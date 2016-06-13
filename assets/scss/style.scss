@@ -1,0 +1,3098 @@
+@import '_variables.scss', '_mixins.scss', 'rem';
+a.back_to_top {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	border-radius: 100% 0 0 0;
+	transform: translate(100%,100%);
+	display: none;
+	border: solid $secondary_color;
+	z-index: 999;
+	transition: all 1s;
+	color: $secondary_color;
+	overflow: hidden;
+	z-index: 20;
+	@include rem(( height: 55px, line-height: 55px,width: 55px, border-width: 5px, ));
+	&:hover {
+		color: #fff;
+		border-color: $primary_color;
+	}
+	&:before {
+		position: absolute;
+		content: "\f106";
+		font: normal normal normal 40px/1 FontAwesome;
+		top: 0;
+		left: 0;
+		transform: translate(50%,20%);
+		animation-name: top;
+		animation-duration: 0.8s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		@keyframes top {
+			to {
+				transform: translate(50%,5%);
+			}
+		}
+	}
+	&:after {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		right: 0;
+		transform: translate(100%,100%);
+		background-color: $primary_color;
+		transition: all 1s;
+		z-index: -20;
+		border-radius: 100% 0 0 0;
+		@include rem(( height: 55px,width: 55px,));
+	}
+	&.show {
+		transform: translate(5px,5px);
+		display: block;
+	}
+}
+a.back_to_top:hover {
+	&:after {
+		transform: translate(0,0);
+	}
+}
+header.header {
+	float: right;
+	width: 100%;
+	.top_bar {
+		float: right;
+		width: 100%;
+		@include rem(( height: 40px, line-height: 35px, border-top: 4px solid, border-bottom: 1px solid, ));
+	}
+	&.style_1 .top_bar {
+		background: #fff;
+		border-top-color: $primary_color;
+		border-bottom-color: #ebebeb;
+	}
+	&.style_3 .top_bar,
+	&.style_4 .top_bar {
+		background: $primary_color;
+		border-top: none;
+		border-bottom: none;
+		color: #fff;
+	}
+	&.style_1 .main_area,
+	&.style_3 .main_area,
+	&.style_4 .main_area {
+		@include rem(( height: 120px, line-height: 120px, ));
+		float: right;
+		width: 100%;
+	}
+}
+header.header .today {
+	float: left;
+	i {
+		@include rem(( font-size: 16px, margin: 7px ));
+		float: left;
+	}
+}
+header.header.style_3 .today {
+	float: left;
+	@include rem(( height: 40px, line-height: 40px, ));
+	i {
+		@include rem(( font-size: 16px, margin: 12px, ));
+		float: left;
+	}
+}
+.top_bar form {
+	float: right;
+	@include rem(( border-right: 1px solid #ebebeb, border-left: 1px solid #ebebeb, padding: 0 15px, height: 35px, ));
+	input {
+		float: left;
+		border: none;
+		@include rem(( height: 35px, width: 215px ));
+	}
+	button {
+		float: left;
+		border: none;
+		@include rem(( height: 35px, font-size: 16px, margin-right: 10px ));
+		color: #bbc5c7;
+		background: none;
+	}
+}
+header.style_3 .top_bar form {
+	border: none;
+	background: #ff4c4c;
+	@include rem(( height: 40px, ));
+	input {
+		background: none;
+		color: $secondary_color;
+	}
+	button {
+		color: #fff;
+	}
+	input::-webkit-input-placeholder {
+		color: #fff;
+	}
+	input:-moz-placeholder {
+		color: #fff;
+	}
+	input::-moz-placeholder {
+		color: #fff;
+	}
+	input:-ms-input-placeholder {
+		color: #fff;
+	}
+}
+.top_bar .user_area {
+	float: right;
+	@include rem(( border-left: 1px solid #ebebeb, padding: 0 30px, height: 35px, ));
+	* {
+		color: #bbc5c7;
+		@include rem(( line-height: 35px, margin: 0 10px, ));
+	}
+	a:hover {
+		color: $secondary_color;
+	}
+}
+.top_bar .shopping_cart {
+	float: right;
+	@include rem(( margin-right: 30px, height: 35px, ));
+	a {
+		@include rem(( height: 25px, line-height: 25px, padding: 0 15px, border-radius: 3px, font-size: 13px ));
+		background: $secondary_color;
+		color: #fff;
+		display: inline-block;
+		i {
+			color: $primary_color;
+			@include rem(margin-right, 5px);
+		}
+	}
+}
+header.style_1 .main_area .logo,
+header.style_3 .main_area .logo,
+header.style_4 .main_area .logo {
+	float: left;
+	overflow: hidden;
+	img {
+		// max-width: 100%;
+		// width: 100%;
+		height: auto;
+	}
+	&.center {
+		float: none;
+		display: block;
+		text-align: center;
+	}
+}
+header.style_1 .main_area .header_ads,
+header.style_3 .main_area .header_ads {
+	text-align: right;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+header .main_menu {
+	float: left;
+	width: 100%;
+	@include rem(( height: 60px, ));
+	ul {
+		float: left;
+		width: 100%;
+		@include rem(height, 60px);
+		padding: 0;
+		list-style: none;
+		z-index: 999;
+		margin-bottom: 0;
+	}
+	ul > li {
+		float: left;
+		@include rem(( height: 60px, line-height: 60px, ));
+		position: relative;
+	}
+	ul > li:first-child {
+		margin-left: 0;
+	}
+	ul > li > a {
+		display: block;
+		@include rem(( font-size: 16px, ));
+	}
+	ul > li > a:after {
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\f078";
+		@include rem(( font-size: 14px, margin-left: 10px, ));
+	}
+	ul > li > a:only-child:after {
+		content: '';
+	}
+	ul > li ul {
+		@include rem(( width: 295px, top: 60px, border-top-width: 3px, transform: translateY(-10px) translateX(-35px), ));
+		position: absolute;
+		height: auto;
+		left: 0;
+		transition: all 300ms;
+		pointer-events: none;
+		opacity: 0;
+	}
+	ul > li:hover > ul {
+		pointer-events: all;
+		opacity: 1;
+		transform: translateY(0) translateX(-35px);
+	}
+	ul > li ul li {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		@include rem(( border-width: 1px, height: 45px, ));
+	}
+	ul > li ul li a {
+		@include rem(( line-height: 45px, padding: 0 30px, font-size: 14px, ));
+	}
+	ul > li ul li a:after {
+		content: "\f101";
+		position: absolute;
+		margin: 0;
+		top: 50%;
+		@include rem(( right: 20px, ));
+		transform: translateY(-50%);
+	}
+	ul > li > ul li ul {
+		@include rem(( left: 293px, transform: translate(10px, 0), top: -3px, ));
+		border-top: none;
+	}
+	ul > li > ul li:hover > ul {
+		transform: translate(0, 0);
+	}
+}
+header.style_1 .main_menu {
+	background: $secondary_color;
+	ul > li {
+		@include rem(( margin: 0 35px, ));
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	ul > li > a {
+		color: #fff;
+	}
+	ul > li:hover > a {
+		color: $primary_color;
+	}
+	ul > li ul {
+		border-top: solid $primary_color;
+		background: $secondary_color;
+	}
+	ul > li ul li {
+		border-bottom: solid #555;
+		border-left: solid #555;
+		margin: 0;
+		@include rem(border-width, 1px);
+	}
+}
+header.style_3 .main_menu,
+header.style_4 .main_menu {
+	border-top: solid #f1f1f1;
+	border-bottom: solid #f1f1f1;
+	@include rem(( border-width: 1px, ));
+	ul {
+		width: auto;
+	}
+	ul > li {
+		@include rem(( margin: 0 20px, ));
+	}
+	ul > li:first-child {
+		margin-right: 0;
+	}
+	ul > li > a {
+		color: $secondary_color;
+		@include rem(( padding: 0 15px, ));
+	}
+	ul > li > a:hover {
+		background: #f4f4f4;
+	}
+	ul > li ul {
+		border-top: solid $secondary_color;
+		background: #f9f9f9;
+		@include rem(width, 295px);
+	}
+	ul > li ul li {
+		border-bottom: solid #e9e9e9;
+		border-left: solid #e9e9e9;
+		@include rem(( border-width: 1px, ));
+		margin: 0;
+	}
+	ul > li ul li:hover > a {
+		background: none;
+		color: $primary_color;
+	}
+}
+header.style_4 .top_bar .user_area {
+	border-left: none;
+	padding-right: 0;
+}
+header.style_4 .top_bar .user_area * {
+	color: #fff;
+}
+header.style_4 .main_area form {
+	width: 90%;
+	float: right;
+	border: solid #eaeaea;
+	@include rem(( border-width: 1px, height: 44px, margin: 38px 0 0 5%, ));
+	input {
+		float: left;
+		@include rem(( width: calc( 100% - 48px), height: 42px, padding: 0 10px, line-height: 42px ));
+		border: none;
+	}
+	button {
+		float: left;
+		@include rem(( width: 48px, height: 42px, line-height: 42px, font-size: 15px ));
+		background: none;
+		border: none;
+		color: #bbc5c7;
+		text-align: center;
+	}
+}
+header.style_4 .main_menu .shopping_cart {
+	float: right;
+	@include rem(( height: 34px, margin-top: 18px, padding: 0 15px, border-radius: 3px, line-height: 34px, font-size: 13px ));
+	background: $primary_color;
+	a {
+		color: $secondary_color;
+	}
+}
+main.main {
+	background: #f7f8fa;
+	float: left;
+	width: 100%;
+}
+section.top {
+	float: right;
+	width: 100%;
+	@include rem(( margin-top: 30px, ));
+	.carousel {
+		overflow: hidden;
+	}
+	.carousel-inner > .item img {
+		width: 100%;
+	}
+	.carousel-control.left,
+	.carousel-control.right {
+		background: none;
+		@include rem(( width: 40px, height: 40px, font-size: 40px, line-height: 40px ));
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 1;
+		color: #fff;
+	}
+	.selection {
+		float: left;
+		width: 100%;
+		h4 {
+			float: left;
+			margin-top: 0;
+			@include rem(margin-bottom, 15px);
+		}
+		a.more {
+			@include rem(line-height, 20px);
+		}
+		ul {
+			float: right;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			@include rem(( border-width: 1px, ));
+			margin-bottom: 0;
+		}
+		ul li {
+			float: left;
+			width: 100%;
+			border-bottom: solid #e4e4e4;
+			@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
+		}
+		ul li:last-child {
+			border-bottom: none;
+		}
+		ul li .thumb {
+			float: left;
+			@include rem(( width: 100px, height: 75px, margin-right: 10px ));
+		}
+		ul li h3 {
+			margin: 0;
+			line-height: 1.35;
+			text-align: justify;
+			@include rem(( font-size: 18px, margin-bottom: 10px, ));
+		}
+		ul li h3 a {
+			color: $secondary_color;
+		}
+		ul li h3 a:hover {
+			color: $primary_color;
+		}
+		ul li .time {
+			color: #979a9f;
+		}
+	}
+}
+a.more {
+	color: #b9b9b9;
+	@include rem(( font-size: 13px, ));
+}
+a.more:after {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: "\f061";
+	@include rem(margin-left, 10px);
+	transition: color 300ms;
+}
+a.more:hover,
+a.more:hover:after {
+	color: $primary_color;
+}
+section.latest_news {
+	float: left;
+	width: 100%;
+	@include rem(margin-top, 30px);
+	.body {
+		float: left;
+		line-height: 50px;
+		width: 100%;
+		@include rem(( height: 50px, line-height: 50px, ));
+		background: $secondary_color;
+		ul {
+			display: none;
+		}
+		a {
+			color: #fff;
+			@include rem(font-size, 16px);
+		}
+	}
+	.title {
+		@include rem(( height: 50px, padding: 0 20px, line-height: 50px, font-size: 15px, margin-right: 15px ));
+		background: $primary_color;
+		color: #fff;
+		position: relative;
+		float: left;
+		font-weight: bold;
+	}
+	.title:after {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-color: transparent transparent transparent $primary_color;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		content: '';
+		@include rem(( right: -7px, border-width: 8px 0 8px 7px, ));
+	}
+	.typed-cursor {
+		opacity: 1;
+		color: #fff;
+		font-size: 18px;
+		-webkit-animation: blink 0.7s infinite;
+		-moz-animation: blink 0.7s infinite;
+		animation: blink 0.7s infinite;
+		@include rem(padding, 0 5px);
+	}
+}
+.article_content,
+.home_content {
+	float: left;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.home_content .box {
+	float: right;
+	width: 100%;
+	.title {
+		float: left;
+		width: 100%;
+		border-left: solid $secondary_color;
+		@include rem(( border-left-width: 2px, padding-left: 15px, margin-top: 30px ));
+		h4 {
+			margin: 0;
+			@include rem(( font-size: 28px, ));
+			font-weight: bold;
+		}
+		h6 {
+			@include rem(( margin: 10px 0 0, font-size: 14px ));
+			color: #979a9f;
+		}
+		a.more {
+			@include rem(font-size, 16px);
+		}
+	}
+	.body {
+		float: left;
+		width: 100%;
+	}
+}
+.big_post {
+	float: left;
+	width: 100%;
+	border: solid #e3e3e5;
+	background: #fff;
+	@include rem(( margin-top: 30px, border-width: 1px ));
+	.thumb {
+		float: left;
+		width: 100%;
+		img {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+	h4 {
+		@include rem(( font-size: 15px, padding: 0 15px, ));
+		width: 100%;
+		float: left;
+		line-height: 1.3;
+		color: #979a9f;
+	}
+	h2 {
+		@include rem(( font-size: 20px, padding: 0 15px, margin: 0 0 10px 0, ));
+		width: 100%;
+		float: left;
+		line-height: 1.3;
+		a {
+			color: $secondary_color;
+		}
+		a:hover {
+			color: $primary_color;
+		}
+	}
+	.time {
+		@include rem(( font-size: 14px, padding: 0 15px, ));
+		width: 100%;
+		float: left;
+		color: #979a9f;
+	}
+	.excerpt {
+		@include rem(( font-size: 15px, padding: 10px 15px, ));
+		width: 100%;
+		float: left;
+		color: #979a9f;
+		text-align: justify;
+	}
+	&.horizontal {
+		border: none;
+		background: none;
+	}
+	&.horizontal ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	&.horizontal ul li {
+		float: right;
+		width: 100%;
+		padding: 0;
+		border: solid #e3e3e5;
+		background: #fff;
+		@include rem(( border-width: 1px, margin-bottom: 15px, ));
+	}
+	&.horizontal ul li .thumb {
+		width: auto;
+		@include rem(margin-right, 30px);
+	}
+	&.horizontal ul li .thumb img {
+		height: auto;
+	}
+	&.horizontal ul li .excerpt,
+	&.horizontal ul li .time,
+	&.horizontal ul li h2 {
+		float: none;
+	}
+	&.horizontal ul li h2 {
+		@include rem(( margin-top: 20px, ));
+	}
+}
+.small_post {
+	float: left;
+	width: 100%;
+	@include rem(margin-top, 30px);
+	ul {
+		float: right;
+		width: 100%;
+		list-style: none;
+		padding: 0;
+		border: solid #e4e4e4;
+		background: #fff;
+		@include rem(( border-width: 1px,));
+		margin-bottom: 0;
+	}
+	ul li {
+		float: left;
+		width: 100%;
+		border-bottom: solid #e4e4e4;
+		@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
+	}
+	ul li:last-child {
+		border-bottom: none;
+	}
+	ul li .thumb {
+		float: left;
+		@include rem(( width: 100px, height: 75px, margin-right: 10px ));
+	}
+	ul li h2 {
+		margin: 0;
+		line-height: 1.35;
+		text-align: justify;
+		@include rem(( font-size: 18px, margin-bottom: 10px, ));
+	}
+	ul li h2 a {
+		color: $secondary_color;
+	}
+	ul li h2 a:hover {
+		color: $primary_color;
+	}
+	ul li .time {
+		color: #979a9f;
+	}
+	&.half_width ul {
+		padding-top: 0;
+	}
+	&.half_width ul li {
+		width: 50%;
+		border-right: solid #e4e4e4;
+		@include rem(border-right-width, 1px);
+	}
+	&.half_width ul li:nth-child(even) {
+		border-right: none;
+	}
+	&.half_width ul li:nth-last-child(2) {
+		border-bottom: none;
+	}
+}
+.shop-carousel {
+	float: left;
+	width: 80%;
+	list-style: none;
+	padding: 0;
+	@include rem(margin, 30px 10% 0);
+	.owl-nav {
+		@include rem(( font-size: 42px, ));
+	}
+	.owl-nav .owl-next,
+	.owl-nav .owl-prev {
+		position: absolute;
+		top: 50%;
+		color: #b5b5b7;
+	}
+	.owl-nav .owl-next {
+		transform: translate(-100%, -50%);
+		left: -10%;
+	}
+	.owl-nav .owl-prev {
+		transform: translate(100%, -50%);
+		right: -10%;
+	}
+	.owl-nav .owl-next:hover,
+	.owl-nav .owl-prev:hover {
+		color: $secondary_color;
+	}
+	.product {
+		width: 100%;
+		border: #e6e6e6 solid;
+		background: #fff;
+		@include rem(( height: 300px, border-width: 1px ));
+		position: relative;
+	}
+	.product .thumb {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 60%;
+		background: #ecf0f1;
+		overflow: hidden;
+	}
+	.product .thumb:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.7);
+		z-index: 2;
+		content: '';
+		opacity: 0;
+		transition: opacity 300ms;
+	}
+	& li:hover .product .thumb:before {
+		opacity: 1;
+	}
+	.product .info {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 40%;
+		background: #fff;
+		text-align: center;
+		transition: background 300ms;
+		@include rem(( padding: 0 10px, ));
+		h3 {
+			@include rem(( font-size: 20px, ));
+			a {
+				color: $secondary_color;
+			}
+		}
+		.price {
+			@include rem(( font-size: 16px, ));
+			color: #979a9f;
+		}
+	}
+	& li:hover .product .info {
+		background: $secondary_color;
+		.price,
+		a {
+			color: #fff;
+		}
+	}
+	.product .thumb .add_to_cart {
+		position: absolute;
+		@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, top: 40px ));
+		color: $secondary_color;
+		background: #fff;
+		z-index: 999;
+		left: 50%;
+		transform: translate(-50%, -200%);
+		min-width: 70%;
+		text-align: center;
+		font-size: 14px;
+		&:hover {
+			color: #fff;
+		}
+	}
+	& li:hover .product .thumb .add_to_cart {
+		transform: translate(-50%, 0);
+	}
+	.product .thumb .permalink {
+		position: absolute;
+		@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, bottom: 40px ));
+		color: $secondary_color;
+		background: #fff;
+		z-index: 999;
+		left: 50%;
+		transform: translate(-50%, 200%);
+		min-width: 70%;
+		text-align: center;
+		font-size: 14px;
+		&:hover {
+			color: #fff;
+		}
+	}
+	& li:hover .product .thumb .permalink {
+		transform: translate(-50%, 0);
+	}
+	.product .thumb .add_to_cart:hover,
+	.product .thumb .permalink:hover {
+		background: $primary_color;
+	}
+}
+#sidebar {
+	float: right;
+	width: 100%;
+	@include rem(padding-top, 30px);
+	section {
+		margin-top: 20px;
+	}
+	section:first-child {
+		margin-top: 0;
+	}
+	.social_widget {
+		float: right;
+		width: 100%;
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			border: solid #e4e4e4;
+			border-top: solid $secondary_color;
+			float: left;
+			width: 100%;
+			background: #fff;
+			@include rem(( border-width: 1px, border-top-width: 2px, ));
+			li a {
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+			li.facebook a {
+				&:hover {
+					color: #fff;
+					border-color: $facebook_color;
+					&:before {
+						background-color: $facebook_color;
+					}
+				}
+				span.icon {
+					background-color: $facebook_color;
+				}
+				border: 1px solid #e4e4e4;
+			}
+			li.twitter a {
+				&:hover {
+					color: #fff;
+					border-color: $twitter_color;
+					&:before {
+						background-color: $twitter_color;
+					}
+				}
+				span.icon {
+					background-color: $twitter_color;
+				}
+				border: 1px solid #e4e4e4;
+			}
+			li.rss a {
+				&:hover {
+					color: #fff;
+					border-color: $rss_color;
+					&:before {
+						background-color: $rss_color;
+					}
+				}
+				span.icon {
+					background-color: $rss_color;
+				}
+				border: 1px solid #e4e4e4;
+			}
+			li.google a {
+				&:hover {
+					color: #fff;
+					border-color: $google_color;
+					&:before {
+						background-color: $google_color;
+					}
+				}
+				span.icon {
+					background-color: $google_color;
+				}
+				border: 1px solid #e4e4e4;
+			}
+			li {
+				float: left;
+				width: 50%;
+				position: relative;
+				overflow: hidden;
+				transition: all 0.4s ease-in-out;
+				@include rem(( height: 70px, ));
+				span.icon {
+					padding: 10px;
+					float: left;
+					text-align: center;
+					color: #fff;
+					transition: all 0.4s ease-in-out;
+					@include rem(( font-size: 25px,border-radius: 4px, height: 40px,width: 40px,margin: 15px,line-height: 10px, ));
+				}
+				span.name {
+					position: absolute;
+					font-weight: 500;
+					top: 50%;
+					left: 50%;
+					transform: translate(-30%,-50%);
+					opacity: 1;
+					overflow: hidden;
+					text-align: center;
+					font-size: 16px;
+					color: #000;
+					transition: all 0.4s ease-in-out;
+				}
+				span.number {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translate(-30%,-100%);
+					opacity: 0;
+					overflow: hidden;
+					text-align: center;
+					font-size: 20px;
+					color: #000;
+					transition: all 0.4s ease-in-out;
+				}
+			}
+			li:hover span.name {
+				opacity: 0;
+				left: 50%;
+				bottom: 0;
+				transform: translate(-30%,100%);
+				color: #fff;
+			}
+			li:hover span.number {
+				opacity: 1;
+				left: 50%;
+				top: 50%;
+				transform: translate(-30%,-50%);
+				color: #fff;
+			}
+		}
+	}
+	.category {
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		h4 {
+			float: left;
+			margin-top: 0;
+			@include rem(margin-bottom, 15px);
+		}
+		ul {
+			float: right;
+			width: 100%;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			list-style: none;
+			@include rem(( border-width: 1px, padding-top: 0 ));
+			margin-bottom: 0;
+		}
+		ul li {
+			float: left;
+			width: 100%;
+			@include rem(( padding: 10px 15px, ));
+			a {
+				display: block;
+				color: $secondary_color;
+				@include rem((font-size: 18px, ));
+				&:hover {
+					color: $primary_color;
+				}
+				span {
+					float: right;
+					font-size: 16px;
+				}
+			}
+		}
+		ul li:hover h3 a {
+			color: $primary_color;
+		}
+		ul li:before {
+			content: "\f101";
+			font: normal normal normal 14px/1 FontAwesome;
+			float: left;
+			@include rem(( margin-right: 10px, line-height: 20px, ));
+		}
+		ul li:hover:before {
+			color: $primary_color;
+		}
+		ul li:hover span {
+			color: $primary_color;
+		}
+	}
+	.news {
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		ul.newsTab {
+			border: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.newsTab li {
+			margin-right: 2px;
+			background: #f7f8fa;
+			font-weight: 500;
+			border: solid #e4e4e4;
+			border-radius: 0;
+			@include rem(( border-width: 1px 1px 0 1px, height: 50px,font-size: 18px,));
+		}
+		ul.newsTab li.active {
+			background: #e4e4e4;
+			border: solid #e4e4e4;
+			@include rem(( border-width: 1px 1px 0 1px, ));
+			a {
+				color: $secondary_color;
+			}
+		}
+		ul.newsTab li a {
+			border: 0;
+			margin-right: 0;
+			color: #737373;
+			@include rem(( height: 50px, line-height: 30px,));
+			display: block;
+			width: 100%;
+			border-radius: 0;
+		}
+		.tab-content {
+			float: right;
+			width: 100%;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			list-style: none;
+			@include rem(( border-width: 0 1px 1px 1px, padding-top: 0 ));
+			margin-bottom: 0;
+			ul {
+				float: right;
+				width: 100%;
+				padding: 0;
+			}
+			ul li {
+				float: left;
+				width: 100%;
+				border-bottom: solid #e4e4e4;
+				@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
+			}
+			ul li:last-child {
+				border-bottom: none;
+			}
+			ul li .thumb {
+				float: left;
+				@include rem(( width: 100px, height: 75px, margin-right: 10px ));
+			}
+			ul li h3 {
+				margin: 0;
+				line-height: 1.35;
+				@include rem(( font-size: 18px, margin-bottom: 10px, ));
+			}
+			ul li h3 a {
+				color: $secondary_color;
+			}
+			ul li h3 a:hover {
+				color: $primary_color;
+			}
+			ul li .time {
+				color: #979a9f;
+			}
+		}
+	}
+	.ads {
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		figure {
+			background: $secondary_color;
+			position: relative;
+			float: left;
+			overflow: hidden;
+			height: auto;
+			text-align: center;
+			cursor: pointer;
+			@include rem(( margin: 10px 0, ));
+			img {
+				opacity: 0.95;
+				transition: opacity 0.35s, transform 0.35s;
+				transform: scale3d(1.05,1.05,1);
+				position: relative;
+				display: block;
+				min-height: 100%;
+				max-width: 100%;
+			}
+		}
+		figure:hover img {
+			opacity: 0.8;
+			transform: scale3d(1,1,1);
+		}
+		figure:hover figcaption:before {
+			transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+		}
+		figure:hover figcaption a {
+			transform: translate( -10px, -10px);
+		}
+		figcaption {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			text-transform: uppercase;
+			backface-visibility: hidden;
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255,255,255,0.5);
+				content: '';
+				transition: transform 0.5s;
+				transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+			}
+			a {
+				background-color: $primary_color;
+				text-align: center;
+				color: #fff;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				transform: translate( -10px, 100%);
+				@include rem((padding: 5px 10px, border-radius: 4px,font-size: 12px,));
+				&:hover {
+					background: #fff;
+					color: $primary_color;
+				}
+			}
+		}
+	}
+	.last_articles {
+		float: left;
+		width: 100%;
+		h4 {
+			float: left;
+			margin-top: 0;
+			@include rem(margin-bottom, 15px);
+		}
+		a.more {
+			float: right;
+			@include rem(line-height, 20px);
+		}
+		ul {
+			float: right;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			@include rem(( border-width: 1px, ));
+			margin-bottom: 0;
+		}
+		ul li {
+			float: left;
+			width: 100%;
+			border-bottom: solid #e4e4e4;
+			@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
+		}
+		ul li:last-child {
+			border-bottom: none;
+		}
+		ul li a {
+			line-height: 1.35;
+			@include rem(( font-size: 18px, margin-bottom: 10px, ));
+			color: $secondary_color;
+		}
+		ul li a:hover {
+			color: $primary_color;
+		}
+		ul li .time {
+			color: #979a9f;
+		}
+	}
+	.video {
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		h4 {
+			float: left;
+			margin-top: 0;
+			@include rem(margin-bottom, 15px);
+		}
+		a.more {
+			float: right;
+			@include rem(line-height, 20px);
+		}
+		ul {
+			float: right;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			@include rem(( border-width: 1px, ));
+			margin-bottom: 0;
+		}
+		ul li {
+			float: left;
+			width: 100%;
+			@include rem(( padding: 15px 15px 0 15px, ));
+			a {
+				display: block;
+			}
+		}
+		ul li:last-child {
+			@include rem(( padding-bottom: 15px, ));
+		}
+		figure {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.5s;
+			overflow: hidden;
+			cursor: pointer;
+			img {
+				width: 100%;
+				height: auto;
+				opacity: 0.95;
+				transition: opacity 0.35s, transform 0.35s;
+				transform: scale3d(1.05,1.05,1);
+			}
+			figcaption {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				backface-visibility: hidden;
+				pointer-events: none;
+				span.play {
+					float: right;
+					transform: translate3d(50%, -50%, 0);
+					text-align: center;
+					background-color: rgba(255, 255, 255, .5);
+					color: #fff;
+					transition: all 0.5s;
+					border-radius: 50%;
+					top: 50%;
+					right: 50%;
+					position: relative;
+					@include rem(( width: 75px, height: 75px, line-height: 75px,font-size: 30px, ));
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					z-index: 0;
+					transform: translate3d(0,50%,0);
+					background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(51,51,51,0.5) 75%);
+				}
+				a {
+					position: absolute;
+					width: 100%;
+					bottom: 0;
+					left: 0;
+					color: #fff;
+					z-index: 2;
+					@include rem(( padding: 15px 15px 0 15px, ));
+					h2 {
+						margin-top: 0;
+						font-weight: bold;
+						transition: all 0.4s;
+						@include rem(( font-size: 20px, ));
+						&:after {
+							content: '';
+							background-color: #fff;
+							width: 0;
+							display: block;
+							transition: all 0.4s;
+							@include rem(( margin: 5px 0, height: 1px,));
+						}
+					}
+					.info {
+						position: absolute;
+						bottom: 0;
+						transition: all 0.4s;
+						transform: translate(0, 100%);
+						opacity: 0;
+						@include rem(( font-size: 15px, ));
+						span {
+							@include rem(( margin-right: 30px, ));
+						}
+					}
+				}
+			}
+		}
+		figure:hover img {
+			opacity: 0.9;
+			transform: scale3d(1, 1, 1);
+		}
+		figure:hover figcaption span.play {
+			border-radius: 0;
+			top: 0;
+			right: 0;
+			left: auto;
+			transform: translate3d(0, 0, 0);
+			background-color: $primary_color;
+			@include rem(( width: 45px, height: 45px, line-height: 45px,font-size: 20px, ));
+			i {
+				animation-name: beat;
+				animation-duration: 0.8s;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
+		}
+		@keyframes beat {
+			to {
+				transform: scale(1.3);
+			}
+		}
+		figure:hover figcaption:after {
+			opacity: 1;
+			transform: translate3d(0,0,0);
+			transition: opacity 0.35s, transform 0.35s;
+		}
+		figure:hover figcaption h2 {
+			transform: translate(0, -100%);
+		}
+		figure:hover figcaption h2:after {
+			width: 100%;
+			background-color: #e4e4e4;
+		}
+		figure:hover figcaption .info {
+			opacity: 1;
+			transform: translate(0, -50%);
+		}
+	}
+	.tags {
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		h4 {
+			float: left;
+			margin-top: 0;
+			@include rem(margin-bottom, 15px);
+		}
+		.tagcloud {
+			float: right;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			@include rem(( border-width: 1px, padding: 15px ));
+			margin-bottom: 0;
+		}
+		.tagcloud a {
+			position: relative;
+			float: left;
+			color: $secondary_color;
+			border: solid #e4e4e4;
+			overflow: hidden;
+			z-index: 10;
+			transition: all 1s;
+			@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px,));
+			&:hover {
+				color: #fff;
+				border-color: $secondary_color;
+				&:before {
+					background-color: $secondary_color;
+				}
+			}
+			// &:before {
+			// 	content: "";
+			// 	position: absolute;
+			// 	bottom: 0;
+			// 	left: 0;
+			// 	background-color: $secondary_color;
+			// 	width: 150px;
+			// 	height: 150px;
+			// 	transform: translate(-100% , 100%);
+			// 	border-radius: 0 100% 0 0;
+			// 	transition: all 1s;
+			// 	z-index: -10;
+			// }
+		}
+		// .tagcloud a:hover:before {
+		// 	transform: translate(0, 0);
+		//
+		// }
+	}
+}
+footer.footer {
+	width: 100%;
+	float: left;
+	&.style_1 .main_area,
+	&.style_2 .main_area,
+	&.style_4 .main_area {
+		background: #222533 url("../../assets/img/footer_bg.jpg") no-repeat right bottom;
+	}
+	&.style_1 .main_area,
+	&.style_2 .main_area,
+	&.style_4 .main_area,
+	&.style_5 .main_area {
+		padding: 40px 0;
+		background-color: #555;
+		color: #a3a3a3;
+	}
+	&.style_3 .top_bar {
+		background-color: $primary_color;
+		color: $secondary_color;
+	}
+	&.style_5 .top_bar {
+		background-color: $secondary_color;
+		color: #a3a3a3;
+		.newsletter {
+			float: left;
+			width: 100%;
+			color: #fff;
+		}
+		.newsletter form {
+			float: right;
+			border: none;
+			padding: 0;
+			height: auto;
+			width: 50%;
+		}
+		.newsletter span {
+			float: left;
+			font-weight: bold;
+			@include rem(( margin-top: 30px ,font-size: 1.5rem, ));
+		}
+		.newsletter input {
+			width: 80%;
+			border-bottom: solid #555;
+			float: left;
+			background-color: $secondary_color;
+			@include rem(( padding: 15px,margin: 20px 0 , border-width: 1px, height: 45px,));
+		}
+		.newsletter button {
+			width: 20%;
+			background-color: #555;
+			border-radius: 0;
+			color: #fff;
+			@include rem(( padding: 5px,margin: 20px 0 ,font-size: 14px,height: 45px, ));
+			&:hover {
+				color: #fff;
+				border-color: $primary_color;
+				&:before {
+					background-color: $primary_color;
+				}
+			}
+		}
+	}
+	&.style_1 .bottom_bar,
+	&.style_2 .bottom_bar,
+	&.style_3 .bottom_bar,
+	&.style_4 .bottom_bar,
+	&.style_5 .bottom_bar {
+		padding: 30px 0;
+		background-color: $secondary_color;
+		color: #a3a3a3;
+		@include rem(( font-size: 1.4rem, ));
+	}
+	&.style_1 .main_area .box_1,
+	&.style_1 .main_area .box_2,
+	&.style_5 .main_area .box_1,
+	&.style_5 .main_area .box_2 {
+		width: 100%;
+		float: left;
+	}
+	&.style_1 .main_area .box_1 p,
+	&.style_4 .main_area .box_1 p {
+		padding: 20px 0;
+		text-align: justify;
+		@include rem((font-size: 1.5rem,));
+	}
+	&.style_4 .main_area .box_1 img {
+		margin: 0 auto;
+		display: block;
+	}
+	&.style_1 .main_area .box_1 ul {
+		width: 100%;
+		float: left;
+		list-style: none;
+		padding: 0;
+	}
+	&.style_1 .main_area .box_1 ul li {
+		float: left;
+	}
+	&.style_1 .main_area .box_1 ul li a {
+		color: #fff;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		display: inline-block;
+		line-height: 40px;
+		border-radius: 4px;
+		@include rem((font-size: 1.6rem,));
+	}
+	&.style_1 .main_area .box_1 ul li a:hover {
+		background-color: $secondary_color;
+	}
+	&.style_1 .main_area .box_2 h2,
+	&.style_1 .main_area .box_3 h2,
+	&.style_2 .main_area .box_1 h2,
+	&.style_2 .main_area .box_2 h2,
+	&.style_2 .main_area .box_3 h2,
+	&.style_2 .main_area .box_4 h2,
+	&.style_5 .main_area .box_1 h2,
+	&.style_5 .main_area .box_2 h2,
+	&.style_5 .main_area .box_3 h2 {
+		margin: 0;
+		color: #fff;
+		@include rem((font-size: 2rem,));
+	}
+	@mixin socialmenu {
+		color: #fff;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		display: inline-block;
+		line-height: 40px;
+		border-radius: 4px;
+		@include rem((font-size: 1.6rem,));
+	}
+	&.style_2 .main_area,
+	&.style_3 .top_bar,
+	&.style_4 .main_area {
+		.social_menu {
+			text-align: center;
+			ul {
+				display: inline-block;
+				list-style: none;
+				padding: 0;
+				float: none;
+				width: auto;
+			}
+			ul li {
+				float: left;
+				width: auto;
+				&:before {
+					display: none;
+				}
+			}
+			ul li a {
+				@include socialmenu;
+			}
+			ul li a:hover {
+				background-color: $secondary_color;
+			}
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			width: 100%;
+			float: left;
+			@include rem(( margin-top: 20px, ));
+			li {
+				float: left;
+				width: 100%;
+				@include rem(( padding: 0, ));
+				&:before {
+					content: "\f101";
+					font: normal normal normal 14px/1 FontAwesome;
+					float: left;
+					margin-right: 10px;
+					line-height: 1.35;
+				}
+			}
+			li h3 {
+				margin: 0;
+				line-height: 1.35;
+				@include rem(( font-size: 16px, margin-bottom: 10px, ));
+			}
+			li h3 a {
+				color: #a3a3a3;
+			}
+			li h3 a:hover {
+				color: $primary_color;
+			}
+		}
+	}
+	&.style_3 .top_bar {
+		.social_menu {
+			&:after {
+				float: right;
+				width: 1px;
+				height: 50%;
+				position: absolute;
+				background: #fff;
+				content: ' ';
+				right: 0;
+				top: 0;
+				transform: translate(0,50%);
+			}
+			ul {
+				li {
+					a {
+						color: #fff;
+						&:hover {
+							background-color: $secondary_color;
+						}
+					}
+				}
+			}
+		}
+		.email_contact {
+			text-align: center;
+			p {
+				color: #fff;
+				@include rem(( margin-top: 30px, font-size: 15px,));
+			}
+		}
+	}
+	&.style_5 .bottom_bar {
+		.social_menu {
+			float: right;
+			@include rem(( margin-top: -10px, ));
+			ul {
+				li {
+					margin-left: 0;
+					&.facebook a:hover {
+						background-color: $facebook_color;
+					}
+					&.twitter a:hover {
+						background-color: $twitter_color;
+					}
+					&.tumblr a:hover {
+						background-color: $tumblr_color;
+					}
+					&.rss a:hover {
+						background-color: $rss_color;
+					}
+					&.vimeo a:hover {
+						background-color: $vimeo_color;
+					}
+					&.linkedin a:hover {
+						background-color: $linkedin_color;
+					}
+					&.dribbble a:hover {
+						background-color: $dribbble_color;
+					}
+					&.instagram a:hover {
+						background-color: $instagram_color;
+					}
+					&.rss a:hover {
+						background-color: $rss_color;
+					}
+					a {
+						color: #fff;
+						@include socialmenu;
+						&:hover {
+							background-color: $primary_color;
+						}
+					}
+				}
+			}
+		}
+		.email_contact {
+			text-align: center;
+			p {
+				@include rem(( margin-top: 30px, ));
+			}
+		}
+	}
+	&.style_1 .main_area .box_2,
+	&.style_5 .main_area .box_1,
+	&.style_5 .main_area .box_2 {
+		ul {
+			float: right;
+			width: 100%;
+			padding: 0;
+			list-style: none;
+		}
+		ul li {
+			float: left;
+			width: 100%;
+			@include rem(( padding: 15px 0, ));
+		}
+		ul li .thumb {
+			float: left;
+			@include rem(( width: 100px, height: 75px, margin-right: 10px ));
+		}
+		ul li h3 {
+			margin: 0;
+			line-height: 1.35;
+			@include rem(( font-size: 18px, margin-bottom: 10px, ));
+		}
+		ul li h3 a {
+			color: #a3a3a3;
+		}
+		ul li h3 a:hover {
+			color: #fff;
+		}
+		ul li .time {
+			color: #a3a3a3;
+		}
+	}
+	&.style_1 .main_area .box_3,
+	&.style_5 .main_area .box_3 {
+		.newsletter {
+			float: left;
+			width: 100%;
+		}
+		.newsletter input {
+			width: 80%;
+			border: solid #A3A3A3;
+			float: left;
+			border-right: 0;
+			background-color: transparent;
+			@include rem(( padding: 15px,margin: 20px 0 , border-width: 1px, ));
+		}
+		.newsletter button {
+			width: 20%;
+			background-color: $primary_color;
+			border-radius: 0;
+			color: #fff;
+			@include rem(( padding: 15px,margin: 20px 0 ,font-size: 1.2rem, ));
+		}
+		.popular_tags {
+			float: left;
+			.tagcloud {
+				float: left;
+				width: 100%;
+				list-style: none;
+				padding: 0;
+				@include rem(( padding: 15px 0, ));
+				margin-bottom: 0;
+			}
+			.tagcloud a {
+				position: relative;
+				overflow: hidden;
+				float: left;
+				color: #a3a3a3;
+				border: solid #a3a3a3;
+				z-index: 10;
+				transition: all 1s;
+				@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px,));
+				&:hover {
+					color: #fff;
+					border-color: $primary_color;
+					&:before {
+						background-color: $primary_color;
+					}
+				}
+				// &:before {
+				// 	content: "";
+				// 	position: absolute;
+				// 	bottom: 0;
+				// 	left: 0;
+				// 	background-color: $primary_color;
+				// 	width: 150px;
+				// 	height: 150px;
+				// 	transform: translate(-100% , 100%);
+				// 	border-radius: 0 100% 0 0;
+				// 	transition: all 1s;
+				// 	z-index: -10;
+				// }
+			}
+			// .tagcloud a:hover:before {
+			//   transform: translate(0, 0);
+			// }
+		}
+	}
+	&.style_1 .bottom_bar,
+	&.style_2 .bottom_bar,
+	&.style_3 .bottom_bar,
+	&.style_4 .bottom_bar,
+	&.style_5 .bottom_bar {
+		.menu_area {
+			text-align: center;
+		}
+		ul {
+			float: left;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+		}
+		ul li {
+			float: left;
+			@include rem(( margin-left: 30px, ));
+			&:first-child {
+				@include rem(( margin-left: 0, ));
+			}
+		}
+		ul li a {
+			color: #a3a3a3;
+			&:hover {
+				color: #fff;
+			}
+		}
+		p {
+			float: left;
+		}
+	}
+	&.style_2 .bottom_bar,
+	&.style_3 .bottom_bar,
+	&.style_4 .bottom_bar {
+		ul {
+			display: inline-block;
+			width: auto;
+			float: none;
+		}
+		p {
+			text-align: center;
+			float: none;
+		}
+	}
+}
+.article_content {
+	@include rem(( padding-top: 30px, ));
+	.article_info {
+		.breadcrumbs {
+			color: #c0c0c0;
+			a {
+				color: #c0c0c0;
+				@include rem(( padding:0 10px, ));
+			}
+			span:first-child a {
+				@include rem(( padding-left:0px ));
+			}
+		}
+		h1.article_title {
+			@include rem((margin: 5px 0, padding:10px 0,font-size: 25px, ));
+		}
+		.article_meta {
+			color: #c0c0c0;
+			span {
+				float: left;
+				@include rem(( margin-right: 40px, ));
+				a {
+					color: #c0c0c0;
+				}
+			}
+		}
+	}
+	.terme_post {
+		float: left;
+		width: 100%;
+		border: solid #e3e3e5;
+		background: #fff;
+		color: #555555;
+		@include rem(( margin-top: 30px, border-width: 1px ));
+		.thumb img {
+			width: 100%;
+			max-width: 100%;
+			height: auto !important;
+			padding: 0;
+		}
+		h2 {
+			color: $primary_color;
+			@include rem(( padding:10px 15px,font-size: 20px, ));
+		}
+		p {
+			text-align: justify;
+			line-height: 1.5;
+			@include rem(( padding:10px 15px,font-size: 15px, ));
+		}
+		img {
+			display: block;
+			margin: 0 auto;
+			width: 95%;
+			height: auto;
+			@include rem(( padding:10px ));
+		}
+		blockquote {
+			background-color: #f6f6f6;
+			border: none;
+			position: relative;
+			@include rem(( padding:50px,font-size: 15px,margin: 10px 20px,));
+			&:before {
+				content: "\f10d";
+				font: normal normal normal 25px/1 FontAwesome;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin: 15px;
+				color: #555555;
+			}
+			&:after {
+				content: "\f10e";
+				font: normal normal normal 25px/1 FontAwesome;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				margin: 15px;
+				color: #555555;
+			}
+		}
+		ul {
+			list-style: none;
+			float: left;
+			width: 100%;
+			@include rem(( margin: 20px 0,));
+			li {
+				float: left;
+				width: 100%;
+				@include rem(( padding:5px 15px,font-size: 15px, ));
+				&:before {
+					content: "\f00c";
+					font: normal normal normal 16px/1 FontAwesome;
+					float: left;
+					@include rem(( margin-right: 10px, line-height: 20px, ));
+				}
+			}
+		}
+		.article_tags {
+			width: 100%;
+			float: left;
+			@include rem(( padding:10px 15px, ));
+			h3 {
+				@include rem(( font-size: 18px, ));
+				color: #979a9f;
+			}
+			a {
+				float: left;
+				color: $secondary_color;
+				border: solid #e4e4e4;
+				@include rem(( padding: 5px 10px,margin: 5px, font-size: 15px, border-width: 1px ));
+				&:hover {
+					background-color: $secondary_color;
+					color: #fff;
+					border: solid $secondary_color;
+					@include rem(( padding: 5px 10px, border-width: 1px ));
+				}
+			}
+		}
+		.article_social {
+			text-align: center;
+			ul {
+				padding: 0;
+				list-style: none;
+				display: inline-block;
+				li {
+					float: left;
+					width: auto;
+					@include rem(( padding: 20px 40px,font-size: 20px, ));
+					&:before {
+						content: "";
+					}
+					a {
+						color: #979a9f;
+						&:hover {
+							color: #2daddc;
+						}
+					}
+				}
+			}
+		}
+	}
+	.article_author {
+		float: left;
+		width: 100%;
+		border: solid #e3e3e5;
+		background: #fff;
+		@include rem(( margin-top: 20px, border-width: 1px ));
+		img {
+			float: left;
+			border-radius: 50%;
+			border: solid #e3e3e5;
+			@include rem(( margin: 20px, border-width: 2px ));
+		}
+		.name {
+			float: left;
+			display: inline-block;
+			width: 25%;
+			@include rem(( padding-top:30px,font-size: 15px, ));
+			span {
+				display: block;
+				color: #979a9f;
+			}
+		}
+		.desc {
+			display: inline-block;
+			float: left;
+			color: #979a9f;
+			text-align: justify;
+			width: 50%;
+			@include rem(( padding: 20px 15px,font-size: 15px, ));
+		}
+	}
+	.article_related {
+		float: left;
+		width: 100%;
+		@include rem(margin-top, 30px);
+		ul {
+			float: right;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			@include rem(( border-width: 1px, padding-top: 10px ));
+			margin-bottom: 0;
+		}
+		ul li {
+			float: left;
+			width: 100%;
+			border-bottom: solid #e4e4e4;
+			@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
+		}
+		ul li:last-child {
+			border-bottom: none;
+		}
+		ul li .thumb {
+			float: left;
+			@include rem(( width: 100px, height: 75px, margin-right: 10px ));
+		}
+		ul li h2 {
+			margin: 0;
+			line-height: 1.35;
+			@include rem(( font-size: 18px, margin-bottom: 10px, ));
+		}
+		ul li h2 a {
+			color: $secondary_color;
+		}
+		ul li h2 a:hover {
+			color: $primary_color;
+		}
+		ul li .time {
+			color: #979a9f;
+		}
+		&.half_width ul {
+			padding-top: 0;
+		}
+		&.half_width ul li {
+			width: 50%;
+			border-right: solid #e4e4e4;
+			@include rem((border-right-width: 1px));
+		}
+		&.half_width ul li:nth-child(even) {
+			border-right: none;
+		}
+		&.half_width ul li:nth-last-child(2) {
+			border-bottom: none;
+		}
+	}
+}
+.article_comment {
+	float: left;
+	width: 100%;
+	padding: 0;
+	border: solid #e4e4e4;
+	background: #fff;
+	list-style: none;
+	@include rem(( border-width: 1px, padding-top: 0,margin-top: 30px ));
+	margin-bottom: 0;
+	h4 {
+		margin: 0;
+		@include rem(( padding: 20px 15px 0 15px, ));
+	}
+	ol {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li {
+			float: left;
+			width: 100%;
+			background: #fff;
+			@include rem(( padding: 20px 0, ));
+			article {
+				float: left;
+				@include rem(( padding: 20px, ));
+				.comment_author {
+					img {
+						border-radius: 50%;
+						float: left;
+						border: solid #e3e3e5;
+						@include rem(( margin: 20px, border-width: 2px ));
+					}
+				}
+				.comment_metadata {
+					position: relative;
+					float: left;
+					width: calc(100% - 150px);
+					@include rem(( margin-top: 20px, ));
+					b.name {
+						display: block;
+						@include rem(( font-size: 15px, ));
+						a {
+							color: #979a9f;
+						}
+					}
+					time {
+						color: #979a9f;
+					}
+					.reply {
+						position: absolute;
+						top: 0;
+						right: 0;
+						a {
+							color: $primary_color;
+							@include rem(( font-size: 15px, ));
+						}
+					}
+				}
+				.comment_content {
+					text-align: justify;
+					color: $secondary_color;
+					float: left;
+					width: calc(100% - 150px);
+					@include rem(( font-size: 15px,margin-top: 10px, ));
+				}
+			}
+		}
+	}
+	ul.children {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		float: left;
+		li {
+			position: relative;
+			float: left;
+			width: 100%;
+			background: #f7f8fa;
+			@include rem(( padding: 0, ));
+			&:before {
+				content: "\f112";
+				font: normal normal normal 20px/1 FontAwesome;
+				position: absolute;
+				top: 70px;
+				left: 70px;
+				transform: rotate(-180deg);
+			}
+			article {
+				float: left;
+				width: 90%;
+				margin-left: 10%;
+			}
+			.comment_author {
+				float: left;
+				img {
+					border-radius: 50%;
+					float: left;
+					border: solid #e3e3e5;
+					@include rem(( margin: 20px, border-width: 2px ));
+				}
+			}
+			.comment_metadata {
+				position: relative;
+				float: left;
+				width: calc(100% - 150px);
+				@include rem(( margin-top: 20px, ));
+				b.name {
+					display: block;
+					@include rem(( font-size: 15px, ));
+					a {
+						color: #979a9f;
+					}
+				}
+				time {
+					color: #979a9f;
+				}
+				.reply {
+					position: absolute;
+					top: 0;
+					right: 0;
+					a {
+						color: $primary_color;
+						@include rem(( font-size: 15px, ));
+					}
+				}
+			}
+			.comment_content {
+				text-align: justify;
+				color: $secondary_color;
+				float: left;
+				width: calc(100% - 150px);
+				@include rem(( font-size: 15px,margin-top: 10px, ));
+			}
+		}
+		li.byadmin {
+			background: #fff;
+		}
+	}
+}
+.comment_form {
+	width: 100%;
+	float: left;
+	padding: 0;
+	border-top: none;
+	border: solid #e4e4e4;
+	background: #fff;
+	@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
+	form {
+		.comment-form-author,
+		.comment-form-email {
+			float: left;
+			width: 50%;
+			box-sizing: border-box;
+			@include rem(( padding: 10px,));
+			input {
+				width: 100%;
+				border: solid #e4e4e4;
+				background: #fafafa;
+				transition: all 0.4s;
+				@include rem(( border-width: 1px,height: 45px, padding: 10px,));
+				&:focus {
+					border: solid $primary_color;
+					@include rem(( border-width: 1px,));
+				}
+			}
+		}
+		.comment-form-comment {
+			float: left;
+			width: 100%;
+			box-sizing: border-box;
+			@include rem(( padding: 10px,));
+			textarea {
+				width: 100%;
+				outline: none;
+				border: solid #e4e4e4;
+				background: #fafafa;
+				transition: all 0.4s;
+				@include rem(( border-width: 1px,height: 100px, padding: 10px,));
+				&:focus {
+					border: solid $primary_color;
+					@include rem(( border-width: 1px,));
+				}
+			}
+		}
+		.form-submit {
+			float: right;
+			@include rem(( padding: 10px,));
+			input {
+				font-weight: bold;
+				background: $primary_color;
+				border: none;
+				color: #fff;
+				@include rem(( padding: 15px 30px,border-radius: 4px, font-size: 14px,));
+			}
+		}
+	}
+}
+.category_content {
+	@include rem(( padding-top: 30px, ));
+	ul {
+		list-style: none;
+		float: left;
+		padding: 0;
+		li {
+			width: 100%;
+			float: left;
+			background: #fff;
+			padding: 0;
+			border: solid #e4e4e4;
+			@include rem(( border-width: 1px,margin-bottom: 20px, ));
+		}
+		li article {
+			float: left;
+			width: 100%;
+			figure {
+				margin: 0;
+			}
+			figure.thumbnail {
+				float: left;
+				margin-right: 20px;
+				border: none;
+				padding: 0;
+			}
+			section {
+				h2 {
+					line-height: 1.3;
+					text-align: justify;
+					@include rem((font-size: 20px,padding-right: 20px, ));
+					a {
+						&:hover {
+							color: $primary_color;
+						}
+					}
+				}
+				.post_time {
+					color: #979a9f;
+					@include rem((font-size: 14px,padding: 0 0 20px 0, ));
+				}
+				.excerpt {
+					width: 100%;
+					text-align: justify;
+					color: #979a9f;
+					@include rem(( border-width: 1px,font-size: 15px,padding-right: 20px, ));
+				}
+			}
+		}
+	}
+	.wp-pagenavi {
+		float: right;
+		width: 100%;
+		margin: 5.3125rem 0;
+		text-align: center;
+		direction: ltr;
+		@include rem(( border-width: 1px,font-size: 15px,padding-right: 20px, ));
+		a {
+			&:hover {
+				background: #fff;
+			}
+		}
+		a,
+		span.current {
+			border-radius: 50%;
+			text-align: center;
+			display: inline-block;
+			margin: 0 1.875rem;
+			color: $secondary_color;
+			@include rem(( font-size: 20px,line-height: 45px,width: 45px,height: 45px, ));
+		}
+		span.current {
+			background: $primary_color;
+			color: #fff;
+		}
+		a.nextpostslink,
+		a.previouspostslink {
+			float: right;
+			margin: 0;
+			width: auto;
+			height: auto;
+			border-radius: 0;
+			background: none;
+			color: #c8c8c8;
+			@include rem(( line-height: 60px,));
+		}
+		a.previouspostslink {
+			float: left;
+		}
+		a.nextpostslink i,
+		a.previouspostslink i {
+			float: right;
+			margin-left: 0.625rem;
+			-webkit-transition: none;
+			-o-transition: none;
+			transition: none;
+			@include rem(( font-size: 60px,));
+		}
+		a.previouspostslink i {
+			float: left;
+			margin-left: 0;
+			margin-right: 0.625rem;
+		}
+		a.nextpostslink:hover,
+		a.previouspostslink:hover {
+			color: $secondary_color;
+		}
+	}
+}
+.shop_filters {
+	width: 100%;
+	float: left;
+	@include rem((padding:30px 15px,));
+	.filter_item {
+		float: left;
+		width: 25%;
+		box-sizing: border-box;
+		@include rem((padding-right: 20px ,));
+		.dropdown {
+			height: 40px;
+			border: none;
+			border-radius: 0;
+			color: #d4d4d4;
+			display: block;
+			button {
+				height: 40px;
+				background: #fff;
+				border: #e6e6e6 solid;
+				@include rem((border-width: 1px, border-radius: 0 ,));
+			}
+			button.dropdown-content {
+				width: 65%;
+				float: left;
+			}
+			button.dropdown-toggle {
+				width: 40px;
+				border: #e6e6e6 solid;
+				float: left;
+				@include rem((border-width: 1px, border-radius: 0 4px 4px 0 ,));
+			}
+		}
+	}
+	#post_grid {
+		&:before {
+			content: "\f009";
+			float: left;
+			font: normal normal normal 20px/1 FontAwesome;
+			width: 40px;
+			height: 40px;
+			background: #d4d4d4;
+			color: #fff;
+			line-height: 40px;
+			text-align: center;
+			@include rem((border-radius: 4px 0 0 4px,));
+		}
+	}
+	#post_sort {
+		&:before {
+			content: "\f062";
+			float: left;
+			font: normal normal normal 20px/1 FontAwesome;
+			width: 40px;
+			height: 40px;
+			background: #d4d4d4;
+			color: #fff;
+			line-height: 40px;
+			text-align: center;
+			@include rem((border-radius: 4px,margin-right: 5px,));
+		}
+	}
+}
+.shop_product {
+	width: 100%;
+	border: #e6e6e6 solid;
+	background: #fff;
+	@include rem(( height: 475px, border-width: 1px,margin-bottom: 20px, ));
+	position: relative;
+}
+.shop_product .thumb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 75%;
+	background: #ecf0f1;
+	overflow: hidden;
+}
+.shop_product .thumb:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.7);
+	z-index: 2;
+	content: '';
+	opacity: 0;
+	transition: opacity 300ms;
+}
+.shop_product:hover .thumb:before {
+	opacity: 1;
+}
+.shop_product .info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 25%;
+	background: #fff;
+	text-align: center;
+	transition: background 300ms;
+	@include rem(( padding: 0 10px, ));
+	h3 {
+		@include rem(( font-size: 20px, ));
+		a {
+			color: $secondary_color;
+		}
+	}
+	.price {
+		@include rem(( font-size: 16px, ));
+		color: #979a9f;
+	}
+}
+.shop_product:hover .info {
+	background: $secondary_color;
+	.price,
+	a {
+		color: #fff;
+	}
+}
+.shop_product .thumb .add_to_cart {
+	position: absolute;
+	@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, ));
+	color: $secondary_color;
+	top: 50%;
+	background: #fff;
+	z-index: 999;
+	left: 0;
+	transform: translate(-100%, -50%);
+	min-width: 30%;
+	text-align: center;
+	font-size: 14px;
+}
+.shop_product:hover .thumb .add_to_cart {
+	transform: translate(50%, -50%);
+}
+.shop_product .thumb .permalink {
+	position: absolute;
+	@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, ));
+	color: $secondary_color;
+	background: #fff;
+	z-index: 999;
+	top: 50%;
+	right: 0;
+	transform: translate(100%, -50%);
+	min-width: 30%;
+	text-align: center;
+	font-size: 14px;
+}
+.shop_product:hover .thumb .permalink {
+	transform: translate(-50%, -50%);
+}
+.shop_product .thumb .add_to_cart:hover,
+.shop_product .thumb .permalink:hover {
+	background: $primary_color;
+	color: #fff;
+}
+.shop_product_4 {
+	width: 100%;
+	border: #e6e6e6 solid;
+	background: #fff;
+	@include rem(( height: 475px, border-width: 1px,margin-bottom: 20px, ));
+	position: relative;
+}
+.shop_product_4 .thumb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 75%;
+	background: #ecf0f1;
+	overflow: hidden;
+}
+.shop_product_4 .thumb:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.7);
+	z-index: 2;
+	content: '';
+	opacity: 0;
+	transition: opacity 300ms;
+}
+.shop_product_4:hover .thumb:before {
+	opacity: 1;
+}
+.shop_product_4 .info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 25%;
+	background: #fff;
+	text-align: center;
+	transition: background 300ms;
+	@include rem(( padding: 0 10px, ));
+	h3 {
+		@include rem(( font-size: 20px, ));
+		a {
+			color: $secondary_color;
+		}
+	}
+	.price {
+		@include rem(( font-size: 16px, ));
+		color: #979a9f;
+	}
+}
+.shop_product_4:hover .info {
+	background: $secondary_color;
+	.price,
+	a {
+		color: #fff;
+	}
+}
+.shop_product_4 .thumb .add_to_cart {
+	position: absolute;
+	@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, ));
+	color: $secondary_color;
+	top: 0;
+	left: 50%;
+	background: #fff;
+	z-index: 999;
+	transform: translate(-50%, -100%);
+	min-width: 30%;
+	text-align: center;
+	font-size: 14px;
+}
+.shop_product_4:hover .thumb .add_to_cart {
+	top: 50%;
+	transform: translate(-50%, -150%);
+}
+.shop_product_4 .thumb .permalink {
+	position: absolute;
+	@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, ));
+	color: $secondary_color;
+	background: #fff;
+	z-index: 999;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 100%);
+	min-width: 30%;
+	text-align: center;
+	font-size: 14px;
+}
+.shop_product_4:hover .thumb .permalink {
+	bottom: 50%;
+	transform: translate(-50%, 150%);
+}
+.shop_product_4 .thumb .add_to_cart:hover,
+.shop_product_4 .thumb .permalink:hover {
+	background: $primary_color;
+	color: #fff;
+}
+.product_page {
+	float: left;
+	width: 100%;
+	padding: 0;
+	border: solid #e4e4e4;
+	background: #fff;
+	list-style: none;
+	@include rem(( border-width: 1px, padding-top: 0 ));
+	margin-bottom: 0;
+	.product_image {
+		float: left;
+		width: 45%;
+		box-sizing: border-box;
+		@include rem(( padding: 0 20px 20px 0,));
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.product_detail {
+		float: right;
+		width: 55%;
+		box-sizing: border-box;
+		@include rem(( padding: 20px, ));
+		h1.product_name {
+			margin: 0;
+			@include rem((font-size: 25px, padding: 20px 0, ));
+		}
+		.product_price {
+			h3 {
+				color: $primary_color;
+				margin: 0;
+				display: inline-block;
+				@include rem((font-size: 25px, padding: 0,margin-right: 5px, ));
+			}
+			.product_stars {
+				float: right;
+				color: $primary_color;
+				@include rem((font-size: 20px,));
+			}
+		}
+		.product_short_desc {
+			p {
+				text-align: justify;
+				@include rem((font-size: 15px,margin-top: 20px, ));
+			}
+		}
+		.product_button {
+			float: left;
+			width: 100%;
+			border: solid #e4e4e4;
+			@include rem((border-width: 1px 0 1px 0,padding: 30px 0,));
+			.product_buy {
+				width: 50%;
+				box-sizing: border-box;
+				float: left;
+				a {
+					border: solid $secondary_color;
+					background: #fff;
+					float: left;
+					font-weight: bold;
+					@include rem((margin-right: 10px,border-radius: 4px,padding: 10px 20px, border-width: 1px,font-size: 14px,));
+					color: $secondary_color;
+					&:hover {
+						color: #fff;
+						border-color: $primary_color;
+						&:before {
+							background-color: $primary_color;
+						}
+					}
+				}
+			}
+			.quantity_container {
+				width: 50%;
+				box-sizing: border-box;
+				float: left;
+				.quantity {
+					float: right;
+					input {
+						border: solid #979a9f;
+						display: inline-block;
+						text-align: center;
+						font-weight: bold;
+						@include rem((width: 70px,margin: 0 10px,height: 35px,border-width: 1px,border-radius: 4px, font-size: 14px,));
+					}
+				}
+				.number_button {
+					border: solid #979a9f;
+					text-align: center;
+					float: right;
+					color: #979a9f;
+					cursor: pointer;
+					@include rem((width: 35px, height: 35px,line-height: 25px,border-width: 1px,padding: 5px,border-radius: 4px,));
+				}
+			}
+		}
+		.product_meta {
+			color: #979a9f;
+			@include rem(( margin: 20px 0, ));
+			span {
+				@include rem((font-size: 15px, ));
+				a {
+					color: #979a9f;
+				}
+			}
+		}
+		.product_tags {
+			float: left;
+			width: 100%;
+			span {
+				@include rem((font-size: 15px, ));
+				color: #979a9f;
+				float: left;
+				display: block;
+				width: 100%;
+			}
+			a {
+				float: left;
+				color: $secondary_color;
+				border: solid #e4e4e4;
+				@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px,));
+				&:hover {
+					color: #fff;
+					border-color: $primary_color;
+				}
+				&:before {
+					background-color: $primary_color;
+				}
+			}
+		}
+		.product_social {
+			float: left;
+			width: 100%;
+			ul {
+				list-style: none;
+				float: left;
+				margin: 0;
+				padding: 0;
+				li {
+					float: left;
+					@include rem((margin: 20px, font-size: 15px,));
+					&.facebook:hover a {
+						color: $facebook_color;
+					}
+					&.twitter:hover a {
+						color: $twitter_color;
+					}
+					&.tumblr:hover a {
+						color: $tumblr_color;
+					}
+					&.pinterest:hover a {
+						color: $pinterest_color;
+					}
+					&.wordpress:hover a {
+						color: $wordpress_color;
+					}
+					&:first-child {
+						margin-left: 0;
+					}
+					a {
+						color: $secondary_color;
+					}
+				}
+			}
+		}
+	}
+	.product_intro {
+		float: left;
+		width: 100%;
+		.product_tab {
+			width: 90%;
+			margin: 0 auto;
+			ul {
+				border-bottom: 0;
+				padding: 0;
+				li {
+					float: left;
+					border-bottom: solid #fff;
+					@include rem(( border-bottom-width: 2px,));
+					a {
+						background: #f6f6f6;
+						color: $secondary_color;
+						font-weight: 500;
+						border: none;
+						@include rem(( margin-right: 2px, padding: 10px 30px,font-size: 15px,));
+					}
+				}
+				li.active {
+					border-bottom: solid #f6f6f6;
+					@include rem(( border-bottom-width: 2px,));
+				}
+			}
+			.tab-content {
+				background: #f6f6f6;
+				@include rem(( padding: 20px,margin: 0 auto 20px auto,));
+				p {
+					text-align: justify;
+					@include rem((font-size: 15px, ));
+				}
+			}
+		}
+	}
+	.product_more {
+		float: left;
+		width: 100%;
+		h2 {
+			color: $primary_color;
+			@include rem(( padding:10px 15px,font-size: 20px, ));
+		}
+		ul {
+			list-style: none;
+			float: left;
+			width: 100%;
+			li {
+				float: left;
+				width: 100%;
+				@include rem(( padding:5px 15px,font-size: 15px, ));
+				&:before {
+					content: "\f00c";
+					font: normal normal normal 16px/1 FontAwesome;
+					float: left;
+					@include rem(( margin-right: 10px, line-height: 20px, ));
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.comment_form {
+		form {
+			.comment-form-author,
+			.comment-form-email {
+				width: 100%;
+			}
+		}
+	}
+	.small_post {
+		&.half_width {
+			ul {
+				li {
+					width: 100%;
+					&:nth-last-child(2) {
+						border-bottom: solid #e4e4e4;
+						@include rem(( border-bottom-width: 1px,));
+					}
+				}
+			}
+		}
+	}
+	.product_page {
+		.product_image {
+			width: 100%;
+			padding: 0;
+		}
+		.product_detail {
+			width: 100%;
+		}
+	}
+	footer.footer {
+		&.style_1 .main_area {
+			.box_1 {
+				text-align: center;
+				img {
+					display: block;
+					margin: 0 auto;
+				}
+				ul {
+					display: inline-block;
+					float: none;
+					width: auto;
+				}
+			}
+		}
+		&.style_3 .top_bar {
+			.social_menu {
+				&:after {
+					display: none;
+				}
+			}
+		}
+		&.style_5 .top_bar {
+			.newsletter {
+				span {
+					display: none;
+				}
+				form {
+					width: 100%;
+				}
+			}
+		}
+		&.style_1 .bottom_bar,
+		&.style_5 .bottom_bar {
+			.social_menu {
+				text-align: center;
+				float: none;
+			}
+			p {
+				float: none;
+			}
+			ul {
+				display: inline-block;
+				float: none;
+				width: auto;
+			}
+		}
+	}
+}
+@media (max-width: 992px) {
+	.header {
+		.main_menu {
+			ul {
+				display: none;
+			}
+		}
+	}
+	header.header {
+		.top_bar {
+			border-top: none;
+		}
+		&.style_1 .top_bar {
+			background: $primary_color;
+			color: #fff;
+		}
+	}
+	.top_bar {
+		form {
+			width: 100%;
+			border: none;
+			input {
+				background: transparent;
+				color: #fff;
+				box-sizing: border-box;
+				width: 90%;
+				&::placeholder {
+					color: #fff;
+				}
+			}
+			button {
+				box-sizing: border-box;
+				width: 10%;
+				margin: 0;
+				color: #fff;
+			}
+		}
+		.shopping_cart,
+		.user_area {
+			display: none;
+		}
+	}
+	.main_menu a.mobile_menu {
+		display: block !important;
+	}
+}
+@media (max-width: 544px) {
+	.big_post {
+		&.horizontal {
+			ul {
+				li {
+					.thumb {
+						width: 100%;
+						img {
+							width: 100%;
+							max-width: 100%;
+							height: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+	.article_content {
+		.terme_post {
+			.article_social {
+				ul {
+					li {
+						@include rem(( padding: 5px 15px,));
+					}
+				}
+			}
+		}
+		.article_author {
+			.name {
+				width: auto;
+				@include rem(( padding: 20px 15px 0 15px,));
+			}
+		}
+	}
+}
+.sb-left {
+	background: $secondary_color;
+	.sidebar_menu {
+		ul {
+			float: left;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+			li {
+				float: left;
+				width: 100%;
+				position: relative;
+				@include rem(( padding: 20px,font-size: 16px,));
+				&:before {
+					content: "";
+					width: 4px;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					background: $primary_color;
+					transition: all 0.4s;
+				}
+				a {
+					color: #fff;
+					display: block;
+				}
+				ul {
+					float: left;
+					list-style: none;
+					padding: 0;
+					position: absolute;
+					left: 0;
+					opacity: 0;
+					height: auto;
+					@include rem(( top: 50px,));
+					li {
+						width: 100%;
+						@include rem(( padding: 15px,font-size: 14px,));
+					}
+				}
+			}
+			li:hover:before {
+				width: 100%;
+			}
+		}
+	}
+}
+.main_menu a.mobile_menu {
+	font-size: 1.375rem;
+	color: #fff;
+	float: left;
+	margin-top: 2rem;
+	margin-left: 1rem;
+	height: 1.375rem;
+	width: 1.375rem;
+	display: none;
+}
+.main_menu a.mobile_menu:before {
+	float: right;
+	background: #fff;
+	height: 0.125rem;
+	width: 1.375rem;
+	border-radius: 0.3125rem;
+	content: '';
+	margin-top: 0.0625rem;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.main_menu a.mobile_menu.search_active:before,
+html.sb-active.sb-active-left .main_menu a.mobile_menu:before {
+	-webkit-transform: rotate3d(0, 0, 1, 45deg) translate(.5rem, 0.125rem);
+	transform: rotate3d(0, 0, 1, 45deg) translate(.5rem, 0.125rem);
+}
+.main_menu a.mobile_menu span.mobile_menu {
+	float: right;
+	background: #fff;
+	height: 0.125rem;
+	width: 1.375rem;
+	border-radius: 0.3125rem;
+	margin-top: 0.4375rem;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+a.mobile_menu.search_active span.mobile_menu,
+html.sb-active.sb-active-left .main_menu a.mobile_menu span.mobile_menu {
+	opacity: 0;
+}
+.main_menu a.mobile_menu:after {
+	float: right;
+	background: #fff;
+	height: 0.125rem;
+	width: 1.4375rem;
+	border-radius: 0.3125rem;
+	content: '';
+	margin-top: 0.4375rem;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+a.mobile_menu.search_active:after,
+html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
+	-webkit-transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
+	transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
+}
