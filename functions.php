@@ -21,7 +21,7 @@ if ( function_exists( 'add_image_size' ) ){
 	add_image_size( 'related_thumb', 100, 70, true );
 }
 // Register our sidebars and widgetized areas.
-function sidebar() {
+function terme_sidebar() {
 	register_sidebar( array(
 		'name'          => 'Terme Sidebar',
 		'id'            => 'sidebar',
@@ -31,7 +31,7 @@ function sidebar() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'sidebar' );
+add_action( 'widgets_init', 'terme_sidebar' );
 
 add_action('after_setup_theme', 'terme_load_textdomain');
 function terme_load_textdomain(){
