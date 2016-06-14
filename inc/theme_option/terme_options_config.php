@@ -10,7 +10,7 @@
 
 
     // This is your option name where all the Redux data is stored.
-    $opt_name = "redux_demo";
+    $opt_name = "terme_options";
 
     // This line is only for altering the demo. Can be easily removed.
     $opt_name = apply_filters( 'redux_demo/opt_name', $opt_name );
@@ -34,7 +34,7 @@
     $sample_patterns_path = ReduxFramework::$_dir . '../sample/patterns/';
     $sample_patterns_url  = ReduxFramework::$_url . '../sample/patterns/';
     $sample_patterns      = array();
-    
+
     if ( is_dir( $sample_patterns_path ) ) {
 
         if ( $sample_patterns_dir = opendir( $sample_patterns_path ) ) {
@@ -285,6 +285,20 @@
         'icon'             => 'el el-home'
     ) );
 
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Test', 'redux-framework-demo' ),
+        'id'               => 'mojtaba-testx',
+        'subsection'       => true,
+        'customizer_width' => '450px',
+        'fields'           => array(
+            array(
+                'id'       => 'opt-custom_field',
+                'type'     => 'icon_selector',
+                'title'    => __( 'custom_field', 'redux-framework-demo' ),
+            ),
+
+        )
+    ) );
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Checkbox', 'redux-framework-demo' ),
         'id'               => 'basic-checkbox',
@@ -2390,4 +2404,3 @@
             }
         }
     }
-
