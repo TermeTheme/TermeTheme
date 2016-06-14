@@ -1,9 +1,9 @@
 <?php
-include TEMPLATEPATH . '/social_network.php';
-include TEMPLATEPATH . '/category_by_count.php';
-include TEMPLATEPATH . '/video.php';
-include TEMPLATEPATH . '/top_articles.php';
-include TEMPLATEPATH . '/tags.php';
-include TEMPLATEPATH . '/ads.php';
-include TEMPLATEPATH . '/news.php';
- ?>
+include TEMPLATEPATH . '/inc/widgets/social_network.php';
+include TEMPLATEPATH . '/inc/widgets/category_by_count.php';
+include TEMPLATEPATH . '/inc/widgets/video.php';
+include TEMPLATEPATH . '/inc/widgets/top_articles.php';
+include TEMPLATEPATH . '/inc/widgets/tags.php';
+include TEMPLATEPATH . '/inc/widgets/ads.php';
+include TEMPLATEPATH . '/inc/widgets/news.php';
+?>
