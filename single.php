@@ -91,7 +91,7 @@
 									}
 									?>
 						</div>
-	<?php include 'comments.php' ?>
+	<?php comments_template(); ?> 
 <?php endwhile; else: ?>
 <?php endif; ?>
 					</div><!-- article_content -->

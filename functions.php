@@ -21,7 +21,7 @@ if ( function_exists( 'add_image_size' ) ){
 	add_image_size( 'related_thumb', 100, 70, true );
 }
 // Register our sidebars and widgetized areas.
-function terme_sidebars() {
+function terme_sidebar() {
 	register_sidebar( array(
 		'name'          => 'Terme Sidebar',
 		'id'            => 'sidebar',
@@ -31,7 +31,7 @@ function terme_sidebars() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'terme_sidebars' );
+add_action( 'widgets_init', 'terme_sidebar' );
 
 add_action('after_setup_theme', 'terme_load_textdomain');
 function terme_load_textdomain(){
@@ -40,5 +40,26 @@ function terme_load_textdomain(){
 
 include TEMPLATEPATH . '/inc/widgets/widgets.php';
 include TEMPLATEPATH . '/inc/theme_option/index.php';
-
 ?>
+<?php
+    function advanced_comment($comment, $args, $depth) {
+       $GLOBALS['comment'] = $comment; ?>
+			 	<li>
+			 		<article class="">
+						<div class="comment_author">
+							<?php echo get_avatar( $comment, 90 ); ?>
+						</div>
+						<div class="comment_metadata">
+		          <b class="name"><?php echo get_comment_author_link(); ?></b>
+		          <time><?php printf(__('%1$s'), get_comment_date('j F Y در g:i a'), get_comment_time()) ?></time>
+		          <div class="reply">
+		            <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+		          </div>
+		        </div>
+		        <div class="comment_content">
+		            <?php comment_text(); ?>
+		        </div>
+			 		</article>
+					<?php if ($comment->comment_approved == '0') : ?>
+                  <?php endif; ?>
+<?php } ?>

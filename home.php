@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-		<?php include 'inc/header/2.php'; ?>
+		<?php include TEMPLATEPATH . '/inc/header/4.php'; ?>
 		<main class="main">
 			<section class="top">
 				<div class="container">
@@ -32,7 +32,7 @@
 				</div><!-- row -->
 			</div><!-- container -->
 		</main>
-	<?php include 'inc/footer/5.php'; ?>
+	<?php include TEMPLATEPATH . '/inc/footer/5.php'; ?>
 	</div><!-- sb-site -->
 	<div class="sb-slidebar sb-left">
 		<div class="sidebar_menu">

@@ -2367,7 +2367,7 @@ footer.footer {
     .article_comment ul.children li.byadmin {
       background: #fff; }
 
-.comment_form {
+.comment-respond {
   width: 100%;
   float: left;
   padding: 0;
@@ -2378,8 +2378,8 @@ footer.footer {
   border-width: 0 0.1rem 0.1rem 0.1rem;
   padding: 15px;
   padding: 1.5rem; }
-  .comment_form form .comment-form-author,
-  .comment_form form .comment-form-email {
+  .comment-respond form .comment-form-author,
+  .comment-respond form .comment-form-email {
     float: left;
     width: 50%;
     -webkit-box-sizing: border-box;
@@ -2387,8 +2387,8 @@ footer.footer {
             box-sizing: border-box;
     padding: 10px;
     padding: 1rem; }
-    .comment_form form .comment-form-author input,
-    .comment_form form .comment-form-email input {
+    .comment-respond form .comment-form-author input,
+    .comment-respond form .comment-form-email input {
       width: 100%;
       border: solid #e4e4e4;
       background: #fafafa;
@@ -2400,12 +2400,12 @@ footer.footer {
       height: 4.5rem;
       padding: 10px;
       padding: 1rem; }
-      .comment_form form .comment-form-author input:focus,
-      .comment_form form .comment-form-email input:focus {
+      .comment-respond form .comment-form-author input:focus,
+      .comment-respond form .comment-form-email input:focus {
         border: solid #ff322e;
         border-width: 1px;
         border-width: 0.1rem; }
-  .comment_form form .comment-form-comment {
+  .comment-respond form .comment-form-comment {
     float: left;
     width: 100%;
     -webkit-box-sizing: border-box;
@@ -2413,7 +2413,7 @@ footer.footer {
             box-sizing: border-box;
     padding: 10px;
     padding: 1rem; }
-    .comment_form form .comment-form-comment textarea {
+    .comment-respond form .comment-form-comment textarea {
       width: 100%;
       outline: none;
       border: solid #e4e4e4;
@@ -2426,15 +2426,15 @@ footer.footer {
       height: 10rem;
       padding: 10px;
       padding: 1rem; }
-      .comment_form form .comment-form-comment textarea:focus {
+      .comment-respond form .comment-form-comment textarea:focus {
         border: solid #ff322e;
         border-width: 1px;
         border-width: 0.1rem; }
-  .comment_form form .form-submit {
+  .comment-respond form .form-submit {
     float: right;
     padding: 10px;
     padding: 1rem; }
-    .comment_form form .form-submit input {
+    .comment-respond form .form-submit input {
       font-weight: bold;
       background: #ff322e;
       border: none;

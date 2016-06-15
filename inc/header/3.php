@@ -5,12 +5,12 @@
 				<div class="col-md-5 hidden-sm  hidden-xs">
 					<div class="today">
 						<i class="fa fa-calendar"></i>
-						جمعه ۲۵ دی ۱۳۹۴ - ۲۲:۳۴
+						<?php the_time('F j, Y - g:i a'); ?>
 					</div>
 				</div><!-- col-xs-5 -->
 				<div class="col-md-7 col-sm-12 col-xs-12">
 					<form action="#">
-						<input type="text" placeholder="جستجو">
+						<input type="text" placeholder="Search">
 						<button><i class="fa fa-search"></i></button>
 					</form>
 				</div><!-- col-xs-7 -->
@@ -22,12 +22,12 @@
 			<div class="row">
 				<div class="col-sm-6 col-xs-12">
 					<div class="logo">
-						<a href="#"><img src="assets/img/logo.jpg" alt=""></a>
+						<a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.jpg" alt=""></a>
 					</div><!-- logo -->
 				</div><!-- col-xs-6 -->
 				<div class="col-sm-6 hidden-xs">
 					<div class="header_ads">
-						<a href="#"><img src="assets/img/ads.jpg" alt=""></a>
+						<a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/img/ads.jpg" alt=""></a>
 					</div><!-- header_ads -->
 				</div><!-- col-xs-6 -->
 			</div><!-- row -->
@@ -35,7 +35,6 @@
 	</div><!-- main_area -->
 	<div class="main_menu">
 		<a href="#" class="mobile_menu sb-toggle-left"><span class="mobile_menu"></span></a>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
