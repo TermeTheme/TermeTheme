@@ -37,7 +37,6 @@ add_action('after_setup_theme', 'terme_load_textdomain');
 function terme_load_textdomain(){
     load_theme_textdomain('terme', get_template_directory() . '/languages');
 }
-
 include TEMPLATEPATH . '/inc/widgets/widgets.php';
 include TEMPLATEPATH . '/inc/theme_option/index.php';
 ?>

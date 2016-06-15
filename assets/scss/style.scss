@@ -1916,10 +1916,11 @@ footer.footer {
 				border: solid #e4e4e4;
 				@include rem(( padding: 5px 10px,margin: 5px, font-size: 15px, border-width: 1px ));
 				&:hover {
-					background-color: $secondary_color;
 					color: #fff;
-					border: solid $secondary_color;
-					@include rem(( padding: 5px 10px, border-width: 1px ));
+					border-color: $secondary_color;
+					&:before {
+						background-color: $secondary_color;
+					}
 				}
 			}
 		}
@@ -1929,6 +1930,8 @@ footer.footer {
 				padding: 0;
 				list-style: none;
 				display: inline-block;
+				width: auto;
+				float: none;
 				li {
 					float: left;
 					width: auto;
@@ -3046,8 +3049,8 @@ footer.footer {
 .main_menu a.mobile_menu:before {
 	float: right;
 	background: #fff;
-	height: 0.125rem;
-	width: 1.375rem;
+	height: 0.5rem;
+	width: 2rem;
 	border-radius: 0.3125rem;
 	content: '';
 	margin-top: 0.0625rem;
@@ -3065,8 +3068,8 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu:before {
 .main_menu a.mobile_menu span.mobile_menu {
 	float: right;
 	background: #fff;
-	height: 0.125rem;
-	width: 1.375rem;
+	height: 0.5rem;
+	width: 2rem;
 	border-radius: 0.3125rem;
 	margin-top: 0.4375rem;
 	-webkit-transition: all 0.5s;
@@ -3080,8 +3083,8 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu span.mobile_menu {
 .main_menu a.mobile_menu:after {
 	float: right;
 	background: #fff;
-	height: 0.125rem;
-	width: 1.4375rem;
+	height: 0.5rem;
+	width: 2rem;
 	border-radius: 0.3125rem;
 	content: '';
 	margin-top: 0.4375rem;

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-		<?php include TEMPLATEPATH . '/inc/header/4.php'; ?>
+		<?php include TEMPLATEPATH . '/inc/header/1.php'; ?>
 		<main class="main">
 			<section class="top">
 				<div class="container">

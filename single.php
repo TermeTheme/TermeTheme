@@ -28,15 +28,14 @@
 								<?php the_content(''); ?>
 							<div class="article_tags">
 								<h3>Tags:</h3>
-								<a href="#" data-termehover="">Sports</a>
-					      <a href="#">best offer</a>
-					      <a href="#">terme</a>
-					      <a href="#">game</a>
-					      <a href="#">Sports</a>
-					      <a href="#">Logic</a>
-					      <a href="#">politics</a>
-					      <a href="#">Logic</a>
-					      <a href="#">terme</a>
+									<?php
+											$posttags = get_the_tags();
+											foreach ( $posttags as $tag ) {
+												$tag_link = get_tag_link( $tag->term_id );
+												$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}' data-termehover=''>";
+												$html .= "{$tag->name}</a>";
+											}
+									echo $html; ?>
 							</div><!-- article_tags -->
 							<div class="article_social">
 								<ul>
@@ -91,7 +90,7 @@
 									}
 									?>
 						</div>
-	<?php comments_template(); ?> 
+	<?php comments_template(); ?>
 <?php endwhile; else: ?>
 <?php endif; ?>
 					</div><!-- article_content -->
@@ -107,20 +106,7 @@
 	</div><!-- sb-site -->
 	<div class="sb-slidebar sb-left">
 		<div class="sidebar_menu">
-			<ul>
-				<li><a href="#">Homapage</a></li>
-				<li><a href="#">Archives</a></li>
-				<li><a href="#">Category</a>
-					<ul>
-						<li><a href="#">section1</a></li>
-						<li><a href="#">section1</a></li>
-						<li><a href="#">section1</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Newsletters</a></li>
-				<li><a href="#">shop</a></li>
-			</ul>
-
+			<?php echo wp_nav_menu(); ?>
 		</div>
 	</div><!-- sb-left -->
 	<a href="#top" class="back_to_top"></a>
