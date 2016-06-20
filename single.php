@@ -1,5 +1,15 @@
-<?php get_header(); ?>
-	<?php include 'inc/header/1.php'; ?>
+<?php global $terme_options; ?>
+		<?php get_header(); ?>
+		<?php if ($terme_options['header_layout'] == '1') {
+			include TEMPLATEPATH . '/inc/header/1.php';
+		}elseif ($terme_options['header_layout'] == '2') {
+			include TEMPLATEPATH . '/inc/header/2.php';
+		}elseif ($terme_options['header_layout'] == '3') {
+			include TEMPLATEPATH . '/inc/header/3.php';
+		}else {
+			include TEMPLATEPATH . '/inc/header/4.php';
+		}
+			?>
 	<main class="main">
 		<div class="container">
 			<div class="row">
@@ -7,12 +17,14 @@
 					<div class="article_content">
 						<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 						<div class="article_info ">
+							<?php if($terme_options['post_breadcrumb']) { ?>
 							<div class="breadcrumbs">
 								<span><a href="#">Home</a>
 										<i class="fa fa-angle-right" aria-hidden="true"></i>
 								</span>
 								<a href="#">Sport Category</a>
 							</div>
+							<?php } ?>
 							<h1 class="article_title"><?php the_title(''); ?></h1>
 							<div class="article_meta">
 								<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
@@ -26,18 +38,20 @@
 								<?php the_post_thumbnail( '' ); ?>
 							</div>
 								<?php the_content(''); ?>
+								<?php if($terme_options['post_tags']) { ?>
 							<div class="article_tags">
 								<h3>Tags:</h3>
-								<a href="#" data-termehover="">Sports</a>
-					      <a href="#">best offer</a>
-					      <a href="#">terme</a>
-					      <a href="#">game</a>
-					      <a href="#">Sports</a>
-					      <a href="#">Logic</a>
-					      <a href="#">politics</a>
-					      <a href="#">Logic</a>
-					      <a href="#">terme</a>
+									<?php
+											$posttags = get_the_tags();
+											foreach ( $posttags as $tag ) {
+												$tag_link = get_tag_link( $tag->term_id );
+												$html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}' data-termehover=''>";
+												$html .= "{$tag->name}</a>";
+											}
+									echo $html; ?>
 							</div><!-- article_tags -->
+							<?php } ?>
+							<?php if($terme_options['post_share']) { ?>
 							<div class="article_social">
 								<ul>
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -47,7 +61,10 @@
 									<li><a href="#"><i class="fa fa-wordpress" aria-hidden="true"></i></a></li>
 								</ul>
 							</div><!-- article_social -->
+							<?php } ?>
+
 						</div><!-- terme_post -->
+						<?php if($terme_options['author_box']) { ?>
 						<div class="article_author">
 								<?php echo get_avatar( $comment, 90 ); ?>
 								<div class="name">
@@ -60,6 +77,8 @@
 									</p>
 								</div>
 						</div>
+						<?php } ?>
+						<?php if($terme_options['related_posts']) { ?>
 						<div class="article_related">
 							<?php
 									$tags = wp_get_post_tags($post->ID);
@@ -69,7 +88,7 @@
 										$args=array(
 											'tag__in' => $tag_ids,
 											'post__not_in' => array($post->ID),
-											'showposts'=>5, // Number of related posts that will be shown.
+											'showposts'=>$terme_options['related_number_of_posts'], // Number of related posts that will be shown.
 											'caller_get_posts'=>1
 										);
 										$my_query = new wp_query($args);
@@ -91,7 +110,15 @@
 									}
 									?>
 						</div>
-	<?php include 'comments.php' ?>
+						<?php } ?>
+						<?php if($terme_options['post_comments']) { ?>
+
+						<div class="article_comment">
+
+	<?php comments_template(); ?>
+	</div>
+	<?php } ?>
+	
 <?php endwhile; else: ?>
 <?php endif; ?>
 					</div><!-- article_content -->
@@ -102,26 +129,25 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</main>
-	<?php include 'inc/footer/5.php'; ?>
-
+	<?php if ($terme_options['footer_layout'] == '1') {
+		include TEMPLATEPATH . '/inc/footer/1.php';
+	}elseif ($terme_options['footer_layout'] == '2') {
+		include TEMPLATEPATH . '/inc/footer/2.php';
+	}elseif ($terme_options['footer_layout'] == '3') {
+		include TEMPLATEPATH . '/inc/footer/3.php';
+	}elseif ($terme_options['footer_layout'] == '4') {
+		include TEMPLATEPATH . '/inc/footer/4.php';
+	}else {
+		include TEMPLATEPATH . '/inc/footer/5.php';
+	}
+		?>
 	</div><!-- sb-site -->
 	<div class="sb-slidebar sb-left">
 		<div class="sidebar_menu">
-			<ul>
-				<li><a href="#">Homapage</a></li>
-				<li><a href="#">Archives</a></li>
-				<li><a href="#">Category</a>
-					<ul>
-						<li><a href="#">section1</a></li>
-						<li><a href="#">section1</a></li>
-						<li><a href="#">section1</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Newsletters</a></li>
-				<li><a href="#">shop</a></li>
-			</ul>
-
+			<?php echo wp_nav_menu(); ?>
 		</div>
 	</div><!-- sb-left -->
+	<?php if($terme_options['scroll-to-top']) { ?>
 	<a href="#top" class="back_to_top"></a>
+	<?php } ?>
 	<?php get_footer(); ?>

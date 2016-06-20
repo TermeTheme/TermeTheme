@@ -5,14 +5,14 @@
 				<div class="col-md-5 hidden-sm  hidden-xs">
 					<div class="today">
 						<i class="fa fa-calendar"></i>
-						جمعه ۲۵ دی ۱۳۹۴ - ۲۲:۳۴
+						<?php the_time($terme_options['today_date_format']); ?>
 					</div>
 				</div><!-- col-xs-6 -->
 				<div class="col-md-7 col-sm-12 col-xs-12">
 					<div class="user_area">
-						<a href="#">وارد شوید</a>
+						<a href="#">Login</a>
 						<span>|</span>
-						<a href="#">عضو شوید</a>
+						<a href="#">Register</a>
 					</div><!-- login_area -->
 				</div><!-- col-xs-6 -->
 			</div><!-- row -->
@@ -23,12 +23,17 @@
 			<div class="row">
 				<div class="col-sm-6 col-xs-12">
 					<div class="logo">
-						<a href="#"><img src="assets/img/logo.jpg" alt=""></a>
+						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
+						<a href="#"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
+						<?php } else { ?>
+							<h1><a href="#"><?php echo $terme_options['site_name']; ?></a></h1>
+							<h2><?php echo $terme_options['site_description']; ?></h2>
+					<?php } ?>
 					</div><!-- logo -->
 				</div><!-- col-xs-6 -->
 				<div class="col-sm-6 hidden-xs">
 					<form action="#">
-						<input type="text" placeholder="جستجو">
+						<input type="text" placeholder="Search">
 						<button><i class="fa fa-search"></i></button>
 					</form>
 				</div><!-- col-xs-6 -->
@@ -37,44 +42,12 @@
 	</div><!-- main_area -->
 	<div class="main_menu">
 		<a href="#" class="mobile_menu sb-toggle-left"><span class="mobile_menu"></span></a>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 						<?php echo wp_nav_menu(); ?>
-					<!-- <ul>
-						<li><a href="">صفحه اصلی</a></li>
-						<li><a href="">آرشیو اخبار</a></li>
-						<li><a href="">دسته‌بندی</a>
-							<ul>
-								<li><a href="">اقتصادی</a></li>
-								<li><a href="">سیاسی</a></li>
-								<li><a href="">ورزشی</a>
-									<ul>
-										<li><a href="">فوتبال</a>
-											<ul>
-												<li><a href="">لیگ برتر خلیج فارس</a></li>
-												<li><a href="">لا لیگای اسپانیا</a></li>
-												<li><a href="">لیگ برتر انگلیس</a></li>
-												<li><a href="">جام جهانی</a></li>
-												<li><a href="">لیگ قهرمانان اروپا</a></li>
-												<li><a href="">سری آ ایتالیا</a></li>
-											</ul>
-										</li>
-										<li><a href="">والیبال</a></li>
-										<li><a href="">هندبال</a></li>
-										<li><a href="">کشتی</a></li>
-									</ul>
-								</li>
-								<li><a href="">اجتماعی</a></li>
-								<li><a href="">فرهنگی</a></li>
-							</ul>
-						</li>
-						<li><a href="">فروشگاه</a></li>
-						<li><a href="">تماس با ما</a></li>
-					</ul> -->
 					<div class="shopping_cart">
-						<a href="#"><i class="fa fa-shopping-bag"></i> سبد خرید</a>
+						<a href="#"><i class="fa fa-shopping-bag"></i> Cart</a>
 					</div><!-- cart -->
 				</div><!-- col-xs-12 -->
 			</div><!-- row -->

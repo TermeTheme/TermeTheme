@@ -2096,19 +2096,18 @@ footer.footer {
         border-width: 1px;
         border-width: 0.1rem; }
         .article_content .terme_post .article_tags a:hover {
-          background-color: #333;
           color: #fff;
-          border: solid #333;
-          padding: 5px 10px;
-          padding: 0.5rem 1rem;
-          border-width: 1px;
-          border-width: 0.1rem; }
+          border-color: #333; }
+          .article_content .terme_post .article_tags a:hover:before {
+            background-color: #333; }
     .article_content .terme_post .article_social {
       text-align: center; }
       .article_content .terme_post .article_social ul {
         padding: 0;
         list-style: none;
-        display: inline-block; }
+        display: inline-block;
+        width: auto;
+        float: none; }
         .article_content .terme_post .article_social ul li {
           float: left;
           width: auto;
@@ -2367,7 +2366,7 @@ footer.footer {
     .article_comment ul.children li.byadmin {
       background: #fff; }
 
-.comment_form {
+.comment-respond {
   width: 100%;
   float: left;
   padding: 0;
@@ -2378,8 +2377,8 @@ footer.footer {
   border-width: 0 0.1rem 0.1rem 0.1rem;
   padding: 15px;
   padding: 1.5rem; }
-  .comment_form form .comment-form-author,
-  .comment_form form .comment-form-email {
+  .comment-respond form .comment-form-author,
+  .comment-respond form .comment-form-email {
     float: left;
     width: 50%;
     -webkit-box-sizing: border-box;
@@ -2387,8 +2386,8 @@ footer.footer {
             box-sizing: border-box;
     padding: 10px;
     padding: 1rem; }
-    .comment_form form .comment-form-author input,
-    .comment_form form .comment-form-email input {
+    .comment-respond form .comment-form-author input,
+    .comment-respond form .comment-form-email input {
       width: 100%;
       border: solid #e4e4e4;
       background: #fafafa;
@@ -2400,12 +2399,12 @@ footer.footer {
       height: 4.5rem;
       padding: 10px;
       padding: 1rem; }
-      .comment_form form .comment-form-author input:focus,
-      .comment_form form .comment-form-email input:focus {
+      .comment-respond form .comment-form-author input:focus,
+      .comment-respond form .comment-form-email input:focus {
         border: solid #ff322e;
         border-width: 1px;
         border-width: 0.1rem; }
-  .comment_form form .comment-form-comment {
+  .comment-respond form .comment-form-comment {
     float: left;
     width: 100%;
     -webkit-box-sizing: border-box;
@@ -2413,7 +2412,7 @@ footer.footer {
             box-sizing: border-box;
     padding: 10px;
     padding: 1rem; }
-    .comment_form form .comment-form-comment textarea {
+    .comment-respond form .comment-form-comment textarea {
       width: 100%;
       outline: none;
       border: solid #e4e4e4;
@@ -2426,15 +2425,15 @@ footer.footer {
       height: 10rem;
       padding: 10px;
       padding: 1rem; }
-      .comment_form form .comment-form-comment textarea:focus {
+      .comment-respond form .comment-form-comment textarea:focus {
         border: solid #ff322e;
         border-width: 1px;
         border-width: 0.1rem; }
-  .comment_form form .form-submit {
+  .comment-respond form .form-submit {
     float: right;
     padding: 10px;
     padding: 1rem; }
-    .comment_form form .form-submit input {
+    .comment-respond form .form-submit input {
       font-weight: bold;
       background: #ff322e;
       border: none;
@@ -3327,8 +3326,8 @@ footer.footer {
 .main_menu a.mobile_menu:before {
   float: right;
   background: #fff;
-  height: 0.125rem;
-  width: 1.375rem;
+  height: 0.5rem;
+  width: 2rem;
   -webkit-border-radius: 0.3125rem;
           border-radius: 0.3125rem;
   content: '';
@@ -3346,8 +3345,8 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu:before {
 .main_menu a.mobile_menu span.mobile_menu {
   float: right;
   background: #fff;
-  height: 0.125rem;
-  width: 1.375rem;
+  height: 0.5rem;
+  width: 2rem;
   -webkit-border-radius: 0.3125rem;
           border-radius: 0.3125rem;
   margin-top: 0.4375rem;
@@ -3361,8 +3360,8 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu span.mobile_menu {
 .main_menu a.mobile_menu:after {
   float: right;
   background: #fff;
-  height: 0.125rem;
-  width: 1.4375rem;
+  height: 0.5rem;
+  width: 2rem;
   -webkit-border-radius: 0.3125rem;
           border-radius: 0.3125rem;
   content: '';
