@@ -21,7 +21,7 @@ if ( function_exists( 'add_image_size' ) ){
 	add_image_size( 'related_thumb', 100, 70, true );
 }
 // Register our sidebars and widgetized areas.
-function terme_sidebarssssssss() {
+function terme_sidebars() {
 	register_sidebar( array(
 		'name'          => 'Terme Sidebar',
 		'id'            => 'sidebar',
@@ -31,11 +31,16 @@ function terme_sidebarssssssss() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'terme_sidebarssssssss' );
+add_action( 'widgets_init', 'terme_sidebars' );
 
 add_action('after_setup_theme', 'terme_load_textdomain');
 function terme_load_textdomain(){
     load_theme_textdomain('terme', get_template_directory() . '/languages');
+}
+add_action('admin_head', 'terme_theme_admin_assets',1);
+function terme_theme_admin_assets() {
+	wp_enqueue_style( 'TermeTheme-admin-style', get_template_directory_uri() . '/assets/admin/css/terme.css', array() );
+    wp_enqueue_script( 'TermeTheme-Admin-Js', get_template_directory_uri() . '/assets/admin/js/terme.js', array('jquery'), true );
 }
 
 include TEMPLATEPATH . '/inc/widgets/widgets.php';

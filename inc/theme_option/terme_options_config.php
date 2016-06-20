@@ -137,7 +137,7 @@
         // FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
         'database'             => '',
         // possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
-        'use_cdn'              => true,
+        'use_cdn'              => false,
         // If you prefer not to use the CDN for Select2, Ace Editor, and others, you may download the Redux Vendor Support plugin yourself and run locally or embed it in your code.
 
         // HINTS
@@ -292,9 +292,72 @@
         'customizer_width' => '450px',
         'fields'           => array(
             array(
-                'id'       => 'opt-custom_field',
-                'type'     => 'icon_selector',
-                'title'    => __( 'custom_field', 'redux-framework-demo' ),
+                'id'       => 'repeater_test',
+                'type'     => 'terme_repeater',
+                'title'    => __( 'Repeater Field', 'redux-framework-demo' ),
+                'fields'     => array(
+
+                                    array(
+                                        'id'          => 'text_field',
+                                        'type'        => 'text',
+                                        'placeholder' => __( 'Text Field', 'redux-framework-demo' ),
+                                        'title' => __( 'Text Field', 'redux-framework-demo' ),
+                                    ),
+                                    // array(
+                                    //     'id'       => 'opt-select',
+                                    //     'type'     => 'select',
+                                    //     'title'    => __( 'Select Option', 'redux-framework-demo' ),
+                                    //     'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+                                    //     'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                                    //     'options'  => array(
+                                    //         '1' => 'Opt 1',
+                                    //         '2' => 'Opt 2',
+                                    //         '3' => 'Opt 3',
+                                    //     ),
+                                    //     'default'  => '2'
+                                    // ),
+                                    // array(
+                                    //     'id'       => 'opt-sortable',
+                                    //     'type'     => 'sortable',
+                                    //     'title'    => __( 'Sortable Text Option', 'redux-framework-demo' ),
+                                    //     'subtitle' => __( 'Define and reorder these however you want.', 'redux-framework-demo' ),
+                                    //     'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                                    //     'label'    => true,
+                                    //     'options'  => array(
+                                    //         'Text One'   => 'Item 1',
+                                    //         'Text Two'   => 'Item 2',
+                                    //         'Text Three' => 'Item 3',
+                                    //     )
+                                    // ),
+                                    // array(
+                                    //     'id'       => 'opt-checkbox',
+                                    //     'type'     => 'checkbox',
+                                    //     'title'    => __( 'Checkbox Option', 'redux-framework-demo' ),
+                                    //     'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+                                    //     'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                                    //     'default'  => '1'// 1 = on | 0 = off
+                                    // ),
+                                    // array(
+                                    //     'id'       => 'opt-multi-check',
+                                    //     'type'     => 'checkbox',
+                                    //     'title'    => __( 'Multi Checkbox Option', 'redux-framework-demo' ),
+                                    //     'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+                                    //     'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                                    //     //Must provide key => value pairs for multi checkbox options
+                                    //     'options'  => array(
+                                    //         '1' => 'Opt 1',
+                                    //         '2' => 'Opt 2',
+                                    //         '3' => 'Opt 3'
+                                    //     ),
+                                    //     //See how std has changed? you also don't need to specify opts that are 0.
+                                    //     'default'  => array(
+                                    //         '1' => '1',
+                                    //         '2' => '0',
+                                    //         '3' => '0'
+                                    //     )
+                                    // ),
+
+                                ),
             ),
 
         )
