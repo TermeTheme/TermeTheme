@@ -48,8 +48,6 @@ function terme_theme_admin_assets() {
     wp_enqueue_script( 'TermeTheme-Admin-Js', get_template_directory_uri() . '/assets/admin/js/terme.js', array('jquery'), true );
 }
 
-add_action( 'widgets_init', 'terme_footer' );
-
 // Translation Text Domin
 add_action('after_setup_theme', 'terme_load_textdomain');
 function terme_load_textdomain(){
@@ -57,6 +55,7 @@ function terme_load_textdomain(){
 }
 include TEMPLATEPATH . '/inc/widgets/widgets.php';
 include TEMPLATEPATH . '/inc/theme_option/index.php';
+include TEMPLATEPATH . '/inc/page-builder/index.php';
 ?>
 <?php
     function advanced_comment($comment, $args, $depth) {
