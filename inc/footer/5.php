@@ -1,3 +1,4 @@
+<?php global $terme_options; ?>
 <footer class="footer style_5">
   <div class="top_bar">
       <div class="container">
@@ -88,22 +89,25 @@
       <li><a href="#">Terms of Use</a></li>
       <li><a href="#">Privacy</a></li>
     </ul>
-    <p>
-      The website names, links, and information contained in this website,
-    and in the websites I design it.
-    </p>
-    <div class="social_menu">
-      <ul>
-        <li class="facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        <li class="twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        <li class="tumblr"><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-        <li class="vimeo"><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-        <li class="linkedin"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-        <li class="dribbble"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-        <li class="instagram"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        <li class="rss"><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-      </ul>
-    </div><!-- social_menu -->
+        <?php if($terme_options['copyright-footer']) { ?>
+          <p>
+            <?php echo $terme_options['footer-text']; ?>
+          </p>
+        <?php } ?>
+        <?php if($terme_options['social-footer']) { ?>
+              <div class="social_menu">
+                <ul>
+                  <li class="facebook"><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li class="twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li class="tumblr"><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+                  <li class="vimeo"><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                  <li class="linkedin"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li class="dribbble"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                  <li class="instagram"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li class="rss"><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                </ul>
+              </div><!-- social_menu -->
+        <?php } ?>
   </div>
 </div><!-- col-xs-12 -->
       </div><!-- row -->

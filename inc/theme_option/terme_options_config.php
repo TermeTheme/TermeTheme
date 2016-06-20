@@ -10,10 +10,10 @@
 
 
     // This is your option name where all the Redux data is stored.
-    $opt_name = "redux_demo";
+    $opt_name = "terme_options";
 
     // This line is only for altering the demo. Can be easily removed.
-    $opt_name = apply_filters( 'redux_demo/opt_name', $opt_name );
+    $opt_name = apply_filters( 'terme_options/opt_name', $opt_name );
 
     /*
      *
@@ -34,7 +34,7 @@
     $sample_patterns_path = ReduxFramework::$_dir . '../sample/patterns/';
     $sample_patterns_url  = ReduxFramework::$_url . '../sample/patterns/';
     $sample_patterns      = array();
-    
+
     if ( is_dir( $sample_patterns_path ) ) {
 
         if ( $sample_patterns_dir = opendir( $sample_patterns_path ) ) {
@@ -278,13 +278,182 @@
 
     // -> START Basic Fields
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Basic Fields', 'redux-framework-demo' ),
-        'id'               => 'basic',
+        'title'            => __( 'General Settings', 'redux-framework-demo' ),
+        'id'               => 'general-settings',
         'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-home'
     ) );
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'General', 'redux-framework-demo' ),
+            'id'               => 'basic-checkbox2',
+            'subsection'       => true,
+            'customizer_width' => '450px',
+            'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+            'fields'           => array(
+              array(
+                  'id'       => 'custom_favicon',
+                  'type'     => 'media',
+                  'url'      => true,
+                  'title'    => __( 'Fav Icon', 'redux-framework-demo' ),
+                  'compiler' => 'true',
+                  //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                  'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Upload any media using the WordPress native uploader', 'redux-framework-demo' ),
+                  'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+                  //'hint'      => array(
+                  //    'title'     => 'Hint Title',
+                  //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                  //)
+              ),
+              array(
+                  'id'       => 'apple_favicon',
+                  'type'     => 'media',
+                  'url'      => true,
+                  'title'    => __( 'Apple Fav Icon', 'redux-framework-demo' ),
+                  'compiler' => 'true',
+                  //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                  'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Upload any media using the WordPress native uploader', 'redux-framework-demo' ),
+                  'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+                  //'hint'      => array(
+                  //    'title'     => 'Hint Title',
+                  //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                  //)
+              ),
+              array(
+                  'id'       => 'scroll-to-top',
+                  'type'     => 'switch',
+                  'title'    => __( 'Scroll to Top', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'default'  => true,
+              ),
+              array(
+                  'id'       => 'header-script',
+                  'type'     => 'textarea',
+                  'title'    => __( 'Header Script - HTML Validated Custom', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                  'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                  'default'  => 'Default Text',
+              ),
+              array(
+                  'id'       => 'footer-script',
+                  'type'     => 'textarea',
+                  'title'    => __( 'Footer Script - HTML Validated Custom', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                  'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                  'default'  => 'Default Text',
+              ),
+              array(
+                  'id'       => 'date_format',
+                  'type'     => 'text',
+                  'title'    => __( 'Date Format', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'default'  => 'Default Text',
+              ),
+            )
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Post Settings', 'redux-framework-demo' ),
+            'id'               => 'post_settings',
+            'subsection'       => true,
+            'customizer_width' => '450px',
+            'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+            'fields'           => array(
+              array(
+                  'id'       => 'post_breadcrumb',
+                  'type'     => 'switch',
+                  'title'    => __( 'Post Breadcrumb', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'default'  => true,
+                  'on'       => 'Enabled',
+                  'off'      => 'Disabled',
+              ),
+              array(
+                  'id'       => 'post_share',
+                  'type'     => 'switch',
+                  'title'    => __( 'Post Share', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'default'  => true,
+                  'on'       => 'Enabled',
+                  'off'      => 'Disabled',
+              ),
+              array(
+                  'id'       => 'post_tags',
+                  'type'     => 'switch',
+                  'title'    => __( 'Post Tags', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'default'  => true,
+                  'on'       => 'Enabled',
+                  'off'      => 'Disabled',
+              ),
+              array(
+                  'id'       => 'author_box',
+                  'type'     => 'switch',
+                  'title'    => __( 'Author Box', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'default'  => true,
+                  'on'       => 'Enabled',
+                  'off'      => 'Disabled',
+              ),
+              array(
+                  'id'       => 'post_comments',
+                  'type'     => 'switch',
+                  'title'    => __( 'Post Comments', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'default'  => true,
+                  'on'       => 'Enabled',
+                  'off'      => 'Disabled',
+              ),
+              array(
+                  'id'       => 'post_share',
+                  'type'     => 'switch',
+                  'title'    => __( 'Post Share', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'default'  => true,
+                  'on'       => 'Enabled',
+                  'off'      => 'Disabled',
+              ),
+              array(
+                  'id'       => 'related_posts',
+                  'type'     => 'switch',
+                  'title'    => __( 'Related Post', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'default'  => true,
+                  'on'       =>  __('Enabled', 'redux-framework-demo'),
+                  'off'      =>  __('Disabled', 'redux-framework-demo'),
+              ),
+              array(
+                  'id'            => 'related_number_of_posts',
+                  'type'          => 'slider',
+                  'title'         => __( 'Number of Posts', 'redux-framework-demo' ),
+                  'subtitle'      => __( 'This slider displays the value as a label.', 'redux-framework-demo' ),
+                  'desc'          => __( 'Slider description. Min: 1, max: 500, step: 1, default value: 250', 'redux-framework-demo' ),
+                  'default'       => 5,
+                  'min'           => 0,
+                  'step'          => 1,
+                  'max'           => 10,
+                  'display_value' => 'label',
+                  'required' => array( 'related_posts', '=', 1 ),
+              ),
+              array(
+                  'id'       => 'related_posts_display_by',
+                  'type'     => 'select',
+                  'title'    => __( 'Select Option', 'redux-framework-demo' ),
+                  'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+                  'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                  'required' => array( 'related_posts', '=', 1 ),
+                  //Must provide key => value pairs for select options
+                  'options'  => array(
+                      '1' => 'Category',
+                      '2' => 'tags',
+                  ),
+                  'default'  => '2'
+              ),
 
+            )
+        ) );
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Checkbox', 'redux-framework-demo' ),
         'id'               => 'basic-checkbox',
@@ -498,6 +667,540 @@
             )
         )
     ) );
+    // -> START Header Setting
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Header Setting', 'redux-framework-demo' ),
+        'id'               => 'header_setting',
+        'customizer_width' => '500px',
+        'icon'             => 'el el-edit',
+    ) );
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Header Style', 'redux-framework-demo' ),
+        'id'         => 'header_style',
+        //'icon'  => 'el el-home'
+        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'subsection' => true,
+        'fields'     => array(
+          array(
+              'id'       => 'header_layout',
+              'type'     => 'image_select',
+              'title'    => __( 'header Layout', 'redux-framework-demo' ),
+              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'redux-framework-demo' ),
+              //Must provide key => value(array:title|img) pairs for radio options
+              'options'  => array(
+                  '1' => array(
+                      'alt' => '1 Column',
+                      'img' => ReduxFramework::$_url . 'assets/img/1col.png',
+                  ),
+                  '2' => array(
+                      'alt' => '2 Column Left',
+                      'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                  ),
+                  '3' => array(
+                      'alt' => '2 Column Right',
+                      'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                  ),
+                  '4' => array(
+                      'alt' => '3 Column Middle',
+                      'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
+                  ),
+
+              ),
+              'default'  => '2'
+          ),
+          array(
+              'id'       => 'logo_type',
+              'type'     => 'select',
+              'title'    => __( 'Select Logo type', 'redux-framework-demo' ),
+              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              //Must provide key => value pairs for select options
+              'options' => array(
+    							'logo_image' => __('Logo Image', 'framework'),
+    							'logo_name' => __('Site Name', 'framework'),
+    							),
+              'default' => 'logo_image',
+          ),
+          array(
+					'id'=>'logo_img',
+					'type' => 'media',
+					'title' => __('Upload your logo image', 'framework'),
+					'url'=> true,
+					'default'=>'',
+					'required' => array('logo_type', '=' , 'logo_image'),
+					),
+					array(
+					'id'=>'retina_logo_img',
+					'type' => 'media',
+					'title' => __('Upload your retina logo image', 'framework'),
+					'url'=> true,
+					'default'=> 0,
+					'required' => array('logo_type', '=' , 'logo_image'),
+					),
+          array(
+              'id'       => 'site_name',
+              'type'     => 'text',
+              'title'    => __( 'Site Name', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+              'required' => array('logo_type', '=' , 'logo_name'),
+
+          ),
+          array(
+              'id'       => 'site_description',
+              'type'     => 'text',
+              'title'    => __( 'Site Description', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+              'required' => array('logo_type', '=' , 'logo_name'),
+
+          ),
+          array(
+              'id'          => 'site_name_style',
+              'type'        => 'typography',
+              'title'       => __( 'Site Name Style', 'redux-framework-demo' ),
+              'required' => array('logo_type', '=' , 'logo_name'),
+
+              //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
+              //'google'      => false,
+              // Disable google fonts. Won't work if you haven't defined your google api key
+              'font-backup' => true,
+              // Select a backup non-google font in addition to a google font
+              //'font-style'    => false, // Includes font-style and weight. Can use font-style or font-weight to declare
+              //'subsets'       => false, // Only appears if google is true and subsets not set to false
+              //'font-size'     => false,
+              //'line-height'   => false,
+              'word-spacing'  => true,  // Defaults to false
+              'letter-spacing'=> true,  // Defaults to false
+              //'color'         => false,
+              //'preview'       => false, // Disable the previewer
+              'all_styles'  => true,
+              // Enable all Google Font style/weight variations to be added to the page
+              'output'      => array( '.logo>h1>a' ),
+              // An array of CSS selectors to apply this font style to dynamically
+              // 'compiler'    => array( 'logo>a-compiler' ),
+              // An array of CSS selectors to apply this font style to dynamically
+              'units'       => 'px',
+              // Defaults to px
+              'subtitle'    => __( 'Typography option with each property can be called individually.', 'redux-framework-demo' ),
+              'default'     => array(
+                  'color'       => '#333',
+                  'font-style'  => '700',
+                  'font-family' => 'Abel',
+                  'google'      => true,
+                  'font-size'   => '33px',
+                  'line-height' => '40px'
+
+              ),
+          ),
+          array(
+              'id'          => 'site_descriotion_style',
+              'type'        => 'typography',
+              'title'       => __( 'Site Descriotion Style', 'redux-framework-demo' ),
+              'required' => array('logo_type', '=' , 'logo_name'),
+
+              //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
+              //'google'      => false,
+              // Disable google fonts. Won't work if you haven't defined your google api key
+              'font-backup' => true,
+              // Select a backup non-google font in addition to a google font
+              //'font-style'    => false, // Includes font-style and weight. Can use font-style or font-weight to declare
+              //'subsets'       => false, // Only appears if google is true and subsets not set to false
+              //'font-size'     => false,
+              //'line-height'   => false,
+              //'word-spacing'  => true,  // Defaults to false
+              //'letter-spacing'=> true,  // Defaults to false
+              //'color'         => false,
+              //'preview'       => false, // Disable the previewer
+              'all_styles'  => true,
+              // Enable all Google Font style/weight variations to be added to the page
+              'output'      => array( '.logo>h2' ),
+              // An array of CSS selectors to apply this font style to dynamically
+              // 'compiler'    => array( 'logo>a-compiler' ),
+              // An array of CSS selectors to apply this font style to dynamically
+              'units'       => 'px',
+              // Defaults to px
+              'subtitle'    => __( 'Typography option with each property can be called individually.', 'redux-framework-demo' ),
+              'default'     => array(
+                  'color'       => '#333',
+                  'font-style'  => '700',
+                  'font-family' => 'Abel',
+                  'google'      => true,
+                  'font-size'   => '33px',
+                  'line-height' => '40px'
+
+              ),
+          ),
+
+
+
+        ),
+        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+    ) );
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Top Bar', 'redux-framework-demo' ),
+        'id'         => 'top_bar',
+        //'icon'  => 'el el-home'
+        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'subsection' => true,
+        'fields'     => array(
+          array(
+              'id'       => 'today_date_format',
+              'type'     => 'text',
+              'title'    => __( 'Today Date Format', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+        ),
+        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+    ) );
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Top Banner', 'redux-framework-demo' ),
+        'id'         => 'top_banner',
+        //'icon'  => 'el el-home'
+        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'subsection' => true,
+        'fields'     => array(
+          array(
+              'id'       => 'top_banner_switch',
+              'type'     => 'switch',
+              'title'    => __( 'Top Banner', 'redux-framework-demo' ),
+              'subtitle' => __( 'Look, it\'s on! Also hidden child elements!', 'redux-framework-demo' ),
+              'default'  => 0,
+              'on'       => 'Enabled',
+              'off'      => 'Disabled',
+          ),
+          array(
+              'id'       => 'close_button',
+              'type'     => 'switch',
+              'title'    => __( 'Close Button', 'redux-framework-demo' ),
+              'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+              'default'  => true,
+              'required' => array( 'top_banner_switch', '=', '1' ),
+
+          ),
+          array(
+              'id'       => 'banner_type',
+              'type'     => 'button_set',
+              'title'    => __( 'Banner Type', 'redux-framework-demo' ),
+              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'required' => array( 'top_banner_switch', '=', '1' ),
+              //Must provide key => value pairs for radio options
+              'options'  => array(
+                  '1' => 'Image',
+                  '2' => 'Custom'
+              ),
+              'default'  => '2'
+          ),
+          array(
+          'id'=>'top_banner_img',
+          'type' => 'media',
+          'title' => __('Upload your logo image', 'framework'),
+          'url'=> true,
+          'default'=>'',
+          'required' => array( 'banner_type', '=', '1' ),
+          ),
+          array(
+              'id'      => 'custom_content',
+              'type'    => 'editor',
+              'title'   => __( 'Custom Content', 'redux-framework-demo' ),
+              'default' => 'Powered by Redux Framework.',
+              'required' => array( 'banner_type', '=', '2' ),
+              'args'    => array(
+                  'wpautop'       => false,
+                  'media_buttons' => false,
+                  'textarea_rows' => 5,
+                  //'tabindex' => 1,
+                  //'editor_css' => '',
+                  'teeny'         => false,
+                  //'tinymce' => array(),
+                  'quicktags'     => false,
+              )
+          ),
+        ),
+        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+    ) );
+
+
+    // -> START Footer Setting
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Footer Setting', 'redux-framework-demo' ),
+        'id'               => 'footer_setting',
+        'customizer_width' => '500px',
+        'icon'             => 'el el-edit',
+    ) );
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Select Footer', 'redux-framework-demo' ),
+        'id'         => 'footer-selection',
+        //'icon'  => 'el el-home'
+        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'subsection' => true,
+        'fields'     => array(
+          array(
+              'id'       => 'footer_layout',
+              'type'     => 'image_select',
+              'title'    => __( 'Footer Layout', 'redux-framework-demo' ),
+              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'redux-framework-demo' ),
+              //Must provide key => value(array:title|img) pairs for radio options
+              'options'  => array(
+                  '1' => array(
+                      'alt' => '1 Column',
+                      'img' => ReduxFramework::$_url . 'assets/img/1col.png',
+                  ),
+                  '2' => array(
+                      'alt' => '2 Column Left',
+                      'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                  ),
+                  '3' => array(
+                      'alt' => '2 Column Right',
+                      'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                  ),
+                  '4' => array(
+                      'alt' => '3 Column Middle',
+                      'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
+                  ),
+                  '5' => array(
+                      'alt' => '3 Column Left',
+                      'img' => ReduxFramework::$_url . 'assets/img/3cl.png'
+                  ),
+
+              ),
+              'default'  => '2'
+          ),
+
+
+
+
+        ),
+        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+    ) );
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Socail Icons', 'redux-framework-demo' ),
+        'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">docs.reduxframework.com/core/fields/text/</a>',
+        'id'               => 'social-icon-setting',
+        'subsection'       => true,
+        'customizer_width' => '700px',
+        'fields'           => array(
+          array(
+              'id'       => 'copyright-footer',
+              'type'     => 'switch',
+              'title'    => __( 'Copyright Footer', 'redux-framework-demo' ),
+              'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+              'default'  => true,
+          ),
+          array(
+              'id'      => 'footer-text',
+              'type'    => 'editor',
+              'title'   => __( 'Footer Text', 'redux-framework-demo' ),
+              'default' => 'Powered by Redux Framework.',
+              'args'    => array(
+                  'wpautop'       => false,
+                  'media_buttons' => false,
+                  'textarea_rows' => 5,
+                  //'tabindex' => 1,
+                  //'editor_css' => '',
+                  'teeny'         => false,
+                  //'tinymce' => array(),
+                  'quicktags'     => false,
+              )
+          ),
+          array(
+              'id'       => 'social-footer',
+              'type'     => 'switch',
+              'title'    => __( 'Active/Deactive', 'redux-framework-demo' ),
+              'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+              'default'  => true,
+          ),
+            array(
+                'id'       => 'facebook',
+                'type'     => 'text',
+                'title'    => __( 'Facebook', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => '#',
+            ),
+            array(
+                'id'       => 'twitter',
+                'type'     => 'text',
+                'title'    => __( 'Twitter', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => '#',
+            ),
+            array(
+                'id'       => 'youtube',
+                'type'     => 'text',
+                'title'    => __( 'Youtube', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => '#',
+            ),
+            array(
+                'id'       => 'instagram',
+                'type'     => 'text',
+                'title'    => __( 'Instagram', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => '#',
+            ),
+            array(
+                'id'       => 'dribbble',
+                'type'     => 'text',
+                'title'    => __( 'Dribbble', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => '#',
+            ),
+            array(
+                'id'       => 'rss',
+                'type'     => 'text',
+                'title'    => __( 'RSS', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => '#',
+            ),
+            array(
+                'id'       => 'vimeo',
+                'type'     => 'text',
+                'title'    => __( 'Vimeo', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => '#',
+            ),
+        )
+    ) );
+    // -> API's Authentication
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'API\'s Authentication', 'redux-framework-demo' ),
+        'id'               => 'api_authentication',
+        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home',
+        'fields' => array(
+          array(
+              'id'    => 'facebook_access_token_info',
+              'type'  => 'info',
+              'style' => 'success',
+              'icon'  => 'el el-facebook',
+              'title' => __( 'This is a title.', 'redux-framework-demo' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+          ),
+          array(
+              'id'       => 'facebook_access_token',
+              'type'     => 'text',
+              'title'    => __( 'Facebook Access Token', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+          array(
+              'id'    => 'twitter_access_token_info',
+              'type'  => 'info',
+              'style' => 'success',
+              'icon'  => 'el el-twitter',
+              'title' => __( 'This is a title.', 'redux-framework-demo' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+          ),
+          array(
+              'id'       => 'twitter_api_key',
+              'type'     => 'text',
+              'title'    => __( 'API Key', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+          array(
+              'id'       => 'twitter_api_secret',
+              'type'     => 'text',
+              'title'    => __( 'API Secret', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+          array(
+              'id'       => 'twitter_access_token',
+              'type'     => 'text',
+              'title'    => __( 'API Access Token', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+          array(
+              'id'       => 'twitter_access_token_secret',
+              'type'     => 'text',
+              'title'    => __( 'API Access Token Secret', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+          array(
+              'id'    => 'mailchimp_api_key_info',
+              'type'  => 'info',
+              'style' => 'success',
+              'icon'  => 'el el-envelope-alt',
+              'title' => __( 'This is a title.', 'redux-framework-demo' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+          ),
+          array(
+              'id'       => 'mailchimp_api_key',
+              'type'     => 'text',
+              'title'    => __( 'Mailchimp API Key', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+          array(
+              'id'    => 'google_api_key_info',
+              'type'  => 'info',
+              'style' => 'success',
+              'icon'  => 'el el-googleplus',
+              'title' => __( 'This is a title.', 'redux-framework-demo' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+          ),
+          array(
+              'id'       => 'google_api_key',
+              'type'     => 'text',
+              'title'    => __( 'Google+ API Key', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+          array(
+              'id'    => 'youtube_api_key_info',
+              'type'  => 'info',
+              'style' => 'success',
+              'icon'  => 'el el-youtube',
+              'title' => __( 'This is a title.', 'redux-framework-demo' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+          ),
+          array(
+              'id'       => 'youtube_api_key',
+              'type'     => 'text',
+              'title'    => __( 'Youtube API Key', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+          array(
+              'id'    => 'instagram_access_token_info',
+              'type'  => 'info',
+              'style' => 'success',
+              'icon'  => 'el el-instagram',
+              'title' => __( 'This is a title.', 'redux-framework-demo' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+          ),
+          array(
+              'id'       => 'instagram_access_token',
+              'type'     => 'text',
+              'title'    => __( 'Instagram Access Token', 'redux-framework-demo' ),
+              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'default'  => 'Default Text',
+          ),
+
+
+        )
+    ) );
+
 
     // -> START Editors
     Redux::setSection( $opt_name, array(
@@ -2390,4 +3093,3 @@
             }
         }
     }
-

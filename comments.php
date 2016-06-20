@@ -17,7 +17,7 @@
   	return;
   ?>
     <?php if ( have_comments() ) : ?>
-      <div class="article_comment">
+
         <h4>User Comments</h4>
         <ol class="comment-list">
                     <?php wp_list_comments('type=comment&avatar_size=80&callback=advanced_comment'); ?>
@@ -38,7 +38,7 @@
             <h5>دیدگاه خود را بیان کنید</h5>
             <p class="no-comments"><?php _e( 'Comments are closed.' , 'twentythirteen' ); ?></p>
           </div>
-        </div>
+
       <?php endif; ?>
     <?php endif; // have_comments() ?>
   <?php if ( comments_open()) : ?>
@@ -102,5 +102,5 @@
   );
   comment_form( $args, get_the_ID() );
   ?>
+
   <?php endif; ?>
-</div><!-- article_comment -->

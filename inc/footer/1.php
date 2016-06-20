@@ -8,8 +8,9 @@
                   <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat ut laoreet dolore magna aliquam erat volutpat ut laoreet dolore magna aliquam erat volutpat.
                   </p>
+                    <?php if($terme_options['social-footer']) { ?>
                   <ul>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
@@ -18,6 +19,8 @@
                     <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
                   </ul>
+                  <?php } ?>
+
                 </div><!-- box_1 -->
               </div><!-- col-xs-4 -->
               <div class="col-md-4 col-sm-6 hidden-xs">
@@ -88,10 +91,12 @@
       <li><a href="#">Terms of Use</a></li>
       <li><a href="#">Privacy</a></li>
     </ul>
+    <?php if($terme_options['copyright-footer']) { ?>
+
     <p>
-      The website names, links, and information contained in this website,
-    and in the websites I design, are subject to change, without notice.
+    <?php echo $terme_options['footer-text']; ?>
     </p>
+      <?php } ?>
   </div>
 </div><!-- col-xs-12 -->
       </div><!-- row -->

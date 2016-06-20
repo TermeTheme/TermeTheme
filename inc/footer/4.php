@@ -14,9 +14,10 @@
 
 
               <div class="col-xs-12">
+                <?php if($terme_options['social-footer']) { ?>
                 <div class="social_menu">
                   <ul>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
@@ -26,6 +27,7 @@
                     <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
                   </ul>
                 </div><!-- social_menu -->
+                <?php } ?>
               </div><!-- col-xs-12 -->
           </div><!-- row -->
       </div>	<!-- contanier -->
@@ -42,10 +44,12 @@
       <li><a href="#">Terms of Use</a></li>
       <li><a href="#">Privacy</a></li>
     </ul>
+    <?php if($terme_options['copyright-footer']) { ?>
     <p>
-      The website names, links, and information contained in this website,
-    and in the websites I design, are subject to change, without notice.
+      <?php echo $terme_options['footer-text']; ?>
     </p>
+    <?php } ?>
+
   </div>
 </div><!-- col-xs-12 -->
       </div><!-- row -->

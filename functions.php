@@ -32,7 +32,19 @@ function terme_sidebar() {
 	) );
 }
 add_action( 'widgets_init', 'terme_sidebar' );
+function terme_footer() {
+	register_sidebar( array(
+		'name'          => 'footer Widget',
+		'id'            => 'footer',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'terme_footer' );
 
+// Translation Text Domin
 add_action('after_setup_theme', 'terme_load_textdomain');
 function terme_load_textdomain(){
     load_theme_textdomain('terme', get_template_directory() . '/languages');
@@ -59,6 +71,7 @@ include TEMPLATEPATH . '/inc/theme_option/index.php';
 		            <?php comment_text(); ?>
 		        </div>
 			 		</article>
+				</li>
 					<?php if ($comment->comment_approved == '0') : ?>
                   <?php endif; ?>
 <?php } ?>
