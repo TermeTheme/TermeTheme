@@ -71,6 +71,7 @@ a.terme_add_page_builder_button {
     background-size: 24px;
     text-decoration: none;
     border-radius: 3px;
+    margin-top: 10px;
 }
 a.terme_add_page_builder_button:hover,
 a.terme_add_page_builder_button:focus {
@@ -94,6 +95,9 @@ a.terme_add_page_builder_button:focus {
 }
 .terme_pb_elements_container ul li a.terme_pb_item_toggle {
     cursor: move;
+}
+.terme_pb_elements_container ul li img {
+    max-width: 100%
 }
 .terme_pb_elements_container ul li a.terme_pb_item_toggle span,
 .terme_pb_elements_container ul li a.terme_pb_delete_element,
