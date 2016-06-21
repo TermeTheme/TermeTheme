@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -18,6 +19,17 @@
 	
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+=======
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Home</title>
+	<!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css"> -->
+	<!-- <link rel="stylesheet" href="assets/css/font-awesome.min.css"> -->
+	<!-- <link rel="stylesheet" href="assets/css/owl.carousel.css"> -->
+	<!-- <link rel="stylesheet" href="assets/css/slidebars.min.css"> -->
+	<!-- <link rel="stylesheet" href="assets/css/terme.css"> -->
+>>>>>>> 5c7cf8e38597780f86f51efac9d52718b8548c3c
 	<?php if ($terme_options['custom_favicon']['url'] != '') { ?>
 	<link rel="shortcut icon" href="<?php echo $terme_options['custom_favicon']['url']; ?>" />
 	<?php } ?>

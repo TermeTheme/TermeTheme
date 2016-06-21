@@ -23,7 +23,9 @@
 					</div>
 				</div><!-- container -->
 			</section><!-- top Section -->
-			<?php include 'inc/page-bulider/news-ticker.php'; ?>
+			<?php if ($terme_options['newsticker']) {
+				include 'inc/page-bulider/news-ticker.php';
+			} ?>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-sm-12">
