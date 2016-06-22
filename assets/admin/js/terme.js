@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
 
+    jQuery('select.terme_select2').select2();
+
     jQuery(document).on('click', 'a.terme_add_page_builder_button', function(event) {
         event.preventDefault();
         jQuery('#postdivrich, .terme_page_builder_container').toggle();
