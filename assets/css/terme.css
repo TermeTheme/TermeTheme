@@ -13,19 +13,6 @@
   100% {
     opacity: 1; } }
 
-@font-face {
-  font-family: 'Droidsans';
-  src: url("../fonts/DroidSans-Bold-webfont.eot");
-  src: url("../fonts/DroidSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans-Bold-webfont.woff") format("woff"), url("../fonts/DroidSans-Bold-webfont.ttf") format("truetype"), url("../fonts/DroidSans-Bold-webfont.svg#droid_sansbold") format("svg");
-  font-weight: bold;
-  font-style: normal; }
-@font-face {
-  font-family: 'Droidsans';
-  src: url("../fonts/DroidSans-webfont.eot");
-  src: url("../fonts/DroidSans-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans-webfont.woff") format("woff"), url("../fonts/DroidSans-webfont.ttf") format("truetype"), url("../fonts/DroidSans-webfont.svg#droid_sansregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 html {
   font-size: 62.5%; }
 
@@ -102,6 +89,19 @@ button[data-termehover]:hover:before {
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0); }
+
+@font-face {
+  font-family: 'Droidsans';
+  src: url("../fonts/DroidSans-Bold-webfont.eot");
+  src: url("../fonts/DroidSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans-Bold-webfont.woff") format("woff"), url("../fonts/DroidSans-Bold-webfont.ttf") format("truetype"), url("../fonts/DroidSans-Bold-webfont.svg#droid_sansbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Droidsans';
+  src: url("../fonts/DroidSans-webfont.eot");
+  src: url("../fonts/DroidSans-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans-webfont.woff") format("woff"), url("../fonts/DroidSans-webfont.ttf") format("truetype"), url("../fonts/DroidSans-webfont.svg#droid_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 
 a.back_to_top {
@@ -354,6 +354,26 @@ header.style_3 .main_area .header_ads {
   header.style_3 .main_area .header_ads img {
     max-width: 100%;
     height: auto; }
+  header.style_1 .main_area .header_ads a,
+  header.style_3 .main_area .header_ads a {
+    width: 475px;
+    height: 60px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    line-height: 60px; }
+    header.style_1 .main_area .header_ads a span,
+    header.style_3 .main_area .header_ads a span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #333;
+      color: #fff;
+      font: normal normal normal 14px/1 FontAwesome;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center; }
 
 header .main_menu {
   float: left;
@@ -2076,13 +2096,20 @@ footer.footer {
   padding-top: 3rem; }
   .article_content .article_info .breadcrumbs {
     color: #c0c0c0; }
-    .article_content .article_info .breadcrumbs a {
-      color: #c0c0c0;
-      padding: 0 10px;
-      padding: 0 1rem; }
-    .article_content .article_info .breadcrumbs span:first-child a {
-      padding-left: 0px;
-      padding-left: 0rem; }
+    .article_content .article_info .breadcrumbs ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      float: left;
+      width: 100%; }
+      .article_content .article_info .breadcrumbs ul li {
+        float: left;
+        display: inline-block; }
+        .article_content .article_info .breadcrumbs ul li a {
+          color: #c0c0c0; }
+        .article_content .article_info .breadcrumbs ul li i {
+          padding: 0 10px;
+          padding: 0 1rem; }
   .article_content .article_info h1.article_title {
     margin: 5px 0;
     margin: 0.5rem 0;

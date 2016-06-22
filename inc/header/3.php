@@ -1,4 +1,7 @@
 <header class="header style_3">
+
+	<?php if ( $terme_options['hide_top_bar'] == '0' ) { ?>
+
 	<div class="top_bar">
 		<div class="container">
 			<div class="row">
@@ -17,6 +20,8 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- top_bar -->
+	<?php } else { ?>
+	<?php } ?>
 	<div class="main_area">
 		<div class="container">
 			<div class="row">

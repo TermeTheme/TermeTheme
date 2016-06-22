@@ -1,15 +1,5 @@
 <?php global $terme_options; ?>
 		<?php get_header(); ?>
-		<?php if ($terme_options['header_layout'] == '1') {
-			include TEMPLATEPATH . '/inc/header/1.php';
-		}elseif ($terme_options['header_layout'] == '2') {
-			include TEMPLATEPATH . '/inc/header/2.php';
-		}elseif ($terme_options['header_layout'] == '3') {
-			include TEMPLATEPATH . '/inc/header/3.php';
-		}else {
-			include TEMPLATEPATH . '/inc/header/4.php';
-		}
-			?>
 	<main class="main">
 		<div class="container">
 			<div class="row">
@@ -17,21 +7,25 @@
 					<div class="article_content">
 						<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 						<div class="article_info ">
+							<?php terme_breadcrumb(); ?>
 							<?php if($terme_options['post_breadcrumb']) { ?>
-							<div class="breadcrumbs">
+							<!-- <div class="breadcrumbs">
 								<span><a href="#">Home</a>
 										<i class="fa fa-angle-right" aria-hidden="true"></i>
 								</span>
 								<a href="#">Sport Category</a>
-							</div>
+							</div> -->
 							<?php } ?>
 							<h1 class="article_title"><?php the_title(''); ?></h1>
-							<div class="article_meta">
-								<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
-								<span class="category"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp <a href="#"><?php the_category($post->ID); ?></a> </span>
-								<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
-								<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
-							</div><!-- article_meta -->
+							<?php if ( $terme_options['post_meta'] == 1 ) { ?>
+								<div class="article_meta">
+									<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
+									<span class="category"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp <a href="#"><?php the_category($post->ID); ?></a> </span>
+									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
+									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
+								</div><!-- article_meta -->
+						<?php	} ?>
+
 						</div><!-- article_info -->
 						<div class="terme_post">
 							<div class="thumb">
@@ -118,7 +112,7 @@
 	<?php comments_template(); ?>
 	</div>
 	<?php } ?>
-	
+
 <?php endwhile; else: ?>
 <?php endif; ?>
 					</div><!-- article_content -->
@@ -129,25 +123,4 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</main>
-	<?php if ($terme_options['footer_layout'] == '1') {
-		include TEMPLATEPATH . '/inc/footer/1.php';
-	}elseif ($terme_options['footer_layout'] == '2') {
-		include TEMPLATEPATH . '/inc/footer/2.php';
-	}elseif ($terme_options['footer_layout'] == '3') {
-		include TEMPLATEPATH . '/inc/footer/3.php';
-	}elseif ($terme_options['footer_layout'] == '4') {
-		include TEMPLATEPATH . '/inc/footer/4.php';
-	}else {
-		include TEMPLATEPATH . '/inc/footer/5.php';
-	}
-		?>
-	</div><!-- sb-site -->
-	<div class="sb-slidebar sb-left">
-		<div class="sidebar_menu">
-			<?php echo wp_nav_menu(); ?>
-		</div>
-	</div><!-- sb-left -->
-	<?php if($terme_options['scroll-to-top']) { ?>
-	<a href="#top" class="back_to_top"></a>
-	<?php } ?>
 	<?php get_footer(); ?>

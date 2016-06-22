@@ -307,11 +307,11 @@
              'id'            => 'number_of_posts_in_homepage',
              'type'          => 'slider',
              'title'         => __( 'Number Of Posts in Homepage', 'redux-framework-demo' ),
-             'default'       => 250,
-             'min'           => 1,
-             'step'          => 1,
-             'max'           => 500,
-             'display_value' => 'labels'
+             "default" => "5",
+             "min" 	=> "-1",
+             "step"	=> "1",
+             "max" 	=> "10",
+             'desc' => __('-1 for show all posts', 'redux-framework-demo'),
          ),
        ),
 
@@ -347,10 +347,10 @@
               'type'     => 'media',
               'url'      => true,
               'title'    => __( 'Favicon (16x16)', 'redux-framework-demo' ),
-              'compiler' => 'true',
+              // 'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Default Favicon. 16px x 16px', 'redux-framework-demo' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+              'subtitle'     => __( 'Default Favicon. 16px x 16px', 'redux-framework-demo' ),
+              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
               //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -361,10 +361,10 @@
               'type'     => 'media',
               'url'      => true,
               'title'    => __( 'Apple iPhone Icon (57x57)', 'redux-framework-demo' ),
-              'compiler' => 'true',
+              // 'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Icon for Classic iPhone', 'redux-framework-demo' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+              'subtitle'     => __( 'Icon for Classic iPhone', 'redux-framework-demo' ),
+              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
               //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -377,8 +377,8 @@
               'title'    => __( 'Apple iPad Icon (72x72)', 'redux-framework-demo' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Icon for Classic iPad', 'redux-framework-demo' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+              'subtitle'     => __( 'Icon for Classic iPad', 'redux-framework-demo' ),
+              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
               //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -389,10 +389,10 @@
               'type'     => 'media',
               'url'      => true,
               'title'    => __( 'Apple iPhone Retina Icon (114x114)', 'redux-framework-demo' ),
-              'compiler' => 'true',
+              // 'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Icon for Retina iPhone', 'redux-framework-demo' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+              'subtitle'     => __( 'Icon for Retina iPhone', 'redux-framework-demo' ),
+              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
               //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -403,10 +403,10 @@
               'type'     => 'media',
               'url'      => true,
               'title'    => __( 'Apple iPad Retina Icon (144x144)', 'redux-framework-demo' ),
-              'compiler' => 'true',
+              // 'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Icon for Retina iPad', 'redux-framework-demo' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
+              'subtitle'     => __( 'Icon for Retina iPad', 'redux-framework-demo' ),
+              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
               //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
@@ -418,7 +418,7 @@
               'title'    => __( 'Header Script - HTML Validated Custom', 'redux-framework-demo' ),
               'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
               'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
+              // 'default'  => 'Default Text',
           ),
           array(
               'id'       => 'footer-script',
@@ -426,7 +426,7 @@
               'title'    => __( 'Footer Script - HTML Validated Custom', 'redux-framework-demo' ),
               'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
               'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
+              // 'default'  => 'Default Text',
           ),
           array(
               'id'       => 'date_format',
@@ -434,7 +434,7 @@
               'title'    => __( 'Date Format', 'redux-framework-demo' ),
               'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
               'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
+              'default'  => 'F j, Y',
           ),
         )
     ) );
@@ -455,12 +455,21 @@
                   'off'      => 'Disabled',
               ),
               array(
+                  'id'       => 'post_breadcrumb_seprator',
+                  'type'     => 'text',
+                  'title'    => __( 'Breadcrumb Seprator', 'redux-framework-demo' ),
+                  'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'required' => array('post_breadcrumb', '=' , 1),
+
+              ),
+              array(
                   'id'    => 'post_meta_info',
                   'type'  => 'info',
                   'style' => 'success',
                   'icon'  => 'el el-share',
-                  'title' => __( 'This is a title.', 'redux-framework-demo' ),
-                  'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+                  'title' => __( 'Post Meta Options', 'redux-framework-demo' ),
+                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
               ),
               array(
                   'id'       => 'post_meta',
@@ -487,7 +496,7 @@
                   'title'    => __( 'Post Date Format', 'redux-framework-demo' ),
                   'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
                   'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-                  'default'  => 'Default Text',
+                  'default'  => 'test@test.com',
                   'required' => array( 'post_date', '=', '1' ),
 
               ),
@@ -569,8 +578,8 @@
                   'type'  => 'info',
                   'style' => 'success',
                   'icon'  => 'el el-share',
-                  'title' => __( 'This is a title.', 'redux-framework-demo' ),
-                  'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+                  'title' => __( 'Post Sharing Options', 'redux-framework-demo' ),
+                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
               ),
               array(
                   'id'       => 'post_share',
@@ -658,8 +667,8 @@
                   'type'  => 'info',
                   'style' => 'success',
                   'icon'  => 'el el-link',
-                  'title' => __( 'This is a title.', 'redux-framework-demo' ),
-                  'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+                  'title' => __( 'Related Posts Setting', 'redux-framework-demo' ),
+                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
               ),
               array(
                   'id'       => 'related_posts',
@@ -778,19 +787,19 @@
               'options'  => array(
                   '1' => array(
                       'alt' => '1 Column',
-                      'img' => ReduxFramework::$_url . 'assets/img/1col.png',
+                      'img' => ReduxFramework::$_url . 'assets/img/header/1.jpg',
                   ),
                   '2' => array(
                       'alt' => '2 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                      'img' => ReduxFramework::$_url . 'assets/img/header/1.jpg'
                   ),
                   '3' => array(
                       'alt' => '2 Column Right',
-                      'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                      'img' => ReduxFramework::$_url . 'assets/img/header/1.jpg'
                   ),
                   '4' => array(
                       'alt' => '3 Column Middle',
-                      'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
+                      'img' => ReduxFramework::$_url . 'assets/img/header/1.jpg'
                   ),
 
               ),
@@ -946,10 +955,10 @@
               'title'    => __( 'Today Date Format', 'redux-framework-demo' ),
               'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
               'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
-              'required' => array( 'hide_top_bar', '=', '1' ),
-
+              'default'  => 'F j, Y',
+              'required' => array( 'hide_top_bar', '=', '0' ),
           ),
+
 
         ),
         'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
@@ -970,15 +979,7 @@
               'on'       => 'Enabled',
               'off'      => 'Disabled',
           ),
-          array(
-              'id'       => 'close_button',
-              'type'     => 'switch',
-              'title'    => __( 'Close Button', 'redux-framework-demo' ),
-              'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
-              'default'  => true,
-              'required' => array( 'top_banner_switch', '=', '1' ),
 
-          ),
           array(
               'id'       => 'banner_type',
               'type'     => 'button_set',
@@ -997,27 +998,51 @@
           'id'=>'top_banner_img',
           'type' => 'media',
           'title' => __('Upload your logo image', 'framework'),
-          'url'=> true,
+          // 'url'=> true,
+          'width' => '460px',
+          'height' => '60px',
           'default'=>'',
           'required' => array( 'banner_type', '=', '1' ),
           ),
           array(
-              'id'      => 'custom_content',
-              'type'    => 'editor',
+              'id'      => 'banner_custom_content',
+              'type'    => 'text',
               'title'   => __( 'Custom Content', 'redux-framework-demo' ),
-              'default' => 'Powered by Redux Framework.',
+              'default'  => 'test@test.com',
               'required' => array( 'banner_type', '=', '2' ),
-              'args'    => array(
-                  'wpautop'       => false,
-                  'media_buttons' => false,
-                  'textarea_rows' => 5,
-                  //'tabindex' => 1,
-                  //'editor_css' => '',
-                  'teeny'         => false,
-                  //'tinymce' => array(),
-                  'quicktags'     => false,
-              )
+
           ),
+          array(
+            'id'       => 'bg_banner_custom_content',
+            'type'     => 'color',
+            'title'    => __('Background Color', 'redux-framework-demo'),
+            'subtitle' => __('Pick a background color for the theme (default: #fff).', 'redux-framework-demo'),
+            'validate' => 'color',
+            'required' => array( 'banner_type', '=', '2' ),
+            'output'    => array(
+                'background-color' => '.header_ads>a',
+            )
+        ),
+          array(
+            'id'       => 'txt_banner_custom_content',
+            'type'     => 'color',
+            'title'    => __('Text Color', 'redux-framework-demo'),
+            'subtitle' => __('Pick a background color for the theme (default: #fff).', 'redux-framework-demo'),
+            'validate' => 'color',
+            'required' => array( 'banner_type', '=', '2' ),
+            'output'    => array(
+                'color'            => '.header_ads>a',
+            )
+
+        ),
+        array(
+            'id'       => 'close_button',
+            'type'     => 'switch',
+            'title'    => __( 'Close Button', 'redux-framework-demo' ),
+            'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+            'default'  => true,
+            'required' => array( 'banner_type', '=', '2' ),
+        ),
         ),
         'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
     ) );
@@ -1040,23 +1065,23 @@
               'options'  => array(
                   '1' => array(
                       'alt' => '1 Column',
-                      'img' => ReduxFramework::$_url . 'assets/img/1col.png',
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/1.jpg',
                   ),
                   '2' => array(
                       'alt' => '2 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/2.jpg'
                   ),
                   '3' => array(
                       'alt' => '2 Column Right',
-                      'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/3.jpg'
                   ),
                   '4' => array(
                       'alt' => '3 Column Middle',
-                      'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/4.jpg'
                   ),
                   '5' => array(
                       'alt' => '3 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/3cl.png'
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/5.jpg'
                   ),
 
               ),

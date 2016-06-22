@@ -187,6 +187,26 @@ header.style_3 .main_area .header_ads {
 		max-width: 100%;
 		height: auto;
 	}
+	a {
+		width: 475px;
+		height: 60px;
+		display: inline-block;
+		position: relative;
+		text-align: center;
+		line-height: 60px;
+		span {
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: #333;
+			color: #fff;
+	    font: normal normal normal 14px/1 FontAwesome;
+			width: 25px;
+			height: 25px;
+			line-height: 25px;
+			text-align: center;
+		}
+	}
 }
 header .main_menu {
 	float: left;
@@ -1810,13 +1830,33 @@ footer.footer {
 	.article_info {
 		.breadcrumbs {
 			color: #c0c0c0;
-			a {
-				color: #c0c0c0;
-				@include rem(( padding:0 10px, ));
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				float: left;
+				width: 100%;
+				li {
+					float: left;
+					display: inline-block;
+					a {
+						color: #c0c0c0;
+
+					}
+					i {
+						@include rem(( padding: 0 10px, ));
+
+					}
+				}
+
 			}
-			span:first-child a {
-				@include rem(( padding-left:0px ));
-			}
+			// a {
+			// 	color: #c0c0c0;
+			// 	@include rem(( padding:0 10px, ));
+			// }
+			// span:first-child a {
+			// 	@include rem(( padding-left:0px ));
+			// }
 		}
 		h1.article_title {
 			@include rem((margin: 5px 0, padding:10px 0,font-size: 25px, ));

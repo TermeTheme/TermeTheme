@@ -5,7 +5,7 @@
 
 
               <div class="col-sm-6 col-xs-12">
-                  <?php if($terme_options['social-footer']) { ?>
+                  <?php if($terme_options['Social_icon_footer']) { ?>
                 <div class="social_menu">
                   <ul>
                     <li><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -19,7 +19,7 @@
                   </ul>
                 </div><!-- social_menu -->
                 <?php } ?>
-                
+
               </div><!-- col-xs-6 -->
 
                 <div class="col-sm-6 hidden-xs">

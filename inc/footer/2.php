@@ -67,7 +67,7 @@
                 </div><!-- box_3 -->
               </div><!-- col-xs-3 -->
               <div class="col-xs-12">
-                <?php if($terme_options['social-footer']) { ?>
+                <?php if($terme_options['Social_icon_footer']) { ?>
 
                 <div class="social_menu">
                   <ul>

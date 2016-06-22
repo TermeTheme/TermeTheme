@@ -94,7 +94,7 @@
             <?php echo $terme_options['footer-text']; ?>
           </p>
         <?php } ?>
-        <?php if($terme_options['social-footer']) { ?>
+        <?php if($terme_options['Social_icon_footer']) { ?>
               <div class="social_menu">
                 <ul>
                   <li class="facebook"><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
