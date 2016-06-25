@@ -1005,12 +1005,18 @@
           'required' => array( 'banner_type', '=', '1' ),
           ),
           array(
+              'id'      => 'top_banner_link',
+              'type'    => 'text',
+              'title'   => __( 'URL Link', 'redux-framework-demo' ),
+              'default'  => 'test@test.com',
+              'required' => array( 'banner_type', '=', '1' ),
+          ),
+          array(
               'id'      => 'banner_custom_content',
               'type'    => 'text',
               'title'   => __( 'Custom Content', 'redux-framework-demo' ),
               'default'  => 'test@test.com',
               'required' => array( 'banner_type', '=', '2' ),
-
           ),
           array(
             'id'       => 'bg_banner_custom_content',
@@ -1069,19 +1075,19 @@
                   ),
                   '2' => array(
                       'alt' => '2 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/2.jpg'
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/1.jpg'
                   ),
                   '3' => array(
                       'alt' => '2 Column Right',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/3.jpg'
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/1.jpg'
                   ),
                   '4' => array(
                       'alt' => '3 Column Middle',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/4.jpg'
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/1.jpg'
                   ),
                   '5' => array(
                       'alt' => '3 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/5.jpg'
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/1.jpg'
                   ),
 
               ),
@@ -1266,11 +1272,10 @@
         'icon'             => 'el el-css',
         'fields' => array(
           array(
-              'id'       => 'custom_css-code',
+              'id'       => 'custom_css_style',
               'type'     => 'textarea',
               'title'    => __( 'Custom CSS Code', 'redux-framework-demo' ),
               'subtitle' => __( 'Paste your CSS code, do not include any tags or HTML in the field. Any custom CSS entered here will override the theme CSS. In some cases, the !important tag may be needed', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
           array(
               'id'       => 'custom_body_class',
@@ -1279,7 +1284,6 @@
               'subtitle' => __( 'This classes will be added in body of overall site.
 Separate classes with space.
 ', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
 
 
@@ -1299,7 +1303,6 @@ Separate classes with space.
               'title'    => __( 'Large Desktop', 'redux-framework-demo' ),
               'subtitle' => __( '1200px', 'redux-framework-demo' ),
               'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
           array(
               'id'       => 'desktop',
@@ -1307,7 +1310,6 @@ Separate classes with space.
               'title'    => __( 'Desktop', 'redux-framework-demo' ),
               'subtitle' => __( '992px ~ 1200px', 'redux-framework-demo' ),
               'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
           array(
               'id'       => 'tablet',
@@ -1315,7 +1317,6 @@ Separate classes with space.
               'title'    => __( 'Tablet', 'redux-framework-demo' ),
               'subtitle' => __( '768px ~ 992px', 'redux-framework-demo' ),
               'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
           array(
               'id'       => 'mobile',
@@ -1323,7 +1324,6 @@ Separate classes with space.
               'title'    => __( 'Mobile', 'redux-framework-demo' ),
               'subtitle' => __( '0 ~ 768px', 'redux-framework-demo' ),
               'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
         )
     ) );
@@ -1341,7 +1341,6 @@ Separate classes with space.
               'subtitle' => __( 'This classes will be added in body of all categories.
 Separate classes with space.
 ', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
           array(
               'id'       => 'tags_class',
@@ -1350,7 +1349,6 @@ Separate classes with space.
               'subtitle' => __( 'This classes will be added in body of all tags.
 Separate classes with space.
 ', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
           array(
               'id'       => 'authors_class',
@@ -1359,7 +1357,6 @@ Separate classes with space.
               'subtitle' => __( 'This classes will be added in body of all authors.
 Separate classes with space.
 ', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
           array(
               'id'       => 'posts_class',
@@ -1368,7 +1365,6 @@ Separate classes with space.
               'subtitle' => __( 'This classes will be added in body of all posts.
 Separate classes with space.
 ', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
           array(
               'id'       => 'pages_class',
@@ -1377,7 +1373,6 @@ Separate classes with space.
               'subtitle' => __( 'This classes will be added in body of all pages.
 Separate classes with space.
 ', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
           ),
         )
     ) );
@@ -1394,7 +1389,7 @@ Separate classes with space.
               'type'     => 'textarea',
               'title'    => __( 'Google Analytics Code', 'redux-framework-demo' ),
               'subtitle' => __( 'Paste your Google Analytics (or other) tracking code here. This code will be placed before </body> tag in html. Please put code inside script tags.', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
+              // 'default'  => 'Default Text',
           ),
 
           array(
@@ -1402,7 +1397,7 @@ Separate classes with space.
               'type'     => 'textarea',
               'title'    => __( 'Code Before head tag', 'redux-framework-demo' ),
               'subtitle' => __( 'This code will be placed before </head> tag in html. Useful if you have an external script that requires it.', 'redux-framework-demo' ),
-              'default'  => 'Default Text',
+              // 'default'  => 'Default Text',
           ),
         )
     ) );

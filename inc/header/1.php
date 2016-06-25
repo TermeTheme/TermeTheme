@@ -46,7 +46,7 @@
 				<div class="col-sm-6 hidden-xs">
 					<?php if ($terme_options['banner_type'] == '1') { ?>
 						<div class="header_ads">
-							<a href="#"><img src="<?php echo $terme_options['top_banner_img']['url'];?>" alt=""></a>
+							<a href="<?php echo $terme_options['top_banner_link']; ?>"><img src="<?php echo $terme_options['top_banner_img']['url'];?>" alt=""></a>
 						</div><!-- header_ads -->
 					<?php }else{ ?>
 						<div class="header_ads">
