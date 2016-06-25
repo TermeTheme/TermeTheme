@@ -36,7 +36,7 @@ function terme_add_page_builder() {
                             // print_r($current_elements);
                             foreach ($current_elements as $key => $element) {
                                 foreach ($element['fields'] as $id => $field) {
-                                    $el_object = new $element['class_name']($id, $field['title'], $field['number'], $field['category']);
+                                    $el_object = new $element['class_name']($id, $field['title'], $field['subtitle'], $field['number'], $field['category']);
                                     // $el_object->set_fields_value('1','2','3');
                                     // echo $el_object->test();
                                     echo $el_object->get_dashboard_output();

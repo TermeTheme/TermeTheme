@@ -26,6 +26,83 @@
   font-weight: normal;
   font-style: normal; }
 
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Droidsans';
+  color: #333;
+  font-size: 12px;
+  font-size: 1.2rem; }
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 300ms;
+  transition: all 300ms; }
+
+a:hover,
+a:focus {
+  text-decoration: none; }
+
+input {
+  outline: none; }
+
+button {
+  outline: none;
+  padding: 0; }
+
+a[data-termehover] {
+  position: relative;
+  overflow: hidden;
+  z-index: 10; }
+
+a[data-termehover]:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 110%;
+  height: 15vw;
+  -webkit-transform: translate(-100%, 100%);
+      -ms-transform: translate(-100%, 100%);
+          transform: translate(-100%, 100%);
+  -webkit-border-radius: 0 100% 0 0;
+          border-radius: 0 100% 0 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  z-index: -10; }
+
+a[data-termehover]:hover:before {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0); }
+
+button[data-termehover] {
+  position: relative;
+  overflow: hidden;
+  z-index: 10; }
+
+button[data-termehover]:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  -webkit-transform: translate(-100%, 100%);
+      -ms-transform: translate(-100%, 100%);
+          transform: translate(-100%, 100%);
+  -webkit-border-radius: 0 100% 0 0;
+          border-radius: 0 100% 0 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  z-index: -10; }
+
+button[data-termehover]:hover:before {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0); }
+
 
 a.back_to_top {
   position: fixed;
@@ -3429,80 +3506,3 @@ a.mobile_menu.search_active:after,
 html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
   -webkit-transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
   transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem); }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  font-family: 'Droidsans';
-  color: #333;
-  font-size: 12px;
-  font-size: 1.2rem; }
-
-a {
-  text-decoration: none;
-  -webkit-transition: all 300ms;
-  transition: all 300ms; }
-
-a:hover,
-a:focus {
-  text-decoration: none; }
-
-input {
-  outline: none; }
-
-button {
-  outline: none;
-  padding: 0; }
-
-a[data-termehover] {
-  position: relative;
-  overflow: hidden;
-  z-index: 10; }
-
-a[data-termehover]:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 110%;
-  height: 15vw;
-  -webkit-transform: translate(-100%, 100%);
-      -ms-transform: translate(-100%, 100%);
-          transform: translate(-100%, 100%);
-  -webkit-border-radius: 0 100% 0 0;
-          border-radius: 0 100% 0 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  z-index: -10; }
-
-a[data-termehover]:hover:before {
-  -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-          transform: translate(0, 0); }
-
-button[data-termehover] {
-  position: relative;
-  overflow: hidden;
-  z-index: 10; }
-
-button[data-termehover]:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 250px;
-  height: 250px;
-  -webkit-transform: translate(-100%, 100%);
-      -ms-transform: translate(-100%, 100%);
-          transform: translate(-100%, 100%);
-  -webkit-border-radius: 0 100% 0 0;
-          border-radius: 0 100% 0 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  z-index: -10; }
-
-button[data-termehover]:hover:before {
-  -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-          transform: translate(0, 0); }

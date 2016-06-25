@@ -19,6 +19,8 @@ if ( function_exists( 'add_theme_support' ) )
 if ( function_exists( 'add_image_size' ) ){
 	add_image_size( 'category_thumb', 210, 210, true );
 	add_image_size( 'related_thumb', 100, 70, true );
+	add_image_size( 'element_01_thumb_01', 420, 250, true );
+	add_image_size( 'element_01_thumb_02', 100, 75, true );
 }
 // Register our sidebars and widgetized areas.
 function terme_sidebars() {
@@ -110,8 +112,10 @@ add_action('after_setup_theme', 'terme_load_textdomain');
 function terme_load_textdomain(){
     load_theme_textdomain('terme', get_template_directory() . '/languages');
 }
+include TEMPLATEPATH . '/inc/terme_funcs.php';
 include TEMPLATEPATH . '/inc/widgets/widgets.php';
 include TEMPLATEPATH . '/inc/theme_option/index.php';
+include TEMPLATEPATH . '/inc/page-builder/index.php';
 ?>
 <?php
     function advanced_comment($comment, $args, $depth) {

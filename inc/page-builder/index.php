@@ -32,12 +32,15 @@ function terme_pb_get_elements() {
 }
 
 function terme_page_builder_enqueue_scripts(){
+    global $post;
     $screen = get_current_screen();
 	if( get_post_type ( $post->ID ) != 'page' || $screen->post_type != 'page' )	{
 		return;
 	}
 	wp_enqueue_script('jquery-ui-draggable');
 	wp_enqueue_script('jquery-ui-droppable');
+    wp_enqueue_style( 'wpmlr_select2', get_template_directory_uri() . '/assets/admin/css/select2.min.css', array() );
+    wp_enqueue_script( 'wpmlr_select2', get_template_directory_uri() . '/assets/admin/js/select2.min.js', array('jquery'), true );
 }
 add_action('admin_enqueue_scripts','terme_page_builder_enqueue_scripts');
 
