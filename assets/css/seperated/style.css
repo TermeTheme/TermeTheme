@@ -718,7 +718,8 @@ section.latest_news {
     width: 100%; }
     .big_post .thumb img {
       max-width: 100%;
-      width: 100%; }
+      width: 100%;
+      height: auto; }
   .big_post h4 {
     font-size: 15px;
     font-size: 1.5rem;
@@ -824,7 +825,6 @@ section.latest_news {
   .small_post ul li h2 {
     margin: 0;
     line-height: 1.35;
-    text-align: justify;
     font-size: 18px;
     font-size: 1.8rem;
     margin-bottom: 10px;
@@ -2201,8 +2201,6 @@ footer.footer {
       background: #fff;
       border-width: 1px;
       border-width: 0.1rem;
-      padding-top: 10px;
-      padding-top: 1rem;
       margin-bottom: 0; }
     .article_content .article_related ul li {
       float: left;

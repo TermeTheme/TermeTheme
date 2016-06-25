@@ -565,6 +565,7 @@ section.latest_news {
 		img {
 			max-width: 100%;
 			width: 100%;
+			height: auto;
 		}
 	}
 	h4 {
@@ -662,7 +663,6 @@ section.latest_news {
 	ul li h2 {
 		margin: 0;
 		line-height: 1.35;
-		text-align: justify;
 		@include rem(( font-size: 18px, margin-bottom: 10px, ));
 	}
 	ul li h2 a {
@@ -2031,7 +2031,7 @@ footer.footer {
 			padding: 0;
 			border: solid #e4e4e4;
 			background: #fff;
-			@include rem(( border-width: 1px, padding-top: 10px ));
+			@include rem(( border-width: 1px, ));
 			margin-bottom: 0;
 		}
 		ul li {

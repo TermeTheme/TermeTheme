@@ -1,0 +1,169 @@
+/*********** Terme General admin styles ***********/
+a[data-tooltip] {
+    position: relative;
+    display: inline-block;
+}
+a[data-tooltip]:before {
+    position: absolute;
+    padding: 0 15px;
+    height: 32px;
+    line-height: 32px;
+    background: #5a5c60;
+    top: -30px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    transform: translateX(-50%);
+    opacity: 0;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    content: attr(data-tooltip);
+    font-size: 11px;
+    left: 50%;
+    min-width: 150px;
+    border-radius: 4px;
+    color: #fff;
+    pointer-events: none;
+    z-index: 999;
+    text-align: center;
+}
+a[data-tooltip]:hover:before {
+    top: -40px;
+    opacity: 1;
+}
+a[data-tooltip]:after {
+    display: inline-block;
+    font: normal normal normal 14px/1 dashicons;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    content: "\f140";
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    color: #5a5c60;
+    font-size: 20px;
+    z-index: 999;
+}
+a[data-tooltip]:hover:after {
+    opacity: 1;
+    top: -16px;
+}
+/*********** Terme Page Builder ***********/
+a.terme_add_page_builder_button {
+    background: url('../images/termelogo.svg') no-repeat 5px center #ff322e;
+    display: inline-block;
+    padding: 10px 10px;
+    color: #fff;
+    padding-left: 35px;
+    -webkit-background-size: 24px;
+    background-size: 24px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+a.terme_add_page_builder_button:hover,
+a.terme_add_page_builder_button:focus {
+    color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.terme_page_builder_container {
+    background: #fff;
+    border: 2px solid #eee;
+    margin-top: 20px;
+    display: none;
+}
+.terme_pb_elements_container ul {
+    padding: 10px 30px;
+    border-bottom: 1px dashed #afb1b3;
+}
+.terme_pb_elements_container ul li {
+    display: inline-block;
+    width: 15%;
+}
+.terme_pb_elements_container ul li a.terme_pb_item_toggle {
+    cursor: move;
+}
+.terme_pb_elements_container ul li img {
+    max-width: 100%
+}
+.terme_pb_elements_container ul li a.terme_pb_item_toggle span,
+.terme_pb_elements_container ul li a.terme_pb_delete_element,
+.terme_pb_elements_container ul li div.pb_item_setting {
+    display: none;
+}
+.terme_pb_content_container {
+    padding: 10px 30px;
+}
+.terme_pb_content_container ul {
+    background: #fff;
+    min-height: 250px
+}
+.terme_pb_content_container ul li {
+    margin-bottom: 15px;
+    background: #f5f5f5;
+    width: 100%;
+    padding: 10px 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+.terme_pb_content_container ul li a.terme_pb_item_toggle {
+    display: block;
+    color: #444;
+    text-decoration: none;
+}
+.terme_pb_content_container ul li img {
+    width: 60px;
+    height: auto;
+    cursor: move;
+}
+.terme_pb_content_container ul li span {
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+}
+.terme_pb_content_container ul li a.terme_pb_delete_element {
+    text-decoration: none;
+    line-height: 16px;
+    font-size: 13px;
+    color: #ff322e;
+    text-align: right;
+    display: block;
+    font-weight: bold;
+}
+
+.terme_pb_content_container ul li div.pb_item_setting {
+    background: #fff;
+    display: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+}
+.terme_pb_content_container ul li div.pb_item_setting td {
+    padding-right: 15px;
+}
+.terme_pb_content_container ul li.terme-sortable-placeholder {
+    height: 60px;
+    background: #fff;
+    border: 1px dashed #afb1b3;
+}
+.terme_pb_content_container ul li.ui-draggable-dragging {
+    background: none;
+}
+.terme_pb_content_container ul li.ui-draggable-dragging span,
+.terme_pb_content_container ul li.ui-draggable-dragging a.terme_pb_delete_element {
+    display: none;
+}

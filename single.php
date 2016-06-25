@@ -7,25 +7,26 @@
 					<div class="article_content">
 						<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 						<div class="article_info ">
-							<?php terme_breadcrumb(); ?>
 							<?php if($terme_options['post_breadcrumb']) { ?>
-							<!-- <div class="breadcrumbs">
-								<span><a href="#">Home</a>
-										<i class="fa fa-angle-right" aria-hidden="true"></i>
-								</span>
-								<a href="#">Sport Category</a>
-							</div> -->
+								<?php terme_breadcrumb(); ?>
 							<?php } ?>
 							<h1 class="article_title"><?php the_title(''); ?></h1>
 							<?php if ( $terme_options['post_meta'] == 1 ) { ?>
 								<div class="article_meta">
+									<?php if($terme_options['post_date']) { ?>
 									<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
+									<?php } ?>
+									<?php if($terme_options['post_category']) { ?>
 									<span class="category"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp <a href="#"><?php the_category($post->ID); ?></a> </span>
+									<?php } ?>
+									<?php if($terme_options['view_count']) { ?>
 									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
+									<?php } ?>
+									<?php if($terme_options['comment_count']) { ?>
 									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
+									<?php } ?>
 								</div><!-- article_meta -->
 						<?php	} ?>
-
 						</div><!-- article_info -->
 						<div class="terme_post">
 							<div class="thumb">
@@ -74,47 +75,73 @@
 						<?php } ?>
 						<?php if($terme_options['related_posts']) { ?>
 						<div class="article_related">
+							<h4>Related Post</h4>
+							<ul>
 							<?php
-									$tags = wp_get_post_tags($post->ID);
-									if ($tags) {
-										$tag_ids = array();
-										foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-										$args=array(
-											'tag__in' => $tag_ids,
-											'post__not_in' => array($post->ID),
-											'showposts'=>$terme_options['related_number_of_posts'], // Number of related posts that will be shown.
-											'caller_get_posts'=>1
-										);
-										$my_query = new wp_query($args);
-										if( $my_query->have_posts() ) {
-											echo '<h4>Related Post</h4>
-											<ul>';
-											while ($my_query->have_posts()) {
-												$my_query->the_post();
-											?>
-											<li>
-												<div class="thumb"><?php the_post_thumbnail( 'related_thumb' ); ?></div>
-												<h2><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-												<div class="time"><i class="fa fa-clock-o"></i> <?php echo get_the_date(); ?></div>
-											</li>
-											<?php
-											}
-											echo '</ul>';
-										}
-									}
-									?>
-						</div>
+					        $tags = wp_get_post_tags($post->ID);
+					        $categories = wp_get_post_categories($post->ID);
+					        if ($tags) {
+					            $tag_ids = array();
+					            foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+					        }
+					        if ($terme_options['related_posts_display_by']=="2") {
+					            $related=array(
+					                'tag__in' => $tag_ids,
+					                'post__not_in' => array($post->ID),
+					                'showposts'=>$terme_options['related_number_of_posts'],
+					                'ignore_sticky_posts'=>1
+					            );
+					        } elseif ($terme_options['related_posts_display_by']=="1") {
+					            $related=array(
+					                'category__in' => $categories,
+					                'post__not_in' => array($post->ID),
+					                'showposts'=>$terme_options['related_number_of_posts'],
+					                'ignore_sticky_posts'=>1
+					            );
+
+					        }
+									// elseif ($terme_options['related_posts_display_by']['options']=="author") {
+					        //     $related=array(
+					        //         'author' => get_the_author_meta('ID'),
+					        //         'post__not_in' => array($post->ID),
+					        //         'showposts'=>$terme_options['related_number_of_posts'],
+					        //         'ignore_sticky_posts'=>1
+					        //     );
+					        // }
+									else {
+					            $related=array(
+					                'tag__in' => $tag_ids,
+					                'category__in' => $categories,
+					                'post__not_in' => array($post->ID),
+					                'showposts'=>$terme_options['related_number_of_posts'],
+					                'ignore_sticky_posts'=>1
+					            );
+					        }
+					        $related_query = new wp_query($related);
+					        if( $related_query->have_posts() ) {
+					            while ($related_query->have_posts()) {
+					                $related_query->the_post();
+					    ?>
+
+								<li>
+									<div class="thumb"><?php the_post_thumbnail( 'related_thumb' ); ?></div>
+									<h2><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+									<div class="time"><i class="fa fa-clock-o"></i> <?php echo get_the_date(); ?></div>
+								</li>
+
+
+							    <?php } wp_reset_postdata(); }  ?>
+									</ul>
+								</div>
 						<?php } ?>
 						<?php if($terme_options['post_comments']) { ?>
-
 						<div class="article_comment">
+						<?php comments_template(); ?>
+						</div>
+						<?php } ?>
 
-	<?php comments_template(); ?>
-	</div>
-	<?php } ?>
-
-<?php endwhile; else: ?>
-<?php endif; ?>
+						<?php endwhile; else: ?>
+						<?php endif; ?>
 					</div><!-- article_content -->
 				</div><!--col-xs-8-->
 				<div class="col-md-4 hidden-sm hidden-xs">

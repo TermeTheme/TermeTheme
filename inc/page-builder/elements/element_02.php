@@ -5,7 +5,7 @@
  * @package Terme Theme
  * @version 1.0.0
  */
-class Terme_Element_One extends Terme_Page_Builder_Element {
+class Terme_Element_Two extends Terme_Page_Builder_Element {
 
     public $title;
     public $icon;
@@ -18,9 +18,9 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
     private $category_value;
 
     function __construct($id=0, $title_value='', $subtitle_value='', $number_value='', $category_value='') {
-        $this->title = __('Category Posts', 'terme');
-        $this->icon = get_template_directory_uri().'/assets/admin/images/3.png';
-        $this->id = 'terme_cat_posts_style1';
+        $this->title = __('Item 2', 'terme');
+        $this->icon = get_template_directory_uri().'/assets/admin/images/4.png';
+        $this->id = 'terme_cat_posts_style2';
         $this->title_value = $title_value;
         $this->subtitle_value = $subtitle_value;
         $this->number_value = $number_value;
@@ -46,7 +46,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         }
         $fields = array(
                         array(
-                            'field' => '<input type="hidden" data-name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_One">',
+                            'field' => '<input type="hidden" data-name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_Two">',
                         ),
                         array(
                             'label' => __('Box Title:', 'terme'),
@@ -80,7 +80,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         }
         $fields = array(
                         array(
-                            'field' => '<input type="hidden" name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_One">',
+                            'field' => '<input type="hidden" name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_Two">',
                         ),
                         array(
                             'label' => __('Box Title:', 'terme'),
@@ -136,17 +136,12 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         $output = '';
         $args_nooffset = array(
             'post_type'         => 'post',
-            'posts_per_page' => 1,
+            'posts_per_page' => $this->number_value,
             'category__in' => array($this->category_value),
-        );
-        $args_offset = array(
-            'post_type'         => 'post',
-            'posts_per_page' => $this->number_value-1,
-            'category__in' => array($this->category_value),
-            'offset'        => 1
         );
         $cat_link = get_category_link( $this->category_value );
-        $output = '<div class="box">
+        $output =
+        '<div class="box">
           <div class="title">
             <a href="'.$cat_link.'" class="more pull-right">'.__('More', 'terme').'</a>
             <h4>'.$this->title_value.'</h4>
@@ -154,40 +149,30 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
           </div><!-- title -->
           <div class="body">
             <div class="row">
+            <div class="col-xs-12">
+            <div class="small_post half_width">
+              <ul>
             ';
         $first_post = new WP_Query($args_nooffset);
         while ($first_post->have_posts()):
         $first_post->the_post();
             $lid = (get_post_meta( get_the_id(), 'terme_lid',  true)) ? '<h4>'.get_post_meta( get_the_id(), 'terme_lid',  true).'</h4>' : '' ;
             $output .= '
-                <div class="col-sm-6 col-xs-12">
-                    <div class="big_post">
-                      <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_01').'</a></div>
+
+                    <li>
+
+                      <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_02').'</a></div>
                       '.$lid.'
                       <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h2>
                       <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
-                      <div class="excerpt">'.terme_shorten_text(get_the_excerpt(), 250).'</div>
-                    </div><!-- big_post -->
-                  </div><!-- col-xs-6 -->
+                      </li>
+
                   ';
         endwhile; wp_reset_postdata();
         $output .= '
-            <div class="col-sm-6 col-xs-12">
-                <div class="small_post">
-                  <ul>';
-        $post_list = new WP_Query($args_offset);
-        while ($post_list->have_posts()):
-        $post_list->the_post();
-            $output .= '
-            <li>
-              <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_02').'</a></div>
-              <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h2>
-              <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
-            </li>';
-        endwhile; wp_reset_postdata();
-        $output .= '
-                    </div>
-                  </div><!-- col-xs-6 -->
+                  </ul>
+                  </div>
+                  </div><!-- col-xs-12 -->
                 </div><!-- row -->
               </div><!-- body -->
             </div><!-- box -->
@@ -197,9 +182,9 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
 
 
 }
-function test_function($elements) {
-    $element = new Terme_Element_One();
+function test_function_02($elements) {
+    $element = new Terme_Element_Two();
     $elements[] = $element->get_dashboard_output();
     return $elements;
 }
-add_filter( 'after_terme_page_builder_elements', 'test_function' );
+add_filter( 'after_terme_page_builder_elements', 'test_function_02' );
