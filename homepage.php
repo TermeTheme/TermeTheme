@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<?php global $terme_options; ?>
-<?php
-/*
-Template name: Homepage
-*/
-get_header(); ?>
-    <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-            <?php the_content(); ?>
-    <?php endwhile; endif; ?>
-    <?php get_footer(); ?>
-=======
 <?php
 /* Template name: Home Page */
 global $terme_options; ?>
@@ -73,18 +61,7 @@ global $terme_options; ?>
 				</div><!-- row -->
 			</div><!-- container -->
 		</main>
-		<?php if ($terme_options['footer_layout'] == '1') {
-			include TEMPLATEPATH . '/inc/footer/1.php';
-		}elseif ($terme_options['footer_layout'] == '2') {
-			include TEMPLATEPATH . '/inc/footer/2.php';
-		}elseif ($terme_options['footer_layout'] == '3') {
-			include TEMPLATEPATH . '/inc/footer/3.php';
-		}elseif ($terme_options['footer_layout'] == '4') {
-			include TEMPLATEPATH . '/inc/footer/4.php';
-		}else {
-			include TEMPLATEPATH . '/inc/footer/5.php';
-		}
-			?>
+	
 	</div><!-- sb-site -->
 	<div class="sb-slidebar sb-left">
 		<div class="sidebar_menu">
@@ -107,4 +84,3 @@ global $terme_options; ?>
 	<a href="#top" class="back_to_top"></a>
 	<?php } ?>
 	<?php get_footer(); ?>
->>>>>>> b26c59a70a32c00ea995a134a17f46b7cd9a5b10

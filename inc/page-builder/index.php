@@ -47,4 +47,8 @@ add_action('admin_enqueue_scripts','terme_page_builder_enqueue_scripts');
 // include TEMPLATEPATH . '/inc/page-builder/elements_loader.php';
 include TEMPLATEPATH . '/inc/page-builder/class.abstract.terme_page_builder_element.php';
 include TEMPLATEPATH . '/inc/page-builder/elements/element_01.php';
+include TEMPLATEPATH . '/inc/page-builder/elements/element_02.php';
+include TEMPLATEPATH . '/inc/page-builder/elements/element_03.php';
+include TEMPLATEPATH . '/inc/page-builder/elements/element_04.php';
+include TEMPLATEPATH . '/inc/page-builder/elements/element_05.php';
 include TEMPLATEPATH . '/inc/page-builder/metabox.php';

@@ -22,9 +22,9 @@
               <div class="excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci</div>
             </li>
           </ul>
-        </div>
+        </div><!-- big_post horizontal -->
 
-      </div>
+      </div><!-- col-xs-12 -->
     </div><!-- row -->
   </div><!-- body -->
 </div><!-- box -->

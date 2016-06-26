@@ -558,13 +558,14 @@ section.latest_news {
 	width: 100%;
 	border: solid #e3e3e5;
 	background: #fff;
-	@include rem(( margin-top: 30px, border-width: 1px ));
+	@include rem(( margin-top: 30px, border-width: 1px, min-height: 375px, ));
 	.thumb {
 		float: left;
 		width: 100%;
 		img {
 			max-width: 100%;
 			width: 100%;
+			height: auto;
 		}
 	}
 	h4 {
@@ -575,7 +576,7 @@ section.latest_news {
 		color: #979a9f;
 	}
 	h2 {
-		@include rem(( font-size: 20px, padding: 0 15px, margin: 0 0 10px 0, ));
+		@include rem(( font-size: 20px, padding: 0 15px, margin: 10px 0 10px 0, ));
 		width: 100%;
 		float: left;
 		line-height: 1.3;
@@ -662,7 +663,6 @@ section.latest_news {
 	ul li h2 {
 		margin: 0;
 		line-height: 1.35;
-		text-align: justify;
 		@include rem(( font-size: 18px, margin-bottom: 10px, ));
 	}
 	ul li h2 a {

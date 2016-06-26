@@ -21,6 +21,8 @@ if ( function_exists( 'add_image_size' ) ){
 	add_image_size( 'related_thumb', 100, 70, true );
 	add_image_size( 'element_01_thumb_01', 420, 250, true );
 	add_image_size( 'element_01_thumb_02', 100, 75, true );
+	add_image_size( 'element_03_thumb_01', 420, 250, true );
+	add_image_size( 'element_05_thumb_01', 215, 215, true );
 }
 // Register our sidebars and widgetized areas.
 function terme_sidebars() {
