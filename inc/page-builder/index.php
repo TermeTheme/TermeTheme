@@ -1,34 +1,16 @@
 <?php
 function terme_pb_get_elements() {
-    $elements = array(
-                '<li>
-                    <a href="#" class="terme_pb_item_toggle" data-tooltip="Item 1">
-                        <img src="'.get_bloginfo('template_url').'/assets/admin/images/2.png" alt="" />
-                        <span class="dashicons dashicons-admin-generic"></span>
-                    </a>
-                    <div class="pb_item_setting">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Test Field</td>
-                                    <td><input type="text" data-name="terme_pb[el_id][text]"></td>
-                                </tr>
-                                <tr>
-                                    <td>Test Field</td>
-                                    <td><select class="" data-name="terme_pb[el_id][select]">
-                                        <option value="1">Option one</option>
-                                        <option value="2">Option two</option>
-                                        <option value="3">Option three</option>
-                                    </select></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <a href="#" class="terme_pb_delete_element">'.__('Delete', 'terme').'</a>
-                    </div><!-- pb_item_setting -->
-                </li>',
-            );
-        $elements = apply_filters( 'after_terme_page_builder_elements', $elements );
-        return $elements;
+    $elements = array();
+
+    $classes = array('Terme_Element_One', 'Terme_Element_Two', 'Terme_Element_Three', 'Terme_Element_Four', 'Terme_Element_Five' );
+    foreach ($classes as $key => $class) {
+        $element = new $class;
+        $new_elements = $element->get_dashboard_output();
+        $elements[] = $new_elements;
+    }
+
+    $elements = apply_filters( 'after_terme_page_builder_elements', $elements );
+    return $elements;
 }
 
 function terme_page_builder_enqueue_scripts(){
@@ -44,7 +26,6 @@ function terme_page_builder_enqueue_scripts(){
 }
 add_action('admin_enqueue_scripts','terme_page_builder_enqueue_scripts');
 
-// include TEMPLATEPATH . '/inc/page-builder/elements_loader.php';
 include TEMPLATEPATH . '/inc/page-builder/class.abstract.terme_page_builder_element.php';
 include TEMPLATEPATH . '/inc/page-builder/elements/element_01.php';
 include TEMPLATEPATH . '/inc/page-builder/elements/element_02.php';
