@@ -20,8 +20,11 @@ array( 'description' => __( 'empty', 'terme' ), )
 public function widget( $args, $instance ) {
 $title = apply_filters( 'widget_title', $instance['title'] );
 // before and after widget arguments are defined by themes
-echo
-'  <section class="tags">
+
+?>
+<?php
+  echo
+'<section class="tags">
     <h4>Tags</h4>
     <div class="tagcloud">
       <a href="#" data-termehover="">Sports</a>

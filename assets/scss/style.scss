@@ -558,7 +558,7 @@ section.latest_news {
 	width: 100%;
 	border: solid #e3e3e5;
 	background: #fff;
-	@include rem(( margin-top: 30px, border-width: 1px ));
+	@include rem(( margin-top: 30px, border-width: 1px, min-height: 375px, ));
 	.thumb {
 		float: left;
 		width: 100%;
@@ -576,7 +576,7 @@ section.latest_news {
 		color: #979a9f;
 	}
 	h2 {
-		@include rem(( font-size: 20px, padding: 0 15px, margin: 0 0 10px 0, ));
+		@include rem(( font-size: 20px, padding: 0 15px, margin: 10px 0 10px 0, ));
 		width: 100%;
 		float: left;
 		line-height: 1.3;
