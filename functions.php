@@ -29,10 +29,10 @@ function terme_sidebars() {
 	register_sidebar( array(
 		'name'          => 'Terme Sidebar',
 		'id'            => 'sidebar',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="rounded">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<section>',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
 	) );
     register_sidebar( array(
 		'name'          => 'footer Widget',

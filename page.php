@@ -43,9 +43,9 @@
 
     								<?php the_content('');
 
-                                    $terme_pb_status = get_post_meta( get_the_ID(), 'terme_pb_status', true );
+                                    $terme_pb_status = get_post_meta( get_the_ID(), '_terme_pb_status', true );
                                     if ($terme_pb_status=='true') {
-                                        $terme_pb = get_post_meta( get_the_ID(), 'terme_pb', true );
+                                        $terme_pb = get_post_meta( get_the_ID(), '_terme_pb', true );
                                         // print_r($terme_pb);
 
                                         foreach ($terme_pb as $key => $element) {
