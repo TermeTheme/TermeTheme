@@ -1,4 +1,5 @@
 <?php
+if(have_posts()) : while(have_posts()) : the_post();
 $terme_pb_status = get_post_meta( get_the_ID(), 'terme_pb_status', true );
 if ($terme_pb_status=='true') {
     $terme_pb = get_post_meta( get_the_ID(), 'terme_pb', true );
@@ -14,4 +15,7 @@ if ($terme_pb_status=='true') {
         }
     }
 }
+
+  endwhile; else:
+  endif;
 ?>

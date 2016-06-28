@@ -24,7 +24,6 @@ global $terme_options; ?>
 				</div><!-- row -->
 			</div><!-- container -->
 		</main>
-
 	</div><!-- sb-site -->
 	<div class="sb-slidebar sb-left">
 		<div class="sidebar_menu">

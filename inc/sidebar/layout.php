@@ -4,12 +4,7 @@ $option = $terme_options['theme_layout'];
 $path = get_sidebar();
 $sidebar = '<div class="col-md-4 hidden-sm hidden-xs">22222</div><!--col-xs-4-->';
 
-            if(have_posts()) : while(have_posts()) : the_post();
-
               get_template_part( 'inc/content/content', 'loop' );
-
-              endwhile; else:
-              endif;
 
 $content = 	'<div class="col-md-8 col-sm-12"><div class="home_content">' . $page_builder_output .'</div><!-- home_content --></div><!--col-xs-8-->';
 

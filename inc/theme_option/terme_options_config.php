@@ -333,11 +333,11 @@
               'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'redux-framework-demo' ),
               //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
-                  '1' => array(
+                  '0' => array(
                       'alt' => '1 Column',
                       'img' => ReduxFramework::$_url . 'assets/img/2cr.png',
                   ),
-                  '2' => array(
+                  '1' => array(
                       'alt' => '2 Column Left',
                       'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
                   ),
