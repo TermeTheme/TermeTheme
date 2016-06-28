@@ -40,23 +40,23 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         }
         $fields = array(
                         array(
-                            'field' => '<input type="hidden" data-name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_One">',
+                            'field' => '<input type="hidden" data-name="terme_pb[0][class_name]" value="Terme_Element_One">',
                         ),
                         array(
                             'label' => __('Box Title:', 'terme'),
-                            'field' => '<input type="text" data-name="terme_pb['.$this->id.'][fields][0][title]">',
+                            'field' => '<input type="text" data-name="terme_pb[0][fields][title]">',
                         ),
                         array(
                             'label' => __('Box Subtitle:', 'terme'),
-                            'field' => '<input type="text" data-name="terme_pb['.$this->id.'][fields][0][subtitle]">',
+                            'field' => '<input type="text" data-name="terme_pb[0][fields][subtitle]">',
                         ),
                         array(
                             'label' => __('Post Number:', 'terme'),
-                            'field' => '<input type="number" data-name="terme_pb['.$this->id.'][fields][0][number]">',
+                            'field' => '<input type="number" data-name="terme_pb[0][fields][number]">',
                         ),
                         array(
                             'label' => __('Category Select:', 'terme'),
-                            'field' => '<select class="" data-name="terme_pb['.$this->id.'][fields][0][category]">'.$cat_options.'</select>',
+                            'field' => '<select class="" data-name="terme_pb[0][fields][category]">'.$cat_options.'</select>',
                         ),
                 );
         return $fields;
@@ -74,23 +74,23 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         }
         $fields = array(
                         array(
-                            'field' => '<input type="hidden" name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_One">',
+                            'field' => '<input type="hidden" name="terme_pb['.$id.'][class_name]" value="Terme_Element_One">',
                         ),
                         array(
                             'label' => __('Box Title:', 'terme'),
-                            'field' => '<input type="text" name="terme_pb['.$this->id.'][fields]['.$id.'][title]" value="'.$this->saved_vals['title'].'">',
+                            'field' => '<input type="text" name="terme_pb['.$id.'][fields][title]" value="'.$this->saved_vals['title'].'">',
                         ),
                         array(
                             'label' => __('Box Subtitle:', 'terme'),
-                            'field' => '<input type="text" name="terme_pb['.$this->id.'][fields]['.$id.'][subtitle]" value="'.$this->saved_vals['subtitle'].'">',
+                            'field' => '<input type="text" name="terme_pb['.$id.'][fields][subtitle]" value="'.$this->saved_vals['subtitle'].'">',
                         ),
                         array(
                             'label' => __('Post Number:', 'terme'),
-                            'field' => '<input type="number" name="terme_pb['.$this->id.'][fields]['.$id.'][number]" value="'.$this->saved_vals['number'].'">',
+                            'field' => '<input type="number" name="terme_pb['.$id.'][fields][number]" value="'.$this->saved_vals['number'].'">',
                         ),
                         array(
                             'label' => __('Category Select:', 'terme'),
-                            'field' => '<select class="" name="terme_pb['.$this->id.'][fields]['.$id.'][category]">'.$cat_options.'</select>',
+                            'field' => '<select class="" name="terme_pb['.$id.'][fields][category]">'.$cat_options.'</select>',
                         ),
                 );
         return $fields;
