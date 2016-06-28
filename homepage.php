@@ -29,17 +29,20 @@ global $terme_options; ?>
                                 $terme_pb_status = get_post_meta( get_the_ID(), 'terme_pb_status', true );
                                 if ($terme_pb_status=='true') {
                                     $terme_pb = get_post_meta( get_the_ID(), 'terme_pb', true );
-                                    // print_r($terme_pb);
-
+                                    print_r($terme_pb);
                                     foreach ($terme_pb as $key => $element) {
                                         foreach ($element['fields'] as $id => $field) {
-                                            $el_object = new $element['class_name']($id, $field['title'], $field['subtitle'], $field['number'], $field['category']);
-                                            // $el_object->set_fields_value('1','2','3');
-                                            // echo $el_object->test();
-                                            // print_r($el_object);
-                                            echo $el_object->get_frontend_output();
+                                            $args = $element['class_name']::get_args();
+                                            $passed_array = array();
+                                            foreach ($args as $arg) {
+                                                $passed_array[$arg] = $field[$arg];
+                                            }
+                                            $el_object = new $element['class_name']($id, $passed_array);
+                                            echo $el_object->get_dashboard_output();
                                         }
                                     }
+
+
 
                                 }
 
@@ -47,12 +50,7 @@ global $terme_options; ?>
                             <?php endwhile; else: ?>
 
                             <?php endif; ?>
-								<?php include TEMPLATEPATH . '/inc/page-builder/elements/box-1.php'; ?>
-								<?php include TEMPLATEPATH . '/inc/page-builder/elements/box-2.php'; ?>
-								<?php include TEMPLATEPATH . '/inc/page-builder/elements/box-3.php'; ?>
-								<?php include TEMPLATEPATH . '/inc/page-builder/elements/box-4.php'; ?>
-								<?php include TEMPLATEPATH . '/inc/page-builder/elements/box-5.php'; ?>
-								<?php include TEMPLATEPATH . '/inc/page-builder/elements/box-6.php'; ?>
+
 						</div><!-- home_content -->
 					</div><!--col-xs-8-->
 					<div class="col-md-4 hidden-sm hidden-xs">
@@ -61,7 +59,7 @@ global $terme_options; ?>
 				</div><!-- row -->
 			</div><!-- container -->
 		</main>
-	
+
 	</div><!-- sb-site -->
 	<div class="sb-slidebar sb-left">
 		<div class="sidebar_menu">
