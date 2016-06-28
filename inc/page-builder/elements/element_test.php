@@ -5,7 +5,7 @@
  * @package Terme Theme
  * @version 1.0.0
  */
-class Terme_Element_Four extends Terme_Page_Builder_Element {
+class Terme_Element_Test extends Terme_Page_Builder_Element {
 
     public $title;
     public $icon;
@@ -15,9 +15,9 @@ class Terme_Element_Four extends Terme_Page_Builder_Element {
     private $saved_vals;
 
     function __construct($id=0, $passed_array=array()) {
-        $this->title = __('Item 4', 'terme');
-        $this->icon = get_template_directory_uri().'/assets/admin/images/2.png';
-        $this->id = 'terme_cat_posts_style4';
+        $this->title = __('Test Element', 'terme');
+        $this->icon = get_template_directory_uri().'/assets/admin/images/3.png';
+        $this->id = 'terme_cat_posts_style1';
         $this->saved_vals = $passed_array;
         if ($id==0) {
             $this->fields = $this->get_empty_fields();
@@ -40,7 +40,7 @@ class Terme_Element_Four extends Terme_Page_Builder_Element {
         }
         $fields = array(
                         array(
-                            'field' => '<input type="hidden" data-name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_Four">',
+                            'field' => '<input type="hidden" data-name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_Test">',
                         ),
                         array(
                             'label' => __('Box Title:', 'terme'),
@@ -58,6 +58,10 @@ class Terme_Element_Four extends Terme_Page_Builder_Element {
                             'label' => __('Category Select:', 'terme'),
                             'field' => '<select class="" data-name="terme_pb['.$this->id.'][fields][0][category]">'.$cat_options.'</select>',
                         ),
+                        array(
+                            'label' => __('Test Fields:', 'terme'),
+                            'field' => '<input type="test" data-name="terme_pb['.$this->id.'][fields][0][test]">',
+                        ),
                 );
         return $fields;
     }
@@ -74,7 +78,7 @@ class Terme_Element_Four extends Terme_Page_Builder_Element {
         }
         $fields = array(
                         array(
-                            'field' => '<input type="hidden" name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_Four">',
+                            'field' => '<input type="hidden" name="terme_pb['.$this->id.'][class_name]" value="Terme_Element_Test">',
                         ),
                         array(
                             'label' => __('Box Title:', 'terme'),
@@ -91,6 +95,10 @@ class Terme_Element_Four extends Terme_Page_Builder_Element {
                         array(
                             'label' => __('Category Select:', 'terme'),
                             'field' => '<select class="" name="terme_pb['.$this->id.'][fields]['.$id.'][category]">'.$cat_options.'</select>',
+                        ),
+                        array(
+                            'label' => __('Test Field:', 'terme'),
+                            'field' => '<input type="text" name="terme_pb['.$this->id.'][fields]['.$id.'][test]" value="'.$this->saved_vals['test'].'">',
                         ),
                 );
         return $fields;
@@ -130,53 +138,76 @@ class Terme_Element_Four extends Terme_Page_Builder_Element {
         $output = '';
         $args_nooffset = array(
             'post_type'         => 'post',
-            'posts_per_page' => $this->saved_vals['number'],
-            'category__in' => array($this->saved_vals['category']),
+            'posts_per_page' => 1,
+            'category__in' => array($this->category_value),
         );
-        $cat_link = get_category_link( $this->saved_vals['category'] );
-        $output =
-        '<div class="box">
+        $args_offset = array(
+            'post_type'         => 'post',
+            'posts_per_page' => $this->number_value-1,
+            'category__in' => array($this->category_value),
+            'offset'        => 1
+        );
+        $cat_link = get_category_link( $this->category_value );
+        $output = '<div class="box">
           <div class="title">
             <a href="'.$cat_link.'" class="more pull-right">'.__('More', 'terme').'</a>
-            <h4>'.$this->saved_vals['title'].'</h4>
-            <h6>'.$this->saved_vals['subtitle'].'</h6>
+            <h4>'.$this->title_value.'</h4>
+            <h6>'.$this->subtitle_value.'</h6>
           </div><!-- title -->
           <div class="body">
             <div class="row">
-              <div class="col-xs-12">
-                <div class="small_post">
-                  <ul>
             ';
         $first_post = new WP_Query($args_nooffset);
         while ($first_post->have_posts()):
         $first_post->the_post();
             $lid = (get_post_meta( get_the_id(), 'terme_lid',  true)) ? '<h4>'.get_post_meta( get_the_id(), 'terme_lid',  true).'</h4>' : '' ;
             $output .= '
-
-                      <li>
-                      <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_02').'</a></div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="big_post">
+                      <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_01').'</a></div>
                       '.$lid.'
                       <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h2>
                       <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
-                      </li>
-
+                      <div class="excerpt">'.terme_shorten_text(get_the_excerpt(), 250).'</div>
+                    </div><!-- big_post -->
+                  </div><!-- col-xs-6 -->
                   ';
         endwhile; wp_reset_postdata();
         $output .= '
-                    </ul>
-                  </div><!-- small_post -->
-                </div><!-- col-xs-12 -->
-              </div><!-- row -->
-            </div><!-- body -->
+            <div class="col-sm-6 col-xs-12">
+                <div class="small_post">
+                  <ul>';
+        $post_list = new WP_Query($args_offset);
+        while ($post_list->have_posts()):
+        $post_list->the_post();
+            $output .= '
+            <li>
+              <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_02').'</a></div>
+              <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h2>
+              <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
+            </li>';
+        endwhile; wp_reset_postdata();
+        $output .= '
+                    </div>
+                  </div><!-- col-xs-6 -->
+                </div><!-- row -->
+              </div><!-- body -->
             </div><!-- box -->
             ';
         return $output;
     }
+
     public static function get_args() {
         static $args = array();
-        $args = array ('title', 'subtitle', 'number', 'category');
+        $args = array ('title', 'subtitle', 'number', 'category', 'test');
         return $args;
     }
 
 
 }
+function test_functiontest_function($elements) {
+    $element = new Terme_Element_Test();
+    $elements[] = $element->get_dashboard_output();
+    return $elements;
+}
+add_filter( 'after_terme_page_builder_elements', 'test_functiontest_function' );
