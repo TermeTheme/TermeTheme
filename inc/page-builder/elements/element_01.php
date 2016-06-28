@@ -12,19 +12,13 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
     public $id;
     public $fields;
 
-    private $title_value;
-    private $subtitle_value;
-    private $number_value;
-    private $category_value;
+    private $saved_vals;
 
-    function __construct($id=0, $title_value='', $subtitle_value='', $number_value='', $category_value='') {
+    function __construct($id=0, $passed_array=array()) {
         $this->title = __('Category Posts', 'terme');
         $this->icon = get_template_directory_uri().'/assets/admin/images/3.png';
         $this->id = 'terme_cat_posts_style1';
-        $this->title_value = $title_value;
-        $this->subtitle_value = $subtitle_value;
-        $this->number_value = $number_value;
-        $this->category_value = $category_value;
+        $this->saved_vals = $passed_array;
         if ($id==0) {
             $this->fields = $this->get_empty_fields();
         } else {
@@ -76,7 +70,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         $categories = get_categories($args);
         $cat_options = '';
         foreach ($categories as $key => $cat) {
-            $cat_options .= '<option value="'.$cat->term_id.'" '.selected( $this->category_value, $cat->term_id, false ).'>'.$cat->name.'</option>';
+            $cat_options .= '<option value="'.$cat->term_id.'" '.selected( $this->saved_vals['category'], $cat->term_id, false ).'>'.$cat->name.'</option>';
         }
         $fields = array(
                         array(
@@ -84,15 +78,15 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
                         ),
                         array(
                             'label' => __('Box Title:', 'terme'),
-                            'field' => '<input type="text" name="terme_pb['.$this->id.'][fields]['.$id.'][title]" value="'.$this->title_value.'">',
+                            'field' => '<input type="text" name="terme_pb['.$this->id.'][fields]['.$id.'][title]" value="'.$this->saved_vals['title'].'">',
                         ),
                         array(
                             'label' => __('Box Subtitle:', 'terme'),
-                            'field' => '<input type="text" name="terme_pb['.$this->id.'][fields]['.$id.'][subtitle]" value="'.$this->subtitle_value.'">',
+                            'field' => '<input type="text" name="terme_pb['.$this->id.'][fields]['.$id.'][subtitle]" value="'.$this->saved_vals['subtitle'].'">',
                         ),
                         array(
                             'label' => __('Post Number:', 'terme'),
-                            'field' => '<input type="number" name="terme_pb['.$this->id.'][fields]['.$id.'][number]" value="'.$this->number_value.'">',
+                            'field' => '<input type="number" name="terme_pb['.$this->id.'][fields]['.$id.'][number]" value="'.$this->saved_vals['number'].'">',
                         ),
                         array(
                             'label' => __('Category Select:', 'terme'),
@@ -137,20 +131,20 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         $args_nooffset = array(
             'post_type'         => 'post',
             'posts_per_page' => 1,
-            'category__in' => array($this->category_value),
+            'category__in' => array($this->saved_vals['category']),
         );
         $args_offset = array(
             'post_type'         => 'post',
-            'posts_per_page' => $this->number_value-1,
-            'category__in' => array($this->category_value),
+            'posts_per_page' => $this->saved_vals['number']-1,
+            'category__in' => array($this->saved_vals['category']),
             'offset'        => 1
         );
-        $cat_link = get_category_link( $this->category_value );
+        $cat_link = get_category_link( $this->saved_vals['category'] );
         $output = '<div class="box">
           <div class="title">
             <a href="'.$cat_link.'" class="more pull-right">'.__('More', 'terme').'</a>
-            <h4>'.$this->title_value.'</h4>
-            <h6>'.$this->subtitle_value.'</h6>
+            <h4>'.$this->saved_vals['title'].'</h4>
+            <h6>'.$this->saved_vals['subtitle'].'</h6>
           </div><!-- title -->
           <div class="body">
             <div class="row">
@@ -195,11 +189,11 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         return $output;
     }
 
+    public static function get_args() {
+        static $args = array();
+        $args = array ('title', 'subtitle', 'number', 'category');
+        return $args;
+    }
+
 
 }
-function test_function($elements) {
-    $element = new Terme_Element_One();
-    $elements[] = $element->get_dashboard_output();
-    return $elements;
-}
-add_filter( 'after_terme_page_builder_elements', 'test_function' );

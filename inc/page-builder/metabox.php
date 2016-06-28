@@ -33,18 +33,21 @@ function terme_add_page_builder() {
             <ul>
                 <?php if ($current_elements): ?>
                     <?php
-                            // print_r($current_elements);
                             foreach ($current_elements as $key => $element) {
                                 foreach ($element['fields'] as $id => $field) {
-                                    $el_object = new $element['class_name']($id, $field['title'], $field['subtitle'], $field['number'], $field['category']);
-                                    // $el_object->set_fields_value('1','2','3');
-                                    // echo $el_object->test();
+                                    $args = $element['class_name']::get_args();
+                                    $passed_array = array();
+                                    foreach ($args as $arg) {
+                                        $passed_array[$arg] = $field[$arg];
+                                    }
+                                    $el_object = new $element['class_name']($id, $passed_array);
                                     echo $el_object->get_dashboard_output();
                                 }
                             }
                     ?>
 
                 <?php endif; ?>
+
             </ul>
         </div><!-- terme_pb_content_container -->
     </div><!-- terme_page_builder_container -->
