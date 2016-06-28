@@ -9,11 +9,11 @@ function terme_add_page_builder() {
 		return;
 	}
     wp_nonce_field( '_terme_pb_nonce', 'terme_pb_nonce' );
-    $terme_pb_status = (get_post_meta( $post->ID, 'terme_pb_status', true )) ? get_post_meta( $post->ID, 'terme_pb_status', true ) : 'false' ;
+    $terme_pb_status = (get_post_meta( $post->ID, '_terme_pb_status', true )) ? get_post_meta( $post->ID, '_terme_pb_status', true ) : 'false' ;
     if ($terme_pb_status=='true') {
         echo '<style>#postdivrich {display:none;}</style>';
     }
-    $current_elements = get_post_meta( $post->ID, 'terme_pb', true );
+    $current_elements = get_post_meta( $post->ID, '_terme_pb', true );
     ?>
 
     <a href="#" class="terme_add_page_builder_button"><?php _e('Page Builder', 'terme'); ?></a>
@@ -33,19 +33,16 @@ function terme_add_page_builder() {
             <ul>
                 <?php if ($current_elements): ?>
                     <?php
-                            foreach ($current_elements as $key => $element) {
-                                foreach ($element['fields'] as $id => $field) {
-                                    $args = $element['class_name']::get_args();
-                                    $passed_array = array();
-                                    foreach ($args as $arg) {
-                                        $passed_array[$arg] = $field[$arg];
-                                    }
-                                    $el_object = new $element['class_name']($id, $passed_array);
-                                    echo $el_object->get_dashboard_output();
-                                }
+                        foreach ($current_elements as $id => $element) {
+                            $args = $element['class_name']::get_args();
+                            $passed_array = array();
+                            foreach ($args as $arg) {
+                                $passed_array[$arg] = $element['fields'][$arg];
                             }
+                            $el_object = new $element['class_name']($id, $passed_array);
+                            echo $el_object->get_dashboard_output();
+                        }
                     ?>
-
                 <?php endif; ?>
 
             </ul>
@@ -62,15 +59,17 @@ function terme_save_page_builder( $post_id ) {
         if ( ! current_user_can( 'edit_post', $post_id ) ) return;
 
         if ( isset( $_POST['terme_pb_status'] ) ) {
-            update_post_meta( $post_id, 'terme_pb_status', $_POST['terme_pb_status'] );
+            update_post_meta( $post_id, '_terme_pb_status', $_POST['terme_pb_status'] );
         }
-        $terme_pb_status = get_post_meta( $post_id, 'terme_pb_status', true );
+        $terme_pb_status = get_post_meta( $post_id, '_terme_pb_status', true );
         if ($terme_pb_status=='true') {
             $terme_pb = array();
+            $i =0;
             foreach ($_POST['terme_pb'] as $key => $value) {
-                $terme_pb[] = $value;
+                $i++;
+                $terme_pb[$i] = $value;
             }
-            update_post_meta( $post_id, 'terme_pb', $terme_pb );
+            update_post_meta( $post_id, '_terme_pb', $terme_pb );
         }
 
 }

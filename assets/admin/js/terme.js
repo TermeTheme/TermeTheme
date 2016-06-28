@@ -21,11 +21,11 @@ jQuery(document).ready(function($) {
         var count = (jQuery('.terme_pb_content_container>ul>li').size())-1;
         var thisHtml = jQuery(ui.draggable).html();
         var regex = new RegExp('\[fields\]\[.\]', "g");
-        var thisHtml = thisHtml.replace(/\[fields\]\[.\]/g, '[fields]['+count+']');
+        var thisHtml = thisHtml.replace(/terme_pb\[.\]/g, 'terme_pb['+count+']');
 
         jQuery(ui.draggable).find('*[data-name]').each(function(index, el) {
             var currentName = jQuery(this).attr('data-name');
-            var newName = currentName.replace(/\[fields\]\[.\]/g, '[fields]['+count+']');
+            var newName = currentName.replace(/terme_pb\[.\]/g, 'terme_pb['+count+']');
             jQuery(this).attr('name', newName);
         });
 
