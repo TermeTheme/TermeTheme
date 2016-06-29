@@ -16,7 +16,7 @@ class Terme_Element_Three extends Terme_Page_Builder_Element {
 
     function __construct($id=0, $passed_array=array()) {
         $this->title = __('Item 3', 'terme');
-        $this->icon = get_template_directory_uri().'/assets/admin/images/1.png';
+        $this->icon = get_template_directory_uri().'/assets/admin/images/element_03.png';
         $this->id = 'terme_cat_posts_style3';
         $this->saved_vals = $passed_array;
         if ($id==0) {

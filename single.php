@@ -13,6 +13,12 @@
 							<h1 class="article_title"><?php the_title(''); ?></h1>
 							<?php if ( $terme_options['post_meta'] == 1 ) { ?>
 								<div class="article_meta">
+
+									<?php if(terme_get_meta( 'terme_date_meta' )) { ?>
+									<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
+									<?php }else { ?>
+										NO
+									<?php } ?>
 									<?php if($terme_options['post_date']) { ?>
 									<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
 									<?php } ?>

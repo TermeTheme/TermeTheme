@@ -16,7 +16,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
 
     function __construct($id=0, $passed_array=array()) {
         $this->title = __('Category Posts', 'terme');
-        $this->icon = get_template_directory_uri().'/assets/admin/images/3.png';
+        $this->icon = get_template_directory_uri().'/assets/admin/images/element_01.png';
         $this->id = 'terme_cat_posts_style1';
         $this->saved_vals = $passed_array;
         if ($id==0) {
