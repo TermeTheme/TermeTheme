@@ -16,7 +16,7 @@ global $terme_options; ?>
 				</div><!-- container -->
 			</section><!-- top Section -->
 			<?php if ($terme_options['newsticker']) {
-          include TEMPLATEPATH.'/inc/page-builder/elements/news-ticker.php';
+          	include TEMPLATEPATH.'/inc/page-builder/elements/news-ticker.php';
       } ?>
 			<?php include TEMPLATEPATH.'/inc/content/layout.php'; ?>
 		</main>

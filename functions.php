@@ -145,7 +145,8 @@ include TEMPLATEPATH.'/inc/terme_funcs.php';
 include TEMPLATEPATH.'/inc/widgets/widgets.php';
 include TEMPLATEPATH.'/inc/theme_option/index.php';
 include TEMPLATEPATH.'/inc/page-builder/index.php';
-include TEMPLATEPATH.'/inc/metabox/metabox.php';
+// include TEMPLATEPATH.'/inc/metabox/metabox.php';
+include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 ?>
 <?php
     function advanced_comment($comment, $args, $depth)
