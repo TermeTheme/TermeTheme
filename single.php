@@ -14,23 +14,30 @@
 							<?php if ( $terme_options['post_meta'] == 1 ) { ?>
 								<div class="article_meta">
 
-									<?php if(terme_get_meta( 'terme_date_meta' )) { ?>
+									<?php if (terme_get_meta('terme_date_meta')): ?>
 									<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
-									<?php }else { ?>
-										NO
-									<?php } ?>
-									<?php if($terme_options['post_date']) { ?>
+									<?php elseif ($terme_options['post_date']): ?>
 									<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
-									<?php } ?>
-									<?php if($terme_options['post_category']) { ?>
+									<?php endif; ?>
+
+									<?php if(terme_get_meta('terme_category_meta')): ?>
 									<span class="category"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp <a href="#"><?php the_category($post->ID); ?></a> </span>
-									<?php } ?>
-									<?php if($terme_options['view_count']) { ?>
+									<?php elseif ($terme_options['post_category']): ?>
+									<span class="category"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp <a href="#"><?php the_category($post->ID); ?></a> </span>
+									<?php endif; ?>
+
+									<?php if(terme_get_meta('terme_view_count_meta')): ?>
 									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
-									<?php } ?>
-									<?php if($terme_options['comment_count']) { ?>
+									<?php elseif ($terme_options['view_count']): ?>
+									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
+									<?php endif; ?>
+
+									<?php if(terme_get_meta('terme_comment_count_meta')): ?>
 									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
-									<?php } ?>
+									<?php elseif ($terme_options['comment_count']): ?>
+									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
+									<?php endif; ?>
+
 								</div><!-- article_meta -->
 						<?php	} ?>
 						</div><!-- article_info -->

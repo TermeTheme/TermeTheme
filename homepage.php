@@ -1,4 +1,4 @@
- <?php
+<?php
 /* Template name: Home Page */
 global $terme_options; ?>
 <?php get_header(); ?>
@@ -16,10 +16,9 @@ global $terme_options; ?>
 				</div><!-- container -->
 			</section><!-- top Section -->
 			<?php if ($terme_options['newsticker']) {
-    include TEMPLATEPATH.'/inc/page-builder/elements/news-ticker.php';
-} ?>
+          include TEMPLATEPATH.'/inc/page-builder/elements/news-ticker.php';
+      } ?>
 			<?php include TEMPLATEPATH.'/inc/content/layout.php'; ?>
 		</main>
 	</div><!-- sb-site -->
-
 	<?php get_footer(); ?>
