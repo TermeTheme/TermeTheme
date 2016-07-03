@@ -1,4 +1,5 @@
 /*********** Terme General admin styles ***********/
+
 a[data-tooltip] {
     position: relative;
     display: inline-block;
@@ -60,7 +61,9 @@ a[data-tooltip]:hover:after {
     opacity: 1;
     top: -16px;
 }
+
 /*********** Terme Page Builder ***********/
+
 a.terme_add_page_builder_button {
     background: url('../images/termelogo.svg') no-repeat 5px center #ff322e;
     display: inline-block;
@@ -73,8 +76,7 @@ a.terme_add_page_builder_button {
     border-radius: 3px;
     margin-top: 10px;
 }
-a.terme_add_page_builder_button:hover,
-a.terme_add_page_builder_button:focus {
+a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
     color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -99,9 +101,7 @@ a.terme_add_page_builder_button:focus {
 .terme_pb_elements_container ul li img {
     max-width: 100%
 }
-.terme_pb_elements_container ul li a.terme_pb_item_toggle span,
-.terme_pb_elements_container ul li a.terme_pb_delete_element,
-.terme_pb_elements_container ul li div.pb_item_setting {
+.terme_pb_elements_container ul li a.terme_pb_item_toggle span, .terme_pb_elements_container ul li a.terme_pb_delete_element, .terme_pb_elements_container ul li div.pb_item_setting {
     display: none;
 }
 .terme_pb_content_container {
@@ -145,7 +145,6 @@ a.terme_add_page_builder_button:focus {
     display: block;
     font-weight: bold;
 }
-
 .terme_pb_content_container ul li div.pb_item_setting {
     background: #fff;
     display: none;
@@ -163,7 +162,64 @@ a.terme_add_page_builder_button:focus {
 .terme_pb_content_container ul li.ui-draggable-dragging {
     background: none;
 }
-.terme_pb_content_container ul li.ui-draggable-dragging span,
-.terme_pb_content_container ul li.ui-draggable-dragging a.terme_pb_delete_element {
+.terme_pb_content_container ul li.ui-draggable-dragging span, .terme_pb_content_container ul li.ui-draggable-dragging a.terme_pb_delete_element {
     display: none;
+}
+#terme_page_option>button {
+    border-left: 1px solid #fff;
+}
+#terme_page_option span {
+    color: #fff;
+}
+#terme_page_option h2 {
+    background: url('../images/pattern.svg') no-repeat center center #ff322e;
+    color: #fff;
+}
+#terme_page_option input[type=checkbox] {
+    display: none;
+}
+#terme_page_option input[type=checkbox]+ label {
+    display: inline-block;
+    background-color: #f65a5b;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    text-transform: uppercase;
+    width: 80px;
+}
+#terme_page_option input[type=checkbox]+ label, #terme_page_option input[type=checkbox]+ label i {
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+#terme_page_option input[type=checkbox]:checked+ label {
+    background-color: #6cbc35;
+}
+#terme_page_option input[type=checkbox]+ label:before, #terme_page_option input[type=checkbox]+ label:after, #terme_page_option input[type=checkbox]+ label i {
+    width: 50%;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+}
+#terme_page_option input[type=checkbox]+ label:before {
+    content: attr(data-text-true);
+}
+#terme_page_option input[type=checkbox]+ label:after {
+    content: attr(data-text-false);
+}
+#terme_page_option input[type=checkbox]+ label i {
+    top: 10%;
+    background-color: white;
+    height: 80%;
+    left: 5%;
+    position: absolute;
+    width: 45%;
+}
+#terme_page_option input[type=checkbox]:checked+ label i {
+    left: 50%;
 }

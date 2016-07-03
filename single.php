@@ -6,9 +6,12 @@
 				<div class="col-md-8 col-sm-12 col-xs-12">
 					<div class="article_content">
 						<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-							<?php print_r(get_post_meta($post->ID,'terme_options', true)); ?>
+
+							<?php
+							$terme_postmeta = get_post_meta( $post->ID, 'terme_postmeta', true );
+							//  print_r(get_post_meta($post->ID,'terme_postmeta', true));?>
 						<div class="article_info ">
-							<?php if (get_post_meta($post->ID,'terme_breadcrumb', true)): ?>
+							<?php if (isset($terme_postmeta['breadcrumb']) && !empty($terme_postmeta['breadcrumb']) ): ?>
 									<?php terme_breadcrumb() ?>
 							<?php elseif ($terme_options['post_breadcrumb']): ?>
 									<?php terme_breadcrumb() ?>
@@ -16,25 +19,26 @@
 							<h1 class="article_title"><?php the_title(''); ?></h1>
 							<?php if ( $terme_options['post_meta'] == 1 ): ?>
 								<div class="article_meta">
-									<?php if (get_post_meta($post->ID, $terme_options['date'], true)): ?>
+									<?php
+						  		if (isset($terme_postmeta['date']) && !empty($terme_postmeta['date']) ): ?>
 									<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
 									<?php elseif ($terme_options['post_date']): ?>
 									<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
 									<?php endif; ?>
 
-									<?php if(get_post_meta($post->ID,$terme_options['category'], true)): ?>
+									<?php if (isset($terme_postmeta['category']) && !empty($terme_postmeta['category']) ): ?>
 									<span class="category"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp <a href="#"><?php the_category($post->ID); ?></a> </span>
 									<?php elseif ($terme_options['post_category']): ?>
 									<span class="category"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp <a href="#"><?php the_category($post->ID); ?></a> </span>
 									<?php endif; ?>
 
-									<?php if(get_post_meta($post->ID,'terme_viewcount', true)): ?>
+									<?php if (isset($terme_postmeta['viewcount']) && !empty($terme_postmeta['viewcount']) ): ?>
 									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
 									<?php elseif ($terme_options['view_count']): ?>
 									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
 									<?php endif; ?>
 
-									<?php if(get_post_meta($post->ID,'terme_commentcount', true)): ?>
+									<?php if (isset($terme_postmeta['commentcount']) && !empty($terme_postmeta['commentcount']) ): ?>
 									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
 									<?php elseif ($terme_options['comment_count']): ?>
 									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
@@ -61,7 +65,7 @@
 									echo $html; ?>
 							</div><!-- article_tags -->
 							<?php } ?>
-							<?php if (get_post_meta($post->ID,'terme_share-display', true)):?>
+							<?php if (isset($terme_postmeta['share-display']) && !empty($terme_postmeta['share-display'])): ?>
 								<div class="article_social">
 									<ul>
 										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -85,7 +89,7 @@
 
 
 						</div><!-- terme_post -->
-						<?php if (get_post_meta($post->ID,'terme_author-display', true)): ?>
+						<?php if (isset($terme_postmeta['author-display']) && !empty($terme_postmeta['author-display'])): ?>
 							<div class="article_author">
 									<?php echo get_avatar( $comment, 90 ); ?>
 									<div class="name">
@@ -113,7 +117,7 @@
 							</div>
 
 						<?php endif; ?>
-						<?php if (get_post_meta($post->ID,'terme_relatedpost-display', true)): ?>
+						<?php if (isset($terme_postmeta['relatedpost-display']) && !empty($terme_postmeta['relatedpost-display'])): ?>
 							<div class="article_related">
 								<h4>Related Post</h4>
 								<ul>
@@ -235,7 +239,7 @@
 									</div>
 
 						<?php endif; ?>
-						<?php if (get_post_meta($post->ID,'terme_comment-display', true)): ?>
+						<?php if (isset($terme_postmeta['comment-display']) && !empty($terme_postmeta['comment-display']) ): ?>
 							<div class="article_comment">
 							<?php comments_template(); ?>
 							</div>
