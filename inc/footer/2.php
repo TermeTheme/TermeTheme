@@ -67,11 +67,13 @@
                 </div><!-- box_3 -->
               </div><!-- col-xs-3 -->
               <div class="col-xs-12">
-                <?php if($terme_options['Social_icon_footer']) { ?>
+                <?php if ($terme_options['Social_icon_footer']) {
+    ?>
 
                 <div class="social_menu">
                   <ul>
-                    <li><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['facebook'];
+    ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
@@ -81,7 +83,8 @@
                     <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
                   </ul>
                 </div><!-- social_menu -->
-                <?php } ?>
+                <?php
+} ?>
 
               </div><!-- col-xs-12 -->
           </div><!-- row -->
@@ -99,11 +102,14 @@
       <li><a href="#">Terms of Use</a></li>
       <li><a href="#">Privacy</a></li>
     </ul>
-    <?php if($terme_options['copyright-footer']) { ?>
+    <?php if ($terme_options['copyright-footer']) {
+    ?>
     <p>
-      <?php echo $terme_options['footer-text']; ?>
+      <?php echo $terme_options['footer-text'];
+    ?>
     </p>
-    <?php } ?>
+    <?php
+} ?>
 
   </div>
 </div><!-- col-xs-12 -->
