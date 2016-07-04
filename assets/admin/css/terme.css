@@ -223,3 +223,18 @@ a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
 #terme_page_option input[type=checkbox]:checked+ label i {
     left: 50%;
 }
+ul.terme_social_widgets li {
+    margin-bottom: 10px;
+}
+ul.terme_social_widgets>li {
+    background: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+ul.terme_social_widgets>li:nth-child(even) {
+    background: #f1f1f1;
+}
+ul.terme_social_widgets>li ul {
+    padding-top: 15px;
+    display: none;
+}

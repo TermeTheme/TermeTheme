@@ -1,9 +1,88 @@
 <?php
+/*-----------------------------------------------------------------------------------*/
+# Terme Shorten Text
+/*-----------------------------------------------------------------------------------*/
 function terme_shorten_text($text,$chars_limit) {
-  $chars_text = strlen($text);
-  $text = $text." ";
-  $text = substr($text,0,$chars_limit);
-  $text = substr($text,0,strrpos($text,' '));
-  if ($chars_text > $chars_limit) { $text = $text."..."; }
-     return $text;
+    $chars_text = strlen($text);
+    $text = $text." ";
+    $text = substr($text,0,$chars_limit);
+    $text = substr($text,0,strrpos($text,' '));
+    if ($chars_text > $chars_limit) { $text = $text."..."; }
+    return $text;
+}
+/*-----------------------------------------------------------------------------------*/
+# Terme breadcrumbs
+/*-----------------------------------------------------------------------------------*/
+function terme_breadcrumb() {
+    global $post;
+    global $terme_options;
+    echo '<div class="breadcrumbs"><ul>';
+    if (!is_home()) {
+        if (!($terme_options['home_link_type'] == 0)) {
+            if ($terme_options['home_link_type'] == 1) {
+                echo '<li><a href="';
+                echo get_option('home');
+                echo '">';
+                echo '<i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i>';
+                echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
+            } elseif ($terme_options['home_link_type'] == 2) {
+                echo '<li><a href="';
+                echo get_option('home');
+                echo '">';
+                echo $terme_options['home_text'];
+                echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
+            } else {
+                echo '<li><a href="';
+                echo get_option('home');
+                echo '">';
+                echo '<i class="fa '.$terme_options['home_icon_text-icon'].'"></i> '.$terme_options['home_icon_text-text'];
+                echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
+            }
+        }
+        if (is_category() || is_single()) {
+            echo '<li>';
+            the_category(' <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li><li> ');
+            if (is_single()) {
+                echo ' <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li><li>';
+                the_title();
+                echo '</li>';
+            }
+        } elseif (is_page()) {
+            if ($post->post_parent) {
+                $anc = get_post_ancestors($post->ID);
+                $title = get_the_title();
+                foreach ($anc as $ancestor) {
+                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a> <i class="fa '.$terme_options['delimiter_icon'].'"></i></li>';
+                }
+                echo $output;
+                echo '<strong title="'.$title.'"> '.$title.'</strong>';
+            } else {
+                echo '<li><strong> '.get_the_title().'</strong></li>';
+            }
+        }
+    } elseif (is_tag()) {
+        single_tag_title();
+    } elseif (is_day()) {
+        echo'<li>Archive for ';
+        the_time('F jS, Y');
+        echo'</li>';
+    } elseif (is_month()) {
+        echo'<li>Archive for ';
+        the_time('F, Y');
+        echo'</li>';
+    } elseif (is_year()) {
+        echo'<li>Archive for ';
+        the_time('Y');
+        echo'</li>';
+    } elseif (is_author()) {
+        echo'<li>Author Archive';
+        echo'</li>';
+    } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+        echo '<li>Blog Archives';
+        echo'</li>';
+    } elseif (is_search()) {
+        echo'<li>Search Results';
+        echo'</li>';
+    }
+    echo '</ul></div>';
 }
