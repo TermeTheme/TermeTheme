@@ -183,6 +183,7 @@ header.style_4 .main_area .logo {
 header.style_1 .main_area .header_ads,
 header.style_3 .main_area .header_ads {
 	text-align: right;
+
 	img {
 		max-width: 100%;
 		height: auto;
@@ -822,6 +823,16 @@ section.latest_news {
 	@include rem(padding-top, 30px);
 	section {
 		margin-top: 20px;
+		ul {
+			float: right;
+			width: 100%;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			list-style: none;
+			@include rem(( border-width: 1px, padding-top: 0 ));
+			margin-bottom: 0;
+		}
 	}
 	section:first-child {
 		margin-top: 0;
@@ -1079,7 +1090,7 @@ section.latest_news {
 			}
 			ul li .time {
 				color: #979a9f;
-			}
+
 		}
 	}
 	.ads {
@@ -3138,4 +3149,5 @@ a.mobile_menu.search_active:after,
 html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
 	-webkit-transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
 	transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
+}
 }
