@@ -12,148 +12,86 @@ class Terme_Socials_Networks extends WP_Widget {
     }
 
     public function widget( $args, $instance ) {
-        // Facebook Fields
-        $facebook_status = (isset($instance['facebook_status']) && !empty($instance['facebook_status'])) ? $instance['facebook_status'] : false;
-        $facebook_page_id = (isset($instance['facebook_page_id']) && !empty($instance['facebook_page_id'])) ? $instance['facebook_page_id'] : '';
-        $facebook_access_token = (isset($instance['facebook_access_token']) && !empty($instance['facebook_access_token'])) ? $instance['facebook_access_token'] : '';
 
-        // Twitter Fields
-        $twitter_status = (isset($instance['twitter_status']) && !empty($instance['twitter_status'])) ? $instance['twitter_status'] : false;
-        $twitter_user = (isset($instance['twitter_user']) && !empty($instance['twitter_user'])) ? $instance['twitter_user'] : '';
-        $twitter_consumer_key = (isset($instance['twitter_consumer_key']) && !empty($instance['twitter_consumer_key'])) ? $instance['twitter_consumer_key'] : '';
-        $twitter_consumer_secret = (isset($instance['twitter_consumer_secret']) && !empty($instance['twitter_consumer_secret'])) ? $instance['twitter_consumer_secret'] : '';
-        $twitter_oauth_access_token = (isset($instance['twitter_oauth_access_token']) && !empty($instance['twitter_oauth_access_token'])) ? $instance['twitter_oauth_access_token'] : '';
-        $twitter_oauth_access_token_secret = (isset($instance['twitter_oauth_access_token_secret']) && !empty($instance['twitter_oauth_access_token_secret'])) ? $instance['twitter_oauth_access_token_secret'] : '';
+        $networks = (!empty($instance['terme_social'])) ? $instance['terme_social'] : array();
+        echo '<pre style="display: none">';
+        print_r($networks);
+        echo '</pre>';
+        echo '<section class="social_widget"><ul>';
+        foreach ($networks as $network_key => $network) {
+            // $status = $network['status'];
+            $status = ( array_key_exists('status', $network) ) ? $network['status'] : false ;
+            if ($status=='true') {
+                switch ($network_key) {
+                    case 'facebook':
+                        $url = 'https://facebook.com/'.$network['fields']['page_id']['value'].'/';
+                        $icon = 'fa-facebook';
+                        $name = __('Facebook', 'terme');
+                        $number = number_format($this->fbLikeCount($network['fields']['page_id']['value'], $network['fields']['access_token']['value']));
+                        break;
 
-        // Twitter Fields
-        $google_status = (isset($instance['google_status']) && !empty($instance['google_status'])) ? $instance['google_status'] : false;
-        $google_id = (isset($instance['google_id']) && !empty($instance['google_id'])) ? $instance['google_id'] : '';
-        $google_api = (isset($instance['google_api']) && !empty($instance['google_api'])) ? $instance['google_api'] : '';
+                    case 'twitter':
+                        $url = 'https://twitter.com/'.$network['fields']['user']['value'].'/';
+                        $icon = 'fa-twitter';
+                        $name = __('Twitter', 'terme');
+                        $number = number_format($this->twFollowers( $network['fields']['user']['value'], $network['fields']['consumer_key']['value'], $network['fields']['consumer_secret']['value'], $network['fields']['oauth_access_token']['value'], $network['fields']['oauth_access_token_secret']['value']));
+                        break;
 
-        // RSS Feed Fields
-        $rss_status = (isset($instance['rss_status']) && !empty($instance['rss_status'])) ? $instance['rss_status'] : false;
-        $rss_url = (isset($instance['rss_url']) && !empty($instance['rss_url'])) ? $instance['rss_url'] : '';
+                    case 'google':
+                        $url = 'https://plus.google.com/u/0/'.$network['fields']['id']['value'].'/';
+                        $icon = 'fa-google';
+                        $name = __('Google', 'terme');
+                        $number = number_format($this->googleplus_count( $network['fields']['id']['value'], $network['fields']['api']['value']));
+                        break;
 
-        // Instagram Fields
-        $insta_status = (isset($instance['insta_status']) && !empty($instance['insta_status'])) ? $instance['insta_status'] : false;
-        $insta_userid = (isset($instance['insta_userid']) && !empty($instance['insta_userid'])) ? $instance['insta_userid'] : '';
-        $insta_username = (isset($instance['insta_username']) && !empty($instance['insta_username'])) ? $instance['insta_username'] : '';
-        $insta_access_token = (isset($instance['insta_access_token']) && !empty($instance['insta_access_token'])) ? $instance['insta_access_token'] : '';
+                    case 'rss':
+                        $url = $network['fields']['url']['value'];
+                        $icon = 'fa-rss';
+                        $name = __('RSS Feed', 'terme');
+                        $number = __('RSS Feed', 'terme');
+                        break;
 
-        // Youtube Fields
-        $youtube_status = (isset($instance['youtube_status']) && !empty($instance['youtube_status'])) ? $instance['youtube_status'] : false;
-        $youtube_chanel = (isset($instance['youtube_chanel']) && !empty($instance['youtube_chanel'])) ? $instance['youtube_chanel'] : '';
-        $youtube_api = (isset($instance['youtube_api']) && !empty($instance['youtube_api'])) ? $instance['youtube_api'] : '';
+                    case 'insta':
+                        $url = 'https://www.instagram.com/'.$network['fields']['username']['value'];
+                        $icon = 'fa-instagram';
+                        $name = __('Instagram', 'terme');
+                        $number = number_format($this->instaFollowers( $network['fields']['userid']['value'], $network['fields']['access_token']['value'] ));
+                        break;
 
-        // Github Fields
-        $github_status = (isset($instance['github_status']) && !empty($instance['github_status'])) ? $instance['github_status'] : false;
-        $github_username = (isset($instance['github_username']) && !empty($instance['github_username'])) ? $instance['github_username'] : '';
+                    case 'youtube':
+                        $url = 'https://www.youtube.com/channel/'.$network['fields']['channel']['value'];
+                        $icon = 'fa-youtube';
+                        $name = __('Youtube', 'terme');
+                        $number = number_format($this->youtube_followers( $network['fields']['channel']['value'], $network['fields']['api']['value'] ));
+                        break;
 
-        // Dribble Fields
-        $dribbble_status = (isset($instance['dribbble_status']) && !empty($instance['dribbble_status'])) ? $instance['dribbble_status'] : false;
-        $dribbble_username = (isset($instance['dribbble_username']) && !empty($instance['dribbble_username'])) ? $instance['dribbble_username'] : '';
-        $dribbble_access_token = (isset($instance['dribbble_access_token']) && !empty($instance['dribbble_access_token'])) ? $instance['dribbble_access_token'] : '';
+                    case 'github':
+                        $url = 'https://github.com/'.$network['fields']['username']['value'];
+                        $icon = 'fa-github';
+                        $name = __('Github', 'terme');
+                        $number = number_format($this->github_followers( $network['fields']['username']['value'] ));
+                        break;
 
-        $networks  = array(
-                        'facebook' => $facebook_status,
-                        'twitter' => $twitter_status,
-                        'google' => $google_status,
-                        'rss' => $rss_status,
-                        'insta' => $insta_status,
-                        'youtube' => $youtube_status,
-                        'github' => $github_status,
-                        'dribbble' => $dribbble_status,
-                    );
-            echo '<section class="social_widget"><ul>';
-            foreach ($networks as $key => $network_status) {
-                if ($network_status) {
+                    case 'dribbble':
+                        $url = 'https://dribbble.com/'.$network['fields']['username']['value'];
+                        $icon = 'fa-dribbble';
+                        $name = __('Dribbble', 'terme');
+                        $number = number_format($this->dribbble_followers( $network['fields']['username']['value'], $network['fields']['access_token']['value'] ));
+                        break;
 
-                    switch ($key) {
-                        case 'facebook':
-                        echo '<li class="facebook">
-                                <a target="_blank" href="https://facebook.com/'.$facebook_page_id.'/" data-termehover="true">
-                                <span class="icon"><i class="fa fa-facebook"></i></span>
-                                <span class="name">'.__('Facebook', 'terme').'</span>
-                                <span class="number">'.$this->fbLikeCount($facebook_page_id, $facebook_access_token).'</span>
-                                </a>
-                              </li>';
-                            break;
-
-                        case 'twitter':
-                        echo '<li class="twitter">
-                                <a target="_blank" href="https://twitter.com/'.$twitter_user.'/" data-termehover="true">
-                                <span class="icon"><i class="fa fa-twitter"></i></span>
-                                <span class="name">'.__('Twitter', 'terme').'</span>
-                                <span class="number">'.$this->twFollowers( $twitter_user, $twitter_consumer_key, $twitter_consumer_secret, $twitter_oauth_access_token, $twitter_oauth_access_token_secret).'</span>
-                                </a>
-                              </li>';
-                            break;
-
-                        case 'google':
-                        echo '<li class="google">
-                                <a target="_blank" href="https://plus.google.com/u/0/'.$google_id.'/" data-termehover="true">
-                                <span class="icon"><i class="fa fa-google"></i></span>
-                                <span class="name">'.__('Google+', 'terme').'</span>
-                                <span class="number">'.$this->googleplus_count( $google_id, $google_api ).'</span>
-                                </a>
-                              </li>';
-                            break;
-
-                        case 'rss':
-                        echo '<li class="rss">
-                                <a target="_blank" href="'.$rss_url.'" data-termehover="true">
-                                <span class="icon"><i class="fa fa-rss"></i></span>
-                                <span class="name">'.__('RSS', 'terme').'</span>
-                                <span class="number">'.__('RSS', 'terme').'</span>
-                                </a>
-                              </li>';
-                            break;
-
-                        case 'insta':
-                        echo '<li class="insta">
-                                <a target="_blank" href="https://www.instagram.com/'.$insta_username.'" data-termehover="true">
-                                <span class="icon"><i class="fa fa-instagram"></i></span>
-                                <span class="name">'.__('Instagram', 'terme').'</span>
-                                <span class="number">'.$this->instaFollowers( $insta_userid, $insta_access_token ).'</span>
-                                </a>
-                              </li>';
-                            break;
-
-                        case 'youtube':
-                        echo '<li class="youtube">
-                                <a target="_blank" href="https://www.youtube.com/channel/'.$youtube_chanel.'" data-termehover="true">
-                                <span class="icon"><i class="fa fa-youtube"></i></span>
-                                <span class="name">'.__('Youtube', 'terme').'</span>
-                                <span class="number">'.$this->youtube_followers( $youtube_chanel, $youtube_api ).'</span>
-                                </a>
-                              </li>';
-                            break;
-
-                        case 'github':
-                        echo '<li class="github">
-                                <a target="_blank" href="https://github.com/'.$github_username.'" data-termehover="true">
-                                <span class="icon"><i class="fa fa-github"></i></span>
-                                <span class="name">'.__('Github', 'terme').'</span>
-                                <span class="number">'.$this->github_followers( $github_username ).'</span>
-                                </a>
-                              </li>';
-                            break;
-
-                        case 'dribbble':
-                        echo '<li class="dribbble">
-                                <a target="_blank" href="https://dribbble.com/'.$dribbble_username.'" data-termehover="true">
-                                <span class="icon"><i class="fa fa-dribbble"></i></span>
-                                <span class="name">'.__('Dribbble', 'terme').'</span>
-                                <span class="number">'.$this->dribbble_followers( $dribbble_username, $dribbble_access_token ).'</span>
-                                </a>
-                              </li>';
-                            break;
-
-                    }
 
                 }
+                echo '<li class="'.$network_key.'">
+                        <a target="_blank" href="'.$url.'" data-termehover="true">
+                        <span class="icon"><i class="fa '.$icon.'"></i></span>
+                        <span class="name">'.$name.'</span>
+                        <span class="number">'.$number.'</span>
+                        </a>
+                      </li>';
             }
-            echo '</ul></section>';
+
+        }
+        echo '</ul></section>';
 
     }
 
@@ -206,13 +144,13 @@ class Terme_Socials_Networks extends WP_Widget {
         $record = json_decode($api_response);
 
     	if($record->data->counts->followed_by){
-    		return $likes = $record->data->counts->followed_by;
+    		return $record->data->counts->followed_by;
     	}else{
     		return 0;
     	}
     }
-    public function youtube_followers( $chanel_id, $apikey ) {
-        $url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='.$chanel_id.'&key='.$apikey;
+    public function youtube_followers( $channel_id, $apikey ) {
+        $url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='.$channel_id.'&key='.$apikey;
         $api_response = file_get_contents($url);
         $record = json_decode($api_response);
         // return $record;
@@ -254,176 +192,164 @@ class Terme_Socials_Networks extends WP_Widget {
     }
 
     public function form( $instance ) {
-
-        // Facebook Fields
-        $facebook_status = (isset($instance['facebook_status']) && !empty($instance['facebook_status'])) ? $instance['facebook_status'] : false;
-        $facebook_page_id = (isset($instance['facebook_page_id']) && !empty($instance['facebook_page_id'])) ? $instance['facebook_page_id'] : '';
-        $facebook_access_token = (isset($instance['facebook_access_token']) && !empty($instance['facebook_access_token'])) ? $instance['facebook_access_token'] : '';
-
-        // Twitter Fields
-        $twitter_status = (isset($instance['twitter_status']) && !empty($instance['twitter_status'])) ? $instance['twitter_status'] : false;
-        $twitter_user = (isset($instance['twitter_user']) && !empty($instance['twitter_user'])) ? $instance['twitter_user'] : '';
-        $twitter_consumer_key = (isset($instance['twitter_consumer_key']) && !empty($instance['twitter_consumer_key'])) ? $instance['twitter_consumer_key'] : '';
-        $twitter_consumer_secret = (isset($instance['twitter_consumer_secret']) && !empty($instance['twitter_consumer_secret'])) ? $instance['twitter_consumer_secret'] : '';
-        $twitter_oauth_access_token = (isset($instance['twitter_oauth_access_token']) && !empty($instance['twitter_oauth_access_token'])) ? $instance['twitter_oauth_access_token'] : '';
-        $twitter_oauth_access_token_secret = (isset($instance['twitter_oauth_access_token_secret']) && !empty($instance['twitter_oauth_access_token_secret'])) ? $instance['twitter_oauth_access_token_secret'] : '';
-
-        // Twitter Fields
-        $google_status = (isset($instance['google_status']) && !empty($instance['google_status'])) ? $instance['google_status'] : false;
-        $google_id = (isset($instance['google_id']) && !empty($instance['google_id'])) ? $instance['google_id'] : '';
-        $google_api = (isset($instance['google_api']) && !empty($instance['google_api'])) ? $instance['google_api'] : '';
-
-        // RSS Feed Fields
-        $rss_status = (isset($instance['rss_status']) && !empty($instance['rss_status'])) ? $instance['rss_status'] : false;
-        $rss_url = (isset($instance['rss_url']) && !empty($instance['rss_url'])) ? $instance['rss_url'] : '';
-
-        // Instagram Fields
-        $insta_status = (isset($instance['insta_status']) && !empty($instance['insta_status'])) ? $instance['insta_status'] : false;
-        $insta_userid = (isset($instance['insta_userid']) && !empty($instance['insta_userid'])) ? $instance['insta_userid'] : '';
-        $insta_username = (isset($instance['insta_username']) && !empty($instance['insta_username'])) ? $instance['insta_username'] : '';
-        $insta_access_token = (isset($instance['insta_access_token']) && !empty($instance['insta_access_token'])) ? $instance['insta_access_token'] : '';
-
-        // Youtube Fields
-        $youtube_status = (isset($instance['youtube_status']) && !empty($instance['youtube_status'])) ? $instance['youtube_status'] : false;
-        $youtube_chanel = (isset($instance['youtube_chanel']) && !empty($instance['youtube_chanel'])) ? $instance['youtube_chanel'] : '';
-        $youtube_api = (isset($instance['youtube_api']) && !empty($instance['youtube_api'])) ? $instance['youtube_api'] : '';
-
-        // Github Fields
-        $github_status = (isset($instance['github_status']) && !empty($instance['github_status'])) ? $instance['github_status'] : false;
-        $github_username = (isset($instance['github_username']) && !empty($instance['github_username'])) ? $instance['github_username'] : '';
-
-        // Dribble Fields
-        $dribbble_status = (isset($instance['dribbble_status']) && !empty($instance['dribbble_status'])) ? $instance['dribbble_status'] : false;
-        $dribbble_username = (isset($instance['dribbble_username']) && !empty($instance['dribbble_username'])) ? $instance['dribbble_username'] : '';
-        $dribbble_access_token = (isset($instance['dribbble_access_token']) && !empty($instance['dribbble_access_token'])) ? $instance['dribbble_access_token'] : '';
-
         ?>
-        <ul class="terme_social_widgets">
+            <ul class="terme_social_widgets">
+            <?php
+            $defaults = array(
+                            'facebook' => array(
+                                            'title'     => __( 'Facebook Page Like Counter', 'terme' ),
+                                            'status'    => false,
+                                            'fields'    => array (
+                                                                'page_id' => array(
+                                                                                    'title' => __( 'Facebook Page ID:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                'access_token' => array(
+                                                                                        'title' => __( 'Facebook Page Access Token:', 'terme' ),
+                                                                                        'value' => ''
+                                                                                    ),
+                                                                )
+                                        ),
+                            'google' => array(
+                                            'title'     => __( 'Google+ Followers Counter', 'terme' ),
+                                            'status'    => false,
+                                            'fields'    => array (
+                                                                'id' => array(
+                                                                                    'title' => __( 'Google+ Username OR ID:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                'api' => array(
+                                                                                        'title' => __( 'Google+ API key:', 'terme' ),
+                                                                                        'value' => ''
+                                                                                    ),
+                                                                )
+                                        ),
+                            'twitter' => array(
+                                            'title'     => __( 'Twitter Followers Counter', 'terme' ),
+                                            'status'    => false,
+                                            'fields'    => array (
+                                                                'user' => array(
+                                                                                    'title' => __( 'Twitter Username:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                'consumer_key' => array(
+                                                                                        'title' => __( 'Twitter Consumer key:', 'terme' ),
+                                                                                        'value' => ''
+                                                                                    ),
+                                                                'consumer_secret' => array(
+                                                                                        'title' => __( 'Twitter Consumer secret:', 'terme' ),
+                                                                                        'value' => ''
+                                                                                    ),
+                                                                'oauth_access_token' => array(
+                                                                                        'title' => __( 'Twitter Access token:', 'terme' ),
+                                                                                        'value' => ''
+                                                                                    ),
+                                                                'oauth_access_token_secret' => array(
+                                                                                        'title' => __( 'Twitter Access token secret:', 'terme' ),
+                                                                                        'value' => ''
+                                                                                    ),
+                                                                )
+                                        ),
+                            'rss' => array(
+                                            'title'     => __( 'RSS Feed', 'terme' ),
+                                            'status'    => false,
+                                            'fields'    => array (
+                                                                'url' => array(
+                                                                                    'title' => __( 'RSS Feed Url:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                )
+                                        ),
+                            'insta' => array(
+                                            'title'     => __( 'Instagram Followers', 'terme' ),
+                                            'status'    => false,
+                                            'fields'    => array (
+                                                                'userid' => array(
+                                                                                    'title' => __( 'Instagram User ID:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                'username' => array(
+                                                                                    'title' => __( 'Instagram User Name:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                'access_token' => array(
+                                                                                    'title' => __( 'Instagram Access Token:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                )
+                                        ),
+                            'youtube' => array(
+                                            'title'     => __( 'Youtube channel', 'terme' ),
+                                            'status'    => false,
+                                            'fields'    => array (
+                                                                'channel' => array(
+                                                                                    'title' => __( 'Youtube channel ID:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                'api' => array(
+                                                                                    'title' => __( 'Youtube channel API Key:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                )
+                                        ),
+                            'github' => array(
+                                            'title'     => __( 'Github Account', 'terme' ),
+                                            'status'    => false,
+                                            'fields'    => array (
+                                                                'username' => array(
+                                                                                    'title' => __( 'Github Username:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                )
+                                        ),
+                            'dribbble' => array(
+                                            'title'     => __( 'Dribbble Account', 'terme' ),
+                                            'status'    => false,
+                                            'fields'    => array (
+                                                                'username' => array(
+                                                                                    'title' => __( 'Dribbble Username:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                'access_token' => array(
+                                                                                    'title' => __( 'Dribbble Access Token:', 'terme' ),
+                                                                                    'value' => '',
+                                                                                ),
+                                                                )
+                                        ),
 
-            <li>
-                <input class="widefat network_status" id="<?php echo $this->get_field_id( 'facebook_status' ); ?>" name="<?php echo $this->get_field_name( 'facebook_status' ); ?>" type="checkbox" value="true" <?php checked( $facebook_status, 'true', true ) ?>>
-                <label for="<?php echo $this->get_field_id( 'facebook_status' ); ?>"><?php _e( 'Facebook Page Like Counter', 'terme' ); ?></label>
-                <ul <?php if ($facebook_status=='true') { echo 'style="display:block"; '; } ?>>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'facebook_page_id' ); ?>"><?php _e( 'Facebook Page ID:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'facebook_page_id' ); ?>" name="<?php echo $this->get_field_name( 'facebook_page_id' ); ?>" type="text" value="<?php echo $facebook_page_id ?>">
-                        <span><?php _e('Example: TermeTheme') ?></span>
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'facebook_access_token' ); ?>"><?php _e( 'Facebook Page Access Token:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'facebook_access_token' ); ?>" name="<?php echo $this->get_field_name( 'facebook_access_token' ); ?>" type="text" value="<?php echo $facebook_access_token ?>">
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <input class="widefat network_status" id="<?php echo $this->get_field_id( 'twitter_status' ); ?>" name="<?php echo $this->get_field_name( 'twitter_status' ); ?>" type="checkbox" value="true" <?php checked( $twitter_status, 'true', true ) ?>>
-                <label for="<?php echo $this->get_field_id( 'twitter_status' ); ?>"><?php _e( 'Twitter Followers Counter', 'terme' ); ?></label>
-                <ul <?php if ($twitter_status=='true') { echo 'style="display:block"; '; } ?>>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'twitter_user' ); ?>"><?php _e( 'Twitter Username:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'twitter_user' ); ?>" name="<?php echo $this->get_field_name( 'twitter_user' ); ?>" type="text" value="<?php echo $twitter_user ?>">
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'twitter_consumer_key' ); ?>"><?php _e( 'Twitter Consumer key:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'twitter_consumer_key' ); ?>" name="<?php echo $this->get_field_name( 'twitter_consumer_key' ); ?>" type="text" value="<?php echo $twitter_consumer_key ?>">
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'twitter_consumer_secret' ); ?>"><?php _e( 'Twitter Consumer secret:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'twitter_consumer_secret' ); ?>" name="<?php echo $this->get_field_name( 'twitter_consumer_secret' ); ?>" type="text" value="<?php echo $twitter_consumer_secret ?>">
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'twitter_oauth_access_token' ); ?>"><?php _e( 'Twitter Access token:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'twitter_oauth_access_token' ); ?>" name="<?php echo $this->get_field_name( 'twitter_oauth_access_token' ); ?>" type="text" value="<?php echo $twitter_oauth_access_token ?>">
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'twitter_oauth_access_token_secret' ); ?>"><?php _e( 'Twitter Access token secret:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'twitter_oauth_access_token_secret' ); ?>" name="<?php echo $this->get_field_name( 'twitter_oauth_access_token_secret' ); ?>" type="text" value="<?php echo $twitter_oauth_access_token_secret ?>">
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <input class="widefat network_status" id="<?php echo $this->get_field_id( 'google_status' ); ?>" name="<?php echo $this->get_field_name( 'google_status' ); ?>" type="checkbox" value="true" <?php checked( $google_status, 'true', true ) ?>>
-                <label for="<?php echo $this->get_field_id( 'google_status' ); ?>"><?php _e( 'Google+ Followers Counter', 'terme' ); ?></label>
-                <ul <?php if ($google_status=='true') { echo 'style="display:block"; '; } ?>>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'google_id' ); ?>"><?php _e( 'Google+ Username OR ID:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'google_id' ); ?>" name="<?php echo $this->get_field_name( 'google_id' ); ?>" type="text" value="<?php echo $google_id; ?>">
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'google_api' ); ?>"><?php _e( 'Google+ API key:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'google_api' ); ?>" name="<?php echo $this->get_field_name( 'google_api' ); ?>" type="text" value="<?php echo $google_api; ?>">
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <input class="widefat network_status" id="<?php echo $this->get_field_id( 'rss_status' ); ?>" name="<?php echo $this->get_field_name( 'rss_status' ); ?>" type="checkbox" value="true" <?php checked( $rss_status, 'true', true ) ?>>
-                <label for="<?php echo $this->get_field_id( 'rss_status' ); ?>"><?php _e( 'RSS Feed', 'terme' ); ?></label>
-                <ul <?php if ($rss_status=='true') { echo 'style="display:block"; '; } ?>>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'rss_url' ); ?>"><?php _e( 'RSS Feed Url:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'rss_url' ); ?>" name="<?php echo $this->get_field_name( 'rss_url' ); ?>" type="text" value="<?php echo $rss_url; ?>">
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <input class="widefat network_status" id="<?php echo $this->get_field_id( 'insta_status' ); ?>" name="<?php echo $this->get_field_name( 'insta_status' ); ?>" type="checkbox" value="true" <?php checked( $insta_status, 'true', true ) ?>>
-                <label for="<?php echo $this->get_field_id( 'insta_status' ); ?>"><?php _e( 'Instagram Followers', 'terme' ); ?></label>
-                <ul <?php if ($insta_status=='true') { echo 'style="display:block"; '; } ?>>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'insta_userid' ); ?>"><?php _e( 'Instagram User ID:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'insta_userid' ); ?>" name="<?php echo $this->get_field_name( 'insta_userid' ); ?>" type="text" value="<?php echo $insta_userid; ?>">
-                        <span>Example: 2929498049</span>
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'insta_username' ); ?>"><?php _e( 'Instagram User Name:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'insta_username' ); ?>" name="<?php echo $this->get_field_name( 'insta_username' ); ?>" type="text" value="<?php echo $insta_username; ?>">
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'insta_access_token' ); ?>"><?php _e( 'Instagram Access Token:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'insta_access_token' ); ?>" name="<?php echo $this->get_field_name( 'insta_access_token' ); ?>" type="text" value="<?php echo $insta_access_token; ?>">
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <input class="widefat network_status" id="<?php echo $this->get_field_id( 'youtube_status' ); ?>" name="<?php echo $this->get_field_name( 'youtube_status' ); ?>" type="checkbox" value="true" <?php checked( $youtube_status, 'true', true ) ?>>
-                <label for="<?php echo $this->get_field_id( 'youtube_status' ); ?>"><?php _e( 'Youtube Chanel', 'terme' ); ?></label>
-                <ul <?php if ($youtube_status=='true') { echo 'style="display:block"; '; } ?>>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'youtube_chanel' ); ?>"><?php _e( 'Youtube Chanel ID:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'youtube_chanel' ); ?>" name="<?php echo $this->get_field_name( 'youtube_chanel' ); ?>" type="text" value="<?php echo $youtube_chanel; ?>">
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'youtube_api' ); ?>"><?php _e( 'Youtube Chanel API Key:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'youtube_api' ); ?>" name="<?php echo $this->get_field_name( 'youtube_api' ); ?>" type="text" value="<?php echo $youtube_api; ?>">
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <input class="widefat network_status" id="<?php echo $this->get_field_id( 'github_status' ); ?>" name="<?php echo $this->get_field_name( 'github_status' ); ?>" type="checkbox" value="true" <?php checked( $github_status, 'true', true ) ?>>
-                <label for="<?php echo $this->get_field_id( 'github_status' ); ?>"><?php _e( 'Github Account', 'terme' ); ?></label>
-                <ul <?php if ($github_status=='true') { echo 'style="display:block"; '; } ?>>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'github_username' ); ?>"><?php _e( 'Github Username:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'github_username' ); ?>" name="<?php echo $this->get_field_name( 'github_username' ); ?>" type="text" value="<?php echo $github_username; ?>">
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <input class="widefat network_status" id="<?php echo $this->get_field_id( 'dribbble_status' ); ?>" name="<?php echo $this->get_field_name( 'dribbble_status' ); ?>" type="checkbox" value="true" <?php checked( $dribbble_status, 'true', true ) ?>>
-                <label for="<?php echo $this->get_field_id( 'dribbble_status' ); ?>"><?php _e( 'Dribbble Account', 'terme' ); ?></label>
-                <ul <?php if ($dribbble_status=='true') { echo 'style="display:block"; '; } ?>>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'dribbble_username' ); ?>"><?php _e( 'Dribbble Username:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'dribbble_username' ); ?>" name="<?php echo $this->get_field_name( 'dribbble_username' ); ?>" type="text" value="<?php echo $dribbble_username; ?>">
-                    </li>
-                    <li>
-                        <label for="<?php echo $this->get_field_id( 'dribbble_access_token' ); ?>"><?php _e( 'Dribbble Access Token:', 'terme' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'dribbble_access_token' ); ?>" name="<?php echo $this->get_field_name( 'dribbble_access_token' ); ?>" type="text" value="<?php echo $dribbble_access_token; ?>">
-                    </li>
-                </ul>
-            </li>
+                        );
+            $networks = ( array_key_exists('terme_social', $instance) ) ? $instance['terme_social'] : $defaults ;
+            foreach ($networks as $network_name => $network):
+                $title = ( isset($network['title']) && !empty($network['title']) ) ? $network['title'] : '' ;
+                $status = ( isset($network['status']) && !empty($network['status']) ) ? $network['status'] : false ;
+            ?>
+                <li>
+                    <input class="widefat network_status" id="<?php echo $this->get_field_id( 'terme_social['.$network_name.'][status]' ); ?>" name="<?php echo $this->get_field_name( 'terme_social['.$network_name.'][status]' ); ?>" type="checkbox" value="true" <?php checked( $status, 'true', true ) ?>>
+                    <label for="<?php echo $this->get_field_id( 'terme_social['.$network_name.'][status]' ); ?>"><?php echo $title ?></label>
+                    <ul <?php if ($status=='true') { echo 'style="display:block"; '; } ?>>
+                            <?php foreach ($network['fields'] as $field_id => $field): ?>
+                                <li>
+                                    <label for="<?php echo $this->get_field_id( 'terme_social['.$network_name.'][fields]['.$field_id.']' ); ?>"><?php echo $field['title'] ?></label>
+                                    <input class="widefat" id="<?php echo $this->get_field_id( 'terme_social['.$network_name.'][fields]['.$field_id.'][value]' ); ?>" name="<?php echo $this->get_field_name( 'terme_social['.$network_name.'][fields]['.$field_id.'][value]' ); ?>" type="text" value="<?php echo $field['value'] ?>">
+                                    <input name="<?php echo $this->get_field_name( 'terme_social['.$network_name.'][fields]['.$field_id.'][title]' ); ?>" type="hidden" value="<?php echo $field['title'] ?>">
+                                </li>
+                            <?php endforeach; ?>
+                    </ul>
+                    <span class="handle"></span>
+                    <input type="hidden" value="<?php echo $title ?>" name="<?php echo $this->get_field_name( 'terme_social['.$network_name.'][title]' ); ?>" />
+                </li>
+            <?php endforeach; ?>
+
 
         </ul>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                jQuery('.terme_social_widgets').sortable({
+                                                  placeholder: "ui-state-highlight",
+                                                  handle: '.handle'
+                                                });
+            });
+        </script>
 
     <?php
     }
@@ -432,47 +358,48 @@ class Terme_Socials_Networks extends WP_Widget {
         $instance = array();
 
         // Facebook
-        $instance['facebook_status'] = ( !empty( $new_instance['facebook_status'] ) ) ? strip_tags( $new_instance['facebook_status'] ) : '';
-        $instance['facebook_page_id'] = ( !empty( $new_instance['facebook_page_id'] ) ) ? strip_tags( $new_instance['facebook_page_id'] ) : '';
-        $instance['facebook_access_token'] = ( !empty( $new_instance['facebook_access_token'] ) ) ? strip_tags( $new_instance['facebook_access_token'] ) : '';
+        // $instance['facebook_status'] = ( !empty( $new_instance['facebook_status'] ) ) ? strip_tags( $new_instance['facebook_status'] ) : '';
+        // $instance['facebook_page_id'] = ( !empty( $new_instance['facebook_page_id'] ) ) ? strip_tags( $new_instance['facebook_page_id'] ) : '';
+        // $instance['facebook_access_token'] = ( !empty( $new_instance['facebook_access_token'] ) ) ? strip_tags( $new_instance['facebook_access_token'] ) : '';
 
         // Twitter
-        $instance['twitter_status'] = ( !empty( $new_instance['twitter_status'] ) ) ? strip_tags( $new_instance['twitter_status'] ) : '';
-        $instance['twitter_user'] = ( !empty( $new_instance['twitter_user'] ) ) ? strip_tags( $new_instance['twitter_user'] ) : '';
-        $instance['twitter_consumer_key'] = ( !empty( $new_instance['twitter_consumer_key'] ) ) ? strip_tags( $new_instance['twitter_consumer_key'] ) : '';
-        $instance['twitter_consumer_secret'] = ( !empty( $new_instance['twitter_consumer_secret'] ) ) ? strip_tags( $new_instance['twitter_consumer_secret'] ) : '';
-        $instance['twitter_oauth_access_token'] = ( !empty( $new_instance['twitter_oauth_access_token'] ) ) ? strip_tags( $new_instance['twitter_oauth_access_token'] ) : '';
-        $instance['twitter_oauth_access_token_secret'] = ( !empty( $new_instance['twitter_oauth_access_token_secret'] ) ) ? strip_tags( $new_instance['twitter_oauth_access_token_secret'] ) : '';
+        // $instance['twitter_status'] = ( !empty( $new_instance['twitter_status'] ) ) ? strip_tags( $new_instance['twitter_status'] ) : '';
+        // $instance['twitter_user'] = ( !empty( $new_instance['twitter_user'] ) ) ? strip_tags( $new_instance['twitter_user'] ) : '';
+        // $instance['twitter_consumer_key'] = ( !empty( $new_instance['twitter_consumer_key'] ) ) ? strip_tags( $new_instance['twitter_consumer_key'] ) : '';
+        // $instance['twitter_consumer_secret'] = ( !empty( $new_instance['twitter_consumer_secret'] ) ) ? strip_tags( $new_instance['twitter_consumer_secret'] ) : '';
+        // $instance['twitter_oauth_access_token'] = ( !empty( $new_instance['twitter_oauth_access_token'] ) ) ? strip_tags( $new_instance['twitter_oauth_access_token'] ) : '';
+        // $instance['twitter_oauth_access_token_secret'] = ( !empty( $new_instance['twitter_oauth_access_token_secret'] ) ) ? strip_tags( $new_instance['twitter_oauth_access_token_secret'] ) : '';
 
         // Google+
-        $instance['google_status'] = ( !empty( $new_instance['google_status'] ) ) ? strip_tags( $new_instance['google_status'] ) : '';
-        $instance['google_id'] = ( !empty( $new_instance['google_id'] ) ) ? strip_tags( $new_instance['google_id'] ) : '';
-        $instance['google_api'] = ( !empty( $new_instance['google_api'] ) ) ? strip_tags( $new_instance['google_api'] ) : '';
+        // $instance['google_status'] = ( !empty( $new_instance['google_status'] ) ) ? strip_tags( $new_instance['google_status'] ) : '';
+        // $instance['google_id'] = ( !empty( $new_instance['google_id'] ) ) ? strip_tags( $new_instance['google_id'] ) : '';
+        // $instance['google_api'] = ( !empty( $new_instance['google_api'] ) ) ? strip_tags( $new_instance['google_api'] ) : '';
 
         // RSS Feed
-        $instance['rss_status'] = ( !empty( $new_instance['rss_status'] ) ) ? strip_tags( $new_instance['rss_status'] ) : '';
-        $instance['rss_url'] = ( !empty( $new_instance['rss_url'] ) ) ? strip_tags( $new_instance['rss_url'] ) : '';
+        // $instance['rss_status'] = ( !empty( $new_instance['rss_status'] ) ) ? strip_tags( $new_instance['rss_status'] ) : '';
+        // $instance['rss_url'] = ( !empty( $new_instance['rss_url'] ) ) ? strip_tags( $new_instance['rss_url'] ) : '';
 
         // Instagram
-        $instance['insta_status'] = ( !empty( $new_instance['insta_status'] ) ) ? strip_tags( $new_instance['insta_status'] ) : '';
-        $instance['insta_userid'] = ( !empty( $new_instance['insta_userid'] ) ) ? strip_tags( $new_instance['insta_userid'] ) : '';
-        $instance['insta_username'] = ( !empty( $new_instance['insta_username'] ) ) ? strip_tags( $new_instance['insta_username'] ) : '';
-        $instance['insta_access_token'] = ( !empty( $new_instance['insta_access_token'] ) ) ? strip_tags( $new_instance['insta_access_token'] ) : '';
+        // $instance['insta_status'] = ( !empty( $new_instance['insta_status'] ) ) ? strip_tags( $new_instance['insta_status'] ) : '';
+        // $instance['insta_userid'] = ( !empty( $new_instance['insta_userid'] ) ) ? strip_tags( $new_instance['insta_userid'] ) : '';
+        // $instance['insta_username'] = ( !empty( $new_instance['insta_username'] ) ) ? strip_tags( $new_instance['insta_username'] ) : '';
+        // $instance['insta_access_token'] = ( !empty( $new_instance['insta_access_token'] ) ) ? strip_tags( $new_instance['insta_access_token'] ) : '';
 
         // Youtube
-        $instance['youtube_status'] = ( !empty( $new_instance['youtube_status'] ) ) ? strip_tags( $new_instance['youtube_status'] ) : '';
-        $instance['youtube_chanel'] = ( !empty( $new_instance['youtube_chanel'] ) ) ? strip_tags( $new_instance['youtube_chanel'] ) : '';
-        $instance['youtube_api'] = ( !empty( $new_instance['youtube_api'] ) ) ? strip_tags( $new_instance['youtube_api'] ) : '';
+        // $instance['youtube_status'] = ( !empty( $new_instance['youtube_status'] ) ) ? strip_tags( $new_instance['youtube_status'] ) : '';
+        // $instance['youtube_channel'] = ( !empty( $new_instance['youtube_channel'] ) ) ? strip_tags( $new_instance['youtube_channel'] ) : '';
+        // $instance['youtube_api'] = ( !empty( $new_instance['youtube_api'] ) ) ? strip_tags( $new_instance['youtube_api'] ) : '';
 
         // Github
-        $instance['github_status'] = ( !empty( $new_instance['github_status'] ) ) ? strip_tags( $new_instance['github_status'] ) : '';
-        $instance['github_username'] = ( !empty( $new_instance['github_username'] ) ) ? strip_tags( $new_instance['github_username'] ) : '';
+        // $instance['github_status'] = ( !empty( $new_instance['github_status'] ) ) ? strip_tags( $new_instance['github_status'] ) : '';
+        // $instance['github_username'] = ( !empty( $new_instance['github_username'] ) ) ? strip_tags( $new_instance['github_username'] ) : '';
 
         // Dribbble
-        $instance['dribbble_status'] = ( !empty( $new_instance['dribbble_status'] ) ) ? strip_tags( $new_instance['dribbble_status'] ) : '';
-        $instance['dribbble_username'] = ( !empty( $new_instance['dribbble_username'] ) ) ? strip_tags( $new_instance['dribbble_username'] ) : '';
-        $instance['dribbble_access_token'] = ( !empty( $new_instance['dribbble_access_token'] ) ) ? strip_tags( $new_instance['dribbble_access_token'] ) : '';
+        // $instance['dribbble_status'] = ( !empty( $new_instance['dribbble_status'] ) ) ? strip_tags( $new_instance['dribbble_status'] ) : '';
+        // $instance['dribbble_username'] = ( !empty( $new_instance['dribbble_username'] ) ) ? strip_tags( $new_instance['dribbble_username'] ) : '';
+        // $instance['dribbble_access_token'] = ( !empty( $new_instance['dribbble_access_token'] ) ) ? strip_tags( $new_instance['dribbble_access_token'] ) : '';
 
+        $instance['terme_social'] = $new_instance['terme_social'];
         return $instance;
     }
 }

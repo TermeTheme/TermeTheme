@@ -225,6 +225,7 @@ a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
 }
 ul.terme_social_widgets li {
     margin-bottom: 10px;
+    position: relative;
 }
 ul.terme_social_widgets>li {
     background: #f1f1f1;
@@ -237,4 +238,41 @@ ul.terme_social_widgets>li:nth-child(even) {
 ul.terme_social_widgets>li ul {
     padding-top: 15px;
     display: none;
+}
+ul.terme_social_widgets li.ui-state-highlight {
+    height: 36px;
+    background: #fff;
+    border: 1px dashed #999;
+    padding: 0;
+}
+ul.terme_social_widgets li span.handle {
+    float: right;
+    width: 24px;
+    height: 24px;
+    cursor: all-scroll;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    text-align: center;
+}
+ul.terme_social_widgets li span.handle:after {
+    content: "\f475";
+    display: inline-block;
+
+    font-size: 17px;
+    line-height: 1;
+    font-family: dashicons;
+    text-decoration: inherit;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    text-align: center;
+    -webkit-transition: color .1s ease-in 0;
+    transition: color .1s ease-in 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: rotate(90deg) translateX(3px);
+    -ms-transform: rotate(90deg) translateX(3px);
+    -o-transform: rotate(90deg) translateX(3px);
+    transform: rotate(90deg) translateX(3px);
 }
