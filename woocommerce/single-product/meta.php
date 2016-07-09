@@ -36,10 +36,9 @@ $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 
 	<?php endif; ?>
 
-	<?php echo $product->get_categories( ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce' ) . ' ', '</span>' ); ?>
+	<?php echo $product->get_categories( ', ', '<span class="posted_in"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce' ) . ' ', '</span>' ); ?>
 
-	<?php echo $product->get_tags( ', ', '<span class="product_tags">' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce' ) . ' ', '</span>' ); ?>
-
+	<?php echo $product->get_tags( ' ', '<span class="tagged_as"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp;' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce' ) . ' ', '</span>' ); ?>
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 
 </div>

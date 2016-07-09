@@ -51,4 +51,23 @@ jQuery(document).ready(function($) {
 			jQuery("html, body").animate({ scrollTop: 0 }, "slow");
   		return false;
 		});
+
+    jQuery(document).on('click', '.number_button', function(event) {
+
+      var jQuerybutton = jQuery(this);
+      var oldValue = jQuerybutton.parent().find("input").val();
+
+      if (jQuerybutton.html() == '<i class="fa fa-plus"></i>') {
+        var newVal = parseFloat(oldValue) + 1;
+      } else {
+       // Don't allow decrementing below zero
+        if (oldValue > 1) {
+            var newVal = parseFloat(oldValue) - 1;
+        } else {
+            newVal = 1;
+          }
+    }
+      jQuerybutton.parent().find("input").val(newVal);
+
+  });
 });
