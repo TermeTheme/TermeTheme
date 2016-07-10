@@ -27,26 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-
-
-
-<div class="col-md-4 col-sm-6 col-xs-12">
-	<div class="shop_product">
-		<div class="thumb">
-			<?php woocommerce_template_loop_product_thumbnail(); ?>
-			<a href="#" class="add_to_cart">Add to cart</a>
-			<a href="#" class="permalink">Description</a>
-		</div>
-		<div class="info">
-			<h3><a href="#">Product name</a></h3>
-			<div class="price">2,500$</div>
-		</div><!-- info -->
-	</div><!-- shop_product -->
-</div><!--col-xs-4-->
-
-
 <li <?php post_class(); ?>>
-
 	<?php
 	/**
 	 * woocommerce_before_shop_loop_item hook.
@@ -54,7 +35,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_link_open - 10
 	 */
 	do_action( 'woocommerce_before_shop_loop_item' );
-
 
 	/**
 	 * woocommerce_before_shop_loop_item_title hook.
