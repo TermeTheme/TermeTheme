@@ -35,8 +35,7 @@ a.back_to_top {
     -webkit-transform: translate(50%, 20%);
         -ms-transform: translate(50%, 20%);
             transform: translate(50%, 20%);
-    -webkit-animation-name: top;
-            animation-name: top;
+    animation-namthumbnails: top;
     -webkit-animation-duration: 0.8s;
             animation-duration: 0.8s;
     -webkit-animation-iteration-count: infinite;
@@ -959,7 +958,11 @@ section.latest_news {
     text-align: center;
     font-size: 14px; }
     .shop-carousel .product .thumb .add_to_cart:hover {
-      color: #fff; }
+      background-color: transparent;
+      color: #fff;
+      border-color: #ff322e; }
+      .shop-carousel .product .thumb .add_to_cart:hover:before {
+        background-color: #ff322e; }
   .shop-carousel li:hover .product .thumb .add_to_cart {
     -webkit-transform: translate(-50%, 0);
         -ms-transform: translate(-50%, 0);
@@ -2678,13 +2681,38 @@ footer.footer {
   width: 100%;
   border: #e6e6e6 solid;
   background: #fff;
+  position: relative;
+  overflow: hidden;
   height: 475px;
   height: 47.5rem;
   border-width: 1px;
   border-width: 0.1rem;
   margin-bottom: 20px;
-  margin-bottom: 2rem;
-  position: relative; }
+  margin-bottom: 2rem; }
+  .shop_product .ribbon {
+    background-color: #ff322e;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left: -100px;
+    top: 20px;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-box-shadow: 0 0 10px #888;
+            box-shadow: 0 0 10px #888;
+    z-index: 1; }
+  .shop_product .ribbon a {
+    border: 1px solid #faa;
+    color: #fff;
+    display: block;
+    margin: 1px 0;
+    padding: 10px 120px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 5px #444;
+    font-size: 15px;
+    font-size: 1.5rem; }
 
 .shop_product .thumb {
   position: absolute;
@@ -2762,6 +2790,11 @@ footer.footer {
   min-width: 30%;
   text-align: center;
   font-size: 14px; }
+  .shop_product .thumb .add_to_cart:hover {
+    color: #fff;
+    border-color: #ff322e; }
+    .shop_product .thumb .add_to_cart:hover:before {
+      background-color: #ff322e; }
 
 .shop_product:hover .thumb .add_to_cart {
   -webkit-transform: translate(50%, -50%);
@@ -2791,16 +2824,16 @@ footer.footer {
   min-width: 30%;
   text-align: center;
   font-size: 14px; }
+  .shop_product .thumb .permalink:hover {
+    color: #fff;
+    border-color: #ff322e; }
+    .shop_product .thumb .permalink:hover:before {
+      background-color: #ff322e; }
 
 .shop_product:hover .thumb .permalink {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
-
-.shop_product .thumb .add_to_cart:hover,
-.shop_product .thumb .permalink:hover {
-  background: #ff322e;
-  color: #fff; }
 
 .shop_product_4 {
   width: 100%;
@@ -2946,20 +2979,29 @@ footer.footer {
   border-width: 0.1rem;
   padding-top: 0;
   padding-top: 0; }
-  .product_page span.onsale {
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-border-radius: 0;
-            border-radius: 0;
+  .product_page .ribbon {
     background-color: #ff322e;
-    font-size: 1.2em;
-    width: 100px;
-    width: 10rem;
-    height: 40px;
-    height: 4rem;
-    line-height: 40px;
-    line-height: 4rem; }
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left: -100px;
+    top: 20px;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-box-shadow: 0 0 10px #888;
+            box-shadow: 0 0 10px #888; }
+  .product_page .ribbon a {
+    border: 1px solid #faa;
+    color: #fff;
+    display: block;
+    margin: 1px 0;
+    padding: 10px 120px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 5px #444;
+    font-size: 15px;
+    font-size: 1.5rem; }
   .product_page .images {
     float: left;
     width: 45%;
@@ -2976,14 +3018,25 @@ footer.footer {
               box-shadow: none; }
     .product_page .images .thumbnails a.first {
       clear: both; }
-    .product_page .images .thumbnails a {
-      float: left;
-      width: 33.333333%;
-      padding: 3%;
-      margin-bottom: 1em;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box; }
+    .product_page .images .thumbnails .owl-dots {
+      text-align: center; }
+    .product_page .images .thumbnails .owl-dots .owl-dot {
+      display: inline-block;
+      zoom: 1; }
+    .product_page .images .thumbnails .owl-dots .owl-dot span {
+      width: 10px;
+      height: 10px;
+      margin: 5px 7px;
+      background: #d6d6d6;
+      display: block;
+      -webkit-backface-visibility: visible;
+      -webkit-transition: opacity 200ms ease;
+      transition: opacity 200ms ease;
+      -webkit-border-radius: 30px;
+      border-radius: 30px; }
+    .product_page .images .thumbnails .owl-dots .owl-dot.active span,
+    .product_page .images .thumbnails .owl-dots .owl-dot:hover span {
+      background: #869791; }
   .product_page .summary {
     float: right;
     width: 55%;
@@ -2999,11 +3052,15 @@ footer.footer {
       font-size: 2.5rem;
       padding: 20px 0 0 0;
       padding: 2rem 0 0 0; }
-    .product_page .summary .woocommerce-product-rating .star-rating {
-      font-size: 1.5rem;
-      height: 2rem; }
-      .product_page .summary .woocommerce-product-rating .star-rating span {
-        color: #FFC107; }
+    .product_page .summary .woocommerce-product-rating {
+      line-height: 2.5; }
+      .product_page .summary .woocommerce-product-rating a {
+        color: #979a9f; }
+      .product_page .summary .woocommerce-product-rating .star-rating {
+        font-size: 1.5rem;
+        height: 2rem; }
+        .product_page .summary .woocommerce-product-rating .star-rating span {
+          color: #FFC107; }
     .product_page .summary .product_price p {
       color: #ff322e;
       margin: 0;
@@ -3104,8 +3161,8 @@ footer.footer {
         position: relative;
         overflow: hidden;
         color: #333;
-        -webkit-transition: all .5s;
-        transition: all .5s;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
         margin-right: 10px;
         margin-right: 1rem;
         -webkit-border-radius: 4px;

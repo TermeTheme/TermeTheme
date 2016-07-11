@@ -1,8 +1,8 @@
 <?php
 /**
- * Single Product Sale Flash
+ * Displayed when no products are found matching the current query
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/sale-flash.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/loop/no-products-found.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -13,23 +13,12 @@
  * @see 	    https://docs.woothemes.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $post, $product;
-
 ?>
-<?php if ( $product->is_on_sale() ) : ?>
-
-	<!-- <?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . __( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?> -->
-	<?php echo apply_filters( 'woocommerce_sale_flash',
-	'<div class="ribbon">
-  <a href="#">' . __( 'Sale!', 'woocommerce' ). '</a>
-	</div>'
-  , $post, $product ); ?>
-
-<?php endif; ?>
+<p class="woocommerce-info"><?php _e( 'No products were found matching your selection.', 'woocommerce' ); ?></p>

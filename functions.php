@@ -72,10 +72,11 @@ include TEMPLATEPATH.'/inc/theme_option/index.php';
 include TEMPLATEPATH.'/inc/page-builder/index.php';
 // include TEMPLATEPATH.'/inc/metabox/metabox.php';
 include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
+include TEMPLATEPATH.'/woocommerce/wc_functions.php';
 ?>
+
 <?php
-    function advanced_comment($comment, $args, $depth)
-    {
+    function advanced_comment($comment, $args, $depth)  {
         $GLOBALS['comment'] = $comment;
         ?>
 			 	<li>
@@ -99,7 +100,6 @@ include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 			 		</article>
 				</li>
 					<?php if ($comment->comment_approved == '0') : ?>
-                  <?php endif;
-        ?>
+                  <?php endif;?>
 <?php
     } ?>

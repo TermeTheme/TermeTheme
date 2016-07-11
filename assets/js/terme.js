@@ -70,4 +70,19 @@ jQuery(document).ready(function($) {
       jQuerybutton.parent().find("input").val(newVal);
 
   });
+  jQuery('.owl-carousel').owlCarousel({
+    margin:20,
+    navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>","<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
+    responsive:{
+        0:{
+            items:0
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+})
 });

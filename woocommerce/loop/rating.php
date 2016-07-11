@@ -1,8 +1,8 @@
 <?php
 /**
- * Single Product Sale Flash
+ * Loop Rating
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/sale-flash.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/loop/rating.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -13,23 +13,19 @@
  * @see 	    https://docs.woothemes.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $post, $product;
+global $product;
 
+if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' )
+	return;
 ?>
-<?php if ( $product->is_on_sale() ) : ?>
 
-	<!-- <?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . __( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?> -->
-	<?php echo apply_filters( 'woocommerce_sale_flash',
-	'<div class="ribbon">
-  <a href="#">' . __( 'Sale!', 'woocommerce' ). '</a>
-	</div>'
-  , $post, $product ); ?>
-
+<?php if ( $rating_html = $product->get_rating_html() ) : ?>
+	<?php echo $rating_html; ?>
 <?php endif; ?>
