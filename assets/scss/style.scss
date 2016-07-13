@@ -211,11 +211,11 @@ header.style_3 .main_area .header_ads {
 header .main_menu {
 	float: left;
 	width: 100%;
-	@include rem(( height: 60px, ));
+	@include rem(( height: 50px, ));
 	ul {
 		float: left;
 		width: 100%;
-		@include rem(height, 60px);
+		@include rem(height, 50px);
 		padding: 0;
 		list-style: none;
 		z-index: 999;
@@ -223,7 +223,7 @@ header .main_menu {
 	}
 	ul > li {
 		float: left;
-		@include rem(( height: 60px, line-height: 60px, ));
+		@include rem(( height: 50px, line-height: 50px, ));
 		position: relative;
 	}
 	ul > li:first-child {
@@ -246,7 +246,7 @@ header .main_menu {
 		content: '';
 	}
 	ul > li ul {
-		@include rem(( width: 295px, top: 60px, border-top-width: 3px, transform: translateY(-10px) translateX(-35px), ));
+		@include rem(( width: 295px, top: 50px, border-top-width: 3px, transform: translateY(-10px) translateX(-35px), ));
 		position: absolute;
 		height: auto;
 		left: 0;
@@ -2472,7 +2472,6 @@ footer.footer {
 		left: -100px;
 		top: 20px;
 		transform: rotate(-45deg);
-		box-shadow: 0 0 10px #888;
 		z-index: 1;
 	}
 	.ribbon a {
@@ -2483,7 +2482,6 @@ footer.footer {
 		padding: 10px 120px;
 		text-align: center;
 		text-decoration: none;
-		text-shadow: 0 0 5px #444;
 		@include rem(( font-size: 15px,));
 	}
 }
@@ -2689,6 +2687,25 @@ footer.footer {
 	background: $primary_color;
 	color: #fff;
 }
+.is_on_sale {
+	width: 100%;
+	float: left;
+	position: relative;
+	color: #fff;
+	background-color: #ff967d;
+	@include rem(( padding: 20px,));
+	h2 {
+		margin: 0;
+		display: inline-block;
+		float: left;
+		@include rem(( font-size: 16px,));
+
+	}
+	span {
+		float: right;
+		background-color: #d54e21;
+	}
+}
 .product_page {
 	float: left;
 	width: 100%;
@@ -2696,7 +2713,7 @@ footer.footer {
 	border: solid #e4e4e4;
 	background: #fff;
 	list-style: none;
-	. margin-bottom: 0;
+	margin-bottom: 0;
 	position: relative;
 	overflow: hidden;
 	@include rem(( border-width: 1px, padding-top: 0 ));
@@ -2708,7 +2725,6 @@ footer.footer {
 		left: -100px;
 		top: 20px;
 		transform: rotate(-45deg);
-		box-shadow: 0 0 10px #888;
 	}
 	.ribbon a {
 		border: 1px solid #faa;
@@ -2718,7 +2734,6 @@ footer.footer {
 		padding: 10px 120px;
 		text-align: center;
 		text-decoration: none;
-		text-shadow: 0 0 5px #444;
 		@include rem(( font-size: 15px,));
 	}
 	// span.onsale {
@@ -2944,23 +2959,15 @@ footer.footer {
 			float: left;
 			@include rem(( margin: 20px 0, ));
 			span.posted_in {
-				@include rem((font-size: 15px, ));
+				@include rem((font-size: 15px, padding: 10px 0,));
 				a {
 					color: #979a9f;
 				}
 			}
 			span.tagged_as {
-				float: left;
-				width: 100%;
-				span {
-					@include rem((font-size: 15px, ));
-					color: #979a9f;
-					float: left;
-					display: block;
-					width: 100%;
-				}
+				display: block;
+				@include rem((font-size: 15px, padding: 10px 0,));
 				a {
-					float: left;
 					color: $secondary_color;
 					border: solid #e4e4e4;
 					@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px,));
@@ -3010,57 +3017,6 @@ footer.footer {
 			}
 		}
 	}
-	.woocommerce-tabs {
-		width: 90%;
-		display: block;
-		margin: 0 auto;
-		clear: both;
-		ul.tabs {
-			width: 100%;
-			float: left;
-			margin: 0 auto;
-			border-bottom: 0;
-			padding: 0;
-			list-style: none;
-			li {
-				float: left;
-				border-bottom: solid #fff;
-				@include rem(( border-bottom-width: 2px,));
-				&.active a {
-					font-weight: bold;
-				}
-				a {
-					background: #f6f6f6;
-					color: $secondary_color;
-					font-weight: 500;
-					border: none;
-					float: left;
-					@include rem(( margin-right: 2px, padding: 10px 30px,font-size: 15px,));
-				}
-			}
-			li.active {
-				border-bottom: solid #f6f6f6;
-				@include rem(( border-bottom-width: 2px,));
-			}
-		}
-		.woocommerce-Tabs-panel {
-			clear: both;
-			width: 100%;
-			float: left;
-			margin: 0 auto;
-			display: block;
-			background: #f6f6f6;
-			@include rem(( padding: 20px,margin: 0 auto 20px auto,));
-			p {
-				text-align: justify;
-				@include rem((font-size: 15px, ));
-			}
-			h2 {
-				font-weight: bold;
-				@include rem((font-size: 20px, ));
-			}
-		}
-	}
 	.product_more {
 		float: left;
 		width: 100%;
@@ -3084,6 +3040,99 @@ footer.footer {
 				}
 			}
 		}
+	}
+}
+.woocommerce-tabs {
+	float: left;
+	width: 100%;
+	padding: 0;
+	border: solid #e4e4e4;
+	background: #fff;
+	list-style: none;
+	position: relative;
+	overflow: hidden;
+	@include rem(( border-width: 1px, padding-top: 0, margin: 20px 0,));
+	ul.tabs {
+		width: 100%;
+		margin: 0 auto;
+		border-bottom: 0;
+		padding: 0;
+		list-style: none;
+		background-color: #f3f6f8;
+		@include rem(( height: 50px,));
+		li {
+			float: left;
+			position: relative;
+			box-shadow: inset 0 0 15px #e9eff3;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: 0;
+				transform: translate(-50%,0);
+				transition: all 0.5s;
+				background-color: #a8bece;
+				@include rem(( height: 3px,));
+			}
+			&.active a {
+				border-top: solid $primary_color;
+				background-color: #fff;
+				@include rem(( border-top-width: 3px,));
+			}
+			a {
+				color: $secondary_color;
+				font-weight: 500;
+				border: none;
+				float: left;
+				@include rem(( height: 50px,line-height: 50px, margin-right: 2px, padding: 0 30px,font-size: 15px,));
+				i {
+					color: #a8bece;
+					@include rem(( margin-right: 10px,));
+				}
+			}
+		}
+		li:hover:before {
+			width: 100%;
+		}
+	}
+	.woocommerce-Tabs-panel {
+		clear: both;
+		width: 100%;
+		float: left;
+		margin: 0 auto;
+		display: block;
+		background: #fff;
+		@include rem(( padding: 20px,margin: 0 auto 20px auto,));
+		p {
+			text-align: justify;
+			@include rem((font-size: 15px, ));
+		}
+		h2 {
+			font-weight: bold;
+			@include rem((font-size: 20px, ));
+		}
+	}
+}
+.related {
+	float: left;
+	width: 100%;
+	padding: 0;
+	border: solid #e4e4e4;
+	background: #fff;
+	list-style: none;
+	position: relative;
+	overflow: hidden;
+	@include rem(( border-width: 1px, padding-top: 0, margin: 20px 0,));
+	h2 {
+		width: 100%;
+		margin: 0 auto;
+		border-bottom: 0;
+		padding: 0;
+		list-style: none;
+		background-color: #f3f6f8;
+		font-weight: bold;
+		@include rem(( padding: 0 20px,height: 50px, line-height: 50px,font-size: 16px,));
 	}
 }
 @media (max-width: 768px) {
