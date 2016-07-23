@@ -1,15 +1,5 @@
 <?php global $terme_options; ?>
 		<?php get_header(); ?>
-		<?php if ($terme_options['header_layout'] == '1') {
-			include TEMPLATEPATH . '/inc/header/1.php';
-		}elseif ($terme_options['header_layout'] == '2') {
-			include TEMPLATEPATH . '/inc/header/2.php';
-		}elseif ($terme_options['header_layout'] == '3') {
-			include TEMPLATEPATH . '/inc/header/3.php';
-		}else {
-			include TEMPLATEPATH . '/inc/header/4.php';
-		}
-			?>
 	<main class="main">
 		<div class="container">
 			<div class="row">
@@ -154,25 +144,5 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</main>
-	<?php if ($terme_options['footer_layout'] == '1') {
-		include TEMPLATEPATH . '/inc/footer/1.php';
-	}elseif ($terme_options['footer_layout'] == '2') {
-		include TEMPLATEPATH . '/inc/footer/2.php';
-	}elseif ($terme_options['footer_layout'] == '3') {
-		include TEMPLATEPATH . '/inc/footer/3.php';
-	}elseif ($terme_options['footer_layout'] == '4') {
-		include TEMPLATEPATH . '/inc/footer/4.php';
-	}else {
-		include TEMPLATEPATH . '/inc/footer/5.php';
-	}
-		?>
-	</div><!-- sb-site -->
-	<div class="sb-slidebar sb-left">
-		<div class="sidebar_menu">
-			<?php echo wp_nav_menu(); ?>
-		</div>
-	</div><!-- sb-left -->
-	<?php if($terme_options['scroll-to-top']) { ?>
-	<a href="#top" class="back_to_top"></a>
-	<?php } ?>
+
 	<?php get_footer(); ?>

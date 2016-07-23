@@ -47,18 +47,33 @@ $woocommerce_loop['columns'] = apply_filters( 'woocommerce_related_products_colu
 if ( $products->have_posts() ) : ?>
 
 	<div class="related products">
-
-		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
-
-		<?php woocommerce_product_loop_start(); ?>
+		<header>
+			<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
+			<div class="owl-controls">
+				<div class="owl-nav">
+					<div class="customPrevBtn" style=""><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+					<div class="customNextBtn" style=""><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+				</div>
+			</div>
+		</header>
+<div class="related_product_loop">
+		<!-- <?php woocommerce_product_loop_start(); ?> -->
 
 			<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<div class="item">
+					<div class="related_items">
+					<?php
+					change_product_thumbnail();
+					change_product_title();
+					 ?>
+				 </div>
+				</div>
 
 			<?php endwhile; // end of the loop. ?>
 
-		<?php woocommerce_product_loop_end(); ?>
+		<!-- <?php woocommerce_product_loop_end(); ?> -->
+</div>
 
 	</div>
 

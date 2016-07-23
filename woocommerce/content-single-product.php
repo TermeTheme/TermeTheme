@@ -42,11 +42,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					if ( $product->is_on_sale() ) : ?>
 						<div class="is_on_sale">
-							<h2>Is On Sale!! Bodo Bodo ...</h2>
-							<span>
-								<span><?php echo $off ?></span>
-								<span>off</span>
-							 </span>
+							<h2>Summer Sale</h2>
+							<div class="off_section">
+								<span>
+									<span class="off">off</span>
+									<span class="currency"><?php echo get_woocommerce_currency_symbol(); ?></span>
+									<span class="price"><?php echo $off ?></span>
+
+								 </span>
+
+							</div>
 						</div>
 			<?php endif; ?>
 

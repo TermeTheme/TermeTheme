@@ -127,7 +127,7 @@ section.latest_news {
     margin-left: 1.5rem;
     float: right; }
   section.latest_news .title:after {
-    border-color: transparent #fac014 transparent transparent;
+    border-color: transparent #ff322e transparent transparent;
     left: -7px;
     left: -0.7rem;
     right: auto;
@@ -137,7 +137,7 @@ section.latest_news {
 
 .home_content .box .title {
   border-left: none;
-  border-right: solid #0b1425;
+  border-right: solid #333;
   border-left-width: 0;
   border-left-width: 0;
   border-right-width: 2px;
@@ -283,7 +283,7 @@ footer.footer.style_3 .top_bar .social_menu:before {
   width: 1px;
   height: 50%;
   position: absolute;
-  background: #0b1425;
+  background: #333;
   content: ' ';
   top: 0;
   -webkit-transform: translate(0, 50%);

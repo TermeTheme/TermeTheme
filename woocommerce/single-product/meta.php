@@ -24,6 +24,10 @@ global $post, $product;
 
 $cat_count = sizeof( get_the_terms( $post->ID, 'product_cat' ) );
 $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
+$terms = wp_get_post_terms( $post->ID, 'product_tag', '' );
+
+
+
 
 ?>
 <div class="product_meta">
@@ -36,8 +40,16 @@ $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 	<?php endif; ?>
 
 	<?php echo $product->get_categories( ', ', '<span class="posted_in"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce' ) . ' ', '</span>' ); ?>
+	<?php
+		echo '<span class="tagged_as"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp; Tags: ';
+	 foreach ($terms as $term) {
+		echo '<a href="' . get_tag_link($term->term_id). '" data-termehover="">' . $term->name .'</a>';
+	}
+	echo '</span>';
+ ?>
+	<!-- <?php //echo $product->get_tags( ' ', '<span class="tagged_as"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp;' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce' ) .  $tagsss . '</span>' ); ?> -->
+	<?php do_action( 'woocommerce_product_meta_end' );
 
-	<?php echo $product->get_tags( ' ', '<span class="tagged_as"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp;' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce' ) . ' ', '</span>' ); ?>
-	<?php do_action( 'woocommerce_product_meta_end' ); ?>
+	?>
 
 </div>
