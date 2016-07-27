@@ -16,8 +16,15 @@ function change_product_title() {
  <?php
  // Remove Breadcrumbs
   remove_action('woocommerce_before_main_content','woocommerce_breadcrumb', 20);
-  // Remove Result Count
+ // Remove Result Count
   remove_action('woocommerce_before_shop_loop','woocommerce_result_count', 20);
+ // Remove Sidebar
+ remove_action('woocommerce_sidebar','woocommerce_get_sidebar', 10);
+ // Remove Price Content-Product
+ remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_price', 10);
+ // Remove AddToCart Content-Product
+ remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_add_to_cart', 10);
+
 
 ?>
 <?php
@@ -25,7 +32,7 @@ function change_product_title() {
 function change_product_thumbnail() {
   global $product,$post;?>
   <div class="thumb">
-    <?php echo woocommerce_get_product_thumbnail('wc_product'); ?>
+    <?php echo woocommerce_get_product_thumbnail(''); ?>
     <?php echo apply_filters( 'woocommerce_loop_add_to_cart_link',
     	sprintf( '<a class="add_to_cart" rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s" data-termehover="">%s</a>',
     		esc_url( $product->add_to_cart_url() ),
@@ -46,7 +53,4 @@ function change_product_thumbnail() {
     remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating',5);
 // woocommerce_after_shop_loop_item_title
     // remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs' );
-
-
-
   ?>

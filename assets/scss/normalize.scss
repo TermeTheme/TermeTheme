@@ -40,7 +40,7 @@ a[data-termehover]:before{
   height: 15vw;
   transform: translate(-100% , 100%);
   border-radius: 0 100% 0 0;
-  transition: all 1s;
+  transition: all .5s;
   z-index: -10;
 }
 a[data-termehover]:hover:before{
@@ -61,7 +61,7 @@ button[data-termehover]:before{
   height: 250px;
   transform: translate(-100% , 100%);
   border-radius: 0 100% 0 0;
-  transition: all 1s;
+  transition: all .5s;
   z-index: -10;
 }
 button[data-termehover]:hover:before{

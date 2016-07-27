@@ -72,9 +72,11 @@ header.header {
 	&.style_3 .top_bar,
 	&.style_4 .top_bar {
 		background: $primary_color;
-		border-top: none;
+		border-top: solid $secondary_color;
 		border-bottom: none;
 		color: #fff;
+		@include rem(( border-top-width: 4px,));
+
 	}
 	&.style_1 .main_area,
 	&.style_3 .main_area,
@@ -87,7 +89,7 @@ header.header {
 header.header .today {
 	float: left;
 	i {
-		@include rem(( font-size: 16px, margin: 7px ));
+		@include rem(( font-size: 16px, margin: 9px ));
 		float: left;
 	}
 }
@@ -118,7 +120,7 @@ header.header.style_3 .today {
 header.style_3 .top_bar form {
 	border: none;
 	background: #ff4c4c;
-	@include rem(( height: 40px, ));
+	@include rem(( height: 35px, ));
 	input {
 		background: none;
 		color: $secondary_color;
@@ -319,6 +321,12 @@ header.style_4 .main_menu {
 	}
 	ul > li {
 		@include rem(( margin: 0 20px, ));
+		&:first-child {
+			margin-left: 0;
+			a {
+				padding-left: 0;
+			}
+		}
 	}
 	ul > li:first-child {
 		margin-right: 0;
@@ -374,10 +382,27 @@ header.style_4 .main_area form {
 }
 header.style_4 .main_menu .shopping_cart {
 	float: right;
-	@include rem(( height: 34px, margin-top: 18px, padding: 0 15px, border-radius: 3px, line-height: 34px, font-size: 13px ));
-	background: $primary_color;
+	@include rem(( height: 34px, margin-top: 7px, border-radius: 3px, line-height: 34px, font-size: 13px ));
 	a {
-		color: $secondary_color;
+		color: #fff;
+		span.icon {
+			float: left;
+			background-color: #ff5252;
+
+			@include rem(( padding: 0 10px,font-size: 14px,border-radius: 3px 0 0 3px,));
+		}
+		.count {
+			display: inline-block;
+			background-color: #e54949;
+			@include rem(( padding: 0 10px,font-size: 14px,border-radius: 0 3px 3px 0,));
+			span {
+				display: inline-block;
+				text-align: center;
+				border-radius: 50%;
+				background-color: #ff5252;
+				@include rem(( margin: 0 5px, width: 25px, height: 25px, line-height: 25px,));
+			}
+		}
 	}
 }
 main.main {
@@ -779,7 +804,7 @@ section.latest_news {
 		position: absolute;
 		@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, top: 40px ));
 		color: $secondary_color;
-		background: #fff;
+		background: rgba(255, 255, 255, .9);
 		z-index: 999;
 		left: 50%;
 		transform: translate(-50%, -200%);
@@ -802,7 +827,7 @@ section.latest_news {
 		position: absolute;
 		@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, bottom: 40px ));
 		color: $secondary_color;
-		background: rgba(255, 255, 255, .8);
+		background: rgba(255, 255, 255, .9);
 		z-index: 999;
 		left: 50%;
 		transform: translate(-50%, 200%);
@@ -1185,8 +1210,8 @@ section.latest_news {
 			padding: 0;
 			border: solid #e4e4e4;
 			background: #fff;
-			@include rem(( border-width: 1px, ));
 			margin-bottom: 0;
+			@include rem(( border-width: 1px, ));
 		}
 		ul li {
 			float: left;
@@ -1434,13 +1459,15 @@ footer.footer {
 	&.style_2 .main_area,
 	&.style_4 .main_area,
 	&.style_5 .main_area {
-		padding: 40px 0;
+		padding: 30px 0;
 		background-color: #555;
 		color: #a3a3a3;
 	}
 	&.style_3 .top_bar {
 		background-color: $primary_color;
 		color: $secondary_color;
+		@include rem(( height: 60px, line-height: 60px, ));
+
 	}
 	&.style_5 .top_bar {
 		background-color: $secondary_color;
@@ -1489,7 +1516,7 @@ footer.footer {
 	&.style_3 .bottom_bar,
 	&.style_4 .bottom_bar,
 	&.style_5 .bottom_bar {
-		padding: 30px 0;
+		padding: 20px 0;
 		background-color: $secondary_color;
 		color: #a3a3a3;
 		@include rem(( font-size: 1.4rem, ));
@@ -1567,6 +1594,7 @@ footer.footer {
 				padding: 0;
 				float: none;
 				width: auto;
+				margin: 0;
 			}
 			ul li {
 				float: left;
@@ -1615,6 +1643,8 @@ footer.footer {
 	}
 	&.style_3 .top_bar {
 		.social_menu {
+			@include rem(( height: 60px, ));
+
 			&:after {
 				float: right;
 				width: 1px;
@@ -1638,10 +1668,12 @@ footer.footer {
 			}
 		}
 		.email_contact {
+			@include rem(( height: 60px, ));
+
 			text-align: center;
 			p {
 				color: #fff;
-				@include rem(( margin-top: 30px, font-size: 15px,));
+				@include rem(( font-size: 15px,));
 			}
 		}
 	}
@@ -1837,6 +1869,7 @@ footer.footer {
 		p {
 			text-align: center;
 			float: none;
+			margin-bottom: 0;
 		}
 	}
 }
@@ -2463,26 +2496,26 @@ footer.footer {
 	background: #fff;
 	position: relative;
 	overflow: hidden;
-	@include rem(( height: 475px, border-width: 1px,margin-bottom: 20px, ));
+	@include rem(( height: 460px, border-width: 1px,margin-bottom: 30px, ));
 	.ribbon {
-		background-color: $primary_color;
-		overflow: hidden;
-		white-space: nowrap;
+		width: 0;
+		height: 0;
+		border-top: 65px solid #e54949;
+		border-right: 65px solid transparent;
+		z-index: 10;
 		position: absolute;
-		left: -100px;
-		top: 20px;
-		transform: rotate(-45deg);
-		z-index: 1;
+		left: 0;
+		top: 0;
 	}
 	.ribbon a {
-		border: 1px solid #faa;
 		color: #fff;
-		display: block;
-		margin: 1px 0;
-		padding: 10px 120px;
-		text-align: center;
+		position: absolute;
+		top: -55px;
+		left: 5px;
 		text-decoration: none;
-		@include rem(( font-size: 15px,));
+		font-size: 15px;
+		font-size: 1.5rem;
+		transform: rotate(-45deg);
 	}
 }
 .shop_product .thumb {
@@ -2493,6 +2526,8 @@ footer.footer {
 	height: 75%;
 	background: #ecf0f1;
 	overflow: hidden;
+	border-bottom: #e6e6e6 solid;
+	@include rem(( border-bottom-width:1px ,));
 }
 .shop_product .thumb:before {
 	position: absolute;
@@ -2520,6 +2555,7 @@ footer.footer {
 	transition: background 300ms;
 	@include rem(( padding: 0 10px, ));
 	h3 {
+		font-weight: bold;
 		@include rem(( font-size: 20px, ));
 		a {
 			color: $secondary_color;
@@ -2528,6 +2564,12 @@ footer.footer {
 	.price {
 		@include rem(( font-size: 16px, ));
 		color: #979a9f;
+		del {}
+		ins {
+			color: $primary_color;
+			font-weight: bold;
+			text-decoration: none;
+		}
 	}
 }
 .shop_product:hover .info {
@@ -2542,7 +2584,7 @@ footer.footer {
 	@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, ));
 	color: $secondary_color;
 	top: 50%;
-	background: #fff;
+	background: rgba(255, 255, 255, .9);
 	z-index: 999;
 	left: 0;
 	transform: translate(-100%, -50%);
@@ -2564,7 +2606,7 @@ footer.footer {
 	position: absolute;
 	@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, ));
 	color: $secondary_color;
-	background: rgba(255, 255, 255, .8);
+	background: rgba(255, 255, 255, .9);
 	z-index: 999;
 	top: 50%;
 	right: 0;
@@ -2654,7 +2696,7 @@ footer.footer {
 	color: $secondary_color;
 	top: 0;
 	left: 50%;
-	background: #fff;
+	background: rgba(255, 255, 255, .9);
 	z-index: 999;
 	transform: translate(-50%, -100%);
 	min-width: 30%;
@@ -2669,7 +2711,7 @@ footer.footer {
 	position: absolute;
 	@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, ));
 	color: $secondary_color;
-	background: rgba(255, 255, 255, .8);
+	background: rgba(255, 255, 255, .9);
 	z-index: 999;
 	bottom: 0;
 	left: 50%;
@@ -2736,23 +2778,24 @@ footer.footer {
 	border-top: none;
 	@include rem(( border-width: 1px, padding-top: 0 ));
 	.ribbon {
-		background-color: $primary_color;
-		overflow: hidden;
-		white-space: nowrap;
+		width: 0;
+		height: 0;
+		border-top: 65px solid #e54949;
+		border-right: 65px solid transparent;
+		z-index: 10;
 		position: absolute;
-		left: -100px;
-		top: 20px;
-		transform: rotate(-45deg);
+		left: 0;
+		top: 0;
 	}
 	.ribbon a {
-		border: 1px solid #faa;
 		color: #fff;
-		display: block;
-		margin: 1px 0;
-		padding: 10px 120px;
-		text-align: center;
+		position: absolute;
+		top: -55px;
+		left: 5px;
 		text-decoration: none;
-		@include rem(( font-size: 15px,));
+		font-size: 15px;
+		font-size: 1.5rem;
+		transform: rotate(-45deg);
 	}
 	// span.onsale {
 	// 	position: absolute;
@@ -2793,7 +2836,6 @@ footer.footer {
 			.owl-dots {
 				text-align: center;
 				@include rem(( padding-top: 10px,));
-
 			}
 			.owl-dots .owl-dot {
 				display: inline-block;
@@ -3186,7 +3228,7 @@ footer.footer {
 				color: $secondary_color;
 				top: 0;
 				left: 50%;
-				background: #fff;
+				background: rgba(255, 255, 255, .9);
 				z-index: 999;
 				transform: translate(-50%, -100%);
 				min-width: 30%;
@@ -3198,15 +3240,14 @@ footer.footer {
 				}
 				&:before {
 					background-color: $primary_color;
-					transition: all .5s;
-
+					transition: all 0.5s;
 				}
 			}
 			a.permalink {
 				position: absolute;
 				@include rem(( padding: 0 15px, height: 40px, line-height: 40px, border-radius: 3px, ));
 				color: $secondary_color;
-				background: rgba(255, 255, 255, .8);
+				background: rgba(255, 255, 255, .9);
 				z-index: 999;
 				bottom: 0;
 				left: 50%;
@@ -3220,7 +3261,7 @@ footer.footer {
 				}
 				&:before {
 					background-color: $primary_color;
-					transition: all .5s;
+					transition: all 0.5s;
 				}
 			}
 		}
@@ -3278,8 +3319,6 @@ footer.footer {
 	}
 	.owl-dots {
 		text-align: center;
-
-
 	}
 	.owl-dots .owl-dot {
 		display: inline-block;
@@ -3617,4 +3656,285 @@ a.mobile_menu.search_active:after,
 html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
 	-webkit-transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
 	transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
+}
+.woocommerce {
+	#tab-reviews {
+		padding: 0;
+		#reviews {
+			padding: 0;
+			#comments {
+				h2 {
+					@include rem((padding: 0 20px,));
+				}
+				ol.commentlist {
+					width: 100%;
+					padding: 0;
+					margin: 0;
+					li {
+						margin: 0;
+						border-bottom: solid #e4e4e4;
+						@include rem(( padding: 25px 0, border-bottom-width: 1px,));
+						.comment_container {
+							position: relative;
+							@include rem(( margin: 0 50px,));
+							.comment-text {
+								border: none;
+								@include rem(( margin-left: 100px));
+								.star-rating {
+									font-size: 1.5em;
+									color: #FFC107;
+								}
+								.meta {
+									@include rem(( font-size: 14px,));
+								}
+							}
+						}
+					}
+				}
+			}
+			#review_form_wrapper {
+				@include rem((padding:20px,));
+			}
+		}
+	}
+}
+#reviews #comments ol.commentlist li {
+	img.avatar {
+		border-radius: 50%;
+		@include rem(( width: 75px !important, padding: 25px 0,));
+	}
+}
+// Woocommerce Add To cart
+.woocommerce {
+	form {
+		@include rem(( padding: 20px 20px 0 20px,font-size: 14px,));
+		table.shop_table {
+			border-collapse: collapse;
+			border: solid #e9eff3;
+			@include rem(( border-width: 1px,));
+			thead {
+				background-color: #f7f9fa;
+				th {
+					padding: 15px 0;
+					text-align: center;
+				}
+			}
+			tbody {
+				tr {
+					td {
+						border: solid #e9eff3;
+						@include rem(( padding: 10px,border-width: 1px,));
+						&.product-remove {
+							background-color: #ffedee;
+							text-align: center;
+							border-right: none;
+							a {
+								display: inline-block;
+								color: #d54e21 !important;
+								@include rem(( width: 20px, height: 20px, line-height: 20px, ));
+								&:hover {
+									background-color: transparent;
+								}
+							}
+						}
+						&.product-thumbnail {
+							border-right: none;
+							border-left: none;
+							img {
+								@include rem(( width: 110px,));
+							}
+						}
+						&.product-name {
+							font-weight: bold;
+							border-left: none;
+							a {
+								color: #333;
+							}
+						}
+						&.product-price {
+							text-align: center;
+							font-weight: bold;
+						}
+						&.product-quantity {
+							.quantity {
+								float: right;
+								input {
+									border: solid #979a9f;
+									display: inline-block;
+									text-align: center;
+									font-weight: bold;
+									@include rem((width: 70px,margin: 0 10px,height: 35px,border-width: 1px,border-radius: 4px, font-size: 14px,));
+								}
+								input[type=number]::-webkit-inner-spin-button,
+								input[type=number]::-webkit-outer-spin-button {
+									-webkit-appearance: none;
+									margin: 0;
+								}
+								.number_button {
+									border: solid #979a9f;
+									text-align: center;
+									float: right;
+									color: #979a9f;
+									cursor: pointer;
+									position: relative;
+									@include rem((width: 35px, height: 35px,line-height: 25px,border-width: 1px,padding: 5px,border-radius: 4px,));
+									i {
+										position: absolute;
+										top: 50%;
+										left: 50%;
+										transform: translate(-50%,-50%);
+									}
+								}
+							}
+						}
+						&.product-subtotal {
+							text-align: center;
+							font-weight: bold;
+							color: #4ab866;
+						}
+					}
+				}
+			}
+			.coupon {
+				input[type="text"] {
+					width: auto;
+				}
+				input[name="apply_coupon"] {
+					background-color: #00aadc;
+					color: #fff;
+				}
+			}
+		}
+	}
+	.cart-collaterals {
+		@include rem(( padding: 0 20px,font-size: 14px,));
+		.cart_totals {
+			h2 {
+				padding: 0;
+				color: #4ab866;
+				font-weight: bold;
+				@include rem(( font-size: 16px,));
+			}
+		}
+		table.shop_table {
+			border: 1px solid #c0f0c1;
+			td,
+			th {
+				@include rem(( padding: 20px,));
+			}
+			tr.order-total {
+				font-weight: bold;
+				color: #4ab866;
+				background-color: #f7fff7;
+				@include rem(( font-size: 16px,));
+				td,
+				th {
+					border-top: 1px solid #c0f0c1;
+				}
+			}
+		}
+		.wc-proceed-to-checkout {
+			a {
+				background-color: #4ab866;
+				float: right;
+				@include rem(( font-size: 14px,));
+				&:hover {
+					background-color: #3d8e33;
+				}
+			}
+		}
+	}
+	//Checkout
+	input {
+		height: 35px;
+	}
+	.woocommerce-info {
+		margin: 0 !important;
+		background-color: #f3f6f8;
+		border-top-color: #4ab866;
+		@include rem(( height: 50px, line-height: 47px,padding: 0 0 0 40px !important,));
+		&:before {
+			top: 0;
+		}
+	}
+	form.checkout_coupon {
+		border: solid #e9eff3;
+		@include rem(( margin: 20px,border-width: 1px,));
+		p.form-row {
+			margin: 0;
+			box-sizing: border-box;
+		}
+		p {
+			&.form-row-first {
+				width: 80%;
+			}
+			&.form-row-last {
+				width: 20%;
+				input[name="apply_coupon"] {
+					background-color: #00aadc;
+					color: #fff;
+				}
+			}
+		}
+	}
+	form.checkout {
+		p {
+			margin: 0;
+			label {
+				color: $secondary_color;
+				@include rem(( font-size: 12px,));
+			}
+			&.woocommerce-invalid input[type="text"] {
+				border-bottom: solid $primary_color;
+				@include rem(( border-width: 1px,));
+			}
+			&.woocommerce-validated input[type="text"] {
+				border-bottom: solid #4ab866;
+				@include rem(( border-width: 1px,));
+			}
+		}
+		#order_review {
+			.shop_table {
+				tfoot {
+					border: 1px solid #c0f0c1;
+					td,
+					th {
+						border-top: 1px solid #c0f0c1;
+					}
+				}
+				.order-total {
+					color: #4ab866;
+					background-color: #f7fff7;
+					.woocommerce-Price-amount {
+						@include rem(( font-size: 16px,));
+					}
+				}
+			}
+			#payment {
+				background-color: #f3f6f8;
+				ul {
+					border-bottom: none;
+				}
+				input {
+					height: auto;
+					&#place_order {
+						background-color: #4ab866;
+					}
+				}
+				img {
+					width: auto;
+					display: inherit;
+				}
+				.payment_box {
+					background-color: #e9eff3;
+					&:before {
+						border: 1em solid #e9eff3;
+						border-right-color: transparent;
+						border-left-color: transparent;
+						border-top-color: transparent;
+					}
+				}
+			}
+		}
+	}
 }

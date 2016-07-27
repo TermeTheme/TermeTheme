@@ -15,7 +15,7 @@
         bloginfo('name');
       }
      ?>
-</title>
+   </title>
 	<?php if ( isset($terme_options['favicon_57']['url']) && !empty ($terme_options['favicon_57']['url'])) { ?>
 		<link rel="shortcut icon" href="<?php echo $terme_options['favicon_57']['url']; ?>" />
 	<?php } elseif (isset($terme_options['favicon_72']['url']) && !empty ($terme_options['favicon_72']['url'])) { ?>

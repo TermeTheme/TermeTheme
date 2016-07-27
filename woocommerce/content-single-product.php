@@ -37,9 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 			<?php
 					global $post, $product;
-
 					$off = $product->regular_price - $product->sale_price;
-
 					if ( $product->is_on_sale() ) : ?>
 						<div class="is_on_sale">
 							<h2>Summer Sale</h2>

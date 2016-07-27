@@ -1,3 +1,6 @@
+<?php global $terme_options; ?>
+
+
 <header class="header style_4">
 	<?php if ( $terme_options['hide_top_bar'] == '0' ) { ?>
 
@@ -51,10 +54,16 @@
 				<div class="col-xs-12">
 						<?php echo wp_nav_menu(); ?>
 					<div class="shopping_cart">
-						<a href="#"><i class="fa fa-shopping-bag"></i> Cart</a>
+						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+							<span class="icon"><i class="fa fa-shopping-bag"></i></span>
+							<div class="count">
+								Cart
+								<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
+							</div>
+						</a>
 					</div><!-- cart -->
-				</div><!-- col-xs-12 -->
-			</div><!-- row -->
-		</div><!-- container -->
+					</div><!-- col-xs-12 -->
+				</div><!-- row -->
+			</div><!-- container -->
 	</div><!-- main_menu -->
 </header>

@@ -45,9 +45,7 @@
       <li><a href="#">Privacy</a></li>
     </ul>
     <?php if($terme_options['copyright-footer']) { ?>
-    <p>
       <?php echo $terme_options['footer-text']; ?>
-    </p>
     <?php } ?>
 
   </div>

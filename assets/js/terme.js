@@ -1,4 +1,7 @@
 jQuery(document).ready(function($) {
+
+
+
     jQuery("#typed").typed({
         stringsElement: jQuery('#typed-strings'),
         typeSpeed: 30,
@@ -116,4 +119,12 @@ $('.customPrevBtn').click(function() {
     // Parameters has to be in square bracket '[]'
     owl.trigger('prev.owl.carousel', [300]);
 })
+
+// jQuery("input[type=text]").focus(function() {
+//     jQuery(this).prev().addClass('oof');
+// });
+// jQuery("input[type=text]").blur(function() {
+//     jQuery(this).prev().removeClass('oof');
+// });
+
 });
