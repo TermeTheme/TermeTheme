@@ -86,3 +86,22 @@ function terme_breadcrumb() {
     }
     echo '</ul></div>';
 }
+/*-----------------------------------------------------------------------------------*/
+# Terme Add Span Count To Category
+/*-----------------------------------------------------------------------------------*/
+
+add_filter('wp_list_categories', 'add_span_cat_count');
+function add_span_cat_count($links) {
+$links = str_replace('</a> (', '</a> <span>', $links);
+$links = str_replace(')', ')</span>', $links);
+return $links;
+}
+/*-----------------------------------------------------------------------------------*/
+# Terme Add Custom Data-attribute To Tag
+/*-----------------------------------------------------------------------------------*/
+add_filter('wp_tag_cloud','add_data_the_tags');
+function add_data_the_tags($html){
+    $postid = get_the_ID();
+    $html = str_replace('<a','<a data-termehover=""',$html);
+    return $html;
+}

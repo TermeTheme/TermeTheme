@@ -34,9 +34,9 @@ function terme_sidebars()
         'name' => 'Terme Sidebar',
         'id' => 'sidebar',
         'before_widget' => '<section>',
-        'after_widget' => '</section>',
+        'after_widget' => '</div></section>',
         'before_title' => '<h4>',
-        'after_title' => '</h4>',
+        'after_title' => '</h4><div class="widget_body">',
     ));
     register_sidebar(array(
         'name' => 'footer Widget',

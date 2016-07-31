@@ -14,9 +14,6 @@ class Terme_Socials_Networks extends WP_Widget {
     public function widget( $args, $instance ) {
 
         $networks = (!empty($instance['terme_social'])) ? $instance['terme_social'] : array();
-        echo '<pre style="display: none">';
-        print_r($networks);
-        echo '</pre>';
         echo '<section class="social_widget"><ul>';
         foreach ($networks as $network_key => $network) {
             // $status = $network['status'];

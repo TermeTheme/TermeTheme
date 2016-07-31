@@ -201,30 +201,58 @@ header.style_3 .top_bar form {
 
 .top_bar .shopping_cart {
   float: right;
-  margin-right: 30px;
-  margin-right: 3rem;
-  height: 35px;
-  height: 3.5rem; }
+  margin-right: 10px;
+  margin-right: 1rem;
+  height: 25px;
+  height: 2.5rem;
+  margin-top: 5px;
+  margin-top: 0.5rem;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  -webkit-border-radius: 0.3rem;
+          border-radius: 0.3rem;
+  line-height: 25px;
+  line-height: 2.5rem;
+  font-size: 13px;
+  font-size: 1.3rem; }
   .top_bar .shopping_cart a {
-    height: 25px;
-    height: 2.5rem;
-    line-height: 25px;
-    line-height: 2.5rem;
-    padding: 0 15px;
-    padding: 0 1.5rem;
-    -webkit-border-radius: 3px;
-            border-radius: 3px;
-    -webkit-border-radius: 0.3rem;
-            border-radius: 0.3rem;
-    font-size: 13px;
-    font-size: 1.3rem;
-    background: #333;
-    color: #fff;
-    display: inline-block; }
-    .top_bar .shopping_cart a i {
-      color: #ff322e;
-      margin-right: 5px;
-      margin-right: 0.5rem; }
+    color: #fff; }
+    .top_bar .shopping_cart a span.icon {
+      float: left;
+      background-color: #ff5252;
+      padding: 0 10px;
+      padding: 0 1rem;
+      font-size: 14px;
+      font-size: 1.4rem;
+      -webkit-border-radius: 3px 0 0 3px;
+              border-radius: 3px 0 0 3px;
+      -webkit-border-radius: 0.3rem 0 0 0.3rem;
+              border-radius: 0.3rem 0 0 0.3rem; }
+    .top_bar .shopping_cart a .count {
+      display: inline-block;
+      background-color: #e54949;
+      padding: 0 10px;
+      padding: 0 1rem;
+      font-size: 14px;
+      font-size: 1.4rem;
+      -webkit-border-radius: 0 3px 3px 0;
+              border-radius: 0 3px 3px 0;
+      -webkit-border-radius: 0 0.3rem 0.3rem 0;
+              border-radius: 0 0.3rem 0.3rem 0; }
+      .top_bar .shopping_cart a .count span {
+        display: inline-block;
+        text-align: center;
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+        background-color: #ff5252;
+        margin: 0 5px;
+        margin: 0 0.5rem;
+        width: 20px;
+        width: 2rem;
+        height: 20px;
+        height: 2rem;
+        line-height: 20px;
+        line-height: 2rem; }
 
 header.style_1 .main_area .logo,
 header.style_3 .main_area .logo,
@@ -753,8 +781,8 @@ section.latest_news {
   margin-top: 3rem;
   border-width: 1px;
   border-width: 0.1rem;
-  min-height: 375px;
-  min-height: 37.5rem; }
+  min-height: 465px;
+  min-height: 46.5rem; }
   .big_post .thumb {
     float: left;
     width: 100%; }
@@ -1048,8 +1076,20 @@ section.latest_news {
   padding-top: 30px;
   padding-top: 3rem; }
   #sidebar section {
+    float: left;
+    width: 100%;
     margin-top: 20px; }
-    #sidebar section ul {
+    #sidebar section h4 {
+      float: left;
+      margin-top: 0;
+      font-weight: bold;
+      margin-bottom: 15px;
+      margin-bottom: 1.5rem; }
+    #sidebar section a.more {
+      float: right;
+      line-height: 20px;
+      line-height: 2rem; }
+    #sidebar section .widget_body {
       float: right;
       width: 100%;
       padding: 0;
@@ -1061,6 +1101,236 @@ section.latest_news {
       padding-top: 0;
       padding-top: 0;
       margin-bottom: 0; }
+      #sidebar section .widget_body ul {
+        list-style: none;
+        padding: 0;
+        margin: 0; }
+      #sidebar section .widget_body ul li.cat-item {
+        float: left;
+        width: 100%;
+        padding: 10px 15px;
+        padding: 1rem 1.5rem; }
+        #sidebar section .widget_body ul li.cat-item a {
+          display: inline-block;
+          color: #333;
+          font-size: 16px;
+          font-size: 1.6rem; }
+          #sidebar section .widget_body ul li.cat-item a:hover {
+            color: #ff322e; }
+        #sidebar section .widget_body ul li.cat-item span {
+          float: right;
+          font-size: 16px; }
+        #sidebar section .widget_body ul li.cat-item ul.children li:last-child {
+          padding-bottom: 0; }
+      #sidebar section .widget_body ul li.cat-item:hover > a {
+        color: #ff322e; }
+      #sidebar section .widget_body ul li.cat-item:before {
+        content: "\f105";
+        font: normal normal normal 20px/1 FontAwesome;
+        float: left;
+        margin-right: 10px;
+        margin-right: 1rem;
+        line-height: 20px;
+        line-height: 2rem; }
+      #sidebar section .widget_body ul li.cat-item:hover:before {
+        color: #ff322e; }
+      #sidebar section .widget_body ul li.cat-item:hover > span {
+        color: #ff322e; }
+      #sidebar section .widget_body .tagcloud {
+        float: right;
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        background: #fff;
+        margin-bottom: 0;
+        padding: 15px;
+        padding: 1.5rem; }
+        #sidebar section .widget_body .tagcloud a {
+          position: relative;
+          float: left;
+          color: #333;
+          border: solid #e4e4e4;
+          overflow: hidden;
+          z-index: 10;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+          border-width: 1px;
+          border-width: 0.1rem;
+          padding: 5px 10px;
+          padding: 0.5rem 1rem;
+          margin: 5px;
+          margin: 0.5rem;
+          font-size: 15px !important;
+          font-size: 1.5rem !important; }
+          #sidebar section .widget_body .tagcloud a:hover {
+            color: #fff;
+            border-color: #333; }
+            #sidebar section .widget_body .tagcloud a:hover:before {
+              background-color: #333; }
+      #sidebar section .widget_body figure {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+        transition: transform 0.5s, -webkit-transform 0.5s;
+        overflow: hidden;
+        cursor: pointer; }
+        #sidebar section .widget_body figure img {
+          width: 100%;
+          height: auto;
+          opacity: 0.95;
+          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
+          -webkit-transform: scale3d(1.05, 1.05, 1);
+                  transform: scale3d(1.05, 1.05, 1); }
+        #sidebar section .widget_body figure figcaption {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+          pointer-events: none; }
+          #sidebar section .widget_body figure figcaption span.play {
+            float: right;
+            -webkit-transform: translate3d(50%, -50%, 0);
+                    transform: translate3d(50%, -50%, 0);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            -webkit-border-radius: 50%;
+                    border-radius: 50%;
+            top: 50%;
+            right: 50%;
+            position: relative;
+            width: 75px;
+            width: 7.5rem;
+            height: 75px;
+            height: 7.5rem;
+            line-height: 75px;
+            line-height: 7.5rem;
+            font-size: 30px;
+            font-size: 3rem; }
+          #sidebar section .widget_body figure figcaption:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 0;
+            -webkit-transform: translate3d(0, 50%, 0);
+                    transform: translate3d(0, 50%, 0);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(72, 76, 97, 0)), color-stop(75%, rgba(51, 51, 51, 0.5)));
+            background: -webkit-linear-gradient(top, rgba(72, 76, 97, 0) 0%, rgba(51, 51, 51, 0.5) 75%);
+            background: linear-gradient(to bottom, rgba(72, 76, 97, 0) 0%, rgba(51, 51, 51, 0.5) 75%); }
+          #sidebar section .widget_body figure figcaption a {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            color: #fff;
+            z-index: 2;
+            padding: 15px 15px 0 15px;
+            padding: 1.5rem 1.5rem 0 1.5rem; }
+            #sidebar section .widget_body figure figcaption a h2 {
+              margin-top: 0;
+              font-weight: bold;
+              -webkit-transition: all 0.4s;
+              transition: all 0.4s;
+              font-size: 20px;
+              font-size: 2rem; }
+              #sidebar section .widget_body figure figcaption a h2:after {
+                content: '';
+                background-color: #fff;
+                width: 0;
+                display: block;
+                -webkit-transition: all 0.4s;
+                transition: all 0.4s;
+                margin: 5px 0;
+                margin: 0.5rem 0;
+                height: 1px;
+                height: 0.1rem; }
+            #sidebar section .widget_body figure figcaption a .info {
+              position: absolute;
+              bottom: 0;
+              -webkit-transition: all 0.4s;
+              transition: all 0.4s;
+              -webkit-transform: translate(0, 100%);
+                  -ms-transform: translate(0, 100%);
+                      transform: translate(0, 100%);
+              opacity: 0;
+              font-size: 15px;
+              font-size: 1.5rem; }
+              #sidebar section .widget_body figure figcaption a .info span {
+                margin-right: 30px;
+                margin-right: 3rem; }
+      #sidebar section .widget_body figure:hover img {
+        opacity: 0.9;
+        -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1); }
+      #sidebar section .widget_body figure:hover figcaption span.play {
+        -webkit-border-radius: 0;
+                border-radius: 0;
+        top: 0;
+        right: 0;
+        left: auto;
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        background-color: #ff322e;
+        width: 45px;
+        width: 4.5rem;
+        height: 45px;
+        height: 4.5rem;
+        line-height: 45px;
+        line-height: 4.5rem;
+        font-size: 20px;
+        font-size: 2rem; }
+        #sidebar section .widget_body figure:hover figcaption span.play i {
+          -webkit-animation-name: beat;
+                  animation-name: beat;
+          -webkit-animation-duration: 0.8s;
+                  animation-duration: 0.8s;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite;
+          -webkit-animation-direction: alternate;
+                  animation-direction: alternate; }
+@-webkit-keyframes beat {
+  to {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3); } }
+@keyframes beat {
+  to {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3); } }
+      #sidebar section .widget_body figure:hover figcaption:after {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s; }
+      #sidebar section .widget_body figure:hover figcaption h2 {
+        -webkit-transform: translate(0, -100%);
+            -ms-transform: translate(0, -100%);
+                transform: translate(0, -100%); }
+      #sidebar section .widget_body figure:hover figcaption h2:after {
+        width: 100%;
+        background-color: #e4e4e4; }
+      #sidebar section .widget_body figure:hover figcaption .info {
+        opacity: 1;
+        -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+                transform: translate(0, -50%); }
   #sidebar section:first-child {
     margin-top: 0; }
   #sidebar .social_widget {
@@ -1194,56 +1464,6 @@ section.latest_news {
             -ms-transform: translate(-30%, -50%);
                 transform: translate(-30%, -50%);
         color: #fff; }
-  #sidebar .category {
-    float: left;
-    width: 100%;
-    margin-top: 20px; }
-    #sidebar .category h4 {
-      float: left;
-      margin-top: 0;
-      margin-bottom: 15px;
-      margin-bottom: 1.5rem; }
-    #sidebar .category ul {
-      float: right;
-      width: 100%;
-      padding: 0;
-      border: solid #e4e4e4;
-      background: #fff;
-      list-style: none;
-      border-width: 1px;
-      border-width: 0.1rem;
-      padding-top: 0;
-      padding-top: 0;
-      margin-bottom: 0; }
-    #sidebar .category ul li {
-      float: left;
-      width: 100%;
-      padding: 10px 15px;
-      padding: 1rem 1.5rem; }
-      #sidebar .category ul li a {
-        display: block;
-        color: #333;
-        font-size: 18px;
-        font-size: 1.8rem; }
-        #sidebar .category ul li a:hover {
-          color: #ff322e; }
-        #sidebar .category ul li a span {
-          float: right;
-          font-size: 16px; }
-    #sidebar .category ul li:hover h3 a {
-      color: #ff322e; }
-    #sidebar .category ul li:before {
-      content: "\f101";
-      font: normal normal normal 14px/1 FontAwesome;
-      float: left;
-      margin-right: 10px;
-      margin-right: 1rem;
-      line-height: 20px;
-      line-height: 2rem; }
-    #sidebar .category ul li:hover:before {
-      color: #ff322e; }
-    #sidebar .category ul li:hover span {
-      color: #ff322e; }
   #sidebar .news {
     float: left;
     width: 100%;
@@ -1456,246 +1676,6 @@ section.latest_news {
       color: #ff322e; }
     #sidebar .last_articles ul li .time {
       color: #979a9f; }
-  #sidebar .video {
-    float: left;
-    width: 100%;
-    margin-top: 20px; }
-    #sidebar .video h4 {
-      float: left;
-      margin-top: 0;
-      margin-bottom: 15px;
-      margin-bottom: 1.5rem; }
-    #sidebar .video a.more {
-      float: right;
-      line-height: 20px;
-      line-height: 2rem; }
-    #sidebar .video ul {
-      float: right;
-      width: 100%;
-      list-style: none;
-      padding: 0;
-      border: solid #e4e4e4;
-      background: #fff;
-      border-width: 1px;
-      border-width: 0.1rem;
-      margin-bottom: 0; }
-    #sidebar .video ul li {
-      float: left;
-      width: 100%;
-      padding: 15px 15px 0 15px;
-      padding: 1.5rem 1.5rem 0 1.5rem; }
-      #sidebar .video ul li a {
-        display: block; }
-    #sidebar .video ul li:last-child {
-      padding-bottom: 15px;
-      padding-bottom: 1.5rem; }
-    #sidebar .video figure {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      -webkit-transition: -webkit-transform 0.5s;
-      transition: -webkit-transform 0.5s;
-      transition: transform 0.5s;
-      transition: transform 0.5s, -webkit-transform 0.5s;
-      overflow: hidden;
-      cursor: pointer; }
-      #sidebar .video figure img {
-        width: 100%;
-        height: auto;
-        opacity: 0.95;
-        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-        transition: opacity 0.35s, -webkit-transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
-        -webkit-transform: scale3d(1.05, 1.05, 1);
-                transform: scale3d(1.05, 1.05, 1); }
-      #sidebar .video figure figcaption {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-        pointer-events: none; }
-        #sidebar .video figure figcaption span.play {
-          float: right;
-          -webkit-transform: translate3d(50%, -50%, 0);
-                  transform: translate3d(50%, -50%, 0);
-          text-align: center;
-          background-color: rgba(255, 255, 255, 0.5);
-          color: #fff;
-          -webkit-transition: all 0.5s;
-          transition: all 0.5s;
-          -webkit-border-radius: 50%;
-                  border-radius: 50%;
-          top: 50%;
-          right: 50%;
-          position: relative;
-          width: 75px;
-          width: 7.5rem;
-          height: 75px;
-          height: 7.5rem;
-          line-height: 75px;
-          line-height: 7.5rem;
-          font-size: 30px;
-          font-size: 3rem; }
-        #sidebar .video figure figcaption:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          z-index: 0;
-          -webkit-transform: translate3d(0, 50%, 0);
-                  transform: translate3d(0, 50%, 0);
-          background: -webkit-gradient(linear, left top, left bottom, from(rgba(72, 76, 97, 0)), color-stop(75%, rgba(51, 51, 51, 0.5)));
-          background: -webkit-linear-gradient(top, rgba(72, 76, 97, 0) 0%, rgba(51, 51, 51, 0.5) 75%);
-          background: linear-gradient(to bottom, rgba(72, 76, 97, 0) 0%, rgba(51, 51, 51, 0.5) 75%); }
-        #sidebar .video figure figcaption a {
-          position: absolute;
-          width: 100%;
-          bottom: 0;
-          left: 0;
-          color: #fff;
-          z-index: 2;
-          padding: 15px 15px 0 15px;
-          padding: 1.5rem 1.5rem 0 1.5rem; }
-          #sidebar .video figure figcaption a h2 {
-            margin-top: 0;
-            font-weight: bold;
-            -webkit-transition: all 0.4s;
-            transition: all 0.4s;
-            font-size: 20px;
-            font-size: 2rem; }
-            #sidebar .video figure figcaption a h2:after {
-              content: '';
-              background-color: #fff;
-              width: 0;
-              display: block;
-              -webkit-transition: all 0.4s;
-              transition: all 0.4s;
-              margin: 5px 0;
-              margin: 0.5rem 0;
-              height: 1px;
-              height: 0.1rem; }
-          #sidebar .video figure figcaption a .info {
-            position: absolute;
-            bottom: 0;
-            -webkit-transition: all 0.4s;
-            transition: all 0.4s;
-            -webkit-transform: translate(0, 100%);
-                -ms-transform: translate(0, 100%);
-                    transform: translate(0, 100%);
-            opacity: 0;
-            font-size: 15px;
-            font-size: 1.5rem; }
-            #sidebar .video figure figcaption a .info span {
-              margin-right: 30px;
-              margin-right: 3rem; }
-    #sidebar .video figure:hover img {
-      opacity: 0.9;
-      -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1); }
-    #sidebar .video figure:hover figcaption span.play {
-      -webkit-border-radius: 0;
-              border-radius: 0;
-      top: 0;
-      right: 0;
-      left: auto;
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0);
-      background-color: #ff322e;
-      width: 45px;
-      width: 4.5rem;
-      height: 45px;
-      height: 4.5rem;
-      line-height: 45px;
-      line-height: 4.5rem;
-      font-size: 20px;
-      font-size: 2rem; }
-      #sidebar .video figure:hover figcaption span.play i {
-        -webkit-animation-name: beat;
-                animation-name: beat;
-        -webkit-animation-duration: 0.8s;
-                animation-duration: 0.8s;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-direction: alternate;
-                animation-direction: alternate; }
-@-webkit-keyframes beat {
-  to {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3); } }
-@keyframes beat {
-  to {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3); } }
-    #sidebar .video figure:hover figcaption:after {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0);
-      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-      transition: opacity 0.35s, -webkit-transform 0.35s;
-      transition: opacity 0.35s, transform 0.35s;
-      transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s; }
-    #sidebar .video figure:hover figcaption h2 {
-      -webkit-transform: translate(0, -100%);
-          -ms-transform: translate(0, -100%);
-              transform: translate(0, -100%); }
-    #sidebar .video figure:hover figcaption h2:after {
-      width: 100%;
-      background-color: #e4e4e4; }
-    #sidebar .video figure:hover figcaption .info {
-      opacity: 1;
-      -webkit-transform: translate(0, -50%);
-          -ms-transform: translate(0, -50%);
-              transform: translate(0, -50%); }
-  #sidebar .tags {
-    float: left;
-    width: 100%;
-    margin-top: 20px; }
-    #sidebar .tags h4 {
-      float: left;
-      margin-top: 0;
-      margin-bottom: 15px;
-      margin-bottom: 1.5rem; }
-    #sidebar .tags .tagcloud {
-      float: right;
-      width: 100%;
-      list-style: none;
-      padding: 0;
-      border: solid #e4e4e4;
-      background: #fff;
-      border-width: 1px;
-      border-width: 0.1rem;
-      padding: 15px;
-      padding: 1.5rem;
-      margin-bottom: 0; }
-    #sidebar .tags .tagcloud a {
-      position: relative;
-      float: left;
-      color: #333;
-      border: solid #e4e4e4;
-      overflow: hidden;
-      z-index: 10;
-      -webkit-transition: all 1s;
-      transition: all 1s;
-      border-width: 1px;
-      border-width: 0.1rem;
-      padding: 5px 10px;
-      padding: 0.5rem 1rem;
-      margin: 5px;
-      margin: 0.5rem;
-      font-size: 15px;
-      font-size: 1.5rem; }
-      #sidebar .tags .tagcloud a:hover {
-        color: #fff;
-        border-color: #333; }
-        #sidebar .tags .tagcloud a:hover:before {
-          background-color: #333; }
 
 footer.footer {
   width: 100%;

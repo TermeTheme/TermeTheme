@@ -5,9 +5,16 @@
         <div class="body">
           <div class="title">Latest News</div>
           <ul id="typed-strings">
-            <li><a href="">The world is changed! i feel in the water, i feel in ...</a></li>
-            <li><a href="">2016 Mac Pro release date rumours & specs</a></li>
-            <li><a href="">Google Ranked As The World's Most Valuable Brands</a></li>
+            <?php
+            $args = array(
+                'showposts'         => 5,
+                );
+            $my_query = new WP_Query($args);
+            while ($my_query->have_posts()):
+            $my_query->the_post();
+            $do_not_duplicate = $post->ID;?>
+              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; ?>
           </ul>
           <span id="typed" style="white-space:pre;"></span>
         </div><!-- body -->

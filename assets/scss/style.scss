@@ -68,6 +68,7 @@ header.header {
 		background: #fff;
 		border-top-color: $primary_color;
 		border-bottom-color: #ebebeb;
+
 	}
 	&.style_3 .top_bar,
 	&.style_4 .top_bar {
@@ -153,19 +154,31 @@ header.style_3 .top_bar form {
 	}
 }
 .top_bar .shopping_cart {
-	float: right;
-	@include rem(( margin-right: 30px, height: 35px, ));
-	a {
-		@include rem(( height: 25px, line-height: 25px, padding: 0 15px, border-radius: 3px, font-size: 13px ));
-		background: $secondary_color;
-		color: #fff;
-		display: inline-block;
-		i {
-			color: $primary_color;
-			@include rem(margin-right, 5px);
-		}
-	}
+  float: right;
+  @include rem(( margin-right: 10px,height: 25px, margin-top: 5px, border-radius: 3px, line-height: 25px, font-size: 13px ));
+  a {
+    color: #fff;
+    span.icon {
+      float: left;
+      background-color: #ff5252;
+
+      @include rem(( padding: 0 10px,font-size: 14px,border-radius: 3px 0 0 3px,));
+    }
+    .count {
+      display: inline-block;
+      background-color: #e54949;
+      @include rem(( padding: 0 10px,font-size: 14px,border-radius: 0 3px 3px 0,));
+      span {
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #ff5252;
+        @include rem(( margin: 0 5px, width: 20px, height: 20px, line-height: 20px,));
+      }
+    }
+  }
 }
+
 header.style_1 .main_area .logo,
 header.style_3 .main_area .logo,
 header.style_4 .main_area .logo {
@@ -583,7 +596,7 @@ section.latest_news {
 	width: 100%;
 	border: solid #e3e3e5;
 	background: #fff;
-	@include rem(( margin-top: 30px, border-width: 1px, min-height: 375px, ));
+	@include rem(( margin-top: 30px, border-width: 1px, min-height: 465px, ));
 	.thumb {
 		float: left;
 		width: 100%;
@@ -851,8 +864,20 @@ section.latest_news {
 	width: 100%;
 	@include rem(padding-top, 30px);
 	section {
+		float: left;
+		width: 100%;
 		margin-top: 20px;
-		ul {
+		h4 {
+			float: left;
+			margin-top: 0;
+			font-weight: bold;
+			@include rem(margin-bottom, 15px);
+		}
+		a.more {
+			float: right;
+			@include rem(line-height, 20px);
+		}
+		.widget_body {
 			float: right;
 			width: 100%;
 			padding: 0;
@@ -861,6 +886,202 @@ section.latest_news {
 			list-style: none;
 			@include rem(( border-width: 1px, padding-top: 0 ));
 			margin-bottom: 0;
+			//Category
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			ul li.cat-item {
+				float: left;
+				width: 100%;
+				@include rem(( padding: 10px 15px, ));
+				a {
+					display: inline-block;
+					color: $secondary_color;
+					@include rem((font-size: 16px, ));
+					&:hover {
+						color: $primary_color;
+					}
+				}
+				span {
+					float: right;
+					font-size: 16px;
+				}
+				ul.children {
+					li {
+						&:last-child {
+							padding-bottom: 0;
+						}
+					}
+				}
+			}
+			ul li.cat-item:hover>a {
+				color: $primary_color;
+			}
+			ul li.cat-item:before {
+				content: "\f105";
+				font: normal normal normal 20px/1 FontAwesome;
+				float: left;
+				@include rem(( margin-right: 10px, line-height: 20px, ));
+			}
+			ul li.cat-item:hover:before {
+				color: $primary_color;
+			}
+			ul li.cat-item:hover>span {
+				color: $primary_color;
+			}
+			//Tags
+			.tagcloud {
+				float: right;
+				width: 100%;
+				list-style: none;
+				padding: 0;
+				background: #fff;
+				margin-bottom: 0;
+				@include rem(( padding: 15px ));
+				a {
+					position: relative;
+					float: left;
+					color: $secondary_color;
+					border: solid #e4e4e4;
+					overflow: hidden;
+					z-index: 10;
+					transition: all 1s;
+					@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px !important,));
+					&:hover {
+						color: #fff;
+						border-color: $secondary_color;
+						&:before {
+							background-color: $secondary_color;
+						}
+					}
+				}
+			}
+			figure {
+		    position: relative;
+		    width: 100%;
+		    height: 100%;
+		    transition: transform 0.5s;
+		    overflow: hidden;
+		    cursor: pointer;
+		    img {
+		      width: 100%;
+		      height: auto;
+		      opacity: 0.95;
+		      transition: opacity 0.35s, transform 0.35s;
+		      transform: scale3d(1.05,1.05,1);
+		    }
+		    figcaption {
+		      position: absolute;
+		      width: 100%;
+		      height: 100%;
+		      top: 0;
+		      left: 0;
+		      backface-visibility: hidden;
+		      pointer-events: none;
+		      span.play {
+		        float: right;
+		        transform: translate3d(50%, -50%, 0);
+		        text-align: center;
+		        background-color: rgba(255, 255, 255, .5);
+		        color: #fff;
+		        transition: all 0.5s;
+		        border-radius: 50%;
+		        top: 50%;
+		        right: 50%;
+		        position: relative;
+		        @include rem(( width: 75px, height: 75px, line-height: 75px,font-size: 30px, ));
+		      }
+		      &:after {
+		        content: '';
+		        position: absolute;
+		        top: 0;
+		        left: 0;
+		        width: 100%;
+		        height: 100%;
+		        opacity: 0;
+		        z-index: 0;
+		        transform: translate3d(0,50%,0);
+		        background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(51,51,51,0.5) 75%);
+		      }
+		      a {
+		        position: absolute;
+		        width: 100%;
+		        bottom: 0;
+		        left: 0;
+		        color: #fff;
+		        z-index: 2;
+		        @include rem(( padding: 15px 15px 0 15px, ));
+		        h2 {
+		          margin-top: 0;
+		          font-weight: bold;
+		          transition: all 0.4s;
+		          @include rem(( font-size: 20px, ));
+		          &:after {
+		            content: '';
+		            background-color: #fff;
+		            width: 0;
+		            display: block;
+		            transition: all 0.4s;
+		            @include rem(( margin: 5px 0, height: 1px,));
+		          }
+		        }
+		        .info {
+		          position: absolute;
+		          bottom: 0;
+		          transition: all 0.4s;
+		          transform: translate(0, 100%);
+		          opacity: 0;
+		          @include rem(( font-size: 15px, ));
+		          span {
+		            @include rem(( margin-right: 30px, ));
+		          }
+		        }
+		      }
+		    }
+		  }
+		  figure:hover img {
+		    opacity: 0.9;
+		    transform: scale3d(1, 1, 1);
+		  }
+		  figure:hover figcaption span.play {
+		    border-radius: 0;
+		    top: 0;
+		    right: 0;
+		    left: auto;
+		    transform: translate3d(0, 0, 0);
+		    background-color: $primary_color;
+		    @include rem(( width: 45px, height: 45px, line-height: 45px,font-size: 20px, ));
+		    i {
+		      animation-name: beat;
+		      animation-duration: 0.8s;
+		      animation-iteration-count: infinite;
+		      animation-direction: alternate;
+		    }
+		  }
+		  @keyframes beat {
+		    to {
+		      transform: scale(1.3);
+		    }
+		  }
+		  figure:hover figcaption:after {
+		    opacity: 1;
+		    transform: translate3d(0,0,0);
+		    transition: opacity 0.35s, transform 0.35s;
+		  }
+		  figure:hover figcaption h2 {
+		    transform: translate(0, -100%);
+		  }
+		  figure:hover figcaption h2:after {
+		    width: 100%;
+		    background-color: #e4e4e4;
+		  }
+		  figure:hover figcaption .info {
+		    opacity: 1;
+		    transform: translate(0, -50%);
+		  }
+
 		}
 	}
 	section:first-child {
@@ -991,58 +1212,6 @@ section.latest_news {
 				transform: translate(-30%,-50%);
 				color: #fff;
 			}
-		}
-	}
-	.category {
-		float: left;
-		width: 100%;
-		margin-top: 20px;
-		h4 {
-			float: left;
-			margin-top: 0;
-			@include rem(margin-bottom, 15px);
-		}
-		ul {
-			float: right;
-			width: 100%;
-			padding: 0;
-			border: solid #e4e4e4;
-			background: #fff;
-			list-style: none;
-			@include rem(( border-width: 1px, padding-top: 0 ));
-			margin-bottom: 0;
-		}
-		ul li {
-			float: left;
-			width: 100%;
-			@include rem(( padding: 10px 15px, ));
-			a {
-				display: block;
-				color: $secondary_color;
-				@include rem((font-size: 18px, ));
-				&:hover {
-					color: $primary_color;
-				}
-				span {
-					float: right;
-					font-size: 16px;
-				}
-			}
-		}
-		ul li:hover h3 a {
-			color: $primary_color;
-		}
-		ul li:before {
-			content: "\f101";
-			font: normal normal normal 14px/1 FontAwesome;
-			float: left;
-			@include rem(( margin-right: 10px, line-height: 20px, ));
-		}
-		ul li:hover:before {
-			color: $primary_color;
-		}
-		ul li:hover span {
-			color: $primary_color;
 		}
 	}
 	.news {
@@ -1234,218 +1403,8 @@ section.latest_news {
 			color: #979a9f;
 		}
 	}
-	.video {
-		float: left;
-		width: 100%;
-		margin-top: 20px;
-		h4 {
-			float: left;
-			margin-top: 0;
-			@include rem(margin-bottom, 15px);
-		}
-		a.more {
-			float: right;
-			@include rem(line-height, 20px);
-		}
-		ul {
-			float: right;
-			width: 100%;
-			list-style: none;
-			padding: 0;
-			border: solid #e4e4e4;
-			background: #fff;
-			@include rem(( border-width: 1px, ));
-			margin-bottom: 0;
-		}
-		ul li {
-			float: left;
-			width: 100%;
-			@include rem(( padding: 15px 15px 0 15px, ));
-			a {
-				display: block;
-			}
-		}
-		ul li:last-child {
-			@include rem(( padding-bottom: 15px, ));
-		}
-		figure {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			transition: transform 0.5s;
-			overflow: hidden;
-			cursor: pointer;
-			img {
-				width: 100%;
-				height: auto;
-				opacity: 0.95;
-				transition: opacity 0.35s, transform 0.35s;
-				transform: scale3d(1.05,1.05,1);
-			}
-			figcaption {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				backface-visibility: hidden;
-				pointer-events: none;
-				span.play {
-					float: right;
-					transform: translate3d(50%, -50%, 0);
-					text-align: center;
-					background-color: rgba(255, 255, 255, .5);
-					color: #fff;
-					transition: all 0.5s;
-					border-radius: 50%;
-					top: 50%;
-					right: 50%;
-					position: relative;
-					@include rem(( width: 75px, height: 75px, line-height: 75px,font-size: 30px, ));
-				}
-				&:after {
-					content: '';
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					opacity: 0;
-					z-index: 0;
-					transform: translate3d(0,50%,0);
-					background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(51,51,51,0.5) 75%);
-				}
-				a {
-					position: absolute;
-					width: 100%;
-					bottom: 0;
-					left: 0;
-					color: #fff;
-					z-index: 2;
-					@include rem(( padding: 15px 15px 0 15px, ));
-					h2 {
-						margin-top: 0;
-						font-weight: bold;
-						transition: all 0.4s;
-						@include rem(( font-size: 20px, ));
-						&:after {
-							content: '';
-							background-color: #fff;
-							width: 0;
-							display: block;
-							transition: all 0.4s;
-							@include rem(( margin: 5px 0, height: 1px,));
-						}
-					}
-					.info {
-						position: absolute;
-						bottom: 0;
-						transition: all 0.4s;
-						transform: translate(0, 100%);
-						opacity: 0;
-						@include rem(( font-size: 15px, ));
-						span {
-							@include rem(( margin-right: 30px, ));
-						}
-					}
-				}
-			}
-		}
-		figure:hover img {
-			opacity: 0.9;
-			transform: scale3d(1, 1, 1);
-		}
-		figure:hover figcaption span.play {
-			border-radius: 0;
-			top: 0;
-			right: 0;
-			left: auto;
-			transform: translate3d(0, 0, 0);
-			background-color: $primary_color;
-			@include rem(( width: 45px, height: 45px, line-height: 45px,font-size: 20px, ));
-			i {
-				animation-name: beat;
-				animation-duration: 0.8s;
-				animation-iteration-count: infinite;
-				animation-direction: alternate;
-			}
-		}
-		@keyframes beat {
-			to {
-				transform: scale(1.3);
-			}
-		}
-		figure:hover figcaption:after {
-			opacity: 1;
-			transform: translate3d(0,0,0);
-			transition: opacity 0.35s, transform 0.35s;
-		}
-		figure:hover figcaption h2 {
-			transform: translate(0, -100%);
-		}
-		figure:hover figcaption h2:after {
-			width: 100%;
-			background-color: #e4e4e4;
-		}
-		figure:hover figcaption .info {
-			opacity: 1;
-			transform: translate(0, -50%);
-		}
-	}
-	.tags {
-		float: left;
-		width: 100%;
-		margin-top: 20px;
-		h4 {
-			float: left;
-			margin-top: 0;
-			@include rem(margin-bottom, 15px);
-		}
-		.tagcloud {
-			float: right;
-			width: 100%;
-			list-style: none;
-			padding: 0;
-			border: solid #e4e4e4;
-			background: #fff;
-			@include rem(( border-width: 1px, padding: 15px ));
-			margin-bottom: 0;
-		}
-		.tagcloud a {
-			position: relative;
-			float: left;
-			color: $secondary_color;
-			border: solid #e4e4e4;
-			overflow: hidden;
-			z-index: 10;
-			transition: all 1s;
-			@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px,));
-			&:hover {
-				color: #fff;
-				border-color: $secondary_color;
-				&:before {
-					background-color: $secondary_color;
-				}
-			}
-			// &:before {
-			// 	content: "";
-			// 	position: absolute;
-			// 	bottom: 0;
-			// 	left: 0;
-			// 	background-color: $secondary_color;
-			// 	width: 150px;
-			// 	height: 150px;
-			// 	transform: translate(-100% , 100%);
-			// 	border-radius: 0 100% 0 0;
-			// 	transition: all 1s;
-			// 	z-index: -10;
-			// }
-		}
-		// .tagcloud a:hover:before {
-		// 	transform: translate(0, 0);
-		//
-		// }
-	}
+
+
 }
 footer.footer {
 	width: 100%;

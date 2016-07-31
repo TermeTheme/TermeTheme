@@ -21,7 +21,13 @@
 							<a href="#">Register</a>
 						</div><!-- login_area -->
 						<div class="shopping_cart">
-							<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><i class="fa fa-shopping-bag"></i> Cart <?php echo sprintf (_n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></a>
+							<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+								<span class="icon"><i class="fa fa-shopping-bag"></i></span>
+								<div class="count">
+									Cart
+									<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
+								</div>
+							</a>
 						</div><!-- cart -->
 					</div><!-- col-xs-7 -->
 				</div><!-- row -->
