@@ -68,7 +68,6 @@ header.header {
 		background: #fff;
 		border-top-color: $primary_color;
 		border-bottom-color: #ebebeb;
-
 	}
 	&.style_3 .top_bar,
 	&.style_4 .top_bar {
@@ -77,7 +76,6 @@ header.header {
 		border-bottom: none;
 		color: #fff;
 		@include rem(( border-top-width: 4px,));
-
 	}
 	&.style_1 .main_area,
 	&.style_3 .main_area,
@@ -154,31 +152,29 @@ header.style_3 .top_bar form {
 	}
 }
 .top_bar .shopping_cart {
-  float: right;
-  @include rem(( margin-right: 10px,height: 25px, margin-top: 5px, border-radius: 3px, line-height: 25px, font-size: 13px ));
-  a {
-    color: #fff;
-    span.icon {
-      float: left;
-      background-color: #ff5252;
-
-      @include rem(( padding: 0 10px,font-size: 14px,border-radius: 3px 0 0 3px,));
-    }
-    .count {
-      display: inline-block;
-      background-color: #e54949;
-      @include rem(( padding: 0 10px,font-size: 14px,border-radius: 0 3px 3px 0,));
-      span {
-        display: inline-block;
-        text-align: center;
-        border-radius: 50%;
-        background-color: #ff5252;
-        @include rem(( margin: 0 5px, width: 20px, height: 20px, line-height: 20px,));
-      }
-    }
-  }
+	float: right;
+	@include rem(( margin-right: 10px,height: 25px, margin-top: 5px, border-radius: 3px, line-height: 25px, font-size: 13px ));
+	a {
+		color: #fff;
+		span.icon {
+			float: left;
+			background-color: #ff5252;
+			@include rem(( padding: 0 10px,font-size: 14px,border-radius: 3px 0 0 3px,));
+		}
+		.count {
+			display: inline-block;
+			background-color: #e54949;
+			@include rem(( padding: 0 10px,font-size: 14px,border-radius: 0 3px 3px 0,));
+			span {
+				display: inline-block;
+				text-align: center;
+				border-radius: 50%;
+				background-color: #ff5252;
+				@include rem(( margin: 0 5px, width: 20px, height: 20px, line-height: 20px,));
+			}
+		}
+	}
 }
-
 header.style_1 .main_area .logo,
 header.style_3 .main_area .logo,
 header.style_4 .main_area .logo {
@@ -401,7 +397,6 @@ header.style_4 .main_menu .shopping_cart {
 		span.icon {
 			float: left;
 			background-color: #ff5252;
-
 			@include rem(( padding: 0 10px,font-size: 14px,border-radius: 3px 0 0 3px,));
 		}
 		.count {
@@ -442,6 +437,42 @@ section.top {
 		opacity: 1;
 		color: #fff;
 	}
+	.slider_item {
+		position: relative;
+		.slider_desc {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			color: #fff;
+			margin: 0;
+			transform: translate(0,0);
+			background: linear-gradient(to top,#000 30%,rgba(0,0,0,0) 100%) repeat scroll 0 0 rgba(0,0,0,0);
+			@include rem(( padding: 50px 20px 20px,));
+			h2 {
+				transition: all 0.5s;
+				@include rem(( font-size: 22px,));
+				a {
+					color: #fff;
+				}
+			}
+			span {
+				position: absolute;
+				transition: all 0.5s;
+				color: #fff;
+				opacity: 0;
+			}
+		}
+		&:hover {
+			h2 {
+				transform: translate(0,-100%);
+			}
+			span {
+				opacity: 1;
+				transform: translate(0,-150%);
+			}
+		}
+	}
 	.selection {
 		float: left;
 		width: 100%;
@@ -479,7 +510,7 @@ section.top {
 		ul li h3 {
 			margin: 0;
 			line-height: 1.35;
-			text-align: justify;
+			text-align: left;
 			@include rem(( font-size: 18px, margin-bottom: 10px, ));
 		}
 		ul li h3 a {
@@ -877,6 +908,80 @@ section.latest_news {
 			float: right;
 			@include rem(line-height, 20px);
 		}
+		//ads
+		ul.ads {
+			float: left;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			figure {
+				background: $secondary_color;
+				position: relative;
+				float: left;
+				overflow: hidden;
+				height: auto;
+				text-align: center;
+				cursor: pointer;
+				width: 100%;
+				@include rem(( margin: 10px 0, ));
+				img {
+					opacity: 0.95;
+					transition: opacity 0.35s, transform 0.35s;
+					transform: scale3d(1.05,1.05,1);
+					position: relative;
+					display: block;
+					min-height: 100%;
+					max-width: 100%;
+					width: 100%;
+					height: auto;
+				}
+			}
+			figure:hover img {
+				opacity: 0.8;
+				transform: scale3d(1,1,1);
+			}
+			figure:hover figcaption:before {
+				transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+			}
+			figure:hover figcaption a {
+				transform: translate( -10px, -10px);
+			}
+			figcaption {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				color: #fff;
+				text-transform: uppercase;
+				backface-visibility: hidden;
+				&:before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(255,255,255,0.5);
+					content: '';
+					transition: transform 0.5s;
+					transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+				}
+				a {
+					background-color: $primary_color;
+					text-align: center;
+					color: #fff;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					transform: translate( -10px, 100%);
+					@include rem((padding: 5px 10px, border-radius: 4px,font-size: 12px,));
+					&:hover {
+						background: #fff;
+						color: $primary_color;
+					}
+				}
+			}
+		}
 		.widget_body {
 			float: right;
 			width: 100%;
@@ -884,24 +989,162 @@ section.latest_news {
 			border: solid #e4e4e4;
 			background: #fff;
 			list-style: none;
-			@include rem(( border-width: 1px, padding-top: 0 ));
 			margin-bottom: 0;
+			@include rem(( border-width: 1px, padding-top: 0 ));
+			// ul {
+			// 	list-style: none;
+			// 	padding: 0;
+			// 	margin: 0;
+			// }
+			// ul li{
+			// 	float: left;
+			// 	width: 100%;
+			// 	a {
+			// 		display: block;
+			// 		color: $secondary_color;
+			// 		@include rem((font-size: 16px,padding: 10px 15px, ));
+			// 		&:hover {
+			// 			color: $primary_color;
+			// 		}
+			// 		&:before {
+			// 			content: "\f105";
+			// 			font: normal normal normal 20px/1 FontAwesome;
+			// 			float: left;
+			// 			@include rem(( margin-right: 10px, line-height: 20px, ));
+			// 		}
+			// 	}
+			// 	span {
+			// 		float: right;
+			// 		font-size: 16px;
+			// 	}
+			// 	ul.sub-menu {
+			// 		float: left;
+			// 		width: 100%;
+			// 		@include rem(( padding: 0 10px, ));
+			//
+			// 	}
+			// }
+			//calendar_wrap
+			#calendar_wrap {
+				#wp-calendar {
+					width: 100%;
+					@include rem(( font-size: 14px, ));
+					caption {
+						background-color: $secondary_color;
+						color: #fff;
+						text-align: center;
+						font-weight: bold;
+						@include rem(( padding: 10px,));
+					}
+					thead {
+						background-color: #f7f8fa;
+						tr {
+							th {
+								text-align: center;
+								@include rem(( padding: 10px,));
+							}
+						}
+					}
+					tbody {
+						tr {
+							td {
+								text-align: center;
+								color: #979a9f;
+								@include rem(( padding: 10px,));
+								a {
+									color: $secondary_color;
+								}
+								&:hover {
+									background-color: #f7f8fa;
+								}
+								&#today {
+									background-color: $primary_color;
+									color: #fff;
+									font-weight: bold;
+									@include rem(( border-radius: 3px,));
+									a {
+										color: #fff;
+									}
+								}
+							}
+						}
+					}
+					tfoot {
+						background-color: #f7f8fa;
+						tr {
+							td {
+								text-align: center;
+								@include rem(( padding: 10px,));
+								a {
+									color: $secondary_color;
+								}
+							}
+						}
+					}
+				}
+			}
 			//Category
 			ul {
 				list-style: none;
 				padding: 0;
 				margin: 0;
 			}
+			ul li.page_item {
+				float: left;
+				width: 100%;
+				border-bottom: solid #e4e4e4;
+				@include rem(( border-bottom-width: 1px, ));
+				&:last-child {
+					border-bottom: none;
+				}
+				a {
+					display: block;
+					line-height: 1.35;
+					color: $secondary_color;
+					@include rem(( padding: 10px 15px,font-size: 18px, ));
+					&:hover {
+						color: $primary_color;
+					}
+				}
+			}
+			ul li.menu-item {
+				float: left;
+				width: 100%;
+				a {
+					display: block;
+					color: $secondary_color;
+					@include rem((font-size: 16px,padding: 10px 15px, ));
+					&:hover {
+						color: $primary_color;
+					}
+					&:before {
+						content: "\f105";
+						font: normal normal normal 20px/1 FontAwesome;
+						float: left;
+						@include rem(( margin-right: 10px, line-height: 20px, ));
+					}
+				}
+				ul.sub-menu {
+					float: left;
+					width: 100%;
+					@include rem(( padding: 0 10px, ));
+				}
+			}
 			ul li.cat-item {
 				float: left;
 				width: 100%;
-				@include rem(( padding: 10px 15px, ));
 				a {
-					display: inline-block;
+					display: block;
 					color: $secondary_color;
-					@include rem((font-size: 16px, ));
+					@include rem((font-size: 16px,padding: 10px 15px, ));
 					&:hover {
 						color: $primary_color;
+					}
+					&:before {
+						content: "\f105";
+						font: normal normal normal 20px/1 FontAwesome;
+						float: left;
+						@include rem(( margin-right: 10px, line-height: 20px, ));
 					}
 				}
 				span {
@@ -909,27 +1152,10 @@ section.latest_news {
 					font-size: 16px;
 				}
 				ul.children {
-					li {
-						&:last-child {
-							padding-bottom: 0;
-						}
-					}
+					float: left;
+					width: 100%;
+					@include rem(( padding: 0 10px, ));
 				}
-			}
-			ul li.cat-item:hover>a {
-				color: $primary_color;
-			}
-			ul li.cat-item:before {
-				content: "\f105";
-				font: normal normal normal 20px/1 FontAwesome;
-				float: left;
-				@include rem(( margin-right: 10px, line-height: 20px, ));
-			}
-			ul li.cat-item:hover:before {
-				color: $primary_color;
-			}
-			ul li.cat-item:hover>span {
-				color: $primary_color;
 			}
 			//Tags
 			.tagcloud {
@@ -958,130 +1184,246 @@ section.latest_news {
 					}
 				}
 			}
-			figure {
-		    position: relative;
-		    width: 100%;
-		    height: 100%;
-		    transition: transform 0.5s;
-		    overflow: hidden;
-		    cursor: pointer;
-		    img {
-		      width: 100%;
-		      height: auto;
-		      opacity: 0.95;
-		      transition: opacity 0.35s, transform 0.35s;
-		      transform: scale3d(1.05,1.05,1);
-		    }
-		    figcaption {
-		      position: absolute;
-		      width: 100%;
-		      height: 100%;
-		      top: 0;
-		      left: 0;
-		      backface-visibility: hidden;
-		      pointer-events: none;
-		      span.play {
-		        float: right;
-		        transform: translate3d(50%, -50%, 0);
-		        text-align: center;
-		        background-color: rgba(255, 255, 255, .5);
-		        color: #fff;
-		        transition: all 0.5s;
-		        border-radius: 50%;
-		        top: 50%;
-		        right: 50%;
-		        position: relative;
-		        @include rem(( width: 75px, height: 75px, line-height: 75px,font-size: 30px, ));
-		      }
-		      &:after {
-		        content: '';
-		        position: absolute;
-		        top: 0;
-		        left: 0;
-		        width: 100%;
-		        height: 100%;
-		        opacity: 0;
-		        z-index: 0;
-		        transform: translate3d(0,50%,0);
-		        background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(51,51,51,0.5) 75%);
-		      }
-		      a {
-		        position: absolute;
-		        width: 100%;
-		        bottom: 0;
-		        left: 0;
-		        color: #fff;
-		        z-index: 2;
-		        @include rem(( padding: 15px 15px 0 15px, ));
-		        h2 {
-		          margin-top: 0;
-		          font-weight: bold;
-		          transition: all 0.4s;
-		          @include rem(( font-size: 20px, ));
-		          &:after {
-		            content: '';
-		            background-color: #fff;
-		            width: 0;
-		            display: block;
-		            transition: all 0.4s;
-		            @include rem(( margin: 5px 0, height: 1px,));
-		          }
-		        }
-		        .info {
-		          position: absolute;
-		          bottom: 0;
-		          transition: all 0.4s;
-		          transform: translate(0, 100%);
-		          opacity: 0;
-		          @include rem(( font-size: 15px, ));
-		          span {
-		            @include rem(( margin-right: 30px, ));
-		          }
-		        }
-		      }
-		    }
-		  }
-		  figure:hover img {
-		    opacity: 0.9;
-		    transform: scale3d(1, 1, 1);
-		  }
-		  figure:hover figcaption span.play {
-		    border-radius: 0;
-		    top: 0;
-		    right: 0;
-		    left: auto;
-		    transform: translate3d(0, 0, 0);
-		    background-color: $primary_color;
-		    @include rem(( width: 45px, height: 45px, line-height: 45px,font-size: 20px, ));
-		    i {
-		      animation-name: beat;
-		      animation-duration: 0.8s;
-		      animation-iteration-count: infinite;
-		      animation-direction: alternate;
-		    }
-		  }
-		  @keyframes beat {
-		    to {
-		      transform: scale(1.3);
-		    }
-		  }
-		  figure:hover figcaption:after {
-		    opacity: 1;
-		    transform: translate3d(0,0,0);
-		    transition: opacity 0.35s, transform 0.35s;
-		  }
-		  figure:hover figcaption h2 {
-		    transform: translate(0, -100%);
-		  }
-		  figure:hover figcaption h2:after {
-		    width: 100%;
-		    background-color: #e4e4e4;
-		  }
-		  figure:hover figcaption .info {
-		    opacity: 1;
-		    transform: translate(0, -50%);
-		  }
-
+			//video
+			ul.video {
+				li {
+					float: left;
+					width: 100%;
+					@include rem(( padding: 15px 15px 0 15px, ));
+					&:last-child {
+						@include rem(( padding-bottom: 15px, ));
+					}
+					a {
+						display: block;
+					}
+				}
+				figure {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					transition: transform 0.5s;
+					overflow: hidden;
+					cursor: pointer;
+					img {
+						width: 100%;
+						height: auto;
+						opacity: 0.95;
+						transition: opacity 0.35s, transform 0.35s;
+						transform: scale3d(1.05,1.05,1);
+					}
+					figcaption {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						backface-visibility: hidden;
+						pointer-events: none;
+						span.play {
+							float: right;
+							transform: translate3d(50%, -50%, 0);
+							text-align: center;
+							background-color: rgba(255, 255, 255, .5);
+							color: #fff;
+							transition: all 0.5s;
+							border-radius: 50%;
+							top: 50%;
+							right: 50%;
+							position: relative;
+							@include rem(( width: 75px, height: 75px, line-height: 75px,font-size: 30px, ));
+						}
+						&:after {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							opacity: 0;
+							z-index: 0;
+							transform: translate3d(0,50%,0);
+							background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(51,51,51,0.5) 75%);
+						}
+						a {
+							position: absolute;
+							width: 100%;
+							bottom: 0;
+							left: 0;
+							color: #fff;
+							z-index: 2;
+							@include rem(( padding: 15px 15px 0 15px, ));
+							h2 {
+								margin-top: 0;
+								font-weight: bold;
+								transition: all 0.4s;
+								@include rem(( font-size: 20px, ));
+								&:after {
+									content: '';
+									background-color: #fff;
+									width: 0;
+									display: block;
+									transition: all 0.4s;
+									@include rem(( margin: 5px 0, height: 1px,));
+								}
+							}
+							.info {
+								position: absolute;
+								bottom: 0;
+								transition: all 0.4s;
+								transform: translate(0, 100%);
+								opacity: 0;
+								@include rem(( font-size: 15px, ));
+								span {
+									@include rem(( margin-right: 30px, ));
+								}
+							}
+						}
+					}
+				}
+				figure:hover img {
+					opacity: 0.9;
+					transform: scale3d(1, 1, 1);
+				}
+				figure:hover figcaption span.play {
+					border-radius: 0;
+					top: 0;
+					right: 0;
+					left: auto;
+					transform: translate3d(0, 0, 0);
+					background-color: $primary_color;
+					@include rem(( width: 45px, height: 45px, line-height: 45px,font-size: 20px, ));
+					i {
+						animation-name: beat;
+						animation-duration: 0.8s;
+						animation-iteration-count: infinite;
+						animation-direction: alternate;
+					}
+				}
+				@keyframes beat {
+					to {
+						transform: scale(1.3);
+					}
+				}
+				figure:hover figcaption:after {
+					opacity: 1;
+					transform: translate3d(0,0,0);
+					transition: opacity 0.35s, transform 0.35s;
+				}
+				figure:hover figcaption h2 {
+					transform: translate(0, -30px);
+				}
+				figure:hover figcaption h2:after {
+					width: 100%;
+					background-color: #e4e4e4;
+				}
+				figure:hover figcaption .info {
+					opacity: 1;
+					transform: translate(0, -50%);
+				}
+			}
+			//Top Articles
+			ul.top_article {
+				li {
+					float: left;
+					width: 100%;
+					border-bottom: solid #e4e4e4;
+					@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
+				}
+				li:last-child {
+					border-bottom: none;
+				}
+				li a {
+					line-height: 1.35;
+					@include rem(( font-size: 18px, margin-bottom: 10px, ));
+					color: $secondary_color;
+				}
+				li a:hover {
+					color: $primary_color;
+				}
+				li .time {
+					color: #979a9f;
+					@include rem(( padding: 10px 0, ));
+				}
+			}
+			//news
+			ul.newsTab {
+				border: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul.newsTab li {
+				margin-right: 2px;
+				background: #f7f8fa;
+				font-weight: 500;
+				border-radius: 0;
+				border: solid #e4e4e4;
+				@include rem(( height: 50px,font-size: 18px,border-width: 0 1px 1px,));
+				// &:first-child {
+				// 	border: solid #e4e4e4;
+				// 	@include rem(( border-width: 0 1px 1px 1px,));
+				// }
+				// &:last-child {
+				// 	border: solid #e4e4e4;
+				// 	@include rem(( border-width: 0 1px 1px 1px,));
+				// }
+				&.active {
+					@include rem((border-width: 0 1px 0,));
+					a {
+						color: $secondary_color;
+					}
+				}
+			}
+			ul.newsTab li a {
+				border: 0;
+				margin-right: 0;
+				color: #979a9f;
+				@include rem(( height: 50px, line-height: 30px,));
+				display: block;
+				width: 100%;
+				border-radius: 0;
+			}
+			.tab-content {
+				float: right;
+				width: 100%;
+				padding: 0;
+				border: solid #e4e4e4;
+				background: #fff;
+				list-style: none;
+				@include rem(( border-width: 0 1px 1px 1px, padding-top: 0 ));
+				margin-bottom: 0;
+				ul {
+					float: right;
+					width: 100%;
+					padding: 0;
+				}
+				ul li {
+					float: left;
+					width: 100%;
+					border-bottom: solid #e4e4e4;
+					@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
+				}
+				ul li:last-child {
+					border-bottom: none;
+				}
+				ul li .thumb {
+					float: left;
+					@include rem(( width: 100px, height: 75px, margin-right: 10px ));
+				}
+				ul li h3 {
+					margin: 0;
+					line-height: 1.35;
+					@include rem(( font-size: 18px, margin-bottom: 10px, ));
+				}
+				ul li h3 a {
+					color: $secondary_color;
+				}
+				ul li h3 a:hover {
+					color: $primary_color;
+				}
+				ul li .time {
+					color: #979a9f;
+				}
+			}
 		}
 	}
 	section:first-child {
@@ -1214,197 +1556,6 @@ section.latest_news {
 			}
 		}
 	}
-	.news {
-		float: left;
-		width: 100%;
-		margin-top: 20px;
-		ul.newsTab {
-			border: none;
-			margin: 0;
-			padding: 0;
-		}
-		ul.newsTab li {
-			margin-right: 2px;
-			background: #f7f8fa;
-			font-weight: 500;
-			border: solid #e4e4e4;
-			border-radius: 0;
-			@include rem(( border-width: 1px 1px 0 1px, height: 50px,font-size: 18px,));
-		}
-		ul.newsTab li.active {
-			background: #e4e4e4;
-			border: solid #e4e4e4;
-			@include rem(( border-width: 1px 1px 0 1px, ));
-			a {
-				color: $secondary_color;
-			}
-		}
-		ul.newsTab li a {
-			border: 0;
-			margin-right: 0;
-			color: #737373;
-			@include rem(( height: 50px, line-height: 30px,));
-			display: block;
-			width: 100%;
-			border-radius: 0;
-		}
-		.tab-content {
-			float: right;
-			width: 100%;
-			padding: 0;
-			border: solid #e4e4e4;
-			background: #fff;
-			list-style: none;
-			@include rem(( border-width: 0 1px 1px 1px, padding-top: 0 ));
-			margin-bottom: 0;
-			ul {
-				float: right;
-				width: 100%;
-				padding: 0;
-			}
-			ul li {
-				float: left;
-				width: 100%;
-				border-bottom: solid #e4e4e4;
-				@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
-			}
-			ul li:last-child {
-				border-bottom: none;
-			}
-			ul li .thumb {
-				float: left;
-				@include rem(( width: 100px, height: 75px, margin-right: 10px ));
-			}
-			ul li h3 {
-				margin: 0;
-				line-height: 1.35;
-				@include rem(( font-size: 18px, margin-bottom: 10px, ));
-			}
-			ul li h3 a {
-				color: $secondary_color;
-			}
-			ul li h3 a:hover {
-				color: $primary_color;
-			}
-			ul li .time {
-				color: #979a9f;
-			}
-		}
-	}
-	.ads {
-		float: left;
-		width: 100%;
-		margin-top: 20px;
-		figure {
-			background: $secondary_color;
-			position: relative;
-			float: left;
-			overflow: hidden;
-			height: auto;
-			text-align: center;
-			cursor: pointer;
-			@include rem(( margin: 10px 0, ));
-			img {
-				opacity: 0.95;
-				transition: opacity 0.35s, transform 0.35s;
-				transform: scale3d(1.05,1.05,1);
-				position: relative;
-				display: block;
-				min-height: 100%;
-				max-width: 100%;
-			}
-		}
-		figure:hover img {
-			opacity: 0.8;
-			transform: scale3d(1,1,1);
-		}
-		figure:hover figcaption:before {
-			transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
-		}
-		figure:hover figcaption a {
-			transform: translate( -10px, -10px);
-		}
-		figcaption {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			color: #fff;
-			text-transform: uppercase;
-			backface-visibility: hidden;
-			&:before {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: rgba(255,255,255,0.5);
-				content: '';
-				transition: transform 0.5s;
-				transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
-			}
-			a {
-				background-color: $primary_color;
-				text-align: center;
-				color: #fff;
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				transform: translate( -10px, 100%);
-				@include rem((padding: 5px 10px, border-radius: 4px,font-size: 12px,));
-				&:hover {
-					background: #fff;
-					color: $primary_color;
-				}
-			}
-		}
-	}
-	.last_articles {
-		float: left;
-		width: 100%;
-		h4 {
-			float: left;
-			margin-top: 0;
-			@include rem(margin-bottom, 15px);
-		}
-		a.more {
-			float: right;
-			@include rem(line-height, 20px);
-		}
-		ul {
-			float: right;
-			width: 100%;
-			list-style: none;
-			padding: 0;
-			border: solid #e4e4e4;
-			background: #fff;
-			margin-bottom: 0;
-			@include rem(( border-width: 1px, ));
-		}
-		ul li {
-			float: left;
-			width: 100%;
-			border-bottom: solid #e4e4e4;
-			@include rem(( padding: 20px 15px, border-bottom-width: 1px, ));
-		}
-		ul li:last-child {
-			border-bottom: none;
-		}
-		ul li a {
-			line-height: 1.35;
-			@include rem(( font-size: 18px, margin-bottom: 10px, ));
-			color: $secondary_color;
-		}
-		ul li a:hover {
-			color: $primary_color;
-		}
-		ul li .time {
-			color: #979a9f;
-		}
-	}
-
-
 }
 footer.footer {
 	width: 100%;
@@ -1426,7 +1577,6 @@ footer.footer {
 		background-color: $primary_color;
 		color: $secondary_color;
 		@include rem(( height: 60px, line-height: 60px, ));
-
 	}
 	&.style_5 .top_bar {
 		background-color: $secondary_color;
@@ -1603,7 +1753,6 @@ footer.footer {
 	&.style_3 .top_bar {
 		.social_menu {
 			@include rem(( height: 60px, ));
-
 			&:after {
 				float: right;
 				width: 1px;
@@ -1628,7 +1777,6 @@ footer.footer {
 		}
 		.email_contact {
 			@include rem(( height: 60px, ));
-
 			text-align: center;
 			p {
 				color: #fff;
@@ -3528,6 +3676,17 @@ footer.footer {
 					background: $primary_color;
 					transition: all 0.4s;
 				}
+				&.menu-item-has-children {
+					&:after {
+						position: absolute;
+						content: "\f067";
+						font: normal normal normal 14px/1 FontAwesome;
+						top: 50%;
+						right: 0;
+						color: #fff;
+						transform: translate(-100%,-50%);
+					}
+				}
 				a {
 					color: #fff;
 					display: block;
@@ -3547,6 +3706,9 @@ footer.footer {
 					}
 				}
 			}
+			.visible {
+				opacity: 1;
+			}
 			li:hover:before {
 				width: 100%;
 			}
@@ -3557,41 +3719,44 @@ footer.footer {
 	font-size: 1.375rem;
 	color: #fff;
 	float: left;
-	margin-top: 2rem;
-	margin-left: 1rem;
-	height: 1.375rem;
-	width: 1.375rem;
+	height: 5rem;
+	width: 5rem;
 	display: none;
+	line-height: 5rem;
+	position: relative;
 }
 .main_menu a.mobile_menu:before {
 	float: right;
 	background: #fff;
-	height: 0.5rem;
-	width: 2rem;
+	height: 0.3rem;
+	width: 3rem;
 	border-radius: 0.3125rem;
 	content: '';
-	margin-top: 0.0625rem;
-	-webkit-transition: all 0.5s;
-	-o-transition: all 0.5s;
 	transition: all 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+	transform: translate3d(-50%, -300%, 0);
+	position: absolute;
+	top: 50%;
+	left: 50%;
 }
 .main_menu a.mobile_menu.search_active:before,
 html.sb-active.sb-active-left .main_menu a.mobile_menu:before {
-	-webkit-transform: rotate3d(0, 0, 1, 45deg) translate(.5rem, 0.125rem);
-	transform: rotate3d(0, 0, 1, 45deg) translate(.5rem, 0.125rem);
+	transform: rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
 }
 .main_menu a.mobile_menu span.mobile_menu {
 	float: right;
 	background: #fff;
-	height: 0.5rem;
-	width: 2rem;
+	height: 0.3rem;
+	width: 3rem;
+	-webkit-border-radius: 0.3125rem;
 	border-radius: 0.3125rem;
-	margin-top: 0.4375rem;
+	/* margin-top: 0.4375rem; */
 	-webkit-transition: all 0.5s;
-	-o-transition: all 0.5s;
 	transition: all 0.5s;
+	/* vertical-align: middle; */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 }
 a.mobile_menu.search_active span.mobile_menu,
 html.sb-active.sb-active-left .main_menu a.mobile_menu span.mobile_menu {
@@ -3600,21 +3765,19 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu span.mobile_menu {
 .main_menu a.mobile_menu:after {
 	float: right;
 	background: #fff;
-	height: 0.5rem;
-	width: 2rem;
+	height: 0.3rem;
+	width: 3rem;
 	border-radius: 0.3125rem;
 	content: '';
-	margin-top: 0.4375rem;
-	-webkit-transition: all 0.5s;
-	-o-transition: all 0.5s;
 	transition: all 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+	transform: translate3d(-50%, 200%, 0);
+	position: absolute;
+	top: 50%;
+	left: 50%;
 }
 a.mobile_menu.search_active:after,
 html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
-	-webkit-transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
-	transform: rotate3d(0, 0, 1, -45deg) translate(0.6875rem, -0.3125rem);
+	transform: rotate3d(0, 0, 1, -45deg) translate3d(0, 0, 0);
 }
 .woocommerce {
 	#tab-reviews {

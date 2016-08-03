@@ -2,19 +2,8 @@
 </div><!-- sb-site -->
 <div class="sb-slidebar sb-left">
 	<div class="sidebar_menu">
-		<ul>
-			<li><a href="#">Homapage</a></li>
-			<li><a href="#">Archives</a></li>
-			<li><a href="#">Category</a>
-				<ul>
-					<li><a href="#">section1</a></li>
-					<li><a href="#">section1</a></li>
-					<li><a href="#">section1</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Newsletters</a></li>
-			<li><a href="#">shop</a></li>
-		</ul>
+		<?php echo wp_nav_menu(); ?>
+
 	</div>
 </div><!-- sb-left -->
 <?php if ($terme_options['footer_layout'] == '1') {

@@ -15,7 +15,7 @@
     <li>
       <div class="thumb">								<?php the_post_thumbnail( 'element_01_thumb_02' ); ?>
       </div>
-      <h3><a href="<?php the_permalink(); ?>"><?php echo terme_shorten_text(get_the_title(), 50); ?></h3>
+      <h3><a href="<?php the_permalink(); ?>"><?php echo terme_shorten_text(get_the_title(), 40); ?></h3>
       <div class="time"><i class="fa fa-clock-o"></i> <?php echo get_the_date(); ?></div>
     </li>
     <?php endwhile; ?>

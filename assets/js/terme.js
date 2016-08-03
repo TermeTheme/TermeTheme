@@ -127,4 +127,11 @@ $('.customPrevBtn').click(function() {
 //     jQuery(this).prev().removeClass('oof');
 // });
 
+
+  jQuery('li.menu-item-has-children').click(function() {
+    jQuery('li.menu-item-has-children > ul.sub-menu').toggleClass('visible');
+  });
+
+
+
 });

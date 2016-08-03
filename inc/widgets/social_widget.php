@@ -11,6 +11,7 @@ class Terme_Socials_Networks extends WP_Widget {
                 );
     }
 
+
     public function widget( $args, $instance ) {
 
         $networks = (!empty($instance['terme_social'])) ? $instance['terme_social'] : array();

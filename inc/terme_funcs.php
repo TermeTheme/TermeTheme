@@ -91,10 +91,10 @@ function terme_breadcrumb() {
 /*-----------------------------------------------------------------------------------*/
 
 add_filter('wp_list_categories', 'add_span_cat_count');
-function add_span_cat_count($links) {
-$links = str_replace('</a> (', '</a> <span>', $links);
-$links = str_replace(')', ')</span>', $links);
-return $links;
+function add_span_cat_count($output) {
+  $output = str_replace('</a> (','<span> ',$output);
+  $output = str_replace(')','</span></a> ',$output);
+  return $output;
 }
 /*-----------------------------------------------------------------------------------*/
 # Terme Add Custom Data-attribute To Tag
