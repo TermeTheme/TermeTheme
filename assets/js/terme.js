@@ -12,7 +12,6 @@ jQuery(document).ready(function($) {
         showCursor: true,
         cursorChar: "|",
     });
-    jQuery(document).ready(function() {
         jQuery(".shop-carousel").owlCarousel({
             margin: 15,
             items: 3,
@@ -42,7 +41,6 @@ jQuery(document).ready(function($) {
                 }
             }
         });
-    });
     jQuery(window).scroll(function() {
 			if (jQuery(window).scrollTop() > 200) {
 				jQuery("a.back_to_top").fadeIn('slow').addClass('show');
@@ -89,6 +87,16 @@ jQuery(document).ready(function($) {
         }
     }
 })
+  jQuery('.MainSlider').owlCarousel({
+    rtl : true,
+    items:1,
+    margin:10,
+    loop:true,
+    nav:true,
+    autoplay: true,
+    navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>","<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
+
+})
   jQuery('.related_product_loop').owlCarousel({
     margin:20,
     // nav: true,
@@ -128,10 +136,20 @@ $('.customPrevBtn').click(function() {
 // });
 
 
-  jQuery('li.menu-item-has-children').click(function() {
-    jQuery('li.menu-item-has-children > ul.sub-menu').toggleClass('visible');
-  });
+  // jQuery('li.menu-item-has-children').click(function() {
+  //   jQuery('li.menu-item-has-children > ul.sub-menu').toggleClass('visible');
+  // });
 
 
+    jQuery('.accordion').dcAccordion( {
+      eventType: 'click',
+      hoverDelay: 600,
+      menuClose: false,
+      autoClose: true,
+      autoExpand: true,
+      classExpand: 'parent-item',
+      speed: 'slow',
+      cookie: 'my-cookie'
+    });
 
 });

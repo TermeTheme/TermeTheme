@@ -150,7 +150,7 @@ class Terme_Element_Test extends Terme_Page_Builder_Element {
         $cat_link = get_category_link( $this->category_value );
         $output = '<div class="box">
           <div class="title">
-            <a href="'.$cat_link.'" class="more pull-right">'.__('More', 'terme').'</a>
+            <a href="'.$cat_link.'" class="more">'.__('More', 'terme').'</a>
             <h4>'.$this->title_value.'</h4>
             <h6>'.$this->subtitle_value.'</h6>
           </div><!-- title -->

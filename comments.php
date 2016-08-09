@@ -40,7 +40,7 @@
 
       <?php endif; ?>
     <?php endif; // have_comments() ?>
-  <?php if (comments_open()) : ?>
+    <?php if (comments_open()) : ?>
             <h4>Your Comment</h4>
     <?php
     $args = array(

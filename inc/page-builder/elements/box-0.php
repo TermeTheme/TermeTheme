@@ -1,6 +1,6 @@
 <div class="selection">
   <h4>Top News</h4>
-  <a href="#" class="more pull-right">More</a>
+  <a href="#" class="more">More</a>
   <ul>
       <?php
     $args = array(
@@ -13,7 +13,7 @@
     $do_not_duplicate = $post->ID;?>
 
     <li>
-      <div class="thumb">								<?php the_post_thumbnail( 'element_01_thumb_02' ); ?>
+      <div class="thumb">	<?php the_post_thumbnail( 'element_01_thumb_02' ); ?>
       </div>
       <h3><a href="<?php the_permalink(); ?>"><?php echo terme_shorten_text(get_the_title(), 40); ?></h3>
       <div class="time"><i class="fa fa-clock-o"></i> <?php echo get_the_date(); ?></div>

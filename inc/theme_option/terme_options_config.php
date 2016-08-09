@@ -282,7 +282,7 @@
          'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
          'customizer_width' => '400px',
          'icon'             => 'el el-home',
-         'fields'           => array (
+         'fields'           => array(
          array(
              'id'       => 'homepage_display',
              'type'     => 'select',
@@ -464,6 +464,77 @@
             'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
             'fields'           => array(
               array(
+                  'id'       => 'breadcrumb_type',
+                  'type'     => 'select',
+                  'title'    => __('Breadcrumb Type', 'redux-framework-demo'),
+                  'desc'     => __('If Select (WordPress Seo Plugin Breadcrumb), You Need To Install Wordpress Seo by Yoast Plugin ', 'redux-framework-demo'),
+                  // Must provide key => value pairs for select options
+                  'options'  => array(
+                      '1' => 'Cornita Breadcrumb',
+                      '2' => 'WordPress Seo Plugin Breadcrumb',
+                  ),
+                  'default'  => '1',
+              ),
+
+                  array(
+                      'id'       => 'delimiter_icon',
+                      'type'     => 'icon_selector',
+                      'title'    => __( 'Delimiter Icon', 'redux-framework-demo' ),
+                      'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      'required' => array( 'breadcrumb_type', "=", 1 ),
+                      'default'  => 'fa-angle-right',
+                  ),
+
+                  array(
+                      'id'       => 'home_link_type',
+                      'type'     => 'select',
+                      'title'    => __( 'Home Link Type', 'redux-framework-demo' ),
+                      'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      'required' => array( 'breadcrumb_type', "=", 1 ),
+                      'subtitle'     => __( 'Select Home Link Type', 'redux-framework-demo' ),
+                      'options'  => array(
+                          '0' => 'Disable',
+                          '1' => 'Icon',
+                          '2' => 'Text',
+                          '3' => 'Icon & Text',
+                      ),
+                      'default'  => '3'
+                  ),
+
+                      // array(
+                      //     'id'       => 'home_icon2',
+                      //     'type'     => 'icon_selector',
+                      //     'title'    => __( 'Home Icon', 'redux-framework-demo' ),
+                      //     'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      //     'required' => array( 'home_link_type', "=", 1 ),
+                      //     'default'  => 'fa-home',
+                      // ),
+
+                      array(
+                          'id'       => 'home_text',
+                          'type'     => 'text',
+                          'title'    => __( 'Home Text', 'redux-framework-demo' ),
+                          'indent'   => true, // Indent all options below until the next 'section' option is set.
+                          'required' => array( 'home_link_type', "=", 2 ),
+                          'default'  => 'Home'
+                      ),
+                      // array(
+                      //     'id'       => 'home_icon_text-icon',
+                      //     'type'     => 'icon_select',
+                      //     'title'    => __( 'Home Icon', 'redux-framework-demo' ),
+                      //     // 'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      //     'default'  => 'fa-home',
+                      // ),
+
+                      array(
+                          'id'       => 'home_icon_text-text',
+                          'type'     => 'text',
+                          'title'    => __( 'Home Text', 'redux-framework-demo' ),
+                          'indent'   => true, // Indent all options below until the next 'section' option is set.
+                          'required' => array( 'home_link_type', "=", 3 ),
+                          'default'  => 'Home'
+                      ),
+              array(
                   'id'       => 'post_breadcrumb',
                   'type'     => 'switch',
                   'title'    => __( 'Post Breadcrumb', 'redux-framework-demo' ),
@@ -472,15 +543,15 @@
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
               ),
-              array(
-                  'id'       => 'post_breadcrumb_seprator',
-                  'type'     => 'text',
-                  'title'    => __( 'Breadcrumb Seprator', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-                  'required' => array('post_breadcrumb', '=' , 1),
-
-              ),
+              // array(
+              //     'id'       => 'post_breadcrumb_seprator',
+              //     'type'     => 'icon_selector',
+              //     'title'    => __( 'Breadcrumb Seprator', 'redux-framework-demo' ),
+              //     'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+              //     'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              //     'required' => array('post_breadcrumb', '=' , 1),
+              //
+              // ),
               array(
                   'id'    => 'post_meta_info',
                   'type'  => 'info',
@@ -508,6 +579,7 @@
                   'off'      => 'Disabled',
                   'required' => array('post_meta', '=' , 1),
               ),
+
               array(
                   'id'       => 'post_date_format',
                   'type'     => 'text',
@@ -538,6 +610,7 @@
                   'off'      => 'Disabled',
                   'required' => array('post_meta', '=' , 1),
               ),
+              
               array(
                   'id'       => 'comment_count',
                   'type'     => 'switch',
@@ -555,10 +628,6 @@
                   // 'subtitle' => __( 'With the "section" field you can create indented option sections.', 'redux-framework-demo' ),
                   'indent'   => true, // Indent all options below until the next 'section' option is set.
               ),
-
-
-
-
               array(
                   'id'     => 'section-end',
                   'type'   => 'section',

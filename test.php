@@ -7,4 +7,4 @@ global $terme_options
 
     $mojtaba = get_option( 'mojtaba' );
     $fields = get_post_meta( 62, '_terme_pb', true );
-    print_r($fields);
+    print_r($terme_options);

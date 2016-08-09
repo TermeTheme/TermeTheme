@@ -2,8 +2,15 @@
 </div><!-- sb-site -->
 <div class="sb-slidebar sb-left">
 	<div class="sidebar_menu">
-		<?php echo wp_nav_menu(); ?>
-
+			<?php
+			if (has_nav_menu('top_menu')) {
+				wp_nav_menu( array(
+					'theme_location' => 'top_menu',
+					'menu_class' => 'accordion',
+					'container' => false
+				) );
+			}
+ ?>
 	</div>
 </div><!-- sb-left -->
 <?php if ($terme_options['footer_layout'] == '1') {

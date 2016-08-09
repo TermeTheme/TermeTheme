@@ -142,7 +142,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         $cat_link = get_category_link( $this->saved_vals['category'] );
         $output = '<div class="box">
           <div class="title">
-            <a href="'.$cat_link.'" class="more pull-right">'.__('More', 'terme').'</a>
+            <a href="'.$cat_link.'" class="more">'.__('More', 'terme').'</a>
             <h4>'.$this->saved_vals['title'].'</h4>
             <h6>'.$this->saved_vals['subtitle'].'</h6>
           </div><!-- title -->

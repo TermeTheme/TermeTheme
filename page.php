@@ -16,12 +16,6 @@
 							</div>
 							<?php } ?>
 							<h1 class="article_title"><?php the_title(''); ?></h1>
-							<div class="article_meta">
-								<span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp <?php echo get_the_date(); ?> </span>
-								<span class="category"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp <a href="#"><?php the_category($post->ID); ?></a> </span>
-								<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
-								<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
-							</div><!-- article_meta -->
 						</div><!-- article_info -->
 						<div class="terme_post">
 							<div class="thumb">

@@ -322,14 +322,18 @@
 .redux-main input {
     line-height: 19px;
     height: 35px;
-    border: 1px solid #e9eff3;
-    border-radius: 5px;
-    color: #a8bece;
+    border: 1px solid #a8bece;
+    border-radius: 3px;
+    color: #668eaa;
+  }
+.redux-main input::placeholder {
+
+    color: #e9eff3;
 }
 .redux-main textarea {
-    border: 1px solid #e9eff3;
-    border-radius: 5px;
-    color: #a8bece;
+    border: 1px solid #a8bece;
+    border-radius: 3px;
+    color: #668eaa;
 }
 .redux-main input[type="text"]:focus, .redux-main textarea:focus {
     box-shadow: none;
@@ -2720,7 +2724,7 @@ pre {
 }
 .redux-main .media_upload_button {
     border: 1px solid #4ab866;
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: transparent;
     color: #4ab866;
     box-shadow: none;
@@ -2733,7 +2737,7 @@ pre {
 }
 .redux-main .remove-image {
     border: 1px solid #d54e21;
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: transparent;
     color: #d54e21;
     box-shadow: none;
@@ -2743,7 +2747,7 @@ pre {
     position: relative;
     z-index: 10;
     padding: 0 20px;
-    
+
 }
 .redux-main .button:hover {
     color: #fff;
@@ -2801,12 +2805,12 @@ pre {
 .redux-main select {
     line-height: 19px;
     height: 35px;
-    border: 1px solid #e9eff3;
-    border-radius: 5px;
-    color: #a8bece;
+    border: 1px solid #a8bece;
+    border-radius: 3px;
+    color: #668eaa;
 }
 .input.readonly, input[readonly], textarea.readonly, textarea[readonly] {
-    background-color: #e9eff3;
+  background-color: #fff;
 }
 .redux-main h2 {
     color: #4f748e;
