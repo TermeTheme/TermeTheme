@@ -12,19 +12,19 @@
 				</div><!-- col-md-3 -->
 				<div class="col-md-9 col-sm-12 col-xs-12">
 					<form action="#">
-						<input type="text" placeholder="Search">
+						<input type="text" placeholder="<?php _e( 'Search','terme' ); ?>">
 						<button><i class="fa fa-search"></i></button>
 					</form>
 					<div class="user_area">
-						<a href="#">Login</a>
-						<span>or</span>
-						<a href="#">Register</a>
+						<a href="#">	<?php _e( 'Login','terme' ); ?></a>
+						<span>	<?php _e( 'OR','terme' ); ?></span>
+						<a href="#">	<?php _e( 'Register','terme' ); ?></a>
 					</div><!-- login_area -->
 					<div class="shopping_cart">
-						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">
 							<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 							<div class="count">
-								Cart
+									<?php _e( 'Cart','terme' ); ?>
 								<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
 							</div>
 						</a>

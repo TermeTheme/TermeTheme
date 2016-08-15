@@ -11,7 +11,7 @@
 				</div><!-- col-md-3 -->
 				<div class="col-md-9 col-sm-12 col-xs-12">
 					<form action="#">
-						<input type="text" placeholder="Search">
+						<input type="text" placeholder="<?php _e( 'Search','terme' ); ?>">
 						<button><i class="fa fa-search"></i></button>
 					</form>
 				</div><!-- col-md-9 -->

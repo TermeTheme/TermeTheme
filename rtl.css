@@ -329,6 +329,8 @@ footer.footer.style_5 .bottom_bar .social_menu {
     margin-right: auto;
     margin-left: 10px;
     margin-left: 1rem; }
+.article_content .terme_post .article_social ul li {
+  float: right; }
 .article_content .article_author img {
   float: right; }
 .article_content .article_author .name {
@@ -344,31 +346,47 @@ footer.footer.style_5 .bottom_bar .social_menu {
   margin-left: 10px;
   margin-left: 1rem; }
 
-.article_comment ol li {
+.article_comment .comment_container ol li {
   float: right; }
-  .article_comment ol li article {
+  .article_comment .comment_container ol li article {
     float: right; }
-    .article_comment ol li article .comment_author img {
+    .article_comment .comment_container ol li article .comment_author img {
       float: right; }
-    .article_comment ol li article .comment_metadata .reply {
+    .article_comment .comment_container ol li article .comment_metadata .reply {
       right: auto;
       left: 0; }
-.article_comment ul.children li {
-  float: right; }
-  .article_comment ul.children li:before {
-    right: 70px;
-    left: auto; }
-  .article_comment ul.children li article {
-    float: right;
-    margin-left: auto;
-    margin-right: 10%; }
-  .article_comment ul.children li .comment_author {
+  .article_comment .comment_container ol li ul.children li {
     float: right; }
-    .article_comment ul.children li .comment_author img {
+    .article_comment .comment_container ol li ul.children li:before {
+      right: 70px;
+      left: auto; }
+    .article_comment .comment_container ol li ul.children li article {
+      float: right;
+      margin-left: auto;
+      margin-right: 10%; }
+    .article_comment .comment_container ol li ul.children li .comment_author {
       float: right; }
-  .article_comment ul.children li .comment_metadata .reply {
-    right: auto;
-    left: 0; }
+      .article_comment .comment_container ol li ul.children li .comment_author img {
+        float: right; }
+    .article_comment .comment_container ol li ul.children li .comment_metadata .reply {
+      right: auto;
+      left: 0; }
+.article_comment .comment_container .comment-respond {
+  width: 100%;
+  float: left;
+  padding: 0;
+  border-top: none;
+  border: solid #e4e4e4;
+  background: #fff;
+  border-width: 0 1px 1px 1px;
+  border-width: 0 0.1rem 0.1rem 0.1rem;
+  padding: 15px;
+  padding: 1.5rem; }
+  .article_comment .comment_container .comment-respond form .comment-form-author,
+  .article_comment .comment_container .comment-respond form .comment-form-email {
+    float: right; }
+  .article_comment .comment_container .comment-respond form .form-submit {
+    float: left; }
 
 .product_page .images {
   float: right; }

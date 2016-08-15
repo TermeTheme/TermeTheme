@@ -3,9 +3,9 @@
 <div class="sb-slidebar sb-left">
 	<div class="sidebar_menu">
 			<?php
-			if (has_nav_menu('top_menu')) {
+			if (has_nav_menu('header_menu')) {
 				wp_nav_menu( array(
-					'theme_location' => 'top_menu',
+					'theme_location' => 'header_menu',
 					'menu_class' => 'accordion',
 					'container' => false
 				) );

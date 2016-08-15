@@ -15,9 +15,9 @@
 				</div><!-- col-md-6 -->
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<div class="user_area">
-						<a href="#">Login</a>
-						<span>|</span>
-						<a href="#">Register</a>
+						<a href="#">	<?php _e( 'Login','terme' ); ?></a>
+						<span>	<?php _e( 'OR','terme' ); ?></span>
+						<a href="#">	<?php _e( 'Register','terme' ); ?></a>
 					</div><!-- login_area -->
 				</div><!-- col-md-6 -->
 			</div><!-- row -->
@@ -40,7 +40,7 @@
 				</div><!-- col-xs-6 -->
 				<div class="col-sm-6 hidden-xs">
 					<form action="#">
-						<input type="text" placeholder="Search">
+						<input type="text" placeholder="<?php _e( 'Search','terme' ); ?>">
 						<button><i class="fa fa-search"></i></button>
 					</form>
 				</div><!-- col-xs-6 -->
@@ -55,7 +55,7 @@
 
 						<?php echo wp_nav_menu(); ?>
 					<div class="shopping_cart">
-						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">
 							<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 							<div class="count">
 								Cart

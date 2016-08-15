@@ -26,6 +26,7 @@
 	<?php } else { ?>
 		<link rel="shortcut icon" href="<?php echo $terme_options['favicon_16']['url']; ?>" />
 	<?php }  ?>
+  <?php load_theme_textdomain('terme'); ?>
   <?php if ( get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
   <?php include TEMPLATEPATH . '/style.php'; ?>
   <?php echo $terme_options['google_analytics_code']; ?>
@@ -44,4 +45,4 @@
 		}else {
 			include TEMPLATEPATH . '/inc/header/4.php';
 		}
-			?>
+		?>

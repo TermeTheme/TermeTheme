@@ -6,7 +6,7 @@ class Terme_Socials_Networks extends WP_Widget {
                     'terme_social_networks',
                     __('Terme Social Widget', 'terme'),
                     array(
-                        'description' => __( 'Terme Theme social networks widget', 'terme' ),
+                        'description' => __( 'Show social networks widget', 'terme' ),
                     )
                 );
     }

@@ -8,10 +8,10 @@ parent::__construct(
 'top_article_widget',
 
 // Widget name will appear in UI
-__('Terme Top Article Widget', 'wpb_widget_domain'),
+__('Terme Top Article Widget', 'terme'),
 
 // Widget description
-array( 'description' => __( 'Show the Most view Article', 'wpb_widget_domain' ), )
+array( 'description' => __( 'Show the Last Articles', 'terme' ), )
 );
 }
 
@@ -48,17 +48,17 @@ if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
 }
 else {
-$title = __( 'متن همیار', 'wpb_widget_domain' );
+$title = __( 'Hot', 'terme' );
 }
 // Widget admin form
 ?>
 
 <p>
-<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'terme' ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 </p>
 <p>
-<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Count:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Count:', 'terme' ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo $count; ?>"  />
 </p>
 

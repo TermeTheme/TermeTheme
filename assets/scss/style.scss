@@ -257,7 +257,7 @@ header .main_menu {
 		content: '';
 	}
 	ul > li ul {
-		@include rem(( width: 295px, top: 50px, border-top-width: 3px, transform: translateY(-10px) translateX(-35px), ));
+		@include rem(( width: 295px, top: 50px, border-top-width: 3px, transform: translateY(-10px) translateX(0), ));
 		position: absolute;
 		height: auto;
 		left: 0;
@@ -268,7 +268,7 @@ header .main_menu {
 	ul > li:hover > ul {
 		pointer-events: all;
 		opacity: 1;
-		transform: translateY(0) translateX(-35px);
+		transform: translateY(0) translateX(0);
 	}
 	ul > li ul li {
 		width: 100%;
@@ -297,14 +297,15 @@ header .main_menu {
 }
 header.style_1 .main_menu {
 	background: $secondary_color;
-	ul > li {
-		@include rem(( margin: 0 35px, ));
-		&:first-child {
-			margin-left: 0;
-		}
-	}
+	// ul > li {
+	// 	@include rem(( margin: 0 35px, ));
+	// 	&:first-child {
+	// 		margin-left: 0;
+	// 	}
+	// }
 	ul > li > a {
 		color: #fff;
+				@include rem(( padding: 0 15px, ));
 	}
 	ul > li:hover > a {
 		color: $primary_color;
@@ -338,17 +339,17 @@ header.style_4 .main_menu {
 		width: auto;
 	}
 	ul > li {
-		@include rem(( margin: 0 20px, ));
-		&:first-child {
-			margin-left: 0;
-			a {
-				padding-left: 0;
-			}
-		}
+		// @include rem(( margin: 0 20px, ));
+		// &:first-child {
+		// 	margin-left: 0;
+		// 	a {
+		// 		padding-left: 0;
+		// 	}
+		// }
 	}
-	ul > li:first-child {
-		margin-right: 0;
-	}
+	// ul > li:first-child {
+	// 	margin-right: 0;
+	// }
 	ul > li > a {
 		color: $secondary_color;
 		@include rem(( padding: 0 15px, ));
@@ -2500,15 +2501,19 @@ footer.footer {
 .article_comment {
 	float: left;
 	width: 100%;
+	@include rem(margin-top, 30px);
+.comment_container {
+	float: left;
+	width: 100%;
 	padding: 0;
 	border: solid #e4e4e4;
 	background: #fff;
 	list-style: none;
-	@include rem(( border-width: 1px, padding-top: 0,margin-top: 30px ));
+	@include rem(( border-width: 1px, padding-top: 0 ));
 	margin-bottom: 0;
 	h4 {
 		margin: 0;
-		@include rem(( padding: 20px 15px 0 15px, ));
+		@include rem(( padding: 10px, ));
 	}
 	ol {
 		list-style: none;
@@ -2644,65 +2649,71 @@ footer.footer {
 			}
 		}
 	}
-}
-.comment-respond {
-	width: 100%;
-	float: left;
-	padding: 0;
-	border-top: none;
-	border: solid #e4e4e4;
-	background: #fff;
-	@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
-	form {
-		.comment-form-author,
-		.comment-form-email {
-			float: left;
-			width: 50%;
-			box-sizing: border-box;
-			@include rem(( padding: 10px,));
-			input {
-				width: 100%;
-				border: solid #e4e4e4;
-				background: #fafafa;
-				transition: all 0.4s;
-				@include rem(( border-width: 1px,height: 45px, padding: 10px,));
-				&:focus {
-					border: solid $primary_color;
-					@include rem(( border-width: 1px,));
+	.comment-respond {
+		width: 100%;
+		float: left;
+		padding: 0;
+		border-top: none;
+		border: solid #e4e4e4;
+		background: #fff;
+		@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
+		form {
+			.comment-form-author,
+			.comment-form-email {
+				float: left;
+				width: 50%;
+				box-sizing: border-box;
+				@include rem(( padding: 10px,));
+				input {
+					width: 100%;
+					border: solid #e4e4e4;
+					background: #fafafa;
+					transition: all 0.4s;
+					@include rem(( border-width: 1px,height: 45px, padding: 10px,));
+					&:focus {
+						border: solid $primary_color;
+						@include rem(( border-width: 1px,));
+					}
 				}
 			}
-		}
-		.comment-form-comment {
-			float: left;
-			width: 100%;
-			box-sizing: border-box;
-			@include rem(( padding: 10px,));
-			textarea {
+			.logged-in-as {
+				@include rem(( padding: 10px,));
+
+			}
+			.comment-form-comment {
+				float: left;
 				width: 100%;
-				outline: none;
-				border: solid #e4e4e4;
-				background: #fafafa;
-				transition: all 0.4s;
-				@include rem(( border-width: 1px,height: 100px, padding: 10px,));
-				&:focus {
-					border: solid $primary_color;
-					@include rem(( border-width: 1px,));
+				box-sizing: border-box;
+				@include rem(( padding: 10px,));
+				textarea {
+					width: 100%;
+					outline: none;
+					border: solid #e4e4e4;
+					background: #fafafa;
+					transition: all 0.4s;
+					@include rem(( border-width: 1px,height: 100px, padding: 10px,));
+					&:focus {
+						border: solid $primary_color;
+						@include rem(( border-width: 1px,));
+					}
 				}
 			}
-		}
-		.form-submit {
-			float: right;
-			@include rem(( padding: 10px,));
-			input {
-				font-weight: bold;
-				background: $primary_color;
-				border: none;
-				color: #fff;
-				@include rem(( padding: 15px 30px,border-radius: 4px, font-size: 14px,));
+			.form-submit {
+				float: right;
+				@include rem(( padding: 10px,));
+				input {
+					font-weight: bold;
+					background: $primary_color;
+					border: none;
+					color: #fff;
+					@include rem(( padding: 10px 20px,border-radius: 4px, font-size: 14px,));
+				}
 			}
 		}
 	}
 }
+}
+
 .category_content {
 	@include rem(( padding-top: 30px, ));
 	ul {

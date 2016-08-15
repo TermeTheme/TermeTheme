@@ -8,10 +8,10 @@ parent::__construct(
 'tab_widget',
 
 // Widget name will appear in UI
-__('Terme Tab Widget', 'wpb_widget_domain'),
+__('Terme Tab Widget', 'terme'),
 
 // Widget description
-array( 'description' => __( 'Show the News', 'wpb_widget_domain' ), )
+array( 'description' => __( 'Show the News by Category', 'terme' ), )
 );
 }
 
@@ -112,15 +112,15 @@ $title_03 = $instance[ 'title_03' ];
 
 
 <p>
-<label for="<?php echo $this->get_field_id( 'title_01' ); ?>"><?php _e( 'Title 1:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'title_01' ); ?>"><?php _e( 'Title 1:', 'terme'  ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'title_01' ); ?>" name="<?php echo $this->get_field_name( 'title_01' ); ?>" type="text" value="<?php echo esc_attr( $title_01 ); ?>" />
 </p>
 <p>
-<label for="<?php echo $this->get_field_id( 'count_01' ); ?>"><?php _e( 'Count:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'count_01' ); ?>"><?php _e( 'Count:', 'terme'  ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'count_01' ); ?>" name="<?php echo $this->get_field_name( 'count_01' ); ?>" type="text" value="<?php echo $count_01; ?>"  />
 </p>
 <p>
-  <label for="<?php echo $this->get_field_id( 'select_cat_01' ); ?>"><?php _e( 'Select Category:' ); ?></label>
+  <label for="<?php echo $this->get_field_id( 'select_cat_01' ); ?>"><?php _e( 'Select Category:', 'terme'  ); ?></label>
   <select class="widefat" name="<?php echo $this->get_field_name( 'select_cat_01' ); ?>" id="<?php echo $this->get_field_id( 'select_cat_01' ); ?>">
   <?php
       $categories = get_categories( array( 'orderby' => 'name',
@@ -139,15 +139,15 @@ $title_03 = $instance[ 'title_03' ];
 <hr />
 
 <p>
-<label for="<?php echo $this->get_field_id( 'title_02' ); ?>"><?php _e( 'Title 2:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'title_02' ); ?>"><?php _e( 'Title 2:', 'terme'  ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'title_02' ); ?>" name="<?php echo $this->get_field_name( 'title_02' ); ?>" type="text" value="<?php echo esc_attr( $title_02 ); ?>" />
 </p>
 <p>
-<label for="<?php echo $this->get_field_id( 'count_02' ); ?>"><?php _e( 'Count:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'count_02' ); ?>"><?php _e( 'Count:', 'terme'  ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'count_02' ); ?>" name="<?php echo $this->get_field_name( 'count_02' ); ?>" type="text" value="<?php echo $count_02; ?>"  />
 </p>
 <p>
-  <label for="<?php echo $this->get_field_id( 'select_cat_02' ); ?>"><?php _e( 'Select Category:' ); ?></label>
+  <label for="<?php echo $this->get_field_id( 'select_cat_02' ); ?>"><?php _e( 'Select Category:', 'terme'  ); ?></label>
   <select class="widefat" name="<?php echo $this->get_field_name( 'select_cat_02' ); ?>" id="<?php echo $this->get_field_id( 'select_cat_02' ); ?>">
   <?php
       $categories = get_categories( array( 'orderby' => 'name',
@@ -165,15 +165,15 @@ $title_03 = $instance[ 'title_03' ];
 </p>
 <hr />
 <p>
-<label for="<?php echo $this->get_field_id( 'title_03' ); ?>"><?php _e( 'Title 3:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'title_03' ); ?>"><?php _e( 'Title 3:', 'terme'  ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'title_03' ); ?>" name="<?php echo $this->get_field_name( 'title_03' ); ?>" type="text" value="<?php echo esc_attr( $title_03 ); ?>" />
 </p>
 <p>
-<label for="<?php echo $this->get_field_id( 'count_03' ); ?>"><?php _e( 'Count:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'count_03' ); ?>"><?php _e( 'Count:', 'terme'  ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'count_03' ); ?>" name="<?php echo $this->get_field_name( 'count_03' ); ?>" type="text" value="<?php echo $count_03; ?>"  />
 </p>
 <p>
-  <label for="<?php echo $this->get_field_id( 'select_cat_03' ); ?>"><?php _e( 'Select Category:' ); ?></label>
+  <label for="<?php echo $this->get_field_id( 'select_cat_03' ); ?>"><?php _e( 'Select Category:', 'terme'  ); ?></label>
   <select class="widefat" name="<?php echo $this->get_field_name( 'select_cat_03' ); ?>" id="<?php echo $this->get_field_id( 'select_cat_03' ); ?>">
   <?php
       $categories = get_categories( array( 'orderby' => 'name',

@@ -70,25 +70,26 @@ function woocommerce_support()
 add_action('after_setup_theme', 'terme_load_textdomain');
 function terme_load_textdomain()
 {
-    load_theme_textdomain('terme', get_template_directory().'/languages');
+    // load_theme_textdomain('terme', get_template_directory().'/languages');
+    load_theme_textdomain( 'terme', TEMPLATEPATH.'/languages' );
+    $locale = get_locale();
+    $locale_file = TEMPLATEPATH."/languages/$locale.php";
+    if ( is_readable($locale_file) )
+    	require_once($locale_file);
 }
 // Menu
 add_action( 'init', 'theme_setup' );
 function theme_setup() {
 	register_nav_menus(
 		array(
-			'top_menu' => __( 'Top menu' ),
-			'main_menu' => __( 'Main menu' ),
-			'side_panel' => __( 'Mobile side menu' ),
+			'header_menu' => __( 'Header Menu','terme' ),
+			'footer_menu' => __( 'Footer Menu','terme' ),
 			)
 	);
 }
 
 // Remove the admin bar from the front end
 add_filter( 'show_admin_bar', '__return_false' );
-
-
-
 include TEMPLATEPATH.'/inc/terme_funcs.php';
 include TEMPLATEPATH.'/inc/hooks.php';
 include TEMPLATEPATH.'/inc/widgets/widgets.php';
@@ -98,10 +99,6 @@ include TEMPLATEPATH.'/inc/page-builder/index.php';
 include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 include TEMPLATEPATH.'/woocommerce/wc_functions.php';
 include TEMPLATEPATH.'/inc/post_type/slider.php';
-
-
-
-
 ?>
 
 <?php

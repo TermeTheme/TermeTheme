@@ -7,108 +7,7 @@ class Rational_Meta_Box {
 		'post',
 		'page',
 	);
-	private $fields = array(
-		array(
-			'id' => 'date',
-			'label' => 'Show Post Date',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-		array(
-			'id' => 'category',
-			'label' => 'Show Post Category',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-		array(
-			'id' => 'viewcount',
-			'label' => 'Show Post View Count',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-		array(
-			'id' => 'commentcount',
-			'label' => 'Show Comment View Count',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-		array(
-			'id' => 'dateformat',
-			'label' => 'Date Format',
-			'type' => 'text',
-		),
-		array(
-			'id' => 'relatedpost-display',
-			'label' => 'Show Related Post',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-		array(
-			'id' => 'relatedpost-by',
-			'label' => 'Related Post By',
-			'type' => 'checkbox',
-			'options' => array(
-				'tag',
-				'category',
-			),
-		),
-		array(
-			'id' => 'relatedpost-count',
-			'label' => 'Related Post Number',
-			'type' => 'text',
-		),
-		array(
-			'id' => 'comment-display',
-			'label' => 'Show Comment Box',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-		array(
-			'id' => 'author-display',
-			'label' => 'Show Author Box',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-		array(
-			'id' => 'share-display',
-			'label' => 'Show Share Icon',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-		array(
-			'id' => 'breadcrumb',
-			'label' => 'Show Breadcrumb',
-			'type' => 'checkbox',
-      'options' => array(
-				'Disabeled',
-				'Enabeled',
-			),
-		),
-	);
+	private $fields = array();
 
 	/**
 	 * Class construct method. Adds actions to their respective WordPress hooks.
@@ -116,6 +15,109 @@ class Rational_Meta_Box {
 	public function __construct() {
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'save_post', array( $this, 'save_post' ) );
+
+		$this->fields = array(
+			array(
+				'id' => 'date',
+				'label' =>  __('Show Post Date', 'terme'),
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			),
+			array(
+				'id' => 'category',
+				'label' => 'Show Post Category',
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			),
+			array(
+				'id' => 'viewcount',
+				'label' =>  __('Show Post View Count', 'terme'),
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			),
+			array(
+				'id' => 'commentcount',
+				'label' => 'Show Comment View Count',
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			),
+			array(
+				'id' => 'dateformat',
+				'label' => 'Date Format',
+				'type' => 'text',
+			),
+			array(
+				'id' => 'relatedpost-display',
+				'label' => 'Show Related Post',
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			),
+			array(
+				'id' => 'relatedpost-by',
+				'label' => 'Related Post By',
+				'type' => 'checkbox',
+				'options' => array(
+					'tag',
+					'category',
+				),
+			),
+			array(
+				'id' => 'relatedpost-count',
+				'label' => 'Related Post Number',
+				'type' => 'text',
+			),
+			array(
+				'id' => 'comment-display',
+				'label' => 'Show Comment Box',
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			),
+			array(
+				'id' => 'author-display',
+				'label' => 'Show Author Box',
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			),
+			array(
+				'id' => 'share-display',
+				'label' => 'Show Share Icon',
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			),
+			array(
+				'id' => 'breadcrumb',
+				'label' => 'Show Breadcrumb',
+				'type' => 'checkbox',
+	      'options' => array(
+					'Disabeled',
+					'Enabeled',
+				),
+			)
+		);
 	}
 
 	/**

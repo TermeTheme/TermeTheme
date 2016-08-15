@@ -8,10 +8,10 @@ parent::__construct(
 'html_widget',
 
 // Widget name will appear in UI
-__('Terme Video Widget', 'wpb_widget_domain'),
+__('Terme Video Widget', 'terme'),
 
 // Widget description
-array( 'description' => __( 'Show the Video', 'wpb_widget_domain' ), )
+array( 'description' => __( 'Show the Video', 'terme' ), )
 );
 }
 
@@ -61,22 +61,22 @@ if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
 }
 else {
-$title = __( 'متن همیار', 'wpb_widget_domain' );
+$title = __( 'Video', 'terme' );
 }
 // Widget admin form
 ?>
 
 <p>
-<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'terme' ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 </p>
 <p>
-<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Count:' ); ?></label>
+<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Count:', 'terme' ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo $count; ?>"  />
 </p>
 
 <p>
-  <label for="<?php echo $this->get_field_id( 'selectopt' ); ?>"><?php _e( 'Select Category:' ); ?></label>
+  <label for="<?php echo $this->get_field_id( 'selectopt' ); ?>"><?php _e( 'Select Category:', 'terme' ); ?></label>
   <select class="widefat" name="<?php echo $this->get_field_name( 'selectopt' ); ?>" id="<?php echo $this->get_field_id( 'selectopt' ); ?>">
   <?php
       $categories = get_categories( array( 'orderby' => 'name',

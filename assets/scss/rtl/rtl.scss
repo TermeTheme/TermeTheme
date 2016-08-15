@@ -407,6 +407,13 @@ footer.footer {
 				}
 			}
 		}
+		.article_social {
+			ul {
+				li {
+					float: right;
+				}
+			}
+		}
 	}
 	.article_author {
 		img {
@@ -430,6 +437,7 @@ footer.footer {
 	}
 }
 .article_comment {
+.comment_container {
 	ol {
 		li {
 			float: right;
@@ -447,35 +455,59 @@ footer.footer {
 					}
 				}
 			}
+			ul.children {
+				li {
+					float: right;
+					&:before {
+						right: 70px;
+						left: auto;
+					}
+					article {
+						float: right;
+						margin-left: auto;
+						margin-right: 10%;
+					}
+					.comment_author {
+						float: right;
+						img {
+							float: right;
+						}
+					}
+					.comment_metadata {
+						.reply {
+							right: auto;
+							left: 0;
+						}
+					}
+				}
+			}
 		}
 	}
-	ul.children {
-		li {
-			float: right;
-			&:before {
-				right: 70px;
-				left: auto;
-			}
-			article {
+	.comment-respond {
+		width: 100%;
+		float: left;
+		padding: 0;
+		border-top: none;
+		border: solid #e4e4e4;
+		background: #fff;
+		@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
+		form {
+			.comment-form-author,
+			.comment-form-email {
 				float: right;
-				margin-left: auto;
-				margin-right: 10%;
 			}
-			.comment_author {
-				float: right;
-				img {
-					float: right;
-				}
-			}
-			.comment_metadata {
-				.reply {
-					right: auto;
-					left: 0;
-				}
-			}
+
+		.form-submit {
+			float: left;
+
+		}
+
 		}
 	}
 }
+
+}
+
 .product_page {
 	.images {
 		float: right;
@@ -485,7 +517,6 @@ footer.footer {
 		.woocommerce-product-rating {
 			.star-rating {
 				float: right;
-
 				@include rem((	margin: 5px 0 0 10px, ));
 
 			}

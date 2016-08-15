@@ -119,7 +119,7 @@
 						<?php endif; ?>
 						<?php if (isset($terme_postmeta['relatedpost-display']) && !empty($terme_postmeta['relatedpost-display'])): ?>
 							<div class="article_related">
-								<h4>Related Post</h4>
+								<h4><?php _e('Related Post', 'terme'); ?></h4>
 								<ul>
 								<?php
 										$tags = wp_get_post_tags($post->ID);
@@ -179,7 +179,7 @@
 									</div>
 						<?php elseif ($terme_options['related_posts']): ?>
 							<div class="article_related">
-								<h4>Related Post</h4>
+								<h4><?php _e('Related Post', 'terme'); ?></h4>
 								<ul>
 								<?php
 										$tags = wp_get_post_tags($post->ID);
@@ -244,7 +244,9 @@
 							<?php comments_template(); ?>
 							</div>
 						<?php elseif ($terme_options['post_comments']): ?>
+
 							<div class="article_comment">
+
 							<?php comments_template(); ?>
 							</div>
 
