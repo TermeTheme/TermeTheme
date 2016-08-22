@@ -35,19 +35,48 @@ if (function_exists('add_image_size')) {
 function terme_sidebars()
 {
     register_sidebar(array(
-        'name' => 'Terme Sidebar',
+        'name' => 'Sidebar',
         'id' => 'sidebar',
+        'description' => __( 'Widgets in this area will be shown in the default sidebar.', 'terme' ),
         'before_widget' => '<section>',
         'after_widget' => '</div></section>',
         'before_title' => '<h4>',
         'after_title' => '</h4><div class="widget_body">',
     ));
     register_sidebar(array(
-        'name' => 'footer Widget',
-        'id' => 'footer',
-        'before_widget' => '<div>',
+        'name' => 'Footer (Column 1)',
+        'id' => 'footer_1',
+        'description' => __( 'Widgets in this area will be shown in the footer column 1.', 'terme' ),
+        'before_widget' => '<div class="box_1">',
         'after_widget' => '</div>',
-        'before_title' => '<h2 class="rounded">',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer (Column 2)',
+        'id' => 'footer_2',
+        'description' => __( 'Widgets in this area will be shown in the footer column 2.', 'terme' ),
+        'before_widget' => '<div class="box_2">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer (Column 3)',
+        'id' => 'footer_3',
+        'description' => __( 'Widgets in this area will be shown in the footer column 3.', 'terme' ),
+        'before_widget' => '<div class="box_3">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer (Column 4)',
+        'id' => 'footer_4',
+        'description' => __( 'Widgets in this area will be shown in the footer column 4.', 'terme' ),
+        'before_widget' => '<div class="box_4">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
         'after_title' => '</h2>',
     ));
 }
@@ -88,6 +117,9 @@ function theme_setup() {
 	);
 }
 
+
+
+
 // Remove the admin bar from the front end
 add_filter( 'show_admin_bar', '__return_false' );
 include TEMPLATEPATH.'/inc/terme_funcs.php';
@@ -95,7 +127,6 @@ include TEMPLATEPATH.'/inc/hooks.php';
 include TEMPLATEPATH.'/inc/widgets/widgets.php';
 include TEMPLATEPATH.'/inc/theme_option/index.php';
 include TEMPLATEPATH.'/inc/page-builder/index.php';
-// include TEMPLATEPATH.'/inc/metabox/metabox.php';
 include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 include TEMPLATEPATH.'/woocommerce/wc_functions.php';
 include TEMPLATEPATH.'/inc/post_type/slider.php';

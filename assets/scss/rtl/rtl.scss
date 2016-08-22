@@ -263,6 +263,11 @@ section.latest_news {
 	}
 }
 footer.footer {
+	&.style_1 .main_area {
+		.tagcloud {
+			float: right;
+}
+	}
 	&.style_1 .main_area .box_1 ul {
 		float: right;
 	}

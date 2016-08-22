@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: terme\n"
-"POT-Creation-Date: 2016-08-15 11:42+0430\n"
-"PO-Revision-Date: 2016-08-15 11:42+0430\n"
+"POT-Creation-Date: 2016-08-16 12:21+0430\n"
+"PO-Revision-Date: 2016-08-16 12:23+0430\n"
 "Last-Translator: \n"
 "Language-Team: TermeTheme <termetheme@gmail.com>\n"
 "Language: fa_IR\n"
@@ -79,15 +79,44 @@ msgstr "نام"
 msgid "Email"
 msgstr "ایمیل"
 
-#: functions.php:85
+#: functions.php:40
+msgid "Widgets in this area will be shown in the default sidebar."
+msgstr ""
+"ابزارک هایی که در این قسمت قرار می گیرند در سایدبار نمایش داده خواهند شد."
+
+#: functions.php:49
+msgid "Widgets in this area will be shown in the footer column 1."
+msgstr ""
+"ابزارک هایی که در این قسمت قرار می گیرند در ستون اول فوتر نمایش داده خواهند "
+"شد."
+
+#: functions.php:58
+msgid "Widgets in this area will be shown in the footer column 2."
+msgstr ""
+"ابزارک هایی که در این قسمت قرار می گیرند در ستون دوم فوتر نمایش داده خواهند "
+"شد."
+
+#: functions.php:67
+msgid "Widgets in this area will be shown in the footer column 3."
+msgstr ""
+"ابزارک هایی که در این قسمت قرار می گیرند در ستون سوم فوتر نمایش داده خواهند "
+"شد."
+
+#: functions.php:76
+msgid "Widgets in this area will be shown in the footer column 4."
+msgstr ""
+"ابزارک هایی که در این قسمت قرار می گیرند در ستون چهارم فوتر نمایش داده "
+"خواهند شد."
+
+#: functions.php:114
 msgid "Header Menu"
 msgstr "منوی هدر"
 
-#: functions.php:86
+#: functions.php:115
 msgid "Footer Menu"
 msgstr "منوی فوتر"
 
-#: functions.php:117
+#: functions.php:146
 #, php-format
 msgid "%1$s"
 msgstr ""
@@ -1277,22 +1306,69 @@ msgstr ""
 msgid "Terme ADS Widget"
 msgstr "تبلیغات (ترمه)"
 
-#: inc/widgets/ads.php:14
+#: inc/widgets/ads.php:14 inc/widgets/footer_about.php:14
+#: inc/widgets/footer_social.php:14
 msgid "Show the ADS Section"
 msgstr "نمایش تبلیغات بنری"
 
-#: inc/widgets/ads.php:54
+#: inc/widgets/ads.php:54 inc/widgets/footer_about.php:56
+#: inc/widgets/footer_social.php:54
 msgid "ADS"
 msgstr "تبلیغات"
 
-#: inc/widgets/ads.php:65 inc/widgets/top_articles.php:57
+#: inc/widgets/ads.php:65 inc/widgets/footer_about.php:67
+#: inc/widgets/footer_about.php:76 inc/widgets/footer_category.php:56
+#: inc/widgets/footer_news.php:58 inc/widgets/footer_social.php:65
+#: inc/widgets/footer_social.php:74 inc/widgets/top_articles.php:57
 #: inc/widgets/video.php:70
 msgid "Title:"
 msgstr "عنوان"
 
-#: inc/widgets/ads.php:69
+#: inc/widgets/ads.php:69 inc/widgets/footer_about.php:71
+#: inc/widgets/footer_social.php:69
 msgid "Image:"
 msgstr "تصویر:"
+
+#: inc/widgets/ads.php:74
+msgid "URL:"
+msgstr ""
+
+#: inc/widgets/footer_about.php:11
+msgid "Terme footer about"
+msgstr ""
+
+#: inc/widgets/footer_category.php:11
+msgid "Terme Footer Category"
+msgstr ""
+
+#: inc/widgets/footer_category.php:14 inc/widgets/footer_news.php:14
+#: inc/widgets/top_articles.php:14
+msgid "Show the Last Articles"
+msgstr "نمایش آخرین مطالب"
+
+#: inc/widgets/footer_category.php:50 inc/widgets/footer_news.php:52
+#: inc/widgets/top_articles.php:51
+msgid "Hot"
+msgstr "داغ"
+
+#: inc/widgets/footer_category.php:60 inc/widgets/footer_news.php:62
+#: inc/widgets/news.php:119 inc/widgets/news.php:146 inc/widgets/news.php:172
+#: inc/widgets/top_articles.php:61 inc/widgets/video.php:74
+msgid "Count:"
+msgstr "تعداد:"
+
+#: inc/widgets/footer_category.php:64 inc/widgets/news.php:123
+#: inc/widgets/news.php:150 inc/widgets/news.php:176 inc/widgets/video.php:79
+msgid "Select Category:"
+msgstr "انتخاب دسته بندی:"
+
+#: inc/widgets/footer_news.php:11
+msgid "Terme Footer"
+msgstr ""
+
+#: inc/widgets/footer_social.php:11
+msgid "Terme footer Social"
+msgstr ""
 
 #: inc/widgets/news.php:11
 msgid "Terme Tab Widget"
@@ -1305,16 +1381,6 @@ msgstr "نمایش مطالب بر اساس دسته بندی"
 #: inc/widgets/news.php:115
 msgid "Title 1:"
 msgstr "عنوان اول"
-
-#: inc/widgets/news.php:119 inc/widgets/news.php:146 inc/widgets/news.php:172
-#: inc/widgets/top_articles.php:61 inc/widgets/video.php:74
-msgid "Count:"
-msgstr "تعداد:"
-
-#: inc/widgets/news.php:123 inc/widgets/news.php:150 inc/widgets/news.php:176
-#: inc/widgets/video.php:79
-msgid "Select Category:"
-msgstr "انتخاب دسته بندی:"
 
 #: inc/widgets/news.php:142
 msgid "Title 2:"
@@ -1448,14 +1514,6 @@ msgstr "Dribbble Access Token:"
 #: inc/widgets/top_articles.php:11
 msgid "Terme Top Article Widget"
 msgstr "آخرین مطالب (ترمه)"
-
-#: inc/widgets/top_articles.php:14
-msgid "Show the Last Articles"
-msgstr "نمایش آخرین مطالب"
-
-#: inc/widgets/top_articles.php:51
-msgid "Hot"
-msgstr "داغ"
 
 #: inc/widgets/video.php:11
 msgid "Terme Video Widget"

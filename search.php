@@ -6,7 +6,7 @@ global $terme_options; ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-sm-12">
-					<div class="category_content">
+					<div class="search_content">
 						<ul>
 							<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 							<li>
@@ -28,15 +28,8 @@ global $terme_options; ?>
 						<?php endwhile; else: ?>
 						<?php endif; ?>
 						</ul>
-						<div class="wp-pagenavi">
-									<a class="previouspostslink" rel="prev" href="http://hamyarwp.com/category/plugins/"><span>Previous</span> <i class="fa fa-angle-left" aria-hidden="true"></i></a>
-									<a class="page smaller" href="http://hamyarwp.com/category/plugins/">1</a><span class="current">2</span>
-									<a class="page larger" href="http://hamyarwp.com/category/plugins/page/3/">3</a><a class="page larger" href="http://hamyarwp.com/category/plugins/page/4/">4</a>
-									<a class="page larger" href="http://hamyarwp.com/category/plugins/page/5/">5</a><span class="extend">...</span>
-									<a class="larger page" href="http://hamyarwp.com/category/plugins/page/20/">20</a>
-									<a class="nextpostslink" rel="next" href="http://hamyarwp.com/category/plugins/page/3/"><span>Next</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-						</div>
-						<?php wp_pagenavi( array( 'type' => 'multipart' ) ); ?>
+
+						<?php wp_pagenavi(); ?>
 
 
 

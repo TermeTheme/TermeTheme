@@ -28,18 +28,14 @@ global $terme_options; ?>
 						<?php endwhile; else: ?>
 						<?php endif; ?>
 						</ul>
-						
 						<?php wp_pagenavi(); ?>
-
-
-
 								</div><!-- category_content -->
-				</div><!--col-xs-8-->
+				</div><!--col-md-8-->
 				<div class="col-md-4 hidden-sm hidden-xs">
 					<aside id="sidebar">
 							<?php get_sidebar(); ?>
 					</aside><!-- sidebar -->
-								</div><!--col-xs-4-->
+								</div><!--col-md-4-->
 			</div><!-- row -->
 		</div><!-- container -->
 	</main>

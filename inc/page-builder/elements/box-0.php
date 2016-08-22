@@ -4,8 +4,11 @@
   <ul>
       <?php
     $args = array(
-        'showposts'         => 3,
+        'posts_per_page'         => 3,
         'cat' => 1,
+        'meta_key' => 'terme_post_views_count',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC',
     );
     $my_query = new WP_Query($args);
     while ($my_query->have_posts()):

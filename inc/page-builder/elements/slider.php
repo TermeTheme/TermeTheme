@@ -15,8 +15,7 @@
                   <h2><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
                   <span><?php the_time('F j, Y g:i a'); ?></span>
                 </div>
-
               </div>
             </div>
-          <?php endwhile; ?>
+      <?php endwhile; ?>
 </div>

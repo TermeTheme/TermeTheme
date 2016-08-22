@@ -234,6 +234,8 @@ section.latest_news {
     -ms-transform: translate(30%, -50%);
     transform: translate(30%, -50%); }
 
+footer.footer.style_1 .main_area .tagcloud {
+  float: right; }
 footer.footer.style_1 .main_area .box_1 ul {
   float: right; }
 footer.footer.style_1 .main_area .box_1 ul li {

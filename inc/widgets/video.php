@@ -38,7 +38,7 @@ echo '<li>
           <figcaption>
             <span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
             <a href="'.get_permalink().'">
-              <h2>'.get_the_title().'</h2>
+              <h2>'. terme_shorten_text(get_the_title(), 40) .'</h2>
                 <div class="info">
                  <span><i class="fa fa-eye" aria-hidden="true"></i> 2.745</span>
                  <span><i class="fa fa-commenting" aria-hidden="true"></i> 1.586</span>

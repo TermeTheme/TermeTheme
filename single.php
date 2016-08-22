@@ -5,8 +5,9 @@
 			<div class="row">
 				<div class="col-md-8 col-sm-12 col-xs-12">
 					<div class="article_content">
-							<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-
+							<?php if(have_posts()) : while(have_posts()) : the_post();
+								terme_set_post_views(get_the_ID());
+							 ?>
 							<?php
 							$terme_postmeta = get_post_meta( $post->ID, 'terme_postmeta', true );
 							//  print_r(get_post_meta($post->ID,'terme_postmeta', true));?>
@@ -33,9 +34,9 @@
 									<?php endif; ?>
 
 									<?php if (isset($terme_postmeta['viewcount']) && !empty($terme_postmeta['viewcount']) ): ?>
-									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
+									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp <?php echo terme_get_post_views(get_the_ID()); ?></span>
 									<?php elseif ($terme_options['view_count']): ?>
-									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
+									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp <?php echo terme_get_post_views(get_the_ID()); ?></span>
 									<?php endif; ?>
 
 									<?php if (isset($terme_postmeta['commentcount']) && !empty($terme_postmeta['commentcount']) ): ?>

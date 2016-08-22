@@ -43,15 +43,18 @@ echo $args['before_title'] . $title . $args['after_title'];
   <div class="tab-pane active" id="tab_default_1">
     <ul>
       <?php $arg = array(
-          'showposts'         => $instance['count_01'],
+          'posts_per_page'         => $instance['count_01'],
           'cat' => $instance['select_cat_01'],
+          'meta_key' => 'terme_post_views_count',
+          'orderby' => 'meta_value_num',
+          'order' => 'DESC',
           );
       $my_query = new WP_Query($arg);
       while ($my_query->have_posts()):
       $my_query->the_post(); ?>
       <li>
         <div class="thumb">	<?php the_post_thumbnail( 'related_thumb' ); ?></div>
-        <h3><a href="<?php the_permalink() ?>"><?php echo terme_shorten_text(get_the_title(), 50); ?></a></h3>
+        <h3><a href="<?php the_permalink() ?>"><?php echo terme_shorten_text(get_the_title(), 40); ?></a></h3>
         <div class="time"><i class="fa fa-clock-o"></i> Friday, 27 April 2016</div>
       </li>
     <?php endwhile; ?>
@@ -61,7 +64,7 @@ echo $args['before_title'] . $title . $args['after_title'];
 <div class="tab-pane" id="tab_default_2">
   <ul>
     <?php $arg = array(
-        'showposts'         => $instance['count_02'],
+        'posts_per_page'         => $instance['count_02'],
         'cat' => $instance['select_cat_02'],
         );
     $my_query = new WP_Query($arg);
@@ -69,7 +72,7 @@ echo $args['before_title'] . $title . $args['after_title'];
     $my_query->the_post(); ?>
     <li>
       <div class="thumb">	<?php the_post_thumbnail( 'related_thumb' ); ?></div>
-      <h3><a href="<?php the_permalink() ?>"><?php echo terme_shorten_text(get_the_title(), 50); ?></a></h3>
+      <h3><a href="<?php the_permalink() ?>"><?php echo terme_shorten_text(get_the_title(), 40); ?></a></h3>
       <div class="time"><i class="fa fa-clock-o"></i> Friday, 27 April 2016</div>
     </li>
   <?php endwhile; ?>
@@ -78,7 +81,7 @@ echo $args['before_title'] . $title . $args['after_title'];
 <div class="tab-pane" id="tab_default_3">
   <ul>
     <?php $arg = array(
-        'showposts'         => $instance['count_03'],
+        'posts_per_page'         => $instance['count_03'],
         'cat' => $instance['select_cat_03'],
         );
     $my_query = new WP_Query($arg);
@@ -86,7 +89,7 @@ echo $args['before_title'] . $title . $args['after_title'];
     $my_query->the_post(); ?>
     <li>
       <div class="thumb">	<?php the_post_thumbnail( 'related_thumb' ); ?></div>
-      <h3><a href="<?php the_permalink() ?>"><?php echo terme_shorten_text(get_the_title(), 50); ?></a></h3>
+      <h3><a href="<?php the_permalink() ?>"><?php echo terme_shorten_text(get_the_title(), 40); ?></a></h3>
       <div class="time"><i class="fa fa-clock-o"></i> Friday, 27 April 2016</div>
     </li>
   <?php endwhile; ?>

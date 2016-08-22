@@ -1,14 +1,14 @@
 <?php
 // Creating the widget
-class ads_widget extends WP_Widget {
+class footer_about extends WP_Widget {
 
 function __construct() {
 parent::__construct(
 // Base ID of your widget
-'ads_widget',
+'footer_about',
 
 // Widget name will appear in UI
-__('Terme ADS Widget', 'terme'),
+__('Terme footer about', 'terme'),
 
 // Widget description
 array( 'description' => __( 'Show the ADS Section', 'terme' ), )
@@ -30,22 +30,24 @@ public function upload_scripts()
 public function widget( $args, $instance ) {
 $title = apply_filters( 'widget_title', $instance['title'] );
 $url   = (string)$instance['url'];
+$desc = $instance['desc'];
 
 
 
-echo '<section><ul class="ads">';
-echo '<figure>
-        <img src="'.$instance['image'].'" alt="" />
-        <figcaption>
-          <a href="'.$url.'"><i class="fa fa-plus" aria-hidden="true"></i> More</a>
-        </figcaption>
-      </figure>';
-echo'</ul></section>';
+echo '
+        <img src="'.$instance['image'].'" alt="" width="150" height="100"/>
+
+        <p class="about_us"> '.$instance['desc'].'</p>
+
+      ';
+
 }
 
 // Widget Backend
 public function form( $instance ) {
   $url   = (string)$instance['url'];
+  $desc = $instance['desc'];
+
 
 if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
@@ -71,8 +73,8 @@ $image = '';
     <input class="upload_image_button" type="button" value="Upload Image" />
 </p>
 <p>
-<label for="<?php echo $this->get_field_id( 'url' ); ?>"><?php _e( 'URL:', 'terme' ); ?></label>
-<input class="widefat" id="<?php echo $this->get_field_id( 'url' ); ?>" name="<?php echo $this->get_field_name( 'url' ); ?>" type="text" value="<?php echo esc_attr( $url ); ?>" />
+ <label for="<?php echo $this->get_field_id( 'desc' ); ?>"><?php _e( 'Title:', 'terme' ); ?></label>
+  <textarea class="widefat" id="<?php echo $this->get_field_id( 'desc' ); ?>" name="<?php echo $this->get_field_name( 'desc' ); ?>" rows="8" cols="40"><?php echo esc_attr( $desc ); ?></textarea>
 </p>
 
 <?php
@@ -83,13 +85,13 @@ public function update( $new_instance, $old_instance ) {
 $instance = array();
 $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? strip_tags( $new_instance['image'] ) : '';
-$instance['url'] = ( ! empty( $new_instance['url'] ) ) ? strip_tags( $new_instance['url'] ) : '';
+$instance['desc'] = ( ! empty( $new_instance['desc'] ) ) ? strip_tags( $new_instance['desc'] ) : '';
 return $instance;
 }
 } // Class wpb_widget ends here
 
 // Register and load the widget
-function ads_widget() {
-	register_widget( 'ads_widget' );
+function footer_about() {
+	register_widget( 'footer_about' );
 }
-add_action( 'widgets_init', 'ads_widget' );
+add_action( 'widgets_init', 'footer_about' );

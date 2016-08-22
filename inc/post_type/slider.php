@@ -3,10 +3,10 @@
 function slider_post_type() {
 
 	$labels = array(
-		'name'                  => _x( 'Post Types', 'Post Type General Name', 'terme' ),
-		'singular_name'         => _x( 'Post Type', 'Post Type Singular Name', 'terme' ),
-		'menu_name'             => __( 'Post Types', 'terme' ),
-		'name_admin_bar'        => __( 'Post Type', 'terme' ),
+		'name'                  => _x( 'Sliders', 'Post Type General Name', 'terme' ),
+		'singular_name'         => _x( 'Slider', 'Post Type Singular Name', 'terme' ),
+		'menu_name'             => __( 'Sliders', 'terme' ),
+		'name_admin_bar'        => __( 'Slider', 'terme' ),
 		'archives'              => __( 'Item Archives', 'terme' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'terme' ),
 		'all_items'             => __( 'All Items', 'terme' ),

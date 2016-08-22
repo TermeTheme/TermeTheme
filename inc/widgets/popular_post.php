@@ -1,14 +1,14 @@
 <?php
 // Creating the widget
-class top_article_widget extends WP_Widget {
+class popular_post extends WP_Widget {
 
 function __construct() {
 parent::__construct(
 // Base ID of your widget
-'top_article_widget',
+'popular_post',
 
 // Widget name will appear in UI
-__('Terme Top Article Widget', 'terme'),
+__('Terme Popular Post Widget', 'terme'),
 
 // Widget description
 array( 'description' => __( 'Show the Last Articles', 'terme' ), )
@@ -24,7 +24,10 @@ echo $args['before_widget'];
 echo $args['before_title'] . $title . $args['after_title'];
 echo '<ul class="top_article">';
 $arg = array(
-    'showposts'         => $instance['count'],
+    'posts_per_page'         => $instance['count'],
+    'meta_key' => 'terme_post_views_count',
+    'orderby' => 'meta_value_num',
+    'order' => 'DESC',
     );
 $my_query = new WP_Query($arg);
 while ($my_query->have_posts()):
@@ -61,10 +64,6 @@ $title = __( 'Hot', 'terme' );
 <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Count:', 'terme' ); ?></label>
 <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo $count; ?>"  />
 </p>
-<p>
-<label for="<?php echo $this->get_field_id( 'check' ); ?>"><?php _e( 'check:', 'terme' ); ?></label>
-<input class="widefat" id="<?php echo $this->get_field_id( 'check' ); ?>" name="<?php echo $this->get_field_name( 'check' ); ?>" type="checkbox" <?php checked($instance['check'],1,true); ?>  />
-</p>
 
 
 <?php
@@ -75,13 +74,12 @@ public function update( $new_instance, $old_instance ) {
 $instance = array();
 $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 $instance['count'] = ( ! empty( $new_instance['count'] ) ) ? strip_tags( $new_instance['count'] ) : '';
-$instance['check'] = ( ! empty( $new_instance['check'] ) ) ? strip_tags( $new_instance['check'] ) : '0';
 return $instance;
 }
 } // Class wpb_widget ends here
 
 // Register and load the widget
-function top_article_widget() {
-	register_widget( 'top_article_widget' );
+function popular_post() {
+	register_widget( 'popular_post' );
 }
-add_action( 'widgets_init', 'top_article_widget' );
+add_action( 'widgets_init', 'popular_post' );

@@ -53,6 +53,11 @@ jQuery(document).ready(function($) {
   		return false;
 		});
 
+    jQuery(document).ready(function($) {
+  		jQuery('span.close_button').click(function() {
+  			jQuery('.header_ads').slideUp('slow');
+  		});
+  	});
     jQuery(document).on('click', '.number_button', function(event) {
 
       var jQuerybutton = jQuery(this);
@@ -109,8 +114,12 @@ jQuery(document).ready(function($) {
         600:{
             items:3
         },
-        1000:{
+        800:{
             items:4
+
+        },
+        1000:{
+            items:5
 
         }
     }

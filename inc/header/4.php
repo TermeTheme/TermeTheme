@@ -36,11 +36,12 @@
 							<h1><a href="<?php bloginfo('url'); ?>"><?php echo $terme_options['site_name']; ?></a></h1>
 							<h2><?php echo $terme_options['site_description']; ?></h2>
 					<?php } ?>
+						<a href="#" class="mobile_menu sb-toggle-left js-toggle-left-slidebar"><span class="mobile_menu"></span></a>
 					</div><!-- logo -->
 				</div><!-- col-xs-6 -->
 				<div class="col-sm-6 hidden-xs">
-					<form action="#">
-						<input type="text" placeholder="<?php _e( 'Search','terme' ); ?>">
+					<form role="search" method="get" id="searchform">
+						<input type="text" name="s" id="s" value="" placeholder="	<?php _e( 'Search','terme' ); ?>">
 						<button><i class="fa fa-search"></i></button>
 					</form>
 				</div><!-- col-xs-6 -->
@@ -51,8 +52,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<a href="#" class="mobile_menu sb-toggle-left"><span class="mobile_menu"></span></a>
-
+					<a href="#" class="mobile_menu sb-toggle-left js-toggle-left-slidebar"><span class="mobile_menu"></span></a>
 						<?php echo wp_nav_menu(); ?>
 					<div class="shopping_cart">
 						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">
