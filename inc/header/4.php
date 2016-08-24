@@ -28,7 +28,9 @@
 	<div class="main_area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-xs-12">
+				<div class="col-md-6 col-xs-12">
+					<a href="#" class="mobile_menu js-toggle-left-slidebar"><span class="mobile_menu1"></span></a>
+
 					<div class="logo">
 						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
 						<a href="<?php bloginfo('url'); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
@@ -36,10 +38,9 @@
 							<h1><a href="<?php bloginfo('url'); ?>"><?php echo $terme_options['site_name']; ?></a></h1>
 							<h2><?php echo $terme_options['site_description']; ?></h2>
 					<?php } ?>
-						<a href="#" class="mobile_menu sb-toggle-left js-toggle-left-slidebar"><span class="mobile_menu"></span></a>
 					</div><!-- logo -->
 				</div><!-- col-xs-6 -->
-				<div class="col-sm-6 hidden-xs">
+				<div class="col-md-6 hidden-sm hidden-xs">
 					<form role="search" method="get" id="searchform">
 						<input type="text" name="s" id="s" value="" placeholder="	<?php _e( 'Search','terme' ); ?>">
 						<button><i class="fa fa-search"></i></button>

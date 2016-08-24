@@ -1,6 +1,6 @@
 <?php global $terme_options; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,6 @@
 </head>
 <body <?php body_class($terme_options['custom_body_class']); ?>>
   	<div canvas="container">
-
 		<?php if ($terme_options['header_layout'] == '1') {
 			include TEMPLATEPATH . '/inc/header/1.php';
 		}elseif ($terme_options['header_layout'] == '2') {

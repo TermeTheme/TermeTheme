@@ -59,6 +59,8 @@ a.back_to_top:hover {
 header.header {
 	float: right;
 	width: 100%;
+	position: relative;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	.top_bar {
 		float: right;
 		width: 100%;
@@ -181,8 +183,8 @@ header.style_4 .main_area .logo {
 	float: left;
 	overflow: hidden;
 	img {
-		// max-width: 100%;
-		// width: 100%;
+		max-width: 100%;
+		width: auto;
 		height: auto;
 	}
 	&.center {
@@ -2324,231 +2326,6 @@ footer.footer {
 		}
 	}
 }
-// .article_comment {
-// 	float: left;
-// 	width: 100%;
-// 	padding: 0;
-// 	border: solid #e4e4e4;
-// 	background: #fff;
-// 	list-style: none;
-// 	@include rem(( border-width: 1px, padding-top: 0,margin-top: 30px ));
-// 	margin-bottom: 0;
-// 	h4 {
-// 		margin: 0;
-// 		@include rem(( padding: 20px 15px 0 15px, ));
-// 	}
-// 	ol {
-// 		margin: 0;
-// 		padding: 20px;
-// 		li {
-// 			list-style: none;
-// 			article {
-// 				width: 100%;
-// 				float: left;
-// 				margin: 10px 0;
-// 				.author {
-// 					position: relative;
-// 					box-sizing: border-box;
-// 					float: left;
-// 					span.avatar {
-// 						img {
-// 							border-radius: 50%;
-// 							padding: 5px;
-// 							border: 1px solid #4ab866;
-// 						}
-// 					}
-//
-// 				}
-// 				.content {
-// 					width: 100%;
-// 					position: relative;
-// 					box-sizing: border-box;
-// 					float: left;
-// 					box-shadow: 0 0 1px 0px rgba(168,190,206,1);
-// 					.metadata {
-// 								position: relative;
-// 								text-align:left;
-// 								height: 35px;
-// 								line-height: 35px;
-// 								background-color: #e9eff3;
-// 								border-radius: 3px 3px 0 0;
-// 								box-shadow: 0 1px 1px 0px #a8bece;
-// 								// &:before {
-// 								// 	content: '';
-// 								// 	position: absolute;
-// 								// 	top: 50%;
-// 								// 	left: 0;
-// 								// 	width: 0;
-// 								// 	height: 0;
-// 								// 	border-style: solid;
-// 								// 	border-width: 10px 10px 10px 0;
-// 								// 	border-color: transparent #e9eff3 transparent transparent;
-// 								// 	    transform: translate(-10px,-50%);
-// 								// }
-// 								span.name {
-// 									font-weight: bold;
-// 								}
-// 								time {
-// 									color: #a8bece;
-// 									padding: 0 10px;
-// 								}
-// 								span.reply {
-// 									float: right;
-// 									width: 35px;
-// 									height: 35px;
-// 									background-color: #4ab866;
-// 									text-align: center;
-// 									a {
-// 											color: #fff;
-// 									}
-// 								}
-// 							}
-// 							.text {
-// 								padding: 10px;
-// 								border-radius: 0 0 3px 3px;
-// 							}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-// .article_comment {
-// 		float: left;
-// 		width: 100%;
-// 		padding: 0;
-// 		border: solid #e4e4e4;
-// 		background: #fff;
-// 		list-style: none;
-// 		@include rem(( border-width: 1px, padding-top: 0,margin-top: 30px ));
-// 		margin-bottom: 0;
-// 		h4 {
-// 			margin: 0;
-// 			@include rem(( padding: 20px 15px 0 15px, ));
-// 		}
-// 	ol {
-// 		margin: 0;
-// 		padding: 20px;
-// 		li {
-// 			list-style: none;
-// 			article {
-// 				.metadata {
-// 					position: relative;
-// 					padding-left: 20px;
-// 					text-align:left;
-// 					    margin: 15px;
-// 					&:before {
-// 						content: "\f111";
-// 						position: absolute;
-// 						bottom: 0;
-// 						left: 0;
-// 						float: left;
-// 						font: normal normal normal 10px/1 FontAwesome;
-// 						color: #c0f0c1;
-// 					}
-// 					span.name {
-// 						font-weight: bold;
-// 					}
-// 					time {
-// 						color: #a8bece;
-// 						padding: 0 10px;
-// 					}
-// 					span.reply {
-// 						float: right;
-// 						a {
-// 								color: #4ab866;
-// 						}
-// 					}
-// 				}
-// 				.content {
-// 					position: relative;
-// 					border-radius: 3px;
-// 					padding: 10px;
-// 					margin: 15px;
-// 					background-color: #c0f0c1;
-// 					color: #4ab866;
-// 					&:before {
-// 						position: absolute;
-// 						top: 0;
-// 						left: 0;
-// 						transform: translate(30px, -10px);
-// 						content: '';
-// 						width: 0;
-// 						height: 0;
-// 						border-style: solid;
-// 						border-width: 0 10px 10px 10px;
-// 						border-color: transparent transparent #c0f0c1 transparent;
-// 					}
-// 					span.avatar {
-// 						img {
-// 							border: solid #fff;
-// 							border-width: 3px;
-// 							border-radius: 50%;}
-//
-// 					}
-// 					p {
-// 						margin: 0;
-// 					}
-// 				}
-//
-// 			}
-// 			ul.children {
-// 				li {
-// 					article {
-// 						.metadata {
-// 							position: relative;
-// 							padding-right: 20px;
-// 							text-align: right;
-// 							    margin: 15px;
-// 							&:before {
-// 								content: "\f111";
-// 								position: absolute;
-// 								bottom: 0;
-// 								right: 0;
-// 								float: right;
-// 								font: normal normal normal 10px/1 FontAwesome;
-// 								color: #e9eff3;
-// 							}
-// 							span.name {
-// 								float: right;
-// 							}
-// 							span.reply {
-// 								float: left;
-// 							}
-// 						}
-// 						.content {
-// 							position: relative;
-// 							border-radius: 3px;
-// 							padding: 10px;
-// 							margin: 15px;
-// 							background-color: #e9eff3;
-// 							color: #333;
-// 							&:before {
-// 								position: absolute;
-// 								top: 0;
-// 								left:auto;
-// 								right: 0;
-// 								transform: translate(-30px, -10px);
-// 								content: '';
-// 								width: 0;
-// 								height: 0;
-// 								border-style: solid;
-// 								border-width: 0 10px 10px 10px;
-// 								border-color: transparent transparent #e9eff3 transparent;
-// 							}
-// 							p {
-// 								margin: 0;
-// 							}
-// 						}
-//
-//
-// 					}
-//
-// 				}
-// 			}
-// 		}
-//
-// 	}
-// }
 .article_comment {
 	float: left;
 	width: 100%;
@@ -2610,6 +2387,9 @@ footer.footer {
 							a {
 								color: $primary_color;
 								@include rem(( font-size: 15px, ));
+								&:hover {
+									color: $secondary_color;
+								}
 							}
 						}
 					}
@@ -2626,6 +2406,7 @@ footer.footer {
 					padding: 0;
 					margin: 0;
 					float: left;
+					width: 100%;
 					li {
 						position: relative;
 						float: left;
@@ -2633,12 +2414,11 @@ footer.footer {
 						background: #f7fff7;
 						@include rem(( padding: 0, ));
 						&:before {
-							content: "\f148";
+							content: "\f178";
 							font: normal normal normal 20px/1 FontAwesome;
 							position: absolute;
 							top: 70px;
 							left: 70px;
-							transform: rotate(-270deg);
 						}
 						&:first-child {
 							border-top: solid #e4e4e4;
@@ -2683,6 +2463,9 @@ footer.footer {
 								a {
 									color: $primary_color;
 									@include rem(( font-size: 15px, ));
+									&:hover {
+										color: $secondary_color;
+									}
 								}
 							}
 						}
@@ -2700,72 +2483,85 @@ footer.footer {
 				}
 			}
 		}
-		.comment-respond {
-			width: 100%;
-			float: left;
-			padding: 0;
-			border-top: none;
-			border: solid #e4e4e4;
-			background: #fff;
-			@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
-			form {
-				.comment-form-author,
-				.comment-form-email {
-					float: left;
-					width: 50%;
-					box-sizing: border-box;
-					@include rem(( padding: 10px,));
-					input {
-						width: 100%;
-						border: solid #e4e4e4;
-						background: #fafafa;
-						transition: all 0.4s;
-						@include rem(( border-width: 1px,height: 45px, padding: 10px,));
-						&:focus {
-							border: solid $primary_color;
-							@include rem(( border-width: 1px,));
-						}
-					}
+	}
+	.comment-respond {
+		width: 100%;
+		float: left;
+		padding: 0;
+		border-top: none;
+		border: solid #e4e4e4;
+		background: #fff;
+		@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
+		h3.comment-reply-title {
+			margin: 0;
+			@include rem(( font-size: 18px, padding: 10px,));
+			small {
+				float: right;
+				a {
+					color: $primary_color;
+					line-height: 2;
 				}
-				.logged-in-as {
-					@include rem(( padding: 10px,));
-				}
-				.comment-form-comment {
-					float: left;
+			}
+		}
+		form {
+			.comment-form-author,
+			.comment-form-email {
+				float: left;
+				width: 50%;
+				box-sizing: border-box;
+				@include rem(( padding: 10px,));
+				input {
 					width: 100%;
-					box-sizing: border-box;
-					@include rem(( padding: 10px,));
-					textarea {
-						width: 100%;
-						outline: none;
-						border: solid #e4e4e4;
-						background: #fafafa;
-						transition: all 0.4s;
-						@include rem(( border-width: 1px,height: 100px, padding: 10px,));
-						&:focus {
-							border: solid $primary_color;
-							@include rem(( border-width: 1px,));
-						}
+					border: solid #e4e4e4;
+					background: #fafafa;
+					transition: all 0.4s;
+					@include rem(( border-width: 1px,height: 45px, padding: 10px,));
+					&:focus {
+						border: solid $primary_color;
+						@include rem(( border-width: 1px,));
 					}
 				}
-				.form-submit {
-					float: right;
-					@include rem(( padding: 10px,));
-					input {
-						font-weight: bold;
-						background: $primary_color;
-						border: none;
-						color: #fff;
-						@include rem(( padding: 10px 20px,border-radius: 4px, font-size: 14px,));
+			}
+			.logged-in-as {
+				@include rem(( padding: 10px,));
+			}
+			.comment-form-comment {
+				float: left;
+				width: 100%;
+				box-sizing: border-box;
+				@include rem(( padding: 10px,));
+				textarea {
+					width: 100%;
+					outline: none;
+					border: solid #e4e4e4;
+					background: #fafafa;
+					transition: all 0.4s;
+					@include rem(( border-width: 1px,height: 100px, padding: 10px,));
+					&:focus {
+						border: solid $primary_color;
+						@include rem(( border-width: 1px,));
 					}
+				}
+			}
+			.form-submit {
+				float: right;
+				@include rem(( padding: 10px,));
+				input {
+					font-weight: bold;
+					background: $primary_color;
+					border: none;
+					color: #fff;
+					@include rem(( padding: 10px 20px,border-radius: 4px, font-size: 14px,));
 				}
 			}
 		}
 	}
 }
 // Start Category Page Style
+.author,
 .category,
 .search {
+	.author_content,
 	.category_content,
 	.search_content {
 		float: left;
@@ -3433,55 +3229,6 @@ footer.footer {
 				}
 			}
 		}
-		// .product_button {
-		// 	float: left;
-		// 	width: 100%;
-		// 	border: solid #e4e4e4;
-		// 	@include rem((border-width: 1px 0 1px 0,padding: 30px 0,));
-		// 	.product_buy {
-		// 		width: 50%;
-		// 		box-sizing: border-box;
-		// 		float: left;
-		// 		a {
-		// 			border: solid $secondary_color;
-		// 			background: #fff;
-		// 			float: left;
-		// 			font-weight: bold;
-		// 			@include rem((margin-right: 10px,border-radius: 4px,padding: 10px 20px, border-width: 1px,font-size: 14px,));
-		// 			color: $secondary_color;
-		// 			&:hover {
-		// 				color: #fff;
-		// 				border-color: $primary_color;
-		// 				&:before {
-		// 					background-color: $primary_color;
-		// 				}
-		// 			}
-		// 		}
-		// 	}
-		// 	.quantity_container {
-		// 		width: 50%;
-		// 		box-sizing: border-box;
-		// 		float: left;
-		// 		.quantity {
-		// 			float: right;
-		// 			input {
-		// 				border: solid #979a9f;
-		// 				display: inline-block;
-		// 				text-align: center;
-		// 				font-weight: bold;
-		// 				@include rem((width: 70px,margin: 0 10px,height: 35px,border-width: 1px,border-radius: 4px, font-size: 14px,));
-		// 			}
-		// 		}
-		// 		.number_button {
-		// 			border: solid #979a9f;
-		// 			text-align: center;
-		// 			float: right;
-		// 			color: #979a9f;
-		// 			cursor: pointer;
-		// 			@include rem((width: 35px, height: 35px,line-height: 25px,border-width: 1px,padding: 5px,border-radius: 4px,));
-		// 		}
-		// 	}
-		// }
 		.product_meta {
 			color: #979a9f;
 			float: left;
@@ -3934,9 +3681,7 @@ footer.footer {
 @media (max-width: 992px) {
 	.header {
 		.main_menu {
-			ul {
-				display: none;
-			}
+			display: none;
 		}
 	}
 	header.header {
@@ -3975,7 +3720,7 @@ footer.footer {
 			display: none;
 		}
 	}
-	.main_menu a.mobile_menu {
+	.main_area a.mobile_menu {
 		display: block !important;
 	}
 }
@@ -4143,6 +3888,13 @@ footer.footer {
 							}
 						}
 					}
+					// ul:first-of-type {
+					// 			list-style: none;
+					// 			width: 100%;
+					//
+					// 		padding: 10px 30px;
+					//
+					// }
 				}
 				ul {
 					margin: 0;
@@ -4181,11 +3933,11 @@ footer.footer {
 							border-bottom: 1px solid #636363;
 							color: #fff;
 							&:before {
-								content: "\f068";
+								content: "\f141";
 								font: normal normal normal 14px/1 FontAwesome;
 								float: right;
-								color: #fff;
-								margin-left: 10px;
+								color: #636363;
+								margin: 2px 0 0 10px;
 							}
 						}
 					}
@@ -4194,19 +3946,20 @@ footer.footer {
 		}
 	}
 }
-.main_menu a.mobile_menu {
+.main_area a.mobile_menu {
 	font-size: 1.375rem;
 	color: #fff;
-	float: left;
+	float: right;
 	height: 5rem;
 	width: 5rem;
 	display: none;
 	line-height: 5rem;
 	position: relative;
+	@include rem((margin: 35px 0,));
 }
-.main_menu a.mobile_menu:before {
+.main_area a.mobile_menu:before {
 	float: right;
-	background: #fff;
+	background: $secondary_color;
 	height: 0.3rem;
 	width: 3rem;
 	border-radius: 1rem;
@@ -4217,13 +3970,12 @@ footer.footer {
 	top: 50%;
 	left: 50%;
 }
-.main_menu a.mobile_menu.search_active:before,
-html.sb-active.sb-active-left .main_menu a.mobile_menu:before {
+body .js-close-any-slidebar .main_area a.mobile_menu:before {
 	transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, 45deg);
 }
-.main_menu a.mobile_menu span.mobile_menu {
+.main_area a.mobile_menu span.mobile_menu1 {
 	float: right;
-	background: #fff;
+	background: $secondary_color;
 	height: 0.3rem;
 	width: 3rem;
 	border-radius: 1rem;
@@ -4233,13 +3985,12 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu:before {
 	left: 50%;
 	transform: translate(-50%,-50%);
 }
-a.mobile_menu.search_active span.mobile_menu,
-html.sb-active.sb-active-left .main_menu a.mobile_menu span.mobile_menu {
+body .js-close-any-slidebar .main_area a.mobile_menu span.mobile_menu1 {
 	opacity: 0;
 }
-.main_menu a.mobile_menu:after {
+.main_area a.mobile_menu:after {
 	float: right;
-	background: #fff;
+	background: $secondary_color;
 	height: 0.3rem;
 	width: 3rem;
 	border-radius: 1rem;
@@ -4250,8 +4001,7 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu span.mobile_menu {
 	top: 50%;
 	left: 50%;
 }
-a.mobile_menu.search_active:after,
-html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
+body .js-close-any-slidebar .main_area a.mobile_menu:after {
 	transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg);
 }
 .woocommerce {
@@ -4406,6 +4156,7 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
 	.cart-collaterals {
 		@include rem(( padding: 0 20px,font-size: 14px,));
 		.cart_totals {
+			float: right;
 			h2 {
 				padding: 0;
 				color: #4ab866;
@@ -4444,15 +4195,6 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
 	//Checkout
 	input {
 		height: 35px;
-	}
-	.woocommerce-info {
-		margin: 0 !important;
-		background-color: #f3f6f8;
-		border-top-color: #4ab866;
-		@include rem(( height: 50px, line-height: 47px,padding: 0 0 0 40px !important,));
-		&:before {
-			top: 0;
-		}
 	}
 	form.checkout_coupon {
 		border: solid #e9eff3;
@@ -4536,20 +4278,29 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
 	}
 }
 .woocommerce {
+	.woocommerce-error,
+	.woocommerce-info,
+	.woocommerce-message {
+		@include rem(( padding: 10px 20px 10px 40px !important ,));
+	}
 	.woocommerce-message {
 		background-color: #f7fff7;
 		border-color: #4ab866 #c0f0c1 #c0f0c1 #c0f0c1;
 		border-width: 3px 1px 1px 1px;
 		border-style: solid;
 		line-height: 2em;
+		text-align: left;
 		&:before {
 			content: "\f00c";
 			color: #4ab866;
 			font: normal normal normal 16px/1 FontAwesome;
+			top: 15px;
+			left: 20px;
 		}
 		a.button {
 			background-color: #4ab866;
 			color: #fff;
+			float: right;
 		}
 	}
 	.woocommerce-error {
@@ -4566,6 +4317,20 @@ html.sb-active.sb-active-left .main_menu a.mobile_menu:after {
 		a.button {
 			background-color: #d54e21;
 			color: #fff;
+		}
+	}
+	.woocommerce-info {
+		background-color: #f7f6f7;
+		border-color: #00aadc;
+		border-width: 3px 1px 1px 1px;
+		border-style: solid;
+		line-height: 2em;
+		&:before {
+			content: "\f129";
+			font: normal normal normal 14px/1 FontAwesome;
+			color: #00aadc;
+			top: 15px;
+			left: 20px;
 		}
 	}
 	form.woocommerce-ordering {

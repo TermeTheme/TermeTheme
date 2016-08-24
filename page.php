@@ -15,7 +15,7 @@
 								<a href="#">Sport Category</a>
 							</div>
 							<?php } ?>
-							<h1 class="article_title"><?php the_title(''); ?></h1>
+							<h1 class="article_title"><?php __(the_title(''), 'terme') ?></h1>
 						</div><!-- article_info -->
 						<div class="terme_post">
 							<div class="thumb">

@@ -1,5 +1,5 @@
 body {
-  font-family: 'IRANSans';
+  font-family: 'Vazir';
   text-align: right;
   direction: rtl; }
 
@@ -130,7 +130,7 @@ section.latest_news {
     margin-left: 1.5rem;
     float: right; }
   section.latest_news .title:after {
-    border-color: transparent #ff322e transparent transparent;
+    border-color: transparent #e23d28 transparent transparent;
     left: -7px;
     left: -0.7rem;
     right: auto;
@@ -140,7 +140,7 @@ section.latest_news {
 
 .home_content .box .title {
   border-left: none;
-  border-right: solid #333;
+  border-right: solid #464646;
   border-left-width: 0;
   border-left-width: 0;
   border-right-width: 2px;
@@ -285,7 +285,7 @@ footer.footer.style_3 .top_bar .social_menu:before {
   width: 1px;
   height: 50%;
   position: absolute;
-  background: #333;
+  background: #464646;
   content: ' ';
   top: 0;
   -webkit-transform: translate(0, 50%);
@@ -351,6 +351,7 @@ footer.footer.style_5 .bottom_bar .social_menu {
   .article_comment .comment_container ol li ul.children li {
     float: right; }
     .article_comment .comment_container ol li ul.children li:before {
+      content: "\f177";
       right: 70px;
       left: auto; }
     .article_comment .comment_container ol li ul.children li article {
@@ -364,7 +365,7 @@ footer.footer.style_5 .bottom_bar .social_menu {
     .article_comment .comment_container ol li ul.children li .comment_metadata .reply {
       right: auto;
       left: 0; }
-.article_comment .comment_container .comment-respond {
+.article_comment .comment-respond {
   width: 100%;
   float: left;
   padding: 0;
@@ -375,14 +376,43 @@ footer.footer.style_5 .bottom_bar .social_menu {
   border-width: 0 0.1rem 0.1rem 0.1rem;
   padding: 15px;
   padding: 1.5rem; }
-  .article_comment .comment_container .comment-respond form .comment-form-author,
-  .article_comment .comment_container .comment-respond form .comment-form-email {
+  .article_comment .comment-respond h3.comment-reply-title small {
+    float: left; }
+  .article_comment .comment-respond form .comment-form-author,
+  .article_comment .comment-respond form .comment-form-email {
     float: right; }
-  .article_comment .comment_container .comment-respond form .form-submit {
+  .article_comment .comment-respond form .form-submit {
     float: left; }
 
+.product_page .ribbon {
+  left: auto;
+  right: 0;
+  border-bottom: 65px solid transparent;
+  border-right: 65px solid #e54949;
+  border-left: 0;
+  border-top: 0; }
+  .product_page .ribbon a {
+    top: 15px;
+    right: 0;
+    left: auto;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
 .product_page .images {
-  float: right; }
+  float: right;
+  padding: 0 0 20px 20px;
+  padding: 0 0 2rem 2rem; }
+.product_page .summary .product_price p {
+  margin-left: 5px;
+  margin-left: 0.5rem;
+  margin-right: 0;
+  margin-right: 0; }
+.product_page .summary .product_price del {
+  color: #979a9f;
+  margin-left: 10px;
+  margin-left: 1rem;
+  margin-right: 0;
+  margin-right: 0; }
 .product_page .summary .woocommerce-product-rating .star-rating {
   float: right;
   margin: 5px 0 0 10px;
@@ -440,30 +470,87 @@ footer.footer.style_5 .bottom_bar .social_menu {
   margin-left: 10px;
   margin-left: 1rem; }
 
-.category_content ul li article figure.thumbnail {
+.author .author_content ul li article figure.thumbnail,
+.author .category_content ul li article figure.thumbnail,
+.author .search_content ul li article figure.thumbnail,
+.category .author_content ul li article figure.thumbnail,
+.category .category_content ul li article figure.thumbnail,
+.category .search_content ul li article figure.thumbnail,
+.search .author_content ul li article figure.thumbnail,
+.search .category_content ul li article figure.thumbnail,
+.search .search_content ul li article figure.thumbnail {
   float: right;
   margin-right: 0;
   margin-left: 20px; }
-.category_content ul li article section h2 {
+.author .author_content ul li article section h2,
+.author .category_content ul li article section h2,
+.author .search_content ul li article section h2,
+.category .author_content ul li article section h2,
+.category .category_content ul li article section h2,
+.category .search_content ul li article section h2,
+.search .author_content ul li article section h2,
+.search .category_content ul li article section h2,
+.search .search_content ul li article section h2 {
   padding-right: 0;
   padding-right: 0;
   padding-left: 20px;
   padding-left: 2rem; }
-.category_content ul li article section .excerpt {
+.author .author_content ul li article section .excerpt,
+.author .category_content ul li article section .excerpt,
+.author .search_content ul li article section .excerpt,
+.category .author_content ul li article section .excerpt,
+.category .category_content ul li article section .excerpt,
+.category .search_content ul li article section .excerpt,
+.search .author_content ul li article section .excerpt,
+.search .category_content ul li article section .excerpt,
+.search .search_content ul li article section .excerpt {
   padding-right: 0;
   padding-right: 0;
   padding-left: 20px;
   padding-left: 2rem; }
 
+.woocommerce .woocommerce-error,
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-message {
+  padding: 10px 40px 10px 20px !important;
+  padding: 1rem 4rem 1rem 2rem !important; }
+.woocommerce .woocommerce-message {
+  text-align: right; }
+  .woocommerce .woocommerce-message:before {
+    left: auto;
+    right: 20px; }
+  .woocommerce .woocommerce-message a.button {
+    float: left; }
+.woocommerce .woocommerce-info {
+  text-align: right; }
+  .woocommerce .woocommerce-info:before {
+    left: auto;
+    right: 20px; }
+  .woocommerce .woocommerce-info a.button {
+    float: left; }
+.woocommerce .woocommerce-error {
+  text-align: right; }
+  .woocommerce .woocommerce-error:before {
+    left: auto;
+    right: 20px; }
+  .woocommerce .woocommerce-error a.button {
+    float: left; }
 .woocommerce form table.shop_table tbody tr td.product-remove {
   border-left: none; }
 .woocommerce form table.shop_table tbody tr td.product-name {
   border-right: none;
   border-left: auto;
   text-align: right; }
+.woocommerce .cart-collaterals .cart_totals {
+  float: left; }
+  .woocommerce .cart-collaterals .cart_totals .wc-proceed-to-checkout a {
+    float: left; }
 
 .woocommerce-tabs ul.tabs li {
   float: right; }
 
 .related header .owl-controls {
+  float: left; }
+
+.is_on_sale .off_section {
   float: left; }

@@ -6,7 +6,7 @@ global $terme_options; ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-sm-12">
-					<div class="search_content">
+					<div class="author_content">
 						<ul>
 							<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 							<li>
@@ -29,22 +29,22 @@ global $terme_options; ?>
 						<?php wp_pagenavi(); ?>
 
 						<?php else: ?>
-							<p>
-								Sorry
-							</p>
+							<p><?php _e('No posts by this author.'); ?></p>
+
 						<?php endif; ?>
 						</ul>
-					</div><!-- category_content -->
-				</div><!--col-xs-8-->
+								</div><!-- category_content -->
+				</div><!--col-md-8-->
 				<div class="col-md-4 hidden-sm hidden-xs">
 					<aside id="sidebar">
 							<?php get_sidebar(); ?>
 					</aside><!-- sidebar -->
-								</div><!--col-xs-4-->
+								</div><!--col-md-4-->
 			</div><!-- row -->
 		</div><!-- container -->
 	</main>
 	<?php get_footer(); ?>
+
 </div><!-- sb-site -->
 <div class="sb-slidebar sb-left">
 	<div class="sidebar_menu">

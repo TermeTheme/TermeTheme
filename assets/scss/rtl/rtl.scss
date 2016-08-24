@@ -1,6 +1,6 @@
 @import '../_variables.scss', '../_mixins.scss', '../rem';
 body {
-	font-family: 'IRANSans';
+	font-family: 'Vazir';
 	text-align: right;
 	direction: rtl;
 }
@@ -266,7 +266,7 @@ footer.footer {
 	&.style_1 .main_area {
 		.tagcloud {
 			float: right;
-}
+		}
 	}
 	&.style_1 .main_area .box_1 ul {
 		float: right;
@@ -442,38 +442,13 @@ footer.footer {
 	}
 }
 .article_comment {
-.comment_container {
-	ol {
-		li {
-			float: right;
-			article {
+	.comment_container {
+		ol {
+			li {
 				float: right;
-				.comment_author {
-					img {
-						float: right;
-					}
-				}
-				.comment_metadata {
-					.reply {
-						right: auto;
-						left: 0;
-					}
-				}
-			}
-			ul.children {
-				li {
+				article {
 					float: right;
-					&:before {
-						right: 70px;
-						left: auto;
-					}
-					article {
-						float: right;
-						margin-left: auto;
-						margin-right: 10%;
-					}
 					.comment_author {
-						float: right;
 						img {
 							float: right;
 						}
@@ -482,6 +457,33 @@ footer.footer {
 						.reply {
 							right: auto;
 							left: 0;
+						}
+					}
+				}
+				ul.children {
+					li {
+						float: right;
+						&:before {
+							content: "\f177";
+							right: 70px;
+							left: auto;
+						}
+						article {
+							float: right;
+							margin-left: auto;
+							margin-right: 10%;
+						}
+						.comment_author {
+							float: right;
+							img {
+								float: right;
+							}
+						}
+						.comment_metadata {
+							.reply {
+								right: auto;
+								left: 0;
+							}
 						}
 					}
 				}
@@ -496,34 +498,55 @@ footer.footer {
 		border: solid #e4e4e4;
 		background: #fff;
 		@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
+		h3.comment-reply-title {
+			small {
+				float: left;
+			}
+		}
 		form {
 			.comment-form-author,
 			.comment-form-email {
 				float: right;
 			}
-
-		.form-submit {
-			float: left;
-
-		}
-
+			.form-submit {
+				float: left;
+			}
 		}
 	}
 }
-
-}
-
 .product_page {
+	.ribbon {
+		left: auto;
+		right: 0;
+		border-bottom: 65px solid transparent;
+		border-right: 65px solid #e54949;
+		border-left: 0;
+		border-top: 0;
+		a {
+			top: 15px;
+			right: 0;
+			left: auto;
+			transform: rotate(45deg);
+		}
+	}
 	.images {
 		float: right;
+		@include rem(( padding: 0 0 20px 20px,));
 	}
 	.summary {
-
+		.product_price {
+			p {
+				@include rem((margin-left: 5px, margin-right: 0, ));
+			}
+			del {
+				color: #979a9f;
+				@include rem((margin-left: 10px,margin-right: 0,));
+			}
+		}
 		.woocommerce-product-rating {
 			.star-rating {
 				float: right;
-				@include rem((	margin: 5px 0 0 10px, ));
-
+				@include rem(( margin: 5px 0 0 10px, ));
 			}
 		}
 	}
@@ -603,7 +626,12 @@ footer.footer {
 		}
 	}
 }
-.category_content {
+.author,
+.category,
+.search {
+	.author_content,
+	.category_content,
+	.search_content {
 	ul {
 		li article {
 			figure.thumbnail {
@@ -622,7 +650,43 @@ footer.footer {
 		}
 	}
 }
+}
 .woocommerce {
+	.woocommerce-error,
+	.woocommerce-info,
+	.woocommerce-message {
+		@include rem(( padding: 10px 40px 10px 20px !important ,));
+	}
+	.woocommerce-message {
+		text-align: right;
+		&:before {
+			left: auto;
+			right: 20px;
+		}
+		a.button {
+			float: left;
+		}
+	}
+	.woocommerce-info {
+		text-align: right;
+		&:before {
+			left: auto;
+			right: 20px;
+		}
+		a.button {
+			float: left;
+		}
+	}
+	.woocommerce-error {
+		text-align: right;
+		&:before {
+			left: auto;
+			right: 20px;
+		}
+		a.button {
+			float: left;
+		}
+	}
 	form {
 		table.shop_table {
 			tbody {
@@ -641,8 +705,18 @@ footer.footer {
 			}
 		}
 	}
+	.cart-collaterals {
+		.cart_totals {
+			float: left;
+			.wc-proceed-to-checkout {
+				a {
+					float: left;
+				}
+			}
+		}
+	}
 }
-.woocommerce-tabs  {
+.woocommerce-tabs {
 	ul.tabs {
 		li {
 			float: right;
@@ -654,5 +728,10 @@ footer.footer {
 		.owl-controls {
 			float: left;
 		}
+	}
+}
+.is_on_sale {
+	.off_section {
+		float: left;
 	}
 }

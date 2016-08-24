@@ -52,7 +52,6 @@
     'cancel_reply_link' => __('Cancel Reply', 'terme'),
     'label_submit' => __('Post Comment', 'terme'),
     'comment_field' => '<p class="comment-form-comment">'.
-    // '<label for="comment">' . _x( 'دیدگاه', 'noun' ) . '</label>' .
       '<textarea id="comment" placeholder="' . __('Your Comment', 'terme' ) . '" name="comment" cols="58" rows="3" aria-required="true">'.
       '</textarea></p>',
     'must_log_in' => '<p class="must-log-in">'.
@@ -63,22 +62,15 @@
     'comment_notes_after' => '',
     'fields' => apply_filters('comment_form_default_fields', array(
       'author' => '<div class="comment-form-author">'.
-        // '<label for="author">' . __( 'نام', 'domainreference' ) . '</label> ' .
-        // ( $req ? '<span class="required">*</span>' : '' ) .
+
         '<input id="author" placeholder="' . __('Name', 'terme' ) . '" name="author" type="text" value="'.esc_attr($commenter['comment_author']).
         '" size="30"/></div>',
 
       'email' => '<div class="comment-form-email">'.
-        // '<label for="email">' . __( 'ایمیل', 'domainreference' ) . '</label> '.
-        // ( $req ? '<span class="required">*</span>' : '' ) .
+
         '<input id="email" name="email" placeholder="' . __('Email', 'terme' ) . '" type="text" value="'.esc_attr($commenter['comment_author_email']).
         '" size="30"/></div>',
 
-      // 'url' =>
-        // '<div class="comment-form-url">' .
-        // '<label for="url">'. __( 'وبسایت', 'domainreference' ) . '</label>' .
-        // '<input id="url" name="url" placeholder="وبسایت" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
-        // '" size="30" /></div>'
       )
     ),
   );

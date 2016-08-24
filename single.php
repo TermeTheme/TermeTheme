@@ -40,9 +40,9 @@
 									<?php endif; ?>
 
 									<?php if (isset($terme_postmeta['commentcount']) && !empty($terme_postmeta['commentcount']) ): ?>
-									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
+									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp  <?php comments_number( 0, 1, '%' ); ?> </span>
 									<?php elseif ($terme_options['comment_count']): ?>
-									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
+									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp  <?php comments_number( 0, 1, '%' ); ?> </span>
 									<?php endif; ?>
 
 								</div><!-- article_meta -->
@@ -94,7 +94,8 @@
 							<div class="article_author">
 									<?php echo get_avatar( $comment, 90 ); ?>
 									<div class="name">
-											<a href="<?php the_author_meta( 'user_email' ); ?>"><?php the_author_meta( 'display_name' ); ?></a>
+										<?php the_author_posts_link(); ?>
+
 										<span><?php the_author_posts(); ?> Article</span>
 									</div>
 									<div class="desc">
@@ -107,7 +108,8 @@
 							<div class="article_author">
 									<?php echo get_avatar( $comment, 90 ); ?>
 									<div class="name">
-											<a href="<?php the_author_meta( 'user_email' ); ?>"><?php the_author_meta( 'display_name' ); ?></a>
+
+												<?php the_author_posts_link(); ?>
 										<span><?php the_author_posts(); ?> Article</span>
 									</div>
 									<div class="desc">
@@ -247,20 +249,18 @@
 						<?php elseif ($terme_options['post_comments']): ?>
 
 							<div class="article_comment">
-
 							<?php comments_template(); ?>
 							</div>
-
 						<?php endif; ?>
 						<?php endwhile; else: ?>
 						<?php endif; ?>
 					</div><!-- article_content -->
-				</div><!--col-xs-8-->
+				</div><!--col-md-8-->
 				<div class="col-md-4 hidden-sm hidden-xs">
 					<aside id="sidebar">
 							<?php get_sidebar(); ?>
 					</aside><!-- sidebar -->
-				</div><!--col-xs-4-->
+				</div><!--col-md-4-->
 			</div><!-- row -->
 		</div><!-- container -->
 	</main>

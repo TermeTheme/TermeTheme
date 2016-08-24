@@ -20,5 +20,4 @@ global $terme_options; ?>
       			};
 						include TEMPLATEPATH.'/inc/content/layout.php'; ?>
 		</main><!-- main -->
-	</div><!-- sb-site -->
 <?php get_footer(); ?>
