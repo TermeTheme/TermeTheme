@@ -2438,7 +2438,8 @@ footer.footer {
     .article_comment .comment_container ol {
       list-style: none;
       padding: 0;
-      margin: 0; }
+      margin: 0;
+      float: left; }
       .article_comment .comment_container ol li {
         float: left;
         width: 100%;
