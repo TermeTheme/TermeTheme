@@ -498,11 +498,11 @@ footer.footer {
 		border: solid #e4e4e4;
 		background: #fff;
 		@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
-		h3.comment-reply-title {
+
 			small {
 				float: left;
 			}
-		}
+
 		form {
 			.comment-form-author,
 			.comment-form-email {
@@ -632,24 +632,24 @@ footer.footer {
 	.author_content,
 	.category_content,
 	.search_content {
-	ul {
-		li article {
-			figure.thumbnail {
-				float: right;
-				margin-right: 0;
-				margin-left: 20px;
-			}
-			section {
-				h2 {
-					@include rem((padding-right: 0, padding-left: 20px, ));
+		ul {
+			li article {
+				figure.thumbnail {
+					float: right;
+					margin-right: 0;
+					margin-left: 20px;
 				}
-				.excerpt {
-					@include rem(( padding-right: 0, padding-left: 20px, ));
+				section {
+					h2 {
+						@include rem((padding-right: 0, padding-left: 20px, ));
+					}
+					.excerpt {
+						@include rem(( padding-right: 0, padding-left: 20px, ));
+					}
 				}
 			}
 		}
 	}
-}
 }
 .woocommerce {
 	.woocommerce-error,
@@ -715,6 +715,29 @@ footer.footer {
 			}
 		}
 	}
+	#tab-reviews {
+		#reviews {
+			#comments {
+				ol.commentlist {
+					li {
+						.comment_container {
+							img.avatar {
+								float: right;
+								left: auto;
+								right: 0;
+							}
+							.comment-text {
+								@include rem(( margin-left: 0,margin-right: 100px,));
+								.star-rating {
+									float: left;
+								}
+							}
+						}
+					}
+				}
+			}
+		}}
+
 }
 .woocommerce-tabs {
 	ul.tabs {

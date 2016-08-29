@@ -136,8 +136,8 @@ include TEMPLATEPATH.'/inc/post_type/slider.php';
     function advanced_comment($comment, $args, $depth)  {
         $GLOBALS['comment'] = $comment;
         ?>
-        <li>
-          <article class="">
+        <li <?php comment_class(); ?> >
+          <article id="comment-<?php comment_ID(); ?>">
             <div class="comment_author">
               <?php echo get_avatar($comment, 75);
         ?>

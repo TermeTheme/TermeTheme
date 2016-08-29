@@ -96,7 +96,7 @@
 									<div class="name">
 										<?php the_author_posts_link(); ?>
 
-										<span><?php the_author_posts(); ?> Article</span>
+										<span><?php the_author_posts(); ?> <?php _e('Articles', 'terme') ?></span>
 									</div>
 									<div class="desc">
 										<p>
@@ -110,7 +110,7 @@
 									<div class="name">
 
 												<?php the_author_posts_link(); ?>
-										<span><?php the_author_posts(); ?> Article</span>
+										<span><?php the_author_posts(); ?> <?php _e('Articles', 'terme') ?></span>
 									</div>
 									<div class="desc">
 										<p>
@@ -179,7 +179,7 @@
 
 										<?php } wp_reset_postdata(); }  ?>
 										</ul>
-									</div>
+							</div>
 						<?php elseif ($terme_options['related_posts']): ?>
 							<div class="article_related">
 								<h4><?php _e('Related Post', 'terme'); ?></h4>

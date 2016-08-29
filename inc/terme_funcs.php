@@ -140,7 +140,7 @@ function terme_get_post_views($postID){
     if($count==''){
         delete_post_meta($postID, $count_key);
         add_post_meta($postID, $count_key, '0');
-        return "0 View";
+        return "0 __(' View','terme')";
     }
-    return $count.' Views';
+    return $count. __(' View','terme');
 }

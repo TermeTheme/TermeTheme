@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: terme\n"
-"POT-Creation-Date: 2016-08-16 12:21+0430\n"
-"PO-Revision-Date: 2016-08-16 12:23+0430\n"
+"POT-Creation-Date: 2016-08-28 12:48+0430\n"
+"PO-Revision-Date: 2016-08-28 15:54+0430\n"
 "Last-Translator: \n"
 "Language-Team: TermeTheme <termetheme@gmail.com>\n"
 "Language: fa_IR\n"
@@ -19,6 +19,10 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: assets\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: inc/theme_option/ReduxFramework\n"
+
+#: author.php:32
+msgid "No posts by this author."
+msgstr "هیچ مطلبی توسط این نویسنده ثبت نشده است."
 
 #: comments.php:19
 msgid "Comments"
@@ -40,7 +44,7 @@ msgstr "نظرات اخیر &rarr;"
 msgid "Comments are closed."
 msgstr "نظرات بسته شده است."
 
-#: comments.php:50 comments.php:56
+#: comments.php:50 comments.php:55
 msgid "Your Comment"
 msgstr "نظر شما"
 
@@ -57,12 +61,12 @@ msgstr "لغو پاسخ"
 msgid "Post Comment"
 msgstr "ارسال نظر"
 
-#: comments.php:59
+#: comments.php:58
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "برای ارسال نظر می بایست <a href=\"%s\">وارد شوید</a>"
 
-#: comments.php:61
+#: comments.php:60
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -71,13 +75,38 @@ msgstr ""
 "شما با نام کاربری <a href=\"%1$s\">%2$s</a> وارد شده اید. هم اکنون <a href="
 "\"%3$s\" title=\"Log out of this account\">خارج شوید</a>"
 
-#: comments.php:68 woocommerce/single-product-reviews.php:73
+#: comments.php:66 woocommerce/single-product-reviews.php:73
 msgid "Name"
 msgstr "نام"
 
-#: comments.php:74 woocommerce/single-product-reviews.php:75
+#: comments.php:71 woocommerce/single-product-reviews.php:75
 msgid "Email"
 msgstr "ایمیل"
+
+#: footer.php:26
+msgid "Logout"
+msgstr "خروج"
+
+#: footer.php:30 inc/header/1.php:19 inc/header/2.php:19 inc/header/4.php:18
+msgid "Login"
+msgstr "ورود"
+
+#: footer.php:31 inc/header/1.php:20 inc/header/2.php:20 inc/header/4.php:19
+msgid "OR"
+msgstr "یا"
+
+#: footer.php:32 inc/header/1.php:21 inc/header/2.php:21 inc/header/4.php:20
+msgid "Register"
+msgstr "ثبت نام"
+
+#: footer.php:36 inc/header/1.php:24 inc/header/2.php:24 inc/header/4.php:57
+msgid "View your shopping cart"
+msgstr "مشاهده سبد خرید"
+
+#: footer.php:45 inc/header/1.php:15 inc/header/2.php:15 inc/header/3.php:14
+#: inc/header/4.php:44
+msgid "Search"
+msgstr "جست و جو"
 
 #: functions.php:40
 msgid "Widgets in this area will be shown in the default sidebar."
@@ -116,31 +145,10 @@ msgstr "منوی هدر"
 msgid "Footer Menu"
 msgstr "منوی فوتر"
 
-#: functions.php:146
+#: functions.php:148
 #, php-format
 msgid "%1$s"
 msgstr ""
-
-#: inc/header/1.php:15 inc/header/2.php:15 inc/header/3.php:14
-#: inc/header/4.php:43
-msgid "Search"
-msgstr "جست و جو"
-
-#: inc/header/1.php:19 inc/header/2.php:19 inc/header/4.php:18
-msgid "Login"
-msgstr "ورود"
-
-#: inc/header/1.php:20 inc/header/2.php:20 inc/header/4.php:19
-msgid "OR"
-msgstr "یا"
-
-#: inc/header/1.php:21 inc/header/2.php:21 inc/header/4.php:20
-msgid "Register"
-msgstr "ثبت نام"
-
-#: inc/header/1.php:24 inc/header/2.php:24 inc/header/4.php:58
-msgid "View your shopping cart"
-msgstr "مشاهده سبد خرید"
 
 #: inc/header/1.php:27 inc/header/2.php:27
 msgid "Cart"
@@ -156,7 +164,7 @@ msgstr "نمایش تعداد بازدید"
 
 #: inc/metabox/terme_meta.php:131
 msgid "Terme Page Option"
-msgstr ""
+msgstr "تنظیمات برگه ترمه"
 
 #: inc/page-builder/elements/element_01.php:18
 msgid "Category Posts"
@@ -277,12 +285,12 @@ msgid "Page Builder Elements"
 msgstr ""
 
 #: inc/post_type/slider.php:8
-msgid "Post Types"
+msgid "Sliders"
 msgstr ""
 
-#: inc/post_type/slider.php:9
-msgid "Post Type"
-msgstr ""
+#: inc/post_type/slider.php:9 inc/post_type/slider.php:33
+msgid "Slider"
+msgstr "اسلایدر"
 
 #: inc/post_type/slider.php:10
 msgid "Item Archives"
@@ -368,13 +376,13 @@ msgstr ""
 msgid "Filter items list"
 msgstr ""
 
-#: inc/post_type/slider.php:33
-msgid "Slider"
-msgstr "اسلایدر"
-
 #: inc/post_type/slider.php:34
 msgid "Main Page Slider"
-msgstr ""
+msgstr "اسلایدر صفحه اصلی"
+
+#: inc/terme_funcs.php:145
+msgid " View"
+msgstr " بازدید"
 
 #: inc/theme_option/terme_options_config.php:77
 #: inc/theme_option/terme_options_config.php:78
@@ -388,7 +396,7 @@ msgstr ""
 
 #: inc/theme_option/terme_options_config.php:184
 msgid "Support"
-msgstr ""
+msgstr "پشتیبانی"
 
 #: inc/theme_option/terme_options_config.php:190
 msgid "Extensions"
@@ -433,7 +441,7 @@ msgstr ""
 
 #: inc/theme_option/terme_options_config.php:280
 msgid "Homepage"
-msgstr ""
+msgstr "صفحه اصلی"
 
 #: inc/theme_option/terme_options_config.php:282
 #: inc/theme_option/terme_options_config.php:326
@@ -759,7 +767,7 @@ msgstr ""
 #: inc/theme_option/terme_options_config.php:745
 #: inc/theme_option/terme_options_config.php:769
 msgid "Enabled"
-msgstr ""
+msgstr "فعال"
 
 #: inc/theme_option/terme_options_config.php:696
 #: inc/theme_option/terme_options_config.php:706
@@ -769,7 +777,7 @@ msgstr ""
 #: inc/theme_option/terme_options_config.php:746
 #: inc/theme_option/terme_options_config.php:770
 msgid "Disabled"
-msgstr ""
+msgstr "غیرفعال"
 
 #: inc/theme_option/terme_options_config.php:702
 msgid "Twitter Share"
@@ -795,7 +803,7 @@ msgstr ""
 msgid "Related Posts Setting"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:765 single.php:122 single.php:182
+#: inc/theme_option/terme_options_config.php:765 single.php:125 single.php:185
 msgid "Related Post"
 msgstr "مطالب مرتبط"
 
@@ -1319,8 +1327,8 @@ msgstr "تبلیغات"
 #: inc/widgets/ads.php:65 inc/widgets/footer_about.php:67
 #: inc/widgets/footer_about.php:76 inc/widgets/footer_category.php:56
 #: inc/widgets/footer_news.php:58 inc/widgets/footer_social.php:65
-#: inc/widgets/footer_social.php:74 inc/widgets/top_articles.php:57
-#: inc/widgets/video.php:70
+#: inc/widgets/footer_social.php:74 inc/widgets/popular_post.php:60
+#: inc/widgets/top_articles.php:57 inc/widgets/video.php:70
 msgid "Title:"
 msgstr "عنوان"
 
@@ -1331,7 +1339,7 @@ msgstr "تصویر:"
 
 #: inc/widgets/ads.php:74
 msgid "URL:"
-msgstr ""
+msgstr "آدرس"
 
 #: inc/widgets/footer_about.php:11
 msgid "Terme footer about"
@@ -1342,33 +1350,34 @@ msgid "Terme Footer Category"
 msgstr ""
 
 #: inc/widgets/footer_category.php:14 inc/widgets/footer_news.php:14
-#: inc/widgets/top_articles.php:14
+#: inc/widgets/popular_post.php:14 inc/widgets/top_articles.php:14
 msgid "Show the Last Articles"
 msgstr "نمایش آخرین مطالب"
 
 #: inc/widgets/footer_category.php:50 inc/widgets/footer_news.php:52
-#: inc/widgets/top_articles.php:51
+#: inc/widgets/popular_post.php:54 inc/widgets/top_articles.php:51
 msgid "Hot"
 msgstr "داغ"
 
 #: inc/widgets/footer_category.php:60 inc/widgets/footer_news.php:62
-#: inc/widgets/news.php:119 inc/widgets/news.php:146 inc/widgets/news.php:172
-#: inc/widgets/top_articles.php:61 inc/widgets/video.php:74
+#: inc/widgets/news.php:122 inc/widgets/news.php:149 inc/widgets/news.php:175
+#: inc/widgets/popular_post.php:64 inc/widgets/top_articles.php:61
+#: inc/widgets/video.php:74
 msgid "Count:"
 msgstr "تعداد:"
 
-#: inc/widgets/footer_category.php:64 inc/widgets/news.php:123
-#: inc/widgets/news.php:150 inc/widgets/news.php:176 inc/widgets/video.php:79
+#: inc/widgets/footer_category.php:64 inc/widgets/news.php:126
+#: inc/widgets/news.php:153 inc/widgets/news.php:179 inc/widgets/video.php:79
 msgid "Select Category:"
 msgstr "انتخاب دسته بندی:"
 
 #: inc/widgets/footer_news.php:11
 msgid "Terme Footer"
-msgstr ""
+msgstr "فوتر (ترمه)"
 
 #: inc/widgets/footer_social.php:11
 msgid "Terme footer Social"
-msgstr ""
+msgstr "شبکه های اجتماعی فوتر (ترمه)"
 
 #: inc/widgets/news.php:11
 msgid "Terme Tab Widget"
@@ -1378,17 +1387,21 @@ msgstr "تب (ترمه)"
 msgid "Show the News by Category"
 msgstr "نمایش مطالب بر اساس دسته بندی"
 
-#: inc/widgets/news.php:115
+#: inc/widgets/news.php:118
 msgid "Title 1:"
 msgstr "عنوان اول"
 
-#: inc/widgets/news.php:142
+#: inc/widgets/news.php:145
 msgid "Title 2:"
 msgstr "عنوان دوم"
 
-#: inc/widgets/news.php:168
+#: inc/widgets/news.php:171
 msgid "Title 3:"
 msgstr "عنوان سوم"
+
+#: inc/widgets/popular_post.php:11
+msgid "Terme Popular Post Widget"
+msgstr "مطالب محبوب (ترمه)"
 
 #: inc/widgets/social_widget.php:7
 msgid "Terme Social Widget"
@@ -1515,6 +1528,10 @@ msgstr "Dribbble Access Token:"
 msgid "Terme Top Article Widget"
 msgstr "آخرین مطالب (ترمه)"
 
+#: inc/widgets/top_articles.php:65
+msgid "check:"
+msgstr "پست های محبوب (ترمه)"
+
 #: inc/widgets/video.php:11
 msgid "Terme Video Widget"
 msgstr "ویدئو (ترمه)"
@@ -1526,6 +1543,10 @@ msgstr "نمایش ویدئو"
 #: inc/widgets/video.php:64
 msgid "Video"
 msgstr "ویدئو"
+
+#: single.php:99 single.php:113
+msgid "Articles"
+msgstr "مقاله"
 
 #: woocommerce/cart/cart.php:36 woocommerce/cart/cart.php:79
 #: woocommerce/checkout/review-order.php:26
@@ -1584,7 +1605,7 @@ msgstr "رمز عبور خود را فراموش کرده اید؟"
 
 #: woocommerce/loop/no-products-found.php:24
 msgid "No products were found matching your selection."
-msgstr ""
+msgstr "هیچ محصول منطبق با انتخاب شما یافت نشد."
 
 #: woocommerce/loop/sale-flash.php:34
 #: woocommerce/single-product/sale-flash.php:28
@@ -1665,20 +1686,21 @@ msgstr "در حال حاضر این محصول در انبار موجود نمی
 
 #: woocommerce/single-product/add-to-cart/variable.php:43
 msgid "Clear"
-msgstr ""
+msgstr "حذف"
 
 #: woocommerce/single-product/add-to-cart/variation.php:31
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
+"با عرض پوزش، این محصول در دسترس نیست. لطفا یک مجموعه دیگری را انتخاب نمایید."
 
 #: woocommerce/single-product/meta.php:38
 msgid "SKU:"
-msgstr ""
+msgstr "شناسه محصول"
 
 #: woocommerce/single-product/meta.php:38
 msgid "N/A"
-msgstr ""
+msgstr "نامعلوم"
 
 #: woocommerce/single-product/product-attributes.php:38
 msgid "Weight"
@@ -1700,7 +1722,7 @@ msgstr ""
 #: woocommerce/single-product/rating.php:38
 #, php-format
 msgid "out of %s5%s"
-msgstr ""
+msgstr "خارج از %s5%s"
 
 #: woocommerce/single-product/related.php:51
 msgid "Related Products"
@@ -1716,7 +1738,10 @@ msgstr "توضیحات محصول"
 
 #: woocommerce/single-product/up-sells.php:48
 msgid "You may also like&hellip;"
-msgstr ""
+msgstr "ممکن این موارد را هم بپسندید &hellip;"
+
+#~ msgid "View"
+#~ msgstr "بازدید"
 
 #~ msgid "Cart Totals"
 #~ msgstr "مجموع سبد خرید"

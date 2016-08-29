@@ -376,7 +376,7 @@ footer.footer.style_5 .bottom_bar .social_menu {
   border-width: 0 0.1rem 0.1rem 0.1rem;
   padding: 15px;
   padding: 1.5rem; }
-  .article_comment .comment-respond h3.comment-reply-title small {
+  .article_comment .comment-respond small {
     float: left; }
   .article_comment .comment-respond form .comment-form-author,
   .article_comment .comment-respond form .comment-form-email {
@@ -544,6 +544,17 @@ footer.footer.style_5 .bottom_bar .social_menu {
 .woocommerce .cart-collaterals .cart_totals {
   float: left; }
   .woocommerce .cart-collaterals .cart_totals .wc-proceed-to-checkout a {
+    float: left; }
+.woocommerce #tab-reviews #reviews #comments ol.commentlist li .comment_container img.avatar {
+  float: right;
+  left: auto;
+  right: 0; }
+.woocommerce #tab-reviews #reviews #comments ol.commentlist li .comment_container .comment-text {
+  margin-left: 0;
+  margin-left: 0;
+  margin-right: 100px;
+  margin-right: 10rem; }
+  .woocommerce #tab-reviews #reviews #comments ol.commentlist li .comment_container .comment-text .star-rating {
     float: left; }
 
 .woocommerce-tabs ul.tabs li {

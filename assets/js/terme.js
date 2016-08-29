@@ -81,10 +81,7 @@ jQuery(document).ready(function($) {
     stagePadding:10,
     navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>","<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
     responsive:{
-        0:{
-            items:0
-        },
-        600:{
+        450:{
             items:3
         },
         1000:{
@@ -109,16 +106,20 @@ jQuery(document).ready(function($) {
     navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>","<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
     responsive:{
         0:{
-            items:0
+            items:1
         },
         600:{
-            items:3
+            items:2
         },
         800:{
-            items:4
+            items:3
 
         },
         1000:{
+            items:4
+
+        },
+        1200:{
             items:5
 
         }

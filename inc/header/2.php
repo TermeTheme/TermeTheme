@@ -39,6 +39,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
+					<a href="#" class="mobile_menu js-toggle-left-slidebar"><span class="mobile_menu1"></span></a>
+
 					<div class="logo center">
 						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
 

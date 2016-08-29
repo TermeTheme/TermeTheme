@@ -180,7 +180,7 @@ header.style_3 .top_bar form {
 header.style_1 .main_area .logo,
 header.style_3 .main_area .logo,
 header.style_4 .main_area .logo {
-	float: left;
+	float: none;
 	overflow: hidden;
 	img {
 		max-width: 100%;
@@ -1594,7 +1594,6 @@ section.latest_news {
 footer.footer {
 	width: 100%;
 	float: left;
-	@include rem(( margin-top: 20px, ));
 	&.style_1 .main_area,
 	&.style_2 .main_area,
 	&.style_4 .main_area,
@@ -2342,6 +2341,7 @@ footer.footer {
 		margin-bottom: 0;
 		h4 {
 			margin: 0;
+			display: inline-block;
 			@include rem(( padding: 10px, ));
 		}
 		ol {
@@ -2497,12 +2497,13 @@ footer.footer {
 		h3.comment-reply-title {
 			margin: 0;
 			@include rem(( font-size: 18px, padding: 10px,));
-			small {
-				float: right;
-				a {
-					color: $primary_color;
-					line-height: 2;
-				}
+		}
+		small {
+			float: right;
+			@include rem(( padding: 15px 10px,));
+			a {
+				color: $primary_color;
+				line-height: 2;
 			}
 		}
 		form {
@@ -3236,28 +3237,33 @@ footer.footer {
 			float: left;
 			width: 100%;
 			@include rem(( margin: 20px 0, ));
-			span.posted_in {
+			span {
 				display: block;
-				@include rem((font-size: 15px,));
-				a {
-					color: #979a9f;
-				}
-			}
-			span.tagged_as {
-				display: block;
-				@include rem((font-size: 15px,));
-				a {
-					overflow: hidden;
-					color: $secondary_color;
-					border: solid #e4e4e4;
-					display: inline-flex;
-					@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px,));
-					&:hover {
-						color: #fff;
-						border-color: $secondary_color;
+				@include rem((font-size: 15px,padding: 5px 0,));
+				&.sku_wrapper {
+					span {
+						display: inline-block;
 					}
-					&:before {
-						background-color: $secondary_color;
+				}
+				&.posted_in {
+					a {
+						color: #979a9f;
+					}
+				}
+				&.tagged_as {
+					a {
+						overflow: hidden;
+						color: $secondary_color;
+						border: solid #e4e4e4;
+						display: inline-flex;
+						@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px,));
+						&:hover {
+							color: #fff;
+							border-color: $secondary_color;
+						}
+						&:before {
+							background-color: $secondary_color;
+						}
 					}
 				}
 			}
@@ -3402,6 +3408,30 @@ footer.footer {
 		}
 	}
 }
+.up-sells {
+	float: left;
+	width: 100%;
+	padding: 0;
+	border: solid #e4e4e4;
+	background: #fff;
+	list-style: none;
+	position: relative;
+	overflow: hidden;
+	@include rem(( border-width: 1px,));
+	h2 {
+		width: 100%;
+		margin: 0 auto;
+		border-bottom: 0;
+		padding: 0;
+		list-style: none;
+		background-color: #f3f6f8;
+		font-weight: bold;
+		@include rem(( height: 50px,line-height: 50px,padding: 0 20px,font-size: 16px,));
+	}
+	ul {
+		@include rem(( padding: 20px !important,));
+	}
+}
 .related_product_loop {
 	position: relative;
 	@include rem((padding: 20px, ));
@@ -3411,7 +3441,7 @@ footer.footer {
 		height: auto;
 		border: #e6e6e6 solid;
 		background: #fff;
-		@include rem(( border-width: 1px,margin-bottom: 20px, ));
+		@include rem(( border-width: 1px,margin-bottom: 20px,));
 		.thumb {
 			position: relative;
 			display: block;
@@ -3484,9 +3514,10 @@ footer.footer {
 			background: #fff;
 			text-align: center;
 			transition: background 300ms;
-			@include rem(( padding:10px, min-height: 100px,));
+			@include rem(( padding:10px, min-height: 130px,));
 			h3 {
-				@include rem(( font-size: 20px,margin-top: 0, ));
+				font-weight: bold;
+				@include rem(( line-height: 20px, font-size: 16px,margin-top: 0,min-height: 75px, ));
 				a {
 					color: $secondary_color;
 				}
@@ -3521,11 +3552,11 @@ footer.footer {
 	}
 	.related_items:hover .thumb .add_to_cart {
 		top: 50%;
-		transform: translate(-50%, -150%);
+		transform: translate(-50%, -125%);
 	}
 	.related_items:hover .thumb .permalink {
 		bottom: 50%;
-		transform: translate(-50%, 150%);
+		transform: translate(-50%, 125%);
 	}
 	.owl-dots {
 		text-align: center;
@@ -3597,8 +3628,10 @@ footer.footer {
 }
 @media (max-width: 768px) {
 	header.header {
+		border-top: solid $secondary_color;
+		@include rem((border-top-width: 4px,));
 		.top_bar {
-			@include rem((height: 4px, ));
+			display: none;
 		}
 	}
 	.comment_form {
@@ -3622,7 +3655,29 @@ footer.footer {
 			}
 		}
 	}
+	.woocommerce {
+		form {
+			table.shop_table {
+				tbody {
+					tr {
+						td {
+							&.product-remove {
+								text-align: center !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.product_page {
+		.summary {
+			width: 100%;
+		}
+		.images {
+			width: 100%;
+			padding: 0;
+		}
 		.product_image {
 			width: 100%;
 			padding: 0;
@@ -3727,6 +3782,17 @@ footer.footer {
 	}
 }
 @media (max-width: 544px) {
+	.woocommerce-tabs {
+		ul.tabs {
+			li {
+				width: 100%;
+				a {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
 	.big_post {
 		&.horizontal {
 			ul {
@@ -3770,6 +3836,7 @@ footer.footer {
 			float: left;
 			width: 100%;
 			border-bottom: solid #636363;
+			padding: 0;
 			@include rem(( border-bottom-width: 1px,));
 			input {
 				width: 80%;
@@ -3777,6 +3844,7 @@ footer.footer {
 				float: left;
 				background: $secondary_color_light;
 				box-sizing: border-box;
+				height: auto;
 				@include rem(( padding: 15px,));
 			}
 			button {
@@ -4007,14 +4075,23 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 	transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg);
 }
 .woocommerce {
+	table.shop_attributes {
+		td,
+		th {
+			border-color: #c0f0c1;
+		}
+		.alt {
+			td,
+			th {
+				background-color: #f7fff7;
+			}
+		}
+	}
+
 	#tab-reviews {
-		padding: 0;
 		#reviews {
 			padding: 0;
 			#comments {
-				h2 {
-					@include rem((padding: 0 20px,));
-				}
 				ol.commentlist {
 					width: 100%;
 					padding: 0;
@@ -4042,13 +4119,50 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 				}
 			}
 			#review_form_wrapper {
-				@include rem((padding:20px,));
+				@include rem(( padding: 20px 0, ));
+				#review_form {
+					#respond {
+						h3 {
+							font-weight: bold;
+							@include rem(( font-size: 20px, ));
+						}
+						form {
+							@include rem(( padding: 20px 0, ));
+							p.stars {
+								a {
+									color: #FFC107;
+									@include rem(( font-size: 20px, ));
+
+								}
+							}
+
+							textarea {
+								width: 100%;
+								outline: none;
+								border: solid #e4e4e4;
+								background: #fafafa;
+								transition: all 0.4s;
+								@include rem(( border-width: 1px,height: 100px, padding: 10px,));
+							}
+							.form-submit {
+								input[name="submit"] {
+									font-weight: bold;
+									background: $primary_color;
+									border: none;
+									color: #fff;
+									@include rem(( padding: 10px 20px,border-radius: 4px, font-size: 14px,));
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
 }
 #reviews #comments ol.commentlist li {
 	img.avatar {
+		float: left;
 		border-radius: 50%;
 		@include rem(( width: 75px !important, padding: 25px 0,));
 	}
@@ -4157,6 +4271,31 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 	}
 	.cart-collaterals {
 		@include rem(( padding: 0 20px,font-size: 14px,));
+		.cross-sells {
+			float: left;
+			width: 100%;
+			padding: 0;
+			border: solid #e4e4e4;
+			background: #fff;
+			list-style: none;
+			position: relative;
+			overflow: hidden;
+			@include rem(( border-width: 1px,));
+			h2 {
+				width: 100%;
+				margin: 0 auto;
+				border-bottom: 0;
+				padding: 0;
+				list-style: none;
+				background-color: #f3f6f8;
+				font-weight: bold;
+				color: $secondary_color;
+				@include rem(( height: 50px,line-height: 50px,padding: 0 20px,font-size: 16px,));
+			}
+			ul {
+				@include rem(( padding: 20px !important,));
+			}
+		}
 		.cart_totals {
 			float: right;
 			h2 {
@@ -4219,71 +4358,122 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 		}
 	}
 	form.checkout {
-		p {
-			margin: 0;
-			label {
-				color: $secondary_color;
-				@include rem(( font-size: 12px,));
+		.woocommerce-billing-fields {
+			p {
+				margin: 0;
+				input {
+					width: 100%;
+					border: solid #e4e4e4;
+					background: #fafafa;
+					transition: all 0.4s;
+					@include rem(( border-width: 1px,height: 45px, padding: 10px,));
+					&:focus {
+						border: solid $primary_color;
+						@include rem(( border-width: 1px,));
+					}
+				}
+				label {
+					color: $secondary_color;
+					@include rem(( font-size: 12px,));
+				}
+				&.woocommerce-invalid input[type="text"] {
+					border-bottom: solid $primary_color;
+					@include rem(( border-width: 1px,));
+				}
+				&.woocommerce-validated input[type="text"] {
+					border-bottom: solid #4ab866;
+					@include rem(( border-width: 1px,));
+				}
+				.select2-container {
+					a {
+						width: 100%;
+						border: solid #e4e4e4;
+						background: #fafafa;
+						transition: all 0.4s;
+						@include rem(( border-width: 1px,height: 45px, padding: 10px,));
+						&:focus {
+							border: solid $primary_color;
+							@include rem(( border-width: 1px,));
+						}
+					}
+				}
 			}
-			&.woocommerce-invalid input[type="text"] {
-				border-bottom: solid $primary_color;
-				@include rem(( border-width: 1px,));
-			}
-			&.woocommerce-validated input[type="text"] {
-				border-bottom: solid #4ab866;
-				@include rem(( border-width: 1px,));
+			#order_review {
+				.shop_table {
+					tfoot {
+						border: 1px solid #c0f0c1;
+						td,
+						th {
+							border-top: 1px solid #c0f0c1;
+						}
+					}
+					.order-total {
+						color: #4ab866;
+						background-color: #f7fff7;
+						.woocommerce-Price-amount {
+							@include rem(( font-size: 16px,));
+						}
+					}
+				}
+				#payment {
+					background-color: #f3f6f8;
+					ul {
+						border-bottom: none;
+					}
+					input {
+						height: auto;
+						&#place_order {
+							background-color: #4ab866;
+						}
+					}
+					img {
+						width: auto;
+						display: inherit;
+					}
+					.payment_box {
+						background-color: #e9eff3;
+						&:before {
+							border: 1em solid #e9eff3;
+							border-right-color: transparent;
+							border-left-color: transparent;
+							border-top-color: transparent;
+						}
+					}
+				}
 			}
 		}
-		#order_review {
-			.shop_table {
-				tfoot {
-					border: 1px solid #c0f0c1;
-					td,
-					th {
-						border-top: 1px solid #c0f0c1;
-					}
+		.woocommerce-shipping-fields {
+			p {
+				label {
+					color: $secondary_color;
+					@include rem(( font-size: 12px,));
 				}
-				.order-total {
-					color: #4ab866;
-					background-color: #f7fff7;
-					.woocommerce-Price-amount {
-						@include rem(( font-size: 16px,));
-					}
-				}
-			}
-			#payment {
-				background-color: #f3f6f8;
-				ul {
-					border-bottom: none;
-				}
-				input {
-					height: auto;
-					&#place_order {
-						background-color: #4ab866;
-					}
-				}
-				img {
-					width: auto;
-					display: inherit;
-				}
-				.payment_box {
-					background-color: #e9eff3;
-					&:before {
-						border: 1em solid #e9eff3;
-						border-right-color: transparent;
-						border-left-color: transparent;
-						border-top-color: transparent;
+				textarea {
+					width: 100%;
+					border: solid #e4e4e4;
+					background: #fafafa;
+					transition: all 0.4s;
+					@include rem(( border-width: 1px, padding: 10px,height: 100px,));
+					&:focus {
+						border: solid $primary_color;
+						@include rem(( border-width: 1px,));
 					}
 				}
 			}
 		}
 	}
-}
-.woocommerce {
 	.woocommerce-error,
 	.woocommerce-info,
 	.woocommerce-message {
 		@include rem(( padding: 10px 20px 10px 40px !important ,));
+		li {
+			padding: 0 !important;
+			@include rem(( font-size: 12px !important,));
+
+			&:before {
+				content:'' !important;
+			}
+		}
 	}
 	.woocommerce-message {
 		background-color: #f7fff7;

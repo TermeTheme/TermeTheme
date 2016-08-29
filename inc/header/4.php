@@ -30,7 +30,6 @@
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<a href="#" class="mobile_menu js-toggle-left-slidebar"><span class="mobile_menu1"></span></a>
-
 					<div class="logo">
 						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
 						<a href="<?php bloginfo('url'); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
@@ -53,7 +52,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<a href="#" class="mobile_menu sb-toggle-left js-toggle-left-slidebar"><span class="mobile_menu"></span></a>
 						<?php echo wp_nav_menu(); ?>
 					<div class="shopping_cart">
 						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">

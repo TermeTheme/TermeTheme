@@ -38,7 +38,9 @@
 	<div class="main_area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-xs-12">
+				<div class="col-md-6 col-xs-12">
+					<a href="#" class="mobile_menu js-toggle-left-slidebar"><span class="mobile_menu1"></span></a>
+
 					<div class="logo">
 						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
 								<a href="<?php bloginfo('url'); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
@@ -49,7 +51,7 @@
 					</div><!-- logo -->
 				</div><!-- col-xs-6 -->
 				<?php if($terme_options['top_banner_switch']) { ?>
-				<div class="col-sm-6 hidden-xs">
+				<div class="col-md-6 hidden-xs">
 					<?php if ($terme_options['banner_type'] == '1') { ?>
 						<div class="header_ads">
 							<a href="<?php echo $terme_options['top_banner_link']; ?>"><img src="<?php echo $terme_options['top_banner_img']['url'];?>" alt=""></a>
