@@ -74,6 +74,7 @@ jQuery(document).ready(function($) {
           }
     }
       jQuerybutton.parent().find("input").val(newVal);
+      jQuery( 'div.woocommerce > form input[name="update_cart"]' ).prop( 'disabled', false );
 
   });
   jQuery('.owl-carousel').owlCarousel({
@@ -89,16 +90,30 @@ jQuery(document).ready(function($) {
         }
     }
 })
-  jQuery('.MainSlider').owlCarousel({
-    rtl : true,
-    items:1,
-    margin:10,
-    loop:true,
-    nav:true,
-    autoplay: true,
-    navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>","<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
 
-})
+if (jQuery('body').hasClass('rtl')) {
+    jQuery('.MainSlider').owlCarousel({
+      rtl : true,
+      items:1,
+      margin:10,
+      loop:true,
+      nav:true,
+      autoplay: true,
+      navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>","<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
+
+  });
+} else {
+    jQuery('.MainSlider').owlCarousel({
+      items:1,
+      margin:10,
+      loop:true,
+      nav:true,
+      autoplay: true,
+      navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>","<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
+
+  })
+}
+
   jQuery('.related_product_loop').owlCarousel({
     margin:20,
     // nav: true,

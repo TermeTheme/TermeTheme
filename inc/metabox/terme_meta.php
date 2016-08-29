@@ -152,16 +152,39 @@ class Rational_Meta_Box {
 	 */
 	public function generate_fields( $post ) {
 		$output = '';
-		foreach ( $this->fields as $field ) {
+        global $terme_options;
+        $dateformat = ( array_key_exists('post_date_format', $terme_options) && isset($terme_options['post_date_format']) && !empty($terme_options['post_date_format']) ) ? $terme_options['post_date_format'] : get_option('date_format') ;
+        $related_number = ( array_key_exists('related_number_of_posts', $terme_options) && isset($terme_options['related_number_of_posts']) && !empty($terme_options['related_number_of_posts']) ) ? $terme_options['related_number_of_posts'] : 5 ;
+        $defaults = array(
+            'date' => 1,
+            'category' => 1,
+            'viewcount' => 1,
+            'commentcount' => 1,
+            'dateformat' => $dateformat,
+            'relatedpost-by' => 1,
+            'relatedpost-display' => 1,
+            'relatedpost-count' => $related_number,
+            'comment-display' => 1,
+            'author-display' => 1,
+            'share-display' => 1,
+            'breadcrumb' => 1,
+        );
+        $terme_postmeta = (get_post_meta( $post->ID, 'terme_postmeta', true )) ? get_post_meta( $post->ID, 'terme_postmeta', true ) : $defaults ;
+        foreach ( $this->fields as $field ) {
 			$label = '<label for="' . $field['id'] . '">' . $field['label'] . '</label>';
-            $terme_postmeta = (get_post_meta( $post->ID, 'terme_postmeta', true )) ? get_post_meta( $post->ID, 'terme_postmeta', true ) : array() ;
-      $db_value = (array_key_exists($field['id'],$terme_postmeta)) ?  $terme_postmeta[$field['id']] : '' ;
+
 			switch ( $field['type'] ) {
 				case 'checkbox':
+                    if (array_key_exists($field['id'],$terme_postmeta)) {
+                        $db_value = $terme_postmeta[$field['id']];
+                    } else {
+                        $db_value = 0;
+                    }
 					$input = sprintf(
 						'<input %s id="%s" name="%s" type="checkbox" value="1">
 						<label for="%s" data-text-true="Yes" data-text-false="No"><i></i></label>',
-						$db_value === '1' ? 'checked' : '',
+						// $db_value === '1' ? 'checked' : '',
+                        checked( $db_value, 1, false ),
 						$field['id'],
 						$field['id'],
 						$field['id']
@@ -187,6 +210,11 @@ class Rational_Meta_Box {
 					$input .= '</fieldset>';
 					break;
 				default:
+                    if (array_key_exists($field['id'],$terme_postmeta)) {
+                        $db_value = $terme_postmeta[$field['id']];
+                    } else {
+                        $db_value = '';
+                    }
 					$input = sprintf(
 						'<input %s id="%s" name="%s" type="%s" value="%s">',
 						$field['type'] !== 'color' ? 'class="regular-text"' : '',

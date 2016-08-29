@@ -11,7 +11,7 @@ function addAndOverridePanelCSS() {
   wp_dequeue_style( 'redux-admin-css' );
   wp_register_style(
     'redux-custom-css',
-    'http://localhost/wp/wp-content/themes/TermeTheme/assets/css/redux-custom-css.css',
+    get_template_directory_uri().'/assets/admin/css/redux-custom-css.css',
     array( 'farbtastic' ), // Notice redux-admin-css is removed and the wordpress standard farbtastic is included instead
     time(),
     'all'

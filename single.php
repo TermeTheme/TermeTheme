@@ -6,11 +6,26 @@
 				<div class="col-md-8 col-sm-12 col-xs-12">
 					<div class="article_content">
 							<?php if(have_posts()) : while(have_posts()) : the_post();
-								terme_set_post_views(get_the_ID());
+
 							 ?>
 							<?php
-							$terme_postmeta = get_post_meta( $post->ID, 'terme_postmeta', true );
-							//  print_r(get_post_meta($post->ID,'terme_postmeta', true));?>
+							// $terme_postmeta = get_post_meta( $post->ID, 'terme_postmeta', true );
+                            $defaults = array(
+                                'date' => 1,
+                                'category' => 1,
+                                'viewcount' => 1,
+                                'commentcount' => 1,
+                                'dateformat' => 1,
+                                'relatedpost-by' => 1,
+                                'relatedpost-display' => 1,
+                                'relatedpost-count' => 1,
+                                'comment-display' => 1,
+                                'author-display' => 1,
+                                'share-display' => 1,
+                                'breadcrumb' => 1,
+                            );
+                            $terme_postmeta = (get_post_meta( get_the_id(), 'terme_postmeta', true )) ? get_post_meta( get_the_id(), 'terme_postmeta', true ) : $defaults ;
+							?>
 						<div class="article_info ">
 							<?php if (isset($terme_postmeta['breadcrumb']) && !empty($terme_postmeta['breadcrumb']) ): ?>
 									<?php terme_breadcrumb() ?>
@@ -66,7 +81,7 @@
 									echo $html; ?>
 							</div><!-- article_tags -->
 							<?php } ?>
-							<?php if (isset($terme_postmeta['share-display']) && !empty($terme_postmeta['share-display'])): ?>
+							<?php if ( isset($terme_postmeta['share-display']) && !empty($terme_postmeta['share-display'])  ): ?>
 								<div class="article_social">
 									<ul>
 										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -252,7 +267,7 @@
 							<?php comments_template(); ?>
 							</div>
 						<?php endif; ?>
-						<?php endwhile; else: ?>
+						<?php terme_set_post_views(get_the_ID()); endwhile; else: ?>
 						<?php endif; ?>
 					</div><!-- article_content -->
 				</div><!--col-md-8-->
