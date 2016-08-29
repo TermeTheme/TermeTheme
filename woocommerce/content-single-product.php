@@ -35,8 +35,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 	return;
 	 }
 ?>
+			<?php
+					global $post, $product;
+					$off = $product->regular_price - $product->sale_price;
+					if ( $product->is_on_sale() ) : ?>
+						<div class="is_on_sale">
+							<h2>Summer Sale</h2>
+							<div class="off_section">
+								<span>
+									<span class="off">off</span>
+									<span class="currency"><?php echo get_woocommerce_currency_symbol(); ?></span>
+									<span class="price"><?php echo $off ?></span>
+
+								 </span>
+
+							</div>
+						</div>
+			<?php endif; ?>
 
 <div class="product_page" itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 
 	<?php
 		/**
@@ -67,19 +85,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div><!-- .product_detail -->
 
-	<?php
-		/**
-		 * woocommerce_after_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_output_product_data_tabs - 10
-		 * @hooked woocommerce_upsell_display - 15
-		 * @hooked woocommerce_output_related_products - 20
-		 */
-		do_action( 'woocommerce_after_single_product_summary' );
-	?>
+
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
 </div><!-- #product-<?php the_ID(); ?> -->
+
+		<?php
+			/**
+			 * woocommerce_after_single_product_summary hook.
+			 *
+			 * @hooked woocommerce_output_product_data_tabs - 10
+			 * @hooked woocommerce_upsell_display - 15
+			 * @hooked woocommerce_output_related_products - 20
+			 */
+			do_action( 'woocommerce_after_single_product_summary' );
+		?>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

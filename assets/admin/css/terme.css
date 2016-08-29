@@ -185,11 +185,12 @@ a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
     font-family: sans-serif;
     font-size: 14px;
     font-weight: bold;
-    height: 30px;
+    height: 35px;
     line-height: 30px;
     position: relative;
     text-transform: uppercase;
-    width: 80px;
+    width: 73px;
+    border-radius: 5px;
 }
 #terme_page_option input[type=checkbox]+ label, #terme_page_option input[type=checkbox]+ label i {
     -webkit-transition: all 200ms ease;
@@ -207,18 +208,20 @@ a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
     text-align: center;
 }
 #terme_page_option input[type=checkbox]+ label:before {
-    content: attr(data-text-true);
+    content: "\f00c";
+    font: normal normal normal 14px/1 FontAwesome;
 }
 #terme_page_option input[type=checkbox]+ label:after {
     content: attr(data-text-false);
 }
 #terme_page_option input[type=checkbox]+ label i {
-    top: 10%;
+    top: 2px;
     background-color: white;
-    height: 80%;
+    height: 31px;
     left: 5%;
     position: absolute;
-    width: 45%;
+    width: 31px;
+    border-radius: 5px;
 }
 #terme_page_option input[type=checkbox]:checked+ label i {
     left: 50%;
@@ -258,7 +261,6 @@ ul.terme_social_widgets li span.handle {
 ul.terme_social_widgets li span.handle:after {
     content: "\f475";
     display: inline-block;
-
     font-size: 17px;
     line-height: 1;
     font-family: dashicons;

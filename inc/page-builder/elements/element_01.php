@@ -142,7 +142,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         $cat_link = get_category_link( $this->saved_vals['category'] );
         $output = '<div class="box">
           <div class="title">
-            <a href="'.$cat_link.'" class="more pull-right">'.__('More', 'terme').'</a>
+            <a href="'.$cat_link.'" class="more">'.__('More', 'terme').'</a>
             <h4>'.$this->saved_vals['title'].'</h4>
             <h6>'.$this->saved_vals['subtitle'].'</h6>
           </div><!-- title -->
@@ -175,7 +175,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
             $output .= '
             <li>
               <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_02').'</a></div>
-              <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h2>
+              <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.terme_shorten_text(get_the_title(), 50).'</a></h2>
               <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
             </li>';
         endwhile; wp_reset_postdata();

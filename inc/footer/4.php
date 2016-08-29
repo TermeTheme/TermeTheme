@@ -3,12 +3,8 @@
       <div class="container">
           <div class="row">
               <div class="col-xs-4 col-xs-offset-4">
-                <div class="box_1">
-                  <img src="" width="150" height="100" alt="" />
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat ut laoreet dolore magna aliquam erat volutpat ut laoreet dolore magna aliquam erat volutpat.
-                  </p>
-                </div><!-- box_1 -->
+                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer_1') ) : ?>
+                <?php endif; ?>
               </div><!-- col-xs-3 -->
 
 
@@ -37,17 +33,16 @@
       <div class="row">
 <div class="col-xs-12">
   <div class="menu_area">
-    <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Terme Achievements</a></li>
-      <li><a href="#">Opportunity</a></li>
-      <li><a href="#">Terms of Use</a></li>
-      <li><a href="#">Privacy</a></li>
-    </ul>
+    <?php
+    if (has_nav_menu('footer_menu')) {
+      wp_nav_menu( array(
+        'theme_location' => 'footer_menu',
+        'container' => false
+      ) );
+    }
+?>
     <?php if($terme_options['copyright-footer']) { ?>
-    <p>
       <?php echo $terme_options['footer-text']; ?>
-    </p>
     <?php } ?>
 
   </div>

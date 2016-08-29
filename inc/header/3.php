@@ -1,22 +1,20 @@
 <header class="header style_3">
-
 	<?php if ( $terme_options['hide_top_bar'] == '0' ) { ?>
-
 	<div class="top_bar">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5 hidden-sm  hidden-xs">
+				<div class="col-md-3 hidden-sm  hidden-xs">
 					<div class="today">
 						<i class="fa fa-calendar"></i>
 						<?php the_time($terme_options['today_date_format']); ?>
 					</div>
-				</div><!-- col-xs-5 -->
-				<div class="col-md-7 col-sm-12 col-xs-12">
+				</div><!-- col-md-3 -->
+				<div class="col-md-9 col-sm-12 col-xs-12">
 					<form action="#">
-						<input type="text" placeholder="Search">
+						<input type="text" placeholder="<?php _e( 'Search','terme' ); ?>">
 						<button><i class="fa fa-search"></i></button>
 					</form>
-				</div><!-- col-xs-7 -->
+				</div><!-- col-md-9 -->
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- top_bar -->
@@ -25,20 +23,20 @@
 	<div class="main_area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-xs-12">
+				<div class="col-md-6 col-xs-12">
+					<a href="#" class="mobile_menu js-toggle-left-slidebar"><span class="mobile_menu1"></span></a>
 					<div class="logo">
 						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
-						<a href="#"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
+						<a href="<?php bloginfo('url'); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
 						<?php } else { ?>
-							<h1><a href="#"><?php echo $terme_options['site_name']; ?></a></h1>
+							<h1><a href="<?php bloginfo('url'); ?>"><?php echo $terme_options['site_name']; ?></a></h1>
 							<h2><?php echo $terme_options['site_description']; ?></h2>
 						<?php } ?>
 					</div><!-- logo -->
 				</div><!-- col-xs-6 -->
 					<?php if($terme_options['top_banner_switch']) { ?>
-				<div class="col-sm-6 hidden-xs">
+				<div class="col-md-6 hidden-xs">
 					<?php if ($terme_options['banner_type'] == '1') { ?>
-
 					<div class="header_ads">
 						<a href="#"><img src="<?php echo $terme_options['top_banner_img']['url'];?>" alt=""></a>
 					</div><!-- header_ads -->
@@ -54,11 +52,11 @@
 		</div><!-- container -->
 	</div><!-- main_area -->
 	<div class="main_menu">
-		<a href="#" class="mobile_menu sb-toggle-left"><span class="mobile_menu"></span></a>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-			<?php echo wp_nav_menu(); ?>
+					<a href="#" class="mobile_menu sb-toggle-left"><span class="mobile_menu"></span></a>
+					<?php echo wp_nav_menu(); ?>
 				</div><!-- col-xs-12 -->
 			</div><!-- row -->
 		</div><!-- container -->

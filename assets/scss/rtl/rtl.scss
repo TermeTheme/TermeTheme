@@ -1,6 +1,6 @@
 @import '../_variables.scss', '../_mixins.scss', '../rem';
 body {
-	font-family: 'IRANSans';
+	font-family: 'Vazir';
 	text-align: right;
 	direction: rtl;
 }
@@ -38,6 +38,7 @@ header.style_4 .main_area .logo {
 header.style_1 .main_area .header_ads,
 header.style_3 .main_area .header_ads {
 	text-align: left;
+	text-align: center;
 }
 header .main_menu {
 	float: right;
@@ -108,6 +109,9 @@ section.top {
 		}
 		ul li {
 			float: right;
+			h3 {
+				text-align: right;
+			}
 		}
 		ul li .thumb {
 			float: right;
@@ -161,6 +165,71 @@ section.latest_news {
 	}
 }
 #sidebar {
+	section {
+		h4 {
+			float: right;
+		}
+		ul.ads {
+			figcaption {
+				a {
+					right: auto;
+					left: 0;
+				}
+			}
+			figure:hover figcaption a {
+				transform: translate( 10px, -10px);
+			}
+		}
+		.widget_body {
+			ul li.cat-item {
+				a {
+					&:before {
+						content: "\f104";
+						float: right;
+						margin-right: 0;
+						@include rem(( margin-left: 10px, ));
+					}
+				}
+			}
+			ul li.menu-item {
+				float: right;
+				a {
+					&:before {
+						content: "\f104";
+						float: right;
+						margin-right: 0;
+						@include rem(( margin-left: 10px, line-height: 20px, ));
+					}
+				}
+			}
+			ul.video {
+				figure {
+					figcaption {
+						a {
+							.info {
+								span {
+									margin-right: 0;
+									@include rem(( margin-left: 30px, ));
+								}
+							}
+						}
+					}
+				}
+			}
+			.tagcloud {
+				a {
+					float: right;
+				}
+			}
+			.tab-content {
+				ul li .thumb {
+					float: right;
+					margin-right: 0;
+					@include rem(( margin-left: 10px ));
+				}
+			}
+		}
+	}
 	.social_widget {
 		ul {
 			float: right;
@@ -192,70 +261,13 @@ section.latest_news {
 			}
 		}
 	}
-	.category {
-		float: right;
-		h4 {
-			float: right;
-		}
-		ul {
-			li {
-				float: right;
-				&:before {
-					float: right;
-					content: "\f100";
-					@include rem(( margin-left: 10px,margin-right: 0, ));
-				}
-				h3 {
-					float: right;
-				}
-				span {
-					float: left;
-				}
-			}
-		}
-	}
-	.news {
-		.tab-content {
-			ul {
-				li {
-					float: right;
-					.thumb {
-						float: right;
-						@include rem(( margin-right: 0, margin-left: 10px, ));
-					}
-				}
-			}
-		}
-	}
-	.last_articles {
-		float: right;
-		h4 {
-			float: right;
-		}
-		a.more {
-			float: left;
-		}
-	}
-	.video {
-		float: right;
-		h4 {
-			float: right;
-		}
-		a.more {
-			float: left;
-		}
-	}
-	.tags {
-		float: right;
-		h4 {
-			float: right;
-		}
-		.tags_content a {
-			float: right;
-		}
-	}
 }
 footer.footer {
+	&.style_1 .main_area {
+		.tagcloud {
+			float: right;
+		}
+	}
 	&.style_1 .main_area .box_1 ul {
 		float: right;
 	}
@@ -275,8 +287,17 @@ footer.footer {
 	}
 	&.style_1 .main_area .box_3,
 	&.style_5 .main_area .box_3 {
+		.popular_tags {
+			.tagcloud {
+				a {
+					float: right;
+				}
+			}
+		}
 		.newsletter input {
 			float: right;
+			border-left: 0;
+			border-right: 1px solid;
 		}
 		.tags_items a {
 			float: right;
@@ -324,9 +345,9 @@ footer.footer {
 	&.style_3 .top_bar {
 		.social_menu {
 			&:before {
-				float: left;
-				left: 0;
-				right: auto;
+				float: right;
+				left: auto;
+				right: 0;
 				width: 1px;
 				height: 50%;
 				position: absolute;
@@ -367,6 +388,13 @@ footer.footer {
 }
 .article_content {
 	.article_info {
+		.breadcrumbs {
+			ul {
+				li {
+					float: right;
+				}
+			}
+		}
 		.article_meta {
 			span {
 				float: right;
@@ -381,6 +409,13 @@ footer.footer {
 				&:before {
 					float: right;
 					@include rem(( margin-right: auto,margin-left: 10px, ));
+				}
+			}
+		}
+		.article_social {
+			ul {
+				li {
+					float: right;
 				}
 			}
 		}
@@ -407,56 +442,117 @@ footer.footer {
 	}
 }
 .article_comment {
-	ol {
-		li {
-			float: right;
-			article {
+	.comment_container {
+		ol {
+			li {
 				float: right;
-				.comment_author {
-					img {
-						float: right;
+				article {
+					float: right;
+					.comment_author {
+						img {
+							float: right;
+						}
+					}
+					.comment_metadata {
+						.reply {
+							right: auto;
+							left: 0;
+						}
 					}
 				}
-				.comment_metadata {
-					.reply {
-						right: auto;
-						left: 0;
+				ul.children {
+					li {
+						float: right;
+						&:before {
+							content: "\f177";
+							right: 70px;
+							left: auto;
+						}
+						article {
+							float: right;
+							margin-left: auto;
+							margin-right: 10%;
+						}
+						.comment_author {
+							float: right;
+							img {
+								float: right;
+							}
+						}
+						.comment_metadata {
+							.reply {
+								right: auto;
+								left: 0;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
-	ul.children {
-		li {
-			float: right;
-			&:before {
-				right: 70px;
-				left: auto;
+	.comment-respond {
+		width: 100%;
+		float: left;
+		padding: 0;
+		border-top: none;
+		border: solid #e4e4e4;
+		background: #fff;
+		@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
+
+			small {
+				float: left;
 			}
-			article {
+
+		form {
+			.comment-form-author,
+			.comment-form-email {
 				float: right;
-				margin-left: auto;
-				margin-right: 10%;
 			}
-			.comment_author {
-				float: right;
-				img {
-					float: right;
-				}
-			}
-			.comment_metadata {
-				.reply {
-					right: auto;
-					left: 0;
-				}
+			.form-submit {
+				float: left;
 			}
 		}
 	}
 }
 .product_page {
+	.ribbon {
+		left: auto;
+		right: 0;
+		border-bottom: 65px solid transparent;
+		border-right: 65px solid #e54949;
+		border-left: 0;
+		border-top: 0;
+		a {
+			top: 15px;
+			right: 0;
+			left: auto;
+			transform: rotate(45deg);
+		}
+	}
+	.images {
+		float: right;
+		@include rem(( padding: 0 0 20px 20px,));
+	}
+	.summary {
+		.product_price {
+			p {
+				@include rem((margin-left: 5px, margin-right: 0, ));
+			}
+			del {
+				color: #979a9f;
+				@include rem((margin-left: 10px,margin-right: 0,));
+			}
+		}
+		.woocommerce-product-rating {
+			.star-rating {
+				float: right;
+				@include rem(( margin: 5px 0 0 10px, ));
+			}
+		}
+	}
 	.product_image {
 		float: right;
-		@include rem((padding:  0 0 20px 20px, ));
+		@include rem((padding: 0 0 20px 20px, ));
 		img {
 			float: right;
 		}
@@ -530,24 +626,135 @@ footer.footer {
 		}
 	}
 }
-.category_content {
-	ul {
-		li article {
-			figure.thumbnail {
-				float: right;
-				margin-right: 0;
-				margin-left: 20px;
-			}
-			section {
-				h2 {
-					@include rem((padding-right: 0, padding-left: 20px, ));
-
+.author,
+.category,
+.search {
+	.author_content,
+	.category_content,
+	.search_content {
+		ul {
+			li article {
+				figure.thumbnail {
+					float: right;
+					margin-right: 0;
+					margin-left: 20px;
 				}
-				.excerpt {
-					@include rem(( padding-right: 0, padding-left: 20px, ));
-
+				section {
+					h2 {
+						@include rem((padding-right: 0, padding-left: 20px, ));
+					}
+					.excerpt {
+						@include rem(( padding-right: 0, padding-left: 20px, ));
+					}
 				}
 			}
 		}
+	}
+}
+.woocommerce {
+	.woocommerce-error,
+	.woocommerce-info,
+	.woocommerce-message {
+		@include rem(( padding: 10px 40px 10px 20px !important ,));
+	}
+	.woocommerce-message {
+		text-align: right;
+		&:before {
+			left: auto;
+			right: 20px;
+		}
+		a.button {
+			float: left;
+		}
+	}
+	.woocommerce-info {
+		text-align: right;
+		&:before {
+			left: auto;
+			right: 20px;
+		}
+		a.button {
+			float: left;
+		}
+	}
+	.woocommerce-error {
+		text-align: right;
+		&:before {
+			left: auto;
+			right: 20px;
+		}
+		a.button {
+			float: left;
+		}
+	}
+	form {
+		table.shop_table {
+			tbody {
+				tr {
+					td {
+						&.product-remove {
+							border-left: none;
+						}
+						&.product-name {
+							border-right: none;
+							border-left: auto;
+							text-align: right;
+						}
+					}
+				}
+			}
+		}
+	}
+	.cart-collaterals {
+		.cart_totals {
+			float: left;
+			.wc-proceed-to-checkout {
+				a {
+					float: left;
+				}
+			}
+		}
+	}
+	#tab-reviews {
+		#reviews {
+			#comments {
+				ol.commentlist {
+					li {
+						.comment_container {
+							img.avatar {
+								float: right;
+								left: auto;
+								right: 0;
+							}
+							.comment-text {
+								@include rem(( margin-left: 0,margin-right: 100px,));
+								.star-rating {
+									float: left;
+								}
+							}
+						}
+					}
+				}
+			}
+		}}
+
+}
+.woocommerce-tabs {
+	ul.tabs {
+		li {
+			float: right;
+		}
+	}
+}
+.related {
+	header {
+		.owl-controls {
+			float: left;
+		}
+	}
+}
+.is_on_sale {
+	.off_section {
+		float: left;
 	}
 }

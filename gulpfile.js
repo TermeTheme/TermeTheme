@@ -30,7 +30,7 @@ gulp.task('rtlsass', function(){
 	//.pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('assets/css/seperated/rtl'))
 	.pipe(concat('rtl.css'))
-    .pipe(gulp.dest('assets/css'));
+    .pipe(gulp.dest('.'));
 });
 
 

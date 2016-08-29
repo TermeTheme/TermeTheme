@@ -3,7 +3,7 @@ html {
 
 body {
   font-family: 'Droidsans';
-  color: #333;
+  color: #464646;
   font-size: 12px;
   font-size: 1.2rem; }
 
@@ -40,8 +40,8 @@ a[data-termehover]:before {
           transform: translate(-100%, 100%);
   -webkit-border-radius: 0 100% 0 0;
           border-radius: 0 100% 0 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
   z-index: -10; }
 
 a[data-termehover]:hover:before {
@@ -66,8 +66,8 @@ button[data-termehover]:before {
           transform: translate(-100%, 100%);
   -webkit-border-radius: 0 100% 0 0;
           border-radius: 0 100% 0 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
   z-index: -10; }
 
 button[data-termehover]:hover:before {

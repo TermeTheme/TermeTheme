@@ -36,13 +36,14 @@
       <div class="row">
 <div class="col-xs-12">
   <div class="menu_area">
-    <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Terme Achievements</a></li>
-      <li><a href="#">Opportunity</a></li>
-      <li><a href="#">Terms of Use</a></li>
-      <li><a href="#">Privacy</a></li>
-    </ul>
+    <?php
+    if (has_nav_menu('footer_menu')) {
+      wp_nav_menu( array(
+        'theme_location' => 'footer_menu',
+        'container' => false
+      ) );
+    }
+?>
     <?php if($terme_options['copyright-footer']) { ?>
 
     <p>

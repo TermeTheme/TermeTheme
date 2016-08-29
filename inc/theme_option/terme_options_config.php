@@ -74,8 +74,8 @@
         //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
         'allow_sub_menu'       => true,
         // Show the sections below the admin menu item or not
-        'menu_title'           => __( 'Sample Options', 'redux-framework-demo' ),
-        'page_title'           => __( 'Sample Options', 'redux-framework-demo' ),
+        'menu_title'           => __( 'Terme Setting', 'terme' ),
+        'page_title'           => __( 'Terme Setting', 'terme' ),
         // You will need to generate a Google API key to use this feature.
         // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
         'google_api_key'       => '',
@@ -175,19 +175,19 @@
     $args['admin_bar_links'][] = array(
         'id'    => 'redux-docs',
         'href'  => 'http://docs.reduxframework.com/',
-        'title' => __( 'Documentation', 'redux-framework-demo' ),
+        'title' => __( 'Documentation', 'terme' ),
     );
 
     $args['admin_bar_links'][] = array(
         //'id'    => 'redux-support',
         'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-        'title' => __( 'Support', 'redux-framework-demo' ),
+        'title' => __( 'Support', 'terme' ),
     );
 
     $args['admin_bar_links'][] = array(
         'id'    => 'redux-extensions',
         'href'  => 'reduxframework.com/extensions',
-        'title' => __( 'Extensions', 'redux-framework-demo' ),
+        'title' => __( 'Extensions', 'terme' ),
     );
 
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
@@ -220,13 +220,13 @@
         } else {
             $v = str_replace( '-', '_', $args['opt_name'] );
         }
-        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo' ), $v );
+        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'terme' ), $v );
     } else {
-        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo' );
+        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'terme' );
     }
 
     // Add content after the form.
-    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'redux-framework-demo' );
+    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'terme' );
 
     Redux::setArgs( $opt_name, $args );
 
@@ -242,19 +242,19 @@
     $tabs = array(
         array(
             'id'      => 'redux-help-tab-1',
-            'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+            'title'   => __( 'Theme Information 1', 'terme' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'terme' )
         ),
         array(
             'id'      => 'redux-help-tab-2',
-            'title'   => __( 'Theme Information 2', 'redux-framework-demo' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+            'title'   => __( 'Theme Information 2', 'terme' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'terme' )
         )
     );
     Redux::setHelpTab( $opt_name, $tabs );
 
     // Set the help sidebar
-    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo' );
+    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'terme' );
     Redux::setHelpSidebar( $opt_name, $content );
 
 
@@ -277,16 +277,16 @@
      */
      // -> START Homepage
      Redux::setSection( $opt_name, array(
-         'title'            => __( 'Homepage', 'redux-framework-demo' ),
+         'title'            => __( 'Homepage', 'terme' ),
          'id'               => 'homepage',
-         'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+         'desc'             => __( 'These are really basic fields!', 'terme' ),
          'customizer_width' => '400px',
          'icon'             => 'el el-home',
-         'fields'           => array (
+         'fields'           => array(
          array(
              'id'       => 'homepage_display',
              'type'     => 'select',
-             'title'    => __( 'Default Homepage Display', 'redux-framework-demo' ),
+             'title'    => __( 'Default Homepage Display', 'terme' ),
              //Must provide key => value pairs for select options
              'options' => array(
                 'blog' => __('Blog', 'framework'),
@@ -296,7 +296,7 @@
          array(
              'id'       => 'homepage_layout',
              'type'     => 'select',
-             'title'    => __( 'Default Homepage Layout Style', 'redux-framework-demo' ),
+             'title'    => __( 'Default Homepage Layout Style', 'terme' ),
              //Must provide key => value pairs for select options
              'options' => array(
                 'full_width' => __('Full Width', 'framework'),
@@ -306,12 +306,14 @@
          array(
              'id'            => 'number_of_posts_in_homepage',
              'type'          => 'slider',
-             'title'         => __( 'Number Of Posts in Homepage', 'redux-framework-demo' ),
+             'title'         => __( 'Number Of Posts in Homepage', 'terme' ),
+             'subtitle' => __( 'Number of post to display', 'terme' ),
+
              "default" => "5",
              "min" 	=> "-1",
              "step"	=> "1",
              "max" 	=> "10",
-             'desc' => __('-1 for show all posts', 'redux-framework-demo'),
+             'desc' => __('-1 for show all posts', 'terme'),
          ),
        ),
 
@@ -319,18 +321,18 @@
 
     // -> START General Settings
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'General Settings', 'redux-framework-demo' ),
+        'title'            => __( 'General Settings', 'terme' ),
         'id'               => 'general-settings',
-        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-wrench',
         'fields'           => array(
           array(
               'id'       => 'theme_layout',
               'type'     => 'image_select',
-              'title'    => __( 'Theme Layout', 'redux-framework-demo' ),
-              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'redux-framework-demo' ),
+              'title'    => __( 'Theme Layout', 'terme' ),
+              'subtitle' => __( 'Select the general sidebar you want to use by default. This option can be overridden on every page, post, category and tag.', 'terme' ),
+              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'terme' ),
               //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
                   '0' => array(
@@ -347,15 +349,15 @@
           array(
               'id'       => 'scroll-to-top',
               'type'     => 'switch',
-              'title'    => __( 'Scroll to Top Button', 'redux-framework-demo' ),
-              'subtitle' => __( 'Enabling this option will add a "Back To Top" button to pages.', 'redux-framework-demo' ),
+              'title'    => __( 'Scroll to Top Button', 'terme' ),
+              'subtitle' => __( 'Enabling this option will add a "Back To Top" button to pages.', 'terme' ),
               'default'  => true,
           ),
           array(
               'id'       => 'newsticker',
               'type'     => 'switch',
-              'title'    => __( 'NewsTicker', 'redux-framework-demo' ),
-              'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+              'title'    => __( 'NewsTicker', 'terme' ),
+              'subtitle' => __( 'Look, it\'s on!', 'terme' ),
               'default'  => true,
               'on'       => 'Enabled',
               'off'      => 'Disabled',
@@ -364,10 +366,10 @@
               'id'       => 'favicon_16',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Favicon (16x16)', 'redux-framework-demo' ),
+              'title'    => __( 'Favicon (16x16)', 'terme' ),
               // 'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'subtitle'     => __( 'Default Favicon. 16px x 16px', 'redux-framework-demo' ),
+              'subtitle'     => __( 'Default Favicon. 16px x 16px', 'terme' ),
               // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
@@ -378,10 +380,10 @@
               'id'       => 'favicon_57',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Apple iPhone Icon (57x57)', 'redux-framework-demo' ),
+              'title'    => __( 'Apple iPhone Icon (57x57)', 'terme' ),
               // 'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'subtitle'     => __( 'Icon for Classic iPhone', 'redux-framework-demo' ),
+              'subtitle'     => __( 'Icon for Classic iPhone', 'terme' ),
               // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
@@ -392,10 +394,10 @@
               'id'       => 'favicon_72',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Apple iPad Icon (72x72)', 'redux-framework-demo' ),
+              'title'    => __( 'Apple iPad Icon (72x72)', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'subtitle'     => __( 'Icon for Classic iPad', 'redux-framework-demo' ),
+              'subtitle'     => __( 'Icon for Classic iPad', 'terme' ),
               // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
@@ -406,10 +408,10 @@
               'id'       => 'favicon_114',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Apple iPhone Retina Icon (114x114)', 'redux-framework-demo' ),
+              'title'    => __( 'Apple iPhone Retina Icon (114x114)', 'terme' ),
               // 'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'subtitle'     => __( 'Icon for Retina iPhone', 'redux-framework-demo' ),
+              'subtitle'     => __( 'Icon for Retina iPhone', 'terme' ),
               // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
@@ -420,10 +422,10 @@
               'id'       => 'favicon_144',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Apple iPad Retina Icon (144x144)', 'redux-framework-demo' ),
+              'title'    => __( 'Apple iPad Retina Icon (144x144)', 'terme' ),
               // 'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'subtitle'     => __( 'Icon for Retina iPad', 'redux-framework-demo' ),
+              'subtitle'     => __( 'Icon for Retina iPad', 'terme' ),
               // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               //'hint'      => array(
               //    'title'     => 'Hint Title',
@@ -433,67 +435,138 @@
           array(
               'id'       => 'header-script',
               'type'     => 'textarea',
-              'title'    => __( 'Header Script - HTML Validated Custom', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'title'    => __( 'Header Script - HTML Validated Custom', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
               // 'default'  => 'Default Text',
           ),
           array(
               'id'       => 'footer-script',
               'type'     => 'textarea',
-              'title'    => __( 'Footer Script - HTML Validated Custom', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'title'    => __( 'Footer Script - HTML Validated Custom', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
               // 'default'  => 'Default Text',
           ),
           array(
               'id'       => 'date_format',
               'type'     => 'text',
-              'title'    => __( 'Date Format', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'Date Format', 'terme' ),
+              'subtitle' => __( 'Change date format click <a href="http://codex.wordpress.org/Formatting_Date_and_Time" target="_blank">here</a> to see how to change it', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'F j, Y',
           ),
         )
     ) );
         Redux::setSection( $opt_name, array(
-            'title'            => __( 'Post Settings', 'redux-framework-demo' ),
+            'title'            => __( 'Post Settings', 'terme' ),
             'id'               => 'post_settings',
             'subsection'       => true,
             'customizer_width' => '450px',
-            'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+            'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
             'fields'           => array(
+              array(
+                  'id'       => 'breadcrumb_type',
+                  'type'     => 'select',
+                  'title'    => __('Breadcrumb Type', 'terme'),
+                  'desc'     => __('If Select (WordPress Seo Plugin Breadcrumb), You Need To Install Wordpress Seo by Yoast Plugin ', 'terme'),
+                  // Must provide key => value pairs for select options
+                  'options'  => array(
+                      '1' => 'Cornita Breadcrumb',
+                      '2' => 'WordPress Seo Plugin Breadcrumb',
+                  ),
+                  'default'  => '1',
+              ),
+
+                  array(
+                      'id'       => 'delimiter_icon',
+                      'type'     => 'icon_selector',
+                      'title'    => __( 'Delimiter Icon', 'terme' ),
+                      'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      'required' => array( 'breadcrumb_type', "=", 1 ),
+                      'default'  => 'fa-angle-right',
+                  ),
+
+                  array(
+                      'id'       => 'home_link_type',
+                      'type'     => 'select',
+                      'title'    => __( 'Home Link Type', 'terme' ),
+                      'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      'required' => array( 'breadcrumb_type', "=", 1 ),
+                      'subtitle'     => __( 'Select Home Link Type', 'terme' ),
+                      'options'  => array(
+                          '0' => 'Disable',
+                          '1' => 'Icon',
+                          '2' => 'Text',
+                          '3' => 'Icon & Text',
+                      ),
+                      'default'  => '3'
+                  ),
+
+                      // array(
+                      //     'id'       => 'home_icon2',
+                      //     'type'     => 'icon_selector',
+                      //     'title'    => __( 'Home Icon', 'terme' ),
+                      //     'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      //     'required' => array( 'home_link_type', "=", 1 ),
+                      //     'default'  => 'fa-home',
+                      // ),
+
+                      array(
+                          'id'       => 'home_text',
+                          'type'     => 'text',
+                          'title'    => __( 'Home Text', 'terme' ),
+                          'indent'   => true, // Indent all options below until the next 'section' option is set.
+                          'required' => array( 'home_link_type', "=", 2 ),
+                          'default'  => 'Home'
+                      ),
+                      // array(
+                      //     'id'       => 'home_icon_text-icon',
+                      //     'type'     => 'icon_select',
+                      //     'title'    => __( 'Home Icon', 'terme' ),
+                      //     // 'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      //     'default'  => 'fa-home',
+                      // ),
+
+                      array(
+                          'id'       => 'home_icon_text-text',
+                          'type'     => 'text',
+                          'title'    => __( 'Home Text', 'terme' ),
+                          'indent'   => true, // Indent all options below until the next 'section' option is set.
+                          'required' => array( 'home_link_type', "=", 3 ),
+                          'default'  => 'Home'
+                      ),
               array(
                   'id'       => 'post_breadcrumb',
                   'type'     => 'switch',
-                  'title'    => __( 'Post Breadcrumb', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Breadcrumbs are a hierarchy of links displayed below the main navigation. They are displayed on all pages but the home-page.', 'redux-framework-demo' ),
+                  'title'    => __( 'Post Breadcrumb', 'terme' ),
+                  'subtitle' => __( 'Breadcrumbs are a hierarchy of links displayed below the main navigation. They are displayed on all pages but the home-page.', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
               ),
-              array(
-                  'id'       => 'post_breadcrumb_seprator',
-                  'type'     => 'text',
-                  'title'    => __( 'Breadcrumb Seprator', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-                  'required' => array('post_breadcrumb', '=' , 1),
-
-              ),
+              // array(
+              //     'id'       => 'post_breadcrumb_seprator',
+              //     'type'     => 'icon_selector',
+              //     'title'    => __( 'Breadcrumb Seprator', 'terme' ),
+              //     'subtitle' => __( 'Subtitle', 'terme' ),
+              //     'desc'     => __( 'Field Description', 'terme' ),
+              //     'required' => array('post_breadcrumb', '=' , 1),
+              //
+              // ),
               array(
                   'id'    => 'post_meta_info',
                   'type'  => 'info',
                   'style' => 'success',
                   'icon'  => 'el el-share',
-                  'title' => __( 'Post Meta Options', 'redux-framework-demo' ),
-                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+                  'title' => __( 'Post Meta Options', 'terme' ),
+                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
               ),
               array(
                   'id'       => 'post_meta',
                   'type'     => 'switch',
-                  'title'    => __( 'Post Meta', 'redux-framework-demo' ),
-                  'subtitle' => __( 'You can hide post meta ( date, author and comments ) inside single posts with enabling this option.', 'redux-framework-demo' ),
+                  'title'    => __( 'Post Meta', 'terme' ),
+                  'subtitle' => __( 'You can hide post meta ( date, author and comments ) inside single posts with enabling this option.', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -501,19 +574,20 @@
               array(
                   'id'       => 'post_date',
                   'type'     => 'switch',
-                  'title'    => __( 'Show Post Date', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Show Post Date', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
                   'required' => array('post_meta', '=' , 1),
               ),
+
               array(
                   'id'       => 'post_date_format',
                   'type'     => 'text',
-                  'title'    => __( 'Post Date Format', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'title'    => __( 'Post Date Format', 'terme' ),
+                  'subtitle' => __( 'Subtitle', 'terme' ),
+                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => 'test@test.com',
                   'required' => array( 'post_date', '=', '1' ),
 
@@ -521,8 +595,8 @@
               array(
                   'id'       => 'post_category',
                   'type'     => 'switch',
-                  'title'    => __( 'Show Post Category', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Show Post Category', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -531,18 +605,19 @@
               array(
                   'id'       => 'view_count',
                   'type'     => 'switch',
-                  'title'    => __( 'Show Post view Count', 'redux-framework-demo' ),
-                  'subtitle' => __( 'You can hide post views count inside post meta info for all content listings with disabling this option.', 'redux-framework-demo' ),
+                  'title'    => __( 'Show Post view Count', 'terme' ),
+                  'subtitle' => __( 'You can hide post views count inside post meta info for all content listings with disabling this option.', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
                   'required' => array('post_meta', '=' , 1),
               ),
+
               array(
                   'id'       => 'comment_count',
                   'type'     => 'switch',
-                  'title'    => __( 'Show Post Comment Count', 'redux-framework-demo' ),
-                  'subtitle' => __( 'You can hide post comments count inside post meta info for all content listings with disabling this option.', 'redux-framework-demo' ),
+                  'title'    => __( 'Show Post Comment Count', 'terme' ),
+                  'subtitle' => __( 'You can hide post comments count inside post meta info for all content listings with disabling this option.', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -551,14 +626,10 @@
               array(
                   'id'       => 'section-start',
                   'type'     => 'section',
-                  // 'title'    => __( 'Section Example', 'redux-framework-demo' ),
-                  // 'subtitle' => __( 'With the "section" field you can create indented option sections.', 'redux-framework-demo' ),
+                  // 'title'    => __( 'Section Example', 'terme' ),
+                  // 'subtitle' => __( 'With the "section" field you can create indented option sections.', 'terme' ),
                   'indent'   => true, // Indent all options below until the next 'section' option is set.
               ),
-
-
-
-
               array(
                   'id'     => 'section-end',
                   'type'   => 'section',
@@ -567,8 +638,8 @@
               array(
                   'id'       => 'post_tags',
                   'type'     => 'switch',
-                  'title'    => __( 'Post Tags', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Post Tags', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -576,8 +647,8 @@
               array(
                   'id'       => 'author_box',
                   'type'     => 'switch',
-                  'title'    => __( 'Author Box', 'redux-framework-demo' ),
-                  'subtitle' => __( 'You can hide post author inside post meta info for all content listings with disabling this option.', 'redux-framework-demo' ),
+                  'title'    => __( 'Author Box', 'terme' ),
+                  'subtitle' => __( 'You can hide post author inside post meta info for all content listings with disabling this option.', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -585,8 +656,8 @@
               array(
                   'id'       => 'post_comments',
                   'type'     => 'switch',
-                  'title'    => __( 'Post Comments', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Post Comments', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -596,14 +667,14 @@
                   'type'  => 'info',
                   'style' => 'success',
                   'icon'  => 'el el-share',
-                  'title' => __( 'Post Sharing Options', 'redux-framework-demo' ),
-                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+                  'title' => __( 'Post Sharing Options', 'terme' ),
+                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
               ),
               array(
                   'id'       => 'post_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Post Share', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Post Share', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -611,68 +682,68 @@
               array(
                   'id'       => 'section-start',
                   'type'     => 'section',
-                  // 'title'    => __( 'Section Example', 'redux-framework-demo' ),
-                  // 'subtitle' => __( 'With the "section" field you can create indented option sections.', 'redux-framework-demo' ),
+                  // 'title'    => __( 'Section Example', 'terme' ),
+                  // 'subtitle' => __( 'With the "section" field you can create indented option sections.', 'terme' ),
                   'indent'   => true, // Indent all options below until the next 'section' option is set.
               ),
               array(
                   'id'       => 'facebook_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Facebook Share', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Facebook Share', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
-                  'on'       =>  __('Enabled', 'redux-framework-demo'),
-                  'off'      =>  __('Disabled', 'redux-framework-demo'),
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_share', '=' , 1),
               ),
               array(
                   'id'       => 'twitter_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Twitter Share', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Twitter Share', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
-                  'on'       =>  __('Enabled', 'redux-framework-demo'),
-                  'off'      =>  __('Disabled', 'redux-framework-demo'),
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_share', '=' , 1),
               ),
               array(
                   'id'       => 'pinterest_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Pinterest Share', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Pinterest Share', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
-                  'on'       =>  __('Enabled', 'redux-framework-demo'),
-                  'off'      =>  __('Disabled', 'redux-framework-demo'),
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_share', '=' , 1),
               ),
               array(
                   'id'       => 'tumblr_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Tumblr Share', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Tumblr Share', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
-                  'on'       =>  __('Enabled', 'redux-framework-demo'),
-                  'off'      =>  __('Disabled', 'redux-framework-demo'),
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_share', '=' , 1),
               ),
               array(
                   'id'       => 'wordpress_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Wordpress Share', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Wordpress Share', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
-                  'on'       =>  __('Enabled', 'redux-framework-demo'),
-                  'off'      =>  __('Disabled', 'redux-framework-demo'),
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_share', '=' , 1),
               ),
               array(
                   'id'       => 'print_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Print Icon', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Print Icon', 'terme' ),
+                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
-                  'on'       =>  __('Enabled', 'redux-framework-demo'),
-                  'off'      =>  __('Disabled', 'redux-framework-demo'),
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_share', '=' , 1),
               ),
               array(
@@ -685,24 +756,25 @@
                   'type'  => 'info',
                   'style' => 'success',
                   'icon'  => 'el el-link',
-                  'title' => __( 'Related Posts Setting', 'redux-framework-demo' ),
-                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+                  'title' => __( 'Related Posts Setting', 'terme' ),
+                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
               ),
               array(
                   'id'       => 'related_posts',
                   'type'     => 'switch',
-                  'title'    => __( 'Related Post', 'redux-framework-demo' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                  'title'    => __( 'Related Post', 'terme' ),
+                  'subtitle' => __( 'Enable or disable the related article section
+', 'terme' ),
                   'default'  => true,
-                  'on'       =>  __('Enabled', 'redux-framework-demo'),
-                  'off'      =>  __('Disabled', 'redux-framework-demo'),
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
               ),
               array(
                   'id'            => 'related_number_of_posts',
                   'type'          => 'slider',
-                  'title'         => __( 'Number of Posts', 'redux-framework-demo' ),
-                  'subtitle'      => __( 'This slider displays the value as a label.', 'redux-framework-demo' ),
-                  'desc'          => __( 'Slider description. Min: 1, max: 500, step: 1, default value: 250', 'redux-framework-demo' ),
+                  'title'         => __( 'Number of Posts', 'terme' ),
+                  'subtitle'      => __( 'How many related articles to show:', 'terme' ),
+                  'desc'          => __( 'Slider description. Min: 1, max: 500, step: 1, default value: 250', 'terme' ),
                   'default'       => 5,
                   'min'           => 1,
                   'step'          => 1,
@@ -713,9 +785,11 @@
               array(
                   'id'       => 'related_posts_display_by',
                   'type'     => 'select',
-                  'title'    => __( 'Select Option', 'redux-framework-demo' ),
-                  'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-                  'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+                  'title'    => __( 'Select Option', 'terme' ),
+                  'subtitle' => __( 'How to pick the related articles:
+by category - pick posts from that have at least one category in common with the current post
+by tags - pick posts that have at least one tag in common with the current post', 'terme' ),
+                  'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
                   'required' => array( 'related_posts', '=', 1 ),
                   //Must provide key => value pairs for select options
                   'options'  => array(
@@ -728,60 +802,60 @@
             )
         ) );
         Redux::setSection( $opt_name, array(
-            'title'            => __( 'Social Icons', 'redux-framework-demo' ),
+            'title'            => __( 'Social Icons', 'terme' ),
             'id'               => 'social_icons',
             'subsection'       => true,
             'customizer_width' => '450px',
-            'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+            'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
             'fields'           => array(
 
               array(
                   'id'       => 'facebook',
                   'type'     => 'text',
-                  'title'    => __( 'Facebook', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'title'    => __( 'Facebook', 'terme' ),
+                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'twitter',
                   'type'     => 'text',
-                  'title'    => __( 'Twitter', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'title'    => __( 'Twitter', 'terme' ),
+                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'youtube',
                   'type'     => 'text',
-                  'title'    => __( 'Youtube', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'title'    => __( 'Youtube', 'terme' ),
+                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'instagram',
                   'type'     => 'text',
-                  'title'    => __( 'Instagram', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'title'    => __( 'Instagram', 'terme' ),
+                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'dribbble',
                   'type'     => 'text',
-                  'title'    => __( 'Dribbble', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'title'    => __( 'Dribbble', 'terme' ),
+                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'rss',
                   'type'     => 'text',
-                  'title'    => __( 'RSS', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'title'    => __( 'RSS', 'terme' ),
+                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'vimeo',
                   'type'     => 'text',
-                  'title'    => __( 'Vimeo', 'redux-framework-demo' ),
-                  'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                  'title'    => __( 'Vimeo', 'terme' ),
+                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
 
@@ -790,7 +864,7 @@
 
     // -> START Header Settings
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Header Settings', 'redux-framework-demo' ),
+        'title'            => __( 'Header Settings', 'terme' ),
         'id'               => 'header_settings',
         'customizer_width' => '500px',
         'icon'             => 'el el-edit',
@@ -798,9 +872,9 @@
           array(
               'id'       => 'header_layout',
               'type'     => 'image_select',
-              'title'    => __( 'header Layout', 'redux-framework-demo' ),
-              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'redux-framework-demo' ),
+              'title'    => __( 'header Layout', 'terme' ),
+              'subtitle' => __( 'No validation can be done on this field type', 'terme' ),
+              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'terme' ),
               //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
                   '1' => array(
@@ -826,9 +900,9 @@
           array(
               'id'       => 'logo_type',
               'type'     => 'select',
-              'title'    => __( 'Select Logo type', 'redux-framework-demo' ),
-              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'title'    => __( 'Select Logo type', 'terme' ),
+              'subtitle' => __( 'No validation can be done on this field type', 'terme' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
               //Must provide key => value pairs for select options
               'options' => array(
                   'logo_image' => __('Logo Image', 'framework'),
@@ -842,7 +916,7 @@
           'title' => __('Upload your logo image', 'framework'),
           'url'=> true,
           'default'=>'',
-          'subtitle' => __( 'By default, a text-based logo is created using your site title. But you can also upload an image-based logo here.', 'redux-framework-demo' ),
+          'subtitle' => __( 'By default, a text-based logo is created using your site title. But you can also upload an image-based logo here.', 'terme' ),
 
           'required' => array('logo_type', '=' , 'logo_image'),
           ),
@@ -852,15 +926,15 @@
           'title' => __('Upload your retina logo image', 'framework'),
           'url'=> true,
           'default'=> 0,
-          'subtitle' => __( 'If you want to upload a Retina Image, It\'s Image Size should be exactly double in compare with your normal Logo. It requires WP Retina 2x plugin.', 'redux-framework-demo' ),
+          'subtitle' => __( 'If you want to upload a Retina Image, It\'s Image Size should be exactly double in compare with your normal Logo. It requires WP Retina 2x plugin.', 'terme' ),
 
           'required' => array('logo_type', '=' , 'logo_image'),
           ),
           array(
               'id'       => 'site_name',
               'type'     => 'text',
-              'title'    => __( 'Site Name', 'redux-framework-demo' ),
-              'subtitle' => __( 'The desired text will be used if logo images are not provided below.', 'redux-framework-demo' ),
+              'title'    => __( 'Site Name', 'terme' ),
+              'subtitle' => __( 'The desired text will be used if logo images are not provided below.', 'terme' ),
               'default'  => 'Default Text',
               'required' => array('logo_type', '=' , 'logo_name'),
 
@@ -868,8 +942,8 @@
           array(
               'id'       => 'site_description',
               'type'     => 'text',
-              'title'    => __( 'Site Description', 'redux-framework-demo' ),
-              'subtitle' => __( 'The desired text will be used if logo images are not provided below.', 'redux-framework-demo' ),
+              'title'    => __( 'Site Description', 'terme' ),
+              'subtitle' => __( 'The desired text will be used if logo images are not provided below.', 'terme' ),
               'default'  => 'Default Text',
               'required' => array('logo_type', '=' , 'logo_name'),
 
@@ -877,7 +951,7 @@
           array(
               'id'          => 'site_name_style',
               'type'        => 'typography',
-              'title'       => __( 'Site Name Style', 'redux-framework-demo' ),
+              'title'       => __( 'Site Name Style', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
 
               //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
@@ -901,7 +975,7 @@
               // An array of CSS selectors to apply this font style to dynamically
               'units'       => 'px',
               // Defaults to px
-              'subtitle'    => __( 'Typography option with each property can be called individually.', 'redux-framework-demo' ),
+              'subtitle'    => __( 'Typography option with each property can be called individually.', 'terme' ),
               'default'     => array(
                   'color'       => '#333',
                   'font-style'  => '700',
@@ -915,7 +989,7 @@
           array(
               'id'          => 'site_descriotion_style',
               'type'        => 'typography',
-              'title'       => __( 'Site Descriotion Style', 'redux-framework-demo' ),
+              'title'       => __( 'Site Descriotion Style', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
 
               //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
@@ -939,7 +1013,7 @@
               // An array of CSS selectors to apply this font style to dynamically
               'units'       => 'px',
               // Defaults to px
-              'subtitle'    => __( 'Typography option with each property can be called individually.', 'redux-framework-demo' ),
+              'subtitle'    => __( 'Typography option with each property can be called individually.', 'terme' ),
               'default'     => array(
                   'color'       => '#333',
                   'font-style'  => '700',
@@ -952,17 +1026,17 @@
         ),
     ) );
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Top Bar', 'redux-framework-demo' ),
+        'title'      => __( 'Top Bar', 'terme' ),
         'id'         => 'top_bar',
         //'icon'  => 'el el-home'
-        'desc'       => __( 'Enabling this will disable the top bar element that appears above the logo area.', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'desc'       => __( 'Enabling this will disable the top bar element that appears above the logo area.', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
         'subsection' => true,
         'fields'     => array(
           array(
               'id'       => 'hide_top_bar',
               'type'     => 'switch',
-              'title'    => __( 'Hide Top Bar', 'redux-framework-demo' ),
-              'subtitle' => __( 'Look, it\'s on! Also hidden child elements!', 'redux-framework-demo' ),
+              'title'    => __( 'Hide Top Bar', 'terme' ),
+              'subtitle' => __( 'Look, it\'s on! Also hidden child elements!', 'terme' ),
               'default'  => 0,
               'on'       => 'Yes',
               'off'      => 'No',
@@ -970,29 +1044,29 @@
           array(
               'id'       => 'today_date_format',
               'type'     => 'text',
-              'title'    => __( 'Today Date Format', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'Today Date Format', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'F j, Y',
               'required' => array( 'hide_top_bar', '=', '0' ),
           ),
 
 
         ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'desc'       => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
     ) );
     Redux::setSection( $opt_name, array(
-        'title'      => __( 'Top Banner', 'redux-framework-demo' ),
+        'title'      => __( 'Top Banner', 'terme' ),
         'id'         => 'top_banner',
         //'icon'  => 'el el-home'
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'desc'       => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
         'subsection' => true,
         'fields'     => array(
           array(
               'id'       => 'top_banner_switch',
               'type'     => 'switch',
-              'title'    => __( 'Top Banner', 'redux-framework-demo' ),
-              'subtitle' => __( 'Look, it\'s on! Also hidden child elements!', 'redux-framework-demo' ),
+              'title'    => __( 'Top Banner', 'terme' ),
+              'subtitle' => __( 'Look, it\'s on! Also hidden child elements!', 'terme' ),
               'default'  => 0,
               'on'       => 'Enabled',
               'off'      => 'Disabled',
@@ -1001,9 +1075,9 @@
           array(
               'id'       => 'banner_type',
               'type'     => 'button_set',
-              'title'    => __( 'Banner Type', 'redux-framework-demo' ),
-              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'title'    => __( 'Banner Type', 'terme' ),
+              'subtitle' => __( 'No validation can be done on this field type', 'terme' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
               'required' => array( 'top_banner_switch', '=', '1' ),
               //Must provide key => value pairs for radio options
               'options'  => array(
@@ -1025,22 +1099,22 @@
           array(
               'id'      => 'top_banner_link',
               'type'    => 'text',
-              'title'   => __( 'URL Link', 'redux-framework-demo' ),
+              'title'   => __( 'URL Link', 'terme' ),
               'default'  => 'test@test.com',
               'required' => array( 'banner_type', '=', '1' ),
           ),
           array(
               'id'      => 'banner_custom_content',
               'type'    => 'text',
-              'title'   => __( 'Custom Content', 'redux-framework-demo' ),
+              'title'   => __( 'Custom Content', 'terme' ),
               'default'  => 'test@test.com',
               'required' => array( 'banner_type', '=', '2' ),
           ),
           array(
             'id'       => 'bg_banner_custom_content',
             'type'     => 'color',
-            'title'    => __('Background Color', 'redux-framework-demo'),
-            'subtitle' => __('Pick a background color for the theme (default: #fff).', 'redux-framework-demo'),
+            'title'    => __('Background Color', 'terme'),
+            'subtitle' => __('Pick a background color for the theme (default: #fff).', 'terme'),
             'validate' => 'color',
             'required' => array( 'banner_type', '=', '2' ),
             'output'    => array(
@@ -1050,8 +1124,8 @@
           array(
             'id'       => 'txt_banner_custom_content',
             'type'     => 'color',
-            'title'    => __('Text Color', 'redux-framework-demo'),
-            'subtitle' => __('Pick a background color for the theme (default: #fff).', 'redux-framework-demo'),
+            'title'    => __('Text Color', 'terme'),
+            'subtitle' => __('Pick a background color for the theme (default: #fff).', 'terme'),
             'validate' => 'color',
             'required' => array( 'banner_type', '=', '2' ),
             'output'    => array(
@@ -1062,19 +1136,19 @@
         array(
             'id'       => 'close_button',
             'type'     => 'switch',
-            'title'    => __( 'Close Button', 'redux-framework-demo' ),
-            'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+            'title'    => __( 'Close Button', 'terme' ),
+            'subtitle' => __( 'Look, it\'s on!', 'terme' ),
             'default'  => true,
             'required' => array( 'banner_type', '=', '2' ),
         ),
         ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'desc'       => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
     ) );
 
 
     // -> START Footer Settings
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Footer Settings', 'redux-framework-demo' ),
+        'title'            => __( 'Footer Settings', 'terme' ),
         'id'               => 'footer_settings',
         'customizer_width' => '500px',
         'icon'             => 'el el-edit',
@@ -1082,9 +1156,9 @@
           array(
               'id'       => 'footer_layout',
               'type'     => 'image_select',
-              'title'    => __( 'Footer Layout', 'redux-framework-demo' ),
-              'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'redux-framework-demo' ),
+              'title'    => __( 'Footer Layout', 'terme' ),
+              'subtitle' => __( 'Set the footer template', 'terme' ),
+              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'terme' ),
               //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
                   '1' => array(
@@ -1114,15 +1188,16 @@
             array(
                 'id'       => 'copyright-footer',
                 'type'     => 'switch',
-                'title'    => __( 'Copyright Footer', 'redux-framework-demo' ),
-                'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                'title'    => __( 'Copyright Footer', 'terme' ),
+                'subtitle' => __( 'Show or hide the Footer Copyright', 'terme' ),
                 'default'  => true,
             ),
             array(
                 'id'      => 'footer-text',
                 'type'    => 'editor',
-                'title'   => __( 'Footer Text', 'redux-framework-demo' ),
+                'title'   => __( 'Footer Text', 'terme' ),
                 'default' => 'Powered by Redux Framework.',
+                'subtitle' => __( 'Set footer copyright text', 'terme' ),
                 'required' => array('copyright-footer', '=' , 1),
                 'args'    => array(
                     'wpautop'       => false,
@@ -1138,8 +1213,8 @@
             array(
                 'id'       => 'Social_icon_footer',
                 'type'     => 'switch',
-                'title'    => __( 'Footer Social Icons', 'redux-framework-demo' ),
-                'subtitle' => __( 'Look, it\'s on!', 'redux-framework-demo' ),
+                'title'    => __( 'Footer Social Icons', 'terme' ),
+                'subtitle' => __( 'Show or hide the social icons, to setup the Social icons go to Social Networks', 'terme' ),
                 'default'  => true,
             ),
 
@@ -1150,9 +1225,9 @@
 
     // -> API's Authentication
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'API\'s Authentication', 'redux-framework-demo' ),
+        'title'            => __( 'API\'s Authentication', 'terme' ),
         'id'               => 'api_authentication',
-        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-opensource',
         'fields' => array(
@@ -1161,15 +1236,15 @@
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-facebook',
-              'title' => __( 'This is a title.', 'redux-framework-demo' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+              'title' => __( 'This is a title.', 'terme' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
           ),
           array(
               'id'       => 'facebook_access_token',
               'type'     => 'text',
-              'title'    => __( 'Facebook Access Token', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'Facebook Access Token', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1177,39 +1252,39 @@
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-twitter',
-              'title' => __( 'This is a title.', 'redux-framework-demo' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+              'title' => __( 'This is a title.', 'terme' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
           ),
           array(
               'id'       => 'twitter_api_key',
               'type'     => 'text',
-              'title'    => __( 'API Key', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'API Key', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
               'id'       => 'twitter_api_secret',
               'type'     => 'text',
-              'title'    => __( 'API Secret', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'API Secret', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
               'id'       => 'twitter_access_token',
               'type'     => 'text',
-              'title'    => __( 'API Access Token', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'API Access Token', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
               'id'       => 'twitter_access_token_secret',
               'type'     => 'text',
-              'title'    => __( 'API Access Token Secret', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'API Access Token Secret', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1217,15 +1292,15 @@
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-envelope-alt',
-              'title' => __( 'This is a title.', 'redux-framework-demo' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+              'title' => __( 'This is a title.', 'terme' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
           ),
           array(
               'id'       => 'mailchimp_api_key',
               'type'     => 'text',
-              'title'    => __( 'Mailchimp API Key', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'Mailchimp API Key', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1233,15 +1308,15 @@
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-googleplus',
-              'title' => __( 'This is a title.', 'redux-framework-demo' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+              'title' => __( 'This is a title.', 'terme' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
           ),
           array(
               'id'       => 'google_api_key',
               'type'     => 'text',
-              'title'    => __( 'Google+ API Key', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'Google+ API Key', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1249,15 +1324,15 @@
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-youtube',
-              'title' => __( 'This is a title.', 'redux-framework-demo' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+              'title' => __( 'This is a title.', 'terme' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
           ),
           array(
               'id'       => 'youtube_api_key',
               'type'     => 'text',
-              'title'    => __( 'Youtube API Key', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'Youtube API Key', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1265,15 +1340,15 @@
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-instagram',
-              'title' => __( 'This is a title.', 'redux-framework-demo' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo' )
+              'title' => __( 'This is a title.', 'terme' ),
+              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
           ),
           array(
               'id'       => 'instagram_access_token',
               'type'     => 'text',
-              'title'    => __( 'Instagram Access Token', 'redux-framework-demo' ),
-              'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-              'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+              'title'    => __( 'Instagram Access Token', 'terme' ),
+              'subtitle' => __( 'Subtitle', 'terme' ),
+              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
 
@@ -1283,25 +1358,25 @@
 
     // -> Custom CSS
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Custom CSS', 'redux-framework-demo' ),
+        'title'            => __( 'Custom CSS', 'terme' ),
         'id'               => 'custom_css',
-        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-css',
         'fields' => array(
           array(
               'id'       => 'custom_css_style',
               'type'     => 'textarea',
-              'title'    => __( 'Custom CSS Code', 'redux-framework-demo' ),
-              'subtitle' => __( 'Paste your CSS code, do not include any tags or HTML in the field. Any custom CSS entered here will override the theme CSS. In some cases, the !important tag may be needed', 'redux-framework-demo' ),
+              'title'    => __( 'Custom CSS Code', 'terme' ),
+              'subtitle' => __( 'Paste your CSS code, do not include any tags or HTML in the field. Any custom CSS entered here will override the theme CSS. In some cases, the !important tag may be needed', 'terme' ),
           ),
           array(
               'id'       => 'custom_body_class',
               'type'     => 'text',
-              'title'    => __( 'Custom Body Class', 'redux-framework-demo' ),
+              'title'    => __( 'Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of overall site.
 Separate classes with space.
-', 'redux-framework-demo' ),
+', 'terme' ),
           ),
 
 
@@ -1309,121 +1384,121 @@ Separate classes with space.
         )
     ) );
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Responsive CSS', 'redux-framework-demo' ),
+        'title'            => __( 'Responsive CSS', 'terme' ),
         'id'               => 'responsive_css',
         'subsection'       => true,
         'customizer_width' => '450px',
-        'desc'             => __( 'Paste your custom css in the appropriate box, to run only on a specific device', 'redux-framework-demo' ),
+        'desc'             => __( 'Paste your custom css in the appropriate box, to run only on a specific device', 'terme' ),
         'fields'           => array(
           array(
               'id'       => 'large_desktop',
               'type'     => 'textarea',
-              'title'    => __( 'Large Desktop', 'redux-framework-demo' ),
-              'subtitle' => __( '1200px', 'redux-framework-demo' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'title'    => __( 'Large Desktop', 'terme' ),
+              'subtitle' => __( '+ 1200px', 'terme' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
           ),
           array(
               'id'       => 'desktop',
               'type'     => 'textarea',
-              'title'    => __( 'Desktop', 'redux-framework-demo' ),
-              'subtitle' => __( '992px ~ 1200px', 'redux-framework-demo' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'title'    => __( 'Desktop', 'terme' ),
+              'subtitle' => __( '992px ~ 1200px', 'terme' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
           ),
           array(
               'id'       => 'tablet',
               'type'     => 'textarea',
-              'title'    => __( 'Tablet', 'redux-framework-demo' ),
-              'subtitle' => __( '768px ~ 992px', 'redux-framework-demo' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'title'    => __( 'Tablet', 'terme' ),
+              'subtitle' => __( '768px ~ 992px', 'terme' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
           ),
           array(
               'id'       => 'mobile',
               'type'     => 'textarea',
-              'title'    => __( 'Mobile', 'redux-framework-demo' ),
-              'subtitle' => __( '0 ~ 768px', 'redux-framework-demo' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+              'title'    => __( 'Mobile', 'terme' ),
+              'subtitle' => __( '0 ~ 768px', 'terme' ),
+              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
           ),
         )
     ) );
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Advanced CSS', 'redux-framework-demo' ),
+        'title'            => __( 'Advanced CSS', 'terme' ),
         'id'               => 'advanced_css',
         'subsection'       => true,
         'customizer_width' => '450px',
-        'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+        'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
         'fields'           => array(
           array(
               'id'       => 'categories_class',
               'type'     => 'text',
-              'title'    => __( 'Categories Custom Body Class', 'redux-framework-demo' ),
+              'title'    => __( 'Categories Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all categories.
 Separate classes with space.
-', 'redux-framework-demo' ),
+', 'terme' ),
           ),
           array(
               'id'       => 'tags_class',
               'type'     => 'text',
-              'title'    => __( 'Tags Custom Body Class', 'redux-framework-demo' ),
+              'title'    => __( 'Tags Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all tags.
 Separate classes with space.
-', 'redux-framework-demo' ),
+', 'terme' ),
           ),
           array(
               'id'       => 'authors_class',
               'type'     => 'text',
-              'title'    => __( 'Authors Custom Body Class', 'redux-framework-demo' ),
+              'title'    => __( 'Authors Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all authors.
 Separate classes with space.
-', 'redux-framework-demo' ),
+', 'terme' ),
           ),
           array(
               'id'       => 'posts_class',
               'type'     => 'text',
-              'title'    => __( 'Posts Custom Body Class', 'redux-framework-demo' ),
+              'title'    => __( 'Posts Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all posts.
 Separate classes with space.
-', 'redux-framework-demo' ),
+', 'terme' ),
           ),
           array(
               'id'       => 'pages_class',
               'type'     => 'text',
-              'title'    => __( 'Pages Custom Body Class', 'redux-framework-demo' ),
+              'title'    => __( 'Pages Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all pages.
 Separate classes with space.
-', 'redux-framework-demo' ),
+', 'terme' ),
           ),
         )
     ) );
     // -> Analytics $ JS
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Analytics & JS' , 'redux-framework-demo' ),
+        'title'            => __( 'Analytics & JS' , 'terme' ),
         'id'               => 'analytics_js',
-        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-graph',
         'fields' => array(
           array(
               'id'       => 'google_analytics_code',
               'type'     => 'textarea',
-              'title'    => __( 'Google Analytics Code', 'redux-framework-demo' ),
-              'subtitle' => __( 'Paste your Google Analytics (or other) tracking code here. This code will be placed before </body> tag in html. Please put code inside script tags.', 'redux-framework-demo' ),
+              'title'    => __( 'Google Analytics Code', 'terme' ),
+              'subtitle' => __( 'Paste your Google Analytics (or other) tracking code here. This code will be placed before </body> tag in html. Please put code inside script tags.', 'terme' ),
               // 'default'  => 'Default Text',
           ),
 
           array(
               'id'       => 'code_before_head',
               'type'     => 'textarea',
-              'title'    => __( 'Code Before head tag', 'redux-framework-demo' ),
-              'subtitle' => __( 'This code will be placed before </head> tag in html. Useful if you have an external script that requires it.', 'redux-framework-demo' ),
+              'title'    => __( 'Code Before head tag', 'terme' ),
+              'subtitle' => __( 'This code will be placed before </head> tag in html. Useful if you have an external script that requires it.', 'terme' ),
               // 'default'  => 'Default Text',
           ),
         )
     ) );
     // -> Custom Fonts
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Custom Fonts' , 'redux-framework-demo' ),
+        'title'            => __( 'Custom Fonts' , 'terme' ),
         'id'               => 'custom_fonts',
-        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-font',
         'fields' => array(
@@ -1431,11 +1506,11 @@ Separate classes with space.
               'id'       => 'font_woff',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Font.woff', 'redux-framework-demo' ),
+              'title'    => __( 'Font.woff', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-demo' ),
-              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'redux-framework-demo' ),
+              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'terme' ),
+              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'terme' ),
               'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               'preview'  => false,
               //'hint'      => array(
@@ -1447,11 +1522,11 @@ Separate classes with space.
               'id'       => 'font_ttf',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Font.ttf', 'redux-framework-demo' ),
+              'title'    => __( 'Font.ttf', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-demo' ),
-              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'redux-framework-demo' ),
+              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'terme' ),
+              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'terme' ),
               'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               'preview'  => false,
               //'hint'      => array(
@@ -1463,11 +1538,11 @@ Separate classes with space.
               'id'       => 'font_svg',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Font.svg', 'redux-framework-demo' ),
+              'title'    => __( 'Font.svg', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-demo' ),
-              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'redux-framework-demo' ),
+              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'terme' ),
+              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'terme' ),
               'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               'preview'  => false,
               //'hint'      => array(
@@ -1479,11 +1554,11 @@ Separate classes with space.
               'id'       => 'font_eot',
               'type'     => 'media',
               'url'      => true,
-              'title'    => __( 'Font.eot', 'redux-framework-demo' ),
+              'title'    => __( 'Font.eot', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'redux-framework-demo' ),
-              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'redux-framework-demo' ),
+              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'terme' ),
+              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'terme' ),
               'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               'preview'  => false,
               //'hint'      => array(
@@ -1496,16 +1571,16 @@ Separate classes with space.
     ) );
     Redux::setSection( $opt_name, array(
         'icon'            => 'el el-list-alt',
-        'title'           => __( 'Customizer Only', 'redux-framework-demo' ),
-        'desc'            => __( '<p class="description">This Section should be visible only in Customizer</p>', 'redux-framework-demo' ),
+        'title'           => __( 'Customizer Only', 'terme' ),
+        'desc'            => __( '<p class="description">This Section should be visible only in Customizer</p>', 'terme' ),
         'customizer_only' => true,
         'fields'          => array(
             array(
                 'id'              => 'opt-customizer-only',
                 'type'            => 'select',
-                'title'           => __( 'Customizer Only Option', 'redux-framework-demo' ),
-                'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'redux-framework-demo' ),
-                'desc'            => __( 'The field desc is NOT visible in customizer.', 'redux-framework-demo' ),
+                'title'           => __( 'Customizer Only Option', 'terme' ),
+                'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'terme' ),
+                'desc'            => __( 'The field desc is NOT visible in customizer.', 'terme' ),
                 'customizer_only' => true,
                 //Must provide key => value pairs for select options
                 'options'         => array(
@@ -1521,7 +1596,7 @@ Separate classes with space.
     if ( file_exists( dirname( __FILE__ ) . '/../README.md' ) ) {
         $section = array(
             'icon'   => 'el el-list-alt',
-            'title'  => __( 'Documentation', 'redux-framework-demo' ),
+            'title'  => __( 'Documentation', 'terme' ),
             'fields' => array(
                 array(
                     'id'       => '17',
@@ -1636,8 +1711,8 @@ Separate classes with space.
         function dynamic_section( $sections ) {
             //$sections = array();
             $sections[] = array(
-                'title'  => __( 'Section via hook', 'redux-framework-demo' ),
-                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'redux-framework-demo' ),
+                'title'  => __( 'Section via hook', 'terme' ),
+                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'terme' ),
                 'icon'   => 'el el-paper-clip',
                 // Leave this as a blank section, no options just some intro text set above.
                 'fields' => array()

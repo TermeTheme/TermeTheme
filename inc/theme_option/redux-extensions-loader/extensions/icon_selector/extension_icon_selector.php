@@ -50,7 +50,7 @@ if( !class_exists( 'ReduxFramework_extension_icon_selector' ) ) {
         * @return      void
         */
         public function __construct( $parent ) {
-            
+
             $this->parent = $parent;
             if ( empty( $this->extension_dir ) ) {
                 $this->extension_dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
@@ -63,11 +63,11 @@ if( !class_exists( 'ReduxFramework_extension_icon_selector' ) ) {
 
         }
 
-        public function getInstance() {
+        public static function getInstance() {
             return self::$theInstance;
         }
 
-        // Forces the use of the embeded field path vs what the core typically would use    
+        // Forces the use of the embeded field path vs what the core typically would use
         public function overload_field_path($field) {
             return dirname(__FILE__).'/'.$this->field_name.'/field_'.$this->field_name.'.php';
         }

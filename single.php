@@ -5,8 +5,9 @@
 			<div class="row">
 				<div class="col-md-8 col-sm-12 col-xs-12">
 					<div class="article_content">
-						<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-
+							<?php if(have_posts()) : while(have_posts()) : the_post();
+								terme_set_post_views(get_the_ID());
+							 ?>
 							<?php
 							$terme_postmeta = get_post_meta( $post->ID, 'terme_postmeta', true );
 							//  print_r(get_post_meta($post->ID,'terme_postmeta', true));?>
@@ -33,15 +34,15 @@
 									<?php endif; ?>
 
 									<?php if (isset($terme_postmeta['viewcount']) && !empty($terme_postmeta['viewcount']) ): ?>
-									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
+									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp <?php echo terme_get_post_views(get_the_ID()); ?></span>
 									<?php elseif ($terme_options['view_count']): ?>
-									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp 1.253</span>
+									<span class="view"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp <?php echo terme_get_post_views(get_the_ID()); ?></span>
 									<?php endif; ?>
 
 									<?php if (isset($terme_postmeta['commentcount']) && !empty($terme_postmeta['commentcount']) ): ?>
-									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
+									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp  <?php comments_number( 0, 1, '%' ); ?> </span>
 									<?php elseif ($terme_options['comment_count']): ?>
-									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp <?php comments_number( 0, 1, $more ); ?> </span>
+									<span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp  <?php comments_number( 0, 1, '%' ); ?> </span>
 									<?php endif; ?>
 
 								</div><!-- article_meta -->
@@ -93,8 +94,9 @@
 							<div class="article_author">
 									<?php echo get_avatar( $comment, 90 ); ?>
 									<div class="name">
-											<a href="<?php the_author_meta( 'user_email' ); ?>"><?php the_author_meta( 'display_name' ); ?></a>
-										<span><?php the_author_posts(); ?> Article</span>
+										<?php the_author_posts_link(); ?>
+
+										<span><?php the_author_posts(); ?> <?php _e('Articles', 'terme') ?></span>
 									</div>
 									<div class="desc">
 										<p>
@@ -106,8 +108,9 @@
 							<div class="article_author">
 									<?php echo get_avatar( $comment, 90 ); ?>
 									<div class="name">
-											<a href="<?php the_author_meta( 'user_email' ); ?>"><?php the_author_meta( 'display_name' ); ?></a>
-										<span><?php the_author_posts(); ?> Article</span>
+
+												<?php the_author_posts_link(); ?>
+										<span><?php the_author_posts(); ?> <?php _e('Articles', 'terme') ?></span>
 									</div>
 									<div class="desc">
 										<p>
@@ -119,7 +122,7 @@
 						<?php endif; ?>
 						<?php if (isset($terme_postmeta['relatedpost-display']) && !empty($terme_postmeta['relatedpost-display'])): ?>
 							<div class="article_related">
-								<h4>Related Post</h4>
+								<h4><?php _e('Related Post', 'terme'); ?></h4>
 								<ul>
 								<?php
 										$tags = wp_get_post_tags($post->ID);
@@ -176,10 +179,10 @@
 
 										<?php } wp_reset_postdata(); }  ?>
 										</ul>
-									</div>
+							</div>
 						<?php elseif ($terme_options['related_posts']): ?>
 							<div class="article_related">
-								<h4>Related Post</h4>
+								<h4><?php _e('Related Post', 'terme'); ?></h4>
 								<ul>
 								<?php
 										$tags = wp_get_post_tags($post->ID);
@@ -244,18 +247,20 @@
 							<?php comments_template(); ?>
 							</div>
 						<?php elseif ($terme_options['post_comments']): ?>
+
 							<div class="article_comment">
 							<?php comments_template(); ?>
 							</div>
-
 						<?php endif; ?>
 						<?php endwhile; else: ?>
 						<?php endif; ?>
 					</div><!-- article_content -->
-				</div><!--col-xs-8-->
+				</div><!--col-md-8-->
 				<div class="col-md-4 hidden-sm hidden-xs">
-					<?php include 'inc/sidebar/sidebar.php'; ?>
-				</div><!--col-xs-4-->
+					<aside id="sidebar">
+							<?php get_sidebar(); ?>
+					</aside><!-- sidebar -->
+				</div><!--col-md-4-->
 			</div><!-- row -->
 		</div><!-- container -->
 	</main>
