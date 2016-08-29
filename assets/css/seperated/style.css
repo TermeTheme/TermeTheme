@@ -2831,9 +2831,7 @@ footer.footer {
     border-width: 1px;
     border-width: 0.1rem;
     font-size: 15px;
-    font-size: 1.5rem;
-    padding-right: 20px;
-    padding-right: 2rem; }
+    font-size: 1.5rem; }
     .author .author_content .wp-pagenavi a:hover,
     .author .category_content .wp-pagenavi a:hover,
     .author .search_content .wp-pagenavi a:hover,
@@ -4274,24 +4272,23 @@ footer.footer {
     float: left;
     width: 100%;
     background-color: #f7f8fa;
-    border-bottom: solid #f1f1f1;
-    border-bottom-width: 1px;
-    border-bottom-width: 0.1rem;
+    border: solid #f1f1f1;
+    border-width: 1px 0;
+    border-width: 0.1rem 0;
     height: 45px;
     height: 4.5rem;
     line-height: 45px;
-    line-height: 4.5rem;
-    padding: 0 15px;
-    padding: 0 1.5rem; }
+    line-height: 4.5rem; }
     .sb-left .sidebar_menu .shopping_cart a {
       display: block;
       color: #464646; }
       .sb-left .sidebar_menu .shopping_cart a span.icon {
         width: 20%;
-        float: left;
+        float: right;
         -webkit-box-sizing: border-box;
            -moz-box-sizing: border-box;
                 box-sizing: border-box;
+        text-align: center;
         font-size: 20px;
         font-size: 2rem; }
       .sb-left .sidebar_menu .shopping_cart a .count {
@@ -4299,10 +4296,13 @@ footer.footer {
         -webkit-box-sizing: border-box;
            -moz-box-sizing: border-box;
                 box-sizing: border-box;
-        float: left;
-        font-weight: bold; }
+        float: right;
+        font-weight: bold;
+        text-align: right;
+        padding-left: 15px;
+        padding-left: 1.5rem; }
         .sb-left .sidebar_menu .shopping_cart a .count span {
-          float: right;
+          float: left;
           text-align: center;
           -webkit-border-radius: 50%;
                   border-radius: 50%;
