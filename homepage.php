@@ -1,5 +1,5 @@
 <?php
-/* Template name: Home Page */
+/* Template name: HomePage */
 global $terme_options; ?>
 <?php get_header(); ?>
 		<main class="main">
