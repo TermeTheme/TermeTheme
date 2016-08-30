@@ -1,0 +1,121 @@
+.field_icon_selector_ul_container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	display: none;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+	padding: 5% 10%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.field_icon_selector_ul_container a.close_icon_selector {
+    display: inline-block;
+    -webkit-transform: translate(15px, 30px);
+    -ms-transform: translate(15px, 30px);
+    -o-transform: translate(15px, 30px);
+    transform: translate(15px, 30px);
+    color: #777;
+    font-size: 16px;
+}
+.field_icon_selector_ul_container .terme-font-awesome {
+	height: auto;
+	overflow: visible;
+	background: #fff;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+    text-align: center;
+}
+.field_icon_selector_ul_container .search_icon {
+	padding: 10px;
+	background: #fff;
+}
+.field_icon_selector_ul_container .search_icon .filter {
+	width: 60%;
+	background: #fff;
+	border: 1px solid #d1d1d1;
+	position: relative;
+	-moz-border-radius: 99px;
+	-webkit-border-radius: 99px;
+	border-radius: 99px;
+	float: none;
+	margin: 15px 20% 0;
+	padding: 10px;
+	text-align: center;
+}
+.field_icon_selector_ul_container .search_icon .filter-count {
+	display: block;
+	padding: 20px 0 0;
+	text-align: center;
+}
+.field_icon_selector_ul_container .search_icon .filter-selected-icon {
+    border-bottom: 1px solid #d1d1d1;
+    text-align: center;
+    font-size: 32px;
+    color: rgba(12,178,228,1);
+    height: 80px;
+    padding: 15px 0 10px;
+}
+.field_icon_selector_ul_container .terme-font-awesome li {
+	margin-right: 5px;
+    font-size: 14px;
+}
+.field_icon_selector_ul_container  .terme-font-awesome li span {
+	display: none;
+}
+.redux-container-icon_selector span.icon_selected {
+	float: none;
+	margin-right: 0;
+	margin-left: 10px;
+	margin-top: 2px;
+	display: inline-block;
+}
+.terme-font-awesome li {
+	display: inline-block;
+}
+.terme-font-awesome li input[type="radio"] {
+    display:none;
+}
+.terme-font-awesome li input[type="radio"] + label {
+    display:inline-block;
+    width:28px;
+    height:28px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    line-height: 28px;
+	-webkit-box-shadow: inset 0px 0px 0px 1px #ccc;
+	-moz-box-shadow: inset 0px 0px 0px 1px #ccc;
+	box-shadow: inset 0px 0px 0px 1px #ccc;
+    -webkit-transition: .1s;
+    -o-transition: .1s;
+    transition: .1s;
+    text-align: center;
+    color: #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.terme-font-awesome li input[type="radio"]:checked + label {
+    color: #0cb2e4;
+	-webkit-box-shadow: inset 0px 0px 0px 2px rgba(12,178,228,1);
+	-moz-box-shadow: inset 0px 0px 0px 2px rgba(12,178,228,1);
+	box-shadow: inset 0px 0px 0px 2px rgba(12,178,228,1);
+}
+span.icon_selected {
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border: 1px solid #ccc;
+    float: left;
+    text-align: center;
+    line-height: 26px;
+    margin-right: 10px;
+    font-size: 14px;
+}
