@@ -2,7 +2,7 @@
 function terme_pb_get_elements() {
     $elements = array();
 
-    $classes = array('Terme_Element_One', 'Terme_Element_Two', 'Terme_Element_Three', 'Terme_Element_Four', 'Terme_Element_Five' );
+    $classes = array('Terme_Element_One', 'Terme_Element_Two', 'Terme_Element_Three', 'Terme_Element_Four', 'Terme_Element_Five', 'Terme_Element_Shop' );
     foreach ($classes as $key => $class) {
         $element = new $class;
         $new_elements = $element->get_dashboard_output();
@@ -28,4 +28,5 @@ include TEMPLATEPATH . '/inc/page-builder/elements/element_02.php';
 include TEMPLATEPATH . '/inc/page-builder/elements/element_03.php';
 include TEMPLATEPATH . '/inc/page-builder/elements/element_04.php';
 include TEMPLATEPATH . '/inc/page-builder/elements/element_05.php';
+include TEMPLATEPATH . '/inc/page-builder/elements/element_shop.php';
 include TEMPLATEPATH . '/inc/page-builder/metabox.php';
