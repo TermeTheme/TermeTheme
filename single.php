@@ -257,12 +257,7 @@
 									</div>
 
 						<?php endif; ?>
-						<?php if (isset($terme_postmeta['comment-display']) && !empty($terme_postmeta['comment-display']) ): ?>
-							<div class="article_comment">
-							<?php comments_template(); ?>
-							</div>
-						<?php elseif ($terme_options['post_comments']): ?>
-
+						<?php if ((isset($terme_postmeta['comment-display']) && !empty($terme_postmeta['comment-display']) || $terme_options['post_comments'] ) ) : ?>
 							<div class="article_comment">
 							<?php comments_template(); ?>
 							</div>

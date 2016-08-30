@@ -2438,7 +2438,8 @@ footer.footer {
       list-style: none;
       padding: 0;
       margin: 0;
-      float: left; }
+      float: left;
+      width: 100%; }
       .article_comment .comment_container ol li {
         float: left;
         width: 100%;
@@ -4327,7 +4328,6 @@ footer.footer {
       .sb-left .sidebar_menu ul.accordion li a {
         color: #fff;
         display: block;
-        border-bottom: 1px solid #545454;
         position: relative;
         text-align: right;
         padding: 15px;

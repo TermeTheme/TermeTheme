@@ -42,6 +42,7 @@
 			include TEMPLATEPATH . '/inc/header/2.php';
 		}elseif ($terme_options['header_layout'] == '3') {
 			include TEMPLATEPATH . '/inc/header/3.php';
+
 		}else {
 			include TEMPLATEPATH . '/inc/header/4.php';
 		}
