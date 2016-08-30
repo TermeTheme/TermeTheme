@@ -154,7 +154,7 @@ class Terme_Element_Three extends Terme_Page_Builder_Element {
                       <div class="big_post">
                       <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_03_thumb_01').'</a></div>
                       '.$lid.'
-                      <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h2>
+                      <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.terme_shorten_text(get_the_title(), 50).'</a></h2>
                       <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
                         <div class="excerpt">' .get_the_excerpt().'</div>
                           </div><!-- big_post -->

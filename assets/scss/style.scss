@@ -19,7 +19,6 @@ a.back_to_top {
 		color: #fff;
 		border-color: $primary_color;
 	}
-
 	&:before {
 		position: absolute;
 		content: "\f106";
@@ -931,13 +930,13 @@ section.latest_news {
 		@include rem(border-right-width, 1px);
 	}
 
-	&.half_width ul li:nth-child(even) {
-		border-right: none;
-	}
-
-	&.half_width ul li:nth-last-child(2) {
-		border-bottom: none;
-	}
+	// &.half_width ul li:nth-child(even) {
+	// 	border-right: none;
+	// }
+	//
+	// &.half_width ul li:nth-last-child(2) {
+	// 	border-bottom: none;
+	// }
 }
 
 .shop-carousel {
@@ -2749,6 +2748,7 @@ footer.footer {
 			padding: 0;
 			margin: 0;
 			float: left;
+			width: 100%;
 
 			li {
 				float: left;
@@ -3498,10 +3498,10 @@ footer.footer {
 	@include rem(( padding: 0 20px,border-width: 1px 1px 0 1px,height: 70px, line-height: 70px,));
 
 	h2 {
-		margin: 0;
 		display: inline-block;
 		font-weight: bold;
-		@include rem(( font-size: 16px,));
+		margin: 0;
+		@include rem(( font-size: 16px,line-height: 70px,));
 	}
 
 	.off_section {
@@ -3542,7 +3542,6 @@ footer.footer {
 	margin-bottom: 0;
 	position: relative;
 	overflow: hidden;
-	border-top: none;
 	@include rem(( border-width: 1px, padding-top: 0 ));
 
 	.ribbon {
@@ -3566,15 +3565,7 @@ footer.footer {
 		font-size: 1.5rem;
 		transform: rotate(-45deg);
 	}
-	// span.onsale {
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	border-radius: 0;
-	// 	background-color: $primary_color;
-	// 	font-size: 1.2em;
-	// 	@include rem(( width: 100px,height: 40px, line-height: 40px,));
-	// }
+
 	.images {
 		float: left;
 		width: 45%;
@@ -4590,8 +4581,7 @@ footer.footer {
 				a {
 					color: #fff;
 					display: block;
-					border-bottom: 1px solid $secondary_color_light;
-					position: relative;
+ 					position: relative;
 					text-align: right;
 					@include rem(( padding:15px,));
 

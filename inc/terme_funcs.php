@@ -23,7 +23,7 @@ function terme_breadcrumb() {
                 echo '<li><a href="';
                 echo get_option('home');
                 echo '">';
-                echo '<i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i>';
+                echo '<i class="fa '.$terme_options['home_icon_text_icon'].'"></i>';
                 echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
             } elseif ($terme_options['home_link_type'] == 2) {
                 echo '<li><a href="';
@@ -35,7 +35,7 @@ function terme_breadcrumb() {
                 echo '<li><a href="';
                 echo get_option('home');
                 echo '">';
-                echo '<i class="fa '.$terme_options['home_icon_text-icon'].'"></i> '.$terme_options['home_icon_text-text'];
+                echo '<i class="fa '.$terme_options['home_icon_text_icon'].'"></i> '.$terme_options['home_icon_text-text'];
                 echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
             }
         }

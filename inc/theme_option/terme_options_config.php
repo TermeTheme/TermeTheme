@@ -275,49 +275,6 @@
 
 
      */
-     // -> START Homepage
-     Redux::setSection( $opt_name, array(
-         'title'            => __( 'Homepage', 'terme' ),
-         'id'               => 'homepage',
-         'desc'             => __( 'These are really basic fields!', 'terme' ),
-         'customizer_width' => '400px',
-         'icon'             => 'el el-home',
-         'fields'           => array(
-         array(
-             'id'       => 'homepage_display',
-             'type'     => 'select',
-             'title'    => __( 'Default Homepage Display', 'terme' ),
-             //Must provide key => value pairs for select options
-             'options' => array(
-                'blog' => __('Blog', 'framework'),
-                ),
-             'default' => 'blog',
-         ),
-         array(
-             'id'       => 'homepage_layout',
-             'type'     => 'select',
-             'title'    => __( 'Default Homepage Layout Style', 'terme' ),
-             //Must provide key => value pairs for select options
-             'options' => array(
-                'full_width' => __('Full Width', 'framework'),
-                ),
-             'default' => 'full_width',
-         ),
-         array(
-             'id'            => 'number_of_posts_in_homepage',
-             'type'          => 'slider',
-             'title'         => __( 'Number Of Posts in Homepage', 'terme' ),
-             'subtitle' => __( 'Number of post to display', 'terme' ),
-
-             "default" => "5",
-             "min" 	=> "-1",
-             "step"	=> "1",
-             "max" 	=> "10",
-             'desc' => __('-1 for show all posts', 'terme'),
-         ),
-       ),
-
-     ) );
 
     // -> START General Settings
     Redux::setSection( $opt_name, array(
@@ -357,7 +314,7 @@
               'id'       => 'newsticker',
               'type'     => 'switch',
               'title'    => __( 'NewsTicker', 'terme' ),
-              'subtitle' => __( 'Look, it\'s on!', 'terme' ),
+              'subtitle' => __( 'Enable or disable the NewsTicker', 'terme' ),
               'default'  => true,
               'on'       => 'Enabled',
               'off'      => 'Disabled',
@@ -436,24 +393,20 @@
               'id'       => 'header-script',
               'type'     => 'textarea',
               'title'    => __( 'Header Script - HTML Validated Custom', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
-              // 'default'  => 'Default Text',
+              'subtitle' => __( 'The following code will add to the <head> tag. Useful if you need to add additional codes such as CSS or JS.
+', 'terme' ),
           ),
           array(
               'id'       => 'footer-script',
               'type'     => 'textarea',
               'title'    => __( 'Footer Script - HTML Validated Custom', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
-              // 'default'  => 'Default Text',
+              'subtitle' => __( 'The following code will add to the footer before the closing </body> tag. Useful if you need to add Javascript or tracking code.', 'terme' ),
           ),
           array(
               'id'       => 'date_format',
               'type'     => 'text',
               'title'    => __( 'Date Format', 'terme' ),
               'subtitle' => __( 'Change date format click <a href="http://codex.wordpress.org/Formatting_Date_and_Time" target="_blank">here</a> to see how to change it', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'F j, Y',
           ),
         )
@@ -479,7 +432,7 @@
               ),
 
                   array(
-                      'id'       => 'delimiter_icon',
+                      'id'       => 'post_breadcrumb_seprator',
                       'type'     => 'icon_selector',
                       'title'    => __( 'Delimiter Icon', 'terme' ),
                       'indent'   => true, // Indent all options below until the next 'section' option is set.
@@ -512,21 +465,22 @@
                       //     'default'  => 'fa-home',
                       // ),
 
-                      array(
-                          'id'       => 'home_text',
-                          'type'     => 'text',
-                          'title'    => __( 'Home Text', 'terme' ),
-                          'indent'   => true, // Indent all options below until the next 'section' option is set.
-                          'required' => array( 'home_link_type', "=", 2 ),
-                          'default'  => 'Home'
-                      ),
                       // array(
-                      //     'id'       => 'home_icon_text-icon',
-                      //     'type'     => 'icon_select',
-                      //     'title'    => __( 'Home Icon', 'terme' ),
-                      //     // 'indent'   => true, // Indent all options below until the next 'section' option is set.
-                      //     'default'  => 'fa-home',
+                      //     'id'       => 'home_text',
+                      //     'type'     => 'text',
+                      //     'title'    => __( 'Home Text', 'terme' ),
+                      //     'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      //     'required' => array( 'home_link_type', "=", 2 ),
+                      //     'default'  => 'Home'
                       // ),
+                      array(
+                        'id'       => 'home_icon_text_icon',
+                        'type'     => 'icon_selector',
+                        'title'    => __( 'Home Icon', 'terme' ),
+                        'indent'   => true, // Indent all options below until the next 'section' option is set.
+                        'required' => array( 'breadcrumb_type', "=", 1 ),
+                        'default'  => 'fa-angle-right',
+                      ),
 
                       array(
                           'id'       => 'home_icon_text-text',
@@ -575,7 +529,7 @@
                   'id'       => 'post_date',
                   'type'     => 'switch',
                   'title'    => __( 'Show Post Date', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
+                  'subtitle' => __( 'Enable or disable the Post Date', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -596,7 +550,7 @@
                   'id'       => 'post_category',
                   'type'     => 'switch',
                   'title'    => __( 'Show Post Category', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
+                  'subtitle' => __( 'Enable or disable the Post Category', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -639,7 +593,7 @@
                   'id'       => 'post_tags',
                   'type'     => 'switch',
                   'title'    => __( 'Post Tags', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
+                  'subtitle' => __( 'Enable or disable the Post Tags', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -657,7 +611,7 @@
                   'id'       => 'post_comments',
                   'type'     => 'switch',
                   'title'    => __( 'Post Comments', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
+                  'subtitle' => __( 'Enable or disable the Post Comment', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -674,7 +628,7 @@
                   'id'       => 'post_share',
                   'type'     => 'switch',
                   'title'    => __( 'Post Share', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
+                  'subtitle' => __( 'Enable or disable the Post Share', 'terme' ),
                   'default'  => true,
                   'on'       => 'Enabled',
                   'off'      => 'Disabled',
@@ -813,49 +767,42 @@ by tags - pick posts that have at least one tag in common with the current post'
                   'id'       => 'facebook',
                   'type'     => 'text',
                   'title'    => __( 'Facebook', 'terme' ),
-                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'twitter',
                   'type'     => 'text',
                   'title'    => __( 'Twitter', 'terme' ),
-                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'youtube',
                   'type'     => 'text',
                   'title'    => __( 'Youtube', 'terme' ),
-                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'instagram',
                   'type'     => 'text',
                   'title'    => __( 'Instagram', 'terme' ),
-                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'dribbble',
                   'type'     => 'text',
                   'title'    => __( 'Dribbble', 'terme' ),
-                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'rss',
                   'type'     => 'text',
                   'title'    => __( 'RSS', 'terme' ),
-                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
               array(
                   'id'       => 'vimeo',
                   'type'     => 'text',
                   'title'    => __( 'Vimeo', 'terme' ),
-                  'desc'     => __( 'Field Description', 'terme' ),
                   'default'  => '#',
               ),
 
@@ -873,8 +820,7 @@ by tags - pick posts that have at least one tag in common with the current post'
               'id'       => 'header_layout',
               'type'     => 'image_select',
               'title'    => __( 'header Layout', 'terme' ),
-              'subtitle' => __( 'No validation can be done on this field type', 'terme' ),
-              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'terme' ),
+              'subtitle' => __( 'Choose the default layout', 'terme' ),
               //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
                   '1' => array(
@@ -901,8 +847,6 @@ by tags - pick posts that have at least one tag in common with the current post'
               'id'       => 'logo_type',
               'type'     => 'select',
               'title'    => __( 'Select Logo type', 'terme' ),
-              'subtitle' => __( 'No validation can be done on this field type', 'terme' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
               //Must provide key => value pairs for select options
               'options' => array(
                   'logo_image' => __('Logo Image', 'framework'),
@@ -1222,6 +1166,65 @@ by tags - pick posts that have at least one tag in common with the current post'
 
         ),
     ) );
+    // -> START Woocommerce Settings
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Woocommerce Settings', 'terme' ),
+        'id'               => 'woocommerce_settings',
+        'customizer_width' => '500px',
+        'icon'             => 'el el-edit',
+        'fields'     => array(
+          array(
+              'id'       => 'woocommerce_layout',
+              'type'     => 'image_select',
+              'title'    => __( 'Footer Layout', 'terme' ),
+              'subtitle' => __( 'Set the Woocommerce template', 'terme' ),
+              //Must provide key => value(array:title|img) pairs for radio options
+              'options'  => array(
+                  '1' => array(
+                      'alt' => '1 Column',
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/1.jpg',
+                  ),
+                  '2' => array(
+                      'alt' => '2 Column Left',
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/2.jpg'
+                  ),
+                  '3' => array(
+                      'alt' => '2 Column Right',
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/3.jpg'
+                  ),
+                  '4' => array(
+                      'alt' => '3 Column Middle',
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/4.jpg'
+                  ),
+                  '5' => array(
+                      'alt' => '3 Column Left',
+                      'img' => ReduxFramework::$_url . 'assets/img/footer/5.jpg'
+                  ),
+
+              ),
+              'default'  => '2'
+          ),
+
+            array(
+                'id'       => 'is_on_sale',
+                'type'     => 'switch',
+                'title'    => __( 'Sale Section', 'terme' ),
+                'subtitle' => __( 'Show or hide the Sale Section for Products are in sell', 'terme' ),
+                'default'  => true,
+            ),
+            array(
+                'id'       => 'is_on_sale_title',
+                'type'     => 'text',
+                'title'    => __( 'Sale Title', 'terme' ),
+                'subtitle' => __( 'The Sale Title', 'terme' ),
+                'default'  => 'Sale',
+                'required' => array( 'is_on_sale', "=", 1 ),
+            ),
+
+
+
+        ),
+    ) );
 
     // -> API's Authentication
     Redux::setSection( $opt_name, array(
@@ -1236,15 +1239,13 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-facebook',
-              'title' => __( 'This is a title.', 'terme' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
+              'title' => __( 'Facebook (required for social counter widget)', 'terme' ),
+              'desc'  => __( 'to get Facebook access token <a href="https://smashballoon.com/custom-facebook-feed/access-token/" target="_blank">Follow this</a>', 'terme' )
           ),
           array(
               'id'       => 'facebook_access_token',
               'type'     => 'text',
               'title'    => __( 'Facebook Access Token', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1252,39 +1253,34 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-twitter',
-              'title' => __( 'This is a title.', 'terme' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
-          ),
+              'title' => __( 'Twitter API (required for using twitter widgets and social counters widget)', 'terme' ),
+              'desc'  => __( 'You can get twitter Authentication data by following this <a href="http://www.youtube.com/watch?v=zdSHhiHAxBA" target="_blank">tutorial</a>.', 'terme' )          ),
           array(
               'id'       => 'twitter_api_key',
               'type'     => 'text',
               'title'    => __( 'API Key', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
+
               'default'  => 'Default Text',
           ),
           array(
               'id'       => 'twitter_api_secret',
               'type'     => 'text',
               'title'    => __( 'API Secret', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
+
               'default'  => 'Default Text',
           ),
           array(
               'id'       => 'twitter_access_token',
               'type'     => 'text',
               'title'    => __( 'API Access Token', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
+
               'default'  => 'Default Text',
           ),
           array(
               'id'       => 'twitter_access_token_secret',
               'type'     => 'text',
               'title'    => __( 'API Access Token Secret', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
+
               'default'  => 'Default Text',
           ),
           array(
@@ -1292,15 +1288,13 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-envelope-alt',
-              'title' => __( 'This is a title.', 'terme' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
+              'title' => __( 'Mailchimp (required for using newsletter widget)', 'terme' ),
+              'desc'  => __( 'To find your API key <a href="http://kb.mailchimp.com/article/where-can-i-find-my-api-key" target="_blank">Click here</a>.', 'terme' )
           ),
           array(
               'id'       => 'mailchimp_api_key',
               'type'     => 'text',
               'title'    => __( 'Mailchimp API Key', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1308,15 +1302,13 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-googleplus',
-              'title' => __( 'This is a title.', 'terme' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
+              'title' => __( 'Google+ (required for using social counter widget)', 'terme' ),
+              'desc'  => __( 'to get Google+ API key <a href="http://www.youtube.com/watch?v=-wPKcfEadAc" target="_blank">Follow this</a>', 'terme' )
           ),
           array(
               'id'       => 'google_api_key',
               'type'     => 'text',
               'title'    => __( 'Google+ API Key', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1324,15 +1316,13 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-youtube',
-              'title' => __( 'This is a title.', 'terme' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
+              'title' => __( 'Youtube (required for get video duration in media page and youtube count in social counter widget)', 'terme' ),
+              'desc'  => __( 'to get Youtube API key <a href="https://www.youtube.com/watch?v=Im69kzhpR3I" target="_blank">Follow this</a>', 'terme' )
           ),
           array(
               'id'       => 'youtube_api_key',
               'type'     => 'text',
               'title'    => __( 'Youtube API Key', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
           array(
@@ -1340,15 +1330,13 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'  => 'info',
               'style' => 'success',
               'icon'  => 'el el-instagram',
-              'title' => __( 'This is a title.', 'terme' ),
-              'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
+              'title' => __( 'Instagram (required for using social counter widget)', 'terme' ),
+              'desc'  => __( '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token" target="_blank">Click Here</a> To get the Access Token.', 'terme' )
           ),
           array(
               'id'       => 'instagram_access_token',
               'type'     => 'text',
               'title'    => __( 'Instagram Access Token', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'Default Text',
           ),
 
@@ -1509,9 +1497,6 @@ Separate classes with space.
               'title'    => __( 'Font.woff', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'terme' ),
-              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'terme' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               'preview'  => false,
               //'hint'      => array(
               //    'title'     => 'Hint Title',
@@ -1525,9 +1510,6 @@ Separate classes with space.
               'title'    => __( 'Font.ttf', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'terme' ),
-              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'terme' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               'preview'  => false,
               //'hint'      => array(
               //    'title'     => 'Hint Title',
@@ -1541,9 +1523,6 @@ Separate classes with space.
               'title'    => __( 'Font.svg', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'terme' ),
-              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'terme' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               'preview'  => false,
               //'hint'      => array(
               //    'title'     => 'Hint Title',
@@ -1557,9 +1536,6 @@ Separate classes with space.
               'title'    => __( 'Font.eot', 'terme' ),
               'compiler' => 'true',
               //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'desc'     => __( 'Basic media uploader with disabled URL input field.', 'terme' ),
-              'subtitle' => __( 'Upload any media using the WordPress native uploader', 'terme' ),
-              'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
               'preview'  => false,
               //'hint'      => array(
               //    'title'     => 'Hint Title',
