@@ -1,3 +1,5 @@
+<div class="col-md-8 col-sm-12">
+     <div class="home_content">
         <?php
             if(have_posts()) : while(have_posts()) : the_post();
             $terme_pb_status = get_post_meta( get_the_ID(), '_terme_pb_status', true );
@@ -18,3 +20,5 @@
               endwhile; else:
               endif;
         ?>
+      </div><!-- home_content -->
+ </div><!--col-xs-8-->

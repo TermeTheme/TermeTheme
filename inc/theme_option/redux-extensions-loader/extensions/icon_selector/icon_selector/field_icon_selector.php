@@ -97,7 +97,7 @@ if( !class_exists( 'ReduxFramework_icon_selector' ) ) {
             $html.='<div class="field_icon_selector_ul_container">';
             $html.= '<a class="close_icon_selector" href="#"><i class="fa fa-times"></i></a>';
             $html.= '<div class="search_icon">';
-            $html.= '<input type="text" autocomplete="off" name="search" value="" class="filter" placeholder="Type to Find Your Icon..." autofocus />';
+            $html.= '<input type="text" autocomplete="off" value="" class="filter" placeholder="Type to Find Your Icon..." autofocus />';
             $html.= '<div class="filter-count" data-text="Founded icon: "></div>';
             $html.= '<div class="filter-selected-icon"> ';
                 $html.= '<div class="display-icon"><i class="fa '.$Selected_icon.'"></i></div>';

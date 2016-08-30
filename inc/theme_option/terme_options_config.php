@@ -432,7 +432,7 @@
               ),
 
                   array(
-                      'id'       => 'delimiter_icon',
+                      'id'       => 'post_breadcrumb_seprator',
                       'type'     => 'icon_selector',
                       'title'    => __( 'Delimiter Icon', 'terme' ),
                       'indent'   => true, // Indent all options below until the next 'section' option is set.
@@ -465,21 +465,22 @@
                       //     'default'  => 'fa-home',
                       // ),
 
-                      array(
-                          'id'       => 'home_text',
-                          'type'     => 'text',
-                          'title'    => __( 'Home Text', 'terme' ),
-                          'indent'   => true, // Indent all options below until the next 'section' option is set.
-                          'required' => array( 'home_link_type', "=", 2 ),
-                          'default'  => 'Home'
-                      ),
                       // array(
-                      //     'id'       => 'home_icon_text-icon',
-                      //     'type'     => 'icon_select',
-                      //     'title'    => __( 'Home Icon', 'terme' ),
-                      //     // 'indent'   => true, // Indent all options below until the next 'section' option is set.
-                      //     'default'  => 'fa-home',
+                      //     'id'       => 'home_text',
+                      //     'type'     => 'text',
+                      //     'title'    => __( 'Home Text', 'terme' ),
+                      //     'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      //     'required' => array( 'home_link_type', "=", 2 ),
+                      //     'default'  => 'Home'
                       // ),
+                      array(
+                        'id'       => 'home_icon_text_icon',
+                        'type'     => 'icon_selector',
+                        'title'    => __( 'Home Icon', 'terme' ),
+                        'indent'   => true, // Indent all options below until the next 'section' option is set.
+                        'required' => array( 'breadcrumb_type', "=", 1 ),
+                        'default'  => 'fa-angle-right',
+                      ),
 
                       array(
                           'id'       => 'home_icon_text-text',
