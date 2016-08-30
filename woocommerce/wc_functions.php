@@ -27,6 +27,29 @@ function change_product_title() {
 
 
 ?>
+
+<?php
+// Woocommerce Add Is On Sale Section
+
+function terme_wc_show_is_on_sale () {
+  global $post, $product, $terme_options;
+  $off = $product->regular_price - $product->sale_price;
+  if ( $terme_options['is_on_sale'] == '1' && $product->is_on_sale() ) : ?>
+    <div class="is_on_sale">
+      <h2><?php echo $terme_options['is_on_sale_title']; ?></h2>
+      <div class="off_section">
+        <span>
+          <span class="off">off</span>
+          <span class="currency"><?php echo get_woocommerce_currency_symbol(); ?></span>
+          <span class="price"><?php echo $off ?></span>
+         </span>
+      </div>
+    </div>
+<?php endif;
+}
+add_action( 'terme_wc_is_on_sale', 'terme_wc_show_is_on_sale' );
+?>
+
 <?php
 // Woocommerce Change Thumbnail Section
 function change_product_thumbnail() {

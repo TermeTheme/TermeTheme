@@ -950,10 +950,6 @@ section.latest_news {
     border-right: solid #e4e4e4;
     border-right-width: 1px;
     border-right-width: 0.1rem; }
-  .small_post.half_width ul li:nth-child(even) {
-    border-right: none; }
-  .small_post.half_width ul li:nth-last-child(2) {
-    border-bottom: none; }
 
 .shop-carousel {
   float: left;
@@ -3360,11 +3356,13 @@ footer.footer {
   line-height: 70px;
   line-height: 7rem; }
   .is_on_sale h2 {
-    margin: 0;
     display: inline-block;
     font-weight: bold;
+    margin: 0;
     font-size: 16px;
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    line-height: 70px;
+    line-height: 7rem; }
   .is_on_sale .off_section {
     float: right;
     padding: 15px 0;
@@ -3412,7 +3410,6 @@ footer.footer {
   margin-bottom: 0;
   position: relative;
   overflow: hidden;
-  border-top: none;
   border-width: 1px;
   border-width: 0.1rem;
   padding-top: 0;

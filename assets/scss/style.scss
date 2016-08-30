@@ -930,13 +930,13 @@ section.latest_news {
 		@include rem(border-right-width, 1px);
 	}
 
-	&.half_width ul li:nth-child(even) {
-		border-right: none;
-	}
-
-	&.half_width ul li:nth-last-child(2) {
-		border-bottom: none;
-	}
+	// &.half_width ul li:nth-child(even) {
+	// 	border-right: none;
+	// }
+	//
+	// &.half_width ul li:nth-last-child(2) {
+	// 	border-bottom: none;
+	// }
 }
 
 .shop-carousel {
@@ -3498,10 +3498,10 @@ footer.footer {
 	@include rem(( padding: 0 20px,border-width: 1px 1px 0 1px,height: 70px, line-height: 70px,));
 
 	h2 {
-		margin: 0;
 		display: inline-block;
 		font-weight: bold;
-		@include rem(( font-size: 16px,));
+		margin: 0;
+		@include rem(( font-size: 16px,line-height: 70px,));
 	}
 
 	.off_section {
@@ -3542,7 +3542,6 @@ footer.footer {
 	margin-bottom: 0;
 	position: relative;
 	overflow: hidden;
-	border-top: none;
 	@include rem(( border-width: 1px, padding-top: 0 ));
 
 	.ribbon {

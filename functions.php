@@ -7,7 +7,7 @@ function TermeTheme()
     wp_enqueue_style('TermeStyle', get_template_directory_uri().'/assets/css/terme.css', array(), '4.0.0');
     wp_enqueue_style('FontAwesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array(), '4.0.0');
     wp_enqueue_style('SlideBars', get_template_directory_uri().'/assets/css/slidebars.min.css', array(), '4.0.0');
-    // wp_enqueue_style('dcaccordion', get_template_directory_uri().'/assets/css/dcaccordion.css', array(), '4.0.0');
+    wp_enqueue_style('termeAdmin', get_template_directory_uri().'/assets/admin/css/terme.css', array(), '4.0.0');
     // Scripts
     wp_enqueue_script('jQuery-OwlCarousel', get_template_directory_uri().'/assets/js/owl.carousel.min.js', array('jquery'), '1.4.1', true);
     wp_enqueue_script('jQuery-Bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js', array('jquery'), '1.4.1', true);
@@ -129,7 +129,9 @@ include TEMPLATEPATH.'/inc/theme_option/index.php';
 include TEMPLATEPATH.'/inc/page-builder/index.php';
 include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 include TEMPLATEPATH.'/woocommerce/wc_functions.php';
-include TEMPLATEPATH.'/inc/post_type/slider.php';
+// include TEMPLATEPATH.'/inc/post_type/slider.php';
+include TEMPLATEPATH.'/inc/post_type/post_type_ini.php';
+include TEMPLATEPATH.'/inc/post_type/meta_box_ini.php';
 ?>
 
 <?php
