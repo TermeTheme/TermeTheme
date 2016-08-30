@@ -1,22 +1,33 @@
 <?php
 /* template name: Test */
-global $terme_options
+global $terme_options;
+get_header();
 ?>
 <pre>
 <?php
-// include TEMPLATEPATH.'/inc/libraries/php-font-lib/FontLib/Autoloader.php';
-// include TEMPLATEPATH.'/inc/libraries/php-font-lib/vendor/autoload.php';
-// use FontLib\Font;
-$font_path = TEMPLATEPATH.'/assets/css/font-awesome.min.css';
-$css_File = file_get_contents($font_path);
-$pattern_two = "/\.fa-[\w-]+:before\s*?/";
-preg_match_all($pattern_two, $css_File, $matches);
-$classes = array();
-foreach ($matches['0'] as $key => $class) {
-    $class = str_replace(":before","",$class);
-    $class = str_replace(".fa-","fa-",$class);
-    $classes[] = $class;
+$row = '<div class="container"><div class="row">';
+$content = '<div class="col-xs-9"><div style="background: #00f; height: 500px; color: #fff">Content</div></div>';
+$content = get_template_part( 'content', 'single' );
+$sidebar = '<div class="col-xs-3"><div style="background: #f00; height: 500px; color: #fff">Sidebar</div></div>';
+
+if ($terme_options['theme_layout']==0) {
+    $columns = array(
+        $content,
+        $sidebar
+    );
+} else {
+    $columns = array(
+        $sidebar,
+        $content
+    );
 }
-echo '<pre>';
-print_r($matches['0']);
-echo '</pre>';
+echo $row;
+foreach ($columns as $column) {
+    echo $column;
+}
+
+// class_exists('Woocommerce')
+// echo $content;
+// echo $sidebar;
+
+echo "</div></div>";
