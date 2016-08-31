@@ -1,70 +1,76 @@
 @import '_variables.scss', '_mixins.scss', 'rem';
-
-
 // Theme Normalize
 html {
-  @include rem-baseline;
+    @include rem-baseline;
 }
 
 body {
-	font-family: 'Droidsans';
-	color: $secondary_color;
-	@include rem(font-size, 12px);
+    font-family: 'Droidsans';
+    color: $secondary_color;
+    @include rem(font-size, 12px);
 }
+
 a {
-	text-decoration: none;
-	transition: all 300ms
+    text-decoration: none;
+    transition: all 300ms;
 }
-a:hover,
-a:focus {
-	text-decoration: none
+
+a:focus,
+a:hover {
+    text-decoration: none;
 }
+
 input {
-	outline: none
+    outline: none;
 }
+
 button {
-	outline: none;
-	padding: 0;
+    outline: none;
+    padding: 0;
 }
+
 a[data-termehover] {
-  position: relative;
-  overflow: hidden;
-  z-index: 10;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
 }
-a[data-termehover]:before{
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 110%;
-  height: 15vw;
-  transform: translate(-100% , 100%);
-  border-radius: 0 100% 0 0;
-  transition: all .5s;
-  z-index: -10;
-}
-a[data-termehover]:hover:before{
-  transform: translate(0, 0);
 
+a[data-termehover]:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 110%;
+    height: 15vw;
+    transform: translate(-100% , 100%);
+    border-radius: 0 100% 0 0;
+    transition: all 0.5s;
+    z-index: -10;
 }
+
+a[data-termehover]:hover:before {
+    transform: translate(0, 0);
+}
+
 button[data-termehover] {
-  position: relative;
-  overflow: hidden;
-  z-index: 10;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
 }
-button[data-termehover]:before{
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 250px;
-  height: 250px;
-  transform: translate(-100% , 100%);
-  border-radius: 0 100% 0 0;
-  transition: all .5s;
-  z-index: -10;
-}
-button[data-termehover]:hover:before{
-  transform: translate(0, 0);
 
+button[data-termehover]:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    transform: translate(-100% , 100%);
+    border-radius: 0 100% 0 0;
+    transition: all 0.5s;
+    z-index: -10;
+}
+
+button[data-termehover]:hover:before {
+    transform: translate(0, 0);
 }

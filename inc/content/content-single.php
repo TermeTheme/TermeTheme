@@ -3,7 +3,7 @@
       <?php if(have_posts()) : while(have_posts()) : the_post();
        ?>
       <?php
-      global $terme_options; 
+      global $terme_options;
       // $terme_postmeta = get_post_meta( $post->ID, 'terme_postmeta', true );
                     $defaults = array(
                         'date' => 1,
@@ -22,9 +22,7 @@
                     $terme_postmeta = (get_post_meta( get_the_id(), 'terme_postmeta', true )) ? get_post_meta( get_the_id(), 'terme_postmeta', true ) : $defaults ;
       ?>
     <div class="article_info ">
-      <?php if (isset($terme_postmeta['breadcrumb']) && !empty($terme_postmeta['breadcrumb']) ): ?>
-          <?php terme_breadcrumb() ?>
-      <?php elseif ($terme_options['post_breadcrumb']): ?>
+      <?php if ((isset($terme_postmeta['breadcrumb']) && !empty($terme_postmeta['breadcrumb']) || $terme_options['post_breadcrumb'] ) ) : ?>
           <?php terme_breadcrumb() ?>
       <?php endif; ?>
       <h1 class="article_title"><?php the_title(''); ?></h1>
@@ -50,19 +48,22 @@
         <?php the_post_thumbnail( '' ); ?>
       </div>
         <?php the_content(''); ?>
-        <?php if($terme_options['post_tags']) { ?>
-      <div class="article_tags">
-        <h3>Tags:</h3>
-          <?php
-              $posttags = get_the_tags();
-              foreach ( $posttags as $tag ) {
-                $tag_link = get_tag_link( $tag->term_id );
-                $html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}' data-termehover=''>";
-                $html .= "{$tag->name}</a>";
-              }
-          echo $html; ?>
-      </div><!-- article_tags -->
-      <?php } ?>
+
+      <?php if ((isset($terme_postmeta['post_tags']) && !empty($terme_postmeta['post_tags']) || $terme_options['post_tags'] ) ) : ?>
+        <div class="article_tags">
+          <h3><?php _e('Tags:', 'terme') ?></h3>
+            <?php
+                $posttags = get_the_tags();
+                foreach ( $posttags as $posttag ) {
+                  $tag_link = get_tag_link( $posttag->term_id );
+                  $html .= "<a href='{$tag_link}' title='{$posttag->name} Tag' class='{$posttag->slug}' data-termehover=''>";
+                  $html .= "{$posttag->name}</a>";
+                }
+            echo $html; ?>
+        </div><!-- article_tags -->
+      <?php endif; ?>
+
+
       <?php if ((isset($terme_postmeta['share-display']) && !empty($terme_postmeta['share-display']) || $terme_options['post_share'] ) ) : ?>
         <div class="article_social">
           <ul>

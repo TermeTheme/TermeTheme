@@ -2483,7 +2483,7 @@ footer.footer {
 		border: solid #e3e3e5;
 		background: #fff;
 		color: #555555;
-		@include rem(( margin-top: 30px, border-width: 1px ));
+		@include rem(( margin-top: 20px, border-width: 1px ));
 
 		.thumb img {
 			width: 100%;

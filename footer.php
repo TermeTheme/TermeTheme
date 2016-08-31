@@ -11,7 +11,8 @@
 	include TEMPLATEPATH . '/inc/footer/5.php';
 }
 	?>
-<?php if (isset($terme_options['scroll-to-top']) && !empty ($terme_options['scroll-to-top'])) { ?>
+<?php
+ if (isset($terme_options['scroll_to_top']) && !empty ($terme_options['scroll_to_top'])) { ?>
 	<a href="#top" class="back_to_top"></a>
 <?php } ?>
 </div><!-- sb-site -->

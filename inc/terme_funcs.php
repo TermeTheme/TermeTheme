@@ -35,7 +35,7 @@ function terme_breadcrumb() {
                 echo '<li><a href="';
                 echo get_option('home');
                 echo '">';
-                echo '<i class="fa '.$terme_options['home_icon_text_icon'].'"></i> '.$terme_options['home_icon_text-text'];
+                echo '<i class="fa '.$terme_options['home_icon_text_icon'].'"></i> '.$terme_options['home_icon_text_text'];
                 echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
             }
         }

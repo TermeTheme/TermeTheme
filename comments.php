@@ -15,9 +15,10 @@
       return;
   }
   ?>
+  <h4><?php _e('Comments','terme') ?></h4>
+  <div class="comment_container">
+
     <?php if (have_comments()) : ?>
-        <h4><?php _e('Comments','terme') ?></h4>
-        <div class="comment_container">
 
 
         <ol class="comment-list">
@@ -75,6 +76,7 @@
     ),
   );
   comment_form($args, get_the_ID());
-  ?>  </div>
+  ?>
 
   <?php endif; ?>
+ </div>

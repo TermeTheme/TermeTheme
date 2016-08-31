@@ -155,6 +155,7 @@ class Rational_Meta_Box {
         global $terme_options;
         $dateformat = ( array_key_exists('post_date_format', $terme_options) && isset($terme_options['post_date_format']) && !empty($terme_options['post_date_format']) ) ? $terme_options['post_date_format'] : get_option('date_format') ;
         $related_number = ( array_key_exists('related_number_of_posts', $terme_options) && isset($terme_options['related_number_of_posts']) && !empty($terme_options['related_number_of_posts']) ) ? $terme_options['related_number_of_posts'] : 5 ;
+				$post_breadcrumb = ( array_key_exists('post_breadcrumb', $terme_options) && isset($terme_options['post_breadcrumb']) && !empty($terme_options['post_breadcrumb']) ) ? $terme_options['post_breadcrumb'] : false ;
         $defaults = array(
             'date' => 1,
             'category' => 1,
@@ -167,7 +168,7 @@ class Rational_Meta_Box {
             'comment-display' => 1,
             'author-display' => 1,
             'share-display' => 1,
-            'breadcrumb' => 1,
+            'breadcrumb' => $post_breadcrumb,
         );
         $terme_postmeta = (get_post_meta( $post->ID, 'terme_postmeta', true )) ? get_post_meta( $post->ID, 'terme_postmeta', true ) : $defaults ;
         foreach ( $this->fields as $field ) {
@@ -184,7 +185,7 @@ class Rational_Meta_Box {
 						'<input %s id="%s" name="%s" type="checkbox" value="1">
 						<label for="%s" data-text-true="Yes" data-text-false="No"><i></i></label>',
 						// $db_value === '1' ? 'checked' : '',
-                        checked( $db_value, 1, false ),
+            checked( $db_value, 1, false ),
 						$field['id'],
 						$field['id'],
 						$field['id']

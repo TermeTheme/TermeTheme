@@ -304,7 +304,7 @@
               'default'  => '2'
           ),
           array(
-              'id'       => 'scroll-to-top',
+              'id'       => 'scroll_to_top',
               'type'     => 'switch',
               'title'    => __( 'Scroll to Top Button', 'terme' ),
               'subtitle' => __( 'Enabling this option will add a "Back To Top" button to pages.', 'terme' ),
@@ -414,10 +414,20 @@
         Redux::setSection( $opt_name, array(
             'title'            => __( 'Post Settings', 'terme' ),
             'id'               => 'post_settings',
+            'icon'             => 'el el-website',
             'subsection'       => true,
             'customizer_width' => '450px',
             'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
             'fields'           => array(
+              array(
+                  'id'       => 'post_breadcrumb',
+                  'type'     => 'switch',
+                  'title'    => __( 'Post Breadcrumb', 'terme' ),
+                  'subtitle' => __( 'Breadcrumbs are a hierarchy of links displayed below the main navigation. They are displayed on all pages but the home-page.', 'terme' ),
+                  'default'  => true,
+                  'on'       => 'Enabled',
+                  'off'      => 'Disabled',
+              ),
               array(
                   'id'       => 'breadcrumb_type',
                   'type'     => 'select',
@@ -431,6 +441,42 @@
                   'default'  => '1',
               ),
 
+              array(
+                  'id'       => 'home_link_type',
+                  'type'     => 'select',
+                  'title'    => __( 'Home Link Type', 'terme' ),
+                  'indent'   => true, // Indent all options below until the next 'section' option is set.
+                  'required' => array( 'breadcrumb_type', "=", 1 ),
+                  'subtitle'     => __( 'Select Home Link Type', 'terme' ),
+                  'options'  => array(
+                      '0' => 'Disable',
+                      '1' => 'Icon',
+                      '2' => 'Text',
+                      '3' => 'Icon & Text',
+                  ),
+                  'default'  => '3'
+              ),
+
+
+
+                  array(
+                      'id'       => 'home_text',
+                      'type'     => 'text',
+                      'title'    => __( 'Home Text', 'terme' ),
+                      'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      'required' => array( 'home_link_type', "=", 2 ),
+                      'default'  => 'Home'
+                  ),
+
+
+                  array(
+                      'id'       => 'home_icon_text_text',
+                      'type'     => 'text',
+                      'title'    => __( 'Home Text', 'terme' ),
+                      'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      'required' => array( 'home_link_type', "=", 3 ),
+                      'default'  => 'Home'
+                  ),
                   array(
                       'id'       => 'post_breadcrumb_seprator',
                       'type'     => 'icon_selector',
@@ -441,73 +487,17 @@
                   ),
 
                   array(
-                      'id'       => 'home_link_type',
-                      'type'     => 'select',
-                      'title'    => __( 'Home Link Type', 'terme' ),
-                      'indent'   => true, // Indent all options below until the next 'section' option is set.
-                      'required' => array( 'breadcrumb_type', "=", 1 ),
-                      'subtitle'     => __( 'Select Home Link Type', 'terme' ),
-                      'options'  => array(
-                          '0' => 'Disable',
-                          '1' => 'Icon',
-                          '2' => 'Text',
-                          '3' => 'Icon & Text',
-                      ),
-                      'default'  => '3'
+                    'id'       => 'home_icon_text_icon',
+                    'type'     => 'icon_selector',
+                    'title'    => __( 'Home Icon', 'terme' ),
+                    'indent'   => true, // Indent all options below until the next 'section' option is set.
+                    'required' => array( 'breadcrumb_type', "=", 1 ),
+                    'default'  => 'fa-angle-right',
                   ),
 
-                      // array(
-                      //     'id'       => 'home_icon2',
-                      //     'type'     => 'icon_selector',
-                      //     'title'    => __( 'Home Icon', 'terme' ),
-                      //     'indent'   => true, // Indent all options below until the next 'section' option is set.
-                      //     'required' => array( 'home_link_type', "=", 1 ),
-                      //     'default'  => 'fa-home',
-                      // ),
 
-                      // array(
-                      //     'id'       => 'home_text',
-                      //     'type'     => 'text',
-                      //     'title'    => __( 'Home Text', 'terme' ),
-                      //     'indent'   => true, // Indent all options below until the next 'section' option is set.
-                      //     'required' => array( 'home_link_type', "=", 2 ),
-                      //     'default'  => 'Home'
-                      // ),
-                      array(
-                        'id'       => 'home_icon_text_icon',
-                        'type'     => 'icon_selector',
-                        'title'    => __( 'Home Icon', 'terme' ),
-                        'indent'   => true, // Indent all options below until the next 'section' option is set.
-                        'required' => array( 'breadcrumb_type', "=", 1 ),
-                        'default'  => 'fa-angle-right',
-                      ),
 
-                      array(
-                          'id'       => 'home_icon_text-text',
-                          'type'     => 'text',
-                          'title'    => __( 'Home Text', 'terme' ),
-                          'indent'   => true, // Indent all options below until the next 'section' option is set.
-                          'required' => array( 'home_link_type', "=", 3 ),
-                          'default'  => 'Home'
-                      ),
-              array(
-                  'id'       => 'post_breadcrumb',
-                  'type'     => 'switch',
-                  'title'    => __( 'Post Breadcrumb', 'terme' ),
-                  'subtitle' => __( 'Breadcrumbs are a hierarchy of links displayed below the main navigation. They are displayed on all pages but the home-page.', 'terme' ),
-                  'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
-              ),
-              // array(
-              //     'id'       => 'post_breadcrumb_seprator',
-              //     'type'     => 'icon_selector',
-              //     'title'    => __( 'Breadcrumb Seprator', 'terme' ),
-              //     'subtitle' => __( 'Subtitle', 'terme' ),
-              //     'desc'     => __( 'Field Description', 'terme' ),
-              //     'required' => array('post_breadcrumb', '=' , 1),
-              //
-              // ),
+
               array(
                   'id'    => 'post_meta_info',
                   'type'  => 'info',
@@ -758,6 +748,7 @@ by tags - pick posts that have at least one tag in common with the current post'
         Redux::setSection( $opt_name, array(
             'title'            => __( 'Social Icons', 'terme' ),
             'id'               => 'social_icons',
+            'icon'             => 'el el-globe',
             'subsection'       => true,
             'customizer_width' => '450px',
             'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
@@ -767,43 +758,36 @@ by tags - pick posts that have at least one tag in common with the current post'
                   'id'       => 'facebook',
                   'type'     => 'text',
                   'title'    => __( 'Facebook', 'terme' ),
-                  'default'  => '#',
               ),
               array(
                   'id'       => 'twitter',
                   'type'     => 'text',
                   'title'    => __( 'Twitter', 'terme' ),
-                  'default'  => '#',
               ),
               array(
                   'id'       => 'youtube',
                   'type'     => 'text',
                   'title'    => __( 'Youtube', 'terme' ),
-                  'default'  => '#',
               ),
               array(
                   'id'       => 'instagram',
                   'type'     => 'text',
                   'title'    => __( 'Instagram', 'terme' ),
-                  'default'  => '#',
               ),
               array(
                   'id'       => 'dribbble',
                   'type'     => 'text',
                   'title'    => __( 'Dribbble', 'terme' ),
-                  'default'  => '#',
               ),
               array(
                   'id'       => 'rss',
                   'type'     => 'text',
                   'title'    => __( 'RSS', 'terme' ),
-                  'default'  => '#',
               ),
               array(
                   'id'       => 'vimeo',
                   'type'     => 'text',
                   'title'    => __( 'Vimeo', 'terme' ),
-                  'default'  => '#',
               ),
 
             )
@@ -814,7 +798,7 @@ by tags - pick posts that have at least one tag in common with the current post'
         'title'            => __( 'Header Settings', 'terme' ),
         'id'               => 'header_settings',
         'customizer_width' => '500px',
-        'icon'             => 'el el-edit',
+        'icon'             => 'el el-screen',
         'fields'     => array(
           array(
               'id'       => 'header_layout',
@@ -1094,8 +1078,9 @@ by tags - pick posts that have at least one tag in common with the current post'
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Footer Settings', 'terme' ),
         'id'               => 'footer_settings',
+        'desc'             => __( 'The footer uses sidebars to show information. To add content to the footer head go to the widgets section and drag widget to the Footer 1, Footer 2 and Footer 3 sidebars.', 'terme' ),
         'customizer_width' => '500px',
-        'icon'             => 'el el-edit',
+        'icon'             => 'el el-screen',
         'fields'     => array(
           array(
               'id'       => 'footer_layout',
@@ -1171,7 +1156,7 @@ by tags - pick posts that have at least one tag in common with the current post'
         'title'            => __( 'Woocommerce Settings', 'terme' ),
         'id'               => 'woocommerce_settings',
         'customizer_width' => '500px',
-        'icon'             => 'el el-edit',
+        'icon'             => 'el el-shopping-cart',
         'fields'     => array(
           array(
               'id'       => 'woocommerce_layout',
@@ -1374,6 +1359,7 @@ Separate classes with space.
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Responsive CSS', 'terme' ),
         'id'               => 'responsive_css',
+        'icon'             => 'el el-resize-full',
         'subsection'       => true,
         'customizer_width' => '450px',
         'desc'             => __( 'Paste your custom css in the appropriate box, to run only on a specific device', 'terme' ),
@@ -1411,6 +1397,7 @@ Separate classes with space.
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Advanced CSS', 'terme' ),
         'id'               => 'advanced_css',
+        'icon'             => 'el el-puzzle',
         'subsection'       => true,
         'customizer_width' => '450px',
         'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',

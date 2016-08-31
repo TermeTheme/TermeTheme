@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: terme\n"
-"POT-Creation-Date: 2016-08-28 12:48+0430\n"
-"PO-Revision-Date: 2016-08-28 15:54+0430\n"
+"POT-Creation-Date: 2016-08-30 15:54+0430\n"
+"PO-Revision-Date: 2016-08-30 15:55+0430\n"
 "Last-Translator: \n"
 "Language-Team: TermeTheme <termetheme@gmail.com>\n"
 "Language: fa_IR\n"
@@ -108,53 +108,66 @@ msgstr "مشاهده سبد خرید"
 msgid "Search"
 msgstr "جست و جو"
 
-#: functions.php:40
+#: functions.php:41
 msgid "Widgets in this area will be shown in the default sidebar."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در سایدبار نمایش داده خواهند شد."
 
-#: functions.php:49
+#: functions.php:50
 msgid "Widgets in this area will be shown in the footer column 1."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون اول فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:58
+#: functions.php:59
 msgid "Widgets in this area will be shown in the footer column 2."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون دوم فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:67
+#: functions.php:68
 msgid "Widgets in this area will be shown in the footer column 3."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون سوم فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:76
+#: functions.php:77
 msgid "Widgets in this area will be shown in the footer column 4."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون چهارم فوتر نمایش داده "
 "خواهند شد."
 
-#: functions.php:114
+#: functions.php:115
 msgid "Header Menu"
 msgstr "منوی هدر"
 
-#: functions.php:115
+#: functions.php:116
 msgid "Footer Menu"
 msgstr "منوی فوتر"
 
-#: functions.php:148
+#: functions.php:151
 #, php-format
 msgid "%1$s"
 msgstr ""
+
+#: inc/content/content-single.php:57
+msgid "Tags:"
+msgstr "برچسب ها:"
+
+#: inc/content/content-single.php:88
+msgid "Articles"
+msgstr "مقاله"
+
+#: inc/content/content-single.php:99
+#: inc/theme_option/terme_options_config.php:719
+msgid "Related Post"
+msgstr "مطالب مرتبط"
 
 #: inc/header/1.php:27 inc/header/2.php:27
 msgid "Cart"
 msgstr "سبد خرید"
 
-#: inc/metabox/terme_meta.php:22 inc/theme_option/terme_options_config.php:577
+#: inc/metabox/terme_meta.php:22 inc/theme_option/terme_options_config.php:531
 msgid "Show Post Date"
 msgstr "نمایش تاریخ"
 
@@ -180,6 +193,8 @@ msgstr ""
 #: inc/page-builder/elements/element_04.php:80
 #: inc/page-builder/elements/element_05.php:46
 #: inc/page-builder/elements/element_05.php:80
+#: inc/page-builder/elements/element_shop.php:38
+#: inc/page-builder/elements/element_shop.php:59
 #: inc/page-builder/elements/element_test.php:46
 #: inc/page-builder/elements/element_test.php:84
 msgid "Box Title:"
@@ -195,6 +210,8 @@ msgstr ""
 #: inc/page-builder/elements/element_04.php:84
 #: inc/page-builder/elements/element_05.php:50
 #: inc/page-builder/elements/element_05.php:84
+#: inc/page-builder/elements/element_shop.php:42
+#: inc/page-builder/elements/element_shop.php:63
 #: inc/page-builder/elements/element_test.php:50
 #: inc/page-builder/elements/element_test.php:88
 msgid "Box Subtitle:"
@@ -210,6 +227,7 @@ msgstr ""
 #: inc/page-builder/elements/element_04.php:88
 #: inc/page-builder/elements/element_05.php:54
 #: inc/page-builder/elements/element_05.php:88
+#: inc/page-builder/elements/element_shop.php:67
 #: inc/page-builder/elements/element_test.php:54
 #: inc/page-builder/elements/element_test.php:92
 msgid "Post Number:"
@@ -235,6 +253,7 @@ msgstr ""
 #: inc/page-builder/elements/element_03.php:122
 #: inc/page-builder/elements/element_04.php:122
 #: inc/page-builder/elements/element_05.php:122
+#: inc/page-builder/elements/element_shop.php:98
 #: inc/page-builder/elements/element_test.php:130
 msgid "Delete"
 msgstr ""
@@ -244,6 +263,7 @@ msgstr ""
 #: inc/page-builder/elements/element_03.php:140
 #: inc/page-builder/elements/element_04.php:140
 #: inc/page-builder/elements/element_05.php:140
+#: inc/page-builder/elements/element_shop.php:114
 #: inc/page-builder/elements/element_test.php:153
 msgid "More"
 msgstr ""
@@ -264,6 +284,22 @@ msgstr ""
 msgid "Item 5"
 msgstr ""
 
+#: inc/page-builder/elements/element_shop.php:18
+msgid "Shop Carousel"
+msgstr ""
+
+#: inc/page-builder/elements/element_shop.php:46
+msgid "Product Number:"
+msgstr ""
+
+#: inc/page-builder/elements/element_shop.php:130
+msgid "Add to cart"
+msgstr ""
+
+#: inc/page-builder/elements/element_shop.php:131
+msgid "Description"
+msgstr ""
+
 #: inc/page-builder/elements/element_test.php:18
 msgid "Test Element"
 msgstr ""
@@ -282,6 +318,46 @@ msgstr ""
 
 #: inc/page-builder/metabox.php:23
 msgid "Page Builder Elements"
+msgstr ""
+
+#: inc/post_type/meta_box_ini.php:10
+msgid "Image slides"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:6 inc/post_type/slider.php:14
+msgid "Add New"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:7
+msgid "Add New Slider"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:8
+msgid "Edit Slider"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:9
+msgid "New Slider"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:10
+msgid "All Sliders"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:11
+msgid "View Slider"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:12
+msgid "Search Sliders"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:13
+msgid "No Sliders found"
+msgstr ""
+
+#: inc/post_type/post_type_ini.php:14
+msgid "No Sliders found in the Trash"
 msgstr ""
 
 #: inc/post_type/slider.php:8
@@ -306,10 +382,6 @@ msgstr ""
 
 #: inc/post_type/slider.php:13
 msgid "Add New Item"
-msgstr ""
-
-#: inc/post_type/slider.php:14
-msgid "Add New"
 msgstr ""
 
 #: inc/post_type/slider.php:15
@@ -380,9 +452,13 @@ msgstr ""
 msgid "Main Page Slider"
 msgstr "اسلایدر صفحه اصلی"
 
-#: inc/terme_funcs.php:145
+#: inc/terme_funcs.php:131
 msgid " View"
 msgstr " بازدید"
+
+#: inc/theme_option/redux-extensions-loader/extensions/icon_selector/icon_selector/field_icon_selector.php:104
+msgid "Use Icon"
+msgstr ""
 
 #: inc/theme_option/terme_options_config.php:77
 #: inc/theme_option/terme_options_config.php:78
@@ -390,7 +466,7 @@ msgid "Terme Setting"
 msgstr "تنظیمات ترمه"
 
 #: inc/theme_option/terme_options_config.php:178
-#: inc/theme_option/terme_options_config.php:1599
+#: inc/theme_option/terme_options_config.php:1575
 msgid "Documentation"
 msgstr ""
 
@@ -439,395 +515,350 @@ msgstr ""
 msgid "<p>This is the sidebar content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:280
-msgid "Homepage"
-msgstr "صفحه اصلی"
-
-#: inc/theme_option/terme_options_config.php:282
-#: inc/theme_option/terme_options_config.php:326
-#: inc/theme_option/terme_options_config.php:1230
-#: inc/theme_option/terme_options_config.php:1363
-#: inc/theme_option/terme_options_config.php:1476
-#: inc/theme_option/terme_options_config.php:1501
-msgid "These are really basic fields!"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:289
-msgid "Default Homepage Display"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:292
-msgid "Blog"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:299
-msgid "Default Homepage Layout Style"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:302
-msgid "Full Width"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:309
-msgid "Number Of Posts in Homepage"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:310
-msgid "Number of post to display"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:316
-msgid "-1 for show all posts"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:324
+#: inc/theme_option/terme_options_config.php:281
 msgid "General Settings"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:333
+#: inc/theme_option/terme_options_config.php:283
+#: inc/theme_option/terme_options_config.php:1233
+#: inc/theme_option/terme_options_config.php:1351
+#: inc/theme_option/terme_options_config.php:1464
+#: inc/theme_option/terme_options_config.php:1489
+msgid "These are really basic fields!"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:290
 msgid "Theme Layout"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:334
+#: inc/theme_option/terme_options_config.php:291
 msgid ""
 "Select the general sidebar you want to use by default. This option can be "
 "overridden on every page, post, category and tag."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:335
-#: inc/theme_option/terme_options_config.php:877
-#: inc/theme_option/terme_options_config.php:1161
+#: inc/theme_option/terme_options_config.php:292
+#: inc/theme_option/terme_options_config.php:1105
 msgid ""
 "This uses some of the built in images, you can use them for layout options."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:352
+#: inc/theme_option/terme_options_config.php:309
 msgid "Scroll to Top Button"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:353
+#: inc/theme_option/terme_options_config.php:310
 msgid "Enabling this option will add a \"Back To Top\" button to pages."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:359
+#: inc/theme_option/terme_options_config.php:316
 msgid "NewsTicker"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:360
-#: inc/theme_option/terme_options_config.php:578
-#: inc/theme_option/terme_options_config.php:599
-#: inc/theme_option/terme_options_config.php:642
-#: inc/theme_option/terme_options_config.php:660
-#: inc/theme_option/terme_options_config.php:677
-#: inc/theme_option/terme_options_config.php:693
-#: inc/theme_option/terme_options_config.php:703
-#: inc/theme_option/terme_options_config.php:713
-#: inc/theme_option/terme_options_config.php:723
-#: inc/theme_option/terme_options_config.php:733
-#: inc/theme_option/terme_options_config.php:743
-#: inc/theme_option/terme_options_config.php:1140
-msgid "Look, it's on!"
+#: inc/theme_option/terme_options_config.php:317
+msgid "Enable or disable the NewsTicker"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:369
+#: inc/theme_option/terme_options_config.php:326
 msgid "Favicon (16x16)"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:372
+#: inc/theme_option/terme_options_config.php:329
 msgid "Default Favicon. 16px x 16px"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:383
+#: inc/theme_option/terme_options_config.php:340
 msgid "Apple iPhone Icon (57x57)"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:386
+#: inc/theme_option/terme_options_config.php:343
 msgid "Icon for Classic iPhone"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:397
+#: inc/theme_option/terme_options_config.php:354
 msgid "Apple iPad Icon (72x72)"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:400
+#: inc/theme_option/terme_options_config.php:357
 msgid "Icon for Classic iPad"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:411
+#: inc/theme_option/terme_options_config.php:368
 msgid "Apple iPhone Retina Icon (114x114)"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:414
+#: inc/theme_option/terme_options_config.php:371
 msgid "Icon for Retina iPhone"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:425
+#: inc/theme_option/terme_options_config.php:382
 msgid "Apple iPad Retina Icon (144x144)"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:428
+#: inc/theme_option/terme_options_config.php:385
 msgid "Icon for Retina iPad"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:438
+#: inc/theme_option/terme_options_config.php:395
 msgid "Header Script - HTML Validated Custom"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:439
-#: inc/theme_option/terme_options_config.php:447
-#: inc/theme_option/terme_options_config.php:589
-#: inc/theme_option/terme_options_config.php:1048
-#: inc/theme_option/terme_options_config.php:1246
-#: inc/theme_option/terme_options_config.php:1262
-#: inc/theme_option/terme_options_config.php:1270
-#: inc/theme_option/terme_options_config.php:1278
-#: inc/theme_option/terme_options_config.php:1286
-#: inc/theme_option/terme_options_config.php:1302
-#: inc/theme_option/terme_options_config.php:1318
-#: inc/theme_option/terme_options_config.php:1334
-#: inc/theme_option/terme_options_config.php:1350
-msgid "Subtitle"
+#: inc/theme_option/terme_options_config.php:396
+msgid ""
+"The following code will add to the <head> tag. Useful if you need to add "
+"additional codes such as CSS or JS.\n"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:440
-#: inc/theme_option/terme_options_config.php:448
-#: inc/theme_option/terme_options_config.php:792
-#: inc/theme_option/terme_options_config.php:905
-#: inc/theme_option/terme_options_config.php:1080
-#: inc/theme_option/terme_options_config.php:1398
-#: inc/theme_option/terme_options_config.php:1405
-#: inc/theme_option/terme_options_config.php:1412
-#: inc/theme_option/terme_options_config.php:1419
-msgid "This is the description field, again good for additional info."
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:446
+#: inc/theme_option/terme_options_config.php:402
 msgid "Footer Script - HTML Validated Custom"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:454
+#: inc/theme_option/terme_options_config.php:403
+msgid ""
+"The following code will add to the footer before the closing </body> tag. "
+"Useful if you need to add Javascript or tracking code."
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:408
 msgid "Date Format"
 msgstr "فرمت تاریخ"
 
-#: inc/theme_option/terme_options_config.php:455
+#: inc/theme_option/terme_options_config.php:409
 msgid ""
 "Change date format click <a href=\"http://codex.wordpress.org/"
 "Formatting_Date_and_Time\" target=\"_blank\">here</a> to see how to change it"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:456
-#: inc/theme_option/terme_options_config.php:590
-#: inc/theme_option/terme_options_config.php:816
-#: inc/theme_option/terme_options_config.php:823
-#: inc/theme_option/terme_options_config.php:830
-#: inc/theme_option/terme_options_config.php:837
-#: inc/theme_option/terme_options_config.php:844
-#: inc/theme_option/terme_options_config.php:851
-#: inc/theme_option/terme_options_config.php:858
-#: inc/theme_option/terme_options_config.php:1049
-#: inc/theme_option/terme_options_config.php:1247
-#: inc/theme_option/terme_options_config.php:1263
-#: inc/theme_option/terme_options_config.php:1271
-#: inc/theme_option/terme_options_config.php:1279
-#: inc/theme_option/terme_options_config.php:1287
-#: inc/theme_option/terme_options_config.php:1303
-#: inc/theme_option/terme_options_config.php:1319
-#: inc/theme_option/terme_options_config.php:1335
-#: inc/theme_option/terme_options_config.php:1351
-msgid "Field Description"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:462
+#: inc/theme_option/terme_options_config.php:415
 msgid "Post Settings"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:466
-#: inc/theme_option/terme_options_config.php:809
-#: inc/theme_option/terme_options_config.php:1056
-#: inc/theme_option/terme_options_config.php:1062
-#: inc/theme_option/terme_options_config.php:1145
-#: inc/theme_option/terme_options_config.php:1428
+#: inc/theme_option/terme_options_config.php:419
+#: inc/theme_option/terme_options_config.php:763
+#: inc/theme_option/terme_options_config.php:1000
+#: inc/theme_option/terme_options_config.php:1006
+#: inc/theme_option/terme_options_config.php:1089
+#: inc/theme_option/terme_options_config.php:1416
 msgid "For full documentation on this field, visit: "
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:471
+#: inc/theme_option/terme_options_config.php:424
 msgid "Breadcrumb Type"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:472
+#: inc/theme_option/terme_options_config.php:425
 msgid ""
 "If Select (WordPress Seo Plugin Breadcrumb), You Need To Install Wordpress "
 "Seo by Yoast Plugin "
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:484
+#: inc/theme_option/terme_options_config.php:437
 msgid "Delimiter Icon"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:493
+#: inc/theme_option/terme_options_config.php:446
 msgid "Home Link Type"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:496
+#: inc/theme_option/terme_options_config.php:449
 msgid "Select Home Link Type"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:518
-#: inc/theme_option/terme_options_config.php:534
+#: inc/theme_option/terme_options_config.php:479
+msgid "Home Icon"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:488
 msgid "Home Text"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:542
+#: inc/theme_option/terme_options_config.php:496
 msgid "Post Breadcrumb"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:543
+#: inc/theme_option/terme_options_config.php:497
 msgid ""
 "Breadcrumbs are a hierarchy of links displayed below the main navigation. "
 "They are displayed on all pages but the home-page."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:562
+#: inc/theme_option/terme_options_config.php:516
 msgid "Post Meta Options"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:568
+#: inc/theme_option/terme_options_config.php:522
 msgid "Post Meta"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:569
+#: inc/theme_option/terme_options_config.php:523
 msgid ""
 "You can hide post meta ( date, author and comments ) inside single posts "
 "with enabling this option."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:588
+#: inc/theme_option/terme_options_config.php:532
+msgid "Enable or disable the Post Date"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:542
 msgid "Post Date Format"
 msgstr "فرمت تاریخ"
 
-#: inc/theme_option/terme_options_config.php:598
+#: inc/theme_option/terme_options_config.php:543
+#: inc/theme_option/terme_options_config.php:992
+msgid "Subtitle"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:544
+#: inc/theme_option/terme_options_config.php:993
+msgid "Field Description"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:552
 msgid "Show Post Category"
 msgstr "نمایش دسته بندی"
 
-#: inc/theme_option/terme_options_config.php:608
+#: inc/theme_option/terme_options_config.php:553
+msgid "Enable or disable the Post Category"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:562
 msgid "Show Post view Count"
 msgstr "نمایش تعداد بازدید"
 
-#: inc/theme_option/terme_options_config.php:609
+#: inc/theme_option/terme_options_config.php:563
 msgid ""
 "You can hide post views count inside post meta info for all content listings "
 "with disabling this option."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:619
+#: inc/theme_option/terme_options_config.php:573
 msgid "Show Post Comment Count"
 msgstr "نمایش تعداد نظرات"
 
-#: inc/theme_option/terme_options_config.php:620
+#: inc/theme_option/terme_options_config.php:574
 msgid ""
 "You can hide post comments count inside post meta info for all content "
 "listings with disabling this option."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:641
+#: inc/theme_option/terme_options_config.php:595
 msgid "Post Tags"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:650
+#: inc/theme_option/terme_options_config.php:596
+msgid "Enable or disable the Post Tags"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:604
 msgid "Author Box"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:651
+#: inc/theme_option/terme_options_config.php:605
 msgid ""
 "You can hide post author inside post meta info for all content listings with "
 "disabling this option."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:659
+#: inc/theme_option/terme_options_config.php:613
 msgid "Post Comments"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:670
+#: inc/theme_option/terme_options_config.php:614
+msgid "Enable or disable the Post Comment"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:624
 msgid "Post Sharing Options"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:676
+#: inc/theme_option/terme_options_config.php:630
 msgid "Post Share"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:692
+#: inc/theme_option/terme_options_config.php:631
+msgid "Enable or disable the Post Share"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:646
 msgid "Facebook Share"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:695
-#: inc/theme_option/terme_options_config.php:705
-#: inc/theme_option/terme_options_config.php:715
-#: inc/theme_option/terme_options_config.php:725
-#: inc/theme_option/terme_options_config.php:735
-#: inc/theme_option/terme_options_config.php:745
-#: inc/theme_option/terme_options_config.php:769
+#: inc/theme_option/terme_options_config.php:647
+#: inc/theme_option/terme_options_config.php:657
+#: inc/theme_option/terme_options_config.php:667
+#: inc/theme_option/terme_options_config.php:677
+#: inc/theme_option/terme_options_config.php:687
+#: inc/theme_option/terme_options_config.php:697
+#: inc/theme_option/terme_options_config.php:1084
+msgid "Look, it's on!"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:649
+#: inc/theme_option/terme_options_config.php:659
+#: inc/theme_option/terme_options_config.php:669
+#: inc/theme_option/terme_options_config.php:679
+#: inc/theme_option/terme_options_config.php:689
+#: inc/theme_option/terme_options_config.php:699
+#: inc/theme_option/terme_options_config.php:723
 msgid "Enabled"
 msgstr "فعال"
 
-#: inc/theme_option/terme_options_config.php:696
-#: inc/theme_option/terme_options_config.php:706
-#: inc/theme_option/terme_options_config.php:716
-#: inc/theme_option/terme_options_config.php:726
-#: inc/theme_option/terme_options_config.php:736
-#: inc/theme_option/terme_options_config.php:746
-#: inc/theme_option/terme_options_config.php:770
+#: inc/theme_option/terme_options_config.php:650
+#: inc/theme_option/terme_options_config.php:660
+#: inc/theme_option/terme_options_config.php:670
+#: inc/theme_option/terme_options_config.php:680
+#: inc/theme_option/terme_options_config.php:690
+#: inc/theme_option/terme_options_config.php:700
+#: inc/theme_option/terme_options_config.php:724
 msgid "Disabled"
 msgstr "غیرفعال"
 
-#: inc/theme_option/terme_options_config.php:702
+#: inc/theme_option/terme_options_config.php:656
 msgid "Twitter Share"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:712
+#: inc/theme_option/terme_options_config.php:666
 msgid "Pinterest Share"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:722
+#: inc/theme_option/terme_options_config.php:676
 msgid "Tumblr Share"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:732
+#: inc/theme_option/terme_options_config.php:686
 msgid "Wordpress Share"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:742
+#: inc/theme_option/terme_options_config.php:696
 msgid "Print Icon"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:759
+#: inc/theme_option/terme_options_config.php:713
 msgid "Related Posts Setting"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:765 single.php:125 single.php:185
-msgid "Related Post"
-msgstr "مطالب مرتبط"
-
-#: inc/theme_option/terme_options_config.php:766
+#: inc/theme_option/terme_options_config.php:720
 msgid "Enable or disable the related article section\n"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:775
+#: inc/theme_option/terme_options_config.php:729
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:776
+#: inc/theme_option/terme_options_config.php:730
 msgid "How many related articles to show:"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:777
+#: inc/theme_option/terme_options_config.php:731
 msgid "Slider description. Min: 1, max: 500, step: 1, default value: 250"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:788
+#: inc/theme_option/terme_options_config.php:742
 msgid "Select Option"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:789
+#: inc/theme_option/terme_options_config.php:743
 msgid ""
 "How to pick the related articles:\n"
 "by category - pick posts from that have at least one category in common with "
@@ -836,474 +867,539 @@ msgid ""
 "post"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:805
+#: inc/theme_option/terme_options_config.php:746
+#: inc/theme_option/terme_options_config.php:1024
+#: inc/theme_option/terme_options_config.php:1386
+#: inc/theme_option/terme_options_config.php:1393
+#: inc/theme_option/terme_options_config.php:1400
+#: inc/theme_option/terme_options_config.php:1407
+msgid "This is the description field, again good for additional info."
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:759
 msgid "Social Icons"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:815
+#: inc/theme_option/terme_options_config.php:769
 #: inc/widgets/social_widget.php:27
 msgid "Facebook"
 msgstr "فیسبوک"
 
-#: inc/theme_option/terme_options_config.php:822
+#: inc/theme_option/terme_options_config.php:775
 #: inc/widgets/social_widget.php:34
 msgid "Twitter"
 msgstr "توییتر"
 
-#: inc/theme_option/terme_options_config.php:829
+#: inc/theme_option/terme_options_config.php:781
 #: inc/widgets/social_widget.php:62
 msgid "Youtube"
 msgstr "یوتوب"
 
-#: inc/theme_option/terme_options_config.php:836
+#: inc/theme_option/terme_options_config.php:787
 #: inc/widgets/social_widget.php:55
 msgid "Instagram"
 msgstr "اینستاگرام"
 
-#: inc/theme_option/terme_options_config.php:843
+#: inc/theme_option/terme_options_config.php:793
 #: inc/widgets/social_widget.php:76
 msgid "Dribbble"
 msgstr "دریبل"
 
-#: inc/theme_option/terme_options_config.php:850
+#: inc/theme_option/terme_options_config.php:799
 msgid "RSS"
 msgstr "آر اس اس"
 
-#: inc/theme_option/terme_options_config.php:857
+#: inc/theme_option/terme_options_config.php:805
 msgid "Vimeo"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:867
+#: inc/theme_option/terme_options_config.php:814
 msgid "Header Settings"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:875
+#: inc/theme_option/terme_options_config.php:822
 msgid "header Layout"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:876
-#: inc/theme_option/terme_options_config.php:904
-#: inc/theme_option/terme_options_config.php:1079
-msgid "No validation can be done on this field type"
+#: inc/theme_option/terme_options_config.php:823
+msgid "Choose the default layout"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:903
+#: inc/theme_option/terme_options_config.php:849
 msgid "Select Logo type"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:908
+#: inc/theme_option/terme_options_config.php:852
 msgid "Logo Image"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:909
-#: inc/theme_option/terme_options_config.php:936
+#: inc/theme_option/terme_options_config.php:853
+#: inc/theme_option/terme_options_config.php:880
 msgid "Site Name"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:916
-#: inc/theme_option/terme_options_config.php:1092
+#: inc/theme_option/terme_options_config.php:860
+#: inc/theme_option/terme_options_config.php:1036
 msgid "Upload your logo image"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:919
+#: inc/theme_option/terme_options_config.php:863
 msgid ""
 "By default, a text-based logo is created using your site title. But you can "
 "also upload an image-based logo here."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:926
+#: inc/theme_option/terme_options_config.php:870
 msgid "Upload your retina logo image"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:929
+#: inc/theme_option/terme_options_config.php:873
 msgid ""
 "If you want to upload a Retina Image, It's Image Size should be exactly "
 "double in compare with your normal Logo. It requires WP Retina 2x plugin."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:937
-#: inc/theme_option/terme_options_config.php:946
+#: inc/theme_option/terme_options_config.php:881
+#: inc/theme_option/terme_options_config.php:890
 msgid "The desired text will be used if logo images are not provided below."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:945
+#: inc/theme_option/terme_options_config.php:889
 msgid "Site Description"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:954
+#: inc/theme_option/terme_options_config.php:898
 msgid "Site Name Style"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:978
-#: inc/theme_option/terme_options_config.php:1016
+#: inc/theme_option/terme_options_config.php:922
+#: inc/theme_option/terme_options_config.php:960
 msgid "Typography option with each property can be called individually."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:992
+#: inc/theme_option/terme_options_config.php:936
 msgid "Site Descriotion Style"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1029
+#: inc/theme_option/terme_options_config.php:973
 msgid "Top Bar"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1032
+#: inc/theme_option/terme_options_config.php:976
 msgid ""
 "Enabling this will disable the top bar element that appears above the logo "
 "area."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1038
+#: inc/theme_option/terme_options_config.php:982
 msgid "Hide Top Bar"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1039
-#: inc/theme_option/terme_options_config.php:1069
+#: inc/theme_option/terme_options_config.php:983
+#: inc/theme_option/terme_options_config.php:1013
 msgid "Look, it's on! Also hidden child elements!"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1047
+#: inc/theme_option/terme_options_config.php:991
 msgid "Today Date Format"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1059
-#: inc/theme_option/terme_options_config.php:1068
+#: inc/theme_option/terme_options_config.php:1003
+#: inc/theme_option/terme_options_config.php:1012
 msgid "Top Banner"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1078
+#: inc/theme_option/terme_options_config.php:1022
 msgid "Banner Type"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1102
+#: inc/theme_option/terme_options_config.php:1023
+msgid "No validation can be done on this field type"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1046
 msgid "URL Link"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1109
+#: inc/theme_option/terme_options_config.php:1053
 msgid "Custom Content"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1116
+#: inc/theme_option/terme_options_config.php:1060
 msgid "Background Color"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1117
-#: inc/theme_option/terme_options_config.php:1128
+#: inc/theme_option/terme_options_config.php:1061
+#: inc/theme_option/terme_options_config.php:1072
 msgid "Pick a background color for the theme (default: #fff)."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1127
+#: inc/theme_option/terme_options_config.php:1071
 msgid "Text Color"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1139
+#: inc/theme_option/terme_options_config.php:1083
 msgid "Close Button"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1151
+#: inc/theme_option/terme_options_config.php:1095
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1159
+#: inc/theme_option/terme_options_config.php:1103
+#: inc/theme_option/terme_options_config.php:1179
 msgid "Footer Layout"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1160
+#: inc/theme_option/terme_options_config.php:1104
 msgid "Set the footer template"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1191
+#: inc/theme_option/terme_options_config.php:1135
 msgid "Copyright Footer"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1192
+#: inc/theme_option/terme_options_config.php:1136
 msgid "Show or hide the Footer Copyright"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1198
+#: inc/theme_option/terme_options_config.php:1142
 msgid "Footer Text"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1200
+#: inc/theme_option/terme_options_config.php:1144
 msgid "Set footer copyright text"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1216
+#: inc/theme_option/terme_options_config.php:1160
 msgid "Footer Social Icons"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1217
+#: inc/theme_option/terme_options_config.php:1161
 msgid ""
 "Show or hide the social icons, to setup the Social icons go to Social "
 "Networks"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1228
+#: inc/theme_option/terme_options_config.php:1171
+msgid "Woocommerce Settings"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1180
+msgid "Set the Woocommerce template"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1211
+msgid "Sale Section"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1212
+msgid "Show or hide the Sale Section for Products are in sell"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1218
+msgid "Sale Title"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1219
+msgid "The Sale Title"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1231
 msgid "API's Authentication"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1239
-#: inc/theme_option/terme_options_config.php:1255
-#: inc/theme_option/terme_options_config.php:1295
-#: inc/theme_option/terme_options_config.php:1311
-#: inc/theme_option/terme_options_config.php:1327
-#: inc/theme_option/terme_options_config.php:1343
-msgid "This is a title."
+#: inc/theme_option/terme_options_config.php:1242
+msgid "Facebook (required for social counter widget)"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1240
-#: inc/theme_option/terme_options_config.php:1256
-#: inc/theme_option/terme_options_config.php:1296
-#: inc/theme_option/terme_options_config.php:1312
-#: inc/theme_option/terme_options_config.php:1328
-#: inc/theme_option/terme_options_config.php:1344
+#: inc/theme_option/terme_options_config.php:1243
 msgid ""
-"This is an info field with the <strong>success</strong> style applied and an "
-"icon."
+"to get Facebook access token <a href=\"https://smashballoon.com/custom-"
+"facebook-feed/access-token/\" target=\"_blank\">Follow this</a>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1245
+#: inc/theme_option/terme_options_config.php:1248
 msgid "Facebook Access Token"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1256
+msgid ""
+"Twitter API (required for using twitter widgets and social counters widget)"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1257
+msgid ""
+"You can get twitter Authentication data by following this <a href=\"http://"
+"www.youtube.com/watch?v=zdSHhiHAxBA\" target=\"_blank\">tutorial</a>."
 msgstr ""
 
 #: inc/theme_option/terme_options_config.php:1261
 msgid "API Key"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1269
+#: inc/theme_option/terme_options_config.php:1268
 msgid "API Secret"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1277
+#: inc/theme_option/terme_options_config.php:1275
 msgid "API Access Token"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1285
+#: inc/theme_option/terme_options_config.php:1282
 msgid "API Access Token Secret"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1301
+#: inc/theme_option/terme_options_config.php:1291
+msgid "Mailchimp (required for using newsletter widget)"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1292
+msgid ""
+"To find your API key <a href=\"http://kb.mailchimp.com/article/where-can-i-"
+"find-my-api-key\" target=\"_blank\">Click here</a>."
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1297
 msgid "Mailchimp API Key"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1317
+#: inc/theme_option/terme_options_config.php:1305
+msgid "Google+ (required for using social counter widget)"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1306
+msgid ""
+"to get Google+ API key <a href=\"http://www.youtube.com/watch?v=-wPKcfEadAc"
+"\" target=\"_blank\">Follow this</a>"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1311
 msgid "Google+ API Key"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1333
+#: inc/theme_option/terme_options_config.php:1319
+msgid ""
+"Youtube (required for get video duration in media page and youtube count in "
+"social counter widget)"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1320
+msgid ""
+"to get Youtube API key <a href=\"https://www.youtube.com/watch?v=Im69kzhpR3I"
+"\" target=\"_blank\">Follow this</a>"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1325
 msgid "Youtube API Key"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1349
+#: inc/theme_option/terme_options_config.php:1333
+msgid "Instagram (required for using social counter widget)"
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1334
+msgid ""
+"<a href=\"http://www.pinceladasdaweb.com.br/instagram/access-token\" target="
+"\"_blank\">Click Here</a> To get the Access Token."
+msgstr ""
+
+#: inc/theme_option/terme_options_config.php:1339
 msgid "Instagram Access Token"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1361
+#: inc/theme_option/terme_options_config.php:1349
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1370
+#: inc/theme_option/terme_options_config.php:1358
 msgid "Custom CSS Code"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1371
+#: inc/theme_option/terme_options_config.php:1359
 msgid ""
 "Paste your CSS code, do not include any tags or HTML in the field. Any "
 "custom CSS entered here will override the theme CSS. In some cases, the !"
 "important tag may be needed"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1376
+#: inc/theme_option/terme_options_config.php:1364
 msgid "Custom Body Class"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1377
+#: inc/theme_option/terme_options_config.php:1365
 msgid ""
 "This classes will be added in body of overall site.\n"
 "Separate classes with space.\n"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1387
+#: inc/theme_option/terme_options_config.php:1375
 msgid "Responsive CSS"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1391
+#: inc/theme_option/terme_options_config.php:1379
 msgid ""
 "Paste your custom css in the appropriate box, to run only on a specific "
 "device"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1396
+#: inc/theme_option/terme_options_config.php:1384
 msgid "Large Desktop"
 msgstr "مانیتورهای بزرگ"
 
-#: inc/theme_option/terme_options_config.php:1397
+#: inc/theme_option/terme_options_config.php:1385
 msgid "+ 1200px"
 msgstr "بزرگتر از ۱۲۰۰ پیکسل"
 
-#: inc/theme_option/terme_options_config.php:1403
+#: inc/theme_option/terme_options_config.php:1391
 msgid "Desktop"
 msgstr "لپ تاپ (مانیتورهای کوچک)"
 
-#: inc/theme_option/terme_options_config.php:1404
+#: inc/theme_option/terme_options_config.php:1392
 msgid "992px ~ 1200px"
 msgstr "بین ۷۶۸ و ۹۹۲ پیکسل"
 
-#: inc/theme_option/terme_options_config.php:1410
+#: inc/theme_option/terme_options_config.php:1398
 msgid "Tablet"
 msgstr "تبلت"
 
-#: inc/theme_option/terme_options_config.php:1411
+#: inc/theme_option/terme_options_config.php:1399
 msgid "768px ~ 992px"
 msgstr "بین ۷۶۸ و ۹۹۲ پیکسل"
 
-#: inc/theme_option/terme_options_config.php:1417
+#: inc/theme_option/terme_options_config.php:1405
 msgid "Mobile"
 msgstr "موبایل"
 
-#: inc/theme_option/terme_options_config.php:1418
+#: inc/theme_option/terme_options_config.php:1406
 msgid "0 ~ 768px"
 msgstr "حداکثر ۷۶۸ پیکسل"
 
-#: inc/theme_option/terme_options_config.php:1424
+#: inc/theme_option/terme_options_config.php:1412
 msgid "Advanced CSS"
 msgstr "استایل پیشرفته"
 
-#: inc/theme_option/terme_options_config.php:1433
+#: inc/theme_option/terme_options_config.php:1421
 msgid "Categories Custom Body Class"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1434
+#: inc/theme_option/terme_options_config.php:1422
 msgid ""
 "This classes will be added in body of all categories.\n"
 "Separate classes with space.\n"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1441
+#: inc/theme_option/terme_options_config.php:1429
 msgid "Tags Custom Body Class"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1442
+#: inc/theme_option/terme_options_config.php:1430
 msgid ""
 "This classes will be added in body of all tags.\n"
 "Separate classes with space.\n"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1449
+#: inc/theme_option/terme_options_config.php:1437
 msgid "Authors Custom Body Class"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1450
+#: inc/theme_option/terme_options_config.php:1438
 msgid ""
 "This classes will be added in body of all authors.\n"
 "Separate classes with space.\n"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1457
+#: inc/theme_option/terme_options_config.php:1445
 msgid "Posts Custom Body Class"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1458
+#: inc/theme_option/terme_options_config.php:1446
 msgid ""
 "This classes will be added in body of all posts.\n"
 "Separate classes with space.\n"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1465
+#: inc/theme_option/terme_options_config.php:1453
 msgid "Pages Custom Body Class"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1466
+#: inc/theme_option/terme_options_config.php:1454
 msgid ""
 "This classes will be added in body of all pages.\n"
 "Separate classes with space.\n"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1474
+#: inc/theme_option/terme_options_config.php:1462
 msgid "Analytics & JS"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1483
+#: inc/theme_option/terme_options_config.php:1471
 msgid "Google Analytics Code"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1484
+#: inc/theme_option/terme_options_config.php:1472
 msgid ""
 "Paste your Google Analytics (or other) tracking code here. This code will be "
 "placed before </body> tag in html. Please put code inside script tags."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1491
+#: inc/theme_option/terme_options_config.php:1479
 msgid "Code Before head tag"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1492
+#: inc/theme_option/terme_options_config.php:1480
 msgid ""
 "This code will be placed before </head> tag in html. Useful if you have an "
 "external script that requires it."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1499
+#: inc/theme_option/terme_options_config.php:1487
 msgid "Custom Fonts"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1509
+#: inc/theme_option/terme_options_config.php:1497
 msgid "Font.woff"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1512
-#: inc/theme_option/terme_options_config.php:1528
-#: inc/theme_option/terme_options_config.php:1544
-#: inc/theme_option/terme_options_config.php:1560
-msgid "Basic media uploader with disabled URL input field."
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:1513
-#: inc/theme_option/terme_options_config.php:1529
-#: inc/theme_option/terme_options_config.php:1545
-#: inc/theme_option/terme_options_config.php:1561
-msgid "Upload any media using the WordPress native uploader"
-msgstr ""
-
-#: inc/theme_option/terme_options_config.php:1525
+#: inc/theme_option/terme_options_config.php:1510
 msgid "Font.ttf"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1541
+#: inc/theme_option/terme_options_config.php:1523
 msgid "Font.svg"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1557
+#: inc/theme_option/terme_options_config.php:1536
 msgid "Font.eot"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1574
+#: inc/theme_option/terme_options_config.php:1550
 msgid "Customizer Only"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1575
+#: inc/theme_option/terme_options_config.php:1551
 msgid ""
 "<p class=\"description\">This Section should be visible only in Customizer</"
 "p>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1581
+#: inc/theme_option/terme_options_config.php:1557
 msgid "Customizer Only Option"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1582
+#: inc/theme_option/terme_options_config.php:1558
 msgid "The subtitle is NOT visible in customizer"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1583
+#: inc/theme_option/terme_options_config.php:1559
 msgid "The field desc is NOT visible in customizer."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1714
+#: inc/theme_option/terme_options_config.php:1690
 msgid "Section via hook"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1715
+#: inc/theme_option/terme_options_config.php:1691
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -1544,10 +1640,6 @@ msgstr "نمایش ویدئو"
 msgid "Video"
 msgstr "ویدئو"
 
-#: single.php:99 single.php:113
-msgid "Articles"
-msgstr "مقاله"
-
 #: woocommerce/cart/cart.php:36 woocommerce/cart/cart.php:79
 #: woocommerce/checkout/review-order.php:26
 msgid "Product"
@@ -1739,6 +1831,9 @@ msgstr "توضیحات محصول"
 #: woocommerce/single-product/up-sells.php:48
 msgid "You may also like&hellip;"
 msgstr "ممکن این موارد را هم بپسندید &hellip;"
+
+#~ msgid "Homepage"
+#~ msgstr "صفحه اصلی"
 
 #~ msgid "View"
 #~ msgstr "بازدید"
