@@ -16,7 +16,7 @@ class Terme_Element_Shop extends Terme_Page_Builder_Element {
 
     function __construct($id=0, $passed_array=array()) {
         $this->title = __('Shop Carousel', 'terme');
-        $this->icon = get_template_directory_uri().'/assets/admin/images/element_01.png';
+        $this->icon = get_template_directory_uri().'/assets/admin/images/element_06.png';
         $this->id = 'terme_shop_carousel_item';
         $this->saved_vals = $passed_array;
         if ($id==0) {

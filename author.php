@@ -2,7 +2,7 @@
 /* Template name: Home Page */
 global $terme_options; ?>
 <?php get_header(); ?>
-	<main class="main">
+	<main class="main <?php echo $terme_options['authors_class']; ?>">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-sm-12">

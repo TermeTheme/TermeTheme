@@ -109,13 +109,13 @@
 	box-shadow: inset 0px 0px 0px 2px rgba(12,178,228,1);
 }
 span.icon_selected {
-    width: 26px;
-    height: 26px;
+    width: 31px;
+    height: 31px;
     background: #fff;
     border: 1px solid #ccc;
     float: left;
     text-align: center;
-    line-height: 26px;
+    line-height: 31px;
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 20px;
 }

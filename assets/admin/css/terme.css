@@ -4,6 +4,7 @@ a[data-tooltip] {
     position: relative;
     display: inline-block;
 }
+
 a[data-tooltip]:before {
     position: absolute;
     padding: 0 15px;
@@ -29,10 +30,12 @@ a[data-tooltip]:before {
     z-index: 999;
     text-align: center;
 }
+
 a[data-tooltip]:hover:before {
     top: -40px;
     opacity: 1;
 }
+
 a[data-tooltip]:after {
     display: inline-block;
     font: normal normal normal 14px/1 dashicons;
@@ -57,10 +60,12 @@ a[data-tooltip]:after {
     font-size: 20px;
     z-index: 999;
 }
+
 a[data-tooltip]:hover:after {
     opacity: 1;
     top: -16px;
 }
+
 
 /*********** Terme Page Builder ***********/
 
@@ -76,41 +81,52 @@ a.terme_add_page_builder_button {
     border-radius: 3px;
     margin-top: 10px;
 }
+
 a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
     color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
 .terme_page_builder_container {
     background: #fff;
     border: 2px solid #eee;
     margin-top: 20px;
     display: none;
 }
+
 .terme_pb_elements_container ul {
     padding: 10px 30px;
     border-bottom: 1px dashed #afb1b3;
 }
+
 .terme_pb_elements_container ul li {
     display: inline-block;
     width: 15%;
+    padding: 5px;
 }
+
 .terme_pb_elements_container ul li a.terme_pb_item_toggle {
     cursor: move;
 }
+
 .terme_pb_elements_container ul li img {
     max-width: 100%
 }
+
 .terme_pb_elements_container ul li a.terme_pb_item_toggle span, .terme_pb_elements_container ul li a.terme_pb_delete_element, .terme_pb_elements_container ul li div.pb_item_setting {
     display: none;
 }
+
 .terme_pb_content_container {
     padding: 10px 30px;
 }
+
 .terme_pb_content_container ul {
     background: #fff;
     min-height: 250px
 }
+
 .terme_pb_content_container ul li {
     margin-bottom: 15px;
     background: #f5f5f5;
@@ -121,21 +137,25 @@ a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
     box-sizing: border-box;
     position: relative;
 }
+
 .terme_pb_content_container ul li a.terme_pb_item_toggle {
     display: block;
     color: #444;
     text-decoration: none;
 }
+
 .terme_pb_content_container ul li img {
     width: 60px;
     height: auto;
     cursor: move;
 }
+
 .terme_pb_content_container ul li span {
     display: inline-block;
     float: right;
     margin-top: 10px;
 }
+
 .terme_pb_content_container ul li a.terme_pb_delete_element {
     text-decoration: none;
     line-height: 16px;
@@ -145,109 +165,142 @@ a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
     display: block;
     font-weight: bold;
 }
+
 .terme_pb_content_container ul li div.pb_item_setting {
     background: #fff;
     display: none;
     margin-top: 15px;
     padding: 10px 20px;
 }
+
 .terme_pb_content_container ul li div.pb_item_setting td {
     padding-right: 15px;
 }
+
 .terme_pb_content_container ul li.terme-sortable-placeholder {
     height: 60px;
     background: #fff;
     border: 1px dashed #afb1b3;
 }
+
 .terme_pb_content_container ul li.ui-draggable-dragging {
     background: none;
 }
+
 .terme_pb_content_container ul li.ui-draggable-dragging span, .terme_pb_content_container ul li.ui-draggable-dragging a.terme_pb_delete_element {
     display: none;
 }
+
 #terme_page_option>button {
     border-left: 1px solid #fff;
 }
+
 #terme_page_option span {
     color: #fff;
 }
+
 #terme_page_option h2 {
     background: url('../images/pattern.svg') no-repeat center center #ff322e;
     color: #fff;
 }
+
 #terme_page_option input[type=checkbox] {
     display: none;
 }
+
 #terme_page_option input[type=checkbox]+ label {
     display: inline-block;
-    background-color: #f65a5b;
+    background-color: #FF9090;
     color: white;
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     height: 35px;
-    line-height: 30px;
+    line-height: 35px;
     position: relative;
-    text-transform: uppercase;
-    width: 73px;
-    border-radius: 5px;
+    width: 135px;
+    border-radius: 0;
+    border-color: #F48080;
+    text-shadow: 0px 1px 0 #EC7979;
 }
+
 #terme_page_option input[type=checkbox]+ label, #terme_page_option input[type=checkbox]+ label i {
     -webkit-transition: all 200ms ease;
     -moz-transition: all 200ms ease;
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
+
 #terme_page_option input[type=checkbox]:checked+ label {
-    background-color: #6cbc35;
+    background-color: #4ab866;
+    color: #fff;
+    border-color: #55AD56;
+    text-shadow: 0px 1px 0 #499D4A;
 }
+
 #terme_page_option input[type=checkbox]+ label:before, #terme_page_option input[type=checkbox]+ label:after, #terme_page_option input[type=checkbox]+ label i {
     width: 50%;
     display: inline-block;
     height: 100%;
     text-align: center;
 }
+
 #terme_page_option input[type=checkbox]+ label:before {
-    content: "\f00c";
-    font: normal normal normal 14px/1 FontAwesome;
+  content: attr(data-text-true);
+
 }
+
 #terme_page_option input[type=checkbox]+ label:after {
     content: attr(data-text-false);
 }
+
 #terme_page_option input[type=checkbox]+ label i {
-    top: 2px;
+    top: 3px;
     background-color: white;
-    height: 31px;
-    left: 5%;
+    height: 29px;
+    left: 2%;
     position: absolute;
-    width: 31px;
-    border-radius: 5px;
+    width: 64px;
+    border-radius: 0;
+    line-height: 29px;
+    color: #FF9090;
+    text-shadow: none;
 }
+
+
 #terme_page_option input[type=checkbox]:checked+ label i {
     left: 50%;
+    color: #4ab866;
+
 }
+
 ul.terme_social_widgets li {
     margin-bottom: 10px;
     position: relative;
 }
+
 ul.terme_social_widgets>li {
     background: #f1f1f1;
     padding: 10px 15px;
     border-radius: 4px;
 }
+
 ul.terme_social_widgets>li:nth-child(even) {
     background: #f1f1f1;
 }
+
 ul.terme_social_widgets>li ul {
     padding-top: 15px;
     display: none;
 }
+
 ul.terme_social_widgets li.ui-state-highlight {
     height: 36px;
     background: #fff;
     border: 1px dashed #999;
     padding: 0;
 }
+
 ul.terme_social_widgets li span.handle {
     float: right;
     width: 24px;
@@ -258,6 +311,7 @@ ul.terme_social_widgets li span.handle {
     right: 6px;
     text-align: center;
 }
+
 ul.terme_social_widgets li span.handle:after {
     content: "\f475";
     display: inline-block;

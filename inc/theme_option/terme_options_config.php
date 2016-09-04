@@ -280,7 +280,6 @@
     Redux::setSection( $opt_name, array(
         'title'            => __( 'General Settings', 'terme' ),
         'id'               => 'general-settings',
-        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-wrench',
         'fields'           => array(
@@ -288,17 +287,15 @@
               'id'       => 'theme_layout',
               'type'     => 'image_select',
               'title'    => __( 'Theme Layout', 'terme' ),
-              'subtitle' => __( 'Select the general sidebar you want to use by default. This option can be overridden on every page, post, category and tag.', 'terme' ),
-              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'terme' ),
-              //Must provide key => value(array:title|img) pairs for radio options
+              'subtitle' => __( 'Select the general sidebar you want to use by default.', 'terme' ),
               'options'  => array(
                   '0' => array(
                       'alt' => '1 Column',
-                      'img' => ReduxFramework::$_url . 'assets/img/2cr.png',
+                      'img' => get_template_directory_uri().'/assets/admin/images/right_sidebar.png',
                   ),
                   '1' => array(
                       'alt' => '2 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                      'img' => get_template_directory_uri().'/assets/admin/images/left_sidebar.png',
                   ),
               ),
               'default'  => '2'
@@ -309,6 +306,8 @@
               'title'    => __( 'Scroll to Top Button', 'terme' ),
               'subtitle' => __( 'Enabling this option will add a "Back To Top" button to pages.', 'terme' ),
               'default'  => true,
+              'on'       => 'Enabled',
+              'off'      => 'Disabled',
           ),
           array(
               'id'       => 'newsticker',
@@ -322,78 +321,39 @@
           array(
               'id'       => 'favicon_16',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Favicon (16x16)', 'terme' ),
-              // 'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
               'subtitle'     => __( 'Default Favicon. 16px x 16px', 'terme' ),
-              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
           ),
           array(
               'id'       => 'favicon_57',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Apple iPhone Icon (57x57)', 'terme' ),
-              // 'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
               'subtitle'     => __( 'Icon for Classic iPhone', 'terme' ),
-              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
           ),
           array(
               'id'       => 'favicon_72',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Apple iPad Icon (72x72)', 'terme' ),
               'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
               'subtitle'     => __( 'Icon for Classic iPad', 'terme' ),
-              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
           ),
           array(
               'id'       => 'favicon_114',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Apple iPhone Retina Icon (114x114)', 'terme' ),
-              // 'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
               'subtitle'     => __( 'Icon for Retina iPhone', 'terme' ),
-              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
           ),
           array(
               'id'       => 'favicon_144',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Apple iPad Retina Icon (144x144)', 'terme' ),
-              // 'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
               'subtitle'     => __( 'Icon for Retina iPad', 'terme' ),
-              // 'default'  => array( 'url' => 'http://s.wordpress.org/style/images/codeispoetry.png' ),
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
           ),
           array(
               'id'       => 'header-script',
               'type'     => 'textarea',
               'title'    => __( 'Header Script - HTML Validated Custom', 'terme' ),
-              'subtitle' => __( 'The following code will add to the <head> tag. Useful if you need to add additional codes such as CSS or JS.
+              'subtitle' => __( 'The following code will add to the <\head\> tag. Useful if you need to add additional codes such as CSS or JS.
 ', 'terme' ),
           ),
           array(
@@ -417,7 +377,6 @@
             'icon'             => 'el el-website',
             'subsection'       => true,
             'customizer_width' => '450px',
-            'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
             'fields'           => array(
               array(
                   'id'       => 'post_breadcrumb',
@@ -435,7 +394,7 @@
                   'desc'     => __('If Select (WordPress Seo Plugin Breadcrumb), You Need To Install Wordpress Seo by Yoast Plugin ', 'terme'),
                   // Must provide key => value pairs for select options
                   'options'  => array(
-                      '1' => 'Cornita Breadcrumb',
+                      '1' => 'Terme Breadcrumb',
                       '2' => 'WordPress Seo Plugin Breadcrumb',
                   ),
                   'default'  => '1',
@@ -634,7 +593,6 @@
                   'id'       => 'facebook_share',
                   'type'     => 'switch',
                   'title'    => __( 'Facebook Share', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -644,7 +602,6 @@
                   'id'       => 'twitter_share',
                   'type'     => 'switch',
                   'title'    => __( 'Twitter Share', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -654,7 +611,6 @@
                   'id'       => 'pinterest_share',
                   'type'     => 'switch',
                   'title'    => __( 'Pinterest Share', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -664,7 +620,6 @@
                   'id'       => 'tumblr_share',
                   'type'     => 'switch',
                   'title'    => __( 'Tumblr Share', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -674,17 +629,6 @@
                   'id'       => 'wordpress_share',
                   'type'     => 'switch',
                   'title'    => __( 'Wordpress Share', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
-                  'default'  => true,
-                  'on'       =>  __('Enabled', 'terme'),
-                  'off'      =>  __('Disabled', 'terme'),
-                  'required' => array('post_share', '=' , 1),
-              ),
-              array(
-                  'id'       => 'print_share',
-                  'type'     => 'switch',
-                  'title'    => __( 'Print Icon', 'terme' ),
-                  'subtitle' => __( 'Look, it\'s on!', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -751,7 +695,6 @@ by tags - pick posts that have at least one tag in common with the current post'
             'icon'             => 'el el-globe',
             'subsection'       => true,
             'customizer_width' => '450px',
-            'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
             'fields'           => array(
 
               array(
@@ -763,6 +706,11 @@ by tags - pick posts that have at least one tag in common with the current post'
                   'id'       => 'twitter',
                   'type'     => 'text',
                   'title'    => __( 'Twitter', 'terme' ),
+              ),
+              array(
+                  'id'       => 'google_plus',
+                  'type'     => 'text',
+                  'title'    => __( 'Google+', 'terme' ),
               ),
               array(
                   'id'       => 'youtube',
@@ -803,25 +751,25 @@ by tags - pick posts that have at least one tag in common with the current post'
           array(
               'id'       => 'header_layout',
               'type'     => 'image_select',
-              'title'    => __( 'header Layout', 'terme' ),
-              'subtitle' => __( 'Choose the default layout', 'terme' ),
+              'title'    => __( 'Header Layout', 'terme' ),
+              'subtitle' => __( 'Choose the default header layout', 'terme' ),
               //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
                   '1' => array(
-                      'alt' => '1 Column',
-                      'img' => ReduxFramework::$_url . 'assets/img/header/1.jpg',
+                      'alt' => 'Header(1)',
+                      'img' => get_template_directory_uri().'/assets/admin/images/header_01.png',
                   ),
                   '2' => array(
-                      'alt' => '2 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/header/2.jpg'
+                      'alt' => 'Header(2)',
+                      'img' => get_template_directory_uri().'/assets/admin/images/header_02.png',
                   ),
                   '3' => array(
-                      'alt' => '2 Column Right',
-                      'img' => ReduxFramework::$_url . 'assets/img/header/3.jpg'
+                      'alt' => 'Header(3)',
+                      'img' => get_template_directory_uri().'/assets/admin/images/header_03.png',
                   ),
                   '4' => array(
-                      'alt' => '3 Column Middle',
-                      'img' => ReduxFramework::$_url . 'assets/img/header/4.jpg'
+                      'alt' => 'Header(4)',
+                      'img' => get_template_directory_uri().'/assets/admin/images/header_04.png',
                   ),
 
               ),
@@ -842,7 +790,6 @@ by tags - pick posts that have at least one tag in common with the current post'
           'id'=>'logo_img',
           'type' => 'media',
           'title' => __('Upload your logo image', 'framework'),
-          'url'=> true,
           'default'=>'',
           'subtitle' => __( 'By default, a text-based logo is created using your site title. But you can also upload an image-based logo here.', 'terme' ),
 
@@ -852,7 +799,6 @@ by tags - pick posts that have at least one tag in common with the current post'
           'id'=>'retina_logo_img',
           'type' => 'media',
           'title' => __('Upload your retina logo image', 'framework'),
-          'url'=> true,
           'default'=> 0,
           'subtitle' => __( 'If you want to upload a Retina Image, It\'s Image Size should be exactly double in compare with your normal Logo. It requires WP Retina 2x plugin.', 'terme' ),
 
@@ -957,7 +903,7 @@ by tags - pick posts that have at least one tag in common with the current post'
         'title'      => __( 'Top Bar', 'terme' ),
         'id'         => 'top_bar',
         //'icon'  => 'el el-home'
-        'desc'       => __( 'Enabling this will disable the top bar element that appears above the logo area.', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+        'desc'       => __( 'Enabling this will disable the top bar element that appears above the logo area.', 'terme' ),
         'subsection' => true,
         'fields'     => array(
           array(
@@ -981,13 +927,11 @@ by tags - pick posts that have at least one tag in common with the current post'
 
 
         ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
     ) );
     Redux::setSection( $opt_name, array(
         'title'      => __( 'Top Banner', 'terme' ),
         'id'         => 'top_banner',
         //'icon'  => 'el el-home'
-        'desc'       => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
         'subsection' => true,
         'fields'     => array(
           array(
@@ -1070,7 +1014,6 @@ by tags - pick posts that have at least one tag in common with the current post'
             'required' => array( 'banner_type', '=', '2' ),
         ),
         ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
     ) );
 
 
@@ -1117,7 +1060,7 @@ by tags - pick posts that have at least one tag in common with the current post'
             array(
                 'id'       => 'copyright-footer',
                 'type'     => 'switch',
-                'title'    => __( 'Copyright Footer', 'terme' ),
+                'title'    => __( 'Footer Copyright', 'terme' ),
                 'subtitle' => __( 'Show or hide the Footer Copyright', 'terme' ),
                 'default'  => true,
             ),
@@ -1159,9 +1102,9 @@ by tags - pick posts that have at least one tag in common with the current post'
         'icon'             => 'el el-shopping-cart',
         'fields'     => array(
           array(
-              'id'       => 'woocommerce_layout',
+              'id'       => 'woocommerce_sidebar',
               'type'     => 'image_select',
-              'title'    => __( 'Footer Layout', 'terme' ),
+              'title'    => __( 'Woocommerce Sidebar', 'terme' ),
               'subtitle' => __( 'Set the Woocommerce template', 'terme' ),
               //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
@@ -1333,7 +1276,6 @@ by tags - pick posts that have at least one tag in common with the current post'
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Custom CSS', 'terme' ),
         'id'               => 'custom_css',
-        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-css',
         'fields' => array(
@@ -1400,7 +1342,6 @@ Separate classes with space.
         'icon'             => 'el el-puzzle',
         'subsection'       => true,
         'customizer_width' => '450px',
-        'desc'             => __( 'For full documentation on this field, visit: ', 'terme' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
         'fields'           => array(
           array(
               'id'       => 'categories_class',
@@ -1448,7 +1389,6 @@ Separate classes with space.
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Analytics & JS' , 'terme' ),
         'id'               => 'analytics_js',
-        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-graph',
         'fields' => array(
@@ -1457,7 +1397,6 @@ Separate classes with space.
               'type'     => 'textarea',
               'title'    => __( 'Google Analytics Code', 'terme' ),
               'subtitle' => __( 'Paste your Google Analytics (or other) tracking code here. This code will be placed before </body> tag in html. Please put code inside script tags.', 'terme' ),
-              // 'default'  => 'Default Text',
           ),
 
           array(
@@ -1465,7 +1404,6 @@ Separate classes with space.
               'type'     => 'textarea',
               'title'    => __( 'Code Before head tag', 'terme' ),
               'subtitle' => __( 'This code will be placed before </head> tag in html. Useful if you have an external script that requires it.', 'terme' ),
-              // 'default'  => 'Default Text',
           ),
         )
     ) );
@@ -1473,61 +1411,32 @@ Separate classes with space.
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Custom Fonts' , 'terme' ),
         'id'               => 'custom_fonts',
-        'desc'             => __( 'These are really basic fields!', 'terme' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-font',
         'fields' => array(
           array(
               'id'       => 'font_woff',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Font.woff', 'terme' ),
-              'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'preview'  => false,
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
+
           ),
           array(
               'id'       => 'font_ttf',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Font.ttf', 'terme' ),
-              'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'preview'  => false,
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
+
           ),
           array(
               'id'       => 'font_svg',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Font.svg', 'terme' ),
-              'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'preview'  => false,
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
+
           ),
           array(
               'id'       => 'font_eot',
               'type'     => 'media',
-              'url'      => true,
               'title'    => __( 'Font.eot', 'terme' ),
-              'compiler' => 'true',
-              //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-              'preview'  => false,
-              //'hint'      => array(
-              //    'title'     => 'Hint Title',
-              //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-              //)
+
           ),
 
         )

@@ -162,7 +162,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
                       <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
                       <div class="excerpt">'.terme_shorten_text(get_the_excerpt(), 250).'</div>
                     </div><!-- big_post -->
-                  </div><!-- col-xs-6 -->
+                  </div><!-- col-sm-6 -->
                   ';
         endwhile; wp_reset_postdata();
         $output .= '
@@ -175,13 +175,15 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
             $output .= '
             <li>
               <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_02').'</a></div>
-              <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h2>
+              <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.terme_shorten_text(get_the_title(), 45).'</a></h2>
               <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
-            </li>';
+            </li>
+            ';
         endwhile; wp_reset_postdata();
         $output .= '
-                    </div>
-                  </div><!-- col-xs-6 -->
+        </ul>
+                    </div><!-- small_post -->
+                  </div><!-- col-sm-6 -->
                 </div><!-- row -->
               </div><!-- body -->
             </div><!-- box -->

@@ -1761,6 +1761,8 @@ section.latest_news {
           color: #979a9f; }
   #sidebar section:first-child {
     margin-top: 0; }
+  #sidebar section:last-child {
+    margin-bottom: 20px; }
   #sidebar .social_widget {
     float: right;
     width: 100%; }

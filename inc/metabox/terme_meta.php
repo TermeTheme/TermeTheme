@@ -15,61 +15,69 @@ class Rational_Meta_Box {
 	public function __construct() {
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'save_post', array( $this, 'save_post' ) );
-
 		$this->fields = array(
 			array(
+				'id' => 'breadcrumb',
+				'label' => __('Breadcrumb','terme'),
+				'type' => 'checkbox',
+				'options' => array(
+					'Disabled',
+					'Enabled',
+				),
+			),
+			array(
 				'id' => 'date',
-				'label' =>  __('Show Post Date', 'terme'),
+				'label' =>  __('Post Date', 'terme'),
 				'type' => 'checkbox',
 	      'options' => array(
-					'Disabeled',
-					'Enabeled',
+					'Disabled',
+					'Enabled',
 				),
 			),
 			array(
 				'id' => 'category',
-				'label' => 'Show Post Category',
+				'label' =>  __('Post Category', 'terme'),
 				'type' => 'checkbox',
 	      'options' => array(
-					'Disabeled',
-					'Enabeled',
+					'Disabled',
+					'Enabled',
 				),
 			),
 			array(
 				'id' => 'viewcount',
-				'label' =>  __('Show Post View Count', 'terme'),
+				'label' =>  __('Post View Count', 'terme'),
 				'type' => 'checkbox',
 	      'options' => array(
-					'Disabeled',
-					'Enabeled',
+					'Disabled',
+					'Enabled',
 				),
 			),
 			array(
 				'id' => 'commentcount',
-				'label' => 'Show Comment View Count',
+				'label' =>  __('Comment View Count', 'terme'),
 				'type' => 'checkbox',
 	      'options' => array(
-					'Disabeled',
-					'Enabeled',
+					'Disabled',
+					'Enabled',
 				),
 			),
 			array(
 				'id' => 'dateformat',
-				'label' => 'Date Format',
+				'label' =>  __('Date Format', 'terme'),
 				'type' => 'text',
 			),
 			array(
 				'id' => 'relatedpost-display',
-				'label' => 'Show Related Post',
+				'label' =>  __('Related Post', 'terme'),
 				'type' => 'checkbox',
 	      'options' => array(
-					'Disabeled',
-					'Enabeled',
+					'Disabled',
+					'Enabled',
 				),
 			),
 			array(
 				'id' => 'relatedpost-by',
-				'label' => 'Related Post By',
+				'label' =>  __('Related Post By', 'terme'),
 				'type' => 'checkbox',
 				'options' => array(
 					'tag',
@@ -78,45 +86,36 @@ class Rational_Meta_Box {
 			),
 			array(
 				'id' => 'relatedpost-count',
-				'label' => 'Related Post Number',
+				'label' =>  __('Related Post Number', 'terme'),
 				'type' => 'text',
 			),
 			array(
 				'id' => 'comment-display',
-				'label' => 'Show Comment Box',
+				'label' =>  __('Comment Box', 'terme'),
 				'type' => 'checkbox',
 	      'options' => array(
-					'Disabeled',
-					'Enabeled',
+					'Disabled',
+					'Enabled',
 				),
 			),
 			array(
 				'id' => 'author-display',
-				'label' => 'Show Author Box',
+				'label' =>  __('Author Box', 'terme'),
 				'type' => 'checkbox',
 	      'options' => array(
-					'Disabeled',
-					'Enabeled',
+					'Disabled',
+					'Enabled',
 				),
 			),
 			array(
 				'id' => 'share-display',
-				'label' => 'Show Share Icon',
+				'label' =>  __('Share Box', 'terme'),
 				'type' => 'checkbox',
 	      'options' => array(
-					'Disabeled',
-					'Enabeled',
+					'Disabled',
+					'Enabled',
 				),
 			),
-			array(
-				'id' => 'breadcrumb',
-				'label' => 'Show Breadcrumb',
-				'type' => 'checkbox',
-	      'options' => array(
-					'Disabeled',
-					'Enabeled',
-				),
-			)
 		);
 	}
 
@@ -183,7 +182,7 @@ class Rational_Meta_Box {
                     }
 					$input = sprintf(
 						'<input %s id="%s" name="%s" type="checkbox" value="1">
-						<label for="%s" data-text-true="Yes" data-text-false="No"><i></i></label>',
+						<label for="%s" data-text-true="Enabled" data-text-false="Disabled"><i>||</i></label>',
 						// $db_value === '1' ? 'checked' : '',
             checked( $db_value, 1, false ),
 						$field['id'],

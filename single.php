@@ -1,6 +1,6 @@
 <?php global $terme_options; ?>
 		<?php get_header(); ?>
-	<main class="main">
+	<main class="main <?php echo $terme_options['posts_class']; ?>">
 		<div class="container">
 			<div class="row">
 				<?php

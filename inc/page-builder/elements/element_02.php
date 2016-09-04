@@ -167,7 +167,7 @@ class Terme_Element_Two extends Terme_Page_Builder_Element {
                   </div>
                   </div><!-- col-xs-12 -->
                 </div><!-- row -->
-              </div><!-- bod
+              </div><!-- body -->
             </div><!-- box -->
             ';
         return $output;

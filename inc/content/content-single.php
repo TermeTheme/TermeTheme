@@ -1,8 +1,6 @@
 <div class="col-md-8 col-sm-12 col-xs-12">
   <div class="article_content">
       <?php if(have_posts()) : while(have_posts()) : the_post();
-       ?>
-      <?php
       global $terme_options;
       // $terme_postmeta = get_post_meta( $post->ID, 'terme_postmeta', true );
                     $defaults = array(
@@ -56,7 +54,7 @@
                 $posttags = get_the_tags();
                 foreach ( $posttags as $posttag ) {
                   $tag_link = get_tag_link( $posttag->term_id );
-                  $html .= "<a href='{$tag_link}' title='{$posttag->name} Tag' class='{$posttag->slug}' data-termehover=''>";
+                  $html .= "<a href='{$tag_link}' title='{$posttag->name}' class='{$posttag->slug}' data-termehover=''>";
                   $html .= "{$posttag->name}</a>";
                 }
             echo $html; ?>
@@ -67,11 +65,21 @@
       <?php if ((isset($terme_postmeta['share-display']) && !empty($terme_postmeta['share-display']) || $terme_options['post_share'] ) ) : ?>
         <div class="article_social">
           <ul>
-            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-wordpress" aria-hidden="true"></i></a></li>
+            <?php if (isset($terme_options['facebook_share']) && !empty($terme_options['facebook_share']))  : ?>
+            <li><a href="<?php echo $terme_options['facebook_share'] ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <?php endif; ?>
+            <?php if (isset($terme_options['twitter_share']) && !empty($terme_options['twitter_share']))  : ?>
+            <li><a href="<?php echo $terme_options['twitter_share'] ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <?php endif; ?>
+          <?php if (isset($terme_options['pinterest_share']) && !empty($terme_options['pinterest_share']))  : ?>
+            <li><a href="<?php echo $terme_options['pinterest_share'] ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+          <?php endif; ?>
+          <?php if (isset($terme_options['tumblr_share']) && !empty($terme_options['tumblr_share']))  : ?>
+            <li><a href="<?php echo $terme_options['tumblr_share'] ?>"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+          <?php endif; ?>
+          <?php if (isset($terme_options['wordpress_share']) && !empty($terme_options['wordpress_share']))  : ?>
+            <li><a href="<?php echo $terme_options['wordpress_share'] ?>"><i class="fa fa-wordpress" aria-hidden="true"></i></a></li>
+          <?php endif; ?>
           </ul>
         </div><!-- article_social -->
       <?php endif; ?>

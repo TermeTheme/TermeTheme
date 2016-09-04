@@ -1712,6 +1712,9 @@ section.latest_news {
 	section:first-child {
 		margin-top: 0;
 	}
+	section:last-child {
+		margin-bottom:20px;
+	}
 
 	.social_widget {
 		float: right;
