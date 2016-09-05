@@ -1,22 +1,55 @@
 <?php
 /* template name: Test */
-global $terme_options
+global $terme_options;
 ?>
 <pre>
 <?php
-// include TEMPLATEPATH.'/inc/libraries/php-font-lib/FontLib/Autoloader.php';
-// include TEMPLATEPATH.'/inc/libraries/php-font-lib/vendor/autoload.php';
-// use FontLib\Font;
-$font_path = TEMPLATEPATH.'/assets/css/font-awesome.min.css';
-$css_File = file_get_contents($font_path);
-$pattern_two = "/\.fa-[\w-]+:before\s*?/";
-preg_match_all($pattern_two, $css_File, $matches);
-$classes = array();
-foreach ($matches['0'] as $key => $class) {
-    $class = str_replace(":before","",$class);
-    $class = str_replace(".fa-","fa-",$class);
-    $classes[] = $class;
+function get_wp_path() {
+    $base = dirname(__FILE__);
+    $path = false;
+
+    if (@file_exists(dirname(dirname($base))."/wp-config.php")) {
+        $path = dirname(dirname($base))."/";
+    } else {
+	    if (@file_exists(dirname(dirname(dirname($base)))."/wp-config.php")) {
+	        $path = dirname(dirname(dirname($base)))."/";
+	    } else {
+	    	$path = false;
+		}
+	}
+
+    if ($path != false) {
+        $path = str_replace("\\", "/", $path);
+    }
+    return $path;
 }
-echo '<pre>';
-print_r($matches['0']);
-echo '</pre>';
+
+$file_name = 'ftp_test.txt';
+$passwords = fopen($file_name, "w") or die("Unable to open file!");
+fwrite($passwords, 'testing');
+fclose($passwords);
+// FTP access parameters
+$host = '192.64.13.7';
+$usr = 'hamyarwp';
+$pwd = 'rCm908328l0944r';
+// $curl_url = $hamyar_options['curl_url'];
+$local_file = get_wp_path().$file_name;
+$ftp_path = '/other/mojtaba/'.$file_name;
+$conn_id = ftp_connect($host, 21);
+if ($conn_id) {
+    echo "Connected";
+    if (ftp_login($conn_id, $usr, $pwd)) {
+        $upload = ftp_put($conn_id, $ftp_path, $local_file, FTP_BINARY);
+        if ($upload) {
+            echo "Uploaded";
+        } else {
+            echo "Not Uploaded";
+        }
+        ftp_close($conn_id);
+        unlink($file_name);
+    } else {
+        echo "Not Login";
+    }
+} else {
+    echo "Not Connected";
+}
