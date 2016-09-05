@@ -19,6 +19,7 @@ a.back_to_top {
 		color: #fff;
 		border-color: $primary_color;
 	}
+
 	&:before {
 		position: absolute;
 		content: "\f106";
@@ -833,6 +834,7 @@ section.latest_news {
 	&.horizontal {
 		border: none;
 		background: none;
+		min-height: auto;
 	}
 
 	&.horizontal ul {
@@ -929,7 +931,6 @@ section.latest_news {
 		border-right: solid #e4e4e4;
 		@include rem(border-right-width, 1px);
 	}
-
 	// &.half_width ul li:nth-child(even) {
 	// 	border-right: none;
 	// }
@@ -1712,8 +1713,9 @@ section.latest_news {
 	section:first-child {
 		margin-top: 0;
 	}
+
 	section:last-child {
-		margin-bottom:20px;
+		margin-bottom: 20px;
 	}
 
 	.social_widget {
@@ -2076,7 +2078,7 @@ footer.footer {
 	// 	text-align: justify;
 	// 	@include rem((font-size: 1.5rem,));
 	// }
-	&.style_4 .main_area .box_1 img {
+	&.style_4 .main_area  img {
 		margin: 0 auto;
 		display: block;
 	}
@@ -4584,7 +4586,7 @@ footer.footer {
 				a {
 					color: #fff;
 					display: block;
- 					position: relative;
+					position: relative;
 					text-align: right;
 					@include rem(( padding:15px,));
 

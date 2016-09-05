@@ -16,7 +16,10 @@
 	<a href="#top" class="back_to_top"></a>
 <?php } ?>
 </div><!-- sb-site -->
-<div off-canvas="slidebar-1 right reveal" class="sb-left">
+<?php if (is_rtl()): ?>
+
+<?php endif; ?>
+<div off-canvas="slidebar-1 <?php echo (is_rtl()) ? "left" : "right"; ?> reveal" class="sb-left">
 	<div class="sidebar_menu">
 		<div class="user_area">
 			<?php if( is_user_logged_in() ) {
@@ -24,11 +27,11 @@
 					echo get_avatar( $user, 100 );
 				?>
 				<div class="clearfix"></div>
-				<a href="#">	<?php _e( 'Logout','terme' ); ?></a>
+				<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( 'Logout','terme' ); ?></a>
 			<?php } else {
 					echo get_avatar( $user, 100 );?>
 					<div class="clearfix"></div>
-					<a href="#" class="login">	<?php _e( 'Login','terme' ); ?></a>
+					<a href="<?php echo wp_login_url( home_url() ); ?>" class="login">	<?php _e( 'Login','terme' ); ?></a>
 					<span>	<?php _e( 'OR','terme' ); ?></span>
 					<a href="#" class="register">	<?php _e( 'Register','terme' ); ?></a>
 			 <?php }; ?>
@@ -37,7 +40,7 @@
 			<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">
 				<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 				<div class="count">
-					Cart
+					<?php _e('Cart', 'terme') ?>
 					<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
 				</div>
 			</a>
@@ -53,8 +56,7 @@
 					'menu_class' => 'accordion',
 					'container' => false
 				) );
-			}
- ?>
+			}?>
 	</div><!-- sidebar_menu -->
 </div><!-- sb-left -->
 	<?php echo $terme_options['footer-script']; ?>
@@ -64,22 +66,18 @@
 			// Initialize Slidebars
 			var controller = new slidebars();
 			controller.init();
-
 			// Toggle Slidebars
 			$( '.js-toggle-left-slidebar' ).on( 'click', function ( event ) {
 	        event.stopPropagation();
 	        controller.toggle( 'slidebar-1' );
 	    } );
-
 			// Close any
 	    $( controller.events ).on( 'opened', function () {
 	        $( '[canvas="container"]' ).addClass( 'js-close-any-slidebar' );
 	    } );
-
 	    $( controller.events ).on( 'closed', function () {
 	        $( '[canvas="container"]' ).removeClass( 'js-close-any-slidebar' );
 	    } );
-
 	    $( 'body' ).on( 'click', '.js-close-any-slidebar', function ( event ) {
 	        event.stopPropagation();
 	        controller.close();

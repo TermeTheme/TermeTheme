@@ -423,7 +423,8 @@
 .redux-container .redux-main img {
     max-width: 100%;
     height: auto;
-    width: auto !important
+    width: auto !important;
+    margin: 10px 0;
 }
 
 .redux-container .redux-main .select2-default {

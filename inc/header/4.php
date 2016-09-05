@@ -15,9 +15,13 @@
 				</div><!-- col-md-6 -->
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					<div class="user_area">
-						<a href="#">	<?php _e( 'Login','terme' ); ?></a>
-						<span>	<?php _e( 'OR','terme' ); ?></span>
-						<a href="#">	<?php _e( 'Register','terme' ); ?></a>
+						<?php if( is_user_logged_in()) { ?>
+							<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( 'Logout','terme' ); ?></a>
+						<?php } else { ?>
+							<a href="<?php echo wp_login_url( home_url() ); ?>">	<?php _e( 'Login','terme' ); ?></a>
+							<span>	<?php _e( 'OR','terme' ); ?></span>
+							<a href="#">	<?php _e( 'Register','terme' ); ?></a>
+						<?php } ?>
 					</div><!-- login_area -->
 				</div><!-- col-md-6 -->
 			</div><!-- row -->

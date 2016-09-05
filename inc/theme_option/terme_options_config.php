@@ -740,6 +740,70 @@ by tags - pick posts that have at least one tag in common with the current post'
 
             )
         ) );
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Slider Settings', 'terme' ),
+            'id'               => 'slider_setting',
+            'icon'             => 'el el-lock',
+            'subsection'       => true,
+            'customizer_width' => '450px',
+            'fields'           => array(
+              array(
+                  'id'       => 'slider',
+                  'type'     => 'switch',
+                  'title'    => __( 'Slider', 'terme' ),
+                  'default'  => true,
+                  'on'       => 'Enabled',
+                  'off'      => 'Disabled',
+              ),
+              array(
+                  'title'    => __( 'Select Slider', 'terme' ),
+                  'id'       => 'slider_id',
+                  'type'     => 'select',
+                  'multi'    => false,
+                  'data'     => 'posts',
+                  'args' => array('post_type' => array('slider'), 'posts_per_page' => -1),
+                  'subtitle' => __( 'Selected post will be displayed in page top menu', 'terme' ),
+                  'required' => array('slider', '=' , 'on'),
+              ),
+            )
+        ) );
+        Redux::setSection( $opt_name, array(
+            'title'            => __( 'Login Settings', 'terme' ),
+            'id'               => 'login_setting',
+            'icon'             => 'el el-lock',
+            'subsection'       => true,
+            'customizer_width' => '450px',
+            'fields'           => array(
+              array(
+                  'id'       => 'login_text',
+                  'type'     => 'text',
+                  'title'    => __( 'Login Text', 'terme' ),
+                  'default'=>'Login',
+              ),
+                array(
+                    'title'    => __( 'Login Page', 'terme' ),
+                    'id'       => 'login_page',
+                    'type'     => 'select',
+                    'multi'    => false,
+                    'data'     => 'page',
+                    'subtitle' => __( 'Selected post will be displayed in page top menu', 'terme' ),
+                ),
+                array(
+                    'id'       => 'register_text',
+                    'type'     => 'text',
+                    'title'    => __( 'Register Text', 'terme' ),
+                    'default'=>'Register',
+                ),
+                array(
+                    'title'    => __( 'Register Page', 'terme' ),
+                    'id'       => 'register_page',
+                    'type'     => 'select',
+                    'multi'    => false,
+                    'data'     => 'page',
+                    'subtitle' => __( 'Selected post will be displayed in page top menu', 'terme' ),
+                ),
+            )
+        ) );
 
     // -> START Header Settings
     Redux::setSection( $opt_name, array(
@@ -1021,7 +1085,7 @@ by tags - pick posts that have at least one tag in common with the current post'
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Footer Settings', 'terme' ),
         'id'               => 'footer_settings',
-        'desc'             => __( 'The footer uses sidebars to show information. To add content to the footer head go to the widgets section and drag widget to the Footer 1, Footer 2 and Footer 3 sidebars.', 'terme' ),
+        'desc'             => __( 'The footer uses sidebars to show information. To add content to the footer head go to the widgets section and drag widget to the Footer 1, Footer 2, Footer 3 and Footer 4 sidebars.', 'terme' ),
         'customizer_width' => '500px',
         'icon'             => 'el el-screen',
         'fields'     => array(
@@ -1035,28 +1099,34 @@ by tags - pick posts that have at least one tag in common with the current post'
               'options'  => array(
                   '1' => array(
                       'alt' => '1 Column',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/1.jpg',
+                      'img' => get_template_directory_uri().'/assets/admin/images/footer_01.png',
                   ),
                   '2' => array(
                       'alt' => '2 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/2.jpg'
+                      'img' => get_template_directory_uri().'/assets/admin/images/footer_02.png',
                   ),
                   '3' => array(
                       'alt' => '2 Column Right',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/3.jpg'
+                      'img' => get_template_directory_uri().'/assets/admin/images/footer_03.png',
                   ),
                   '4' => array(
                       'alt' => '3 Column Middle',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/4.jpg'
+                      'img' => get_template_directory_uri().'/assets/admin/images/footer_04.png',
                   ),
                   '5' => array(
                       'alt' => '3 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/5.jpg'
+                      'img' => get_template_directory_uri().'/assets/admin/images/footer_05.png',
                   ),
 
               ),
               'default'  => '2'
           ),
+            array(
+                'id'       => 'email_footer',
+                'type'     => 'text',
+                'title'    => __( 'Footer Email', 'terme' ),
+                'default'  => 'info@termetheme.com',
+            ),
             array(
                 'id'       => 'copyright-footer',
                 'type'     => 'switch',

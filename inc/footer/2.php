@@ -24,18 +24,18 @@
 
                 <div class="social_menu">
                   <ul>
-                    <li><a href="<?php echo $terme_options['facebook'];?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['google_plus']; ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['vimeo']; ?>"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['dribbble']; ?>"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['instagram']; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['rss']; ?>"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                    <li><a href="<?php echo $terme_options['youtube']; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                   </ul>
                 </div><!-- social_menu -->
                 <?php
-} ?>
+                  } ?>
 
               </div><!-- col-xs-12 -->
           </div><!-- row -->
@@ -52,17 +52,14 @@
         'theme_location' => 'footer_menu',
         'container' => false
       ) );
-    }
-?>
+    }?>
     <?php if ($terme_options['copyright-footer']) {
     ?>
     <p>
       <?php echo $terme_options['footer-text'];
     ?>
     </p>
-    <?php
-} ?>
-
+    <?php } ?>
   </div>
 </div><!-- col-xs-12 -->
       </div><!-- row -->

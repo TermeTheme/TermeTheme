@@ -16,9 +16,13 @@
 							<button><i class="fa fa-search"></i></button>
 						</form>
 						<div class="user_area">
-							<a href="#">	<?php _e( 'Login','terme' ); ?></a>
-							<span>	<?php _e( 'OR','terme' ); ?></span>
-							<a href="#">	<?php _e( 'Register','terme' ); ?></a>
+							<?php if( is_user_logged_in()) { ?>
+								<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( 'Logout','terme' ); ?></a>
+							<?php } else { ?>
+								<a href="<?php echo wp_login_url( home_url() ); ?>">	<?php _e( 'Login','terme' ); ?></a>
+								<span>	<?php _e( 'OR','terme' ); ?></span>
+								<a href="#">	<?php _e( 'Register','terme' ); ?></a>
+							<?php } ?>
 						</div><!-- login_area -->
 						<div class="shopping_cart">
 							<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">

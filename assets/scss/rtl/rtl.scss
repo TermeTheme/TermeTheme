@@ -1,174 +1,225 @@
 @import '../_variables.scss', '../_mixins.scss', '../rem';
+
 body {
 	font-family: 'Vazir';
 	text-align: right;
 	direction: rtl;
 }
+
 header.header .today {
 	float: right;
+
 	i {
 		float: right;
 	}
 }
+
 .top_bar form {
 	float: left;
+
 	input {
 		float: right;
 	}
+
 	button {
 		float: right;
 	}
 }
+
 .top_bar .user_area {
 	float: left;
 	@include rem(( border-right: 1px solid #ebebeb, ));
 }
+
 .top_bar .shopping_cart {
 	float: left;
 	@include rem(( margin-left: 30px, ));
+
 	a i {
 		@include rem(margin-left, 5px);
 	}
+}
+.main_area a.mobile_menu {
+
+	float: left;
+
 }
 header.style_1 .main_area .logo,
 header.style_3 .main_area .logo,
 header.style_4 .main_area .logo {
 	// float: right;
 }
+
 header.style_1 .main_area .header_ads,
 header.style_3 .main_area .header_ads {
 	text-align: left;
 	text-align: center;
 }
+
 header .main_menu {
 	float: right;
+
 	ul {
 		float: right;
 	}
+
 	ul > li {
 		float: right;
 	}
+
 	ul > li:first-child {
 		margin-right: 0;
 	}
+
 	ul > li > a:after {
 		@include rem(( margin-right: 10px, ));
 	}
+
 	ul > li ul {
 		right: 0;
 	}
+
 	ul > li ul li a:after {
 		content: "\f100";
 		@include rem(( left: 20px, right: auto, ));
 	}
+
 	ul > li > ul li ul {
 		@include rem(( right: 295px, ));
 	}
 }
+
 header.header.style_3 .today {
 	float: right;
 	@include rem(( height: 40px, line-height: 40px, ));
+
 	i {
 		@include rem(( font-size: 16px, margin: 12px, ));
 		float: right;
 	}
 }
+
 header.style_4 .top_bar .user_area {
 	border-right: none;
 	padding-left: 0;
 }
+
 header.style_4 .main_area form {
 	margin: 28px 5% 0 0;
 	float: left;
+
 	input {
 		float: right;
 	}
+
 	button {
 		float: right;
 		@include rem(( line-height: 46px, ));
 	}
 }
+
 header.style_4 .main_menu .shopping_cart {
 	float: left;
 }
+
 main.main {
 	float: right;
 }
+
 section.top {
 	.carousel-control.left {
 		left: 0;
 		right: auto;
 	}
+
 	.selection {
 		float: right;
+
 		h4 {
 			float: right;
 		}
+
 		a.more {
 			float: left;
 		}
+
 		ul li {
 			float: right;
+
 			h3 {
 				text-align: right;
 			}
 		}
+
 		ul li .thumb {
 			float: right;
 			@include rem(( margin-right: 0, margin-left: 10px ));
 		}
 	}
 }
+
 a.more:after {
 	content: "\f060";
 	@include rem(( margin-left: 0, margin-right: 10px ));
 }
+
 section.latest_news {
 	float: right;
+
 	.body {
 		float: right;
+
 		a {
 			@include rem(font-size, 14px);
 		}
 	}
+
 	.title {
 		@include rem(( margin-right: 0, margin-left: 15px ));
 		float: right;
 	}
+
 	.title:after {
 		border-color: transparent $primary_color transparent transparent;
 		@include rem(( left: -7px, right: auto, border-width: 8px 7px 8px 0, ));
 	}
 }
+
 .home_content .box {
 	.title {
 		border-left: none;
 		border-right: solid $secondary_color;
 		@include rem(( border-left-width: 0, border-right-width: 2px, padding-left: 0, padding-right: 15px ));
+
 		a.more {
 			float: left;
 		}
 	}
 }
+
 .big_post {
 	.thumb {
 		float: right;
 	}
+
 	&.horizontal ul li .thumb {
 		@include rem((margin-right: 0, margin-left: 30px,));
 	}
 }
+
 .small_post {
 	ul li .thumb {
 		float: right;
 		@include rem(( margin-left: 10px, margin-right: 0 ));
 	}
 }
+
 #sidebar {
 	section {
 		h4 {
 			float: right;
 		}
+
 		ul.ads {
 			figcaption {
 				a {
@@ -176,10 +227,12 @@ section.latest_news {
 					left: 0;
 				}
 			}
+
 			figure:hover figcaption a {
 				transform: translate( 10px, -10px);
 			}
 		}
+
 		.widget_body {
 			ul li.cat-item {
 				a {
@@ -191,8 +244,10 @@ section.latest_news {
 					}
 				}
 			}
+
 			ul li.menu-item {
 				float: right;
+
 				a {
 					&:before {
 						content: "\f104";
@@ -202,6 +257,7 @@ section.latest_news {
 					}
 				}
 			}
+
 			ul.video {
 				figure {
 					figcaption {
@@ -216,11 +272,13 @@ section.latest_news {
 					}
 				}
 			}
+
 			.tagcloud {
 				a {
 					float: right;
 				}
 			}
+
 			.tab-content {
 				ul li .thumb {
 					float: right;
@@ -230,30 +288,37 @@ section.latest_news {
 			}
 		}
 	}
+
 	.social_widget {
 		ul {
 			float: right;
+
 			li {
 				float: right;
+
 				span.icon {
 					float: right;
 				}
+
 				span.name {
 					right: 50%;
 					left: auto;
 					transform: translate(30%,-50%);
 				}
+
 				span.number {
 					left: auto;
 					right: 50%;
 					transform: translate(30%,-100%);
 				}
 			}
+
 			li:hover span.name {
 				right: 50%;
 				left: auto;
 				transform: translate(30%,100%);
 			}
+
 			li:hover span.number {
 				left: auto;
 				right: 50%;
@@ -262,29 +327,35 @@ section.latest_news {
 		}
 	}
 }
+
 footer.footer {
 	&.style_1 .main_area {
 		.tagcloud {
 			float: right;
 		}
 	}
+
 	&.style_1 .main_area .box_1 ul {
 		float: right;
 	}
+
 	&.style_1 .main_area .box_1 ul li {
 		float: right;
 	}
+
 	&.style_1 .main_area .box_2,
 	&.style_5 .main_area .box_1,
 	&.style_5 .main_area .box_2 {
 		ul li {
 			float: right;
 		}
+
 		ul li .thumb {
 			float: right;
 			@include rem(( margin-right: 0, margin-left: 10px, ));
 		}
 	}
+
 	&.style_1 .main_area .box_3,
 	&.style_5 .main_area .box_3 {
 		.popular_tags {
@@ -294,15 +365,18 @@ footer.footer {
 				}
 			}
 		}
+
 		.newsletter input {
 			float: right;
 			border-left: 0;
 			border-right: 1px solid;
 		}
+
 		.tags_items a {
 			float: right;
 		}
 	}
+
 	&.style_1 .bottom_bar,
 	&.style_2 .bottom_bar,
 	&.style_3 .bottom_bar,
@@ -311,21 +385,26 @@ footer.footer {
 		ul li {
 			float: right;
 			@include rem(( margin-left: 0, margin-right: 30px ));
+
 			&:first-child {
 				@include rem(( margin-right: 0, ));
 			}
 		}
+
 		p {
 			float: right;
 		}
 	}
+
 	&.style_2 .main_area,
 	&.style_3 .top_bar,
 	&.style_4 .main_area {
 		ul {
 			float: right;
+
 			li {
 				float: right;
+
 				&:before {
 					content: "\f100";
 					float: right;
@@ -335,6 +414,7 @@ footer.footer {
 			}
 		}
 	}
+
 	&.style_2 .bottom_bar,
 	&.style_3 .bottom_bar,
 	&.style_4 .bottom_bar {
@@ -342,6 +422,7 @@ footer.footer {
 			float: none;
 		}
 	}
+
 	&.style_3 .top_bar {
 		.social_menu {
 			&:before {
@@ -356,28 +437,35 @@ footer.footer {
 				top: 0;
 				transform: translate(0,50%);
 			}
+
 			&:after {
 				display: none;
 			}
 		}
 	}
+
 	&.style_5 .top_bar {
 		.newsletter span {
 			float: right;
 		}
+
 		.newsletter form {
 			float: left;
 		}
+
 		.newsletter input {
 			float: right;
 		}
+
 		.newsletter button {
 			float: left;
 		}
 	}
+
 	&.style_5 .bottom_bar {
 		.social_menu {
 			float: left;
+
 			ul {
 				li {
 					margin-right: 0;
@@ -386,6 +474,7 @@ footer.footer {
 		}
 	}
 }
+
 .article_content {
 	.article_info {
 		.breadcrumbs {
@@ -395,6 +484,7 @@ footer.footer {
 				}
 			}
 		}
+
 		.article_meta {
 			span {
 				float: right;
@@ -402,16 +492,19 @@ footer.footer {
 			}
 		}
 	}
+
 	.terme_post {
 		ul {
 			li {
 				float: right;
+
 				&:before {
 					float: right;
 					@include rem(( margin-right: auto,margin-left: 10px, ));
 				}
 			}
 		}
+
 		.article_social {
 			ul {
 				li {
@@ -419,45 +512,55 @@ footer.footer {
 				}
 			}
 		}
+
 		.article_tags {
 			a {
 				float: right;
 			}
 		}
 	}
+
 	.article_author {
 		img {
 			float: right;
 		}
+
 		.name {
 			float: right;
 		}
+
 		.desc {
 			float: right;
 		}
 	}
+
 	.article_related {
 		ul li {
 			float: right;
 		}
+
 		ul li .thumb {
 			float: right;
 			@include rem((margin-right: 0, margin-left: 10px, ));
 		}
 	}
 }
+
 .article_comment {
 	.comment_container {
 		ol {
 			li {
 				float: right;
+
 				article {
 					float: right;
+
 					.comment_author {
 						img {
 							float: right;
 						}
 					}
+
 					.comment_metadata {
 						.reply {
 							right: auto;
@@ -465,25 +568,31 @@ footer.footer {
 						}
 					}
 				}
+
 				ul.children {
 					li {
 						float: right;
+
 						&:before {
 							content: "\f177";
 							right: 70px;
 							left: auto;
 						}
+
 						article {
 							float: right;
 							margin-left: auto;
 							margin-right: 10%;
 						}
+
 						.comment_author {
 							float: right;
+
 							img {
 								float: right;
 							}
 						}
+
 						.comment_metadata {
 							.reply {
 								right: auto;
@@ -495,6 +604,7 @@ footer.footer {
 			}
 		}
 	}
+
 	.comment-respond {
 		width: 100%;
 		float: left;
@@ -504,21 +614,23 @@ footer.footer {
 		background: #fff;
 		@include rem(( border-width: 0 1px 1px 1px, padding: 15px,));
 
-			small {
-				float: left;
-			}
+		small {
+			float: left;
+		}
 
 		form {
 			.comment-form-author,
 			.comment-form-email {
 				float: right;
 			}
+
 			.form-submit {
 				float: left;
 			}
 		}
 	}
 }
+
 .product_page {
 	.ribbon {
 		left: auto;
@@ -527,6 +639,7 @@ footer.footer {
 		border-right: 65px solid #e54949;
 		border-left: 0;
 		border-top: 0;
+
 		a {
 			top: 15px;
 			right: 0;
@@ -534,20 +647,24 @@ footer.footer {
 			transform: rotate(45deg);
 		}
 	}
+
 	.images {
 		float: right;
 		@include rem(( padding: 0 0 20px 20px,));
 	}
+
 	.summary {
 		.product_price {
 			p {
 				@include rem((margin-left: 5px, margin-right: 0, ));
 			}
+
 			del {
 				color: #979a9f;
 				@include rem((margin-left: 10px,margin-right: 0,));
 			}
 		}
+
 		.woocommerce-product-rating {
 			.star-rating {
 				float: right;
@@ -555,37 +672,46 @@ footer.footer {
 			}
 		}
 	}
+
 	.product_image {
 		float: right;
 		@include rem((padding: 0 0 20px 20px, ));
+
 		img {
 			float: right;
 		}
 	}
+
 	.product_detail {
 		float: left;
+
 		.product_price {
 			.product_stars {
 				float: left;
 			}
 		}
+
 		.product_tags {
 			a {
 				float: right;
 			}
 		}
+
 		.product_social {
 			float: right;
+
 			ul {
 				float: right;
 			}
 		}
 	}
+
 	.product_intro {
 		.product_tab {
 			ul {
 				li {
 					float: right;
+
 					a {
 						@include rem((margin-left: 2px, margin-right: 0, ));
 					}
@@ -593,6 +719,7 @@ footer.footer {
 			}
 		}
 	}
+
 	.product_more {
 		ul {
 			li {
@@ -604,26 +731,31 @@ footer.footer {
 		}
 	}
 }
+
 .shop_filters {
 	.filter_item {
 		float: right;
 		@include rem((padding-left: 20px , padding-right: 0 ,));
+
 		.dropdown {
 			button.dropdown-content {
 				float: right;
 			}
+
 			button.dropdown-toggle {
 				float: right;
 				@include rem(( border-radius: 4px 0 0 4px ,));
 			}
 		}
 	}
+
 	#post_grid {
 		&:before {
 			float: right;
 			@include rem((border-radius: 0 4px 4px 0,));
 		}
 	}
+
 	#post_sort {
 		&:before {
 			float: right;
@@ -631,6 +763,7 @@ footer.footer {
 		}
 	}
 }
+
 .author,
 .category,
 .search {
@@ -644,10 +777,12 @@ footer.footer {
 					margin-right: 0;
 					margin-left: 20px;
 				}
+
 				section {
 					h2 {
 						@include rem((padding-right: 0, padding-left: 20px, ));
 					}
+
 					.excerpt {
 						@include rem(( padding-right: 0, padding-left: 20px, ));
 					}
@@ -656,42 +791,53 @@ footer.footer {
 		}
 	}
 }
+
 .woocommerce {
 	.woocommerce-error,
 	.woocommerce-info,
 	.woocommerce-message {
 		@include rem(( padding: 10px 40px 10px 20px !important ,));
 	}
+
 	.woocommerce-message {
 		text-align: right;
+
 		&:before {
 			left: auto;
 			right: 20px;
 		}
+
 		a.button {
 			float: left;
 		}
 	}
+
 	.woocommerce-info {
 		text-align: right;
+
 		&:before {
 			left: auto;
 			right: 20px;
 		}
+
 		a.button {
 			float: left;
 		}
 	}
+
 	.woocommerce-error {
 		text-align: right;
+
 		&:before {
 			left: auto;
 			right: 20px;
 		}
+
 		a.button {
 			float: left;
 		}
 	}
+
 	form {
 		table.shop_table {
 			tbody {
@@ -700,6 +846,7 @@ footer.footer {
 						&.product-remove {
 							border-left: none;
 						}
+
 						&.product-name {
 							border-right: none;
 							border-left: auto;
@@ -710,9 +857,11 @@ footer.footer {
 			}
 		}
 	}
+
 	.cart-collaterals {
 		.cart_totals {
 			float: left;
+
 			.wc-proceed-to-checkout {
 				a {
 					float: left;
@@ -720,6 +869,7 @@ footer.footer {
 			}
 		}
 	}
+
 	#tab-reviews {
 		#reviews {
 			#comments {
@@ -731,8 +881,10 @@ footer.footer {
 								left: auto;
 								right: 0;
 							}
+
 							.comment-text {
 								@include rem(( margin-left: 0,margin-right: 100px,));
+
 								.star-rating {
 									float: left;
 								}
@@ -741,9 +893,10 @@ footer.footer {
 					}
 				}
 			}
-		}}
-
+		}
+	}
 }
+
 .woocommerce-tabs {
 	ul.tabs {
 		li {
@@ -751,6 +904,7 @@ footer.footer {
 		}
 	}
 }
+
 .related {
 	header {
 		.owl-controls {
@@ -758,8 +912,44 @@ footer.footer {
 		}
 	}
 }
+
 .is_on_sale {
 	.off_section {
 		float: left;
+	}
+}
+
+.sb-left {
+	.sidebar_menu {
+		form#searchform {
+			input {
+
+				float: right;
+
+			}
+
+			button {
+
+				float: right;
+
+			}
+		}
+		.shopping_cart {
+			a {
+				span.icon {
+					float: left;
+				}
+				.count {
+
+					float: left;
+					text-align: left;
+					@include rem(( padding-left: 0, padding-right: 15px, ));
+
+					span {
+						float: right;
+					}
+				}
+			}
+		}
 	}
 }

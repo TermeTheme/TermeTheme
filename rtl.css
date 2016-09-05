@@ -44,6 +44,9 @@ header.header .today {
     margin-left: 5px;
     margin-left: 0.5rem; }
 
+.main_area a.mobile_menu {
+  float: left; }
+
 header.style_1 .main_area .header_ads,
 header.style_3 .main_area .header_ads {
   text-align: left;
@@ -583,3 +586,19 @@ footer.footer.style_5 .bottom_bar .social_menu {
 
 .is_on_sale .off_section {
   float: left; }
+
+.sb-left .sidebar_menu form#searchform input {
+  float: right; }
+.sb-left .sidebar_menu form#searchform button {
+  float: right; }
+.sb-left .sidebar_menu .shopping_cart a span.icon {
+  float: left; }
+.sb-left .sidebar_menu .shopping_cart a .count {
+  float: left;
+  text-align: left;
+  padding-left: 0;
+  padding-left: 0;
+  padding-right: 15px;
+  padding-right: 1.5rem; }
+  .sb-left .sidebar_menu .shopping_cart a .count span {
+    float: right; }

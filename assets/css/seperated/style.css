@@ -870,7 +870,8 @@ section.latest_news {
     text-align: justify; }
   .big_post.horizontal {
     border: none;
-    background: none; }
+    background: none;
+    min-height: auto; }
   .big_post.horizontal ul {
     list-style: none;
     padding: 0;
@@ -1961,7 +1962,7 @@ footer.footer {
   footer.footer.style_1 .main_area .box_1, footer.footer.style_1 .main_area .box_2, footer.footer.style_5 .main_area .box_1, footer.footer.style_5 .main_area .box_2 {
     width: 100%;
     float: left; }
-  footer.footer.style_4 .main_area .box_1 img {
+  footer.footer.style_4 .main_area img {
     margin: 0 auto;
     display: block; }
   footer.footer.style_1 .main_area .box_1 ul {

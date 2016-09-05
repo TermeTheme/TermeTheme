@@ -7,14 +7,6 @@
 					<div class="article_content">
 						<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 						<div class="article_info ">
-							<?php if($terme_options['post_breadcrumb']) { ?>
-							<div class="breadcrumbs">
-								<span><a href="#">Home</a>
-										<i class="fa fa-angle-right" aria-hidden="true"></i>
-								</span>
-								<a href="#">Sport Category</a>
-							</div>
-							<?php } ?>
 							<h1 class="article_title"><?php __(the_title(''), 'terme') ?></h1>
 						</div><!-- article_info -->
 						<div class="terme_post">
@@ -33,12 +25,8 @@
 <?php endwhile; else: ?>
 <?php endif; ?>
 					</div><!-- article_content -->
-				</div><!--col-xs-8-->
-				<div class="col-md-4 hidden-sm hidden-xs">
-					<?php //include 'inc/sidebar/sidebar.php'; ?>
-				</div><!--col-xs-4-->
+				</div><!--col-md-12-->
 			</div><!-- row -->
 		</div><!-- container -->
 	</main>
-
 	<?php get_footer(); ?>
