@@ -1,20 +1,20 @@
 jQuery(document).ready(function($) {
-  jQuery('.upload_image_button').click(function(e) {
+  jQuery(document).on('click', '.upload_image_button', function(e) {
     e.preventDefault();
+    var key = jQuery(this);
     var image = wp.media({
         title: 'Upload Image',
         // mutiple: true if you want to upload multiple files at once
         multiple: false
     }).open()
     .on('select', function(e){
-        // This will return the selected image from the Media Uploader, the result is an object
         var uploaded_image = image.state().get('selection').first();
-        // We convert uploaded_image to a JSON object to make accessing it easier
-        // Output to the console uploaded_image
-        var image_url = uploaded_image.toJSON().url;
-        // Let's assign the url value to the input field
-        console.log(image_url);
-      jQuery('.upload_image_button').prev().val(image_url);
+        var imgInfo = uploaded_image.toJSON();
+        console.log(imgInfo);
+        console.log(imgInfo.id);
+        var thumbImg = '<img src="'+imgInfo.sizes.thumbnail.url+'">';
+        key.parent().find('.terme_ads_widget_thumb').html('').append(thumbImg);
+        key.parent().find('.ads_widget_img_id').val(imgInfo.id);
     });
 });
 });
