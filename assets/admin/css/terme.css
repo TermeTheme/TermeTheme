@@ -352,7 +352,20 @@ table.terme_slides_table .select2-container {
 #slider_category .select2-container--default.select2-container--focus .select2-selection--multiple {
     border: solid #a8bece 1px;
 }
-
+.terme_ads_widget_thumb {
+    display: inline-block;
+    margin: 00 15px;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px);
+    width: 75px;
+    height: 75px;
+}
+.terme_ads_widget_thumb img {
+    max-width: 100%;
+    height: auto;
+}
 /*
 .widefat td.cornita-content,
 .widefat th.cornita-content {

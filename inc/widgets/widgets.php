@@ -9,7 +9,4 @@ include TEMPLATEPATH . '/inc/widgets/footer_news.php';
 include TEMPLATEPATH . '/inc/widgets/footer_about.php';
 include TEMPLATEPATH . '/inc/widgets/footer_social.php';
 include TEMPLATEPATH . '/inc/widgets/footer_category.php';
-// include TEMPLATEPATH . '/inc/widgets/test.php';
-
-
  ?>
