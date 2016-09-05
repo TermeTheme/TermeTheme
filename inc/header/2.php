@@ -17,11 +17,11 @@
 					</form>
 					<div class="user_area">
 						<?php if( is_user_logged_in()) { ?>
-							<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( 'Logout','terme' ); ?></a>
+							<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( $terme_options['logout_text'],'terme' ); ?></a>
 						<?php } else { ?>
-							<a href="<?php echo wp_login_url( home_url() ); ?>">	<?php _e( 'Login','terme' ); ?></a>
+							<a href="<?php echo get_page_link($terme_options['login_page']); ?>">	<?php _e( $terme_options['login_text'],'terme' ); ?></a>
 							<span>	<?php _e( 'OR','terme' ); ?></span>
-							<a href="#">	<?php _e( 'Register','terme' ); ?></a>
+							<a href="<?php echo get_page_link($terme_options['register_page']); ?>">	<?php _e( $terme_options['register_text'],'terme' ); ?></a>
 						<?php } ?>
 					</div><!-- login_area -->
 					<div class="shopping_cart">

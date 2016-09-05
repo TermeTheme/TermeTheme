@@ -3,6 +3,8 @@
 global $terme_options; ?>
 <?php get_header(); ?>
 		<main class="main">
+			<?php if ($terme_options['slider']) { ?>
+
 			<section class="top">
 				<div class="container">
 					<div class="row">
@@ -15,6 +17,7 @@ global $terme_options; ?>
 					</div>
 				</div><!-- container -->
 			</section><!-- top -->
+			<?php } ?>
 			<?php if ($terme_options['newsticker']) {
           	include TEMPLATEPATH.'/inc/page-builder/elements/news-ticker.php';
       			};

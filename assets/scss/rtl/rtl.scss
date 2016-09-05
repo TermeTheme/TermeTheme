@@ -1,11 +1,9 @@
 @import '../_variables.scss', '../_mixins.scss', '../rem';
-
 body {
 	font-family: 'Vazir';
 	text-align: right;
 	direction: rtl;
 }
-
 header.header .today {
 	float: right;
 
@@ -348,6 +346,12 @@ footer.footer {
 	&.style_5 .main_area .box_2 {
 		ul li {
 			float: right;
+			&:before {
+				content:"\f100";
+				float: right;
+				@include rem(( margin-right: 0, margin-left: 10px, ));
+
+			}
 		}
 
 		ul li .thumb {
@@ -481,6 +485,13 @@ footer.footer {
 			ul {
 				li {
 					float: right;
+					&:first-child {
+						a {
+							i {
+								@include rem(( padding: 0 0 10px 0, ));
+							}
+						}
+					}
 				}
 			}
 		}

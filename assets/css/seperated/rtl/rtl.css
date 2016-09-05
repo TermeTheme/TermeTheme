@@ -245,6 +245,13 @@ footer.footer.style_1 .main_area .box_1 ul li {
   float: right; }
 footer.footer.style_1 .main_area .box_2 ul li, footer.footer.style_5 .main_area .box_1 ul li, footer.footer.style_5 .main_area .box_2 ul li {
   float: right; }
+  footer.footer.style_1 .main_area .box_2 ul li:before, footer.footer.style_5 .main_area .box_1 ul li:before, footer.footer.style_5 .main_area .box_2 ul li:before {
+    content: "\f100";
+    float: right;
+    margin-right: 0;
+    margin-right: 0;
+    margin-left: 10px;
+    margin-left: 1rem; }
 footer.footer.style_1 .main_area .box_2 ul li .thumb, footer.footer.style_5 .main_area .box_1 ul li .thumb, footer.footer.style_5 .main_area .box_2 ul li .thumb {
   float: right;
   margin-right: 0;
@@ -311,6 +318,9 @@ footer.footer.style_5 .bottom_bar .social_menu {
 
 .article_content .article_info .breadcrumbs ul li {
   float: right; }
+  .article_content .article_info .breadcrumbs ul li:first-child a i {
+    padding: 0 0 10px 0;
+    padding: 0 0 1rem 0; }
 .article_content .article_info .article_meta span {
   float: right;
   margin-right: 0;

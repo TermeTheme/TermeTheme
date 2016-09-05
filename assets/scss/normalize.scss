@@ -1,5 +1,5 @@
-@import '_variables.scss', '_mixins.scss', 'rem';
-// Theme Normalize
+@import '_variables.scss', '_mixins.scss', 'rem'; // Theme Normalize
+
 html {
     @include rem-baseline;
 }
@@ -42,7 +42,7 @@ a[data-termehover]:before {
     left: 0;
     width: 110%;
     height: 15vw;
-    transform: translate(-100% , 100%);
+    transform: translate(-100%, 100%);
     border-radius: 0 100% 0 0;
     transition: all 0.5s;
     z-index: -10;

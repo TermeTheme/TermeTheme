@@ -37,7 +37,6 @@ a.back_to_top {
 			}
 		}
 	}
-
 	&:after {
 		position: absolute;
 		content: "";
@@ -1118,7 +1117,7 @@ section.latest_news {
 			@include rem(line-height, 20px);
 		}
 		//ads
-		ul.ads {
+		div.ads {
 			float: left;
 			width: 100%;
 			padding: 0;

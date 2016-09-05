@@ -16,9 +16,6 @@
 	<a href="#top" class="back_to_top"></a>
 <?php } ?>
 </div><!-- sb-site -->
-<?php if (is_rtl()): ?>
-
-<?php endif; ?>
 <div off-canvas="slidebar-1 <?php echo (is_rtl()) ? "left" : "right"; ?> reveal" class="sb-left">
 	<div class="sidebar_menu">
 		<div class="user_area">
@@ -27,13 +24,13 @@
 					echo get_avatar( $user, 100 );
 				?>
 				<div class="clearfix"></div>
-				<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( 'Logout','terme' ); ?></a>
+				<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( $terme_options['logout_text'],'terme' ); ?></a>
 			<?php } else {
 					echo get_avatar( $user, 100 );?>
 					<div class="clearfix"></div>
-					<a href="<?php echo wp_login_url( home_url() ); ?>" class="login">	<?php _e( 'Login','terme' ); ?></a>
+					<a href="<?php echo get_page_link($terme_options['login_page']); ?>">	<?php _e( $terme_options['login_text'],'terme' ); ?></a>
 					<span>	<?php _e( 'OR','terme' ); ?></span>
-					<a href="#" class="register">	<?php _e( 'Register','terme' ); ?></a>
+					<a href="<?php echo get_page_link($terme_options['register_page']); ?>">	<?php _e( $terme_options['register_text'],'terme' ); ?></a>
 			 <?php }; ?>
 		</div><!-- user_area -->
 		<div class="shopping_cart">
@@ -51,11 +48,11 @@
 		</form>
 			<?php
 			if (has_nav_menu('header_menu')) {
-				wp_nav_menu( array(
-					'theme_location' => 'header_menu',
-					'menu_class' => 'accordion',
-					'container' => false
-				) );
+					wp_nav_menu( array(
+						'theme_location' => 'header_menu',
+						'menu_class' => 'accordion',
+						'container' => false
+					) );
 			}?>
 	</div><!-- sidebar_menu -->
 </div><!-- sb-left -->

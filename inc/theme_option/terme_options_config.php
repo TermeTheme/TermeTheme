@@ -290,11 +290,11 @@
               'subtitle' => __( 'Select the general sidebar you want to use by default.', 'terme' ),
               'options'  => array(
                   '0' => array(
-                      'alt' => '1 Column',
+                      'alt' => 'right sidebar',
                       'img' => get_template_directory_uri().'/assets/admin/images/right_sidebar.png',
                   ),
                   '1' => array(
-                      'alt' => '2 Column Left',
+                      'alt' => 'left sidebar',
                       'img' => get_template_directory_uri().'/assets/admin/images/left_sidebar.png',
                   ),
               ),
@@ -489,9 +489,6 @@
                   'id'       => 'post_date_format',
                   'type'     => 'text',
                   'title'    => __( 'Post Date Format', 'terme' ),
-                  'subtitle' => __( 'Subtitle', 'terme' ),
-                  'desc'     => __( 'Field Description', 'terme' ),
-                  'default'  => 'test@test.com',
                   'required' => array( 'post_date', '=', '1' ),
 
               ),
@@ -743,7 +740,7 @@ by tags - pick posts that have at least one tag in common with the current post'
         Redux::setSection( $opt_name, array(
             'title'            => __( 'Slider Settings', 'terme' ),
             'id'               => 'slider_setting',
-            'icon'             => 'el el-lock',
+            'icon'             => 'el el-picture',
             'subsection'       => true,
             'customizer_width' => '450px',
             'fields'           => array(
@@ -761,9 +758,9 @@ by tags - pick posts that have at least one tag in common with the current post'
                   'type'     => 'select',
                   'multi'    => false,
                   'data'     => 'posts',
-                  'args' => array('post_type' => array('slider'), 'posts_per_page' => -1),
+                  'args' => array('post_type' => array('slider')),
                   'subtitle' => __( 'Selected post will be displayed in page top menu', 'terme' ),
-                  'required' => array('slider', '=' , 'on'),
+                  'required' => array('slider', '=' , 1),
               ),
             )
         ) );
@@ -801,6 +798,12 @@ by tags - pick posts that have at least one tag in common with the current post'
                     'multi'    => false,
                     'data'     => 'page',
                     'subtitle' => __( 'Selected post will be displayed in page top menu', 'terme' ),
+                ),
+                array(
+                    'id'       => 'logout_text',
+                    'type'     => 'text',
+                    'title'    => __( 'Logout Text', 'terme' ),
+                    'default'=>'Logout',
                 ),
             )
         ) );
@@ -1222,124 +1225,6 @@ by tags - pick posts that have at least one tag in common with the current post'
 
 
         ),
-    ) );
-
-    // -> API's Authentication
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'API\'s Authentication', 'terme' ),
-        'id'               => 'api_authentication',
-        'desc'             => __( 'These are really basic fields!', 'terme' ),
-        'customizer_width' => '400px',
-        'icon'             => 'el el-opensource',
-        'fields' => array(
-          array(
-              'id'    => 'facebook_access_token_info',
-              'type'  => 'info',
-              'style' => 'success',
-              'icon'  => 'el el-facebook',
-              'title' => __( 'Facebook (required for social counter widget)', 'terme' ),
-              'desc'  => __( 'to get Facebook access token <a href="https://smashballoon.com/custom-facebook-feed/access-token/" target="_blank">Follow this</a>', 'terme' )
-          ),
-          array(
-              'id'       => 'facebook_access_token',
-              'type'     => 'text',
-              'title'    => __( 'Facebook Access Token', 'terme' ),
-              'default'  => 'Default Text',
-          ),
-          array(
-              'id'    => 'twitter_access_token_info',
-              'type'  => 'info',
-              'style' => 'success',
-              'icon'  => 'el el-twitter',
-              'title' => __( 'Twitter API (required for using twitter widgets and social counters widget)', 'terme' ),
-              'desc'  => __( 'You can get twitter Authentication data by following this <a href="http://www.youtube.com/watch?v=zdSHhiHAxBA" target="_blank">tutorial</a>.', 'terme' )          ),
-          array(
-              'id'       => 'twitter_api_key',
-              'type'     => 'text',
-              'title'    => __( 'API Key', 'terme' ),
-
-              'default'  => 'Default Text',
-          ),
-          array(
-              'id'       => 'twitter_api_secret',
-              'type'     => 'text',
-              'title'    => __( 'API Secret', 'terme' ),
-
-              'default'  => 'Default Text',
-          ),
-          array(
-              'id'       => 'twitter_access_token',
-              'type'     => 'text',
-              'title'    => __( 'API Access Token', 'terme' ),
-
-              'default'  => 'Default Text',
-          ),
-          array(
-              'id'       => 'twitter_access_token_secret',
-              'type'     => 'text',
-              'title'    => __( 'API Access Token Secret', 'terme' ),
-
-              'default'  => 'Default Text',
-          ),
-          array(
-              'id'    => 'mailchimp_api_key_info',
-              'type'  => 'info',
-              'style' => 'success',
-              'icon'  => 'el el-envelope-alt',
-              'title' => __( 'Mailchimp (required for using newsletter widget)', 'terme' ),
-              'desc'  => __( 'To find your API key <a href="http://kb.mailchimp.com/article/where-can-i-find-my-api-key" target="_blank">Click here</a>.', 'terme' )
-          ),
-          array(
-              'id'       => 'mailchimp_api_key',
-              'type'     => 'text',
-              'title'    => __( 'Mailchimp API Key', 'terme' ),
-              'default'  => 'Default Text',
-          ),
-          array(
-              'id'    => 'google_api_key_info',
-              'type'  => 'info',
-              'style' => 'success',
-              'icon'  => 'el el-googleplus',
-              'title' => __( 'Google+ (required for using social counter widget)', 'terme' ),
-              'desc'  => __( 'to get Google+ API key <a href="http://www.youtube.com/watch?v=-wPKcfEadAc" target="_blank">Follow this</a>', 'terme' )
-          ),
-          array(
-              'id'       => 'google_api_key',
-              'type'     => 'text',
-              'title'    => __( 'Google+ API Key', 'terme' ),
-              'default'  => 'Default Text',
-          ),
-          array(
-              'id'    => 'youtube_api_key_info',
-              'type'  => 'info',
-              'style' => 'success',
-              'icon'  => 'el el-youtube',
-              'title' => __( 'Youtube (required for get video duration in media page and youtube count in social counter widget)', 'terme' ),
-              'desc'  => __( 'to get Youtube API key <a href="https://www.youtube.com/watch?v=Im69kzhpR3I" target="_blank">Follow this</a>', 'terme' )
-          ),
-          array(
-              'id'       => 'youtube_api_key',
-              'type'     => 'text',
-              'title'    => __( 'Youtube API Key', 'terme' ),
-              'default'  => 'Default Text',
-          ),
-          array(
-              'id'    => 'instagram_access_token_info',
-              'type'  => 'info',
-              'style' => 'success',
-              'icon'  => 'el el-instagram',
-              'title' => __( 'Instagram (required for using social counter widget)', 'terme' ),
-              'desc'  => __( '<a href="http://www.pinceladasdaweb.com.br/instagram/access-token" target="_blank">Click Here</a> To get the Access Token.', 'terme' )
-          ),
-          array(
-              'id'       => 'instagram_access_token',
-              'type'     => 'text',
-              'title'    => __( 'Instagram Access Token', 'terme' ),
-              'default'  => 'Default Text',
-          ),
-
-
-        )
     ) );
 
     // -> Custom CSS

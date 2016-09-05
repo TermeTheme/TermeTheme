@@ -47,7 +47,7 @@
       </div>
         <?php the_content(''); ?>
 
-      <?php if ((isset($terme_postmeta['post_tags']) && !empty($terme_postmeta['post_tags']) || $terme_options['post_tags'] ) ) : ?>
+      <?php if ((isset($terme_postmeta['post_tags']) && !empty($terme_postmeta['post_tags']) || $terme_options['post_tags'] && !empty($terme_options['post_tags']) ) ) : ?>
         <div class="article_tags">
           <h3><?php _e('Tags:', 'terme') ?></h3>
             <?php
@@ -60,8 +60,6 @@
             echo $html; ?>
         </div><!-- article_tags -->
       <?php endif; ?>
-
-
       <?php if ((isset($terme_postmeta['share-display']) && !empty($terme_postmeta['share-display']) || $terme_options['post_share'] ) ) : ?>
         <div class="article_social">
           <ul>

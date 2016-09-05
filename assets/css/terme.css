@@ -1234,12 +1234,12 @@ section.latest_news {
       float: right;
       line-height: 20px;
       line-height: 2rem; }
-    #sidebar section ul.ads {
+    #sidebar section div.ads {
       float: left;
       width: 100%;
       padding: 0;
       margin: 0; }
-      #sidebar section ul.ads figure {
+      #sidebar section div.ads figure {
         background: #464646;
         position: relative;
         float: left;
@@ -1250,7 +1250,7 @@ section.latest_news {
         width: 100%;
         margin: 10px 0;
         margin: 1rem 0; }
-        #sidebar section ul.ads figure img {
+        #sidebar section div.ads figure img {
           opacity: 0.95;
           -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
           transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -1264,18 +1264,18 @@ section.latest_news {
           max-width: 100%;
           width: 100%;
           height: auto; }
-      #sidebar section ul.ads figure:hover img {
+      #sidebar section div.ads figure:hover img {
         opacity: 0.8;
         -webkit-transform: scale3d(1, 1, 1);
                 transform: scale3d(1, 1, 1); }
-      #sidebar section ul.ads figure:hover figcaption:before {
+      #sidebar section div.ads figure:hover figcaption:before {
         -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
                 transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0); }
-      #sidebar section ul.ads figure:hover figcaption a {
+      #sidebar section div.ads figure:hover figcaption a {
         -webkit-transform: translate(-10px, -10px);
             -ms-transform: translate(-10px, -10px);
                 transform: translate(-10px, -10px); }
-      #sidebar section ul.ads figcaption {
+      #sidebar section div.ads figcaption {
         position: absolute;
         top: 0;
         left: 0;
@@ -1285,7 +1285,7 @@ section.latest_news {
         text-transform: uppercase;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden; }
-        #sidebar section ul.ads figcaption:before {
+        #sidebar section div.ads figcaption:before {
           position: absolute;
           top: 0;
           left: 0;
@@ -1299,7 +1299,7 @@ section.latest_news {
           transition: transform 0.5s, -webkit-transform 0.5s;
           -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
                   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0); }
-        #sidebar section ul.ads figcaption a {
+        #sidebar section div.ads figcaption a {
           background-color: #e23d28;
           text-align: center;
           color: #fff;
@@ -1317,7 +1317,7 @@ section.latest_news {
                   border-radius: 0.4rem;
           font-size: 12px;
           font-size: 1.2rem; }
-          #sidebar section ul.ads figcaption a:hover {
+          #sidebar section div.ads figcaption a:hover {
             background: #fff;
             color: #e23d28; }
     #sidebar section .widget_body {
