@@ -122,7 +122,6 @@ function theme_setup() {
 
 
 // Remove the admin bar from the front end
-add_filter( 'show_admin_bar', '__return_false' );
 include TEMPLATEPATH.'/inc/terme_funcs.php';
 include TEMPLATEPATH.'/inc/hooks.php';
 include TEMPLATEPATH.'/inc/widgets/widgets.php';
@@ -130,9 +129,8 @@ include TEMPLATEPATH.'/inc/theme_option/index.php';
 include TEMPLATEPATH.'/inc/page-builder/index.php';
 include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 include TEMPLATEPATH.'/woocommerce/wc_functions.php';
-// include TEMPLATEPATH.'/inc/post_type/slider.php';
-include TEMPLATEPATH.'/inc/post_type/post_type_ini.php';
-include TEMPLATEPATH.'/inc/post_type/meta_box_ini.php';
+include TEMPLATEPATH.'/inc/slider/init.php';
+
 ?>
 
 <?php

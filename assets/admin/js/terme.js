@@ -65,4 +65,35 @@ jQuery(document).ready(function($) {
         jQuery(this).parent().find('ul').slideToggle('300');
     });
 
+    // Slider
+    jQuery(document).on('click', '.terme_slider_type', function(event) {
+        event.preventDefault();
+        console.log(selected);
+        jQuery('.terme_slider_fieldset').slideUp('200');
+        var selected = jQuery(this).val();
+        if (selected=='category') {
+            jQuery('#slider_category').slideDown('200');
+        } else {
+            jQuery('#slider_custom').slideDown('200');
+        }
+    });
+
+
+
+	jQuery(document).on('click','.terme_delete_slide',function(e){
+		e.preventDefault();
+		jQuery(this).closest('tr').animate({
+			opacity: "0",
+			backgroundColor: "#ff4747"},
+			500, function() {
+			jQuery(this).remove();
+		});
+	});
+ 	jQuery( "#sortable" ).sortable({
+        cursor: 'move',
+        handle: 'td.check-column span',
+        placeholder: "terme-sortable-placeholder"
+    });
+    jQuery( "#sortable" ).disableSelection();
+
 });
