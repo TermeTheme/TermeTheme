@@ -70,7 +70,6 @@ class Terme_Slider {
     	}
         $slides = $_POST['slider'];
         $save_array = array();
-        // $ = $slides['settings'];
         $save_array['settings'] = ( isset($slides['settings']) && !empty($slides['settings']) ) ? $slides['settings'] : array('type' => 'custom') ;
         if ( isset($slides['slides']) && !empty($slides['slides']) ) {
             foreach ($slides['slides'] as $key => $slide) {
@@ -84,13 +83,7 @@ class Terme_Slider {
 
             }
         }
-        // if ( isset($slides['settings']) && !empty($slides['settings']) ) {
-        //     foreach ($slides['settings'] as $key => $slide) {
-        //             $save_array['settings'][$key] = $slide;
-        //     }
-        // }
     	update_post_meta( $post_id, '_terme_slider_slides', $save_array );
-    	update_post_meta( $post_id, 'test', $_POST );
     }
 
 
