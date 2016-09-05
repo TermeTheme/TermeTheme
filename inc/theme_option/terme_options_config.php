@@ -876,7 +876,6 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'     => 'text',
               'title'    => __( 'Site Name', 'terme' ),
               'subtitle' => __( 'The desired text will be used if logo images are not provided below.', 'terme' ),
-              'default'  => 'Default Text',
               'required' => array('logo_type', '=' , 'logo_name'),
 
           ),
@@ -885,7 +884,6 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'     => 'text',
               'title'    => __( 'Site Description', 'terme' ),
               'subtitle' => __( 'The desired text will be used if logo images are not provided below.', 'terme' ),
-              'default'  => 'Default Text',
               'required' => array('logo_type', '=' , 'logo_name'),
 
           ),

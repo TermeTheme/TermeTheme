@@ -11,12 +11,12 @@
 	include TEMPLATEPATH . '/inc/footer/5.php';
 }
 	?>
+
+</div><!-- sb-site -->
 <?php
  if (isset($terme_options['scroll_to_top']) && !empty ($terme_options['scroll_to_top'])) { ?>
 	<a href="#top" class="back_to_top"></a>
-<?php } ?>
-</div><!-- sb-site -->
-<div off-canvas="slidebar-1 <?php echo (is_rtl()) ? "left" : "right"; ?> reveal" class="sb-left">
+<?php } ?><div off-canvas="slidebar-1 <?php echo (is_rtl()) ? "left" : "right"; ?> reveal" class="sb-left">
 	<div class="sidebar_menu">
 		<div class="user_area">
 			<?php if( is_user_logged_in() ) {
@@ -56,30 +56,7 @@
 			}?>
 	</div><!-- sidebar_menu -->
 </div><!-- sb-left -->
-	<?php echo $terme_options['footer-script']; ?>
   <?php wp_footer(); ?>
-<script>
-( function ( $ ) {
-			// Initialize Slidebars
-			var controller = new slidebars();
-			controller.init();
-			// Toggle Slidebars
-			$( '.js-toggle-left-slidebar' ).on( 'click', function ( event ) {
-	        event.stopPropagation();
-	        controller.toggle( 'slidebar-1' );
-	    } );
-			// Close any
-	    $( controller.events ).on( 'opened', function () {
-	        $( '[canvas="container"]' ).addClass( 'js-close-any-slidebar' );
-	    } );
-	    $( controller.events ).on( 'closed', function () {
-	        $( '[canvas="container"]' ).removeClass( 'js-close-any-slidebar' );
-	    } );
-	    $( 'body' ).on( 'click', '.js-close-any-slidebar', function ( event ) {
-	        event.stopPropagation();
-	        controller.close();
-	    } );
-		} ) ( jQuery );
-</script>
+
 </body>
 </html>
