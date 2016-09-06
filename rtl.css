@@ -1,6 +1,28 @@
+@font-face {
+  font-family: Vazir;
+  src: url("assets/fonts/Vazir.eot");
+  src: url("assets/fonts/Vazir.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Vazir.woff") format("woff"), url("assets/fonts/Vazir.ttf") format("truetype");
+  font-weight: normal; }
+@font-face {
+  font-family: Vazir;
+  src: url("assets/fonts/Vazir-Bold.eot");
+  src: url("assets/fonts/Vazir-Bold.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Vazir-Bold.woff") format("woff"), url("assets/fonts/Vazir-Bold.ttf") format("truetype");
+  font-weight: bold; }
+@font-face {
+  font-family: Vazir;
+  src: url("assets/fonts/Vazir-Light.eot");
+  src: url("assets/fonts/Vazir-Light.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Vazir-Light.woff") format("woff"), url("assets/fonts/Vazir-Light.ttf") format("truetype");
+  font-weight: 300; }
+
 body {
   font-family: 'Vazir';
   text-align: right;
+  direction: rtl; }
+
+body.rtl [canvas=container] {
+  direction: ltr; }
+
+body.rtl [canvas=container] * {
   direction: rtl; }
 
 header.header .today {
@@ -596,19 +618,3 @@ footer.footer.style_5 .bottom_bar .social_menu {
   padding-right: 1.5rem; }
   .sb-left .sidebar_menu .shopping_cart a .count span {
     float: right; }
-
-@font-face {
-  font-family: Vazir;
-  src: url("assets/fonts/Vazir.eot");
-  src: url("assets/fonts/Vazir.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Vazir.woff") format("woff"), url("assets/fonts/Vazir.ttf") format("truetype");
-  font-weight: normal; }
-@font-face {
-  font-family: Vazir;
-  src: url("assets/fonts/Vazir-Bold.eot");
-  src: url("assets/fonts/Vazir-Bold.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Vazir-Bold.woff") format("woff"), url("assets/fonts/Vazir-Bold.ttf") format("truetype");
-  font-weight: bold; }
-@font-face {
-  font-family: Vazir;
-  src: url("assets/fonts/Vazir-Light.eot");
-  src: url("assets/fonts/Vazir-Light.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Vazir-Light.woff") format("woff"), url("assets/fonts/Vazir-Light.ttf") format("truetype");
-  font-weight: 300; }

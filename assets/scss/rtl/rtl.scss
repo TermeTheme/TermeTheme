@@ -4,6 +4,12 @@ body {
 	text-align: right;
 	direction: rtl;
 }
+body.rtl [canvas=container] {
+	direction: ltr;
+}
+body.rtl [canvas=container] * {
+	direction: rtl;
+}
 header.header .today {
 	float: right;
 

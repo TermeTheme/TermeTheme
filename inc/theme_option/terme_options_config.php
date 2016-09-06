@@ -349,19 +349,7 @@
               'title'    => __( 'Apple iPad Retina Icon (144x144)', 'terme' ),
               'subtitle'     => __( 'Icon for Retina iPad', 'terme' ),
           ),
-          array(
-              'id'       => 'header-script',
-              'type'     => 'textarea',
-              'title'    => __( 'Header Script - HTML Validated Custom', 'terme' ),
-              'subtitle' => __( 'The following code will add to the <\head\> tag. Useful if you need to add additional codes such as CSS or JS.
-', 'terme' ),
-          ),
-          array(
-              'id'       => 'footer-script',
-              'type'     => 'textarea',
-              'title'    => __( 'Footer Script - HTML Validated Custom', 'terme' ),
-              'subtitle' => __( 'The following code will add to the footer before the closing </body> tag. Useful if you need to add Javascript or tracking code.', 'terme' ),
-          ),
+
           array(
               'id'       => 'date_format',
               'type'     => 'text',
@@ -1229,24 +1217,23 @@ by tags - pick posts that have at least one tag in common with the current post'
 
     // -> Custom CSS
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Custom CSS', 'terme' ),
-        'id'               => 'custom_css',
+        'title'            => __( 'Custom CSS & JS', 'terme' ),
+        'id'               => 'custom_css_js',
         'customizer_width' => '400px',
         'icon'             => 'el el-css',
         'fields' => array(
           array(
-              'id'       => 'custom_css_style',
+              'id'       => 'header-script',
               'type'     => 'textarea',
-              'title'    => __( 'Custom CSS Code', 'terme' ),
-              'subtitle' => __( 'Paste your CSS code, do not include any tags or HTML in the field. Any custom CSS entered here will override the theme CSS. In some cases, the !important tag may be needed', 'terme' ),
+              'title'    => __( 'Header Script - HTML Validated Custom', 'terme' ),
+              'subtitle' => __( 'The following code will add to the <\head\> tag. Useful if you need to add additional codes such as CSS or JS.
+', 'terme' ),
           ),
           array(
-              'id'       => 'custom_body_class',
-              'type'     => 'text',
-              'title'    => __( 'Custom Body Class', 'terme' ),
-              'subtitle' => __( 'This classes will be added in body of overall site.
-Separate classes with space.
-', 'terme' ),
+              'id'       => 'footer-script',
+              'type'     => 'textarea',
+              'title'    => __( 'Footer Script - HTML Validated Custom', 'terme' ),
+              'subtitle' => __( 'The following code will add to the footer before the closing </body> tag. Useful if you need to add Javascript or tracking code.', 'terme' ),
           ),
 
 
@@ -1337,28 +1324,6 @@ Separate classes with space.
               'subtitle' => __( 'This classes will be added in body of all pages.
 Separate classes with space.
 ', 'terme' ),
-          ),
-        )
-    ) );
-    // -> Analytics $ JS
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Analytics & JS' , 'terme' ),
-        'id'               => 'analytics_js',
-        'customizer_width' => '400px',
-        'icon'             => 'el el-graph',
-        'fields' => array(
-          array(
-              'id'       => 'google_analytics_code',
-              'type'     => 'textarea',
-              'title'    => __( 'Google Analytics Code', 'terme' ),
-              'subtitle' => __( 'Paste your Google Analytics (or other) tracking code here. This code will be placed before </body> tag in html. Please put code inside script tags.', 'terme' ),
-          ),
-
-          array(
-              'id'       => 'code_before_head',
-              'type'     => 'textarea',
-              'title'    => __( 'Code Before head tag', 'terme' ),
-              'subtitle' => __( 'This code will be placed before </head> tag in html. Useful if you have an external script that requires it.', 'terme' ),
           ),
         )
     ) );
