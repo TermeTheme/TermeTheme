@@ -341,7 +341,8 @@ header .main_menu {
     margin-left: 10px;
     margin-left: 1rem; }
   header .main_menu ul > li > a:only-child:after {
-    content: ''; }
+    content: '';
+    display: none; }
   header .main_menu ul > li ul {
     width: 295px;
     width: 29.5rem;
@@ -1412,8 +1413,7 @@ section.latest_news {
           top: 0;
           left: 0;
           -webkit-backface-visibility: hidden;
-                  backface-visibility: hidden;
-          pointer-events: none; }
+                  backface-visibility: hidden; }
           #sidebar section .widget_body ul.video figure figcaption span.play {
             float: right;
             -webkit-transform: translate3d(50%, -50%, 0);
@@ -2150,7 +2150,8 @@ footer.footer {
     float: left;
     width: 100%;
     color: #c0c0c0;
-    padding: 10px 0; }
+    padding: 0 0 10px;
+    padding: 0 0 1rem; }
     .article_content .article_info .breadcrumbs ul {
       list-style: none;
       margin: 0;
@@ -2195,6 +2196,18 @@ footer.footer {
     margin-top: 2rem;
     border-width: 1px;
     border-width: 0.1rem; }
+    .article_content .terme_post .terme_post_body {
+      padding: 10px 15px;
+      padding: 1rem 1.5rem; }
+      .article_content .terme_post .terme_post_body h1.article_title {
+        font-weight: bold;
+        border-bottom: solid #e3e3e5;
+        font-size: 22px;
+        font-size: 2.2rem;
+        border-bottom-width: 1px;
+        border-bottom-width: 0.1rem;
+        padding-bottom: 15px;
+        padding-bottom: 1.5rem; }
     .article_content .terme_post .thumb img {
       width: 100%;
       max-width: 100%;
@@ -2209,8 +2222,6 @@ footer.footer {
     .article_content .terme_post p {
       text-align: justify;
       line-height: 1.5;
-      padding: 10px 15px;
-      padding: 1rem 1.5rem;
       font-size: 15px;
       font-size: 1.5rem; }
     .article_content .terme_post img {
@@ -2428,6 +2439,11 @@ footer.footer {
     padding-top: 0;
     padding-top: 0;
     margin-bottom: 0; }
+    .article_comment .comment_container p.no-comments {
+      float: right;
+      width: 100%;
+      padding: 10px 15px 0;
+      padding: 1rem 1.5rem 0; }
     .article_comment .comment_container h4 {
       margin: 0;
       display: inline-block;
@@ -2677,7 +2693,10 @@ footer.footer {
 .category .search_content,
 .search .author_content,
 .search .category_content,
-.search .search_content {
+.search .search_content,
+.tag .author_content,
+.tag .category_content,
+.tag .search_content {
   float: left;
   width: 100%;
   padding-top: 30px;
@@ -2690,7 +2709,10 @@ footer.footer {
   .category .search_content ul,
   .search .author_content ul,
   .search .category_content ul,
-  .search .search_content ul {
+  .search .search_content ul,
+  .tag .author_content ul,
+  .tag .category_content ul,
+  .tag .search_content ul {
     list-style: none;
     float: left;
     padding: 0;
@@ -2703,7 +2725,10 @@ footer.footer {
     .category .search_content ul li,
     .search .author_content ul li,
     .search .category_content ul li,
-    .search .search_content ul li {
+    .search .search_content ul li,
+    .tag .author_content ul li,
+    .tag .category_content ul li,
+    .tag .search_content ul li {
       width: 100%;
       float: left;
       background: #fff;
@@ -2721,7 +2746,10 @@ footer.footer {
       .category .search_content ul li article,
       .search .author_content ul li article,
       .search .category_content ul li article,
-      .search .search_content ul li article {
+      .search .search_content ul li article,
+      .tag .author_content ul li article,
+      .tag .category_content ul li article,
+      .tag .search_content ul li article {
         float: left;
         width: 100%; }
         .author .author_content ul li article figure,
@@ -2732,7 +2760,10 @@ footer.footer {
         .category .search_content ul li article figure,
         .search .author_content ul li article figure,
         .search .category_content ul li article figure,
-        .search .search_content ul li article figure {
+        .search .search_content ul li article figure,
+        .tag .author_content ul li article figure,
+        .tag .category_content ul li article figure,
+        .tag .search_content ul li article figure {
           margin: 0; }
           .author .author_content ul li article figure.thumbnail,
           .author .category_content ul li article figure.thumbnail,
@@ -2742,7 +2773,10 @@ footer.footer {
           .category .search_content ul li article figure.thumbnail,
           .search .author_content ul li article figure.thumbnail,
           .search .category_content ul li article figure.thumbnail,
-          .search .search_content ul li article figure.thumbnail {
+          .search .search_content ul li article figure.thumbnail,
+          .tag .author_content ul li article figure.thumbnail,
+          .tag .category_content ul li article figure.thumbnail,
+          .tag .search_content ul li article figure.thumbnail {
             float: left;
             margin-right: 20px;
             border: none;
@@ -2755,7 +2789,10 @@ footer.footer {
         .category .search_content ul li article section h2,
         .search .author_content ul li article section h2,
         .search .category_content ul li article section h2,
-        .search .search_content ul li article section h2 {
+        .search .search_content ul li article section h2,
+        .tag .author_content ul li article section h2,
+        .tag .category_content ul li article section h2,
+        .tag .search_content ul li article section h2 {
           line-height: 1.3;
           text-align: justify;
           font-size: 20px;
@@ -2770,7 +2807,10 @@ footer.footer {
           .category .search_content ul li article section h2 a,
           .search .author_content ul li article section h2 a,
           .search .category_content ul li article section h2 a,
-          .search .search_content ul li article section h2 a {
+          .search .search_content ul li article section h2 a,
+          .tag .author_content ul li article section h2 a,
+          .tag .category_content ul li article section h2 a,
+          .tag .search_content ul li article section h2 a {
             color: #333; }
             .author .author_content ul li article section h2 a:hover,
             .author .category_content ul li article section h2 a:hover,
@@ -2780,7 +2820,10 @@ footer.footer {
             .category .search_content ul li article section h2 a:hover,
             .search .author_content ul li article section h2 a:hover,
             .search .category_content ul li article section h2 a:hover,
-            .search .search_content ul li article section h2 a:hover {
+            .search .search_content ul li article section h2 a:hover,
+            .tag .author_content ul li article section h2 a:hover,
+            .tag .category_content ul li article section h2 a:hover,
+            .tag .search_content ul li article section h2 a:hover {
               color: #e23d28; }
         .author .author_content ul li article section .post_time,
         .author .category_content ul li article section .post_time,
@@ -2790,7 +2833,10 @@ footer.footer {
         .category .search_content ul li article section .post_time,
         .search .author_content ul li article section .post_time,
         .search .category_content ul li article section .post_time,
-        .search .search_content ul li article section .post_time {
+        .search .search_content ul li article section .post_time,
+        .tag .author_content ul li article section .post_time,
+        .tag .category_content ul li article section .post_time,
+        .tag .search_content ul li article section .post_time {
           color: #979a9f;
           font-size: 14px;
           font-size: 1.4rem;
@@ -2804,7 +2850,10 @@ footer.footer {
         .category .search_content ul li article section .excerpt,
         .search .author_content ul li article section .excerpt,
         .search .category_content ul li article section .excerpt,
-        .search .search_content ul li article section .excerpt {
+        .search .search_content ul li article section .excerpt,
+        .tag .author_content ul li article section .excerpt,
+        .tag .category_content ul li article section .excerpt,
+        .tag .search_content ul li article section .excerpt {
           width: 100%;
           text-align: justify;
           color: #979a9f;
@@ -2822,7 +2871,10 @@ footer.footer {
   .category .search_content .wp-pagenavi,
   .search .author_content .wp-pagenavi,
   .search .category_content .wp-pagenavi,
-  .search .search_content .wp-pagenavi {
+  .search .search_content .wp-pagenavi,
+  .tag .author_content .wp-pagenavi,
+  .tag .category_content .wp-pagenavi,
+  .tag .search_content .wp-pagenavi {
     float: right;
     width: 100%;
     margin: 5.3125rem 0;
@@ -2840,7 +2892,10 @@ footer.footer {
     .category .search_content .wp-pagenavi a:hover,
     .search .author_content .wp-pagenavi a:hover,
     .search .category_content .wp-pagenavi a:hover,
-    .search .search_content .wp-pagenavi a:hover {
+    .search .search_content .wp-pagenavi a:hover,
+    .tag .author_content .wp-pagenavi a:hover,
+    .tag .category_content .wp-pagenavi a:hover,
+    .tag .search_content .wp-pagenavi a:hover {
       background: #fff; }
     .author .author_content .wp-pagenavi a,
     .author .author_content .wp-pagenavi span.current,
@@ -2859,7 +2914,13 @@ footer.footer {
     .search .category_content .wp-pagenavi a,
     .search .category_content .wp-pagenavi span.current,
     .search .search_content .wp-pagenavi a,
-    .search .search_content .wp-pagenavi span.current {
+    .search .search_content .wp-pagenavi span.current,
+    .tag .author_content .wp-pagenavi a,
+    .tag .author_content .wp-pagenavi span.current,
+    .tag .category_content .wp-pagenavi a,
+    .tag .category_content .wp-pagenavi span.current,
+    .tag .search_content .wp-pagenavi a,
+    .tag .search_content .wp-pagenavi span.current {
       -webkit-border-radius: 50%;
               border-radius: 50%;
       text-align: center;
@@ -2882,7 +2943,10 @@ footer.footer {
     .category .search_content .wp-pagenavi span.current,
     .search .author_content .wp-pagenavi span.current,
     .search .category_content .wp-pagenavi span.current,
-    .search .search_content .wp-pagenavi span.current {
+    .search .search_content .wp-pagenavi span.current,
+    .tag .author_content .wp-pagenavi span.current,
+    .tag .category_content .wp-pagenavi span.current,
+    .tag .search_content .wp-pagenavi span.current {
       background: #e23d28;
       color: #fff; }
     .author .author_content .wp-pagenavi a.nextpostslink,
@@ -2902,7 +2966,13 @@ footer.footer {
     .search .category_content .wp-pagenavi a.nextpostslink,
     .search .category_content .wp-pagenavi a.previouspostslink,
     .search .search_content .wp-pagenavi a.nextpostslink,
-    .search .search_content .wp-pagenavi a.previouspostslink {
+    .search .search_content .wp-pagenavi a.previouspostslink,
+    .tag .author_content .wp-pagenavi a.nextpostslink,
+    .tag .author_content .wp-pagenavi a.previouspostslink,
+    .tag .category_content .wp-pagenavi a.nextpostslink,
+    .tag .category_content .wp-pagenavi a.previouspostslink,
+    .tag .search_content .wp-pagenavi a.nextpostslink,
+    .tag .search_content .wp-pagenavi a.previouspostslink {
       float: right;
       margin: 0;
       width: auto;
@@ -2921,7 +2991,10 @@ footer.footer {
     .category .search_content .wp-pagenavi a.previouspostslink,
     .search .author_content .wp-pagenavi a.previouspostslink,
     .search .category_content .wp-pagenavi a.previouspostslink,
-    .search .search_content .wp-pagenavi a.previouspostslink {
+    .search .search_content .wp-pagenavi a.previouspostslink,
+    .tag .author_content .wp-pagenavi a.previouspostslink,
+    .tag .category_content .wp-pagenavi a.previouspostslink,
+    .tag .search_content .wp-pagenavi a.previouspostslink {
       float: left; }
     .author .author_content .wp-pagenavi a.nextpostslink i,
     .author .author_content .wp-pagenavi a.previouspostslink i,
@@ -2940,7 +3013,13 @@ footer.footer {
     .search .category_content .wp-pagenavi a.nextpostslink i,
     .search .category_content .wp-pagenavi a.previouspostslink i,
     .search .search_content .wp-pagenavi a.nextpostslink i,
-    .search .search_content .wp-pagenavi a.previouspostslink i {
+    .search .search_content .wp-pagenavi a.previouspostslink i,
+    .tag .author_content .wp-pagenavi a.nextpostslink i,
+    .tag .author_content .wp-pagenavi a.previouspostslink i,
+    .tag .category_content .wp-pagenavi a.nextpostslink i,
+    .tag .category_content .wp-pagenavi a.previouspostslink i,
+    .tag .search_content .wp-pagenavi a.nextpostslink i,
+    .tag .search_content .wp-pagenavi a.previouspostslink i {
       float: right;
       margin-left: 0.625rem;
       -webkit-transition: none;
@@ -2955,7 +3034,10 @@ footer.footer {
     .category .search_content .wp-pagenavi a.previouspostslink i,
     .search .author_content .wp-pagenavi a.previouspostslink i,
     .search .category_content .wp-pagenavi a.previouspostslink i,
-    .search .search_content .wp-pagenavi a.previouspostslink i {
+    .search .search_content .wp-pagenavi a.previouspostslink i,
+    .tag .author_content .wp-pagenavi a.previouspostslink i,
+    .tag .category_content .wp-pagenavi a.previouspostslink i,
+    .tag .search_content .wp-pagenavi a.previouspostslink i {
       float: left;
       margin-left: 0;
       margin-right: 0.625rem; }
@@ -2976,7 +3058,13 @@ footer.footer {
     .search .category_content .wp-pagenavi a.nextpostslink:hover,
     .search .category_content .wp-pagenavi a.previouspostslink:hover,
     .search .search_content .wp-pagenavi a.nextpostslink:hover,
-    .search .search_content .wp-pagenavi a.previouspostslink:hover {
+    .search .search_content .wp-pagenavi a.previouspostslink:hover,
+    .tag .author_content .wp-pagenavi a.nextpostslink:hover,
+    .tag .author_content .wp-pagenavi a.previouspostslink:hover,
+    .tag .category_content .wp-pagenavi a.nextpostslink:hover,
+    .tag .category_content .wp-pagenavi a.previouspostslink:hover,
+    .tag .search_content .wp-pagenavi a.nextpostslink:hover,
+    .tag .search_content .wp-pagenavi a.previouspostslink:hover {
       color: #464646; }
 
 .shop_filters {
@@ -4539,8 +4627,8 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
   padding: 2.5rem 0; }
 
 .woocommerce form {
-  padding: 20px 20px 0 20px;
-  padding: 2rem 2rem 0 2rem;
+  padding: 0;
+  padding: 0;
   font-size: 14px;
   font-size: 1.4rem; }
   .woocommerce form table.shop_table {
