@@ -39,7 +39,6 @@
 				</div><!-- row -->
 			</div><!-- container -->
 		</div><!-- top_bar -->
-	<?php } else { ?>
 	<?php } ?>
 	<div class="main_area">
 		<div class="container">
@@ -66,8 +65,15 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<a href="#" class="mobile_menu sb-toggle-left"><span class="mobile_menu"></span></a>
-
-						<?php echo wp_nav_menu(); ?>
+                    <?php
+                        if (has_nav_menu('header_menu')) {
+                            wp_nav_menu( array(
+                                'theme_location' => 'header_menu',
+                                'menu_class' => 'header_menu',
+                                'container' => false
+                            ) );
+                        }
+                    ?>
 				</div><!-- col-xs-12 -->
 			</div><!-- row -->
 		</div><!-- container -->

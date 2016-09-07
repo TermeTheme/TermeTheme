@@ -705,7 +705,7 @@
                   'id'       => 'slider',
                   'type'     => 'switch',
                   'title'    => __( 'Slider', 'terme' ),
-                  'default'  => false,
+                  'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
               ),

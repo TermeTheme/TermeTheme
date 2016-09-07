@@ -10,14 +10,11 @@
 								<h1 class="article_title"><?php the_title('') ?></h1>
 							</div><!-- article_info -->
 							<div class="terme_post">
-								<div class="thumb">
-									<?php the_post_thumbnail( '' ); ?>
-								</div>
                                 <div class="terme_post_body">
-                                    <?php the_content(); ?>
+                                    <?php echo wp_get_attachment_image( get_the_ID(), 'large' ); ?>
                                 </div>
 							</div><!-- terme_post -->
-							<?php comments_template(); endwhile; endif; ?>
+							<?php endwhile; endif; ?>
 						</div><!-- article_content -->
 					</div><!--col-md-12-->
 				</div><!-- row -->

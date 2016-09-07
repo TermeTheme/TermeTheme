@@ -24,7 +24,6 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- top_bar -->
-	<?php } else { ?>
 	<?php } ?>
 	<div class="main_area">
 		<div class="container">
@@ -53,13 +52,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-						<?php echo wp_nav_menu(); ?>
-						<?php if (class_exists('WooCommerce')) { ?>
+                    <?php
+                        if (has_nav_menu('header_menu')) {
+                            wp_nav_menu( array(
+                                'theme_location' => 'header_menu',
+                                'menu_class' => 'header_menu',
+                                'container' => false
+                            ) );
+                        }
+                    ?>
+					<?php if (class_exists('WooCommerce')) { ?>
 					<div class="shopping_cart">
 						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">
 							<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 							<div class="count">
-								Cart
+								<?php _e('Cart', 'terme') ?>
 								<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
 							</div>
 						</a>

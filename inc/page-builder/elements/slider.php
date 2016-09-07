@@ -3,9 +3,9 @@
          global $terme_options;
         $slider_id = $terme_options['slider_id'];
         $slider = get_post_meta( $slider_id, '_terme_slider_slides',true);
-        if ( isset($slider) && !empty($slider) ) {
+        if ( isset($slider) && !empty($slider) ):
             $type = ( isset($slider['settings']['type']) && !empty($slider['settings']['type']) ) ? $slider['settings']['type'] : 'custom' ;
-        }
+
     ?>
     <?php
         if ( $type == 'custom' ):
@@ -54,5 +54,5 @@
             <?php endwhile; wp_reset_postdata(); ?>
 
     <?php endif; ?>
-
+    <?php endif; ?>
 </div>

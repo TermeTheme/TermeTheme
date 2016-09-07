@@ -13,7 +13,7 @@ add_action( 'wp_head', 'terme_head_style' );
         echo '<link rel="shortcut icon" href="' .$terme_options['favicon_114']['url']. '" />';
        } elseif (isset($terme_options['favicon_144']['url']) && !empty ($terme_options['favicon_144']['url'])) {
          echo '<link rel="shortcut icon" href="' .$terme_options['favicon_144']['url']. '" />';
-      } else {
+     } elseif( isset($terme_options['favicon_16']['url']) && !empty ($terme_options['favicon_16']['url']) ) {
         echo '<link rel="shortcut icon" href="' .$terme_options['favicon_16']['url']. '" />';
       }
     	echo '<style>'; ?>
@@ -54,4 +54,16 @@ add_action( 'wp_footer', 'terme_footer_script' );
         echo '<script type="text/javascript">'.$terme_options['custom_js'].'</script>';
       }
   }
- ?>
+/*-----------------------------------------------------------------------------------*/
+# Terme Add Custom Body Class
+/*-----------------------------------------------------------------------------------*/
+add_filter('body_class', 'terme_custom_body_classes');
+function terme_custom_body_classes($classes) {
+    global $terme_options;
+    $custom_classes = ( isset($terme_options['custom_body_class']) && !empty($terme_options['custom_body_class']) ) ? $terme_options['custom_body_class'] : false ;
+    if ($custom_classes) {
+        $custom_classes = explode(' ', $custom_classes);
+        $classes = array_merge($classes,$custom_classes);
+    }
+    return $classes;
+}

@@ -102,19 +102,36 @@ jQuery(document).ready(function($) {
     // News Ticker
     /*-----------------------------------------------------------------------------------*/
 
-    jQuery('.owl-carousel').owlCarousel({
-        margin: 10,
-        stagePadding: 10,
-        navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
-        responsive: {
-            450: {
-                items: 3
-            },
-            1000: {
-                items: 4
+    if (jQuery('body').hasClass('rtl')) {
+        jQuery('.owl-carousel').owlCarousel({
+            margin: 10,
+            rtl: true,
+            stagePadding: 10,
+            navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
+            responsive: {
+                450: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
             }
-        }
-    })
+        });
+    } else {
+        jQuery('.owl-carousel').owlCarousel({
+            margin: 10,
+            stagePadding: 10,
+            navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
+            responsive: {
+                450: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+    }
 
     /*-----------------------------------------------------------------------------------*/
     // Add RTL Property To Carousel
