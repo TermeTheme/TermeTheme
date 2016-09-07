@@ -1169,20 +1169,21 @@
         'customizer_width' => '450px',
         'fields'           => array(
           array(
+              'id'       => 'custom_body_class',
+              'type'     => 'text',
+              'title'    => __( 'Homepage Custom Body Class', 'terme' ),
+              'subtitle' => __( 'This classes will be added in body of all Homepage.', 'terme' ),
+'desc'     => __( 'Separate classes with space', 'terme' ),
+
+          ),
+          array(
               'id'       => 'categories_class',
               'type'     => 'text',
               'title'    => __( 'Categories Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all categories.', 'terme' ),
               'desc'     => __( 'Separate classes with space', 'terme' ),
           ),
-          array(
-              'id'       => 'tags_class',
-              'type'     => 'text',
-              'title'    => __( 'Tags Custom Body Class', 'terme' ),
-              'subtitle' => __( 'This classes will be added in body of all tags.', 'terme' ),
-'desc'     => __( 'Separate classes with space', 'terme' ),
 
-          ),
           array(
               'id'       => 'authors_class',
               'type'     => 'text',
