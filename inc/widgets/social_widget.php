@@ -4,9 +4,9 @@ class Terme_Socials_Networks extends WP_Widget {
     function __construct() {
         parent::__construct(
                     'terme_social_networks',
-                    __('Terme Social Widget', 'terme'),
+                    __('Terme - Social Networks', 'terme'),
                     array(
-                        'description' => __( 'Show social networks widget', 'terme' ),
+                        'description' => __( 'Show the Social Networks', 'terme' ),
                     )
                 );
     }

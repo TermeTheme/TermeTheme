@@ -15,23 +15,8 @@
       }
      ?>
   </title>
-	<?php if ( isset($terme_options['favicon_57']['url']) && !empty ($terme_options['favicon_57']['url'])) { ?>
-		<link rel="shortcut icon" href="<?php echo $terme_options['favicon_57']['url']; ?>" />
-	<?php } elseif (isset($terme_options['favicon_72']['url']) && !empty ($terme_options['favicon_72']['url'])) { ?>
-		<link rel="shortcut icon" href="<?php echo $terme_options['favicon_57']['url']; ?>" />
-	<?php } elseif (isset($terme_options['favicon_114']['url']) && !empty ($terme_options['favicon_114']['url'])) { ?>
-		<link rel="shortcut icon" href="<?php echo $terme_options['favicon_114']['url']; ?>" />
-	<?php } elseif (isset($terme_options['favicon_144']['url']) && !empty ($terme_options['favicon_144']['url'])) { ?>
-		<link rel="shortcut icon" href="<?php echo $terme_options['favicon_144']['url']; ?>" />
-	<?php } else { ?>
-		<link rel="shortcut icon" href="<?php echo $terme_options['favicon_16']['url']; ?>" />
-	<?php }  ?>
   <?php load_theme_textdomain('terme'); ?>
   <?php if ( get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-  <?php include TEMPLATEPATH . '/style.php'; ?>
-  <?php echo $terme_options['google_analytics_code']; ?>
-  <?php echo $terme_options['code_before_head']; ?>
-	<?php echo $terme_options['header-script']; ?>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class($terme_options['custom_body_class']); ?>>

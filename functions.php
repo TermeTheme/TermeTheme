@@ -7,6 +7,9 @@ function terme_enqueue_scripts() {
     wp_enqueue_style('FontAwesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array(), '4.0.0');
     wp_enqueue_style('SlideBars', get_template_directory_uri().'/assets/css/slidebars.min.css', array(), '4.0.0');
     wp_enqueue_style('termeAdmin', get_template_directory_uri().'/assets/admin/css/terme.css', array(), '4.0.0');
+    if (is_rtl()) {
+        wp_enqueue_style('Bootstrap-RTL', get_template_directory_uri().'/assets/css/bootstrap-rtl.min.css', array(), '4.0.0');
+    }
     // Scripts
     wp_enqueue_script('jQuery-OwlCarousel', get_template_directory_uri().'/assets/js/owl.carousel.min.js', array('jquery'), '1.4.1', true);
     wp_enqueue_script('jQuery-Bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js', array('jquery'), '1.4.1', true);
@@ -71,9 +74,12 @@ add_action('admin_enqueue_scripts', 'terme_theme_admin_assets');
 function terme_theme_admin_assets() {
     wp_enqueue_style('TermeTheme-admin-style', get_template_directory_uri().'/assets/admin/css/terme.css', array());
     wp_enqueue_script('TermeTheme-Admin-Js', get_template_directory_uri().'/assets/admin/js/terme.js', array('jquery'), true);
+    if (is_rtl()) {
+        wp_enqueue_style('TermeTheme-admin-style-rtl', get_template_directory_uri().'/assets/admin/css/terme-rtl.css', array());
+    }
 }
 // Woocommerce Theme Support
-add_action('after_setup_theme', 'terme_setup');
+add_action('after_setup_theme', 'terme_setup', 1);
 function terme_setup() {
     add_theme_support('woocommerce');
     load_theme_textdomain( 'terme', TEMPLATEPATH . '/languages' );
@@ -97,12 +103,12 @@ function terme_setup() {
         add_image_size('wc_product', 250, 250, true);
         add_image_size('slider', 750, 385, true);
     }
+    include TEMPLATEPATH.'/inc/theme_option/index.php';
 }
 
 include TEMPLATEPATH.'/inc/terme_funcs.php';
-include TEMPLATEPATH.'/inc/hooks.php';
+include TEMPLATEPATH.'/inc/terme_customizer.php';
 include TEMPLATEPATH.'/inc/widgets/widgets.php';
-include TEMPLATEPATH.'/inc/theme_option/index.php';
 include TEMPLATEPATH.'/inc/page-builder/index.php';
 include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 include TEMPLATEPATH.'/inc/wc_functions.php';

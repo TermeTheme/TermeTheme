@@ -150,16 +150,12 @@ class Terme_Element_Two extends Terme_Page_Builder_Element {
         $first_post = new WP_Query($args_nooffset);
         while ($first_post->have_posts()):
         $first_post->the_post();
-            $lid = (get_post_meta( get_the_id(), 'terme_lid',  true)) ? '<h4>'.get_post_meta( get_the_id(), 'terme_lid',  true).'</h4>' : '' ;
             $output .= '
-
                     <li>
                       <div class="thumb"><a href="'.get_permalink().'" title="'.get_the_title().'">'.get_the_post_thumbnail(get_the_id(), 'element_01_thumb_02').'</a></div>
-                      '.$lid.'
                       <h2><a href="'.get_permalink().'" title="'.get_the_title().'">'.terme_shorten_text(get_the_title(), 50).'</a></h2>
                       <div class="time"><i class="fa fa-clock-o"></i> '.get_the_time($terme_options['post_date_format']).'</div>
                     </li>
-
                   ';
         endwhile; wp_reset_postdata();
         $output .= '

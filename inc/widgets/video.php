@@ -5,8 +5,8 @@ class terme_video_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'html_widget',
-            __('Terme Video Widget', 'terme'),
-            array( 'description' => __( 'Show the Video', 'terme' ), )
+            __('Terme - Video', 'terme'),
+            array( 'description' => __( 'Recommended for Posts Have Video', 'terme' ), )
         );
     }
     public function widget( $args, $instance ) {

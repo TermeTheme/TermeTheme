@@ -101,7 +101,7 @@ if( !class_exists( 'ReduxFramework_icon_selector' ) ) {
             $html.= '<div class="filter-count" data-text="Founded icon: "></div>';
             $html.= '<div class="filter-selected-icon"> ';
                 $html.= '<div class="display-icon"><i class="fa '.$Selected_icon.'"></i></div>';
-                $html.= '<a href="#" class="button use_icon" data-value="'.$Selected_icon.'">'.__('Use Icon', 'terme').'<input type="hidden" value="'.$Selected_icon.'"></a>';
+                $html.= '<a href="#" class="button use_icon" data-value="'.$Selected_icon.'">'.__('Select Icon', 'terme').'<input type="hidden" value="'.$Selected_icon.'"></a>';
             $html.= '</div></div>';
             $html.='<ul class="terme-font-awesome field_icon_selector_ul">';
             $icons = '';
@@ -111,7 +111,7 @@ if( !class_exists( 'ReduxFramework_icon_selector' ) ) {
             $html.=$icons;
             $html.='</ul></div>';
             echo $html;
-            echo '<a href="#" class="button field_icon_selector_button">Select Icon</a>';
+            echo '<a href="#" class="button field_icon_selector_button">'.__('Select Icon','terme').'</a>';
             echo '<span class="icon_selected"><i class="fa '.$Selected_icon.'"></i></span>';
             echo '<input type="hidden" id="' . $this->field['id'] . '" name="' . $this->field['name'] . $this->field['name_suffix'] . '" value="' . esc_attr( $Selected_icon ) . '" class="regular-text ' . $this->field['class'] . '">';
       }

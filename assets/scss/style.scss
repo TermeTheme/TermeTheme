@@ -7,23 +7,21 @@ a.back_to_top {
 	border-radius: 0;
 	transform: translate(-25%,125%) rotate(45deg);
 	display: none;
-	border: solid $secondary_color;
 	z-index: 999;
 	transition: all 1s;
-	color: $secondary_color;
+	color: $secondary_color_light;
 	overflow: hidden;
 	z-index: 20;
-	@include rem(( height: 50px, line-height: 55px,width: 50px, border-width: 5px, ));
+	@include rem(( height: 50px, line-height: 55px,width: 50px, ));
 
 	&:hover {
-		color: #fff;
-		border-color: $primary_color;
+		color: secondary_color;
 	}
 
 	&:before {
 		position: absolute;
 		content: "\f106";
-		font: normal normal normal 40px/1 FontAwesome;
+		font: normal normal normal 60px/1 FontAwesome;
 		top: 0;
 		left: 0;
 		transform: translate(0%, -20%) rotate(-45deg);
@@ -43,7 +41,6 @@ a.back_to_top {
 		bottom: 0;
 		right: 0;
 		transform: translate(100%,100%);
-		background-color: $primary_color;
 		transition: all 1s;
 		z-index: -20;
 		border-radius: 100% 0 0 0;
@@ -51,7 +48,7 @@ a.back_to_top {
 	}
 
 	&.show {
-		transform: translate(-25%,50%) rotate(45deg);
+		transform: translate(-25%,0) rotate(45deg);
 		display: block;
 	}
 }
@@ -220,6 +217,9 @@ header.style_4 .main_area .logo {
 		max-width: 100%;
 		width: auto;
 		height: auto;
+	}
+	h2 {
+		margin-top: 0;
 	}
 
 	&.center {
@@ -1872,6 +1872,7 @@ footer.footer {
 
 	&.style_1 .main_area,
 	&.style_2 .main_area,
+	&.style_3 .main_area,
 	&.style_4 .main_area,
 	&.style_5 .main_area {
 		.tagcloud {
@@ -1879,9 +1880,8 @@ footer.footer {
 			width: 100%;
 			list-style: none;
 			padding: 0;
-			@include rem(( padding: 15px 0, ));
 			margin-bottom: 0;
-
+			@include rem(( padding: 15px 0, ));
 			a {
 				position: relative;
 				overflow: hidden;
@@ -1891,18 +1891,38 @@ footer.footer {
 				z-index: 10;
 				transition: all 1s;
 				@include rem((border-width: 1px, padding: 5px 10px,margin: 5px,font-size: 15px !important,));
-
 				&:hover {
 					color: #fff;
 					border-color: $primary_color;
-
 					&:before {
 						background-color: $primary_color;
 					}
 				}
 			}
 		}
+		ul.social_network {
+			width: 100%;
+			float: left;
+			list-style: none;
+			padding: 0;
+			li {
+				float: left;
+				a {
+					color: #fff;
+					width: 40px;
+					height: 40px;
+					text-align: center;
+					display: inline-block;
+					line-height: 40px;
+					border-radius: 4px;
+					@include rem((font-size: 1.6rem,));
+					&:hover {
+						background-color: $secondary_color;
+					}
 
+				}
+			}
+		}
 		ul.items {
 			float: right;
 			width: 100%;
@@ -2064,13 +2084,13 @@ footer.footer {
 		@include rem(( font-size: 1.4rem, ));
 	}
 
-	&.style_1 .main_area .box_1,
-	&.style_1 .main_area .box_2,
-	&.style_5 .main_area .box_1,
-	&.style_5 .main_area .box_2 {
-		width: 100%;
-		float: left;
-	}
+	// &.style_1 .main_area .box_1,
+	// &.style_1 .main_area .box_2,
+	// &.style_5 .main_area .box_1,
+	// &.style_5 .main_area .box_2 {
+	// 	width: 100%;
+	// 	float: left;
+	// }
 	// &.style_1 .main_area .box_1 p,
 	// &.style_4 .main_area .box_1 p {
 	// 	padding: 20px 0;
@@ -2082,41 +2102,37 @@ footer.footer {
 		display: block;
 	}
 
-	&.style_1 .main_area .box_1 ul {
-		width: 100%;
-		float: left;
-		list-style: none;
-		padding: 0;
-	}
+	// &.style_1 .main_area .box_1 ul {
+	// 	width: 100%;
+	// 	float: left;
+	// 	list-style: none;
+	// 	padding: 0;
+	// }
+	//
+	// &.style_1 .main_area .box_1 ul li {
+	// 	float: left;
+	// }
+	//
+	// &.style_1 .main_area .box_1 ul li a {
+	// 	color: #fff;
+	// 	width: 40px;
+	// 	height: 40px;
+	// 	text-align: center;
+	// 	display: inline-block;
+	// 	line-height: 40px;
+	// 	border-radius: 4px;
+	// 	@include rem((font-size: 1.6rem,));
+	// }
+	//
+	// &.style_1 .main_area .box_1 ul li a:hover {
+	// 	background-color: $secondary_color;
+	// }
 
-	&.style_1 .main_area .box_1 ul li {
-		float: left;
-	}
-
-	&.style_1 .main_area .box_1 ul li a {
-		color: #fff;
-		width: 40px;
-		height: 40px;
-		text-align: center;
-		display: inline-block;
-		line-height: 40px;
-		border-radius: 4px;
-		@include rem((font-size: 1.6rem,));
-	}
-
-	&.style_1 .main_area .box_1 ul li a:hover {
-		background-color: $secondary_color;
-	}
-
-	&.style_1 .main_area .box_2 h2,
-	&.style_1 .main_area .box_3 h2,
-	&.style_2 .main_area .box_1 h2,
-	&.style_2 .main_area .box_2 h2,
-	&.style_2 .main_area .box_3 h2,
-	&.style_2 .main_area .box_4 h2,
-	&.style_5 .main_area .box_1 h2,
-	&.style_5 .main_area .box_2 h2,
-	&.style_5 .main_area .box_3 h2 {
+	&.style_1 .main_area  h2,
+	&.style_2 .main_area  h2,
+	&.style_3 .main_area  h2,
+	&.style_4 .main_area  h2,
+	&.style_5 .main_area  h2 {
 		margin: 0;
 		color: #fff;
 		@include rem((font-size: 2rem,));
@@ -2394,6 +2410,14 @@ footer.footer {
 
 		p {
 			float: left;
+		}
+		a {
+			color: #a3a3a3;
+			&:hover {
+				color: #fff;
+
+			}
+
 		}
 	}
 
@@ -3223,7 +3247,7 @@ footer.footer {
 	background: #fff;
 	position: relative;
 	overflow: hidden;
-	@include rem(( height: 460px, border-width: 1px,margin-bottom: 30px, ));
+	@include rem(( height: 430px, border-width: 1px,margin-bottom: 30px, ));
 
 	.ribbon {
 		width: 0;
@@ -3286,11 +3310,11 @@ footer.footer {
 	background: #fff;
 	text-align: center;
 	transition: background 300ms;
-	@include rem(( padding: 0 10px, ));
+	@include rem(( padding: 10px, ));
 
 	h3 {
 		font-weight: bold;
-		@include rem(( font-size: 20px, ));
+		@include rem(( font-size: 20px,margin-top: 10px, ));
 
 		a {
 			color: $secondary_color;
@@ -4303,22 +4327,22 @@ footer.footer {
 	}
 
 	footer.footer {
-		&.style_1 .main_area {
-			.box_1 {
-				text-align: center;
-
-				img {
-					display: block;
-					margin: 0 auto;
-				}
-
-				ul {
-					display: inline-block;
-					float: none;
-					width: auto;
-				}
-			}
-		}
+		// &.style_1 .main_area {
+		// 	.box_1 {
+		// 		text-align: center;
+		//
+		// 		img {
+		// 			display: block;
+		// 			margin: 0 auto;
+		// 		}
+		//
+		// 		ul {
+		// 			display: inline-block;
+		// 			float: none;
+		// 			width: auto;
+		// 		}
+		// 	}
+		// }
 
 		&.style_3 .top_bar {
 			.social_menu {
@@ -4359,12 +4383,27 @@ footer.footer {
 		}
 	}
 }
+
+@media (max-width: 1199px) {
+	.shop_product {
+		@include rem(( height: 370px,));
+		.info {
+			h3 {
+				@include rem(( margin: 5px 0,));
+
+			}
+		}
+
+	}
+}
 @media (max-width: 992px) {
 	.header {
 		.main_menu {
 			display: none;
 		}
 	}
+
+
 
 	header.header {
 		.top_bar {
@@ -4974,6 +5013,14 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 					background-color: #00aadc;
 					color: #fff;
 				}
+			}
+		}
+		#payment {
+			input {
+				height: auto;
+			}
+			img {
+				width: auto;
 			}
 		}
 	}

@@ -3,8 +3,8 @@ class terme_tab_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'tab_widget',
-            __('Terme Tab Widget', 'terme'),
-            array( 'description' => __( 'Show the News by Category', 'terme' ), )
+            __('Terme - Tab', 'terme'),
+            array( 'description' => __( 'Show the Last Posts by Category in Tab', 'terme' ), )
         );
     }
 

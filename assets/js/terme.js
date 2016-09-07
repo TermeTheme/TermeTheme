@@ -52,15 +52,15 @@ jQuery(document).ready(function($) {
     // Back To Top Button
     /*-----------------------------------------------------------------------------------*/
 
-    jQuery(window).scroll(function() {
-        if (jQuery(window).scrollTop() > 200) {
+    jQuery('[canvas="container"]').scroll(function() {
+        if (jQuery('[canvas="container"]').scrollTop() > 200) {
             jQuery("a.back_to_top").fadeIn('slow').addClass('show');
         } else {
             jQuery("a.back_to_top").fadeOut('slow').removeClass('show');
         }
     });
     jQuery("a[href='#top']").click(function() {
-        jQuery("html, body").animate({
+        jQuery('[canvas="container"]').animate({
             scrollTop: 0
         }, "slow");
         return false;
@@ -200,6 +200,30 @@ jQuery(document).ready(function($) {
         classExpand: 'parent-item',
         speed: 'slow',
         cookie: 'my-cookie'
+    });
+
+    /*-----------------------------------------------------------------------------------*/
+    // Sliderbar
+    /*-----------------------------------------------------------------------------------*/
+
+    var controller = new slidebars();
+    controller.init();
+    jQuery( '.js-toggle-left-slidebar' ).on( 'click', function ( event ) {
+        event.stopPropagation();
+        controller.toggle( 'slidebar-1' );
+    });
+    // Close any
+    jQuery( controller.events ).on( 'opened', function () {
+        jQuery( '[canvas="container"]' ).addClass( 'js-close-any-slidebar' );
+    });
+
+    jQuery( controller.events ).on( 'closed', function () {
+        jQuery( '[canvas="container"]' ).removeClass( 'js-close-any-slidebar' );
+    });
+
+    jQuery( 'body' ).on( 'click', '.js-close-any-slidebar', function ( event ) {
+        event.stopPropagation();
+        controller.close();
     });
 
 });

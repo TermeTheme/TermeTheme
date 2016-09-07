@@ -24,6 +24,7 @@
 							<a href="<?php echo get_page_link($terme_options['register_page']); ?>">	<?php _e( $terme_options['register_text'],'terme' ); ?></a>
 						<?php } ?>
 					</div><!-- login_area -->
+					<?php if (class_exists('WooCommerce')) { ?>
 					<div class="shopping_cart">
 						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">
 							<span class="icon"><i class="fa fa-shopping-bag"></i></span>
@@ -33,6 +34,7 @@
 							</div>
 						</a>
 					</div><!-- cart -->
+					<?php } ?>
 				</div><!-- col-md-9 -->
 				</div><!-- row -->
 			</div><!-- container -->
