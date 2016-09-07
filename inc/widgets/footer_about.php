@@ -4,8 +4,8 @@ class terme_footer_about_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'terme_footer_about_widget',
-            __('Terme footer about', 'terme'),
-            array( 'description' => __( 'Show the ADS Section', 'terme' ), )
+            __('Terme(Footer) - About Us', 'terme'),
+            array( 'description' => __( 'Show a Logo with short description', 'terme' ), )
         );
         add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
     }
@@ -19,8 +19,8 @@ class terme_footer_about_widget extends WP_Widget {
         $image = ( isset($instance['image']) && !empty($instance['image']) ) ? $instance['image'] : '';
         $desc = ( isset($instance['desc']) && !empty($instance['desc']) ) ? $instance['desc'] : '';
         $thumb = wp_get_attachment_image_src( $image, 'element_01_thumb_02' );
-        echo '<img src="'.$thumb['0'].'" alt="" width="150" height="100"/>';
-        echo '<p class="about_us"> '.$desc.'</p>';
+        echo '<img src="'.$thumb['0'].'" width="150" height="100"/>';
+        echo '<p class="about_us">'.$desc.'</p>';
     }
 
     // Widget Backend

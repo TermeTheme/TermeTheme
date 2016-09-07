@@ -6,22 +6,6 @@
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer_1') ) : ?>
                 <?php endif; ?>
               </div><!-- col-xs-3 -->
-              <div class="col-xs-12">
-                <?php if($terme_options['Social_icon_footer']) { ?>
-                <div class="social_menu">
-                  <ul>
-                    <li><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="<?php echo $terme_options['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="<?php echo $terme_options['google_plus']; ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                    <li><a href="<?php echo $terme_options['vimeo']; ?>"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                    <li><a href="<?php echo $terme_options['dribbble']; ?>"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                    <li><a href="<?php echo $terme_options['instagram']; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="<?php echo $terme_options['rss']; ?>"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                    <li><a href="<?php echo $terme_options['youtube']; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div><!-- social_menu -->
-                <?php } ?>
-              </div><!-- col-xs-12 -->
           </div><!-- row -->
       </div>	<!-- contanier -->
   </div><!-- main_area -->
@@ -38,7 +22,9 @@
       ) );
     }?>
     <?php if($terme_options['copyright-footer']) { ?>
-      <?php echo $terme_options['footer-text']; ?>
+      <p>
+          <?php echo $terme_options['footer-text']; ?>
+      </p>
     <?php } ?>
   </div>
 </div><!-- col-xs-12 -->

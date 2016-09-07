@@ -298,7 +298,7 @@
                       'img' => get_template_directory_uri().'/assets/admin/images/left_sidebar.png',
                   ),
               ),
-              'default'  => '2'
+              'default'  => '0',
           ),
           array(
               'id'       => 'scroll_to_top',
@@ -306,8 +306,8 @@
               'title'    => __( 'Scroll to Top Button', 'terme' ),
               'subtitle' => __( 'Enabling this option will add a "Back To Top" button to pages.', 'terme' ),
               'default'  => true,
-              'on'       => 'Enabled',
-              'off'      => 'Disabled',
+              'on'       =>  __('Enabled', 'terme'),
+              'off'      =>  __('Disabled', 'terme'),
           ),
           array(
               'id'       => 'newsticker',
@@ -315,39 +315,40 @@
               'title'    => __( 'NewsTicker', 'terme' ),
               'subtitle' => __( 'Enable or disable the NewsTicker', 'terme' ),
               'default'  => true,
-              'on'       => 'Enabled',
-              'off'      => 'Disabled',
+              'on'       =>  __('Enabled', 'terme'),
+              'off'      =>  __('Disabled', 'terme'),
           ),
           array(
               'id'       => 'favicon_16',
               'type'     => 'media',
               'title'    => __( 'Favicon (16x16)', 'terme' ),
-              'subtitle'     => __( 'Default Favicon. 16px x 16px', 'terme' ),
+
           ),
           array(
               'id'       => 'favicon_57',
               'type'     => 'media',
-              'title'    => __( 'Apple iPhone Icon (57x57)', 'terme' ),
-              'subtitle'     => __( 'Icon for Classic iPhone', 'terme' ),
+              'title'    => __( 'Apple iPhone Icon', 'terme' ),
+              'desc' => __( 'Icon for Apple iPhone (57px x 57px)', 'terme' ),
+
           ),
           array(
               'id'       => 'favicon_72',
               'type'     => 'media',
-              'title'    => __( 'Apple iPad Icon (72x72)', 'terme' ),
-              'compiler' => 'true',
-              'subtitle'     => __( 'Icon for Classic iPad', 'terme' ),
+              'title'    => __( 'Apple iPad Icon', 'terme' ),
+              'desc' => __( 'Icon for Apple iPhone (72px x 72px)', 'terme' ),
+
           ),
           array(
               'id'       => 'favicon_114',
               'type'     => 'media',
-              'title'    => __( 'Apple iPhone Retina Icon (114x114)', 'terme' ),
-              'subtitle'     => __( 'Icon for Retina iPhone', 'terme' ),
+              'title'    => __( 'Apple iPhone Retina Icon', 'terme' ),
+              'desc' => __( 'Apple iPhone Retina Version (114px x 114px)', 'terme' ),
           ),
           array(
               'id'       => 'favicon_144',
               'type'     => 'media',
-              'title'    => __( 'Apple iPad Retina Icon (144x144)', 'terme' ),
-              'subtitle'     => __( 'Icon for Retina iPad', 'terme' ),
+              'title'    => __( 'Apple iPad Retina Icon', 'terme' ),
+              'desc' => __( 'Icon for Apple iPad Retina Version (144px x 144px)', 'terme' ),
           ),
 
           array(
@@ -367,39 +368,31 @@
             'customizer_width' => '450px',
             'fields'           => array(
               array(
+                  'id'    => 'post_breadcrumb_info',
+                  'type'  => 'info',
+                  'style' => 'success',
+                  'icon'  => 'el el-share',
+                  'title' => __( 'Post Breadcrumb Options', 'terme' ),
+              ),
+              array(
                   'id'       => 'post_breadcrumb',
                   'type'     => 'switch',
                   'title'    => __( 'Post Breadcrumb', 'terme' ),
-                  'subtitle' => __( 'Breadcrumbs are a hierarchy of links displayed below the main navigation. They are displayed on all pages but the home-page.', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
               ),
-              array(
-                  'id'       => 'breadcrumb_type',
-                  'type'     => 'select',
-                  'title'    => __('Breadcrumb Type', 'terme'),
-                  'desc'     => __('If Select (WordPress Seo Plugin Breadcrumb), You Need To Install Wordpress Seo by Yoast Plugin ', 'terme'),
-                  // Must provide key => value pairs for select options
-                  'options'  => array(
-                      '1' => 'Terme Breadcrumb',
-                      '2' => 'WordPress Seo Plugin Breadcrumb',
-                  ),
-                  'default'  => '1',
-              ),
-
               array(
                   'id'       => 'home_link_type',
                   'type'     => 'select',
                   'title'    => __( 'Home Link Type', 'terme' ),
-                  'indent'   => true, // Indent all options below until the next 'section' option is set.
-                  'required' => array( 'breadcrumb_type', "=", 1 ),
-                  'subtitle'     => __( 'Select Home Link Type', 'terme' ),
+                  'indent'   => true,
+                  'required' => array( 'post_breadcrumb', "=", 1 ),
                   'options'  => array(
-                      '0' => 'Disable',
-                      '1' => 'Icon',
-                      '2' => 'Text',
-                      '3' => 'Icon & Text',
+                      '0' => __( 'Disable', 'terme' ),
+                      '1' => __( 'Icon', 'terme' ),
+                      '2' => __( 'Text', 'terme' ),
+                      '3' => __( 'Icon & Text', 'terme' ),
                   ),
                   'default'  => '3'
               ),
@@ -410,7 +403,7 @@
                       'id'       => 'home_text',
                       'type'     => 'text',
                       'title'    => __( 'Home Text', 'terme' ),
-                      'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      'indent'   => true,
                       'required' => array( 'home_link_type', "=", 2 ),
                       'default'  => 'Home'
                   ),
@@ -420,7 +413,7 @@
                       'id'       => 'home_icon_text_text',
                       'type'     => 'text',
                       'title'    => __( 'Home Text', 'terme' ),
-                      'indent'   => true, // Indent all options below until the next 'section' option is set.
+                      'indent'   => true,
                       'required' => array( 'home_link_type', "=", 3 ),
                       'default'  => 'Home'
                   ),
@@ -428,8 +421,8 @@
                       'id'       => 'post_breadcrumb_seprator',
                       'type'     => 'icon_selector',
                       'title'    => __( 'Delimiter Icon', 'terme' ),
-                      'indent'   => true, // Indent all options below until the next 'section' option is set.
-                      'required' => array( 'breadcrumb_type', "=", 1 ),
+                      'indent'   => true,
+                      'required' => array( 'post_breadcrumb', "=", 1 ),
                       'default'  => 'fa-angle-right',
                   ),
 
@@ -437,13 +430,10 @@
                     'id'       => 'home_icon_text_icon',
                     'type'     => 'icon_selector',
                     'title'    => __( 'Home Icon', 'terme' ),
-                    'indent'   => true, // Indent all options below until the next 'section' option is set.
-                    'required' => array( 'breadcrumb_type', "=", 1 ),
-                    'default'  => 'fa-angle-right',
+                    'indent'   => true,
+                    'required' => array( 'post_breadcrumb', "=", 1 ),
+                    'default'  => 'fa-home',
                   ),
-
-
-
 
               array(
                   'id'    => 'post_meta_info',
@@ -451,25 +441,22 @@
                   'style' => 'success',
                   'icon'  => 'el el-share',
                   'title' => __( 'Post Meta Options', 'terme' ),
-                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
               ),
               array(
                   'id'       => 'post_meta',
                   'type'     => 'switch',
                   'title'    => __( 'Post Meta', 'terme' ),
-                  'subtitle' => __( 'You can hide post meta ( date, author and comments ) inside single posts with enabling this option.', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
               ),
               array(
                   'id'       => 'post_date',
                   'type'     => 'switch',
                   'title'    => __( 'Show Post Date', 'terme' ),
-                  'subtitle' => __( 'Enable or disable the Post Date', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_meta', '=' , 1),
               ),
 
@@ -478,26 +465,27 @@
                   'type'     => 'text',
                   'title'    => __( 'Post Date Format', 'terme' ),
                   'required' => array( 'post_date', '=', '1' ),
+                  'default'  => 'F j, Y',
+
+
 
               ),
               array(
                   'id'       => 'post_category',
                   'type'     => 'switch',
                   'title'    => __( 'Show Post Category', 'terme' ),
-                  'subtitle' => __( 'Enable or disable the Post Category', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_meta', '=' , 1),
               ),
               array(
                   'id'       => 'view_count',
                   'type'     => 'switch',
                   'title'    => __( 'Show Post view Count', 'terme' ),
-                  'subtitle' => __( 'You can hide post views count inside post meta info for all content listings with disabling this option.', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_meta', '=' , 1),
               ),
 
@@ -505,50 +493,44 @@
                   'id'       => 'comment_count',
                   'type'     => 'switch',
                   'title'    => __( 'Show Post Comment Count', 'terme' ),
-                  'subtitle' => __( 'You can hide post comments count inside post meta info for all content listings with disabling this option.', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_meta', '=' , 1),
               ),
               array(
                   'id'       => 'section-start',
                   'type'     => 'section',
-                  // 'title'    => __( 'Section Example', 'terme' ),
-                  // 'subtitle' => __( 'With the "section" field you can create indented option sections.', 'terme' ),
-                  'indent'   => true, // Indent all options below until the next 'section' option is set.
+                  'indent'   => true,
               ),
               array(
                   'id'     => 'section-end',
                   'type'   => 'section',
-                  'indent' => false, // Indent all options below until the next 'section' option is set.
+                  'indent' => false,
               ),
               array(
                   'id'       => 'post_tags',
                   'type'     => 'switch',
                   'title'    => __( 'Post Tags', 'terme' ),
-                  'subtitle' => __( 'Enable or disable the Post Tags', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
               ),
               array(
                   'id'       => 'author_box',
                   'type'     => 'switch',
                   'title'    => __( 'Author Box', 'terme' ),
-                  'subtitle' => __( 'You can hide post author inside post meta info for all content listings with disabling this option.', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
               ),
               array(
                   'id'       => 'post_comments',
                   'type'     => 'switch',
                   'title'    => __( 'Post Comments', 'terme' ),
-                  'subtitle' => __( 'Enable or disable the Post Comment', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
               ),
               array(
                   'id'    => 'post_share_info',
@@ -556,28 +538,24 @@
                   'style' => 'success',
                   'icon'  => 'el el-share',
                   'title' => __( 'Post Sharing Options', 'terme' ),
-                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
               ),
               array(
                   'id'       => 'post_share',
                   'type'     => 'switch',
                   'title'    => __( 'Post Share', 'terme' ),
-                  'subtitle' => __( 'Enable or disable the Post Share', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
               ),
               array(
                   'id'       => 'section-start',
                   'type'     => 'section',
-                  // 'title'    => __( 'Section Example', 'terme' ),
-                  // 'subtitle' => __( 'With the "section" field you can create indented option sections.', 'terme' ),
-                  'indent'   => true, // Indent all options below until the next 'section' option is set.
+                  'indent'   => true,
               ),
               array(
                   'id'       => 'facebook_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Facebook Share', 'terme' ),
+                  'title'    => __( 'Facebook', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -586,7 +564,7 @@
               array(
                   'id'       => 'twitter_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Twitter Share', 'terme' ),
+                  'title'    => __( 'Twitter', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -595,7 +573,7 @@
               array(
                   'id'       => 'pinterest_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Pinterest Share', 'terme' ),
+                  'title'    => __( 'Pinterest', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -604,7 +582,7 @@
               array(
                   'id'       => 'tumblr_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Tumblr Share', 'terme' ),
+                  'title'    => __( 'Tumblr', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -613,7 +591,7 @@
               array(
                   'id'       => 'wordpress_share',
                   'type'     => 'switch',
-                  'title'    => __( 'Wordpress Share', 'terme' ),
+                  'title'    => __( 'Wordpress', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -622,7 +600,7 @@
               array(
                   'id'     => 'section-end',
                   'type'   => 'section',
-                  'indent' => false, // Indent all options below until the next 'section' option is set.
+                  'indent' => false,
               ),
               array(
                   'id'    => 'related_posts_info',
@@ -630,14 +608,11 @@
                   'style' => 'success',
                   'icon'  => 'el el-link',
                   'title' => __( 'Related Posts Setting', 'terme' ),
-                  // 'desc'  => __( 'This is an info field with the <strong>success</strong> style applied and an icon.', 'terme' )
               ),
               array(
                   'id'       => 'related_posts',
                   'type'     => 'switch',
                   'title'    => __( 'Related Post', 'terme' ),
-                  'subtitle' => __( 'Enable or disable the related article section
-', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -647,7 +622,6 @@
                   'type'          => 'slider',
                   'title'         => __( 'Number of Posts', 'terme' ),
                   'subtitle'      => __( 'How many related articles to show:', 'terme' ),
-                  'desc'          => __( 'Slider description. Min: 1, max: 500, step: 1, default value: 250', 'terme' ),
                   'default'       => 5,
                   'min'           => 1,
                   'step'          => 1,
@@ -658,13 +632,8 @@
               array(
                   'id'       => 'related_posts_display_by',
                   'type'     => 'select',
-                  'title'    => __( 'Select Option', 'terme' ),
-                  'subtitle' => __( 'How to pick the related articles:
-by category - pick posts from that have at least one category in common with the current post
-by tags - pick posts that have at least one tag in common with the current post', 'terme' ),
-                  'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
+                  'title'    => __( 'Related Post By', 'terme' ),
                   'required' => array( 'related_posts', '=', 1 ),
-                  //Must provide key => value pairs for select options
                   'options'  => array(
                       '1' => 'Category',
                       '2' => 'tags',
@@ -737,8 +706,8 @@ by tags - pick posts that have at least one tag in common with the current post'
                   'type'     => 'switch',
                   'title'    => __( 'Slider', 'terme' ),
                   'default'  => true,
-                  'on'       => 'Enabled',
-                  'off'      => 'Disabled',
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
               ),
               array(
                   'title'    => __( 'Select Slider', 'terme' ),
@@ -747,13 +716,13 @@ by tags - pick posts that have at least one tag in common with the current post'
                   'multi'    => false,
                   'data'     => 'posts',
                   'args' => array('post_type' => array('slider')),
-                  'subtitle' => __( 'Selected post will be displayed in page top menu', 'terme' ),
+                  'subtitle' => __( 'Select Slider will be displayed in Homepage', 'terme' ),
                   'required' => array('slider', '=' , 1),
               ),
             )
         ) );
         Redux::setSection( $opt_name, array(
-            'title'            => __( 'Login Settings', 'terme' ),
+            'title'            => __( 'Login & Logout Settings', 'terme' ),
             'id'               => 'login_setting',
             'icon'             => 'el el-lock',
             'subsection'       => true,
@@ -762,7 +731,7 @@ by tags - pick posts that have at least one tag in common with the current post'
               array(
                   'id'       => 'login_text',
                   'type'     => 'text',
-                  'title'    => __( 'Login Text', 'terme' ),
+                  'title'    => __( 'Login Text Button', 'terme' ),
                   'default'=>'Login',
               ),
                 array(
@@ -771,12 +740,12 @@ by tags - pick posts that have at least one tag in common with the current post'
                     'type'     => 'select',
                     'multi'    => false,
                     'data'     => 'page',
-                    'subtitle' => __( 'Selected post will be displayed in page top menu', 'terme' ),
+                    'subtitle' => __( 'Select Login Page', 'terme' ),
                 ),
                 array(
                     'id'       => 'register_text',
                     'type'     => 'text',
-                    'title'    => __( 'Register Text', 'terme' ),
+                    'title'    => __( 'Register Text Button', 'terme' ),
                     'default'=>'Register',
                 ),
                 array(
@@ -785,12 +754,12 @@ by tags - pick posts that have at least one tag in common with the current post'
                     'type'     => 'select',
                     'multi'    => false,
                     'data'     => 'page',
-                    'subtitle' => __( 'Selected post will be displayed in page top menu', 'terme' ),
+                    'subtitle' => __( 'Select Register Page', 'terme' ),
                 ),
                 array(
                     'id'       => 'logout_text',
                     'type'     => 'text',
-                    'title'    => __( 'Logout Text', 'terme' ),
+                    'title'    => __( 'Logout Text Button', 'terme' ),
                     'default'=>'Logout',
                 ),
             )
@@ -808,7 +777,6 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'     => 'image_select',
               'title'    => __( 'Header Layout', 'terme' ),
               'subtitle' => __( 'Choose the default header layout', 'terme' ),
-              //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
                   '1' => array(
                       'alt' => 'Header(1)',
@@ -834,46 +802,41 @@ by tags - pick posts that have at least one tag in common with the current post'
               'id'       => 'logo_type',
               'type'     => 'select',
               'title'    => __( 'Select Logo type', 'terme' ),
-              //Must provide key => value pairs for select options
               'options' => array(
-                  'logo_image' => __('Logo Image', 'framework'),
-                  'logo_name' => __('Site Name', 'framework'),
+                  'logo_image' => __('Logo Image', 'terme'),
+                  'logo_name' => __('Site Name', 'terme'),
                   ),
               'default' => 'logo_image',
           ),
           array(
           'id'=>'logo_img',
           'type' => 'media',
-          'title' => __('Upload your logo image', 'framework'),
+          'title' => __('Upload your logo image', 'terme'),
           'default'=>'',
-          'subtitle' => __( 'By default, a text-based logo is created using your site title. But you can also upload an image-based logo here.', 'terme' ),
-
           'required' => array('logo_type', '=' , 'logo_image'),
+          'desc'    => __( 'Recommended size (MAX) : 190px x 60px', 'terme' ),
           ),
           array(
           'id'=>'retina_logo_img',
           'type' => 'media',
-          'title' => __('Upload your retina logo image', 'framework'),
-          'default'=> 0,
-          'subtitle' => __( 'If you want to upload a Retina Image, It\'s Image Size should be exactly double in compare with your normal Logo. It requires WP Retina 2x plugin.', 'terme' ),
-
+          'title' => __('Upload your retina logo image', 'terme'),
+          'subtitle' => __( 'If you want to upload a Retina Image, It\'s Image Size should be exactly double in compare with your normal Logo.', 'terme' ),
           'required' => array('logo_type', '=' , 'logo_image'),
           ),
           array(
               'id'       => 'site_name',
               'type'     => 'text',
               'title'    => __( 'Site Name', 'terme' ),
-              'subtitle' => __( 'The desired text will be used if logo images are not provided below.', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
+              'default'=>'TermeTheme',
 
           ),
           array(
               'id'       => 'site_description',
               'type'     => 'text',
               'title'    => __( 'Site Description', 'terme' ),
-              'subtitle' => __( 'The desired text will be used if logo images are not provided below.', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
-
+              'default'=>'Free Wordpress Template',
           ),
           array(
               'id'          => 'site_name_style',
@@ -882,7 +845,7 @@ by tags - pick posts that have at least one tag in common with the current post'
               'required' => array('logo_type', '=' , 'logo_name'),
 
               //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
-              //'google'      => false,
+              'google'      => true,
               // Disable google fonts. Won't work if you haven't defined your google api key
               'font-backup' => true,
               // Select a backup non-google font in addition to a google font
@@ -902,7 +865,6 @@ by tags - pick posts that have at least one tag in common with the current post'
               // An array of CSS selectors to apply this font style to dynamically
               'units'       => 'px',
               // Defaults to px
-              'subtitle'    => __( 'Typography option with each property can be called individually.', 'terme' ),
               'default'     => array(
                   'color'       => '#333',
                   'font-style'  => '700',
@@ -910,13 +872,12 @@ by tags - pick posts that have at least one tag in common with the current post'
                   'google'      => true,
                   'font-size'   => '33px',
                   'line-height' => '40px'
-
               ),
           ),
           array(
               'id'          => 'site_descriotion_style',
               'type'        => 'typography',
-              'title'       => __( 'Site Descriotion Style', 'terme' ),
+              'title'       => __( 'Site Description Style', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
 
               //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
@@ -940,14 +901,13 @@ by tags - pick posts that have at least one tag in common with the current post'
               // An array of CSS selectors to apply this font style to dynamically
               'units'       => 'px',
               // Defaults to px
-              'subtitle'    => __( 'Typography option with each property can be called individually.', 'terme' ),
               'default'     => array(
                   'color'       => '#333',
                   'font-style'  => '700',
                   'font-family' => 'Abel',
                   'google'      => true,
-                  'font-size'   => '33px',
-                  'line-height' => '40px'
+                  'font-size'   => '20px',
+                  'line-height' => '0',
               ),
           ),
         ),
@@ -956,15 +916,13 @@ by tags - pick posts that have at least one tag in common with the current post'
         'title'      => __( 'Top Bar', 'terme' ),
         'id'         => 'top_bar',
         //'icon'  => 'el el-home'
-        'desc'       => __( 'Enabling this will disable the top bar element that appears above the logo area.', 'terme' ),
         'subsection' => true,
         'fields'     => array(
           array(
               'id'       => 'hide_top_bar',
               'type'     => 'switch',
               'title'    => __( 'Hide Top Bar', 'terme' ),
-              'subtitle' => __( 'Look, it\'s on! Also hidden child elements!', 'terme' ),
-              'default'  => 0,
+              'default'  => true,
               'on'       => 'Yes',
               'off'      => 'No',
           ),
@@ -972,13 +930,9 @@ by tags - pick posts that have at least one tag in common with the current post'
               'id'       => 'today_date_format',
               'type'     => 'text',
               'title'    => __( 'Today Date Format', 'terme' ),
-              'subtitle' => __( 'Subtitle', 'terme' ),
-              'desc'     => __( 'Field Description', 'terme' ),
               'default'  => 'F j, Y',
               'required' => array( 'hide_top_bar', '=', '0' ),
           ),
-
-
         ),
     ) );
     Redux::setSection( $opt_name, array(
@@ -991,20 +945,15 @@ by tags - pick posts that have at least one tag in common with the current post'
               'id'       => 'top_banner_switch',
               'type'     => 'switch',
               'title'    => __( 'Top Banner', 'terme' ),
-              'subtitle' => __( 'Look, it\'s on! Also hidden child elements!', 'terme' ),
               'default'  => 0,
-              'on'       => 'Enabled',
-              'off'      => 'Disabled',
+              'on'       =>  __('Enabled', 'terme'),
+              'off'      =>  __('Disabled', 'terme'),
           ),
-
           array(
               'id'       => 'banner_type',
               'type'     => 'button_set',
               'title'    => __( 'Banner Type', 'terme' ),
-              'subtitle' => __( 'No validation can be done on this field type', 'terme' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
               'required' => array( 'top_banner_switch', '=', '1' ),
-              //Must provide key => value pairs for radio options
               'options'  => array(
                   '1' => 'Image',
                   '2' => 'Custom'
@@ -1015,7 +964,6 @@ by tags - pick posts that have at least one tag in common with the current post'
           'id'=>'top_banner_img',
           'type' => 'media',
           'title' => __('Upload your logo image', 'framework'),
-          // 'url'=> true,
           'width' => '460px',
           'height' => '60px',
           'default'=>'',
@@ -1039,7 +987,6 @@ by tags - pick posts that have at least one tag in common with the current post'
             'id'       => 'bg_banner_custom_content',
             'type'     => 'color',
             'title'    => __('Background Color', 'terme'),
-            'subtitle' => __('Pick a background color for the theme (default: #fff).', 'terme'),
             'validate' => 'color',
             'required' => array( 'banner_type', '=', '2' ),
             'output'    => array(
@@ -1050,7 +997,6 @@ by tags - pick posts that have at least one tag in common with the current post'
             'id'       => 'txt_banner_custom_content',
             'type'     => 'color',
             'title'    => __('Text Color', 'terme'),
-            'subtitle' => __('Pick a background color for the theme (default: #fff).', 'terme'),
             'validate' => 'color',
             'required' => array( 'banner_type', '=', '2' ),
             'output'    => array(
@@ -1062,7 +1008,6 @@ by tags - pick posts that have at least one tag in common with the current post'
             'id'       => 'close_button',
             'type'     => 'switch',
             'title'    => __( 'Close Button', 'terme' ),
-            'subtitle' => __( 'Look, it\'s on!', 'terme' ),
             'default'  => true,
             'required' => array( 'banner_type', '=', '2' ),
         ),
@@ -1083,8 +1028,6 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'     => 'image_select',
               'title'    => __( 'Footer Layout', 'terme' ),
               'subtitle' => __( 'Set the footer template', 'terme' ),
-              'desc'     => __( 'This uses some of the built in images, you can use them for layout options.', 'terme' ),
-              //Must provide key => value(array:title|img) pairs for radio options
               'options'  => array(
                   '1' => array(
                       'alt' => '1 Column',
@@ -1108,7 +1051,7 @@ by tags - pick posts that have at least one tag in common with the current post'
                   ),
 
               ),
-              'default'  => '2'
+              'default'  => '1'
           ),
             array(
                 'id'       => 'email_footer',
@@ -1124,22 +1067,11 @@ by tags - pick posts that have at least one tag in common with the current post'
                 'default'  => true,
             ),
             array(
-                'id'      => 'footer-text',
-                'type'    => 'editor',
-                'title'   => __( 'Footer Text', 'terme' ),
-                'default' => 'Powered by Redux Framework.',
-                'subtitle' => __( 'Set footer copyright text', 'terme' ),
+                'id'       => 'footer-text',
+                'type'     => 'textarea',
+                'title'   => __( 'Footer Copyright Text', 'terme' ),
+                'default' => 'Copyright © 2016 <a href="http://termetheme.com">TermeTheme.com </a>',
                 'required' => array('copyright-footer', '=' , 1),
-                'args'    => array(
-                    'wpautop'       => false,
-                    'media_buttons' => false,
-                    'textarea_rows' => 5,
-                    //'tabindex' => 1,
-                    //'editor_css' => '',
-                    'teeny'         => false,
-                    //'tinymce' => array(),
-                    'quicktags'     => false,
-                )
             ),
             array(
                 'id'       => 'Social_icon_footer',
@@ -1148,9 +1080,6 @@ by tags - pick posts that have at least one tag in common with the current post'
                 'subtitle' => __( 'Show or hide the social icons, to setup the Social icons go to Social Networks', 'terme' ),
                 'default'  => true,
             ),
-
-
-
         ),
     ) );
     // -> START Woocommerce Settings
@@ -1160,60 +1089,23 @@ by tags - pick posts that have at least one tag in common with the current post'
         'customizer_width' => '500px',
         'icon'             => 'el el-shopping-cart',
         'fields'     => array(
-          array(
-              'id'       => 'woocommerce_sidebar',
-              'type'     => 'image_select',
-              'title'    => __( 'Woocommerce Sidebar', 'terme' ),
-              'subtitle' => __( 'Set the Woocommerce template', 'terme' ),
-              //Must provide key => value(array:title|img) pairs for radio options
-              'options'  => array(
-                  '1' => array(
-                      'alt' => '1 Column',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/1.jpg',
-                  ),
-                  '2' => array(
-                      'alt' => '2 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/2.jpg'
-                  ),
-                  '3' => array(
-                      'alt' => '2 Column Right',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/3.jpg'
-                  ),
-                  '4' => array(
-                      'alt' => '3 Column Middle',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/4.jpg'
-                  ),
-                  '5' => array(
-                      'alt' => '3 Column Left',
-                      'img' => ReduxFramework::$_url . 'assets/img/footer/5.jpg'
-                  ),
-
-              ),
-              'default'  => '2'
-          ),
-
             array(
                 'id'       => 'is_on_sale',
                 'type'     => 'switch',
                 'title'    => __( 'Sale Section', 'terme' ),
-                'subtitle' => __( 'Show or hide the Sale Section for Products are in sell', 'terme' ),
+                'subtitle' => __( 'Enabling this option will add a Sale Section for Products are in sell', 'terme' ),
                 'default'  => true,
             ),
             array(
                 'id'       => 'is_on_sale_title',
                 'type'     => 'text',
                 'title'    => __( 'Sale Title', 'terme' ),
-                'subtitle' => __( 'The Sale Title', 'terme' ),
                 'default'  => 'Sale',
                 'required' => array( 'is_on_sale', "=", 1 ),
             ),
-
-
-
         ),
     ) );
-
-    // -> Custom CSS
+    // -> Custom CSS & JS
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Custom CSS & JS', 'terme' ),
         'id'               => 'custom_css_js',
@@ -1221,21 +1113,18 @@ by tags - pick posts that have at least one tag in common with the current post'
         'icon'             => 'el el-css',
         'fields' => array(
           array(
-              'id'       => 'header-script',
+              'id'       => 'custom_css',
               'type'     => 'textarea',
-              'title'    => __( 'Header Script - HTML Validated Custom', 'terme' ),
-              'subtitle' => __( 'The following code will add to the <\head\> tag. Useful if you need to add additional codes such as CSS or JS.
-', 'terme' ),
+              'title'    => __( 'Custom Css', 'terme' ),
+              'subtitle' => __( 'The following code will add to the head tag. Useful if you need to add additional codes such as CSS.', 'terme' ),
+
           ),
           array(
-              'id'       => 'footer-script',
+              'id'       => 'custom_js',
               'type'     => 'textarea',
-              'title'    => __( 'Footer Script - HTML Validated Custom', 'terme' ),
-              'subtitle' => __( 'The following code will add to the footer before the closing </body> tag. Useful if you need to add Javascript or tracking code.', 'terme' ),
+              'title'    => __( 'Custom Js', 'terme' ),
+              'subtitle' => __( 'The following code will add to the footer before the closing body tag. Useful if you need to add Javascript or tracking code.', 'terme' ),
           ),
-
-
-
         )
     ) );
     Redux::setSection( $opt_name, array(
@@ -1251,28 +1140,24 @@ by tags - pick posts that have at least one tag in common with the current post'
               'type'     => 'textarea',
               'title'    => __( 'Large Desktop', 'terme' ),
               'subtitle' => __( '+ 1200px', 'terme' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
           ),
           array(
               'id'       => 'desktop',
               'type'     => 'textarea',
               'title'    => __( 'Desktop', 'terme' ),
               'subtitle' => __( '992px ~ 1200px', 'terme' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
           ),
           array(
               'id'       => 'tablet',
               'type'     => 'textarea',
               'title'    => __( 'Tablet', 'terme' ),
               'subtitle' => __( '768px ~ 992px', 'terme' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
           ),
           array(
               'id'       => 'mobile',
               'type'     => 'textarea',
               'title'    => __( 'Mobile', 'terme' ),
               'subtitle' => __( '0 ~ 768px', 'terme' ),
-              'desc'     => __( 'This is the description field, again good for additional info.', 'terme' ),
           ),
         )
     ) );
@@ -1287,41 +1172,40 @@ by tags - pick posts that have at least one tag in common with the current post'
               'id'       => 'categories_class',
               'type'     => 'text',
               'title'    => __( 'Categories Custom Body Class', 'terme' ),
-              'subtitle' => __( 'This classes will be added in body of all categories.
-Separate classes with space.
-', 'terme' ),
+              'subtitle' => __( 'This classes will be added in body of all categories.', 'terme' ),
+              'desc'     => __( 'Separate classes with space', 'terme' ),
           ),
           array(
               'id'       => 'tags_class',
               'type'     => 'text',
               'title'    => __( 'Tags Custom Body Class', 'terme' ),
-              'subtitle' => __( 'This classes will be added in body of all tags.
-Separate classes with space.
-', 'terme' ),
+              'subtitle' => __( 'This classes will be added in body of all tags.', 'terme' ),
+'desc'     => __( 'Separate classes with space', 'terme' ),
+
           ),
           array(
               'id'       => 'authors_class',
               'type'     => 'text',
               'title'    => __( 'Authors Custom Body Class', 'terme' ),
-              'subtitle' => __( 'This classes will be added in body of all authors.
-Separate classes with space.
-', 'terme' ),
+              'subtitle' => __( 'This classes will be added in body of all authors.', 'terme' ),
+'desc'     => __( 'Separate classes with space', 'terme' ),
+
           ),
           array(
               'id'       => 'posts_class',
               'type'     => 'text',
               'title'    => __( 'Posts Custom Body Class', 'terme' ),
-              'subtitle' => __( 'This classes will be added in body of all posts.
-Separate classes with space.
-', 'terme' ),
+              'subtitle' => __( 'This classes will be added in body of all posts.', 'terme' ),
+'desc'     => __( 'Separate classes with space', 'terme' ),
+
           ),
           array(
               'id'       => 'pages_class',
               'type'     => 'text',
               'title'    => __( 'Pages Custom Body Class', 'terme' ),
-              'subtitle' => __( 'This classes will be added in body of all pages.
-Separate classes with space.
-', 'terme' ),
+              'subtitle' => __( 'This classes will be added in body of all pages.', 'terme' ),
+'desc'     => __( 'Separate classes with space', 'terme' ),
+
           ),
         )
     ) );
@@ -1335,25 +1219,25 @@ Separate classes with space.
           array(
               'id'       => 'font_woff',
               'type'     => 'media',
-              'title'    => __( 'Font.woff', 'terme' ),
+              'title'    => 'Font.woff',
 
           ),
           array(
               'id'       => 'font_ttf',
               'type'     => 'media',
-              'title'    => __( 'Font.ttf', 'terme' ),
+              'title'    => 'Font.ttf',
 
           ),
           array(
               'id'       => 'font_svg',
               'type'     => 'media',
-              'title'    => __( 'Font.svg', 'terme' ),
+              'title'    => 'Font.svg',
 
           ),
           array(
               'id'       => 'font_eot',
               'type'     => 'media',
-              'title'    => __( 'Font.eot', 'terme' ),
+              'title'    => 'Font.eot',
 
           ),
 
@@ -1372,7 +1256,6 @@ Separate classes with space.
                 'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'terme' ),
                 'desc'            => __( 'The field desc is NOT visible in customizer.', 'terme' ),
                 'customizer_only' => true,
-                //Must provide key => value pairs for select options
                 'options'         => array(
                     '1' => 'Opt 1',
                     '2' => 'Opt 2',

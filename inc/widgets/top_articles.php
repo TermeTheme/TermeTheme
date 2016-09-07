@@ -3,8 +3,8 @@ class term_top_article_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'term_top_article_widget',
-            __('Terme Last Article Widget', 'terme'),
-            array( 'description' => __( 'Show the Last Articles', 'terme' ), )
+            __('Terme - Last Posts', 'terme'),
+            array( 'description' => __( 'Show the Last Posts', 'terme' ), )
         );
     }
 

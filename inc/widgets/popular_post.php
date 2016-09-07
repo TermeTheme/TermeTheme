@@ -3,8 +3,8 @@ class terme_popular_post_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'popular_post',
-            __('Terme Popular Post Widget', 'terme'),
-            array( 'description' => __( 'Show the Last Articles', 'terme' ), )
+            __('Terme - Popular Posts', 'terme'),
+            array( 'description' => __( 'Show the Popular Posts', 'terme' ), )
         );
     }
 
@@ -37,7 +37,7 @@ class terme_popular_post_widget extends WP_Widget {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
         } else {
-            $title = __( 'Popula Post', 'terme' );
+            $title = __( 'Popular Post', 'terme' );
         }
 ?>
         <p>

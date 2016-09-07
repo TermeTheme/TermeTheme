@@ -79,7 +79,7 @@ function terme_theme_admin_assets() {
     }
 }
 // Woocommerce Theme Support
-add_action('after_setup_theme', 'terme_setup');
+add_action('after_setup_theme', 'terme_setup', 1);
 function terme_setup() {
     add_theme_support('woocommerce');
     load_theme_textdomain( 'terme', TEMPLATEPATH . '/languages' );
@@ -103,12 +103,12 @@ function terme_setup() {
         add_image_size('wc_product', 250, 250, true);
         add_image_size('slider', 750, 385, true);
     }
+    include TEMPLATEPATH.'/inc/theme_option/index.php';
 }
 
 include TEMPLATEPATH.'/inc/terme_funcs.php';
-include TEMPLATEPATH.'/inc/hooks.php';
+include TEMPLATEPATH.'/inc/terme_customizer.php';
 include TEMPLATEPATH.'/inc/widgets/widgets.php';
-include TEMPLATEPATH.'/inc/theme_option/index.php';
 include TEMPLATEPATH.'/inc/page-builder/index.php';
 include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 include TEMPLATEPATH.'/inc/wc_functions.php';

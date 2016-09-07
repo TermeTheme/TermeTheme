@@ -818,7 +818,7 @@
         margin-top: 5px
     }
     .redux-container-switch label {
-        padding: 5px 10px !important
+        padding: 0 !important
     }
     .redux-container-button_set label {
         padding: 12px 10px
@@ -1072,7 +1072,7 @@ pre {
 
 .admin-color-fresh .redux-sidebar .redux-group-menu li.activeChild.hasSubSections ul.subsection li.active a, .wp-customizer .redux-sidebar .redux-group-menu li.activeChild.hasSubSections ul.subsection li.active a {
     background: #e9eff3;
-    /*text-shadow: 1px 1px #002e44*/
+    text-shadow: none;
 }
 
 .admin-color-fresh .redux-container-image_select .redux-image-select-selected img, .wp-customizer .redux-container-image_select .redux-image-select-selected img {

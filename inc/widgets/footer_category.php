@@ -3,8 +3,8 @@ class terme_footer_category_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'terme_footer_category_widget',
-            __('Terme Footer Category', 'terme'),
-            array( 'description' => __( 'Show the Last Articles', 'terme' ), )
+            __('Terme(Footer) - Category', 'terme'),
+            array( 'description' => __( 'Show the Last Posts by Category', 'terme' ), )
         );
     }
 
@@ -23,7 +23,7 @@ class terme_footer_category_widget extends WP_Widget {
         while ($my_query->have_posts()):
         $my_query->the_post();
         echo '<li>
-                <h3><a href="'.get_permalink().'">'.terme_shorten_text(get_the_title(), 50).'</a></h3>
+                <h3><a href="'.get_permalink().'">'.get_the_title().'</a></h3>
               </li>';
         endwhile;
         echo'</ul>';
@@ -72,7 +72,7 @@ class terme_footer_category_widget extends WP_Widget {
         $instance['select_cat_01'] = ( ! empty( $new_instance['select_cat_01'] ) ) ? strip_tags( $new_instance['select_cat_01'] ) : '';
         return $instance;
     }
-} 
+}
 function terme_footer_category_widget() {
 	register_widget( 'terme_footer_category_widget' );
 }

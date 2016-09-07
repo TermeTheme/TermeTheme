@@ -3,8 +3,8 @@ class terme_footer_last_posts_widget extends WP_Widget {
     function __construct() {
             parent::__construct(
             'terme_footer_last_posts_widget',
-            __('Terme Footer Last new', 'terme'),
-            array( 'description' => __( 'Show the Last Articles', 'terme' ), )
+            __('Terme(Footer) - Last Posts', 'terme'),
+            array( 'description' => __( 'Show the Last Posts', 'terme' ), )
         );
     }
 

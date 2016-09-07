@@ -9,6 +9,14 @@ body.rtl [canvas=container] {
 body.rtl [canvas=container] * {
   direction: rtl; }
 
+a {
+  text-decoration: none;
+  transition: all 300ms; }
+
+a:focus,
+a:hover {
+  text-decoration: none; }
+
 header.header .today {
   float: right; }
   header.header .today i {
@@ -245,33 +253,29 @@ section.latest_news {
 
 footer.footer.style_1 .main_area .tagcloud {
   float: right; }
-footer.footer.style_1 .main_area .box_1 ul {
+footer.footer.style_1 .main_area .tagcloud, footer.footer.style_2 .main_area .tagcloud, footer.footer.style_3 .main_area .tagcloud, footer.footer.style_4 .main_area .tagcloud, footer.footer.style_5 .main_area .tagcloud {
   float: right; }
-footer.footer.style_1 .main_area .box_1 ul li {
+  footer.footer.style_1 .main_area .tagcloud a, footer.footer.style_2 .main_area .tagcloud a, footer.footer.style_3 .main_area .tagcloud a, footer.footer.style_4 .main_area .tagcloud a, footer.footer.style_5 .main_area .tagcloud a {
+    float: right; }
+footer.footer.style_1 .main_area ul.social_network, footer.footer.style_2 .main_area ul.social_network, footer.footer.style_3 .main_area ul.social_network, footer.footer.style_4 .main_area ul.social_network, footer.footer.style_5 .main_area ul.social_network {
   float: right; }
-footer.footer.style_1 .main_area .box_2 ul li, footer.footer.style_5 .main_area .box_1 ul li, footer.footer.style_5 .main_area .box_2 ul li {
+  footer.footer.style_1 .main_area ul.social_network li, footer.footer.style_2 .main_area ul.social_network li, footer.footer.style_3 .main_area ul.social_network li, footer.footer.style_4 .main_area ul.social_network li, footer.footer.style_5 .main_area ul.social_network li {
+    float: right; }
+footer.footer.style_1 .main_area ul.just_title, footer.footer.style_2 .main_area ul.just_title, footer.footer.style_3 .main_area ul.just_title, footer.footer.style_4 .main_area ul.just_title, footer.footer.style_5 .main_area ul.just_title {
   float: right; }
-  footer.footer.style_1 .main_area .box_2 ul li:before, footer.footer.style_5 .main_area .box_1 ul li:before, footer.footer.style_5 .main_area .box_2 ul li:before {
-    content: "\f100";
-    float: right;
-    margin-right: 0;
-    margin-right: 0;
-    margin-left: 10px;
-    margin-left: 1rem; }
+  footer.footer.style_1 .main_area ul.just_title li, footer.footer.style_2 .main_area ul.just_title li, footer.footer.style_3 .main_area ul.just_title li, footer.footer.style_4 .main_area ul.just_title li, footer.footer.style_5 .main_area ul.just_title li {
+    float: right; }
+    footer.footer.style_1 .main_area ul.just_title li:before, footer.footer.style_2 .main_area ul.just_title li:before, footer.footer.style_3 .main_area ul.just_title li:before, footer.footer.style_4 .main_area ul.just_title li:before, footer.footer.style_5 .main_area ul.just_title li:before {
+      content: "\f100";
+      float: right;
+      margin-right: 0;
+      margin-left: 10px; }
 footer.footer.style_1 .main_area .box_2 ul li .thumb, footer.footer.style_5 .main_area .box_1 ul li .thumb, footer.footer.style_5 .main_area .box_2 ul li .thumb {
   float: right;
   margin-right: 0;
   margin-right: 0;
   margin-left: 10px;
   margin-left: 1rem; }
-footer.footer.style_1 .main_area .box_3 .popular_tags .tagcloud a, footer.footer.style_5 .main_area .box_3 .popular_tags .tagcloud a {
-  float: right; }
-footer.footer.style_1 .main_area .box_3 .newsletter input, footer.footer.style_5 .main_area .box_3 .newsletter input {
-  float: right;
-  border-left: 0;
-  border-right: 1px solid; }
-footer.footer.style_1 .main_area .box_3 .tags_items a, footer.footer.style_5 .main_area .box_3 .tags_items a {
-  float: right; }
 footer.footer.style_1 .bottom_bar ul li, footer.footer.style_2 .bottom_bar ul li, footer.footer.style_3 .bottom_bar ul li, footer.footer.style_4 .bottom_bar ul li, footer.footer.style_5 .bottom_bar ul li {
   float: right;
   margin-left: 0;
@@ -283,15 +287,6 @@ footer.footer.style_1 .bottom_bar ul li, footer.footer.style_2 .bottom_bar ul li
     margin-right: 0; }
 footer.footer.style_1 .bottom_bar p, footer.footer.style_2 .bottom_bar p, footer.footer.style_3 .bottom_bar p, footer.footer.style_4 .bottom_bar p, footer.footer.style_5 .bottom_bar p {
   float: right; }
-footer.footer.style_2 .main_area ul, footer.footer.style_3 .top_bar ul, footer.footer.style_4 .main_area ul {
-  float: right; }
-  footer.footer.style_2 .main_area ul li, footer.footer.style_3 .top_bar ul li, footer.footer.style_4 .main_area ul li {
-    float: right; }
-    footer.footer.style_2 .main_area ul li:before, footer.footer.style_3 .top_bar ul li:before, footer.footer.style_4 .main_area ul li:before {
-      content: "\f100";
-      float: right;
-      margin-right: 0;
-      margin-left: 10px; }
 footer.footer.style_2 .bottom_bar p, footer.footer.style_3 .bottom_bar p, footer.footer.style_4 .bottom_bar p {
   float: none; }
 footer.footer.style_3 .top_bar .social_menu:before {
@@ -577,6 +572,8 @@ footer.footer.style_5 .bottom_bar .social_menu {
   margin-right: 10rem; }
   .woocommerce #tab-reviews #reviews #comments ol.commentlist li .comment_container .comment-text .star-rating {
     float: left; }
+.woocommerce #payment ul.payment_methods li {
+  text-align: right; }
 
 .woocommerce-tabs ul.tabs li {
   float: right; }

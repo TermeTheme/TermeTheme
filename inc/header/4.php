@@ -54,6 +54,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 						<?php echo wp_nav_menu(); ?>
+						<?php if (class_exists('WooCommerce')) { ?>
 					<div class="shopping_cart">
 						<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">
 							<span class="icon"><i class="fa fa-shopping-bag"></i></span>
@@ -63,6 +64,7 @@
 							</div>
 						</a>
 					</div><!-- cart -->
+					<?php } ?>
 					</div><!-- col-xs-12 -->
 				</div><!-- row -->
 			</div><!-- container -->

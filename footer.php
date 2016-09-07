@@ -33,6 +33,7 @@
 					<a href="<?php echo get_page_link($terme_options['register_page']); ?>">	<?php _e( $terme_options['register_text'],'terme' ); ?></a>
 			 <?php }; ?>
 		</div><!-- user_area -->
+		<?php if (class_exists('WooCommerce')) { ?>
 		<div class="shopping_cart">
 			<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','terme' ); ?>">
 				<span class="icon"><i class="fa fa-shopping-bag"></i></span>
@@ -42,6 +43,7 @@
 				</div>
 			</a>
 		</div><!-- cart -->
+		<?php } ?>
 		<form role="search" method="get" id="searchform">
 			<input type="text" name="s" id="s" value="" placeholder="	<?php _e( 'Search','terme' ); ?>">
 			<button><i class="fa fa-search"></i></button>

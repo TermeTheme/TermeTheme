@@ -1,0 +1,22 @@
+/*********** Terme RTL admin styles ***********/
+
+.redux-sidebar {
+    float: right;
+}
+
+.admin-color-fresh .redux-sidebar .redux-group-menu li.active.hasSubSections a:after, .wp-customizer .redux-sidebar .redux-group-menu li.active.hasSubSections a:after {
+    right: auto;
+    left: 0;
+    border-right-color: transparent;
+    border-left-color: #d54e21;
+}
+
+.redux-sidebar .redux-menu-warning, .redux-sidebar .redux-menu-error, .redux-sidebar .hasSubSections .extraIconSubsections {
+    float: left;
+}
+.redux-main {
+    border-left: 0px;
+    margin-left: 0px;
+    border-right: 1px solid #d8d8d8;
+    margin-right: 201px
+}

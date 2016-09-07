@@ -5,7 +5,7 @@ class ads_widget extends WP_Widget {
     function __construct() {
         parent::__construct(
             'ads_widget',
-            __('Terme ADS Widget', 'terme'),
+            __('Terme - Ads', 'terme'),
             array( 'description' => __( 'Show the ADS Section', 'terme' ), )
         );
         add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
