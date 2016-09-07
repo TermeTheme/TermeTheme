@@ -18,7 +18,6 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- top_bar -->
-	<?php } else { ?>
 	<?php } ?>
 	<div class="main_area">
 		<div class="container">
@@ -40,9 +39,12 @@
 					<div class="header_ads">
 						<a href="#"><img src="<?php echo $terme_options['top_banner_img']['url'];?>" alt=""></a>
 					</div><!-- header_ads -->
-					<?php }else{ ?>
+					<?php } else { ?>
 						<div class="header_ads">
-							<a href="#"><?php echo $terme_options['custom_content']; ?></a>
+                            <?php if ($terme_options['close_button'] == 1) { echo '<span class="close_button"><i class="fa fa-times" aria-hidden="true"></i></span>'; } ?>
+                            <a href="<?php echo $terme_options['top_text_link']; ?>">
+								<?php echo $terme_options['banner_custom_content']; ?>
+                            </a>
 						</div><!-- header_ads -->
 						<?php } ?>
 				</div><!-- col-xs-6 -->
@@ -56,7 +58,15 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<a href="#" class="mobile_menu sb-toggle-left"><span class="mobile_menu"></span></a>
-					<?php echo wp_nav_menu(); ?>
+                    <?php
+                        if (has_nav_menu('header_menu')) {
+                            wp_nav_menu( array(
+                                'theme_location' => 'header_menu',
+                                'menu_class' => 'header_menu',
+                                'container' => false
+                            ) );
+                        }
+                    ?>
 				</div><!-- col-xs-12 -->
 			</div><!-- row -->
 		</div><!-- container -->

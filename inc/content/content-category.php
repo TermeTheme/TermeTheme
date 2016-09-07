@@ -5,7 +5,7 @@
       <li>
         <article>
           <figure class="thumbnail">
-            <?php the_post_thumbnail( 'category_thumb' ); ?>
+            <a href="<?php the_permalink('') ?>"><?php the_post_thumbnail( 'category_thumb' ); ?></a>
           </figure>
           <section>
             <h2><a href="<?php the_permalink('') ?>"><?php the_title(); ?></a></h2>
@@ -18,9 +18,15 @@
           </section>
         </article>
       </li>
-    <?php endwhile; else: ?>
-    <?php endif; ?>
+        <?php
+            endwhile;
+            the_posts_pagination( array(
+                'prev_text'          => __( 'Previous page', 'terme' ),
+                'next_text'          => __( 'Next page', 'terme' ),
+                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'terme' ) . ' </span>',
+            ) );
+            endif;
+        ?>
     </ul>
-    <?php wp_pagenavi(); ?>
         </div><!-- category_content -->
 </div><!--col-md-8-->

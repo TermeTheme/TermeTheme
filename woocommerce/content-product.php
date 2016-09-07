@@ -26,8 +26,14 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+$option = 3;
+if ($option == '3') {
+    $column = 'col-md-4';
+} else {
+    $column = 'col-md-3';
+}
 ?>
-<div <?php post_class('col-md-4 col-sm-6 col-xs-12'); ?>>
+<div <?php post_class($column.' col-sm-6 col-xs-12'); ?>>
 	<div class="shop_product">
 		<?php
 		/**
