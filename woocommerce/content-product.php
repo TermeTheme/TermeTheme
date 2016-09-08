@@ -20,14 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product;
+global $product, $terme_options;
 
 // Ensure visibility
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-$option = 3;
-if ($option == '3') {
+$option = $terme_options['woocommerce_column'];
+if ($option == 'column_3') {
     $column = 'col-md-4';
 } else {
     $column = 'col-md-3';

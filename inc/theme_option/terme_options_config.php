@@ -93,7 +93,7 @@
         // Choose an priority for the admin bar menu
         'global_variable'      => '',
         // Set a different name for your global variable other than the opt_name
-        'dev_mode'             => false,
+        'dev_mode'             => true,
         // Show the time the page took to load, etc
         'update_notice'        => true,
         // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
@@ -172,46 +172,46 @@
     );
 
     // ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
-    // $args['admin_bar_links'][] = array(
-    //     'id'    => 'redux-docs',
-    //     'href'  => 'http://docs.reduxframework.com/',
-    //     'title' => __( 'Documentation', 'terme' ),
-    // );
-    //
-    // $args['admin_bar_links'][] = array(
-    //     //'id'    => 'redux-support',
-    //     'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-    //     'title' => __( 'Support', 'terme' ),
-    // );
-    //
-    // $args['admin_bar_links'][] = array(
-    //     'id'    => 'redux-extensions',
-    //     'href'  => 'reduxframework.com/extensions',
-    //     'title' => __( 'Extensions', 'terme' ),
-    // );
+    $args['admin_bar_links'][] = array(
+        'id'    => 'redux-docs',
+        'href'  => 'http://docs.reduxframework.com/',
+        'title' => __( 'Documentation', 'terme' ),
+    );
+
+    $args['admin_bar_links'][] = array(
+        //'id'    => 'redux-support',
+        'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
+        'title' => __( 'Support', 'terme' ),
+    );
+
+    $args['admin_bar_links'][] = array(
+        'id'    => 'redux-extensions',
+        'href'  => 'reduxframework.com/extensions',
+        'title' => __( 'Extensions', 'terme' ),
+    );
 
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-    // $args['share_icons'][] = array(
-    //     'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
-    //     'title' => 'Visit us on GitHub',
-    //     'icon'  => 'el el-github'
-    //     //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
-    // );
-    // $args['share_icons'][] = array(
-    //     'url'   => 'https://www.facebook.com/pages/Redux-Framework/243141545850368',
-    //     'title' => 'Like us on Facebook',
-    //     'icon'  => 'el el-facebook'
-    // );
-    // $args['share_icons'][] = array(
-    //     'url'   => 'http://twitter.com/reduxframework',
-    //     'title' => 'Follow us on Twitter',
-    //     'icon'  => 'el el-twitter'
-    // );
-    // $args['share_icons'][] = array(
-    //     'url'   => 'http://www.linkedin.com/company/redux-framework',
-    //     'title' => 'Find us on LinkedIn',
-    //     'icon'  => 'el el-linkedin'
-    // );
+    $args['share_icons'][] = array(
+        'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
+        'title' => 'Visit us on GitHub',
+        'icon'  => 'el el-github'
+        //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
+    );
+    $args['share_icons'][] = array(
+        'url'   => 'https://www.facebook.com/pages/Redux-Framework/243141545850368',
+        'title' => 'Like us on Facebook',
+        'icon'  => 'el el-facebook'
+    );
+    $args['share_icons'][] = array(
+        'url'   => 'http://twitter.com/reduxframework',
+        'title' => 'Follow us on Twitter',
+        'icon'  => 'el el-twitter'
+    );
+    $args['share_icons'][] = array(
+        'url'   => 'http://www.linkedin.com/company/redux-framework',
+        'title' => 'Find us on LinkedIn',
+        'icon'  => 'el el-linkedin'
+    );
 
     // Panel Intro text -> before the form
     if ( ! isset( $args['global_variable'] ) || $args['global_variable'] !== false ) {
@@ -588,7 +588,15 @@
                   'off'      =>  __('Disabled', 'terme'),
                   'required' => array('post_share', '=' , 1),
               ),
-
+              array(
+                  'id'       => 'wordpress_share',
+                  'type'     => 'switch',
+                  'title'    => __( 'Wordpress', 'terme' ),
+                  'default'  => true,
+                  'on'       =>  __('Enabled', 'terme'),
+                  'off'      =>  __('Disabled', 'terme'),
+                  'required' => array('post_share', '=' , 1),
+              ),
               array(
                   'id'     => 'section-end',
                   'type'   => 'section',
@@ -798,7 +806,7 @@
                   'logo_image' => __('Logo Image', 'terme'),
                   'logo_name' => __('Site Name', 'terme'),
                   ),
-              'default' => 'logo_name',
+              'default' => 'logo_image',
           ),
           array(
           'id'=>'logo_img',
@@ -820,7 +828,7 @@
               'type'     => 'text',
               'title'    => __( 'Site Name', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
-              'default'  => get_bloginfo('name'),
+              'default'=>'TermeTheme',
 
           ),
           array(
@@ -828,7 +836,7 @@
               'type'     => 'text',
               'title'    => __( 'Site Description', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
-              'default'=> get_bloginfo('description'),
+              'default'=>'Free Wordpress Template',
           ),
           array(
               'id'          => 'site_name_style',
@@ -965,36 +973,29 @@
               'id'      => 'top_banner_link',
               'type'    => 'text',
               'title'   => __( 'URL Link', 'terme' ),
-              'default'  => 'http://termetheme.com',
+              'default'  => 'test@test.com',
               'required' => array( 'banner_type', '=', '1' ),
-          ),
-          array(
-              'id'      => 'top_text_link',
-              'type'    => 'text',
-              'title'   => __( 'URL Link', 'terme' ),
-              'default'  => 'http://termetheme.com',
-              'required' => array( 'banner_type', '=', '2' ),
           ),
           array(
               'id'      => 'banner_custom_content',
               'type'    => 'text',
               'title'   => __( 'Custom Content', 'terme' ),
-              'default'  => 'TermeTheme',
+              'default'  => 'test@test.com',
               'required' => array( 'banner_type', '=', '2' ),
           ),
           array(
             'id'       => 'bg_banner_custom_content',
             'type'     => 'color',
-            'default'     => '#f4f4f4',
             'title'    => __('Background Color', 'terme'),
             'validate' => 'color',
             'required' => array( 'banner_type', '=', '2' ),
-            'output'    => array('background-color' => '.header_ads>a',)
+            'output'    => array(
+                'background-color' => '.header_ads>a',
+            )
         ),
           array(
             'id'       => 'txt_banner_custom_content',
             'type'     => 'color',
-            'default'     => '#333',
             'title'    => __('Text Color', 'terme'),
             'validate' => 'color',
             'required' => array( 'banner_type', '=', '2' ),
@@ -1003,13 +1004,7 @@
             )
 
         ),
-        array(
-            'id'       => 'close_button',
-            'type'     => 'switch',
-            'title'    => __( 'Close Button', 'terme' ),
-            'default'  => true,
-            'required' => array( 'banner_type', '=', '2' ),
-        ),
+
         ),
     ) );
 
@@ -1088,6 +1083,16 @@
         'customizer_width' => '500px',
         'icon'             => 'el el-shopping-cart',
         'fields'     => array(
+            array(
+                'id'       => 'woocommerce_column',
+                'type'     => 'select',
+                'title'    => __( 'WooCommerce Column', 'terme' ),
+                'options' => array(
+                    'column_3' => __('3 Column', 'terme'),
+                    'column_4' => __('4 Column', 'terme'),
+                    ),
+                'default' => 'column_3',
+            ),
             array(
                 'id'       => 'is_on_sale',
                 'type'     => 'switch',

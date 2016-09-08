@@ -699,7 +699,7 @@ footer.footer {
 
 		a {
 			top: 15px;
-			right: 0;
+			right: -63px;
 			left: auto;
 			transform: rotate(45deg);
 		}
@@ -708,6 +708,10 @@ footer.footer {
 	.images {
 		float: right;
 		@include rem(( padding: 0 0 20px 20px,));
+		.thumbnails {
+
+			@include rem(( padding: 10px 0,));
+		}
 	}
 
 	.summary {
@@ -957,6 +961,11 @@ footer.footer {
 			li {
 				text-align: right;
 			}
+		}
+	}
+	.payment_box {
+		&:before {
+			display: none !important;
 		}
 	}
 }
