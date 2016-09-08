@@ -907,7 +907,6 @@ footer.footer {
 						&.product-remove {
 							border-left: none;
 						}
-
 						&.product-name {
 							border-right: none;
 							border-left: auto;
@@ -918,7 +917,48 @@ footer.footer {
 			}
 		}
 	}
+	table.shop_table {
+		tbody {
+			tr {
+				td {
+					text-align: right;
+				}
+			}
+		}
+	}
+	table.order_details {
+		tbody, tfoot {
+			tr {
+				td {
+					text-align: right;
+				}
+			}
+		}
+	}
+	ul.woocommerce-thankyou-order-details {
 
+
+		li {
+border-right: none;
+			border-left: dashed #d3ced2;
+			@include rem(( border-left-width: 1px,));
+
+		}
+	}
+ nav.woocommerce-MyAccount-navigation {
+	 float: right;
+	 ul {
+		 border-right: none;
+		 border-left: solid #e3e3e5;
+		 @include rem((border-left-width: 1px, padding: 0 0 0 10px,));
+
+
+	 }
+ }
+ .woocommerce-MyAccount-content {
+	 float: left;
+
+ }
 	.cart-collaterals {
 		.cart_totals {
 			float: left;

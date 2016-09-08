@@ -3253,34 +3253,7 @@ footer.footer {
 				@include rem((font-size: 14px,));
 			}
 
-			.nav-links {
-				@include rem((padding: 10px, font-size: 14px,));
 
-				span {
-					&.current {
-						font-weight: bold;
-						color: $primary_color;
-						@include rem((padding: 5px 10px,));
-					}
-				}
-
-				a {
-					color: $secondary_color;
-					@include rem((padding: 5px 10px, ));
-
-					&.hover {
-						color: $primary_color;
-					}
-				}
-
-				a.next {
-					font-weight: bold;
-				}
-
-				a.prev {
-					font-weight: bold;
-				}
-			}
 		}
 	}
 }
@@ -3468,7 +3441,7 @@ footer.footer {
 	z-index: 999;
 	left: 50%;
 	transform: translate(-50%, -100%);
-	min-width: 45%;
+	min-width: 75%;
 	text-align: center;
 	font-size: 14px;
 
@@ -3495,7 +3468,7 @@ footer.footer {
 	bottom: 0;
 	left: 50%;
 	transform: translate(-50%, 100%);
-	min-width: 45%;
+	min-width: 75%;
 	text-align: center;
 	font-size: 14px;
 
@@ -5023,6 +4996,18 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 // Woocommerce Add To cart
 
 .woocommerce {
+	ul.woocommerce-thankyou-order-details {
+		padding: 0;
+		@include rem(( margin: 10px 0,));
+
+		li {
+			width: 25%;
+			margin: 0;
+			border-right: dashed #d3ced2;
+			@include rem(( border-right-width: 1px,));
+
+		}
+	}
 	form {
 		@include rem(( padding: 0,font-size: 14px,));
 
@@ -5488,15 +5473,17 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 	nav.woocommerce-MyAccount-navigation {
 		ul {
 			margin: 0;
-			padding: 0;
 			border-right: solid #e3e3e5;
-			@include rem((border-right-width: 1px,));
+			@include rem((border-right-width: 1px, padding: 0 10px 0 0,));
 
 			li {
 				@include rem((padding: 10px));
 
 				&:before {
 					content: "";
+				}
+				&.is-active {
+					background-color: #e3e3e5;
 				}
 
 				a {
@@ -5509,6 +5496,7 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 	}
 
 	.woocommerce-MyAccount-content {
+
 		table.woocommerce-MyAccount-orders {
 			td,
 			th {
@@ -5519,5 +5507,33 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 		a {
 			color: $primary_color;
 		}
+	}
+}
+.nav-links {
+	@include rem((padding: 10px, font-size: 14px,));
+
+	span {
+		&.current {
+			font-weight: bold;
+			color: $primary_color;
+			@include rem((padding: 5px 10px,));
+		}
+	}
+
+	a {
+		color: $secondary_color;
+		@include rem((padding: 5px 10px, ));
+
+		&.hover {
+			color: $primary_color;
+		}
+	}
+
+	a.next {
+		font-weight: bold;
+	}
+
+	a.prev {
+		font-weight: bold;
 	}
 }

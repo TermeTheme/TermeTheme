@@ -560,6 +560,26 @@ footer.footer.style_5 .bottom_bar .social_menu {
   border-right: none;
   border-left: auto;
   text-align: right; }
+.woocommerce table.shop_table tbody tr td {
+  text-align: right; }
+.woocommerce table.order_details tbody tr td, .woocommerce table.order_details tfoot tr td {
+  text-align: right; }
+.woocommerce ul.woocommerce-thankyou-order-details li {
+  border-right: none;
+  border-left: dashed #d3ced2;
+  border-left-width: 1px;
+  border-left-width: 0.1rem; }
+.woocommerce nav.woocommerce-MyAccount-navigation {
+  float: right; }
+  .woocommerce nav.woocommerce-MyAccount-navigation ul {
+    border-right: none;
+    border-left: solid #e3e3e5;
+    border-left-width: 1px;
+    border-left-width: 0.1rem;
+    padding: 0 0 0 10px;
+    padding: 0 0 0 1rem; }
+.woocommerce .woocommerce-MyAccount-content {
+  float: left; }
 .woocommerce .cart-collaterals .cart_totals {
   float: left; }
   .woocommerce .cart-collaterals .cart_totals .wc-proceed-to-checkout a {

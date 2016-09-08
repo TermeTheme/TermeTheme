@@ -98,6 +98,7 @@ jQuery(document).ready(function($) {
             margin: 10,
             rtl: true,
             stagePadding: 10,
+            loop: true,
             navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
             responsive: {
                 450: {
@@ -112,6 +113,7 @@ jQuery(document).ready(function($) {
         jQuery('.owl-carousel').owlCarousel({
             margin: 10,
             stagePadding: 10,
+            loop: true,
             navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
             responsive: {
                 450: {
@@ -154,10 +156,11 @@ jQuery(document).ready(function($) {
     /*-----------------------------------------------------------------------------------*/
     // News Ticker
     /*-----------------------------------------------------------------------------------*/
+    if (jQuery('body').hasClass('rtl')) {
 
     jQuery('.related_product_loop').owlCarousel({
         margin: 20,
-        // nav: true,
+        rtl: true,
         loop: true,
         navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
         responsive: {
@@ -169,18 +172,40 @@ jQuery(document).ready(function($) {
             },
             800: {
                 items: 3
-
             },
             1000: {
                 items: 4
-
             },
             1200: {
                 items: 5
-
             }
         }
     })
+  } else {
+
+        jQuery('.related_product_loop').owlCarousel({
+            margin: 20,
+            loop: true,
+            navText: ["<i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                800: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                },
+                1200: {
+                    items: 5
+                }
+            }
+        })
+  }
     var owl = $('.related_product_loop');
     owl.owlCarousel();
     // Go to the next item
