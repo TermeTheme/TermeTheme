@@ -18,13 +18,15 @@
           </section>
         </article>
       </li>
-    <?php endwhile;  ?>
-    <?php wp_pagenavi(); ?>
-
-    <?php else: ?>
-      <p><?php _e('No posts by this author.'); ?></p>
-
-    <?php endif; ?>
+      <?php
+          endwhile;
+          the_posts_pagination( array(
+              'prev_text'          => __( 'Previous page', 'terme' ),
+              'next_text'          => __( 'Next page', 'terme' ),
+              'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'terme' ) . ' </span>',
+          ) );
+          endif;
+      ?>
     </ul>
         </div><!-- category_content -->
 </div><!--col-md-8-->

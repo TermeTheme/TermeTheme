@@ -32,7 +32,7 @@ class terme_video_widget extends WP_Widget {
                       <h2>'. terme_shorten_text(get_the_title(), 40) .'</h2>
                         <div class="info">
                          <span><i class="fa fa-eye" aria-hidden="true"></i>' .terme_get_post_views(get_the_ID()).'</span>
-                         <span><i class="fa fa-commenting" aria-hidden="true"></i>' .comments_number( 0, 1, '%' ).'</span>
+                         <span><i class="fa fa-commenting" aria-hidden="true"></i>' .get_comments_number( 0, 1, '%' ).'</span>
                         </div>
                     </a>
                   </figcaption>

@@ -78,7 +78,7 @@
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
             <?php endif; ?>
             <?php if (isset($terme_options['twitter_share']) && !empty($terme_options['twitter_share']))  : ?>
-            <li><a href="https://twitter.com/home?status=<?php echo get_the_title() . urlencode( $referal_link ); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/home?status=<?php echo get_the_title() . urlencode( get_permalink() ); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
           <?php endif; ?>
           <?php if (isset($terme_options['pinterest_share']) && !empty($terme_options['pinterest_share']))  : ?>
             <li><a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode( get_permalink() ); ?>&description=<?php the_excerpt() ?>"  target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
