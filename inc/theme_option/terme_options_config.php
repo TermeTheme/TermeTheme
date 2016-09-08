@@ -705,7 +705,7 @@
                   'id'       => 'slider',
                   'type'     => 'switch',
                   'title'    => __( 'Slider', 'terme' ),
-                  'default'  => true,
+                  'default'  => false,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
               ),
@@ -1004,13 +1004,7 @@
             )
 
         ),
-        array(
-            'id'       => 'close_button',
-            'type'     => 'switch',
-            'title'    => __( 'Close Button', 'terme' ),
-            'default'  => true,
-            'required' => array( 'banner_type', '=', '2' ),
-        ),
+
         ),
     ) );
 
@@ -1089,6 +1083,16 @@
         'customizer_width' => '500px',
         'icon'             => 'el el-shopping-cart',
         'fields'     => array(
+            array(
+                'id'       => 'woocommerce_column',
+                'type'     => 'select',
+                'title'    => __( 'WooCommerce Column', 'terme' ),
+                'options' => array(
+                    'column_3' => __('3 Column', 'terme'),
+                    'column_4' => __('4 Column', 'terme'),
+                    ),
+                'default' => 'column_3',
+            ),
             array(
                 'id'       => 'is_on_sale',
                 'type'     => 'switch',

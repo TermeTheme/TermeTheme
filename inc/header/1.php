@@ -63,7 +63,6 @@
 						</div><!-- header_ads -->
 					<?php }else{ ?>
 						<div class="header_ads">
-                            <?php if ($terme_options['close_button'] == 1) { echo '<span class="close_button"><i class="fa fa-times" aria-hidden="true"></i></span>'; } ?>
                             <a href="<?php echo $terme_options['top_text_link']; ?>">
 								<?php echo $terme_options['banner_custom_content']; ?>
                             </a>

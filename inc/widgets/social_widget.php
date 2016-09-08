@@ -65,7 +65,7 @@ class Terme_Socials_Networks extends WP_Widget {
 
                     case 'github':
                         $url = 'https://github.com/'.$network['fields']['username']['value'];
-                        $icon = 'fa-github';
+                        $icon = 'fa-github-alt';
                         $name = __('Github', 'terme');
                         $number = number_format($this->github_followers( $network['fields']['username']['value'] ));
                         break;

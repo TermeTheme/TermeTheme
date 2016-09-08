@@ -425,7 +425,7 @@ footer.footer.style_5 .bottom_bar .social_menu {
   border-top: 0; }
   .product_page .ribbon a {
     top: 15px;
-    right: 0;
+    right: -63px;
     left: auto;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -434,6 +434,9 @@ footer.footer.style_5 .bottom_bar .social_menu {
   float: right;
   padding: 0 0 20px 20px;
   padding: 0 0 2rem 2rem; }
+  .product_page .images .thumbnails {
+    padding: 10px 0;
+    padding: 1rem 0; }
 .product_page .summary .product_price p {
   margin-left: 5px;
   margin-left: 0.5rem;
@@ -590,6 +593,8 @@ footer.footer.style_5 .bottom_bar .social_menu {
     float: left; }
 .woocommerce #payment ul.payment_methods li {
   text-align: right; }
+.woocommerce .payment_box:before {
+  display: none !important; }
 
 .woocommerce-tabs ul.tabs li {
   float: right; }
