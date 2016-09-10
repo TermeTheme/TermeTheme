@@ -7,7 +7,8 @@ class terme_footer_social_widget extends WP_Widget {
             array( 'description' => __( 'Show the Social Networks', 'terme' ), )
         );
     }
-    public function widget( $args, $instance ) { ?>
+    public function widget( $args, $instance ) {
+      global $terme_options; ?>
         <ul class="social_network">
           <li><a href="<?php echo $terme_options['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
           <li><a href="<?php echo $terme_options['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

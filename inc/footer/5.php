@@ -1,21 +1,6 @@
 <?php global $terme_options; ?>
 <footer class="footer style_5">
-  <div class="top_bar">
-      <div class="container">
-          <div class="row">
-              <div class="col-xs-12">
-                <div class="newsletter">
-                    <span>Join to Terme Newsletter</span>
-                    <form class="" action="index.html" method="post">
-                      <input type="text" name="name" value="" placeholder="Enter your email ;)">
-                      <button class="btn" type="submit" data-termehover="">Subscribe</button>
 
-                    </form>
-                </div>
-              </div>
-          </div>
-      </div>
-  </div>
   <div class="main_area">
       <div class="container">
           <div class="row">
