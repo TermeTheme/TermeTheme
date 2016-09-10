@@ -812,7 +812,9 @@
           'id'=>'logo_img',
           'type' => 'media',
           'title' => __('Upload your logo image', 'terme'),
-          'default'=>'',
+          'default'=> array(
+            'url'=> get_template_directory_uri().'/assets/img/terme_logo.png'
+          ),
           'required' => array('logo_type', '=' , 'logo_image'),
           ),
           array(
