@@ -102,7 +102,8 @@ function terme_setup() {
         add_image_size('element_05_thumb_01', 215, 215, true);
         add_image_size('element_shop_thumb', 180, 190, true);
         add_image_size('wc_product', 250, 250, true);
-        add_image_size('shop_catalog_home', 350, 320, true);
+        add_image_size('shop_catalog_home_3', 350, 320, true);
+        add_image_size('shop_catalog_home_4', 250, 320, true);
         add_image_size('slider', 750, 385, true);
     }
     include TEMPLATEPATH.'/inc/theme_option/index.php';

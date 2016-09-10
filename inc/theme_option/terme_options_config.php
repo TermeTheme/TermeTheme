@@ -814,7 +814,6 @@
           'title' => __('Upload your logo image', 'terme'),
           'default'=>'',
           'required' => array('logo_type', '=' , 'logo_image'),
-          'desc'    => __( 'Recommended size (MAX) : 190px x 60px', 'terme' ),
           ),
           array(
           'id'=>'retina_logo_img',
@@ -1214,40 +1213,7 @@
           ),
         )
     ) );
-    // -> Custom Fonts
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Custom Fonts' , 'terme' ),
-        'id'               => 'custom_fonts',
-        'customizer_width' => '400px',
-        'icon'             => 'el el-font',
-        'fields' => array(
-          array(
-              'id'       => 'font_woff',
-              'type'     => 'media',
-              'title'    => 'Font.woff',
 
-          ),
-          array(
-              'id'       => 'font_ttf',
-              'type'     => 'media',
-              'title'    => 'Font.ttf',
-
-          ),
-          array(
-              'id'       => 'font_svg',
-              'type'     => 'media',
-              'title'    => 'Font.svg',
-
-          ),
-          array(
-              'id'       => 'font_eot',
-              'type'     => 'media',
-              'title'    => 'Font.eot',
-
-          ),
-
-        )
-    ) );
     Redux::setSection( $opt_name, array(
         'icon'            => 'el el-list-alt',
         'title'           => __( 'Customizer Only', 'terme' ),

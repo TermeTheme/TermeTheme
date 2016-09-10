@@ -16,7 +16,7 @@ class terme_tab_widget extends WP_Widget {
         $title_01 = ( isset($instance['title_01']) && !empty($instance['title_01']) ) ? $instance['title_01'] : '' ;
         $title_02 = ( isset($instance['title_02']) && !empty($instance['title_02']) ) ? $instance['title_02'] : '' ;
         $title_03 = ( isset($instance['title_03']) && !empty($instance['title_03']) ) ? $instance['title_03'] : '' ;
-        echo $args['before_widget'];
+        echo '<section class="terme_widget_body">';
         echo $args['before_title'] . $title . '</h4><div class="widget_body tab_widget">';
         ?>
         <div class="tabbable-panel">

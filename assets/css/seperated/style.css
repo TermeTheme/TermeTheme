@@ -1202,6 +1202,9 @@ section.latest_news {
           #sidebar section div.ads figcaption a:hover {
             background: #fff;
             color: #e23d28; }
+    #sidebar section.terme_widget_body .widget_body {
+      padding: 0;
+      padding: 0; }
     #sidebar section .widget_body {
       float: right;
       width: 100%;
@@ -1212,8 +1215,8 @@ section.latest_news {
       margin-bottom: 0;
       border-width: 1px;
       border-width: 0.1rem;
-      padding-top: 0;
-      padding-top: 0; }
+      padding: 10px;
+      padding: 1rem; }
       #sidebar section .widget_body #calendar_wrap #wp-calendar {
         width: 100%;
         font-size: 14px;
