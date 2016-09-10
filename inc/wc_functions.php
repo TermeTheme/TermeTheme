@@ -32,7 +32,7 @@ function terme_wc_show_is_on_sale() {
         <h2><?php echo $terme_options['is_on_sale_title']; ?></h2>
         <div class="off_section">
             <span>
-          <span class="off">off</span>
+          <span class="off"><?php _e('off','terme') ?></span>
             <span class="currency"><?php echo get_woocommerce_currency_symbol(); ?></span>
             <span class="price"><?php echo $off ?></span>
             </span>

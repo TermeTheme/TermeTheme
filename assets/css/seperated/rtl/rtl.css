@@ -633,6 +633,21 @@ footer.footer.style_5 .bottom_bar .social_menu {
 
 .is_on_sale .off_section {
   float: left; }
+  .is_on_sale .off_section span {
+    float: left; }
+    .is_on_sale .off_section span .price {
+      padding: 0 20px 0 20px;
+      padding: 0 2rem 0 2rem;
+      border-radius: 0 3px 3px 0;
+      border-radius: 0 0.3rem 0.3rem 0; }
+    .is_on_sale .off_section span .currency {
+      padding: 0 0 0 10px;
+      padding: 0 0 0 1rem; }
+    .is_on_sale .off_section span .off {
+      padding: 0 20px;
+      padding: 0 2rem;
+      border-radius: 3px 0 0 3px;
+      border-radius: 0.3rem 0 0 0.3rem; }
 
 .sb-left .sidebar_menu form#searchform input {
   float: right; }
@@ -655,3 +670,6 @@ footer.footer.style_5 .bottom_bar .social_menu {
 
 label.inline input.woocommerce-Input {
   height: auto; }
+
+.woocommerce-account .addresses .title .edit, .woocommerce-account ul.digital-downloads li .count {
+  float: left; }

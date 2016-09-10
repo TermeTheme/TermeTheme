@@ -1058,6 +1058,21 @@ footer.footer {
 .is_on_sale {
 	.off_section {
 		float: left;
+		span {
+			float: left;
+
+			.price {
+				@include rem(( padding: 0 20px 0 20px, border-radius: 0 3px 3px 0,));
+			}
+
+			.currency {
+				@include rem(( padding: 0 0 0 10px,));
+			}
+
+			.off {
+				@include rem(( padding: 0 20px, border-radius: 3px 0 0 3px,));
+			}
+		}
 	}
 }
 
@@ -1099,4 +1114,7 @@ footer.footer {
 
 label.inline input.woocommerce-Input {
 	height: auto;
+}
+.woocommerce-account .addresses .title .edit, .woocommerce-account ul.digital-downloads li .count {
+	float: left;
 }
