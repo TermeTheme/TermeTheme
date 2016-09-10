@@ -20,3 +20,11 @@
     border-right: 1px solid #d8d8d8;
     margin-right: 201px
 }
+
+.field_icon_selector_ul_container a.close_icon_selector {
+  float: left;
+  -webkit-transform: translate(15px, 30px);
+-ms-transform: translate(15px, 30px);
+-o-transform: translate(15px, 30px);
+transform: translate(15px, 15px);
+}

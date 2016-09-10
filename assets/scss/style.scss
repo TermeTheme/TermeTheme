@@ -1189,7 +1189,12 @@ section.latest_news {
 				}
 			}
 		}
+&.terme_widget_body {
+	.widget_body {
+		@include rem((  padding: 0,));
 
+	}
+}
 		.widget_body {
 			float: right;
 			width: 100%;
@@ -1198,7 +1203,7 @@ section.latest_news {
 			background: #fff;
 			list-style: none;
 			margin-bottom: 0;
-			@include rem(( border-width: 1px, padding-top: 0 ));
+			@include rem(( border-width: 1px, padding: 10px,));
 			// ul {
 			// 	list-style: none;
 			// 	padding: 0;

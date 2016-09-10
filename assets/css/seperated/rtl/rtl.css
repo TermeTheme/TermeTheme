@@ -624,3 +624,9 @@ footer.footer.style_5 .bottom_bar .social_menu {
   padding-right: 1.5rem; }
   .sb-left .sidebar_menu .shopping_cart a .count span {
     float: right; }
+
+.woocommerce-account .addresses .title h3 {
+  float: right; }
+
+label.inline input.woocommerce-Input {
+  height: auto; }

@@ -11,7 +11,7 @@ class term_top_article_widget extends WP_Widget {
     public function widget( $args, $instance ) {
         $title = apply_filters( 'widget_title', $instance['title'] );
         $count = ( isset($instance['count']) && !empty($instance['count']) ) ? $instance['count'] : 3;
-        echo $args['before_widget'];
+        echo '<section class="terme_widget_body">';
         echo $args['before_title'] . $title . $args['after_title'];
         echo '<ul class="top_article">';
         $arg = array(

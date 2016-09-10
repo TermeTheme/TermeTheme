@@ -13,7 +13,7 @@ class terme_video_widget extends WP_Widget {
         $title = ( isset($instance['title']) && !empty($instance['title']) ) ? $instance['title'] : '' ;
         $count = ( isset($instance['count']) && !empty($instance['count']) ) ? $instance['count'] : 3 ;
         $selectopt = ( isset($instance['selectopt']) && !empty($instance['selectopt']) ) ? $instance['selectopt'] : '' ;
-        echo $args['before_widget'];
+        echo '<section class="terme_widget_body">';
         echo $args['before_title'] . $title . $args['after_title'];
         echo '<ul class="video">';
         $arg = array(

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: terme\n"
-"POT-Creation-Date: 2016-09-08 10:43+0430\n"
-"PO-Revision-Date: 2016-09-08 10:43+0430\n"
+"POT-Creation-Date: 2016-09-08 13:50+0430\n"
+"PO-Revision-Date: 2016-09-08 14:12+0430\n"
 "Last-Translator: \n"
 "Language-Team: TermeTheme <termetheme@gmail.com>\n"
 "Language: fa_IR\n"
@@ -142,19 +142,18 @@ msgstr ""
 msgid "your comment is awaiting moderation"
 msgstr "دیدگاه شما در انتظار بررسی است"
 
-#: inc/content/content-authors.php:25
-msgid "No posts by this author."
-msgstr "هیچ مطلبی توسط این نویسنده ثبت نشده است."
-
-#: inc/content/content-category.php:24 index.php:37
+#: inc/content/content-authors.php:24 inc/content/content-category.php:24
+#: index.php:20
 msgid "Previous page"
 msgstr "صفحه قبل"
 
-#: inc/content/content-category.php:25 index.php:38
+#: inc/content/content-authors.php:25 inc/content/content-category.php:25
+#: index.php:21
 msgid "Next page"
 msgstr "صفحه بعد"
 
-#: inc/content/content-category.php:26 index.php:39
+#: inc/content/content-authors.php:26 inc/content/content-category.php:26
+#: index.php:22
 msgid "Page"
 msgstr "صفحه"
 
@@ -459,19 +458,6 @@ msgstr "انتخاب آیکون"
 #: inc/theme_option/terme_options_config.php:78
 msgid "Terme Setting"
 msgstr "تنظیمات ترمه"
-
-#: inc/theme_option/terme_options_config.php:178
-#: inc/theme_option/terme_options_config.php:1277
-msgid "Documentation"
-msgstr "مستندات"
-
-#: inc/theme_option/terme_options_config.php:184
-msgid "Support"
-msgstr "پشتیبانی"
-
-#: inc/theme_option/terme_options_config.php:190
-msgid "Extensions"
-msgstr ""
 
 #: inc/theme_option/terme_options_config.php:223
 #, php-format
@@ -1151,6 +1137,10 @@ msgstr ""
 msgid "The field desc is NOT visible in customizer."
 msgstr ""
 
+#: inc/theme_option/terme_options_config.php:1277
+msgid "Documentation"
+msgstr "مستندات"
+
 #: inc/theme_option/terme_options_config.php:1392
 msgid "Section via hook"
 msgstr ""
@@ -1414,11 +1404,11 @@ msgstr "ترمه - ویدئو"
 msgid "Recommended for Posts Have Video"
 msgstr "مناسب برای مطالب دارای ویدئو"
 
-#: index.php:44
+#: index.php:27
 msgid "Not Found!"
 msgstr "یافت نشد!"
 
-#: index.php:48
+#: index.php:31
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -1615,6 +1605,12 @@ msgstr "توضیحات محصول"
 #: woocommerce/single-product/up-sells.php:48
 msgid "You may also like&hellip;"
 msgstr "ممکن این موارد را هم بپسندید &hellip;"
+
+#~ msgid "No posts by this author."
+#~ msgstr "هیچ مطلبی توسط این نویسنده ثبت نشده است."
+
+#~ msgid "Support"
+#~ msgstr "پشتیبانی"
 
 #~ msgid "Close Button"
 #~ msgstr "دکمه بستن"

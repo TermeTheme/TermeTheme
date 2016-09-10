@@ -42,10 +42,17 @@ function terme_wc_show_is_on_sale() {
 }
 add_action( 'terme_wc_is_on_sale', 'terme_wc_show_is_on_sale' );
 function change_product_thumbnail() {
-  global $product,$post;
   ?>
     <div class="thumb">
-        <?php echo woocommerce_get_product_thumbnail('shop_catalog_home'); ?>
+        <?php
+        global $product,$post, $terme_options;
+        $option = $terme_options['woocommerce_column'];
+        if ($option == 'column_3') {
+          echo woocommerce_get_product_thumbnail('shop_catalog_home_3');
+        } else {
+          echo woocommerce_get_product_thumbnail('shop_catalog_home_4');
+        }
+        ?>
         <?php echo apply_filters( 'woocommerce_loop_add_to_cart_link',
         	sprintf( '<a class="add_to_cart" rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s" data-termehover="">%s</a>',
         		esc_url( $product->add_to_cart_url() ),
