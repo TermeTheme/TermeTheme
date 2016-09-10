@@ -28,3 +28,8 @@
 -o-transform: translate(15px, 30px);
 transform: translate(15px, 15px);
 }
+ul.terme_social_widgets li span.handle {
+  float: left;
+  right: auto;
+  left: 6px;
+}
