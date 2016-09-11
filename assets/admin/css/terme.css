@@ -191,6 +191,9 @@ a.terme_add_page_builder_button:hover, a.terme_add_page_builder_button:focus {
     display: none;
 }
 
+#terme_page_option input {
+  height: 35px;
+}
 #terme_page_option>button {
     border-left: 1px solid #fff;
 }

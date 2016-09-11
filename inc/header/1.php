@@ -1,6 +1,6 @@
 <?php global $terme_options;?>
 <header class="header style_1">
-	<?php if ( $terme_options['hide_top_bar'] == '0' ) { ?>
+	<?php if ( $terme_options['hide_top_bar'] == '1' ) { ?>
 		<div class="top_bar">
 			<div class="container">
 				<div class="row">
@@ -12,7 +12,7 @@
 					</div><!-- col-md-3 -->
 					<div class="col-md-9 col-sm-12 col-xs-12">
 						<form role="search" method="get" id="searchform">
-							<input type="text" name="s" id="s" value="" placeholder="	<?php _e( 'Search','terme' ); ?>">
+							<input type="text" name="s" id="s" value="" placeholder="<?php _e( 'Search','terme' ); ?>">
 							<button><i class="fa fa-search"></i></button>
 						</form>
 						<div class="user_area">
@@ -45,7 +45,6 @@
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<a href="#" class="mobile_menu js-toggle-left-slidebar"><span class="mobile_menu1"></span></a>
-
 					<div class="logo">
 						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
 								<a href="<?php bloginfo('url'); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
@@ -79,14 +78,14 @@
 				<div class="col-xs-12">
 					<a href="#" class="mobile_menu sb-toggle-left"><span class="mobile_menu"></span></a>
 					<?php
-                        if (has_nav_menu('header_menu')) {
-                            wp_nav_menu( array(
-                                'theme_location' => 'header_menu',
-                                'menu_class' => 'header_menu',
-                                'container' => false
-                            ) );
-                        }
-                    ?>
+            if (has_nav_menu('header_menu')) {
+            	wp_nav_menu( array(
+                    'theme_location' => 'header_menu',
+                    'menu_class' => 'header_menu',
+                    'container' => false
+              ) );
+            }
+        	?>
 				</div><!-- col-xs-12 -->
 			</div><!-- row -->
 		</div><!-- container -->

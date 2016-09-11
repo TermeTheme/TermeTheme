@@ -17,9 +17,9 @@ a:focus,
 a:hover {
   text-decoration: none; }
 
-header.header .today {
+header.header.today {
   float: right; }
-  header.header .today i {
+  header.header.today i {
     float: right; }
 
 .top_bar form {
@@ -315,12 +315,12 @@ footer.footer.style_2 .bottom_bar p, footer.footer.style_3 .bottom_bar p, footer
   float: none; }
 footer.footer.style_3 .top_bar .social_menu:before {
   float: right;
-  left: auto;
-  right: 0;
+  left: 0;
+  right: auto;
   width: 1px;
   height: 50%;
   position: absolute;
-  background: #464646;
+  background: #fff;
   content: ' ';
   top: 0;
   -webkit-transform: translate(0, 50%);
@@ -671,5 +671,6 @@ footer.footer.style_5 .bottom_bar .social_menu {
 label.inline input.woocommerce-Input {
   height: auto; }
 
-.woocommerce-account .addresses .title .edit, .woocommerce-account ul.digital-downloads li .count {
+.woocommerce-account .addresses .title .edit,
+.woocommerce-account ul.digital-downloads li .count {
   float: left; }

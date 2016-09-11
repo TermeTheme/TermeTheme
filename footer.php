@@ -45,7 +45,7 @@
 		</div><!-- cart -->
 		<?php } ?>
 		<form role="search" method="get" id="searchform">
-			<input type="text" name="s" id="s" value="" placeholder="	<?php _e( 'Search','terme' ); ?>">
+			<input type="text" name="s" id="s" value="" placeholder="<?php _e('Search','terme'); ?>">
 			<button><i class="fa fa-search"></i></button>
 		</form>
 			<?php
@@ -59,6 +59,5 @@
 	</div><!-- sidebar_menu -->
 </div><!-- sb-left -->
   <?php wp_footer(); ?>
-
 </body>
 </html>

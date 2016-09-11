@@ -1,6 +1,6 @@
 <?php
 /*-----------------------------------------------------------------------------------*/
-# Terme Add Custom CSS STyle
+# Terme Add Custom CSS Style
 /*-----------------------------------------------------------------------------------*/
 add_action( 'wp_head', 'terme_head_style' );
   function terme_head_style() {
@@ -17,18 +17,6 @@ add_action( 'wp_head', 'terme_head_style' );
         echo '<link rel="shortcut icon" href="' .$terme_options['favicon_16']['url']. '" />';
       }
     	echo '<style>'; ?>
-      <?php
-      print_r($terme_options);
-      if (isset($terme_options['custom_css']) && !empty($terme_options['custom_css'])) { ?>
-        @font-face {
-          font-family: 'MyWebFont';
-          src: url('../custom-fonts/WebFont.eot'); /* IE9 Compat Modes */
-          src: url('../custom-fonts/WebFont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-               url('../custom-fonts/WebFont.woff2') format('woff2'), /* Super Modern Browsers */
-               url('../custom-fonts/WebFont.woff') format('woff'), /* Pretty Modern Browsers */
-               url('../custom-fonts/WebFont.ttf')  format('truetype'), /* Safari, Android, iOS */
-        }
-      <?php } ?>
       <?php
       if (isset($terme_options['large_desktop']) && !empty($terme_options['large_desktop'])) {
         echo '@media (min-width: 1200px) {' . $terme_options['large_desktop'] . '}';

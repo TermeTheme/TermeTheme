@@ -1,5 +1,5 @@
 <header class="header style_3">
-	<?php if ( $terme_options['hide_top_bar'] == '0' ) { ?>
+	<?php if ( $terme_options['hide_top_bar'] == '1' ) { ?>
 	<div class="top_bar">
 		<div class="container">
 			<div class="row">
@@ -11,7 +11,7 @@
 				</div><!-- col-md-3 -->
 				<div class="col-md-9 col-sm-12 col-xs-12">
 					<form role="search" method="get" id="searchform">
-						<input type="text" name="s" id="s" value="" placeholder="	<?php _e( 'Search','terme' ); ?>">
+						<input type="text" name="s" id="s" value="" placeholder="<?php _e('Search','terme'); ?>">
 						<button><i class="fa fa-search"></i></button>
 					</form>
 				</div><!-- col-md-9 -->

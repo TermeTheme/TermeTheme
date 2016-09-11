@@ -11,11 +11,13 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
     public $icon;
     public $id;
     public $fields;
+    public $desc;
 
     private $saved_vals;
 
     function __construct($id=0, $passed_array=array()) {
-        $this->title = __('Category Posts', 'terme');
+        $this->title = __('item 1', 'terme');
+        $this->desc = __('* 5 Posts Recommended', 'terme');
         $this->icon = get_template_directory_uri().'/assets/admin/images/element_01.png';
         $this->id = 'terme_cat_posts_style1';
         $this->saved_vals = $passed_array;
@@ -96,6 +98,7 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
         return $fields;
     }
 
+
     public function get_dashboard_output() {
         $output = '<li data-id="'.$this->id.'">
             <a href="#" class="terme_pb_item_toggle" data-tooltip="'.$this->title.'">
@@ -119,8 +122,10 @@ class Terme_Element_One extends Terme_Page_Builder_Element {
             $output .= '
                     </tbody>
                 </table>
+                <p>'.$this->desc.'</p>
                 <a href="#" class="terme_pb_delete_element">'.__('Delete', 'terme').'</a>
             </div><!-- pb_item_setting -->
+
         </li>';
         return $output;
     }

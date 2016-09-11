@@ -42,6 +42,9 @@ class terme_footer_about_widget extends WP_Widget {
             </span>
         </p>
         <p>
+          <?php _e('Recommended Size: 150*100 px','terme') ?>
+        </p>
+        <p>
             <label for="<?php echo $this->get_field_id( 'desc' ); ?>"><?php _e( 'Description:', 'terme' ); ?></label>
             <textarea class="widefat" id="<?php echo $this->get_field_id( 'desc' ); ?>" name="<?php echo $this->get_field_name( 'desc' ); ?>" rows="8" cols="40"><?php echo esc_attr( $desc ); ?></textarea>
         </p>

@@ -18,6 +18,7 @@ function terme_slider_post_type() {
   $args = array(
     'labels'        => $labels,
     'public'        => false,
+    'menu_icon'   => 'dashicons-format-gallery',
     'show_ui' => true,
     'menu_position' => 5,
     'supports'      => array( 'title', ),

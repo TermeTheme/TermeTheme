@@ -23,7 +23,7 @@ function terme_enqueue_scripts() {
 // Register our sidebars and widgetized areas.
 function terme_sidebars() {
     register_sidebar(array(
-        'name' => 'Sidebar',
+        'name' => __('Sidebar','terme'),
         'id' => 'sidebar',
         'description' => __( 'Widgets in this area will be shown in the default sidebar.', 'terme' ),
         'before_widget' => '<section>',
@@ -32,7 +32,7 @@ function terme_sidebars() {
         'after_title' => '</h4><div class="widget_body">',
     ));
     register_sidebar(array(
-        'name' => 'Footer (Column 1)',
+        'name' => __('Footer (Column 1)','terme'),
         'id' => 'footer_1',
         'description' => __( 'Widgets in this area will be shown in the footer column 1.', 'terme' ),
         'before_widget' => '<div class="">',
@@ -41,7 +41,7 @@ function terme_sidebars() {
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
-        'name' => 'Footer (Column 2)',
+        'name' => __('Footer (Column 2)','terme'),
         'id' => 'footer_2',
         'description' => __( 'Widgets in this area will be shown in the footer column 2.', 'terme' ),
         'before_widget' => '<div class="">',
@@ -50,7 +50,7 @@ function terme_sidebars() {
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
-        'name' => 'Footer (Column 3)',
+        'name' => __('Footer (Column 3)','terme'),
         'id' => 'footer_3',
         'description' => __( 'Widgets in this area will be shown in the footer column 3.', 'terme' ),
         'before_widget' => '<div class="">',
@@ -59,7 +59,7 @@ function terme_sidebars() {
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
-        'name' => 'Footer (Column 4)',
+        'name' => __('Footer (Column 4)','terme'),
         'id' => 'footer_4',
         'description' => __( 'Widgets in this area will be shown in the footer column 4.', 'terme' ),
         'before_widget' => '<div class="">',
