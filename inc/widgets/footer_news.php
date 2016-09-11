@@ -23,7 +23,7 @@ class terme_footer_last_posts_widget extends WP_Widget {
             echo '<li>
                     <div class="thumb"><a href="'.get_permalink().'">'.get_the_post_thumbnail(get_the_id(), 'related_thumb'). '</a></div>
                     <h3><a href="'.get_permalink().'">'.terme_shorten_text(get_the_title(), 50).'</a></h3>
-                    <div class="time"><i class="fa fa-clock-o"></i> ' .get_the_time('F j, Y g:i a'). '</div>
+                    <div class="time"><i class="fa fa-clock-o"></i> ' .get_the_time('F j, Y'). '</div>
                   </li>';
         endwhile;
         echo'</ul>';

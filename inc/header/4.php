@@ -1,6 +1,6 @@
 <?php global $terme_options; ?>
 <header class="header style_4">
-	<?php if ( $terme_options['hide_top_bar'] == '0' ) { ?>
+	<?php if ( $terme_options['hide_top_bar'] == '1' ) { ?>
 	<div class="top_bar">
 		<div class="container">
 			<div class="row">

@@ -31,8 +31,8 @@ class terme_video_widget extends WP_Widget {
                     <a href="'.get_permalink().'">
                       <h2>'. terme_shorten_text(get_the_title(), 40) .'</h2>
                         <div class="info">
-                         <span><i class="fa fa-eye" aria-hidden="true"></i>' .terme_get_post_views(get_the_ID()).'</span>
-                         <span><i class="fa fa-commenting" aria-hidden="true"></i>' .get_comments_number( 0, 1, '%' ).'</span>
+                         <span><i class="fa fa-eye" aria-hidden="true"></i>&nbsp' . terme_get_post_views(get_the_ID()) .'</span>
+                         <span><i class="fa fa-commenting" aria-hidden="true"></i>&nbsp' . get_comments_number( 0, 1, '%' ) .'</span>
                         </div>
                     </a>
                   </figcaption>
@@ -42,7 +42,6 @@ class terme_video_widget extends WP_Widget {
         echo'</ul>';
         echo $args['after_widget'];
     }
-
     public function form( $instance ) {
         $count = ( isset($instance['count']) && !empty($instance['count']) ) ? $instance['count'] : 3 ;
         $title = ( isset($instance['title']) && !empty($instance['title']) ) ? $instance['title'] : '' ;
@@ -56,7 +55,6 @@ class terme_video_widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Count:', 'terme' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo $count; ?>" />
         </p>
-
         <p>
             <label for="<?php echo $this->get_field_id( 'selectopt' ); ?>"><?php _e( 'Select Category:', 'terme' ); ?></label>
             <select class="terme_select2" style="width: 100%" name="<?php echo $this->get_field_name( 'selectopt' ); ?>" id="<?php echo $this->get_field_id( 'selectopt' ); ?>">
@@ -72,7 +70,6 @@ class terme_video_widget extends WP_Widget {
                   );
               }
           ?>
-
           </select>
         </p>
     <?php

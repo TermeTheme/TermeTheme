@@ -33,3 +33,17 @@ ul.terme_social_widgets li span.handle {
   right: auto;
   left: 6px;
 }
+.terme_pb_content_container ul li span {
+  float: left;
+}
+.terme_pb_content_container ul li a.terme_pb_delete_element {
+  text-align: left;
+}
+
+#terme_page_option input[type=checkbox]+ label:before {
+    content: attr(data-text-false);
+}
+
+#terme_page_option input[type=checkbox]+ label:after {
+    content: attr(data-text-true);
+}

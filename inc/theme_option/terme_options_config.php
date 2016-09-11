@@ -8,7 +8,6 @@
         return;
     }
 
-
     // This is your option name where all the Redux data is stored.
     $opt_name = "terme_options";
 
@@ -220,13 +219,13 @@
         } else {
             $v = str_replace( '-', '_', $args['opt_name'] );
         }
-        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'terme' ), $v );
+        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'framework' ), $v );
     } else {
-        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'terme' );
+        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'framework' );
     }
 
     // Add content after the form.
-    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'terme' );
+    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'framework' );
 
     Redux::setArgs( $opt_name, $args );
 
@@ -242,19 +241,19 @@
     $tabs = array(
         array(
             'id'      => 'redux-help-tab-1',
-            'title'   => __( 'Theme Information 1', 'terme' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'terme' )
+            'title'   => __( 'Theme Information 1', 'framework' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'framework' )
         ),
         array(
             'id'      => 'redux-help-tab-2',
-            'title'   => __( 'Theme Information 2', 'terme' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'terme' )
+            'title'   => __( 'Theme Information 2', 'framework' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'framework' )
         )
     );
     Redux::setHelpTab( $opt_name, $tabs );
 
     // Set the help sidebar
-    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'terme' );
+    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'framework' );
     Redux::setHelpSidebar( $opt_name, $content );
 
 
@@ -396,9 +395,6 @@
                   ),
                   'default'  => '3'
               ),
-
-
-
                   array(
                       'id'       => 'home_text',
                       'type'     => 'text',
@@ -407,8 +403,6 @@
                       'required' => array( 'home_link_type', "=", 2 ),
                       'default'  => 'Home'
                   ),
-
-
                   array(
                       'id'       => 'home_icon_text_text',
                       'type'     => 'text',
@@ -583,15 +577,6 @@
                   'id'       => 'tumblr_share',
                   'type'     => 'switch',
                   'title'    => __( 'Tumblr', 'terme' ),
-                  'default'  => true,
-                  'on'       =>  __('Enabled', 'terme'),
-                  'off'      =>  __('Disabled', 'terme'),
-                  'required' => array('post_share', '=' , 1),
-              ),
-              array(
-                  'id'       => 'wordpress_share',
-                  'type'     => 'switch',
-                  'title'    => __( 'Wordpress', 'terme' ),
                   'default'  => true,
                   'on'       =>  __('Enabled', 'terme'),
                   'off'      =>  __('Disabled', 'terme'),
@@ -818,13 +803,6 @@
           'required' => array('logo_type', '=' , 'logo_image'),
           ),
           array(
-          'id'=>'retina_logo_img',
-          'type' => 'media',
-          'title' => __('Upload your retina logo image', 'terme'),
-          'subtitle' => __( 'If you want to upload a Retina Image, It\'s Image Size should be exactly double in compare with your normal Logo.', 'terme' ),
-          'required' => array('logo_type', '=' , 'logo_image'),
-          ),
-          array(
               'id'       => 'site_name',
               'type'     => 'text',
               'title'    => __( 'Site Name', 'terme' ),
@@ -916,30 +894,30 @@
     Redux::setSection( $opt_name, array(
         'title'      => __( 'Top Bar', 'terme' ),
         'id'         => 'top_bar',
-        //'icon'  => 'el el-home'
+        'icon'  => 'el el-ok-circle',
         'subsection' => true,
         'fields'     => array(
           array(
               'id'       => 'hide_top_bar',
               'type'     => 'switch',
-              'title'    => __( 'Hide Top Bar', 'terme' ),
+              'title'    => __( 'Top Bar', 'terme' ),
               'default'  => true,
-              'on'       => 'Yes',
-              'off'      => 'No',
+              'on'       =>  __('Enabled', 'terme'),
+              'off'      =>  __('Disabled', 'terme'),
           ),
           array(
               'id'       => 'today_date_format',
               'type'     => 'text',
               'title'    => __( 'Today Date Format', 'terme' ),
               'default'  => 'F j, Y',
-              'required' => array( 'hide_top_bar', '=', '0' ),
+              'required' => array( 'hide_top_bar', '=', '1' ),
           ),
         ),
     ) );
     Redux::setSection( $opt_name, array(
         'title'      => __( 'Top Banner', 'terme' ),
         'id'         => 'top_banner',
-        //'icon'  => 'el el-home'
+        'icon'  => 'el el-ok-circle',
         'subsection' => true,
         'fields'     => array(
           array(
@@ -1060,6 +1038,8 @@
                 'title'    => __( 'Footer Copyright', 'terme' ),
                 'subtitle' => __( 'Show or hide the Footer Copyright', 'terme' ),
                 'default'  => true,
+                'on'       =>  __('Enabled', 'terme'),
+                'off'      =>  __('Disabled', 'terme'),
             ),
             array(
                 'id'       => 'footer-text',
@@ -1074,6 +1054,8 @@
                 'title'    => __( 'Footer Social Icons', 'terme' ),
                 'subtitle' => __( 'Show or hide the social icons, to setup the Social icons go to Social Networks', 'terme' ),
                 'default'  => true,
+                'on'       =>  __('Enabled', 'terme'),
+                'off'      =>  __('Disabled', 'terme'),
             ),
         ),
     ) );
@@ -1100,6 +1082,8 @@
                 'title'    => __( 'Sale Section', 'terme' ),
                 'subtitle' => __( 'Enabling this option will add a Sale Section for Products are in sell', 'terme' ),
                 'default'  => true,
+                'on'       =>  __('Enabled', 'terme'),
+                'off'      =>  __('Disabled', 'terme'),
             ),
             array(
                 'id'       => 'is_on_sale_title',
@@ -1218,16 +1202,16 @@
 
     Redux::setSection( $opt_name, array(
         'icon'            => 'el el-list-alt',
-        'title'           => __( 'Customizer Only', 'terme' ),
+        'title'           => __( 'Customizer Only', 'framework' ),
         'desc'            => __( '<p class="description">This Section should be visible only in Customizer</p>', 'terme' ),
         'customizer_only' => true,
         'fields'          => array(
             array(
                 'id'              => 'opt-customizer-only',
                 'type'            => 'select',
-                'title'           => __( 'Customizer Only Option', 'terme' ),
-                'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'terme' ),
-                'desc'            => __( 'The field desc is NOT visible in customizer.', 'terme' ),
+                'title'           => __( 'Customizer Only Option', 'framework' ),
+                'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'framework' ),
+                'desc'            => __( 'The field desc is NOT visible in customizer.', 'framework' ),
                 'customizer_only' => true,
                 'options'         => array(
                     '1' => 'Opt 1',
@@ -1242,7 +1226,7 @@
     if ( file_exists( dirname( __FILE__ ) . '/../README.md' ) ) {
         $section = array(
             'icon'   => 'el el-list-alt',
-            'title'  => __( 'Documentation', 'terme' ),
+            'title'  => __( 'Documentation', 'framework' ),
             'fields' => array(
                 array(
                     'id'       => '17',
@@ -1357,8 +1341,8 @@
         function dynamic_section( $sections ) {
             //$sections = array();
             $sections[] = array(
-                'title'  => __( 'Section via hook', 'terme' ),
-                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'terme' ),
+                'title'  => __( 'Section via hook', 'framework' ),
+                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'framework' ),
                 'icon'   => 'el el-paper-clip',
                 // Leave this as a blank section, no options just some intro text set above.
                 'fields' => array()

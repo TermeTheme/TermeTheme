@@ -89,7 +89,6 @@ function terme_breadcrumb() {
 /*-----------------------------------------------------------------------------------*/
 # Terme Add Span Count To Category
 /*-----------------------------------------------------------------------------------*/
-
 add_filter('wp_list_categories', 'add_span_cat_count');
 function add_span_cat_count($output) {
   $output = str_replace('</a> (','<span> ',$output);
@@ -105,7 +104,6 @@ function add_data_the_tags($html){
     $html = str_replace('<a','<a data-termehover=""',$html);
     return $html;
 }
-
 /*-----------------------------------------------------------------------------------*/
 # Terme Popular Post By View
 /*-----------------------------------------------------------------------------------*/
@@ -118,7 +116,6 @@ function terme_set_post_views($postID) {
     } else {
         update_post_meta($postID, $count_key, 0);
     }
-
 }
 function terme_get_post_views($postID){
     $count_key = 'terme_post_views_count';

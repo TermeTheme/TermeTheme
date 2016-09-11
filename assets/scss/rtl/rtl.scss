@@ -24,11 +24,13 @@ a:hover {
 	text-decoration: none;
 }
 
-header.header .today {
-	float: right;
-
-	i {
+header.header {
+	&.today {
 		float: right;
+
+		i {
+			float: right;
+		}
 	}
 }
 
@@ -287,6 +289,7 @@ section.latest_news {
 					}
 				}
 			}
+
 			ul li.cat-item {
 				a {
 					&:before {
@@ -297,8 +300,10 @@ section.latest_news {
 					}
 				}
 			}
+
 			ul li.menu-item {
 				float: right;
+
 				a {
 					&:before {
 						content: "\f104";
@@ -308,6 +313,7 @@ section.latest_news {
 					}
 				}
 			}
+
 			ul.video {
 				figure {
 					figcaption {
@@ -500,12 +506,12 @@ footer.footer {
 		.social_menu {
 			&:before {
 				float: right;
-				left: auto;
-				right: 0;
+				left: 0;
+				right: auto;
 				width: 1px;
 				height: 50%;
 				position: absolute;
-				background: $secondary_color;
+				background: #fff;
 				content: ' ';
 				top: 0;
 				transform: translate(0,50%);
@@ -1058,6 +1064,7 @@ footer.footer {
 .is_on_sale {
 	.off_section {
 		float: left;
+
 		span {
 			float: left;
 
@@ -1115,6 +1122,8 @@ footer.footer {
 label.inline input.woocommerce-Input {
 	height: auto;
 }
-.woocommerce-account .addresses .title .edit, .woocommerce-account ul.digital-downloads li .count {
+
+.woocommerce-account .addresses .title .edit,
+.woocommerce-account ul.digital-downloads li .count {
 	float: left;
 }

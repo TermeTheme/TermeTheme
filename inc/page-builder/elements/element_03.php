@@ -11,11 +11,13 @@ class Terme_Element_Three extends Terme_Page_Builder_Element {
     public $icon;
     public $id;
     public $fields;
+    public $desc;
 
     private $saved_vals;
 
     function __construct($id=0, $passed_array=array()) {
         $this->title = __('Item 3', 'terme');
+        $this->desc = __('* Odd Number of Posts Recommended', 'terme');
         $this->icon = get_template_directory_uri().'/assets/admin/images/element_03.png';
         $this->id = 'terme_cat_posts_style3';
         $this->saved_vals = $passed_array;
@@ -119,6 +121,7 @@ class Terme_Element_Three extends Terme_Page_Builder_Element {
             $output .= '
                     </tbody>
                 </table>
+                <p>'.$this->desc.'</p>
                 <a href="#" class="terme_pb_delete_element">'.__('Delete', 'terme').'</a>
             </div><!-- pb_item_setting -->
         </li>';
