@@ -104,6 +104,9 @@ button[data-termehover]:hover:before {
           transform: translate(0, 0); }
 
 
+[canvas=container] {
+  padding-bottom: 20px !important; }
+
 a.back_to_top {
   position: fixed;
   bottom: 0;
@@ -2537,6 +2540,9 @@ footer.footer {
         border-bottom-width: 0.1rem;
         padding-bottom: 15px;
         padding-bottom: 1.5rem; }
+    .article_content .terme_post .wp-video {
+      margin: 20px auto;
+      margin: 2rem auto; }
     .article_content .terme_post .thumb img {
       width: 100%;
       max-width: 100%;
@@ -2634,13 +2640,16 @@ footer.footer {
           .article_content .terme_post .article_tags a:hover:before {
             background-color: #464646; }
     .article_content .terme_post .article_social {
-      text-align: center; }
+      text-align: center;
+      float: left;
+      width: 100%; }
       .article_content .terme_post .article_social ul {
         padding: 0;
         list-style: none;
         display: inline-block;
         width: auto;
-        float: none; }
+        float: none;
+        margin: 0; }
         .article_content .terme_post .article_social ul li {
           float: left;
           width: auto;
@@ -4930,7 +4939,16 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
     .woocommerce nav.woocommerce-pagination ul.page-numbers li {
       border: none;
       margin: 5px;
-      margin: 0.5rem; }
+      margin: 0.5rem;
+      width: 35px;
+      width: 3.5rem;
+      height: 35px;
+      height: 3.5rem;
+      line-height: 35px;
+      line-height: 3.5rem;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      border-radius: 50%; }
       .woocommerce nav.woocommerce-pagination ul.page-numbers li span {
         line-height: inherit;
         padding: 0;
