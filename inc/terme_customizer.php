@@ -2,7 +2,7 @@
 /*-----------------------------------------------------------------------------------*/
 # Terme Add Custom CSS Style
 /*-----------------------------------------------------------------------------------*/
-add_action( 'wp_head', 'terme_head_style' );
+add_action('wp_head', 'terme_head_style');
   function terme_head_style() {
       global $terme_options;
       if ( isset($terme_options['favicon_57']['url']) && !empty ($terme_options['favicon_57']['url'])) {
@@ -13,7 +13,7 @@ add_action( 'wp_head', 'terme_head_style' );
         echo '<link rel="shortcut icon" href="' .$terme_options['favicon_114']['url']. '" />';
        } elseif (isset($terme_options['favicon_144']['url']) && !empty ($terme_options['favicon_144']['url'])) {
          echo '<link rel="shortcut icon" href="' .$terme_options['favicon_144']['url']. '" />';
-     } elseif( isset($terme_options['favicon_16']['url']) && !empty ($terme_options['favicon_16']['url']) ) {
+       } elseif( isset($terme_options['favicon_16']['url']) && !empty ($terme_options['favicon_16']['url']) ) {
         echo '<link rel="shortcut icon" href="' .$terme_options['favicon_16']['url']. '" />';
       }
     	echo '<style>'; ?>

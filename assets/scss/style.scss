@@ -3799,6 +3799,7 @@ footer.footer {
 		}
 
 		.thumbnails {
+			margin-top: 10px;
 			a.first {
 				clear: both;
 			}
@@ -4963,6 +4964,28 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 }
 
 .woocommerce {
+	nav.woocommerce-pagination {
+		@include rem(( margin: 10px auto,));
+			ul.page-numbers {
+				border: none;
+				li {
+					border: none;
+					@include rem(( margin: 5px,));
+					span {
+						line-height:inherit;
+						padding: 0;
+						min-width: auto;
+						&.current {
+							background-color: $primary_color;
+							color: #fff;
+
+						}
+					}
+
+				}
+			}
+
+	}
 	table.shop_attributes {
 		td,
 		th {

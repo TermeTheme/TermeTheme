@@ -17,8 +17,6 @@ jQuery(document).ready(function($) {
     /*-----------------------------------------------------------------------------------*/
     jQuery(".shop-carousel").owlCarousel({
         margin: 15,
-        items: 3,
-        loop: true,
         dots: false,
         freeDrag: false,
         nav: true,
