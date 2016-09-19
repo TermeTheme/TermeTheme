@@ -395,39 +395,39 @@
                   ),
                   'default'  => '3'
               ),
-                  array(
-                      'id'       => 'home_text',
-                      'type'     => 'text',
-                      'title'    => __( 'Home Text', 'terme' ),
-                      'indent'   => true,
-                      'required' => array( 'home_link_type', "=", 2 ),
-                      'default'  => 'Home'
-                  ),
-                  array(
-                      'id'       => 'home_icon_text_text',
-                      'type'     => 'text',
-                      'title'    => __( 'Home Text', 'terme' ),
-                      'indent'   => true,
-                      'required' => array( 'home_link_type', "=", 3 ),
-                      'default'  => 'Home'
-                  ),
-                  array(
-                      'id'       => 'post_breadcrumb_seprator',
-                      'type'     => 'icon_selector',
-                      'title'    => __( 'Delimiter Icon', 'terme' ),
-                      'indent'   => true,
-                      'required' => array( 'post_breadcrumb', "=", 1 ),
-                      'default'  => 'fa-angle-right',
-                  ),
+              array(
+                  'id'       => 'home_text',
+                  'type'     => 'text',
+                  'title'    => __( 'Home Text', 'terme' ),
+                  'indent'   => true,
+                  'required' => array( 'home_link_type', "=", 2 ),
+                  'default'  => 'Home'
+              ),
+              array(
+                  'id'       => 'home_icon_text_text',
+                  'type'     => 'text',
+                  'title'    => __( 'Home Text', 'terme' ),
+                  'indent'   => true,
+                  'required' => array( 'home_link_type', "=", 3 ),
+                  'default'  => 'Home'
+              ),
+              array(
+                  'id'       => 'post_breadcrumb_seprator',
+                  'type'     => 'icon_selector',
+                  'title'    => __( 'Delimiter Icon', 'terme' ),
+                  'indent'   => true,
+                  'required' => array( 'post_breadcrumb', "=", 1 ),
+                  'default'  => 'fa-angle-right',
+              ),
 
-                  array(
-                    'id'       => 'home_icon_text_icon',
-                    'type'     => 'icon_selector',
-                    'title'    => __( 'Home Icon', 'terme' ),
-                    'indent'   => true,
-                    'required' => array( 'post_breadcrumb', "=", 1 ),
-                    'default'  => 'fa-home',
-                  ),
+              array(
+                'id'       => 'home_icon_text_icon',
+                'type'     => 'icon_selector',
+                'title'    => __( 'Home Icon', 'terme' ),
+                'indent'   => true,
+                'required' => array( 'post_breadcrumb', "=", 1 ),
+                'default'  => 'fa-home',
+              ),
 
               array(
                   'id'    => 'post_meta_info',
@@ -460,9 +460,6 @@
                   'title'    => __( 'Post Date Format', 'terme' ),
                   'required' => array( 'post_date', '=', '1' ),
                   'default'  => 'F j, Y',
-
-
-
               ),
               array(
                   'id'       => 'post_category',
@@ -713,12 +710,12 @@
             'subsection'       => true,
             'customizer_width' => '450px',
             'fields'           => array(
-              array(
-                  'id'       => 'login_text',
-                  'type'     => 'text',
-                  'title'    => __( 'Login Text Button', 'terme' ),
-                  'default'=>'Login',
-              ),
+                array(
+                    'id'       => 'login_text',
+                    'type'     => 'text',
+                    'title'    => __( 'Login Text Button', 'terme' ),
+                    'default'=>'Login',
+                ),
                 array(
                     'title'    => __( 'Login Page', 'terme' ),
                     'id'       => 'login_page',
@@ -822,28 +819,13 @@
               'type'        => 'typography',
               'title'       => __( 'Site Name Style', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
-
-              //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
               'google'      => true,
-              // Disable google fonts. Won't work if you haven't defined your google api key
               'font-backup' => true,
-              // Select a backup non-google font in addition to a google font
-              //'font-style'    => false, // Includes font-style and weight. Can use font-style or font-weight to declare
-              //'subsets'       => false, // Only appears if google is true and subsets not set to false
-              //'font-size'     => false,
-              //'line-height'   => false,
               'word-spacing'  => true,  // Defaults to false
               'letter-spacing'=> true,  // Defaults to false
-              //'color'         => false,
-              //'preview'       => false, // Disable the previewer
               'all_styles'  => true,
-              // Enable all Google Font style/weight variations to be added to the page
               'output'      => array( '.logo>h1>a' ),
-              // An array of CSS selectors to apply this font style to dynamically
-              // 'compiler'    => array( 'logo>a-compiler' ),
-              // An array of CSS selectors to apply this font style to dynamically
               'units'       => 'px',
-              // Defaults to px
               'default'     => array(
                   'color'       => '#333',
                   'font-style'  => '700',
@@ -858,28 +840,10 @@
               'type'        => 'typography',
               'title'       => __( 'Site Description Style', 'terme' ),
               'required' => array('logo_type', '=' , 'logo_name'),
-
-              //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
-              //'google'      => false,
-              // Disable google fonts. Won't work if you haven't defined your google api key
               'font-backup' => true,
-              // Select a backup non-google font in addition to a google font
-              //'font-style'    => false, // Includes font-style and weight. Can use font-style or font-weight to declare
-              //'subsets'       => false, // Only appears if google is true and subsets not set to false
-              //'font-size'     => false,
-              //'line-height'   => false,
-              //'word-spacing'  => true,  // Defaults to false
-              //'letter-spacing'=> true,  // Defaults to false
-              //'color'         => false,
-              //'preview'       => false, // Disable the previewer
               'all_styles'  => true,
-              // Enable all Google Font style/weight variations to be added to the page
               'output'      => array( '.logo>h2' ),
-              // An array of CSS selectors to apply this font style to dynamically
-              // 'compiler'    => array( 'logo>a-compiler' ),
-              // An array of CSS selectors to apply this font style to dynamically
               'units'       => 'px',
-              // Defaults to px
               'default'     => array(
                   'color'       => '#333',
                   'font-style'  => '700',
@@ -952,14 +916,14 @@
               'id'      => 'top_banner_link',
               'type'    => 'text',
               'title'   => __( 'URL Link', 'terme' ),
-              'default'  => 'test@test.com',
+              'default'  => 'http://termetheme.com',
               'required' => array( 'banner_type', '=', '1' ),
           ),
           array(
               'id'      => 'banner_custom_content',
               'type'    => 'text',
               'title'   => __( 'Custom Content', 'terme' ),
-              'default'  => 'test@test.com',
+              'default'  => 'TermeTheme.com',
               'required' => array( 'banner_type', '=', '2' ),
           ),
           array(
@@ -1162,7 +1126,7 @@
               'type'     => 'text',
               'title'    => __( 'Homepage Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all Homepage.', 'terme' ),
-'desc'     => __( 'Separate classes with space', 'terme' ),
+              'desc'     => __( 'Separate classes with space', 'terme' ),
 
           ),
           array(
@@ -1178,7 +1142,7 @@
               'type'     => 'text',
               'title'    => __( 'Authors Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all authors.', 'terme' ),
-'desc'     => __( 'Separate classes with space', 'terme' ),
+              'desc'     => __( 'Separate classes with space', 'terme' ),
 
           ),
           array(
@@ -1186,7 +1150,7 @@
               'type'     => 'text',
               'title'    => __( 'Posts Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all posts.', 'terme' ),
-'desc'     => __( 'Separate classes with space', 'terme' ),
+              'desc'     => __( 'Separate classes with space', 'terme' ),
 
           ),
           array(
@@ -1194,7 +1158,7 @@
               'type'     => 'text',
               'title'    => __( 'Pages Custom Body Class', 'terme' ),
               'subtitle' => __( 'This classes will be added in body of all pages.', 'terme' ),
-'desc'     => __( 'Separate classes with space', 'terme' ),
+              'desc'     => __( 'Separate classes with space', 'terme' ),
 
           ),
         )

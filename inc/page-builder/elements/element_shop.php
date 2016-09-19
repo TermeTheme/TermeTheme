@@ -11,7 +11,6 @@ class Terme_Element_Shop extends Terme_Page_Builder_Element {
     public $icon;
     public $id;
     public $fields;
-
     private $saved_vals;
 
     function __construct($id=0, $passed_array=array()) {
@@ -24,7 +23,6 @@ class Terme_Element_Shop extends Terme_Page_Builder_Element {
         } else {
             $this->fields = $this->get_filled_fields($id);
         }
-
     }
 
 
@@ -107,7 +105,7 @@ class Terme_Element_Shop extends Terme_Page_Builder_Element {
         $output = '';
         $args_offset = array(
             'post_type'         => 'product',
-            'posts_per_page' => $this->saved_vals['number']-1,
+            'posts_per_page' => $this->saved_vals['number'],
         );
         $output = '<div class="box">
           <div class="title">

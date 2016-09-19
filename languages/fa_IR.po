@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: terme\n"
 "POT-Creation-Date: 2016-09-11 14:53+0430\n"
-"PO-Revision-Date: 2016-09-11 14:56+0430\n"
+"PO-Revision-Date: 2016-09-11 16:01+0430\n"
 "Last-Translator: \n"
 "Language-Team: TermeTheme <termetheme@gmail.com>\n"
 "Language: fa_IR\n"
@@ -817,7 +817,7 @@ msgstr "انتخاب اسلایدری که در صفحه اصلی نمایش د�
 
 #: inc/theme_option/terme_options_config.php:711
 msgid "Login & Logout Settings"
-msgstr "تنظمات ورود و خروج"
+msgstr "تنظیمات ورود و خروج"
 
 #: inc/theme_option/terme_options_config.php:720
 msgid "Login Text Button"

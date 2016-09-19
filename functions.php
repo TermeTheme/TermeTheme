@@ -19,7 +19,6 @@ function terme_enqueue_scripts() {
     wp_enqueue_script('jQuery-accordion', get_template_directory_uri().'/assets/js/jquery.dcjqaccordion.2.7.min.js', array('jquery'), '1.4.1', true);
     wp_enqueue_script('jQuery-Hover', get_template_directory_uri().'/assets/js/jquery.hoverIntent.minified.js', array('jquery'), '1.4.1', true);
 }
-
 // Register our sidebars and widgetized areas.
 function terme_sidebars() {
     register_sidebar(array(
@@ -69,7 +68,6 @@ function terme_sidebars() {
     ));
 }
 add_action('widgets_init', 'terme_sidebars');
-
 add_action('admin_enqueue_scripts', 'terme_theme_admin_assets');
 function terme_theme_admin_assets() {
     wp_enqueue_style('TermeTheme-admin-style', get_template_directory_uri().'/assets/admin/css/terme.css', array());
@@ -108,7 +106,6 @@ function terme_setup() {
     }
     include TEMPLATEPATH.'/inc/theme_option/index.php';
 }
-
 include TEMPLATEPATH.'/inc/terme_funcs.php';
 include TEMPLATEPATH.'/inc/terme_customizer.php';
 include TEMPLATEPATH.'/inc/widgets/widgets.php';
@@ -117,20 +114,15 @@ include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
 include TEMPLATEPATH.'/inc/wc_functions.php';
 include TEMPLATEPATH.'/inc/slider/init.php';
 ?>
-
-<?php
-    function advanced_comment($comment, $args, $depth)  {
-        $GLOBALS['comment'] = $comment;
-        ?>
-        <li <?php comment_class(); ?> >
+<?php function advanced_comment($comment, $args, $depth) {
+        $GLOBALS['comment'] = $comment; ?>
+        <li <?php comment_class(); ?>>
           <article id="comment-<?php comment_ID(); ?>">
             <div class="comment_author">
-              <?php echo get_avatar($comment, 75);
-        ?>
+              <?php echo get_avatar($comment, 75); ?>
             </div>
             <div class="comment_metadata">
-              <b class="name"><?php echo get_comment_author_link();
-        ?></b>
+              <b class="name"><?php echo get_comment_author_link(); ?></b>
               <time><?php printf(__('%1$s'), get_comment_date('j F Y در g:i a'), get_comment_time()) ?></time>
               <div class="reply">
                 <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
@@ -140,12 +132,9 @@ include TEMPLATEPATH.'/inc/slider/init.php';
                 <?php comment_text(); ?>
                 <?php if ($comment->comment_approved == '0') : ?>>
                     <p>
-                        <?php _e('your comment is awaiting moderation') ?>
+                        <?php _e('your comment is awaiting moderation'); ?>
                     </p>
                 <?php endif;?>
             </div>
           </article>
-
-
-<?php
-} ?>
+<?php } ?>

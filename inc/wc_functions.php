@@ -64,8 +64,7 @@ function change_product_title() {
         $product ); ?>
         <a href="<?php the_permalink(); ?>" class="permalink" data-termehover="">Description</a>
     </div>
-<?php
-}
+<?php }
       // woocommerce_before_shop_loop_item_title
     remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
     add_action( 'woocommerce_before_shop_loop_item_title', 'change_product_thumbnail' );
