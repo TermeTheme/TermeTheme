@@ -18,7 +18,7 @@ class terme_footer_about_widget extends WP_Widget {
     public function widget( $args, $instance ) {
         $image = ( isset($instance['image']) && !empty($instance['image']) ) ? $instance['image'] : '';
         $desc = ( isset($instance['desc']) && !empty($instance['desc']) ) ? $instance['desc'] : '';
-        $thumb = wp_get_attachment_image_src( $image, 'element_01_thumb_02' );
+        $thumb = wp_get_attachment_image_src( $image, '' );
         echo '<img src="'.$thumb['0'].'"/>';
         echo '<p class="about_us">'.$desc.'</p>';
     }

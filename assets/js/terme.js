@@ -15,8 +15,10 @@ jQuery(document).ready(function($) {
     /*-----------------------------------------------------------------------------------*/
     // Shop Carousel
     /*-----------------------------------------------------------------------------------*/
+    if (jQuery('body').hasClass('rtl')) {
     jQuery(".shop-carousel").owlCarousel({
         margin: 15,
+        rtl: true,
         dots: false,
         freeDrag: false,
         nav: true,
@@ -41,7 +43,35 @@ jQuery(document).ready(function($) {
                 items: 3,
             }
         }
-    });
+    }); } else {
+      jQuery(".shop-carousel").owlCarousel({
+          margin: 15,
+          dots: false,
+          freeDrag: false,
+          nav: true,
+          navText: ['<i class="fa fa-angle-right"></i>', '<i class="fa fa-angle-left"></i>'],
+          responsive: {
+              0: {
+                  items: 1
+              },
+              600: {
+                  items: 2
+              },
+              768: {
+                  items: 2
+              },
+              979: {
+                  items: 3
+              },
+              1199: {
+                  items: 3,
+              },
+              1400: {
+                  items: 3,
+              }
+          }
+      });
+    }
     /*-----------------------------------------------------------------------------------*/
     // Back To Top Button
     /*-----------------------------------------------------------------------------------*/

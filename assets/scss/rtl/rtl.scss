@@ -308,6 +308,9 @@ section.latest_news {
 						@include rem(( margin-left: 10px, ));
 					}
 				}
+				span {
+					float: left;
+				}
 			}
 
 			ul li.menu-item {
