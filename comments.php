@@ -16,7 +16,7 @@
   }
   ?>
 <?php if (have_comments() || comments_open()) : ?>
-  <div class="article_comment">
+  <div class="article_comments">
       <h4><?php _e('Comments','terme') ?></h4>
       <div class="comment_container">
 <?php endif; ?>
