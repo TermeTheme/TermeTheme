@@ -871,6 +871,7 @@ section.latest_news {
 	&.half_width ul li {
 		width: 50%;
 		border-right: solid #e4e4e4;
+		min-height: 120px;
 		@include rem(border-right-width, 1px);
 	}
 }
@@ -4989,6 +4990,10 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 							color: #fff;
 
 						}
+					}
+					a {
+						padding: 0;
+						line-height: inherit;
 					}
 
 				}

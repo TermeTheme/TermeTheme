@@ -193,6 +193,13 @@ section.latest_news {
   margin-left: 30px;
   margin-left: 3rem; }
 
+.small_post ul li {
+  float: right; }
+.small_post.half_width ul li {
+  border-left: solid #e4e4e4;
+  border-right: 0;
+  border-left-width: 1px;
+  border-left-width: 0.1rem; }
 .small_post ul li .thumb {
   float: right;
   margin-left: 10px;
@@ -376,6 +383,8 @@ footer.footer.style_5 .bottom_bar .social_menu {
     margin-right: auto;
     margin-left: 10px;
     margin-left: 1rem; }
+.article_content .terme_post p {
+  line-height: 1.8; }
 .article_content .terme_post .article_social ul li {
   float: right; }
 .article_content .terme_post .article_tags a {

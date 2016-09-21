@@ -228,6 +228,15 @@ section.latest_news {
 }
 
 .small_post {
+	ul li {
+		float: right;
+	}
+	&.half_width ul li {
+
+		border-left: solid #e4e4e4;
+		border-right: 0;
+		@include rem(border-left-width, 1px);
+	}
 	ul li .thumb {
 		float: right;
 		@include rem(( margin-left: 10px, margin-right: 0 ));
@@ -590,6 +599,9 @@ footer.footer {
 					@include rem(( margin-right: auto,margin-left: 10px, ));
 				}
 			}
+		}
+		p {
+			line-height: 1.8;
 		}
 
 		.article_social {

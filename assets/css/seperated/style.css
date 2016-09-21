@@ -917,6 +917,7 @@ section.latest_news {
   .small_post.half_width ul li {
     width: 50%;
     border-right: solid #e4e4e4;
+    min-height: 120px;
     border-right-width: 1px;
     border-right-width: 0.1rem; }
 
@@ -4850,6 +4851,9 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
         .woocommerce nav.woocommerce-pagination ul.page-numbers li span.current {
           background-color: #e23d28;
           color: #fff; }
+      .woocommerce nav.woocommerce-pagination ul.page-numbers li a {
+        padding: 0;
+        line-height: inherit; }
 .woocommerce table.shop_attributes td,
 .woocommerce table.shop_attributes th {
   border-color: #c0f0c1; }
