@@ -18,7 +18,7 @@ class ads_widget extends WP_Widget {
     public function widget( $args, $instance ) {
         $title = apply_filters( 'widget_title', $instance['title'] );
         $url = ( isset($instance['url']) && !empty($instance['url']) ) ? esc_url( $instance['url'] ) : '' ;
-        $thumb = wp_get_attachment_image_src( $instance['image'], 'thumbnail' );
+        $thumb = wp_get_attachment_image_src( $instance['image'], '' );
         echo '<section><div class="ads">';
         echo '<figure>
                 <img src="'.$thumb['0'].'" alt="" />

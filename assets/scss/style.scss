@@ -1,5 +1,5 @@
 @import '_variables.scss', '_mixins.scss', 'rem';
-[canvas=container] {
+div[canvas=container] {
 	padding-bottom: 20px !important;
 }
 a.back_to_top {
@@ -1090,7 +1090,7 @@ section.latest_news {
 			}
 
 			figure:hover figcaption:before {
-				transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+				transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,150%,0);
 			}
 
 			figure:hover figcaption a {
@@ -1116,7 +1116,7 @@ section.latest_news {
 					background: rgba(255,255,255,0.5);
 					content: '';
 					transition: transform 0.5s;
-					transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+					transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-150%,0);
 				}
 
 				a {

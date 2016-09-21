@@ -234,6 +234,8 @@ section.latest_news {
   margin-right: 0;
   margin-left: 10px;
   margin-left: 1rem; }
+#sidebar section .widget_body ul li.cat-item span {
+  float: left; }
 #sidebar section .widget_body ul li.menu-item {
   float: right; }
   #sidebar section .widget_body ul li.menu-item a:before {

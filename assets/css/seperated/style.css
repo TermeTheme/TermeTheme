@@ -1,4 +1,4 @@
-[canvas=container] {
+div[canvas=container] {
   padding-bottom: 20px !important; }
 
 a.back_to_top {
@@ -1132,8 +1132,8 @@ section.latest_news {
         -webkit-transform: scale3d(1, 1, 1);
                 transform: scale3d(1, 1, 1); }
       #sidebar section div.ads figure:hover figcaption:before {
-        -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
-                transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0); }
+        -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 150%, 0);
+                transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 150%, 0); }
       #sidebar section div.ads figure:hover figcaption a {
         -webkit-transform: translate(-10px, -10px);
             -ms-transform: translate(-10px, -10px);
@@ -1160,8 +1160,8 @@ section.latest_news {
           transition: -webkit-transform 0.5s;
           transition: transform 0.5s;
           transition: transform 0.5s, -webkit-transform 0.5s;
-          -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
-                  transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0); }
+          -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -150%, 0);
+                  transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -150%, 0); }
         #sidebar section div.ads figcaption a {
           background-color: #e23d28;
           text-align: center;
