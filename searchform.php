@@ -1,7 +1,5 @@
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label>
-		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'terme' ); ?></span>
-		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'terme' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-	</label>
-	<button type="submit" class="search-submit"><span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', 'terme' ); ?></span></button>
-</form>
+<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<label for="s" class="assistive-text"><?php _e( 'Search', 'terme' ); ?></label>
+		<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'terme' ); ?>" />
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'terme' ); ?>" />
+	</form>
