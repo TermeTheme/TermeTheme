@@ -117,13 +117,13 @@ function terme_set_post_views($postID) {
         update_post_meta($postID, $count_key, 0);
     }
 }
-function terme_get_post_views($postID){
+function terme_get_post_views($postID) {
     $count_key = 'terme_post_views_count';
     $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return "0 __(' View','terme')";
-    }
-    return $count. __(' View','terme');
+    $count = (isset($count) && !empty($count)) ? $count : 0 ;
+    $result = printf(
+      __('%s View','terme'),
+      $count
+    );
+    return $result;
 }

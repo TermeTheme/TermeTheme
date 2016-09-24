@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: terme\n"
-"POT-Creation-Date: 2016-09-11 14:53+0430\n"
-"PO-Revision-Date: 2016-09-11 16:01+0430\n"
+"POT-Creation-Date: 2016-09-21 15:45+0330\n"
+"PO-Revision-Date: 2016-09-21 16:00+0330\n"
 "Last-Translator: \n"
 "Language-Team: TermeTheme <termetheme@gmail.com>\n"
 "Language: fa_IR\n"
@@ -96,69 +96,69 @@ msgstr "سبد خرید"
 msgid "Search"
 msgstr "جست و جو"
 
-#: functions.php:26
+#: functions.php:25
 msgid "Sidebar"
 msgstr "سایدبار"
 
-#: functions.php:28
+#: functions.php:27
 msgid "Widgets in this area will be shown in the default sidebar."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در سایدبار نمایش داده خواهند شد."
 
-#: functions.php:35
+#: functions.php:34
 msgid "Footer (Column 1)"
 msgstr "فوتر (ستون اول)"
 
-#: functions.php:37
+#: functions.php:36
 msgid "Widgets in this area will be shown in the footer column 1."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون اول فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:44
+#: functions.php:43
 msgid "Footer (Column 2)"
 msgstr "فوتر (ستون دوم)"
 
-#: functions.php:46
+#: functions.php:45
 msgid "Widgets in this area will be shown in the footer column 2."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون دوم فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:53
+#: functions.php:52
 msgid "Footer (Column 3)"
 msgstr "فوتر (ستون سوم)"
 
-#: functions.php:55
+#: functions.php:54
 msgid "Widgets in this area will be shown in the footer column 3."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون سوم فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:62
+#: functions.php:61
 msgid "Footer (Column 4)"
 msgstr "فوتر (ستون چهارم)"
 
-#: functions.php:64
+#: functions.php:63
 msgid "Widgets in this area will be shown in the footer column 4."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون چهارم فوتر نمایش داده "
 "خواهند شد."
 
-#: functions.php:89
+#: functions.php:87
 msgid "Header Menu"
 msgstr "منوی هدر"
 
-#: functions.php:90
+#: functions.php:88
 msgid "Footer Menu"
 msgstr "منوی فوتر"
 
-#: functions.php:134
+#: functions.php:126
 #, php-format
 msgid "%1$s"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:135
 msgid "your comment is awaiting moderation"
 msgstr "دیدگاه شما در انتظار بررسی است"
 
@@ -186,7 +186,7 @@ msgid "Articles"
 msgstr "مقاله"
 
 #: inc/content/content-single.php:143 inc/metabox/terme_meta.php:71
-#: inc/theme_option/terme_options_config.php:601
+#: inc/theme_option/terme_options_config.php:597
 msgid "Related Post"
 msgstr "مطالب مرتبط"
 
@@ -210,11 +210,11 @@ msgstr "تعداد بازدید پست"
 msgid "Comment View Count"
 msgstr "تعداد دیدگاه های پست"
 
-#: inc/metabox/terme_meta.php:66 inc/theme_option/terme_options_config.php:357
+#: inc/metabox/terme_meta.php:66 inc/theme_option/terme_options_config.php:356
 msgid "Date Format"
 msgstr "فرمت تاریخ"
 
-#: inc/metabox/terme_meta.php:80 inc/theme_option/terme_options_config.php:621
+#: inc/metabox/terme_meta.php:80 inc/theme_option/terme_options_config.php:617
 msgid "Related Post By"
 msgstr "مطالب مرتبط بر اساس"
 
@@ -226,7 +226,7 @@ msgstr "تعداد مطالب مرتبط"
 msgid "Comment Box"
 msgstr "جعبه دیدگاه ها"
 
-#: inc/metabox/terme_meta.php:103 inc/theme_option/terme_options_config.php:517
+#: inc/metabox/terme_meta.php:103 inc/theme_option/terme_options_config.php:513
 msgid "Author Box"
 msgstr "جعبه نویسنده"
 
@@ -256,8 +256,8 @@ msgstr "نمایش ۵ پست پیشنهاد میشود"
 #: inc/page-builder/elements/element_04.php:80
 #: inc/page-builder/elements/element_05.php:46
 #: inc/page-builder/elements/element_05.php:80
-#: inc/page-builder/elements/element_shop.php:38
-#: inc/page-builder/elements/element_shop.php:59
+#: inc/page-builder/elements/element_shop.php:36
+#: inc/page-builder/elements/element_shop.php:57
 #: inc/page-builder/elements/element_test.php:46
 #: inc/page-builder/elements/element_test.php:84
 msgid "Box Title:"
@@ -273,8 +273,8 @@ msgstr "عنوان جعبه:"
 #: inc/page-builder/elements/element_04.php:84
 #: inc/page-builder/elements/element_05.php:50
 #: inc/page-builder/elements/element_05.php:84
-#: inc/page-builder/elements/element_shop.php:42
-#: inc/page-builder/elements/element_shop.php:63
+#: inc/page-builder/elements/element_shop.php:40
+#: inc/page-builder/elements/element_shop.php:61
 #: inc/page-builder/elements/element_test.php:50
 #: inc/page-builder/elements/element_test.php:88
 msgid "Box Subtitle:"
@@ -290,7 +290,7 @@ msgstr "زیرنویس جعبه:"
 #: inc/page-builder/elements/element_04.php:88
 #: inc/page-builder/elements/element_05.php:54
 #: inc/page-builder/elements/element_05.php:88
-#: inc/page-builder/elements/element_shop.php:67
+#: inc/page-builder/elements/element_shop.php:65
 #: inc/page-builder/elements/element_test.php:54
 #: inc/page-builder/elements/element_test.php:92
 msgid "Post Number:"
@@ -316,7 +316,7 @@ msgstr "انتخاب دسته بندی:"
 #: inc/page-builder/elements/element_03.php:125
 #: inc/page-builder/elements/element_04.php:122
 #: inc/page-builder/elements/element_05.php:122
-#: inc/page-builder/elements/element_shop.php:98
+#: inc/page-builder/elements/element_shop.php:96
 #: inc/page-builder/elements/element_test.php:130
 #: inc/slider/settings_html.php:29 inc/slider/settings_html.php:76
 #: inc/slider/settings_html.php:78 inc/slider/settings_html.php:113
@@ -329,7 +329,7 @@ msgstr "حذف"
 #: inc/page-builder/elements/element_03.php:143
 #: inc/page-builder/elements/element_04.php:140
 #: inc/page-builder/elements/element_05.php:140
-#: inc/page-builder/elements/element_shop.php:114
+#: inc/page-builder/elements/element_shop.php:112
 #: inc/page-builder/elements/element_test.php:153
 msgid "More"
 msgstr "بیشتر"
@@ -355,19 +355,19 @@ msgstr "آیتم ۴"
 msgid "Item 5"
 msgstr "آیتم ۵"
 
-#: inc/page-builder/elements/element_shop.php:18
+#: inc/page-builder/elements/element_shop.php:17
 msgid "Shop Carousel"
 msgstr "اسلایدر فروشگاه"
 
-#: inc/page-builder/elements/element_shop.php:46
+#: inc/page-builder/elements/element_shop.php:44
 msgid "Product Number:"
 msgstr "تعداد محصول:"
 
-#: inc/page-builder/elements/element_shop.php:130
+#: inc/page-builder/elements/element_shop.php:128
 msgid "Add to cart"
 msgstr "افزودن به سبد"
 
-#: inc/page-builder/elements/element_shop.php:131
+#: inc/page-builder/elements/element_shop.php:129
 msgid "Description"
 msgstr "توضیحات"
 
@@ -391,7 +391,7 @@ msgstr "صفحه ساز"
 msgid "Page Builder Elements"
 msgstr "المان های صفحه ساز"
 
-#: inc/slider/meta_box.php:15 inc/theme_option/terme_options_config.php:684
+#: inc/slider/meta_box.php:15 inc/theme_option/terme_options_config.php:680
 msgid "Slider Settings"
 msgstr "تنظیمات اسلایدر"
 
@@ -474,21 +474,22 @@ msgstr "دسته بندی ها:"
 msgid "Number of slides:"
 msgstr "تعداد اسلایدها"
 
-#: inc/terme_funcs.php:128
-msgid " View"
-msgstr " بازدید"
+#: inc/terme_funcs.php:125
+#, php-format
+msgid "%s View"
+msgstr "بازدید %s"
 
 #: inc/theme_option/redux-extensions-loader/extensions/icon_selector/icon_selector/field_icon_selector.php:104
 #: inc/theme_option/redux-extensions-loader/extensions/icon_selector/icon_selector/field_icon_selector.php:114
 msgid "Select Icon"
 msgstr "انتخاب آیکون"
 
+#: inc/theme_option/terme_options_config.php:76
 #: inc/theme_option/terme_options_config.php:77
-#: inc/theme_option/terme_options_config.php:78
 msgid "Terme Setting"
 msgstr "تنظیمات ترمه"
 
-#: inc/theme_option/terme_options_config.php:223
+#: inc/theme_option/terme_options_config.php:222
 #, php-format
 msgid ""
 "<p>Did you know that Redux sets a global variable for you? To access any of "
@@ -496,154 +497,154 @@ msgid ""
 "<strong>$%1$s</strong></p>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:225
+#: inc/theme_option/terme_options_config.php:224
 msgid ""
 "<p>This text is displayed above the options panel. It isn't required, but "
 "more info is always better! The intro_text field accepts all HTML.</p>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:229
+#: inc/theme_option/terme_options_config.php:228
 msgid ""
 "<p>This text is displayed below the options panel. It isn't required, but "
 "more info is always better! The footer_text field accepts all HTML.</p>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:245
+#: inc/theme_option/terme_options_config.php:244
 msgid "Theme Information 1"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:246
-#: inc/theme_option/terme_options_config.php:251
+#: inc/theme_option/terme_options_config.php:245
+#: inc/theme_option/terme_options_config.php:250
 msgid "<p>This is the tab content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:250
+#: inc/theme_option/terme_options_config.php:249
 msgid "Theme Information 2"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:257
+#: inc/theme_option/terme_options_config.php:256
 msgid "<p>This is the sidebar content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:281
+#: inc/theme_option/terme_options_config.php:280
 msgid "General Settings"
 msgstr "تنظیمات عمومی"
 
-#: inc/theme_option/terme_options_config.php:289
+#: inc/theme_option/terme_options_config.php:288
 msgid "Theme Layout"
 msgstr "چینش پوسته"
 
-#: inc/theme_option/terme_options_config.php:290
+#: inc/theme_option/terme_options_config.php:289
 msgid "Select the general sidebar you want to use by default."
 msgstr "انتخاب سایدبار پیش فرض"
 
-#: inc/theme_option/terme_options_config.php:306
+#: inc/theme_option/terme_options_config.php:305
 msgid "Scroll to Top Button"
 msgstr "دکمه اسکرول به بالا"
 
-#: inc/theme_option/terme_options_config.php:307
+#: inc/theme_option/terme_options_config.php:306
 msgid "Enabling this option will add a \"Back To Top\" button to pages."
 msgstr ""
 "با فعال کردن این گزینه، دکمه ای جهت اسکرول به بالا در صفحه نمایش داده خواهد "
 "شد."
+
+#: inc/theme_option/terme_options_config.php:308
+#: inc/theme_option/terme_options_config.php:317
+#: inc/theme_option/terme_options_config.php:381
+#: inc/theme_option/terme_options_config.php:444
+#: inc/theme_option/terme_options_config.php:452
+#: inc/theme_option/terme_options_config.php:469
+#: inc/theme_option/terme_options_config.php:478
+#: inc/theme_option/terme_options_config.php:488
+#: inc/theme_option/terme_options_config.php:507
+#: inc/theme_option/terme_options_config.php:515
+#: inc/theme_option/terme_options_config.php:523
+#: inc/theme_option/terme_options_config.php:538
+#: inc/theme_option/terme_options_config.php:551
+#: inc/theme_option/terme_options_config.php:560
+#: inc/theme_option/terme_options_config.php:569
+#: inc/theme_option/terme_options_config.php:578
+#: inc/theme_option/terme_options_config.php:599
+#: inc/theme_option/terme_options_config.php:691
+#: inc/theme_option/terme_options_config.php:869
+#: inc/theme_option/terme_options_config.php:892
+#: inc/theme_option/terme_options_config.php:1005
+#: inc/theme_option/terme_options_config.php:1021
+#: inc/theme_option/terme_options_config.php:1049
+msgid "Enabled"
+msgstr "فعال"
 
 #: inc/theme_option/terme_options_config.php:309
 #: inc/theme_option/terme_options_config.php:318
 #: inc/theme_option/terme_options_config.php:382
 #: inc/theme_option/terme_options_config.php:445
 #: inc/theme_option/terme_options_config.php:453
-#: inc/theme_option/terme_options_config.php:473
-#: inc/theme_option/terme_options_config.php:482
-#: inc/theme_option/terme_options_config.php:492
-#: inc/theme_option/terme_options_config.php:511
-#: inc/theme_option/terme_options_config.php:519
-#: inc/theme_option/terme_options_config.php:527
-#: inc/theme_option/terme_options_config.php:542
-#: inc/theme_option/terme_options_config.php:555
-#: inc/theme_option/terme_options_config.php:564
-#: inc/theme_option/terme_options_config.php:573
-#: inc/theme_option/terme_options_config.php:582
-#: inc/theme_option/terme_options_config.php:603
-#: inc/theme_option/terme_options_config.php:695
-#: inc/theme_option/terme_options_config.php:906
-#: inc/theme_option/terme_options_config.php:929
-#: inc/theme_option/terme_options_config.php:1042
-#: inc/theme_option/terme_options_config.php:1058
-#: inc/theme_option/terme_options_config.php:1086
-msgid "Enabled"
-msgstr "فعال"
-
-#: inc/theme_option/terme_options_config.php:310
-#: inc/theme_option/terme_options_config.php:319
-#: inc/theme_option/terme_options_config.php:383
-#: inc/theme_option/terme_options_config.php:446
-#: inc/theme_option/terme_options_config.php:454
-#: inc/theme_option/terme_options_config.php:474
-#: inc/theme_option/terme_options_config.php:483
-#: inc/theme_option/terme_options_config.php:493
-#: inc/theme_option/terme_options_config.php:512
-#: inc/theme_option/terme_options_config.php:520
-#: inc/theme_option/terme_options_config.php:528
-#: inc/theme_option/terme_options_config.php:543
-#: inc/theme_option/terme_options_config.php:556
-#: inc/theme_option/terme_options_config.php:565
-#: inc/theme_option/terme_options_config.php:574
-#: inc/theme_option/terme_options_config.php:583
-#: inc/theme_option/terme_options_config.php:604
-#: inc/theme_option/terme_options_config.php:696
-#: inc/theme_option/terme_options_config.php:907
-#: inc/theme_option/terme_options_config.php:930
-#: inc/theme_option/terme_options_config.php:1043
-#: inc/theme_option/terme_options_config.php:1059
-#: inc/theme_option/terme_options_config.php:1087
+#: inc/theme_option/terme_options_config.php:470
+#: inc/theme_option/terme_options_config.php:479
+#: inc/theme_option/terme_options_config.php:489
+#: inc/theme_option/terme_options_config.php:508
+#: inc/theme_option/terme_options_config.php:516
+#: inc/theme_option/terme_options_config.php:524
+#: inc/theme_option/terme_options_config.php:539
+#: inc/theme_option/terme_options_config.php:552
+#: inc/theme_option/terme_options_config.php:561
+#: inc/theme_option/terme_options_config.php:570
+#: inc/theme_option/terme_options_config.php:579
+#: inc/theme_option/terme_options_config.php:600
+#: inc/theme_option/terme_options_config.php:692
+#: inc/theme_option/terme_options_config.php:870
+#: inc/theme_option/terme_options_config.php:893
+#: inc/theme_option/terme_options_config.php:1006
+#: inc/theme_option/terme_options_config.php:1022
+#: inc/theme_option/terme_options_config.php:1050
 msgid "Disabled"
 msgstr "غیرفعال"
 
-#: inc/theme_option/terme_options_config.php:315
+#: inc/theme_option/terme_options_config.php:314
 msgid "NewsTicker"
 msgstr "سرخط خبرها"
 
-#: inc/theme_option/terme_options_config.php:316
+#: inc/theme_option/terme_options_config.php:315
 msgid "Enable or disable the NewsTicker"
 msgstr "نمایش تیتر اخبار در صفحه اصلی"
 
-#: inc/theme_option/terme_options_config.php:324
+#: inc/theme_option/terme_options_config.php:323
 msgid "Favicon (16x16)"
 msgstr "فاوآیکون ۱۶x۱۶"
 
-#: inc/theme_option/terme_options_config.php:330
+#: inc/theme_option/terme_options_config.php:329
 msgid "Apple iPhone Icon"
 msgstr "فاوآیکون آیفون"
 
-#: inc/theme_option/terme_options_config.php:331
+#: inc/theme_option/terme_options_config.php:330
 msgid "Icon for Apple iPhone (57px x 57px)"
 msgstr "فاوآیکون آیفون ۵۷x۵۷"
 
-#: inc/theme_option/terme_options_config.php:337
+#: inc/theme_option/terme_options_config.php:336
 msgid "Apple iPad Icon"
 msgstr "فاوآیکون آیپد"
 
-#: inc/theme_option/terme_options_config.php:338
+#: inc/theme_option/terme_options_config.php:337
 msgid "Icon for Apple iPhone (72px x 72px)"
 msgstr "فاوآیکون آیفون ۷۲x۷۲"
 
-#: inc/theme_option/terme_options_config.php:344
+#: inc/theme_option/terme_options_config.php:343
 msgid "Apple iPhone Retina Icon"
 msgstr "فاوآیکون آیفون (رتینا)"
 
-#: inc/theme_option/terme_options_config.php:345
+#: inc/theme_option/terme_options_config.php:344
 msgid "Apple iPhone Retina Version (114px x 114px)"
 msgstr "فاوآیکون آیفون (رتینا) ۱۴۴x۱۴۴"
 
-#: inc/theme_option/terme_options_config.php:350
+#: inc/theme_option/terme_options_config.php:349
 msgid "Apple iPad Retina Icon"
 msgstr "فاوآیکون آیپد (رتینا)"
 
-#: inc/theme_option/terme_options_config.php:351
+#: inc/theme_option/terme_options_config.php:350
 msgid "Icon for Apple iPad Retina Version (144px x 144px)"
 msgstr "فاوآیکون آیپد (رتینا) ۱۴۴x۱۴۴"
 
-#: inc/theme_option/terme_options_config.php:358
+#: inc/theme_option/terme_options_config.php:357
 msgid ""
 "Change date format click <a href=\"http://codex.wordpress.org/"
 "Formatting_Date_and_Time\" target=\"_blank\">here</a> to see how to change it"
@@ -651,283 +652,283 @@ msgstr ""
 "تغییر فرمت تاریخ، جهت مشاهده انواع فرمت ها <a href=\"http://codex.wordpress."
 "org/Formatting_Date_and_Time\" target=\"_blank\">کلیک کنید</a>"
 
-#: inc/theme_option/terme_options_config.php:364
+#: inc/theme_option/terme_options_config.php:363
 msgid "Post Settings"
 msgstr "تنظیمات پست"
 
-#: inc/theme_option/terme_options_config.php:375
+#: inc/theme_option/terme_options_config.php:374
 msgid "Post Breadcrumb Options"
 msgstr "تنظیمات مسیر پست"
 
-#: inc/theme_option/terme_options_config.php:380
+#: inc/theme_option/terme_options_config.php:379
 msgid "Post Breadcrumb"
 msgstr "مسیر پست"
 
-#: inc/theme_option/terme_options_config.php:388
+#: inc/theme_option/terme_options_config.php:387
 msgid "Home Link Type"
 msgstr "نوع نمایش صفحه اصلی"
 
-#: inc/theme_option/terme_options_config.php:392
+#: inc/theme_option/terme_options_config.php:391
 msgid "Disable"
 msgstr "غیرفعال"
 
-#: inc/theme_option/terme_options_config.php:393
+#: inc/theme_option/terme_options_config.php:392
 msgid "Icon"
 msgstr "آيکون"
 
-#: inc/theme_option/terme_options_config.php:394
+#: inc/theme_option/terme_options_config.php:393
 msgid "Text"
 msgstr "متن"
 
-#: inc/theme_option/terme_options_config.php:395
+#: inc/theme_option/terme_options_config.php:394
 msgid "Icon & Text"
 msgstr "متن و آیکون"
 
-#: inc/theme_option/terme_options_config.php:402
-#: inc/theme_option/terme_options_config.php:410
+#: inc/theme_option/terme_options_config.php:401
+#: inc/theme_option/terme_options_config.php:409
 msgid "Home Text"
 msgstr "متن لینک بازگشت به صفحه اصلی"
 
-#: inc/theme_option/terme_options_config.php:418
+#: inc/theme_option/terme_options_config.php:417
 msgid "Delimiter Icon"
 msgstr "آیکون جداکننده"
 
-#: inc/theme_option/terme_options_config.php:427
+#: inc/theme_option/terme_options_config.php:426
 msgid "Home Icon"
 msgstr "آیکون صفحه اصلی"
 
-#: inc/theme_option/terme_options_config.php:438
+#: inc/theme_option/terme_options_config.php:437
 msgid "Post Meta Options"
 msgstr "تنظیمات پست متا"
 
-#: inc/theme_option/terme_options_config.php:443
+#: inc/theme_option/terme_options_config.php:442
 msgid "Post Meta"
 msgstr "پست متا"
 
-#: inc/theme_option/terme_options_config.php:451
+#: inc/theme_option/terme_options_config.php:450
 msgid "Show Post Date"
 msgstr "نمایش تاریخ"
 
-#: inc/theme_option/terme_options_config.php:461
+#: inc/theme_option/terme_options_config.php:460
 msgid "Post Date Format"
 msgstr "فرمت تاریخ"
 
-#: inc/theme_option/terme_options_config.php:471
+#: inc/theme_option/terme_options_config.php:467
 msgid "Show Post Category"
 msgstr "نمایش دسته بندی"
 
-#: inc/theme_option/terme_options_config.php:480
+#: inc/theme_option/terme_options_config.php:476
 msgid "Show Post view Count"
 msgstr "نمایش تعداد بازدید"
 
-#: inc/theme_option/terme_options_config.php:490
+#: inc/theme_option/terme_options_config.php:486
 msgid "Show Post Comment Count"
 msgstr "نمایش تعداد نظرات"
 
-#: inc/theme_option/terme_options_config.php:509
+#: inc/theme_option/terme_options_config.php:505
 msgid "Post Tags"
 msgstr "برچسب های پست"
 
-#: inc/theme_option/terme_options_config.php:525
+#: inc/theme_option/terme_options_config.php:521
 msgid "Post Comments"
 msgstr "دیدگاه های پست"
 
-#: inc/theme_option/terme_options_config.php:535
+#: inc/theme_option/terme_options_config.php:531
 msgid "Post Sharing Options"
 msgstr "تنظیمات اشتراک گذاری پست"
 
-#: inc/theme_option/terme_options_config.php:540
+#: inc/theme_option/terme_options_config.php:536
 msgid "Post Share"
 msgstr "اشتراک گذاری پست"
 
-#: inc/theme_option/terme_options_config.php:553
-#: inc/theme_option/terme_options_config.php:643
+#: inc/theme_option/terme_options_config.php:549
+#: inc/theme_option/terme_options_config.php:639
 #: inc/widgets/social_widget.php:27
 msgid "Facebook"
 msgstr "فیسبوک"
 
-#: inc/theme_option/terme_options_config.php:562
-#: inc/theme_option/terme_options_config.php:648
+#: inc/theme_option/terme_options_config.php:558
+#: inc/theme_option/terme_options_config.php:644
 #: inc/widgets/social_widget.php:34
 msgid "Twitter"
 msgstr "توییتر"
 
-#: inc/theme_option/terme_options_config.php:571
+#: inc/theme_option/terme_options_config.php:567
 msgid "Pinterest"
 msgstr "پینترست"
 
-#: inc/theme_option/terme_options_config.php:580
+#: inc/theme_option/terme_options_config.php:576
 msgid "Tumblr"
 msgstr "تامبلر"
 
-#: inc/theme_option/terme_options_config.php:596
+#: inc/theme_option/terme_options_config.php:592
 msgid "Related Posts Setting"
 msgstr "تنظیمات مطالب مرتبط"
 
-#: inc/theme_option/terme_options_config.php:609
+#: inc/theme_option/terme_options_config.php:605
 msgid "Number of Posts"
 msgstr "تعداد پست ها"
 
-#: inc/theme_option/terme_options_config.php:610
+#: inc/theme_option/terme_options_config.php:606
 msgid "How many related articles to show:"
 msgstr "تعداد مطالب مرتبط جهت نمایش:"
 
-#: inc/theme_option/terme_options_config.php:633
+#: inc/theme_option/terme_options_config.php:629
 msgid "Social Icons"
 msgstr "شبکه های اجتماعی"
 
-#: inc/theme_option/terme_options_config.php:653
+#: inc/theme_option/terme_options_config.php:649
 msgid "Google+"
 msgstr "گوگل پلاس"
 
-#: inc/theme_option/terme_options_config.php:658
+#: inc/theme_option/terme_options_config.php:654
 #: inc/widgets/social_widget.php:62
 msgid "Youtube"
 msgstr "یوتوب"
 
-#: inc/theme_option/terme_options_config.php:663
+#: inc/theme_option/terme_options_config.php:659
 #: inc/widgets/social_widget.php:55
 msgid "Instagram"
 msgstr "اینستاگرام"
 
-#: inc/theme_option/terme_options_config.php:668
+#: inc/theme_option/terme_options_config.php:664
 #: inc/widgets/social_widget.php:76
 msgid "Dribbble"
 msgstr "دریبل"
 
-#: inc/theme_option/terme_options_config.php:673
+#: inc/theme_option/terme_options_config.php:669
 msgid "RSS"
 msgstr "آر اس اس"
 
-#: inc/theme_option/terme_options_config.php:678
+#: inc/theme_option/terme_options_config.php:674
 msgid "Vimeo"
 msgstr "ویمئو"
 
-#: inc/theme_option/terme_options_config.php:693
+#: inc/theme_option/terme_options_config.php:689
 msgid "Slider"
 msgstr "اسلایدر"
 
-#: inc/theme_option/terme_options_config.php:699
+#: inc/theme_option/terme_options_config.php:695
 msgid "Select Slider"
 msgstr "تنظیمات اسلایدر"
 
-#: inc/theme_option/terme_options_config.php:705
+#: inc/theme_option/terme_options_config.php:701
 msgid "Select Slider will be displayed in Homepage"
 msgstr "انتخاب اسلایدری که در صفحه اصلی نمایش داده خواهد شد"
 
-#: inc/theme_option/terme_options_config.php:711
+#: inc/theme_option/terme_options_config.php:707
 msgid "Login & Logout Settings"
 msgstr "تنظیمات ورود و خروج"
 
-#: inc/theme_option/terme_options_config.php:720
+#: inc/theme_option/terme_options_config.php:716
 msgid "Login Text Button"
 msgstr "متن دکمه ورود"
 
-#: inc/theme_option/terme_options_config.php:724
+#: inc/theme_option/terme_options_config.php:720
 msgid "Login Page"
 msgstr "صفحه ورود"
 
-#: inc/theme_option/terme_options_config.php:729
+#: inc/theme_option/terme_options_config.php:725
 msgid "Select Login Page"
 msgstr "انتخاب صفحه ورود"
 
-#: inc/theme_option/terme_options_config.php:734
+#: inc/theme_option/terme_options_config.php:730
 msgid "Register Text Button"
 msgstr "متن دکمه ثبت نام"
 
-#: inc/theme_option/terme_options_config.php:738
+#: inc/theme_option/terme_options_config.php:734
 msgid "Register Page"
 msgstr "صفحه ثبت نام"
 
-#: inc/theme_option/terme_options_config.php:743
+#: inc/theme_option/terme_options_config.php:739
 msgid "Select Register Page"
 msgstr "انتخاب صفحه ثبت نام"
 
-#: inc/theme_option/terme_options_config.php:748
+#: inc/theme_option/terme_options_config.php:744
 msgid "Logout Text Button"
 msgstr "متن دکمه خروج"
 
-#: inc/theme_option/terme_options_config.php:756
+#: inc/theme_option/terme_options_config.php:752
 msgid "Header Settings"
 msgstr "تنظیمات هدر (سربرگ)"
 
-#: inc/theme_option/terme_options_config.php:764
+#: inc/theme_option/terme_options_config.php:760
 msgid "Header Layout"
 msgstr "چینش هدر (سربرگ)"
 
-#: inc/theme_option/terme_options_config.php:765
+#: inc/theme_option/terme_options_config.php:761
 msgid "Choose the default header layout"
 msgstr "انتخاب قالب هدر (سربرگ)"
 
-#: inc/theme_option/terme_options_config.php:790
+#: inc/theme_option/terme_options_config.php:786
 msgid "Select Logo type"
 msgstr "انتخاب نوع نمایش لوگو"
 
-#: inc/theme_option/terme_options_config.php:792
+#: inc/theme_option/terme_options_config.php:788
 msgid "Logo Image"
 msgstr "تصویر لوگو"
 
-#: inc/theme_option/terme_options_config.php:793
-#: inc/theme_option/terme_options_config.php:809
+#: inc/theme_option/terme_options_config.php:789
+#: inc/theme_option/terme_options_config.php:805
 msgid "Site Name"
 msgstr "نام سایت"
 
-#: inc/theme_option/terme_options_config.php:800
-#: inc/theme_option/terme_options_config.php:946
+#: inc/theme_option/terme_options_config.php:796
+#: inc/theme_option/terme_options_config.php:909
 msgid "Upload your logo image"
 msgstr "بارگزاری تصویر لوگو"
 
-#: inc/theme_option/terme_options_config.php:817
+#: inc/theme_option/terme_options_config.php:813
 msgid "Site Description"
 msgstr "توضیح کوتاه سایت"
 
-#: inc/theme_option/terme_options_config.php:824
+#: inc/theme_option/terme_options_config.php:820
 msgid "Site Name Style"
 msgstr "استایل نام سایت"
 
-#: inc/theme_option/terme_options_config.php:860
+#: inc/theme_option/terme_options_config.php:841
 msgid "Site Description Style"
 msgstr "استایل توضیحات سایت"
 
-#: inc/theme_option/terme_options_config.php:896
-#: inc/theme_option/terme_options_config.php:904
+#: inc/theme_option/terme_options_config.php:859
+#: inc/theme_option/terme_options_config.php:867
 msgid "Top Bar"
 msgstr "نوار بالا"
 
-#: inc/theme_option/terme_options_config.php:912
+#: inc/theme_option/terme_options_config.php:875
 msgid "Today Date Format"
 msgstr "فرمت تاریخ روز"
 
-#: inc/theme_option/terme_options_config.php:919
-#: inc/theme_option/terme_options_config.php:927
+#: inc/theme_option/terme_options_config.php:882
+#: inc/theme_option/terme_options_config.php:890
 msgid "Top Banner"
 msgstr "بنر هدر"
 
-#: inc/theme_option/terme_options_config.php:935
+#: inc/theme_option/terme_options_config.php:898
 msgid "Banner Type"
 msgstr "نوع بنر"
 
-#: inc/theme_option/terme_options_config.php:955
+#: inc/theme_option/terme_options_config.php:918
 msgid "URL Link"
 msgstr "آدرس لینک"
 
-#: inc/theme_option/terme_options_config.php:962
+#: inc/theme_option/terme_options_config.php:925
 msgid "Custom Content"
 msgstr "محتوای دلخواه"
 
-#: inc/theme_option/terme_options_config.php:969
+#: inc/theme_option/terme_options_config.php:932
 msgid "Background Color"
 msgstr "رنگ پس زمینه"
 
-#: inc/theme_option/terme_options_config.php:979
+#: inc/theme_option/terme_options_config.php:942
 msgid "Text Color"
 msgstr "رنگ متن"
 
-#: inc/theme_option/terme_options_config.php:994
+#: inc/theme_option/terme_options_config.php:957
 msgid "Footer Settings"
 msgstr "تنظیمات فوتر"
 
-#: inc/theme_option/terme_options_config.php:996
+#: inc/theme_option/terme_options_config.php:959
 msgid ""
 "The footer uses sidebars to show information. To add content to the footer "
 "head go to the widgets section and drag widget to the Footer 1, Footer 2, "
@@ -937,35 +938,35 @@ msgstr ""
 "بخش ابزارک ها مراجعه کنید و ابزارک های مورد نیاز را در فوتر ۱، فوتر ۲، فوتر "
 "۳ و فوتر ۴ درگ کنید."
 
-#: inc/theme_option/terme_options_config.php:1003
+#: inc/theme_option/terme_options_config.php:966
 msgid "Footer Layout"
 msgstr "چینش فوتر"
 
-#: inc/theme_option/terme_options_config.php:1004
+#: inc/theme_option/terme_options_config.php:967
 msgid "Set the footer template"
 msgstr "انتخاب قالب فوتر"
 
-#: inc/theme_option/terme_options_config.php:1033
+#: inc/theme_option/terme_options_config.php:996
 msgid "Footer Email"
 msgstr "فوتر (ایمیل)"
 
-#: inc/theme_option/terme_options_config.php:1039
+#: inc/theme_option/terme_options_config.php:1002
 msgid "Footer Copyright"
 msgstr "فوتر (کپی رایت)"
 
-#: inc/theme_option/terme_options_config.php:1040
+#: inc/theme_option/terme_options_config.php:1003
 msgid "Show or hide the Footer Copyright"
 msgstr "نمایش یا عدم نمایش محتوای کپی رایت در فوتر"
 
-#: inc/theme_option/terme_options_config.php:1048
+#: inc/theme_option/terme_options_config.php:1011
 msgid "Footer Copyright Text"
 msgstr "متن کپی رایت فوتر"
 
-#: inc/theme_option/terme_options_config.php:1055
+#: inc/theme_option/terme_options_config.php:1018
 msgid "Footer Social Icons"
 msgstr "شبکه های اجتماعی فوتر"
 
-#: inc/theme_option/terme_options_config.php:1056
+#: inc/theme_option/terme_options_config.php:1019
 msgid ""
 "Show or hide the social icons, to setup the Social icons go to Social "
 "Networks"
@@ -973,44 +974,44 @@ msgstr ""
 "نمایش یا عدم نمایش شبکه های اجتماعی در فوتر. جهت تنظیمات به شبکه های اجتماعی "
 "مراجعه کنید."
 
-#: inc/theme_option/terme_options_config.php:1065
+#: inc/theme_option/terme_options_config.php:1028
 msgid "Woocommerce Settings"
 msgstr "تنظیمات ووکامرس"
 
-#: inc/theme_option/terme_options_config.php:1073
+#: inc/theme_option/terme_options_config.php:1036
 msgid "WooCommerce Column"
 msgstr "ستون های فروشگاه"
 
-#: inc/theme_option/terme_options_config.php:1075
+#: inc/theme_option/terme_options_config.php:1038
 msgid "3 Column"
 msgstr "سه ستونه"
 
-#: inc/theme_option/terme_options_config.php:1076
+#: inc/theme_option/terme_options_config.php:1039
 msgid "4 Column"
 msgstr "چهار ستونه"
 
-#: inc/theme_option/terme_options_config.php:1083
+#: inc/theme_option/terme_options_config.php:1046
 msgid "Sale Section"
 msgstr "فروش ویژه"
 
-#: inc/theme_option/terme_options_config.php:1084
+#: inc/theme_option/terme_options_config.php:1047
 msgid "Enabling this option will add a Sale Section for Products are in sell"
 msgstr ""
 "فعال کردن این گزینه بخش فروش ویژه را به محصولات دارای تخفیف اضافه خواهد کرد."
 
-#: inc/theme_option/terme_options_config.php:1092
+#: inc/theme_option/terme_options_config.php:1055
 msgid "Sale Title"
 msgstr "عنوان فروش ویژه"
 
-#: inc/theme_option/terme_options_config.php:1100
+#: inc/theme_option/terme_options_config.php:1063
 msgid "Custom CSS & JS"
 msgstr "CSS و JS سفارشی"
 
-#: inc/theme_option/terme_options_config.php:1108
+#: inc/theme_option/terme_options_config.php:1071
 msgid "Custom Css"
 msgstr "CSS سفارشی"
 
-#: inc/theme_option/terme_options_config.php:1109
+#: inc/theme_option/terme_options_config.php:1072
 msgid ""
 "The following code will add to the head tag. Useful if you need to add "
 "additional codes such as CSS."
@@ -1018,22 +1019,22 @@ msgstr ""
 "کدهای وارد شده در این بخش در تگ head قرار خواهند گرفت. جهت اضافه کردن کدهای "
 "Css و ... "
 
-#: inc/theme_option/terme_options_config.php:1115
+#: inc/theme_option/terme_options_config.php:1078
 msgid "Custom Js"
 msgstr "Js سفارشی"
 
-#: inc/theme_option/terme_options_config.php:1116
+#: inc/theme_option/terme_options_config.php:1079
 msgid ""
 "The following code will add to the footer before the closing body tag. "
 "Useful if you need to add Javascript or tracking code."
 msgstr ""
 "کدهای وارد شده در این بخش در فوتر، قبل از تگ بسته body قرار خواهند گرفت. "
 
-#: inc/theme_option/terme_options_config.php:1121
+#: inc/theme_option/terme_options_config.php:1084
 msgid "Responsive CSS"
 msgstr "استایل واکنشگرا"
 
-#: inc/theme_option/terme_options_config.php:1126
+#: inc/theme_option/terme_options_config.php:1089
 msgid ""
 "Paste your custom css in the appropriate box, to run only on a specific "
 "device"
@@ -1041,121 +1042,121 @@ msgstr ""
 "استایل های سفارشی خود را جهت نمایش در دستگاه های مختلف، در باکس های مشخص شده "
 "قرار دهید."
 
-#: inc/theme_option/terme_options_config.php:1131
+#: inc/theme_option/terme_options_config.php:1094
 msgid "Large Desktop"
 msgstr "مانیتورهای بزرگ"
 
-#: inc/theme_option/terme_options_config.php:1132
+#: inc/theme_option/terme_options_config.php:1095
 msgid "+ 1200px"
 msgstr "بزرگتر از ۱۲۰۰ پیکسل"
 
-#: inc/theme_option/terme_options_config.php:1137
+#: inc/theme_option/terme_options_config.php:1100
 msgid "Desktop"
 msgstr "لپ تاپ (مانیتورهای کوچک)"
 
-#: inc/theme_option/terme_options_config.php:1138
+#: inc/theme_option/terme_options_config.php:1101
 msgid "992px ~ 1200px"
 msgstr "بین ۷۶۸ و ۹۹۲ پیکسل"
 
-#: inc/theme_option/terme_options_config.php:1143
+#: inc/theme_option/terme_options_config.php:1106
 msgid "Tablet"
 msgstr "تبلت"
 
-#: inc/theme_option/terme_options_config.php:1144
+#: inc/theme_option/terme_options_config.php:1107
 msgid "768px ~ 992px"
 msgstr "بین ۷۶۸ و ۹۹۲ پیکسل"
 
-#: inc/theme_option/terme_options_config.php:1149
+#: inc/theme_option/terme_options_config.php:1112
 msgid "Mobile"
 msgstr "موبایل"
 
-#: inc/theme_option/terme_options_config.php:1150
+#: inc/theme_option/terme_options_config.php:1113
 msgid "0 ~ 768px"
 msgstr "حداکثر ۷۶۸ پیکسل"
 
-#: inc/theme_option/terme_options_config.php:1155
+#: inc/theme_option/terme_options_config.php:1118
 msgid "Advanced CSS"
 msgstr "استایل پیشرفته"
 
-#: inc/theme_option/terme_options_config.php:1164
+#: inc/theme_option/terme_options_config.php:1127
 msgid "Homepage Custom Body Class"
 msgstr "کلاس اختصاصی صفحه اصلی"
 
-#: inc/theme_option/terme_options_config.php:1165
+#: inc/theme_option/terme_options_config.php:1128
 msgid "This classes will be added in body of all Homepage."
 msgstr "این کلاس ها به بدنه صفحه اصلی اضافه خواهد شد."
 
-#: inc/theme_option/terme_options_config.php:1166
-#: inc/theme_option/terme_options_config.php:1174
-#: inc/theme_option/terme_options_config.php:1182
-#: inc/theme_option/terme_options_config.php:1190
-#: inc/theme_option/terme_options_config.php:1198
+#: inc/theme_option/terme_options_config.php:1129
+#: inc/theme_option/terme_options_config.php:1137
+#: inc/theme_option/terme_options_config.php:1145
+#: inc/theme_option/terme_options_config.php:1153
+#: inc/theme_option/terme_options_config.php:1161
 msgid "Separate classes with space"
 msgstr "کلاس ها را با Space از هم جدا کنید"
 
-#: inc/theme_option/terme_options_config.php:1172
+#: inc/theme_option/terme_options_config.php:1135
 msgid "Categories Custom Body Class"
 msgstr "کلاس اختصاصی صفحه دسته ها"
 
-#: inc/theme_option/terme_options_config.php:1173
+#: inc/theme_option/terme_options_config.php:1136
 msgid "This classes will be added in body of all categories."
 msgstr "این کلاس ها به بدنه تمام صفحات دسته بندی اضافه خواهد شد."
 
-#: inc/theme_option/terme_options_config.php:1180
+#: inc/theme_option/terme_options_config.php:1143
 msgid "Authors Custom Body Class"
 msgstr "کلاس اختصاصی صفحه نویسنده"
 
-#: inc/theme_option/terme_options_config.php:1181
+#: inc/theme_option/terme_options_config.php:1144
 msgid "This classes will be added in body of all authors."
 msgstr "این کلاس ها به بدنه تمام صفحات نویسنده اضافه خواهد شد."
 
-#: inc/theme_option/terme_options_config.php:1188
+#: inc/theme_option/terme_options_config.php:1151
 msgid "Posts Custom Body Class"
 msgstr "کلاس اختصاصی صفحه ادامه مطلب"
 
-#: inc/theme_option/terme_options_config.php:1189
+#: inc/theme_option/terme_options_config.php:1152
 msgid "This classes will be added in body of all posts."
 msgstr "این کلاس ها به بدنه تمام صفحات ادامه مطلب اضافه خواهد شد."
 
-#: inc/theme_option/terme_options_config.php:1196
+#: inc/theme_option/terme_options_config.php:1159
 msgid "Pages Custom Body Class"
 msgstr "کلاس اختصاصی صفحه برگه"
 
-#: inc/theme_option/terme_options_config.php:1197
+#: inc/theme_option/terme_options_config.php:1160
 msgid "This classes will be added in body of all pages."
 msgstr "این کلاس ها به بدنه تمام صفحات برگه اضافه خواهد شد."
 
-#: inc/theme_option/terme_options_config.php:1206
+#: inc/theme_option/terme_options_config.php:1169
 msgid "Customizer Only"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1207
+#: inc/theme_option/terme_options_config.php:1170
 msgid ""
 "<p class=\"description\">This Section should be visible only in Customizer</"
 "p>"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1213
+#: inc/theme_option/terme_options_config.php:1176
 msgid "Customizer Only Option"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1214
+#: inc/theme_option/terme_options_config.php:1177
 msgid "The subtitle is NOT visible in customizer"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1215
+#: inc/theme_option/terme_options_config.php:1178
 msgid "The field desc is NOT visible in customizer."
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1230
+#: inc/theme_option/terme_options_config.php:1193
 msgid "Documentation"
 msgstr "مستندات"
 
-#: inc/theme_option/terme_options_config.php:1345
+#: inc/theme_option/terme_options_config.php:1308
 msgid "Section via hook"
 msgstr ""
 
-#: inc/theme_option/terme_options_config.php:1346
+#: inc/theme_option/terme_options_config.php:1309
 msgid ""
 "<p class=\"description\">This is a section created by adding a filter to the "
 "sections array. Can be used by child themes to add/remove sections from the "
@@ -1637,6 +1638,9 @@ msgstr "توضیحات محصول"
 #: woocommerce/single-product/up-sells.php:48
 msgid "You may also like&hellip;"
 msgstr "ممکن این موارد را هم بپسندید &hellip;"
+
+#~ msgid " View"
+#~ msgstr " بازدید"
 
 #~ msgid "Category Posts"
 #~ msgstr "دسته بندی پست ها"
