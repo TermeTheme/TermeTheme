@@ -1,5 +1,5 @@
 <div class="selection">
-  <h4>Top News</h4>
+  <h4><?php _e('Top News','terme') ?></h4>
   <a href="#" class="more">More</a>
     <ul>
         <?php
