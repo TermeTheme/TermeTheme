@@ -476,6 +476,13 @@ footer.footer {
 		}
 	}
 
+	&.style_4 .main_area {
+		ul.social_network {
+			li {
+				float: none;
+			}
+		}
+	}
 	&.style_1 .main_area,
 	&.style_2 .main_area,
 	&.style_3 .main_area,

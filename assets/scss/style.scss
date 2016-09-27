@@ -1,7 +1,5 @@
 @import '_variables.scss', '_mixins.scss', 'rem';
-div[canvas=container] {
-	padding-bottom: 20px !important;
-}
+
 a.back_to_top {
 	position: fixed;
 	bottom: 0;
@@ -16,7 +14,7 @@ a.back_to_top {
 	@include rem(( height: 50px, line-height: 55px,width: 50px, ));
 
 	&:hover {
-		color: secondary_color;
+		color: $primary_color;
 	}
 
 	&:before {
@@ -2277,12 +2275,23 @@ footer.footer {
 			}
 		}
 	}
+
+	&.style_4 .main_area {
+		ul.social_network {
+			text-align: center;
+
+			li {
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
 	//TO TOP NEW STYLE
 	&.style_1 .main_area,
 	&.style_2 .main_area,
 	&.style_4 .main_area,
 	&.style_5 .main_area {
-		background: #222533 url("../../assets/img/footer_bg.jpg") no-repeat right bottom;
+		background: #222533 url("../../assets/img/footer_bg.jpg") repeat-x right bottom;
 	}
 
 	&.style_1 .main_area,
@@ -3810,6 +3819,7 @@ footer.footer {
 
 		.thumbnails {
 			margin-top: 10px;
+
 			a.first {
 				clear: both;
 			}
@@ -4472,6 +4482,13 @@ footer.footer {
 		}
 	}
 
+	section.top {
+		display: none;
+	}
+	section.latest_news {
+		display: none;
+	}
+
 	.comment_form {
 		form {
 			.comment-form-author,
@@ -4976,30 +4993,33 @@ body .js-close-any-slidebar .main_area a.mobile_menu:after {
 .woocommerce {
 	nav.woocommerce-pagination {
 		@include rem(( margin: 10px auto,));
-			ul.page-numbers {
+
+		ul.page-numbers {
+			border: none;
+
+			li {
 				border: none;
-				li {
-					border: none;
-					@include rem(( margin: 5px, width: 35px, height: 35px, line-height: 35px, border-radius: 50%,));
-					span {
-						line-height:inherit;
-						padding: 0;
-						min-width: auto;
-						&.current {
-							background-color: $primary_color;
-							color: #fff;
+				@include rem(( margin: 5px, width: 35px, height: 35px, line-height: 35px, border-radius: 50%,));
 
-						}
-					}
-					a {
-						padding: 0;
-						line-height: inherit;
-					}
+				span {
+					line-height: inherit;
+					padding: 0;
+					min-width: auto;
 
+					&.current {
+						background-color: $primary_color;
+						color: #fff;
+					}
+				}
+
+				a {
+					padding: 0;
+					line-height: inherit;
 				}
 			}
-
+		}
 	}
+
 	table.shop_attributes {
 		td,
 		th {

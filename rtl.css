@@ -319,6 +319,8 @@ footer.footer.style_1 .main_area .widget_shopping_cart_content p.buttons, footer
 footer.footer.style_1 .main_area ul.product_list_widget li a > img, footer.footer.style_2 .main_area ul.product_list_widget li a > img, footer.footer.style_3 .main_area ul.product_list_widget li a > img, footer.footer.style_4 .main_area ul.product_list_widget li a > img, footer.footer.style_5 .main_area ul.product_list_widget li a > img {
   margin: 0 0 10px 10px;
   float: right; }
+footer.footer.style_4 .main_area ul.social_network li {
+  float: none; }
 footer.footer.style_1 .main_area ul.items li .thumb, footer.footer.style_2 .main_area ul.items li .thumb, footer.footer.style_3 .main_area ul.items li .thumb, footer.footer.style_4 .main_area ul.items li .thumb, footer.footer.style_5 .main_area ul.items li .thumb {
   float: right;
   margin-right: 0;

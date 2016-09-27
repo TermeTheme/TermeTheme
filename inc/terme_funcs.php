@@ -108,22 +108,33 @@ function add_data_the_tags($html){
 # Terme Popular Post By View
 /*-----------------------------------------------------------------------------------*/
 function terme_set_post_views($postID) {
-    $count_key = 'terme_post_views_count';
+    $count_key = '_terme_post_view_count';
     $count = get_post_meta($postID, $count_key, true);
-    if ( isset($count) && !empty($count) ) {
-        $count++;
+    if ( isset($count) ) {
+        ++$count;
         update_post_meta($postID, $count_key, $count);
     } else {
         update_post_meta($postID, $count_key, 0);
     }
 }
 function terme_get_post_views($postID) {
-    $count_key = 'terme_post_views_count';
+    $count_key = '_terme_post_view_count';
     $count = get_post_meta($postID, $count_key, true);
     $count = (isset($count) && !empty($count)) ? $count : 0 ;
-    $result = printf(
+    $result = sprintf(
       __('%s View','terme'),
       $count
     );
     return $result;
 }
+/*-----------------------------------------------------------------------------------*/
+# Terme Unregister Search WP Widgets
+/*-----------------------------------------------------------------------------------*/
+add_filter( 'sidebars_widgets', 'unset_default_widget' );
+
+function unset_default_widget( $sidebars_widgets ) {
+   if (true == true) {
+     $sidebars_widgets = array( false );
+     }
+   return $sidebars_widgets;
+   }
