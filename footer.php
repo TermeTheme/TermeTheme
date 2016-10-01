@@ -1,14 +1,14 @@
 <?php global $terme_options; ?>
 <?php if ($terme_options['footer_layout'] == '1') {
-	include TEMPLATEPATH . '/inc/footer/1.php';
+	include get_template_directory() . '/inc/footer/1.php';
 }elseif ($terme_options['footer_layout'] == '2') {
-	include TEMPLATEPATH . '/inc/footer/2.php';
+	include get_template_directory() . '/inc/footer/2.php';
 }elseif ($terme_options['footer_layout'] == '3') {
-	include TEMPLATEPATH . '/inc/footer/3.php';
+	include get_template_directory() . '/inc/footer/3.php';
 }elseif ($terme_options['footer_layout'] == '4') {
-	include TEMPLATEPATH . '/inc/footer/4.php';
+	include get_template_directory() . '/inc/footer/4.php';
 }else {
-	include TEMPLATEPATH . '/inc/footer/5.php';
+	include get_template_directory() . '/inc/footer/5.php';
 }
 	?>
 
@@ -24,13 +24,13 @@
 					echo get_avatar( $user, 100 );
 				?>
 				<div class="clearfix"></div>
-				<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( $terme_options['logout_text'],'terme' ); ?></a>
+				<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php echo $terme_options['logout_text']; ?></a>
 			<?php } else {
 					echo get_avatar( $user, 100 );?>
 					<div class="clearfix"></div>
-					<a href="<?php echo get_page_link($terme_options['login_page']); ?>">	<?php _e( $terme_options['login_text'],'terme' ); ?></a>
+					<a href="<?php echo get_page_link($terme_options['login_page']); ?>">	<?php echo  $terme_options['login_text']; ?></a>
 					<span>	<?php _e( 'OR','terme' ); ?></span>
-					<a href="<?php echo get_page_link($terme_options['register_page']); ?>">	<?php _e( $terme_options['register_text'],'terme' ); ?></a>
+					<a href="<?php echo get_page_link($terme_options['register_page']); ?>">	<?php echo $terme_options['register_text']; ?></a>
 			 <?php }; ?>
 		</div><!-- user_area -->
 		<?php if (class_exists('WooCommerce')) { ?>
@@ -39,7 +39,7 @@
 				<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 				<div class="count">
 					<?php _e('Cart', 'terme') ?>
-					<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
+					<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count(), 'terme' ), WC()->cart->get_cart_contents_count() ); ?></span>
 				</div>
 			</a>
 		</div><!-- cart -->

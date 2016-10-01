@@ -48,7 +48,16 @@
             </div>
         <?php endif; ?>
         <div class="terme_post_body">
-            <?php the_content(''); ?>
+            <?php the_content('');
+            wp_link_pages( array(
+                            'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'terme' ) . '</span>',
+                            'after'       => '</div>',
+                            'link_before' => '<span>',
+                            'link_after'  => '</span>',
+                            'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'terme' ) . ' </span>%',
+                            'separator'   => '<span class="screen-reader-text">, </span>',
+                        ) );
+             ?>
         </div>
       <?php if ((isset($terme_postmeta['post_tags']) && !empty($terme_postmeta['post_tags']) || $terme_options['post_tags'] && !empty($terme_options['post_tags']) ) ) : ?>
           <?php

@@ -30,8 +30,8 @@
     								<div class="terme_post_body">
                                         <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'terme' ); ?></p>
                                         <p><?php get_search_form(); ?></p>
-                                    </div>
-    							</div><!--
+                    </div>
+    							</div>
 							<?php endif; ?>
 						</div><!-- article_content -->
 					</div><!--col-md-12-->

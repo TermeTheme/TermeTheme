@@ -48,7 +48,7 @@ if ( $products->have_posts() ) : ?>
 
 	<div class="related products">
 		<header>
-			<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
+			<h2><?php _e( 'Related Products', 'terme' ); ?></h2>
 			<div class="owl-controls">
 				<div class="owl-nav">
 					<div class="customPrevBtn" style=""><i class="fa fa-chevron-left" aria-hidden="true"></i></div>

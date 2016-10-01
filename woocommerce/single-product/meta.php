@@ -35,11 +35,11 @@ $terms = wp_get_post_terms( $post->ID, 'product_tag', '' );
 
 	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
 
-		<span class="sku_wrapper"><i class="fa fa-barcode" aria-hidden="true"></i> <?php _e( 'SKU:', 'woocommerce' ); ?> <span class="sku" itemprop="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : __( 'N/A', 'woocommerce' ); ?></span></span>
+		<span class="sku_wrapper"><i class="fa fa-barcode" aria-hidden="true"></i> <?php _e( 'SKU:', 'terme' ); ?> <span class="sku" itemprop="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : __( 'N/A', 'terme' ); ?></span></span>
 
 	<?php endif; ?>
 
-	<?php echo $product->get_categories( ', ', '<span class="posted_in"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce' ) . ' ', '</span>' ); ?>
+	<?php echo $product->get_categories( ', ', '<span class="posted_in"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;' . _n( 'Category:', 'Categories:', $cat_count, 'terme' ) . ' ', '</span>' ); ?>
 	<?php
 		echo '<span class="tagged_as"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp; Tags: ';
 	 foreach ($terms as $term) {
@@ -47,7 +47,7 @@ $terms = wp_get_post_terms( $post->ID, 'product_tag', '' );
 	}
 	echo '</span>';
  ?>
-	<!-- <?php //echo $product->get_tags( ' ', '<span class="tagged_as"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp;' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce' ) .  $tagsss . '</span>' ); ?> -->
+	<!-- <?php //echo $product->get_tags( ' ', '<span class="tagged_as"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp;' . _n( 'Tag:', 'Tags:', $tag_count, 'terme' ) .  $tagsss . '</span>' ); ?> -->
 	<?php do_action( 'woocommerce_product_meta_end' );
 
 	?>

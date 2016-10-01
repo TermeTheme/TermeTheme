@@ -26,9 +26,9 @@
 					<a href="#" class="mobile_menu js-toggle-left-slidebar"><span class="mobile_menu1"></span></a>
 					<div class="logo">
 						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
-						<a href="<?php bloginfo('url'); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
+						<a href="<?php esc_url( home_url() ); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
 						<?php } else { ?>
-							<h1><a href="<?php bloginfo('url'); ?>"><?php echo $terme_options['site_name']; ?></a></h1>
+							<h1><a href="<?php esc_url( home_url() ); ?>"><?php echo $terme_options['site_name']; ?></a></h1>
 							<h2><?php echo $terme_options['site_description']; ?></h2>
 						<?php } ?>
 					</div><!-- logo -->

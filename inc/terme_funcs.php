@@ -21,19 +21,19 @@ function terme_breadcrumb() {
         if (!($terme_options['home_link_type'] == 0)) {
             if ($terme_options['home_link_type'] == 1) {
                 echo '<li><a href="';
-                echo get_option('home');
+                echo home_url();
                 echo '">';
                 echo '<i class="fa '.$terme_options['home_icon_text_icon'].'"></i>';
                 echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
             } elseif ($terme_options['home_link_type'] == 2) {
                 echo '<li><a href="';
-                echo get_option('home');
+                echo home_url();
                 echo '">';
                 echo $terme_options['home_text'];
                 echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
             } else {
                 echo '<li><a href="';
-                echo get_option('home');
+                echo home_url();
                 echo '">';
                 echo '<i class="fa '.$terme_options['home_icon_text_icon'].'"></i> '.$terme_options['home_icon_text_text'];
                 echo '</a> <i class="fa '.$terme_options['post_breadcrumb_seprator'].'"></i></li>';
@@ -130,11 +130,7 @@ function terme_get_post_views($postID) {
 /*-----------------------------------------------------------------------------------*/
 # Terme Unregister Search WP Widgets
 /*-----------------------------------------------------------------------------------*/
-add_filter( 'sidebars_widgets', 'unset_default_widget' );
-
-function unset_default_widget( $sidebars_widgets ) {
-   if (true == true) {
-     $sidebars_widgets = array( false );
-     }
-   return $sidebars_widgets;
-   }
+function unregister_default_wp_widgets() {
+	unregister_widget('WP_Widget_Search');
+}
+add_action('widgets_init', 'unregister_default_wp_widgets', 1);

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: terme\n"
-"POT-Creation-Date: 2016-09-26 10:07+0330\n"
-"PO-Revision-Date: 2016-09-26 10:07+0330\n"
+"POT-Creation-Date: 2016-10-01 11:49+0330\n"
+"PO-Revision-Date: 2016-10-01 12:11+0330\n"
 "Last-Translator: \n"
 "Language-Team: TermeTheme <termetheme@gmail.com>\n"
 "Language: fa_IR\n"
@@ -44,7 +44,7 @@ msgstr "نظرات بسته شده است."
 msgid "Your Comment"
 msgstr "نظر شما"
 
-#: comments.php:50 woocommerce/single-product-reviews.php:70
+#: comments.php:50
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "پاسخ دادن به %s"
@@ -71,11 +71,11 @@ msgstr ""
 "شما با نام کاربری <a href=\"%1$s\">%2$s</a> وارد شده اید. هم اکنون <a href="
 "\"%3$s\" title=\"Log out of this account\">خارج شوید</a>"
 
-#: comments.php:63 woocommerce/single-product-reviews.php:73
+#: comments.php:63
 msgid "Name"
 msgstr "نام"
 
-#: comments.php:64 woocommerce/single-product-reviews.php:75
+#: comments.php:64
 msgid "Email"
 msgstr "ایمیل"
 
@@ -96,69 +96,69 @@ msgstr "سبد خرید"
 msgid "Search"
 msgstr "جست و جو"
 
-#: functions.php:25
+#: functions.php:24
 msgid "Sidebar"
 msgstr "سایدبار"
 
-#: functions.php:27
+#: functions.php:26
 msgid "Widgets in this area will be shown in the default sidebar."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در سایدبار نمایش داده خواهند شد."
 
-#: functions.php:34
+#: functions.php:33
 msgid "Footer (Column 1)"
 msgstr "فوتر (ستون اول)"
 
-#: functions.php:36
+#: functions.php:35
 msgid "Widgets in this area will be shown in the footer column 1."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون اول فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:43
+#: functions.php:42
 msgid "Footer (Column 2)"
 msgstr "فوتر (ستون دوم)"
 
-#: functions.php:45
+#: functions.php:44
 msgid "Widgets in this area will be shown in the footer column 2."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون دوم فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:52
+#: functions.php:51
 msgid "Footer (Column 3)"
 msgstr "فوتر (ستون سوم)"
 
-#: functions.php:54
+#: functions.php:53
 msgid "Widgets in this area will be shown in the footer column 3."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون سوم فوتر نمایش داده خواهند "
 "شد."
 
-#: functions.php:61
+#: functions.php:60
 msgid "Footer (Column 4)"
 msgstr "فوتر (ستون چهارم)"
 
-#: functions.php:63
+#: functions.php:62
 msgid "Widgets in this area will be shown in the footer column 4."
 msgstr ""
 "ابزارک هایی که در این قسمت قرار می گیرند در ستون چهارم فوتر نمایش داده "
 "خواهند شد."
 
-#: functions.php:87
+#: functions.php:86
 msgid "Header Menu"
 msgstr "منوی هدر"
 
-#: functions.php:88
+#: functions.php:87
 msgid "Footer Menu"
 msgstr "منوی فوتر"
 
-#: functions.php:126
+#: functions.php:127
 #, php-format
 msgid "%1$s"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:136
 msgid "your comment is awaiting moderation"
 msgstr "دیدگاه شما در انتظار بررسی است"
 
@@ -173,19 +173,23 @@ msgid "Next page"
 msgstr "صفحه بعد"
 
 #: inc/content/content-authors.php:26 inc/content/content-category.php:26
-#: index.php:22
+#: inc/content/content-single.php:57 index.php:22
 msgid "Page"
 msgstr "صفحه"
 
-#: inc/content/content-single.php:59
+#: inc/content/content-single.php:53
+msgid "Pages:"
+msgstr "صفحات:"
+
+#: inc/content/content-single.php:68
 msgid "Tags:"
 msgstr "برچسب ها:"
 
-#: inc/content/content-single.php:99
+#: inc/content/content-single.php:108
 msgid "Articles"
 msgstr "مقاله"
 
-#: inc/content/content-single.php:143 inc/metabox/terme_meta.php:71
+#: inc/content/content-single.php:152 inc/metabox/terme_meta.php:71
 #: inc/theme_option/terme_options_config.php:597
 msgid "Related Post"
 msgstr "مطالب مرتبط"
@@ -262,8 +266,6 @@ msgstr "نمایش ۵ پست پیشنهاد میشود"
 #: inc/page-builder/elements/element_05.php:80
 #: inc/page-builder/elements/element_shop.php:36
 #: inc/page-builder/elements/element_shop.php:57
-#: inc/page-builder/elements/element_test.php:46
-#: inc/page-builder/elements/element_test.php:84
 msgid "Box Title:"
 msgstr "عنوان جعبه:"
 
@@ -279,8 +281,6 @@ msgstr "عنوان جعبه:"
 #: inc/page-builder/elements/element_05.php:84
 #: inc/page-builder/elements/element_shop.php:40
 #: inc/page-builder/elements/element_shop.php:61
-#: inc/page-builder/elements/element_test.php:50
-#: inc/page-builder/elements/element_test.php:88
 msgid "Box Subtitle:"
 msgstr "زیرنویس جعبه:"
 
@@ -295,8 +295,6 @@ msgstr "زیرنویس جعبه:"
 #: inc/page-builder/elements/element_05.php:54
 #: inc/page-builder/elements/element_05.php:88
 #: inc/page-builder/elements/element_shop.php:65
-#: inc/page-builder/elements/element_test.php:54
-#: inc/page-builder/elements/element_test.php:92
 msgid "Post Number:"
 msgstr "تعداد پست:"
 
@@ -310,8 +308,6 @@ msgstr "تعداد پست:"
 #: inc/page-builder/elements/element_04.php:92
 #: inc/page-builder/elements/element_05.php:58
 #: inc/page-builder/elements/element_05.php:92
-#: inc/page-builder/elements/element_test.php:58
-#: inc/page-builder/elements/element_test.php:96
 msgid "Category Select:"
 msgstr "انتخاب دسته بندی:"
 
@@ -321,7 +317,6 @@ msgstr "انتخاب دسته بندی:"
 #: inc/page-builder/elements/element_04.php:122
 #: inc/page-builder/elements/element_05.php:122
 #: inc/page-builder/elements/element_shop.php:96
-#: inc/page-builder/elements/element_test.php:130
 #: inc/slider/settings_html.php:29 inc/slider/settings_html.php:76
 #: inc/slider/settings_html.php:78 inc/slider/settings_html.php:113
 #: inc/slider/settings_html.php:163
@@ -334,7 +329,6 @@ msgstr "حذف"
 #: inc/page-builder/elements/element_04.php:140
 #: inc/page-builder/elements/element_05.php:140
 #: inc/page-builder/elements/element_shop.php:112
-#: inc/page-builder/elements/element_test.php:153
 msgid "More"
 msgstr "بیشتر"
 
@@ -375,18 +369,6 @@ msgstr "افزودن به سبد"
 msgid "Description"
 msgstr "توضیحات"
 
-#: inc/page-builder/elements/element_test.php:18
-msgid "Test Element"
-msgstr "تست المان ها"
-
-#: inc/page-builder/elements/element_test.php:62
-msgid "Test Fields:"
-msgstr "تست فیلدها:"
-
-#: inc/page-builder/elements/element_test.php:100
-msgid "Test Field:"
-msgstr "تست فیلد"
-
 #: inc/page-builder/metabox.php:19
 msgid "Page Builder"
 msgstr "صفحه ساز"
@@ -399,13 +381,21 @@ msgstr "المان های صفحه ساز"
 msgid "Slider Settings"
 msgstr "تنظیمات اسلایدر"
 
+#: inc/slider/post_type.php:4 inc/slider/post_type.php:16
+msgid "Sliders"
+msgstr "اسلایدرها"
+
+#: inc/slider/post_type.php:5 inc/theme_option/terme_options_config.php:689
+msgid "Slider"
+msgstr "اسلایدر"
+
 #: inc/slider/post_type.php:6
 msgid "Add New"
 msgstr "اضافه کردن"
 
 #: inc/slider/post_type.php:7
 msgid "Add New Slider"
-msgstr "اضافه کردن اسلایدر جدید"
+msgstr "افزودن اسلایدر جدید"
 
 #: inc/slider/post_type.php:8
 msgid "Edit Slider"
@@ -483,8 +473,8 @@ msgstr "تعداد اسلایدها"
 msgid "%s View"
 msgstr "%s بازدید"
 
-#: inc/theme_option/redux-extensions-loader/extensions/icon_selector/icon_selector/field_icon_selector.php:104
-#: inc/theme_option/redux-extensions-loader/extensions/icon_selector/icon_selector/field_icon_selector.php:114
+#: inc/theme_option/redux-extensions-loader/extensions/icon_selector/icon_selector/field_icon_selector.php:118
+#: inc/theme_option/redux-extensions-loader/extensions/icon_selector/icon_selector/field_icon_selector.php:128
 msgid "Select Icon"
 msgstr "انتخاب آیکون"
 
@@ -515,20 +505,20 @@ msgstr ""
 
 #: inc/theme_option/terme_options_config.php:244
 msgid "Theme Information 1"
-msgstr ""
+msgstr "اطلاعات قالب ۱"
 
 #: inc/theme_option/terme_options_config.php:245
 #: inc/theme_option/terme_options_config.php:250
 msgid "<p>This is the tab content, HTML is allowed.</p>"
-msgstr ""
+msgstr "<p>این محتوای تب است. HTML مجاز می باشد.</p>"
 
 #: inc/theme_option/terme_options_config.php:249
 msgid "Theme Information 2"
-msgstr ""
+msgstr "اطلاعات قالب ۲"
 
 #: inc/theme_option/terme_options_config.php:256
 msgid "<p>This is the sidebar content, HTML is allowed.</p>"
-msgstr ""
+msgstr "<p>این محتوای سایدبار است. HTML مجاز می باشد.</p>"
 
 #: inc/theme_option/terme_options_config.php:280
 msgid "General Settings"
@@ -807,10 +797,6 @@ msgstr "آر اس اس"
 #: inc/theme_option/terme_options_config.php:674
 msgid "Vimeo"
 msgstr "ویمئو"
-
-#: inc/theme_option/terme_options_config.php:689
-msgid "Slider"
-msgstr "اسلایدر"
 
 #: inc/theme_option/terme_options_config.php:695
 msgid "Select Slider"
@@ -1283,7 +1269,7 @@ msgid "Google"
 msgstr "گوگل"
 
 #: inc/widgets/social_widget.php:48 inc/widgets/social_widget.php:49
-#: inc/widgets/social_widget.php:252
+#: inc/widgets/social_widget.php:301
 msgid "RSS Feed"
 msgstr "فید آر اس اس"
 
@@ -1291,103 +1277,103 @@ msgstr "فید آر اس اس"
 msgid "Github"
 msgstr "گیت هاب"
 
-#: inc/widgets/social_widget.php:198
+#: inc/widgets/social_widget.php:247
 msgid "Facebook Page Like Counter"
 msgstr "Facebook Page Like Counter"
 
-#: inc/widgets/social_widget.php:202
+#: inc/widgets/social_widget.php:251
 msgid "Facebook Page ID:"
 msgstr "Facebook Page ID:"
 
-#: inc/widgets/social_widget.php:206
+#: inc/widgets/social_widget.php:255
 msgid "Facebook Page Access Token:"
 msgstr "Facebook Page Access Token:"
 
-#: inc/widgets/social_widget.php:212
+#: inc/widgets/social_widget.php:261
 msgid "Google+ Followers Counter"
 msgstr "Google+ Followers Counter"
 
-#: inc/widgets/social_widget.php:216
+#: inc/widgets/social_widget.php:265
 msgid "Google+ Username OR ID:"
 msgstr "Google+ Username OR ID:"
 
-#: inc/widgets/social_widget.php:220
+#: inc/widgets/social_widget.php:269
 msgid "Google+ API key:"
 msgstr "Google+ API key:"
 
-#: inc/widgets/social_widget.php:226
+#: inc/widgets/social_widget.php:275
 msgid "Twitter Followers Counter"
 msgstr "Twitter Followers Counter"
 
-#: inc/widgets/social_widget.php:230
+#: inc/widgets/social_widget.php:279
 msgid "Twitter Username:"
 msgstr "Twitter Username:"
 
-#: inc/widgets/social_widget.php:234
+#: inc/widgets/social_widget.php:283
 msgid "Twitter Consumer key:"
 msgstr "Twitter Consumer key:"
 
-#: inc/widgets/social_widget.php:238
+#: inc/widgets/social_widget.php:287
 msgid "Twitter Consumer secret:"
 msgstr "Twitter Consumer secret:"
 
-#: inc/widgets/social_widget.php:242
+#: inc/widgets/social_widget.php:291
 msgid "Twitter Access token:"
 msgstr "Twitter Access token:"
 
-#: inc/widgets/social_widget.php:246
+#: inc/widgets/social_widget.php:295
 msgid "Twitter Access token secret:"
 msgstr "Twitter Access token secret:"
 
-#: inc/widgets/social_widget.php:256
+#: inc/widgets/social_widget.php:305
 msgid "RSS Feed Url:"
 msgstr "RSS Feed Url:"
 
-#: inc/widgets/social_widget.php:262
+#: inc/widgets/social_widget.php:311
 msgid "Instagram Followers"
 msgstr "Instagram Followers"
 
-#: inc/widgets/social_widget.php:266
+#: inc/widgets/social_widget.php:315
 msgid "Instagram User ID:"
 msgstr "Instagram User ID:"
 
-#: inc/widgets/social_widget.php:270
+#: inc/widgets/social_widget.php:319
 msgid "Instagram User Name:"
 msgstr "Instagram User Name:"
 
-#: inc/widgets/social_widget.php:274
+#: inc/widgets/social_widget.php:323
 msgid "Instagram Access Token:"
 msgstr "Instagram Access Token:"
 
-#: inc/widgets/social_widget.php:280
+#: inc/widgets/social_widget.php:329
 msgid "Youtube channel"
 msgstr "Youtube channel"
 
-#: inc/widgets/social_widget.php:284
+#: inc/widgets/social_widget.php:333
 msgid "Youtube channel ID:"
 msgstr "Youtube channel ID:"
 
-#: inc/widgets/social_widget.php:288
+#: inc/widgets/social_widget.php:337
 msgid "Youtube channel API Key:"
 msgstr "Youtube channel API Key:"
 
-#: inc/widgets/social_widget.php:294
+#: inc/widgets/social_widget.php:343
 msgid "Github Account"
 msgstr "Github Account"
 
-#: inc/widgets/social_widget.php:298
+#: inc/widgets/social_widget.php:347
 msgid "Github Username:"
 msgstr "Github Username:"
 
-#: inc/widgets/social_widget.php:304
+#: inc/widgets/social_widget.php:353
 msgid "Dribbble Account"
 msgstr "Dribbble Account"
 
-#: inc/widgets/social_widget.php:308
+#: inc/widgets/social_widget.php:357
 msgid "Dribbble Username:"
 msgstr "Dribbble Username:"
 
-#: inc/widgets/social_widget.php:312
+#: inc/widgets/social_widget.php:361
 msgid "Dribbble Access Token:"
 msgstr "Dribbble Access Token:"
 
@@ -1439,163 +1425,10 @@ msgstr ""
 "به نظر می رسد چیزی را که مدنظر دارید، نیافته اید. شاید جست و جو به شما کمک "
 "کند."
 
-#: woocommerce/cart/cart.php:36 woocommerce/cart/cart.php:79
-#: woocommerce/checkout/review-order.php:26
-msgid "Product"
-msgstr "محصول"
-
-#: woocommerce/cart/cart.php:37 woocommerce/cart/cart.php:97
-msgid "Price"
-msgstr "قیمت"
-
-#: woocommerce/cart/cart.php:38 woocommerce/cart/cart.php:103
-msgid "Quantity"
-msgstr "مقدار"
-
-#: woocommerce/cart/cart.php:39 woocommerce/cart/cart.php:119
-#: woocommerce/checkout/review-order.php:27
-#: woocommerce/checkout/review-order.php:106
-msgid "Total"
-msgstr "مجموع"
-
-#: woocommerce/cart/cart.php:60 woocommerce/cart/mini-cart.php:49
-msgid "Remove this item"
-msgstr "حذف این آیتم"
-
-#: woocommerce/cart/cart.php:137
-msgid "Coupon"
-msgstr "کد تخفیف"
-
-#: woocommerce/cart/mini-cart.php:71
-msgid "No products in the cart."
-msgstr "هیچ محصولی در سبد خرید نیست."
-
-#: woocommerce/cart/mini-cart.php:79 woocommerce/checkout/review-order.php:59
-msgid "Subtotal"
-msgstr "جمع جزء"
-
-#: woocommerce/cart/mini-cart.php:84
-msgid "View Cart"
-msgstr "مشاهده سبد خرید"
-
-#: woocommerce/cart/mini-cart.php:85
-msgid "Checkout"
-msgstr "پرداخت"
-
-#: woocommerce/checkout/form-coupon.php:28
-msgid "Have a coupon?"
-msgstr "کد تخفیف دارید؟"
-
-#: woocommerce/checkout/form-coupon.php:28
-msgid "Click here to enter your code"
-msgstr "برای استفاده از کد تخفیف اینجا کلیک کنید"
-
-#: woocommerce/global/form-login.php:35
-msgid "Username or email"
-msgstr "نام کاربری یا ایمیل"
-
-#: woocommerce/global/form-login.php:39
-msgid "Password"
-msgstr "رمز عبور"
-
-#: woocommerce/global/form-login.php:51
-msgid "Remember me"
-msgstr "یاددآوری"
-
-#: woocommerce/global/form-login.php:55
-msgid "Lost your password?"
-msgstr "رمز عبور خود را فراموش کرده اید؟"
-
-#: woocommerce/loop/no-products-found.php:24
-msgid "No products were found matching your selection."
-msgstr "هیچ محصول منطبق با انتخاب شما یافت نشد."
-
-#: woocommerce/loop/sale-flash.php:34
-#: woocommerce/single-product/sale-flash.php:28
-#: woocommerce/single-product/sale-flash.php:31
+#: woocommerce/loop/sale-flash.php:31
+#: woocommerce/single-product/sale-flash.php:30
 msgid "Sale!"
 msgstr "تخفیف"
-
-#: woocommerce/product-searchform.php:27
-msgid "Search for:"
-msgstr "جست و جو برای:"
-
-#: woocommerce/single-product-reviews.php:35
-msgid "Reviews"
-msgstr "نظرات"
-
-#: woocommerce/single-product-reviews.php:56
-msgid "There are no reviews yet."
-msgstr "تاکنون هیچ نظری ثبت نشده است."
-
-#: woocommerce/single-product-reviews.php:69
-msgid "Add a review"
-msgstr "ثبت نظر"
-
-#: woocommerce/single-product-reviews.php:69
-#, php-format
-msgid "Be the first to review &ldquo;%s&rdquo;"
-msgstr "اولین نفری باشید که برای &ldquo;%s&rdquo; نظر ثبت می کنید."
-
-#: woocommerce/single-product-reviews.php:78
-msgid "Submit"
-msgstr "ثبت"
-
-#: woocommerce/single-product-reviews.php:84
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a review."
-msgstr "برای ارسال نظر می بایست <a href=\"%s\">وارد شوید</a>"
-
-#: woocommerce/single-product-reviews.php:88
-msgid "Your Rating"
-msgstr "امتیاز شما"
-
-#: woocommerce/single-product-reviews.php:89
-msgid "Rate&hellip;"
-msgstr "ارزیابی &hellip"
-
-#: woocommerce/single-product-reviews.php:90
-msgid "Perfect"
-msgstr "عالی"
-
-#: woocommerce/single-product-reviews.php:91
-msgid "Good"
-msgstr "خوب"
-
-#: woocommerce/single-product-reviews.php:92
-msgid "Average"
-msgstr "متوسط"
-
-#: woocommerce/single-product-reviews.php:93
-msgid "Not that bad"
-msgstr "ضعیف"
-
-#: woocommerce/single-product-reviews.php:94
-msgid "Very Poor"
-msgstr "خیلی ضعیف"
-
-#: woocommerce/single-product-reviews.php:98
-msgid "Your Review"
-msgstr "نظر شما"
-
-#: woocommerce/single-product-reviews.php:107
-msgid ""
-"Only logged in customers who have purchased this product may leave a review."
-msgstr "تنها "
-
-#: woocommerce/single-product/add-to-cart/variable.php:32
-msgid "This product is currently out of stock and unavailable."
-msgstr "در حال حاضر این محصول در انبار موجود نمی باشد."
-
-#: woocommerce/single-product/add-to-cart/variable.php:43
-msgid "Clear"
-msgstr "حذف"
-
-#: woocommerce/single-product/add-to-cart/variation.php:31
-msgid ""
-"Sorry, this product is unavailable. Please choose a different combination."
-msgstr ""
-"با عرض پوزش، این محصول در دسترس نیست. لطفا یک مجموعه دیگری را انتخاب نمایید."
 
 #: woocommerce/single-product/meta.php:38
 msgid "SKU:"
@@ -1605,43 +1438,149 @@ msgstr "شناسه محصول"
 msgid "N/A"
 msgstr "نامعلوم"
 
-#: woocommerce/single-product/product-attributes.php:38
-msgid "Weight"
-msgstr "وزن"
-
-#: woocommerce/single-product/product-attributes.php:45
-msgid "Dimensions"
-msgstr "ابعاد"
-
-#: woocommerce/single-product/product-image.php:36
-msgid "Placeholder"
-msgstr ""
-
-#: woocommerce/single-product/rating.php:36
-#, php-format
-msgid "Rated %s out of 5"
-msgstr ""
-
-#: woocommerce/single-product/rating.php:38
-#, php-format
-msgid "out of %s5%s"
-msgstr "خارج از %s5%s"
-
 #: woocommerce/single-product/related.php:51
 msgid "Related Products"
 msgstr "مطالب مرتبط"
 
-#: woocommerce/single-product/tabs/additional-information.php:25
-msgid "Additional Information"
-msgstr "سایر اطلاعات"
+#~ msgid "Product"
+#~ msgstr "محصول"
 
-#: woocommerce/single-product/tabs/description.php:25
-msgid "Product Description"
-msgstr "توضیحات محصول"
+#~ msgid "Price"
+#~ msgstr "قیمت"
 
-#: woocommerce/single-product/up-sells.php:48
-msgid "You may also like&hellip;"
-msgstr "ممکن این موارد را هم بپسندید &hellip;"
+#~ msgid "Quantity"
+#~ msgstr "مقدار"
+
+#~ msgid "Total"
+#~ msgstr "مجموع"
+
+#~ msgid "Remove this item"
+#~ msgstr "حذف این آیتم"
+
+#~ msgid "Coupon"
+#~ msgstr "کد تخفیف"
+
+#~ msgid "No products in the cart."
+#~ msgstr "هیچ محصولی در سبد خرید نیست."
+
+#~ msgid "Subtotal"
+#~ msgstr "جمع جزء"
+
+#~ msgid "View Cart"
+#~ msgstr "مشاهده سبد خرید"
+
+#~ msgid "Checkout"
+#~ msgstr "پرداخت"
+
+#~ msgid "Have a coupon?"
+#~ msgstr "کد تخفیف دارید؟"
+
+#~ msgid "Click here to enter your code"
+#~ msgstr "برای استفاده از کد تخفیف اینجا کلیک کنید"
+
+#~ msgid "Username or email"
+#~ msgstr "نام کاربری یا ایمیل"
+
+#~ msgid "Password"
+#~ msgstr "رمز عبور"
+
+#~ msgid "Remember me"
+#~ msgstr "یاددآوری"
+
+#~ msgid "Lost your password?"
+#~ msgstr "رمز عبور خود را فراموش کرده اید؟"
+
+#~ msgid "No products were found matching your selection."
+#~ msgstr "هیچ محصول منطبق با انتخاب شما یافت نشد."
+
+#~ msgid "This product is currently out of stock and unavailable."
+#~ msgstr "در حال حاضر این محصول در انبار موجود نمی باشد."
+
+#~ msgid "Clear"
+#~ msgstr "حذف"
+
+#~ msgid ""
+#~ "Sorry, this product is unavailable. Please choose a different combination."
+#~ msgstr ""
+#~ "با عرض پوزش، این محصول در دسترس نیست. لطفا یک مجموعه دیگری را انتخاب "
+#~ "نمایید."
+
+#~ msgid "Weight"
+#~ msgstr "وزن"
+
+#~ msgid "Dimensions"
+#~ msgstr "ابعاد"
+
+#~ msgid "out of %s5%s"
+#~ msgstr "خارج از %s5%s"
+
+#~ msgid "Additional Information"
+#~ msgstr "سایر اطلاعات"
+
+#~ msgid "Product Description"
+#~ msgstr "توضیحات محصول"
+
+#~ msgid "You may also like&hellip;"
+#~ msgstr "ممکن این موارد را هم بپسندید &hellip;"
+
+#~ msgid "Test Element"
+#~ msgstr "تست المان ها"
+
+#~ msgid "Test Fields:"
+#~ msgstr "تست فیلدها:"
+
+#~ msgid "Test Field:"
+#~ msgstr "تست فیلد"
+
+#~ msgid "Search for:"
+#~ msgstr "جست و جو برای:"
+
+#~ msgid "Reviews"
+#~ msgstr "نظرات"
+
+#~ msgid "There are no reviews yet."
+#~ msgstr "تاکنون هیچ نظری ثبت نشده است."
+
+#~ msgid "Add a review"
+#~ msgstr "ثبت نظر"
+
+#~ msgid "Be the first to review &ldquo;%s&rdquo;"
+#~ msgstr "اولین نفری باشید که برای &ldquo;%s&rdquo; نظر ثبت می کنید."
+
+#~ msgid "Submit"
+#~ msgstr "ثبت"
+
+#~ msgid "You must be <a href=\"%s\">logged in</a> to post a review."
+#~ msgstr "برای ارسال نظر می بایست <a href=\"%s\">وارد شوید</a>"
+
+#~ msgid "Your Rating"
+#~ msgstr "امتیاز شما"
+
+#~ msgid "Rate&hellip;"
+#~ msgstr "ارزیابی &hellip"
+
+#~ msgid "Perfect"
+#~ msgstr "عالی"
+
+#~ msgid "Good"
+#~ msgstr "خوب"
+
+#~ msgid "Average"
+#~ msgstr "متوسط"
+
+#~ msgid "Not that bad"
+#~ msgstr "ضعیف"
+
+#~ msgid "Very Poor"
+#~ msgstr "خیلی ضعیف"
+
+#~ msgid "Your Review"
+#~ msgstr "نظر شما"
+
+#~ msgid ""
+#~ "Only logged in customers who have purchased this product may leave a "
+#~ "review."
+#~ msgstr "تنها "
 
 #~ msgid " View"
 #~ msgstr " بازدید"

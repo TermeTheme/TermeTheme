@@ -83,8 +83,22 @@ if( !class_exists( 'ReduxFramework_icon_selector' ) ) {
             }
             $html = '';
 
-            $font_path = TEMPLATEPATH.'/assets/css/font-awesome.min.css';
-            $css_File = file_get_contents($font_path);
+            $font_path = get_template_directory().'/assets/css/font-awesome.min.css';
+
+
+
+
+            wp_nonce_field("filesystem-nonce");
+            $url = wp_nonce_url('admin.php?page=TermeTheme', 'filesystem-nonce');
+            $creds = request_filesystem_credentials($url, '', false, false, null);
+            if ( ! WP_Filesystem($creds) ) {
+            	request_filesystem_credentials($url, '', true, false, null);
+            	return;
+            } else {
+                global $wp_filesystem;
+            }
+
+            $css_File = $wp_filesystem->get_contents($font_path);
             $pattern_two = "/\.fa-[\w-]+:before\s*?/";
             preg_match_all($pattern_two, $css_File, $matches);
             $font_awesome_icons = array();

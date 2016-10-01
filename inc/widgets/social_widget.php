@@ -95,7 +95,26 @@ class Terme_Socials_Networks extends WP_Widget {
 
     public function fbLikeCount($id,$appsecret){
     	$json_url ='https://graph.facebook.com/'.$id.'?access_token='.$appsecret;
-    	$json = file_get_contents($json_url);
+        wp_nonce_field("filesystem-nonce");
+        $url = wp_nonce_url('widgets.php', 'filesystem-nonce');
+        $creds = request_filesystem_credentials($url, '', false, false, null);
+        if ( ! WP_Filesystem($creds) ) {
+            request_filesystem_credentials($url, '', true, false, null);
+            return;
+        } else {
+            global $wp_filesystem;
+        }
+        wp_nonce_field("filesystem-nonce");
+        $url = wp_nonce_url('widgets.php', 'filesystem-nonce');
+        $creds = request_filesystem_credentials($url, '', false, false, null);
+        if ( ! WP_Filesystem($creds) ) {
+            request_filesystem_credentials($url, '', true, false, null);
+            return;
+        } else {
+            global $wp_filesystem;
+        }
+
+    	$json = $wp_filesystem->get_contents($json_url);
     	$json_output = json_decode($json);
     	if($json_output->likes){
     		return $likes = $json_output->likes;
@@ -105,7 +124,7 @@ class Terme_Socials_Networks extends WP_Widget {
     }
     public function twFollowers($user, $consumer_key, $consumer_secret, $oauth_access_token, $oauth_access_token_secret){
 
-        require_once TEMPLATEPATH.'/inc/libraries/twitter_api/vendor/autoload.php';
+        require_once get_template_directory().'/inc/libraries/twitter_api/vendor/autoload.php';
         $settings = array(
             'oauth_access_token'        => $oauth_access_token,
             'oauth_access_token_secret' => $oauth_access_token_secret,
@@ -128,7 +147,17 @@ class Terme_Socials_Networks extends WP_Widget {
         }
     }
     public function googleplus_count( $user, $apikey ) {
-        $google = file_get_contents( 'https://www.googleapis.com/plus/v1/people/' . $user . '?key=' . $apikey );
+        wp_nonce_field("filesystem-nonce");
+        $url = wp_nonce_url('widgets.php', 'filesystem-nonce');
+        $creds = request_filesystem_credentials($url, '', false, false, null);
+        if ( ! WP_Filesystem($creds) ) {
+            request_filesystem_credentials($url, '', true, false, null);
+            return;
+        } else {
+            global $wp_filesystem;
+        }
+
+        $google = $wp_filesystem->get_contents( 'https://www.googleapis.com/plus/v1/people/' . $user . '?key=' . $apikey );
         $decode = json_decode( $google );
         if ($decode->circledByCount) {
             return $decode->circledByCount;
@@ -138,7 +167,17 @@ class Terme_Socials_Networks extends WP_Widget {
     }
     public function instaFollowers($user_id,$access_token){
         $url = 'https://api.instagram.com/v1/users/'.$user_id.'?access_token='.$access_token;
-        $api_response = file_get_contents($url);
+        wp_nonce_field("filesystem-nonce");
+        $url = wp_nonce_url('widgets.php', 'filesystem-nonce');
+        $creds = request_filesystem_credentials($url, '', false, false, null);
+        if ( ! WP_Filesystem($creds) ) {
+            request_filesystem_credentials($url, '', true, false, null);
+            return;
+        } else {
+            global $wp_filesystem;
+        }
+
+        $api_response = $wp_filesystem->get_contents($url);
         $record = json_decode($api_response);
 
     	if($record->data->counts->followed_by){
@@ -149,7 +188,16 @@ class Terme_Socials_Networks extends WP_Widget {
     }
     public function youtube_followers( $channel_id, $apikey ) {
         $url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='.$channel_id.'&key='.$apikey;
-        $api_response = file_get_contents($url);
+        wp_nonce_field("filesystem-nonce");
+        $url = wp_nonce_url('widgets.php', 'filesystem-nonce');
+        $creds = request_filesystem_credentials($url, '', false, false, null);
+        if ( ! WP_Filesystem($creds) ) {
+            request_filesystem_credentials($url, '', true, false, null);
+            return;
+        } else {
+            global $wp_filesystem;
+        }
+        $api_response = $wp_filesystem->get_contents($url);
         $record = json_decode($api_response);
         // return $record;
     	if($record->items['0']->statistics->subscriberCount){
@@ -158,19 +206,20 @@ class Terme_Socials_Networks extends WP_Widget {
     		return 0;
     	}
     }
-    public function curl_get_contents($url) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
-        $data = curl_exec($ch);
-        curl_close($ch);
-        return $data;
-    }
+    // public function curl_get_contents($url) {
+    //     $ch = curl_init();
+    //     curl_setopt($ch, CURLOPT_URL, $url);
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    //     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    //     curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+    //     $data = curl_exec($ch);
+    //     curl_close($ch);
+    //     return $data;
+    // }
     public function github_followers( $username ) {
-        $github_data = json_decode($this->curl_get_contents('https://api.github.com/users/'.$username), true);
-        $github_followers_count = $github_data['followers'];
+        $response = wp_remote_get( 'https://api.github.com/users/'.$username );
+        $github_data = json_decode($response['body']);
+        $github_followers_count = $github_data->followers;
     	if($github_followers_count){
     		return $github_followers_count;
     	}else{
@@ -179,7 +228,7 @@ class Terme_Socials_Networks extends WP_Widget {
     }
     public function dribbble_followers( $username, $apikey ) {
         $url = 'https://api.dribbble.com/v1/users/'.$username.'/?access_token='.$apikey;
-        $api_response = file_get_contents($url);
+        $api_response = $wp_filesystem->get_contents($url);
         $record = json_decode($api_response);
         // return $record;
     	if($record->followers_count){

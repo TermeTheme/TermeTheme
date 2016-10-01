@@ -22,11 +22,11 @@ function terme_page_builder_enqueue_scripts(){
 }
 add_action('admin_enqueue_scripts','terme_page_builder_enqueue_scripts');
 
-include TEMPLATEPATH . '/inc/page-builder/class.abstract.terme_page_builder_element.php';
-include TEMPLATEPATH . '/inc/page-builder/elements/element_01.php';
-include TEMPLATEPATH . '/inc/page-builder/elements/element_02.php';
-include TEMPLATEPATH . '/inc/page-builder/elements/element_03.php';
-include TEMPLATEPATH . '/inc/page-builder/elements/element_04.php';
-include TEMPLATEPATH . '/inc/page-builder/elements/element_05.php';
-include TEMPLATEPATH . '/inc/page-builder/elements/element_shop.php';
-include TEMPLATEPATH . '/inc/page-builder/metabox.php';
+include get_template_directory() . '/inc/page-builder/class.abstract.terme_page_builder_element.php';
+include get_template_directory() . '/inc/page-builder/elements/element_01.php';
+include get_template_directory() . '/inc/page-builder/elements/element_02.php';
+include get_template_directory() . '/inc/page-builder/elements/element_03.php';
+include get_template_directory() . '/inc/page-builder/elements/element_04.php';
+include get_template_directory() . '/inc/page-builder/elements/element_05.php';
+include get_template_directory() . '/inc/page-builder/elements/element_shop.php';
+include get_template_directory() . '/inc/page-builder/metabox.php';

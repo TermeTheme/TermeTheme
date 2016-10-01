@@ -1,6 +1,5 @@
 <?php global $terme_options; ?>
 <footer class="footer style_5">
-
   <div class="main_area">
       <div class="container">
           <div class="row">
@@ -71,5 +70,4 @@
       </div><!-- row -->
     </div><!-- contanier -->
   </div>	<!-- bottom_bar -->
-
 </footer>

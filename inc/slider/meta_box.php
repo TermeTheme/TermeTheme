@@ -32,7 +32,7 @@ class Terme_Slider {
     	wp_enqueue_script('jquery-ui-core');
     	wp_nonce_field( 'slides_meta_box', 'slides_meta_box_nonce' );
     	$slides = get_post_meta( $post->ID, '_terme_slider_slides',true);
-        include TEMPLATEPATH.'/inc/slider/slides_html.php';
+        include get_template_directory().'/inc/slider/slides_html.php';
     }
 
     public function settings_callback( $post ) {
@@ -42,7 +42,7 @@ class Terme_Slider {
     	wp_enqueue_script('jquery-ui-core');
     	wp_nonce_field( 'slides_meta_box', 'slides_meta_box_nonce' );
     	$slider = get_post_meta( $post->ID, '_terme_slider_slides',true);
-        include TEMPLATEPATH.'/inc/slider/settings_html.php';
+        include get_template_directory().'/inc/slider/settings_html.php';
     }
 
     public function save( $post_id ) {

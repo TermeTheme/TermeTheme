@@ -6,7 +6,6 @@ function terme_enqueue_scripts() {
     wp_enqueue_style('TermeStyle', get_template_directory_uri().'/assets/css/terme.css', array(), '4.0.0');
     wp_enqueue_style('FontAwesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array(), '4.0.0');
     wp_enqueue_style('SlideBars', get_template_directory_uri().'/assets/css/slidebars.min.css', array(), '4.0.0');
-    wp_enqueue_style('termeAdmin', get_template_directory_uri().'/assets/admin/css/terme.css', array(), '4.0.0');
     if (is_rtl()) {
         wp_enqueue_style('Bootstrap-RTL', get_template_directory_uri().'/assets/css/bootstrap-rtl.min.css', array(), '4.0.0');
     }
@@ -71,7 +70,7 @@ add_action('widgets_init', 'terme_sidebars');
 add_action('admin_enqueue_scripts', 'terme_theme_admin_assets');
 function terme_theme_admin_assets() {
     wp_enqueue_style('TermeTheme-admin-style', get_template_directory_uri().'/assets/admin/css/terme.css', array());
-    wp_enqueue_script('TermeTheme-Admin-Js', get_template_directory_uri().'/assets/admin/js/terme.js', array('jquery'), true);
+    wp_enqueue_script('TermeTheme-Admin-Js', get_template_directory_uri().'/assets/admin/js/terme.js', array('jquery','jquery-ui-droppable','jquery-ui-sortable'), true);
     if (is_rtl()) {
         wp_enqueue_style('TermeTheme-admin-style-rtl', get_template_directory_uri().'/assets/admin/css/terme-rtl.css', array());
     }
@@ -81,7 +80,7 @@ add_action('after_setup_theme', 'terme_setup', 1);
 function terme_setup() {
     add_theme_support('woocommerce');
     add_theme_support( 'title-tag' );
-    load_theme_textdomain( 'terme', TEMPLATEPATH . '/languages' );
+    load_theme_textdomain( 'terme', get_template_directory() . '/languages' );
     register_nav_menus(
 		array(
 			'header_menu' => __( 'Header Menu','terme' ),
@@ -90,6 +89,7 @@ function terme_setup() {
 	);
     if (function_exists('add_theme_support')) {
         add_theme_support('post-thumbnails');
+        add_theme_support( 'automatic-feed-links' );
     }
     if (function_exists('add_image_size')) {
         add_image_size('category_thumb', 210, 210, true);
@@ -104,15 +104,16 @@ function terme_setup() {
         add_image_size('shop_catalog_home_4', 250, 320, true);
         add_image_size('slider', 750, 385, true);
     }
-    include TEMPLATEPATH.'/inc/theme_option/index.php';
+    include get_template_directory().'/inc/theme_option/index.php';
+    if ( ! isset( $content_width ) ) $GLOBALS['content_width'] = 748;
 }
-include TEMPLATEPATH.'/inc/terme_funcs.php';
-include TEMPLATEPATH.'/inc/terme_customizer.php';
-include TEMPLATEPATH.'/inc/widgets/widgets.php';
-include TEMPLATEPATH.'/inc/page-builder/index.php';
-include TEMPLATEPATH.'/inc/metabox/terme_meta.php';
-include TEMPLATEPATH.'/inc/wc_functions.php';
-include TEMPLATEPATH.'/inc/slider/init.php';
+include get_template_directory().'/inc/terme_funcs.php';
+include get_template_directory().'/inc/terme_customizer.php';
+include get_template_directory().'/inc/widgets/widgets.php';
+include get_template_directory().'/inc/page-builder/index.php';
+include get_template_directory().'/inc/metabox/terme_meta.php';
+include get_template_directory().'/inc/wc_functions.php';
+include get_template_directory().'/inc/slider/init.php';
 ?>
 <?php function advanced_comment($comment, $args, $depth) {
         $GLOBALS['comment'] = $comment; ?>
@@ -123,7 +124,7 @@ include TEMPLATEPATH.'/inc/slider/init.php';
             </div>
             <div class="comment_metadata">
               <b class="name"><?php echo get_comment_author_link(); ?></b>
-              <time><?php printf(__('%1$s'), get_comment_date('j F Y در g:i a'), get_comment_time()) ?></time>
+              <time><?php printf(__('%1$s','terme'), get_comment_date('j F Y - g:i a'), get_comment_time()) ?></time>
               <div class="reply">
                 <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
               </div>
@@ -132,7 +133,7 @@ include TEMPLATEPATH.'/inc/slider/init.php';
                 <?php comment_text(); ?>
                 <?php if ($comment->comment_approved == '0') : ?>>
                     <p>
-                        <?php _e('your comment is awaiting moderation'); ?>
+                        <?php _e('your comment is awaiting moderation','terme'); ?>
                     </p>
                 <?php endif;?>
             </div>

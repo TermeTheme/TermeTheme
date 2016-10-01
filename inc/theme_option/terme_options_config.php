@@ -1009,7 +1009,7 @@
                 'id'       => 'footer-text',
                 'type'     => 'textarea',
                 'title'   => __( 'Footer Copyright Text', 'terme' ),
-                'default' => 'Copyright © 2016 <a href="http://termetheme.com">TermeTheme.com </a>',
+                'default' => 'Copyright &copy 2016 <a href="' . home_url() . '">TermeTheme.com </a>',
                 'required' => array('copyright-footer', '=' , 1),
             ),
             array(

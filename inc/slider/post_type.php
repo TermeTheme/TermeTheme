@@ -1,8 +1,8 @@
 <?php
 function terme_slider_post_type() {
   $labels = array(
-    'name'               => _x( 'Sliders', 'terme' ),
-    'singular_name'      => _x( 'Slider', 'terme' ),
+    'name'               => __( 'Sliders', 'terme' ),
+    'singular_name'      => __( 'Slider', 'terme' ),
     'add_new'            => __( 'Add New', 'terme' ),
     'add_new_item'       => __( 'Add New Slider', 'terme' ),
     'edit_item'          => __( 'Edit Slider', 'terme' ),
@@ -13,7 +13,7 @@ function terme_slider_post_type() {
     'not_found'          => __( 'No Sliders found', 'terme' ),
     'not_found_in_trash' => __( 'No Sliders found in the Trash', 'terme' ),
     'parent_item_colon'  => '',
-    'menu_name'          => _x( 'Sliders', 'terme' )
+    'menu_name'          => __( 'Sliders', 'terme' )
   );
   $args = array(
     'labels'        => $labels,

@@ -15,12 +15,12 @@
   	<div canvas="container">
     <?php
         if ($terme_options['header_layout'] == '1') {
-    		include TEMPLATEPATH . '/inc/header/1.php';
+    		include get_template_directory() . '/inc/header/1.php';
     	} elseif ($terme_options['header_layout'] == '2') {
-    		include TEMPLATEPATH . '/inc/header/2.php';
+    		include get_template_directory() . '/inc/header/2.php';
     	} elseif ($terme_options['header_layout'] == '3') {
-    		include TEMPLATEPATH . '/inc/header/3.php';
+    		include get_template_directory() . '/inc/header/3.php';
     	} else {
-    		include TEMPLATEPATH . '/inc/header/4.php';
+    		include get_template_directory() . '/inc/header/4.php';
     	}
     ?>

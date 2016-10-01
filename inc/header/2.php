@@ -17,11 +17,11 @@
 					</form>
 					<div class="user_area">
 						<?php if( is_user_logged_in()) { ?>
-							<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php _e( $terme_options['logout_text'],'terme' ); ?></a>
+							<a href="<?php echo wp_logout_url( home_url() ); ?>">	<?php echo $terme_options['logout_text']; ?></a>
 						<?php } else { ?>
-							<a href="<?php echo get_page_link($terme_options['login_page']); ?>">	<?php _e( $terme_options['login_text'],'terme' ); ?></a>
+							<a href="<?php echo get_page_link($terme_options['login_page']); ?>">	<?php echo $terme_options['login_text']; ?></a>
 							<span>	<?php _e( 'OR','terme' ); ?></span>
-							<a href="<?php echo get_page_link($terme_options['register_page']); ?>">	<?php _e( $terme_options['register_text'],'terme' ); ?></a>
+							<a href="<?php echo get_page_link($terme_options['register_page']); ?>">	<?php echo $terme_options['register_text']; ?></a>
 						<?php } ?>
 					</div><!-- login_area -->
 					<?php if (class_exists('WooCommerce')) { ?>
@@ -30,7 +30,7 @@
 							<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 							<div class="count">
 									<?php _e( 'Cart','terme' ); ?>
-								<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
+								<span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count(),'terme' ), WC()->cart->get_cart_contents_count() ); ?></span>
 							</div>
 						</a>
 					</div><!-- cart -->
@@ -49,9 +49,9 @@
 					<div class="logo center">
 						<?php if($terme_options['logo_type'] == 'logo_image') { ?>
 
-						<a href="<?php bloginfo('url'); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
+						<a href="<?php esc_url( home_url() ); ?>"><img src="<?php echo $terme_options['logo_img']['url']; ?>" alt=""></a>
 						<?php } else { ?>
-							<h1><a href="<?php bloginfo('url'); ?>"><?php echo $terme_options['site_name']; ?></a></h1>
+							<h1><a href="<?php esc_url( home_url() ); ?>"><?php echo $terme_options['site_name']; ?></a></h1>
 							<h2><?php echo $terme_options['site_description']; ?></h2>
 					<?php } ?>
 					</div><!-- logo -->
