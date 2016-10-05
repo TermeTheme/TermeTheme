@@ -92,7 +92,7 @@
         // Choose an priority for the admin bar menu
         'global_variable'      => '',
         // Set a different name for your global variable other than the opt_name
-        'dev_mode'             => true,
+        'dev_mode'             => false,
         // Show the time the page took to load, etc
         'update_notice'        => true,
         // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
@@ -136,8 +136,11 @@
         // FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
         'database'             => '',
         // possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
-        'use_cdn'              => false,
+        'use_cdn'              => true,
         // If you prefer not to use the CDN for Select2, Ace Editor, and others, you may download the Redux Vendor Support plugin yourself and run locally or embed it in your code.
+        'show_options_object'  => false,
+        // hide Option Object in menu
+
 
         // HINTS
         'hints'                => array(
@@ -219,13 +222,13 @@
         } else {
             $v = str_replace( '-', '_', $args['opt_name'] );
         }
-        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'framework' ), $v );
+        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'terme' ), $v );
     } else {
-        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'framework' );
+        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'terme' );
     }
 
     // Add content after the form.
-    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'framework' );
+    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'terme' );
 
     Redux::setArgs( $opt_name, $args );
 
@@ -241,19 +244,19 @@
     $tabs = array(
         array(
             'id'      => 'redux-help-tab-1',
-            'title'   => __( 'Theme Information 1', 'framework' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'framework' )
+            'title'   => __( 'Theme Information 1', 'terme' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'terme' )
         ),
         array(
             'id'      => 'redux-help-tab-2',
-            'title'   => __( 'Theme Information 2', 'framework' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'framework' )
+            'title'   => __( 'Theme Information 2', 'terme' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'terme' )
         )
     );
     Redux::setHelpTab( $opt_name, $tabs );
 
     // Set the help sidebar
-    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'framework' );
+    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'terme' );
     Redux::setHelpSidebar( $opt_name, $content );
 
 
@@ -906,7 +909,7 @@
           array(
           'id'=>'top_banner_img',
           'type' => 'media',
-          'title' => __('Upload your logo image', 'framework'),
+          'title' => __('Upload your image', 'terme'),
           'width' => '460px',
           'height' => '60px',
           'default'=>'',
@@ -1166,16 +1169,16 @@
 
     Redux::setSection( $opt_name, array(
         'icon'            => 'el el-list-alt',
-        'title'           => __( 'Customizer Only', 'framework' ),
+        'title'           => __( 'Customizer Only', 'terme' ),
         'desc'            => __( '<p class="description">This Section should be visible only in Customizer</p>', 'terme' ),
         'customizer_only' => true,
         'fields'          => array(
             array(
                 'id'              => 'opt-customizer-only',
                 'type'            => 'select',
-                'title'           => __( 'Customizer Only Option', 'framework' ),
-                'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'framework' ),
-                'desc'            => __( 'The field desc is NOT visible in customizer.', 'framework' ),
+                'title'           => __( 'Customizer Only Option', 'terme' ),
+                'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'terme' ),
+                'desc'            => __( 'The field desc is NOT visible in customizer.', 'terme' ),
                 'customizer_only' => true,
                 'options'         => array(
                     '1' => 'Opt 1',
@@ -1190,7 +1193,7 @@
     if ( file_exists( dirname( __FILE__ ) . '/../README.md' ) ) {
         $section = array(
             'icon'   => 'el el-list-alt',
-            'title'  => __( 'Documentation', 'framework' ),
+            'title'  => __( 'Documentation', 'terme' ),
             'fields' => array(
                 array(
                     'id'       => '17',
@@ -1305,8 +1308,8 @@
         function dynamic_section( $sections ) {
             //$sections = array();
             $sections[] = array(
-                'title'  => __( 'Section via hook', 'framework' ),
-                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'framework' ),
+                'title'  => __( 'Section via hook', 'terme' ),
+                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'terme' ),
                 'icon'   => 'el el-paper-clip',
                 // Leave this as a blank section, no options just some intro text set above.
                 'fields' => array()
