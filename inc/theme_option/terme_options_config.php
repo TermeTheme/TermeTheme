@@ -216,19 +216,19 @@
     // );
 
     // Panel Intro text -> before the form
-    if ( ! isset( $args['global_variable'] ) || $args['global_variable'] !== false ) {
-        if ( ! empty( $args['global_variable'] ) ) {
-            $v = $args['global_variable'];
-        } else {
-            $v = str_replace( '-', '_', $args['opt_name'] );
-        }
-        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'terme' ), $v );
-    } else {
-        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'terme' );
-    }
+    // if ( ! isset( $args['global_variable'] ) || $args['global_variable'] !== false ) {
+    //     if ( ! empty( $args['global_variable'] ) ) {
+    //         $v = $args['global_variable'];
+    //     } else {
+    //         $v = str_replace( '-', '_', $args['opt_name'] );
+    //     }
+    //     $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'terme' ), $v );
+    // } else {
+    //     $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'terme' );
+    // }
 
     // Add content after the form.
-    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'terme' );
+    // $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'terme' );
 
     Redux::setArgs( $opt_name, $args );
 
