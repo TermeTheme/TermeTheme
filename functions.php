@@ -70,6 +70,7 @@ add_action('widgets_init', 'terme_sidebars');
 add_action('admin_enqueue_scripts', 'terme_theme_admin_assets');
 function terme_theme_admin_assets() {
     wp_enqueue_style('TermeTheme-admin-style', get_template_directory_uri().'/assets/admin/css/terme.css', array());
+    wp_enqueue_style('TermeTheme-Redux-Style', get_template_directory_uri().'/assets/admin/css/redux-custom-css.css', array());
     wp_enqueue_script('TermeTheme-Admin-Js', get_template_directory_uri().'/assets/admin/js/terme.js', array('jquery','jquery-ui-droppable','jquery-ui-sortable'), true);
     if (is_rtl()) {
         wp_enqueue_style('TermeTheme-admin-style-rtl', get_template_directory_uri().'/assets/admin/css/terme-rtl.css', array());
@@ -104,16 +105,50 @@ function terme_setup() {
         add_image_size('shop_catalog_home_4', 250, 320, true);
         add_image_size('slider', 750, 385, true);
     }
-    include get_template_directory().'/inc/theme_option/index.php';
+    // include get_template_directory().'/inc/theme_option/index.php';
     if ( ! isset( $content_width ) ) $GLOBALS['content_width'] = 748;
 }
 include get_template_directory().'/inc/terme_funcs.php';
+include get_template_directory().'/inc/theme_option/terme_options_config.php';
 include get_template_directory().'/inc/terme_customizer.php';
 include get_template_directory().'/inc/widgets/widgets.php';
 include get_template_directory().'/inc/page-builder/index.php';
 include get_template_directory().'/inc/metabox/terme_meta.php';
 include get_template_directory().'/inc/wc_functions.php';
 include get_template_directory().'/inc/slider/init.php';
+?>
+<?php
+/**
+ * Since I'm already doing a tutorial, I'm not going to include comments to
+ * this code, but if you want, you can check out the "example.php" file
+ * inside the ZIP you downloaded - it has a very detailed documentation.
+ */
+require_once dirname( __FILE__ ) . '/TGM-Plugin-Activation-2.6.1/class-tgm-plugin-activation.php';
+add_action( 'tgmpa_register', 'mytheme_require_plugins' );
+function mytheme_require_plugins() {
+    $plugins = array(
+      array(
+          'name'               => 'TermeReduxFramework',
+          'slug'               => 'terme-redux-framework',
+          'source'             => 'https://downloads.wordpress.org/plugin/redux-framework.3.6.2.zip',
+          'required'           => true, // this plugin is required
+          'external_url'       => 'https://wordpress.org/plugins/redux-framework', // page of my plugin
+          'force_deactivation' => true, // deactivate this plugin when the user switches to another theme
+     ));
+    $config = array(
+         'id'           => 'mytheme-tgmpa', // your unique TGMPA ID
+         'default_path' => get_stylesheet_directory() . '/lib/plugins/', // default absolute path
+         'menu'         => 'mytheme-install-required-plugins', // menu slug
+         'has_notices'  => true, // Show admin notices
+         'dismissable'  => false, // the notices are NOT dismissable
+         'dismiss_msg'  => 'I really, really need you to install these plugins, okay?', // this message will be output at top of nag
+         'is_automatic' => true, // automatically activate plugins after installation
+         'message'      => '<!--Hey there.-->', // message to output right before the plugins table
+         'strings'      => array() // The array of message strings that TGM Plugin Activation uses
+     );
+
+    tgmpa( $plugins, $config );
+}
 ?>
 <?php function advanced_comment($comment, $args, $depth) {
         $GLOBALS['comment'] = $comment; ?>
